@@ -85,10 +85,3 @@ export async function logoutCustomer() {
   if (token) await db.delete(t.customerSessions).where(eq(t.customerSessions.id, sha256(token)));
   jar.delete(COOKIE);
 }
-
-/** Admin: set a traveller's password and sign them out everywhere (no email service yet, so resets go via the team). */
-export async function setCustomerPassword(customerId: number, password: string) {
-  await db.update(t.customers).set({ passwordHash: await hashPassword(password), failedLogins: 0, lockedUntil: null })
-    .where(eq(t.customers.id, customerId));
-  await db.delete(t.customerSessions).where(eq(t.customerSessions.customerId, customerId));
-}
