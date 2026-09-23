@@ -1,3 +1,5 @@
+import { z } from "zod";
+import type { CustomTripDetails } from "@/db/schema";
 import { budgets, tripCategories } from "./site";
 
 export type Lead = {
@@ -51,4 +53,51 @@ export function parseLead(f: FormData): { lead: Lead } | { error: string } {
       sourcePath: str(f.get("sourcePath"), 200),
     },
   };
+}
+
+// ---------------- "Plan my trip" questionnaire (custom / personalised trips)
+
+export const HOTEL_CATEGORIES = ["3 star", "4 star", "5 star"] as const;
+const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Pick a date");
+
+export const customTripSchema = z.object({
+  destination: z.string().trim().min(2, "Where would you like to go?").max(80),
+  departure: isoDate,
+  nights: z.number().int().min(1, "At least 1 night").max(60),
+  hotel: z.enum(HOTEL_CATEGORIES, { message: "Pick a hotel category" }),
+  pax: z.number().int().min(1, "At least 1 traveller").max(200),
+  rooms: z.number().int().min(1, "At least 1 room").max(100),
+  checkIn: isoDate,
+  checkOut: isoDate,
+  name: z.string().trim().min(2, "Enter your name").max(80),
+  email: z.string().trim().email("Enter a valid email").max(120),
+  phone: z.string().transform((p, ctx) => normalizePhone(p) ?? (ctx.addIssue({ code: "custom", message: "Enter a valid 10-digit mobile number" }), z.NEVER)),
+  remarks: z.string().trim().max(1000).default(""),
+  optIn: z.boolean().default(true),
+  sourcePath: z.string().max(200).default(""),
+}).superRefine((v, ctx) => {
+  if (v.checkOut <= v.checkIn) ctx.addIssue({ code: "custom", path: ["checkOut"], message: "Check-out must be after check-in" });
+  if (v.checkIn < v.departure) ctx.addIssue({ code: "custom", path: ["checkIn"], message: "Check-in can't be before departure" });
+  if (v.rooms > v.pax) ctx.addIssue({ code: "custom", path: ["rooms"], message: "More rooms than travellers" });
+});
+export type CustomTripInput = z.input<typeof customTripSchema>;
+
+const d = (iso: string) => new Date(iso + "T00:00:00").toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+
+/** Plain-text summary: WhatsApp messages from the traveller and the team's reply. */
+export function customTripSummary(v: { destination: string | null; name: string; phone: string; email: string | null } & CustomTripDetails) {
+  return [
+    `Destination: ${v.destination ?? "-"}`,
+    `Duration: ${v.nights}N/${v.nights + 1}D`,
+    `Name: ${v.name}`,
+    `Email: ${v.email ?? "-"}`,
+    `Contact: +91 ${v.phone}`,
+    `No. of Pax: ${v.pax}`,
+    `No. of Rooms: ${v.rooms}`,
+    `Departure date: ${d(v.departure)}`,
+    `Check-in date: ${d(v.checkIn)}`,
+    `Check-out: ${d(v.checkOut)}`,
+    `Category: ${v.hotel}`,
+    v.remarks && `Remarks: ${v.remarks}`,
+  ].filter(Boolean).join("\n");
 }

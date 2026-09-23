@@ -43,6 +43,13 @@
       "when": 1790172681151,
       "tag": "0005_customer_passwords",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1790173361567,
+      "tag": "0006_custom_trip_leads",
+      "breakpoints": true
     }
   ]
 }

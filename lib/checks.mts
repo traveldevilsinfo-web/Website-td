@@ -136,3 +136,24 @@ assert.equal(addDays("2027-03-27", 2), "2027-03-29"); // no DST drift
 assert.equal(repeatLabel(["2026-09-25", "2026-10-02", "2026-10-09"]), "Every Friday");
 assert.equal(repeatLabel(["2026-09-25", "2026-10-03", "2026-10-09"]), null);
 console.log("departure date checks passed");
+
+// ---------------- custom trip questionnaire
+const { customTripSchema, customTripSummary } = await import("./lead");
+const trip = {
+  destination: "Bali", departure: "2026-11-06", nights: 5, hotel: "4 star", pax: 3, rooms: 2,
+  checkIn: "2026-11-06", checkOut: "2026-11-11", name: "Asha Rao", email: "asha@example.com", phone: "+91 98765 43210", remarks: "",
+};
+const good = customTripSchema.safeParse(trip);
+assert.ok(good.success);
+assert.equal(good.success && good.data.phone, "9876543210");
+assert.equal(customTripSchema.safeParse({ ...trip, checkOut: "2026-11-06" }).success, false); // check-out not after check-in
+assert.equal(customTripSchema.safeParse({ ...trip, checkIn: "2026-11-05" }).success, false); // before departure
+assert.equal(customTripSchema.safeParse({ ...trip, rooms: 4 }).success, false); // more rooms than pax
+assert.equal(customTripSchema.safeParse({ ...trip, hotel: "7 star" }).success, false);
+assert.equal(customTripSchema.safeParse({ ...trip, phone: "12345" }).success, false);
+const text = customTripSummary({ ...trip, phone: "9876543210", hotel: "4 star", remarks: "Veg food" });
+assert.match(text, /Duration: 5N\/6D/);
+assert.match(text, /No\. of Pax: 3\nNo\. of Rooms: 2/);
+assert.match(text, /Category: 4 star/);
+assert.match(text, /Remarks: Veg food/);
+console.log("custom trip checks passed");

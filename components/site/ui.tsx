@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CalendarDays } from "lucide-react";
 import { BATCH_LABEL, dateShort, durationLabel, inr, repeatLabel, tripHref } from "@/lib/format";
-import { OpenLeadButton } from "@/components/LeadDialog";
+import { OpenCustomTrip } from "@/components/CustomTripDialog";
 
 export type CardTrip = {
   id: number; slug: string; title: string; coverImage: string | null; basePrice: number | null; salePrice: number | null;
@@ -115,9 +115,9 @@ export function CtaBand({ title = "Can't find your kind of trip?", text = "Tell 
         <div className="pointer-events-none absolute -bottom-24 -right-16 size-72 rounded-full bg-accent/25 blur-3xl" />
         <h2 className="headline relative text-3xl sm:text-5xl">{title}</h2>
         <p className="relative mx-auto mt-4 max-w-xl text-lg text-white/75">{text}</p>
-        <OpenLeadButton className="press relative mt-8 rounded-full bg-white px-8 py-4 text-base font-extrabold text-ink hover:bg-white/90">
+        <OpenCustomTrip className="press relative mt-8 rounded-full bg-white px-8 py-4 text-base font-extrabold text-ink hover:bg-white/90">
           Plan a custom trip
-        </OpenLeadButton>
+        </OpenCustomTrip>
       </div>
     </section>
   );

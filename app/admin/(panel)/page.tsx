@@ -4,7 +4,7 @@ import { ArrowRight, CalendarDays, MessageCircle, Phone, Plus } from "lucide-rea
 import { requireUser } from "@/lib/auth";
 import { db, t } from "@/lib/db";
 import { addDays, dateDay } from "@/lib/format";
-import { EmptyState, Notice, PageHeader, StatCard, StatusBadge, btnGhost, btnPrimary } from "@/components/admin/ui";
+import { Badge, EmptyState, Notice, PageHeader, StatCard, StatusBadge, btnGhost, btnPrimary } from "@/components/admin/ui";
 
 const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
 const ago = (d: Date) => {
@@ -124,8 +124,8 @@ export default async function Dashboard({ searchParams }: PageProps<"/admin">) {
               {leads.map((l) => (
                 <li key={l.id} className="flex items-center gap-3 px-5 py-3">
                   <div className="min-w-0 flex-1">
-                    <p className="flex items-center gap-2 truncate text-sm font-bold">{l.name}{l.status === "new" && <StatusBadge status="new" />}</p>
-                    <p className="truncate text-xs text-gray-500">{[l.destination, l.category, l.travelMonth].filter(Boolean).join(" · ") || "General enquiry"} · {ago(l.createdAt)}</p>
+                    <p className="flex items-center gap-2 truncate text-sm font-bold">{l.name}{l.status === "new" && <StatusBadge status="new" />}{l.kind === "custom_trip" && <Badge tone="blue">Quote</Badge>}</p>
+                    <p className="truncate text-xs text-gray-500">{(l.details ? [l.destination, `${l.details.pax} pax`, `${l.details.nights}N`, l.details.hotel] : [l.destination, l.category, l.travelMonth]).filter(Boolean).join(" · ") || "General enquiry"} · {ago(l.createdAt)}</p>
                   </div>
                   <a href={`tel:+91${l.phone}`} aria-label={`Call ${l.name}`} className="grid size-8 place-items-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50"><Phone className="size-4" /></a>
                   <a href={`https://wa.me/91${l.phone}`} target="_blank" aria-label={`WhatsApp ${l.name}`} className="grid size-8 place-items-center rounded-lg border border-gray-200 text-green-600 hover:bg-green-50"><MessageCircle className="size-4" /></a>

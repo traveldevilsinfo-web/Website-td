@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ChevronDown, Phone, UserRound } from "lucide-react";
 import type { ResolvedItem } from "@/lib/nav";
 import type { SiteSettings } from "@/lib/site";
-import { OpenLeadButton } from "./LeadDialog";
+import { OpenCustomTrip } from "./CustomTripDialog";
 import { MobileMenu } from "./MobileMenu";
 import { TopBar } from "./TopBar";
 import { MegaPanel } from "./nav/MegaMenu";
@@ -143,9 +143,9 @@ export function Header({ settings, nav }: { settings: SiteSettings; nav: Resolve
             className="press grid size-10 place-items-center rounded-full bg-ink text-white hover:bg-black">
             <UserRound className="size-[18px]" strokeWidth={2.5} />
           </Link>
-          <OpenLeadButton className="press hidden rounded-full bg-ink px-4 py-2.5 text-sm font-bold text-white hover:bg-black sm:block">
+          <OpenCustomTrip className="press hidden rounded-full bg-ink px-4 py-2.5 text-sm font-bold text-white hover:bg-black sm:block">
             Plan my trip
-          </OpenLeadButton>
+          </OpenCustomTrip>
 
           <MobileMenu className="lg:hidden">
             <summary aria-label="Menu" className="press grid size-10 cursor-pointer list-none place-items-center rounded-full hover:bg-black/5 [&::-webkit-details-marker]:hidden">
@@ -154,7 +154,7 @@ export function Header({ settings, nav }: { settings: SiteSettings; nav: Resolve
             <div className="absolute inset-x-0 top-full h-[calc(100dvh-4rem-var(--topbar-h,0px))] overflow-y-auto bg-white px-5 pb-10 pt-2">
               {nav.map((item) => <MobileItem key={item.label} item={item} />)}
               <div className="mt-6 grid gap-3">
-                <OpenLeadButton className="press rounded-2xl bg-brand py-4 text-lg font-extrabold text-white">Plan my trip</OpenLeadButton>
+                <OpenCustomTrip className="press rounded-2xl bg-brand py-4 text-lg font-extrabold text-white">Plan my trip</OpenCustomTrip>
                 <a href={tel(settings.phone)} className="press rounded-2xl border border-line py-4 text-center text-lg font-extrabold">Call {settings.phone}</a>
               </div>
             </div>
