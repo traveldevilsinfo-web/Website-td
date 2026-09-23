@@ -1,0 +1,859 @@
+{
+  "id": 3734,
+  "slug": "meghalya",
+  "url": "https://traveldevils.in/trip/meghalya/",
+  "title": "Meghalya",
+  "code": "WTE-2886",
+  "modified": "2026-03-03T08:30:03",
+  "duration": {
+    "days": 6,
+    "nights": 5,
+    "duration_unit": "days",
+    "duration_type": "both"
+  },
+  "price": 22499,
+  "sale_price": 0,
+  "has_sale": false,
+  "currency": "INR",
+  "min_pax": 1,
+  "max_pax": "",
+  "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9.png",
+  "destinations": [
+    "Meghalaya"
+  ],
+  "trip_types": [
+    "Domestic Trip",
+    "Meghalaya"
+  ],
+  "trip_duration": [
+    "6 Days 5 Nights"
+  ],
+  "difficulty": [],
+  "activities": [],
+  "upcoming": [],
+  "overview_html": "<!-- wp:paragraph -->\n<p>A 5-7 day backpacking trip to Meghalaya, the \"Abode of Clouds,\" offers an intense experience of lush landscapes, living root bridges, and waterfalls, best visited between September and December. Key highlights include trekking to the Double Decker Root Bridge in Nongriat, exploring Dawki's crystal-clear river, visiting Asia's cleanest village, Mawlynnong, and caving in Cherrapunji.</p>\n<!-- /wp:paragraph -->",
+  "overview": "A 5-7 day backpacking trip to Meghalaya, the \"Abode of Clouds,\" offers an intense experience of lush landscapes, living root bridges, and waterfalls, best visited between September and December. Key highlights include trekking to the Double Decker Root Bridge in Nongriat, exploring Dawki's crystal-clear river, visiting Asia's cleanest village, Mawlynnong, and caving in Cherrapunji.\n",
+  "highlights": [
+    "The 4-hour scenic drive from Guwahati to Shillong.",
+    " Visiting the mesmerising Umiam Lake (Barapani) on the way from Guwahati to Shillong",
+    "Visiting Laitlum Canyon and Mawkdok Dympep Viewpoint.",
+    "Grasping a stunning view of Nohkalikai falls, the Garden of Caves, Arwah Caves, and Seven Sisters' fall (if time permits).",
+    "Trekking to the Double Decker Root Bridge (Nongriat)",
+    ""
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Arrival at Guwahati – Shillong",
+      "content": "- Upon arrival at Guwahati Airport, the representative will meet and greet the group.[7]\n- The group will head to Shillong at 12 PM.[7]\n- It is requested to book a flight arriving before 11 am at Guwahati Airport.[7]\n- The scenic drive from Guwahati to Shillong takes 4 hours.[7]\n- You will see the Umiam Lake (Barapani) on the way, and after capturing its beauty, the journey will continue.[8]\n- Check-in at the hotel, and the evening will be spent at Police Bazar, Shillong.\n- Overnight stay at Shillong.\n"
+    },
+    {
+      "day": 2,
+      "title": "Shillong - Cherrapunji via Laitlum Canyon",
+      "content": "Enjoy a lip-smacking breakfast.\n\nGet transferred to Cherrapunji.\n\nOn the way, visit the breathtaking Laitlum Canyon and Mawkdok Dympep Viewpoint.\n\nAfter this, grasp a stunning view of Nohkalikai falls, the Garden of caves, Arwah Caves, and Seven Sisters' fall if time permits.\n\nOvernight stay at Cherrapunji.\n"
+    },
+    {
+      "day": 3,
+      "title": "Cherrapunji - Nongriat Trek - Cherrapunji",
+      "content": "After breakfast at 7 am, proceed to Tyrna village.\n\nStart the trek to the Double Decker Root Bridge (Nongriat) with the local guide.\n\nThe hike involves climbing up the 3500 steps and ends back at the same village by evening.\n\nOvernight stay at Cherrapunji.\n"
+    },
+    {
+      "day": 4,
+      "title": "Cherrapunji - Mawlynnong - Dawki",
+      "content": "Again, rush to the breakfast area.\n\nGet ready and leave for the Dill Chahta hai Fort and make plans there to visit Goa daily.\n\nWe will also do cycling right at the Para Road (Dear Zindagi).\n\nVisit those aesthetic colorful homes, talk to locals, know their culture and slow life in Goa.\n\nThe evening will be at Dauna Paula watching the most beautiful sunset of your life.\n\nEnd our day in Casino or Tittos lane in Baga beach. Both Entry fees are not included in the package.\n\nReturn to Hotel.\n"
+    },
+    {
+      "day": 5,
+      "title": "Shnongpdeng - Jowai – Shillong",
+      "content": "- Wake up to see the beauty of East Khasi Hills, and have breakfast.\n- You can do multiple adventure activities (on your own) like Kayaking, Boating, Ziplining, and Cliff jumping, etc., over here.\n- Start for Jowai to visit Krang Suri Waterfalls, which is described as India's most magical waterfall.\n- You can get drenched and swim in the natural pools at the waterfall.\n- Travel back to Shillong after witnessing these attractive places.\n- Overnight stay at Shillong.\n"
+    },
+    {
+      "day": 6,
+      "title": "Shillong - Guwahati Airport Drop",
+      "content": "Morning after breakfast, the group heads towards Guwahati Airport around 9 am.\n\nIt's a 4-5 hours drive to the airport, and the group is expected to reach the Airport by 3 pm.\n\nKindly book your flights post 5 pm.\n\nBid farewell to the trip.\n\nNote: It is advised to spend a maximum of 25-40 minutes at one sightseeing place to cover all mentioned locations.\n"
+    }
+  ],
+  "includes": [
+    "Pickup and drop according to fixed timing.",
+    "Transportation for local sightseeing in Tempo Traveler/SUV/Sedan from Guwahati to Guwahati.",
+    "Stay for 5 nights with 5 breakfasts and 1 dinner in Dawki (02 nights in Shillong, 02 nights in Cherrapunji, 01 night in Dawki).",
+    "Nongriat Trek guide.",
+    "All toll, parking, fuel, and driver allowance.",
+    "Operation executive on call for 24x7."
+  ],
+  "excludes": [
+    "5% GST applicable on prices.",
+    "Entry fees to all sightseeing places mentioned in the itinerary.",
+    "Personal expenses like tips, laundry, phone bills, or any other meals not mentioned in the inclusions.",
+    "Any additional sightseeing from the itinerary, pick up/drop from any other points, or use of the vehicle at night.",
+    "Any additional Safari/Boating/Guide charges.",
+    "Anything not mentioned in the Inclusions."
+  ],
+  "faqs": [],
+  "packages": [
+    {
+      "name": "Backpacking Trip",
+      "is_primary": true,
+      "pricing": [
+        {
+          "label": "Dual Sharing",
+          "price": 22499,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Quad Sharing",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan Solo Rider",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan With Pillion",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Sitting Coach",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 20499,
+          "sale_price": "",
+          "type": "per-person"
+        }
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "package": "Backpacking Trip",
+      "count": 1097,
+      "first": "2026-09-23",
+      "last": "2029-09-23",
+      "dates": null
+    }
+  ],
+  "trip_extras": [],
+  "images": [
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1024x394.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1536x591.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-300x115.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-768x295.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-300x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-80x80.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159-292x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-1024x768.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-300x225.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-768x576.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9.png"
+  ],
+  "page_markdown": "[\n!\n ](https://traveldevils.in)\n\n- [Home](https://traveldevils.in/)\n- [Upcoming Trips](https://traveldevils.in/upcoming-trips/)\n- [International Trips](https://traveldevils.in/international-trips/)\n- [Backpacking Trips](https://traveldevils.in/backpacking-trips/)\n- [Corporate Trip](https://traveldevils.in/corporate-trip/)\n- [About Us](https://traveldevils.in/about-us/)\n- [Contact Us](https://traveldevils.in/contact-us/)\n- [My Account](https://traveldevils.in/my-account/)\nX\n\n!\n\n [ Overview ](#)\n [ Itinerary ](#)\n [ Inclusion/Exclusion ](#)\n\n##  [ Overview ](#)\n\n##  [ Itinerary ](#)\n\n##  [ Inclusion/Exclusion ](#)\n\n## Overview\n\nA 5-7 day backpacking trip to Meghalaya, the “Abode of Clouds,” offers an intense experience of lush landscapes, living root bridges, and waterfalls, best visited between September and December. Key highlights include trekking to the Double Decker Root Bridge in Nongriat, exploring Dawki’s crystal-clear river, visiting Asia’s cleanest village, Mawlynnong, and caving in Cherrapunji.\n\n### Highlights\n\n- The 4-hour scenic drive from Guwahati to Shillong.\n-  Visiting the mesmerising Umiam Lake (Barapani) on the way from Guwahati to Shillong\n- Visiting Laitlum Canyon and Mawkdok Dympep Viewpoint.\n- Grasping a stunning view of Nohkalikai falls, the Garden of Caves, Arwah Caves, and Seven Sisters' fall (if time permits).\n- Trekking to the Double Decker Root Bridge (Nongriat)\n\n## Itinerary\n\n Expand all\n\n Day 01 :\n  Arrival at Guwahati – Shillong\n\n- Upon arrival at Guwahati Airport, the representative will meet and greet the group.[7]\n- The group will head to Shillong at 12 PM.[7]\n- It is requested to book a flight arriving before 11 am at Guwahati Airport.[7]\n- The scenic drive from Guwahati to Shillong takes 4 hours.[7]\n- You will see the Umiam Lake (Barapani) on the way, and after capturing its beauty, the journey will continue.[8]\n- Check-in at the hotel, and the evening will be spent at Police Bazar, Shillong.\n- Overnight stay at Shillong.\n\n Day 02 :\n  Shillong - Cherrapunji via Laitlum Canyon\n\nEnjoy a lip-smacking breakfast.\n\nGet transferred to Cherrapunji.\n\nOn the way, visit the breathtaking Laitlum Canyon and Mawkdok Dympep Viewpoint.\n\nAfter this, grasp a stunning view of Nohkalikai falls, the Garden of caves, Arwah Caves, and Seven Sisters' fall if time permits.\n\nOvernight stay at Cherrapunji.\n\n Day 03 :\n  Cherrapunji - Nongriat Trek - Cherrapunji\n\nAfter breakfast at 7 am, proceed to Tyrna village.\n\nStart the trek to the Double Decker Root Bridge (Nongriat) with the local guide.\n\nThe hike involves climbing up the 3500 steps and ends back at the same village by evening.\n\nOvernight stay at Cherrapunji.\n\n Day 04 :\n  Cherrapunji - Mawlynnong - Dawki\n\nAgain, rush to the breakfast area.\n\nGet ready and leave for the Dill Chahta hai Fort and make plans there to visit Goa daily.\n\nWe will also do cycling right at the Para Road (Dear Zindagi).\n\nVisit those aesthetic colorful homes, talk to locals, know their culture and slow life in Goa.\n\nThe evening will be at Dauna Paula watching the most beautiful sunset of your life.\n\nEnd our day in Casino or Tittos lane in Baga beach. Both Entry fees are not included in the package.\n\nReturn to Hotel.\n\n Day 05 :\n  Shnongpdeng - Jowai – Shillong\n\n- Wake up to see the beauty of East Khasi Hills, and have breakfast.\n- You can do multiple adventure activities (on your own) like Kayaking, Boating, Ziplining, and Cliff jumping, etc., over here.\n- Start for Jowai to visit Krang Suri Waterfalls, which is described as India's most magical waterfall.\n- You can get drenched and swim in the natural pools at the waterfall.\n- Travel back to Shillong after witnessing these attractive places.\n- Overnight stay at Shillong.\n\n Day 06 :\n  Shillong - Guwahati Airport Drop\n\nMorning after breakfast, the group heads towards Guwahati Airport around 9 am.\n\nIt's a 4-5 hours drive to the airport, and the group is expected to reach the Airport by 3 pm.\n\nKindly book your flights post 5 pm.\n\nBid farewell to the trip.\n\nNote: It is advised to spend a maximum of 25-40 minutes at one sightseeing place to cover all mentioned locations.\n\n##\n\n### Inclusions\n\n- Pickup and drop according to fixed timing.\n- Transportation for local sightseeing in Tempo Traveler/SUV/Sedan from Guwahati to Guwahati.\n- Stay for 5 nights with 5 breakfasts and 1 dinner in Dawki (02 nights in Shillong, 02 nights in Cherrapunji, 01 night in Dawki).\n- Nongriat Trek guide.\n- All toll, parking, fuel, and driver allowance.\n- Operation executive on call for 24x7.\n\n### Exclusions\n\n- 5% GST applicable on prices.\n- Entry fees to all sightseeing places mentioned in the itinerary.\n- Personal expenses like tips, laundry, phone bills, or any other meals not mentioned in the inclusions.\n- Any additional sightseeing from the itinerary, pick up/drop from any other points, or use of the vehicle at night.\n- Any additional Safari/Boating/Guide charges.\n- Anything not mentioned in the Inclusions.\n\n-  [    Date & Time    ](#wte-booking-datetime)\n-  [    Package Type    ](#wte-booking-packages)\n\n   Back  Continue\n\n  From   ₹22499\n/ Dual Sharing\n  From   ₹20499\n/ Triple Sharing\n\n   Check Availability\n\n## Useful Links\n\n-  [ Home ](https://traveldevils.in/)\n-  [ Upcoming Trips ](https://traveldevils.in/upcoming-trips/)\n-  [ International Trips ](https://traveldevils.in/international-trips/)\n-  [ Domestic Trips ](https://traveldevils.in/domestic-trip/)\n-  [ About Us ](https://traveldevils.in/about-us/)\n-  [ Contact Us ](https://traveldevils.in/contact-us/)\n\n## Unique Links\n\n-  [ Privacy Policy ](https://traveldevils.in/privacy-policy-2/)\n-  [ Terms & Conditions ](https://traveldevils.in/terms-conditions/)\n-  [ Return Policy ](https://traveldevils.in/return-policy/)\n-  [ Refund Process ](https://traveldevils.in/refund-policy/)\n-  [ Cancallation Policy  ](https://traveldevils.in/cancellation-policy/)\n\n## Domestic Trip\n\n-  [ Rajasthan ](https://traveldevils.in/domestic-trip/rajasthan/)\n-  [ Meghalaya ](https://traveldevils.in/domestic-trip/meghalaya/)\n-  [ Ladakh ](https://traveldevils.in/domestic-trip/ladakh/)\n-  [ Sikkim ](https://traveldevils.in/domestic-trip/sikkim/)\n-  [ Delhi ](https://traveldevils.in/domestic-trip/delhi/)\n-  [ Goa ](https://traveldevils.in/domestic-trip/goa/)\n-  [ Himachal ](https://traveldevils.in/domestic-trip/himachal/)\n\n## International Trip\n\n-  [ Bali ](https://traveldevils.in/international-trips/bali/)\n-  [ Bhutan ](https://traveldevils.in/international-trips/bhutan/)\n-  [ Dubai ](https://traveldevils.in/international-trips/dubai/)\n-  [ Sri Lanka ](https://traveldevils.in/international-trips/sri-lanka/)\n-  [ India ](https://traveldevils.in/international-trips/india/)\n-  [ Vietnam ](https://traveldevils.in/international-trips/vietnam/)\n-  [ Thailand ](https://traveldevils.in/international-trips/thailand/)\n\n!\n\n## Travel Devils\n\n-  +91 70428 52209\n-  info@traveldevils.in\n\n-\n-\n\n© 2026 Travel Devils All rights reserved.\n\nWhatsApp us\n",
+  "raw": {
+    "wp": {
+      "id": 3734,
+      "date": "2026-03-03T08:03:37",
+      "date_gmt": "2026-03-03T08:03:37",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3734"
+      },
+      "modified": "2026-03-03T08:30:03",
+      "modified_gmt": "2026-03-03T08:30:03",
+      "slug": "meghalya",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/meghalya/",
+      "title": {
+        "rendered": "Meghalya"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3739,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        146
+      ],
+      "destination": [
+        127
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        84
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [],
+      "class_list": [
+        "post-3734",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-6-days-5-nights",
+        "destination-meghalaya",
+        "trip_types-domestic-trip",
+        "trip_types-meghalaya"
+      ],
+      "acf": [],
+      "packages_ids": [
+        3735
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "enabled": false,
+        "duration": 0,
+        "duration_unit": "days"
+      },
+      "booked-seats": [],
+      "code": "WTE-2886",
+      "price": 22499,
+      "has_sale": false,
+      "sale_price": 0,
+      "discount_percent": 0,
+      "currency": {
+        "code": "INR",
+        "symbol": "&#8377;"
+      },
+      "duration": {
+        "days": 6,
+        "nights": 5,
+        "duration_unit": "days",
+        "duration_type": "both"
+      },
+      "min_pax": 1,
+      "max_pax": "",
+      "discount_value": 0,
+      "discount_label": "0% Off",
+      "primary_category": 165,
+      "available_times": {
+        "type": "default",
+        "items": [
+          "2021-1-01",
+          "2021-2-01",
+          "2021-3-01",
+          "2021-4-01",
+          "2021-5-01",
+          "2021-6-01",
+          "2021-7-01",
+          "2021-8-01",
+          "2021-9-01",
+          "2021-10-01",
+          "2021-11-01",
+          "2021-12-01"
+        ]
+      },
+      "description": "<!-- wp:paragraph -->\n<p>A 5-7 day backpacking trip to Meghalaya, the \"Abode of Clouds,\" offers an intense experience of lush landscapes, living root bridges, and waterfalls, best visited between September and December. Key highlights include trekking to the Double Decker Root Bridge in Nongriat, exploring Dawki's crystal-clear river, visiting Asia's cleanest village, Mawlynnong, and caving in Cherrapunji.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": "Pickup and drop according to fixed timing.\nTransportation for local sightseeing in Tempo Traveler/SUV/Sedan from Guwahati to Guwahati.\nStay for 5 nights with 5 breakfasts and 1 dinner in Dawki (02 nights in Shillong, 02 nights in Cherrapunji, 01 night in Dawki).\nNongriat Trek guide.\nAll toll, parking, fuel, and driver allowance.\nOperation executive on call for 24x7.",
+      "cost_excludes": "5% GST applicable on prices.\nEntry fees to all sightseeing places mentioned in the itinerary.\nPersonal expenses like tips, laundry, phone bills, or any other meals not mentioned in the inclusions.\nAny additional sightseeing from the itinerary, pick up/drop from any other points, or use of the vehicle at night.\nAny additional Safari/Boating/Guide charges.\nAnything not mentioned in the Inclusions.",
+      "itineraries": [
+        {
+          "title": "Arrival at Guwahati – Shillong",
+          "content": "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Upon arrival at Guwahati Airport, the representative will meet and greet the group.<a>7</a></li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>The group will head to Shillong at 12 PM.<a>7</a></li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>It is requested to book a flight arriving before 11 am at Guwahati Airport.<a>7</a></li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>The scenic drive from Guwahati to Shillong takes 4 hours.<a>7</a></li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>You will see the Umiam Lake (Barapani) on the way, and after capturing its beauty, the journey will continue.<a>8</a></li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Check-in at the hotel, and the evening will be spent at Police Bazar, Shillong.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Overnight stay at Shillong.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->"
+        },
+        {
+          "title": "Shillong - Cherrapunji via Laitlum Canyon",
+          "content": "<!-- wp:paragraph -->\n<p>Enjoy a lip-smacking breakfast.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Get transferred to Cherrapunji.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>On the way, visit the breathtaking Laitlum Canyon and Mawkdok Dympep Viewpoint.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>After this, grasp a stunning view of Nohkalikai falls, the Garden of caves, Arwah Caves, and Seven Sisters' fall if time permits.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Overnight stay at Cherrapunji.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Cherrapunji - Nongriat Trek - Cherrapunji",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast at 7 am, proceed to Tyrna village.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Start the trek to the Double Decker Root Bridge (Nongriat) with the local guide.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The hike involves climbing up the 3500 steps and ends back at the same village by evening.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Overnight stay at Cherrapunji.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Cherrapunji - Mawlynnong - Dawki",
+          "content": "<!-- wp:paragraph -->\n<p>Again, rush to the breakfast area.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Get ready and leave for the&nbsp;<em>Dill Chahta hai</em>&nbsp;Fort and make plans there to visit Goa daily.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will also do cycling right at the Para Road (<em>Dear Zindagi</em>).</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Visit those aesthetic colorful homes, talk to locals, know their culture and slow life in Goa.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The evening will be at Dauna Paula watching the most beautiful sunset of your life.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>End our day in Casino or Tittos lane in Baga beach.&nbsp;Both Entry fees are not included in the package.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Return to Hotel.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Shnongpdeng - Jowai – Shillong",
+          "content": "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Wake up to see the beauty of East Khasi Hills, and have breakfast.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>You can do multiple adventure activities (on your own) like Kayaking, Boating, Ziplining, and Cliff jumping, etc., over here.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Start for Jowai to visit Krang Suri Waterfalls, which is described as India's most magical waterfall.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>You can get drenched and swim in the natural pools at the waterfall.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Travel back to Shillong after witnessing these attractive places.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Overnight stay at Shillong.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->"
+        },
+        {
+          "title": "Shillong - Guwahati Airport Drop",
+          "content": "<!-- wp:paragraph -->\n<p>Morning after breakfast, the group heads towards Guwahati Airport around 9 am.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>It's a 4-5 hours drive to the airport, and the group is expected to reach the Airport by 3 pm.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Kindly book your flights post 5 pm.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Bid farewell to the trip.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>Note:</strong>&nbsp;It is advised to spend a maximum of 25-40 minutes at one sightseeing place to cover all mentioned locations.</p>\n<!-- /wp:paragraph -->"
+        }
+      ],
+      "faqs": [],
+      "is_featured": false,
+      "featured_image": {
+        "width": 1200,
+        "height": 900,
+        "file": "2026/03/Kanatal-Tehri-9.png",
+        "filesize": 2046592,
+        "sizes": {
+          "medium": {
+            "file": "Kanatal-Tehri-9-300x225.png",
+            "width": 300,
+            "height": 225,
+            "filesize": 127196,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-300x225.png"
+          },
+          "large": {
+            "file": "Kanatal-Tehri-9-1024x768.png",
+            "width": 1024,
+            "height": 768,
+            "filesize": 1351370,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-1024x768.png"
+          },
+          "thumbnail": {
+            "file": "Kanatal-Tehri-9-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 44149,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-150x150.png"
+          },
+          "medium_large": {
+            "file": "Kanatal-Tehri-9-768x576.png",
+            "width": 768,
+            "height": 576,
+            "filesize": 774404,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-768x576.png"
+          },
+          "trip-thumb-size": {
+            "file": "Kanatal-Tehri-9-374x226.png",
+            "width": 374,
+            "height": 226,
+            "filesize": 163357,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-374x226.png"
+          },
+          "destination-thumb-size": {
+            "file": "Kanatal-Tehri-9-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 841525,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-600x810.png"
+          },
+          "destination-thumb-trip-size": {
+            "file": "Kanatal-Tehri-9-410x250.png",
+            "width": 410,
+            "height": 250,
+            "filesize": 196299,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-410x250.png"
+          },
+          "activities-thumb-size": {
+            "file": "Kanatal-Tehri-9-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 841525,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-600x810.png"
+          },
+          "trip-single-size": {
+            "file": "Kanatal-Tehri-9-990x490.png",
+            "width": 990,
+            "height": 490,
+            "filesize": 904085,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-990x490.png"
+          },
+          "meafe-featured-page": {
+            "file": "Kanatal-Tehri-9-500x410.png",
+            "width": 500,
+            "height": 410,
+            "filesize": 367274,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-500x410.png"
+          },
+          "meafe-testimonial-two": {
+            "file": "Kanatal-Tehri-9-272x316.png",
+            "width": 272,
+            "height": 316,
+            "filesize": 159502,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-272x316.png"
+          },
+          "meafe-blog-one": {
+            "file": "Kanatal-Tehri-9-370x247.png",
+            "width": 370,
+            "height": 247,
+            "filesize": 172855,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-370x247.png"
+          },
+          "meafe-blog-two": {
+            "file": "Kanatal-Tehri-9-197x278.png",
+            "width": 197,
+            "height": 278,
+            "filesize": 103760,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-197x278.png"
+          },
+          "meafe-category-tab": {
+            "file": "Kanatal-Tehri-9-355x355.png",
+            "width": 355,
+            "height": 355,
+            "filesize": 230004,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-355x355.png"
+          },
+          "meafe-category-grid": {
+            "file": "Kanatal-Tehri-9-370x370.png",
+            "width": 370,
+            "height": 370,
+            "filesize": 249366,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-370x370.png"
+          },
+          "meafe-category-grid-one": {
+            "file": "Kanatal-Tehri-9-570x530.png",
+            "width": 570,
+            "height": 530,
+            "filesize": 533584,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-570x530.png"
+          },
+          "meafe-category-grid-two": {
+            "file": "Kanatal-Tehri-9-270x180.png",
+            "width": 270,
+            "height": 180,
+            "filesize": 93898,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-270x180.png"
+          },
+          "meafe-category-grid-three": {
+            "file": "Kanatal-Tehri-9-570x320.png",
+            "width": 570,
+            "height": 320,
+            "filesize": 346304,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-570x320.png"
+          },
+          "meafe-category-grid-lay-three": {
+            "file": "Kanatal-Tehri-9-170x170.png",
+            "width": 170,
+            "height": 170,
+            "filesize": 56199,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-170x170.png"
+          },
+          "meafe-post-modules-small-img": {
+            "file": "Kanatal-Tehri-9-300x300.png",
+            "width": 300,
+            "height": 300,
+            "filesize": 165178,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-300x300.png"
+          },
+          "travil_80X80": {
+            "file": "Kanatal-Tehri-9-80x80.png",
+            "width": 80,
+            "height": 80,
+            "filesize": 13356,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-80x80.png"
+          },
+          "travil_424X370": {
+            "file": "Kanatal-Tehri-9-424x370.png",
+            "width": 424,
+            "height": 370,
+            "filesize": 284010,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-424x370.png"
+          },
+          "travil-shop-single": {
+            "file": "Kanatal-Tehri-9-620x500.png",
+            "width": 620,
+            "height": 500,
+            "filesize": 548748,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9-620x500.png"
+          },
+          "full": {
+            "file": "Kanatal-Tehri-9.png",
+            "width": 1200,
+            "height": 900,
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3734",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/types/trip"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/users/3"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/comments?post=3734"
+          }
+        ],
+        "version-history": [
+          {
+            "count": 1,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3734/revisions"
+          }
+        ],
+        "predecessor-version": [
+          {
+            "id": 3736,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3734/revisions/3736"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/media/3739"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/media?parent=3734"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "new_upcoming_trips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/new_upcoming_trips?post=3734"
+          },
+          {
+            "taxonomy": "trip_duration",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_duration?post=3734"
+          },
+          {
+            "taxonomy": "destination",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/destination?post=3734"
+          },
+          {
+            "taxonomy": "activities",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/activities?post=3734"
+          },
+          {
+            "taxonomy": "trip_types",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_types?post=3734"
+          },
+          {
+            "taxonomy": "difficulty",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/difficulty?post=3734"
+          },
+          {
+            "taxonomy": "trip_tag",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_tag?post=3734"
+          },
+          {
+            "taxonomy": "upcomingtrips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/wptravelengine_custom_taxonomy_upcomingtrips?post=3734"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    "wte_v2": {
+      "id": 3734,
+      "date": "2026-03-03T08:03:37",
+      "date_gmt": "2026-03-03T08:03:37",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3734"
+      },
+      "modified": "2026-03-03T08:30:03",
+      "modified_gmt": "2026-03-03T08:30:03",
+      "slug": "meghalya",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/meghalya/",
+      "title": {
+        "rendered": "Meghalya"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3739,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        146
+      ],
+      "destination": [
+        127
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        84
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [],
+      "class_list": [
+        "post-3734",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-6-days-5-nights",
+        "destination-meghalaya",
+        "trip_types-domestic-trip",
+        "trip_types-meghalaya"
+      ],
+      "packages_ids": [
+        3735
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "period": 0,
+        "unit": "days"
+      },
+      "booked-seats": [],
+      "fsd": {
+        "hide": false
+      },
+      "trip_code": "WTE-2886",
+      "overview": "<!-- wp:paragraph -->\n<p>A 5-7 day backpacking trip to Meghalaya, the \"Abode of Clouds,\" offers an intense experience of lush landscapes, living root bridges, and waterfalls, best visited between September and December. Key highlights include trekking to the Double Decker Root Bridge in Nongriat, exploring Dawki's crystal-clear river, visiting Asia's cleanest village, Mawlynnong, and caving in Cherrapunji.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": [
+        "Pickup and drop according to fixed timing.",
+        "Transportation for local sightseeing in Tempo Traveler/SUV/Sedan from Guwahati to Guwahati.",
+        "Stay for 5 nights with 5 breakfasts and 1 dinner in Dawki (02 nights in Shillong, 02 nights in Cherrapunji, 01 night in Dawki).",
+        "Nongriat Trek guide.",
+        "All toll, parking, fuel, and driver allowance.",
+        "Operation executive on call for 24x7."
+      ],
+      "cost_excludes": [
+        "5% GST applicable on prices.",
+        "Entry fees to all sightseeing places mentioned in the itinerary.",
+        "Personal expenses like tips, laundry, phone bills, or any other meals not mentioned in the inclusions.",
+        "Any additional sightseeing from the itinerary, pick up/drop from any other points, or use of the vehicle at night.",
+        "Any additional Safari/Boating/Guide charges.",
+        "Anything not mentioned in the Inclusions."
+      ],
+      "duration": {
+        "period": 6,
+        "unit": "days",
+        "nights": 5
+      },
+      "_s_duration": "144",
+      "age_limit": {
+        "min": 0,
+        "max": 0
+      },
+      "participants": {
+        "min": 1,
+        "max": ""
+      },
+      "capacity_per_category": {
+        "enabled": false,
+        "mode": "same",
+        "limits": [],
+        "package_limits": []
+      },
+      "trip_map": {
+        "images": [],
+        "iframe": ""
+      },
+      "highlights": [
+        "The 4-hour scenic drive from Guwahati to Shillong.",
+        " Visiting the mesmerising Umiam Lake (Barapani) on the way from Guwahati to Shillong",
+        "Visiting Laitlum Canyon and Mawkdok Dympep Viewpoint.",
+        "Grasping a stunning view of Nohkalikai falls, the Garden of Caves, Arwah Caves, and Seven Sisters' fall (if time permits).",
+        "Trekking to the Double Decker Root Bridge (Nongriat)",
+        ""
+      ],
+      "faqs": [],
+      "gallery": [],
+      "video_gallery": [],
+      "itinerary_description": "",
+      "itineraries": [
+        {
+          "title": "Arrival at Guwahati – Shillong",
+          "content": "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Upon arrival at Guwahati Airport, the representative will meet and greet the group.<a>7</a></li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>The group will head to Shillong at 12 PM.<a>7</a></li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>It is requested to book a flight arriving before 11 am at Guwahati Airport.<a>7</a></li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>The scenic drive from Guwahati to Shillong takes 4 hours.<a>7</a></li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>You will see the Umiam Lake (Barapani) on the way, and after capturing its beauty, the journey will continue.<a>8</a></li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Check-in at the hotel, and the evening will be spent at Police Bazar, Shillong.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Overnight stay at Shillong.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Shillong - Cherrapunji via Laitlum Canyon",
+          "content": "<!-- wp:paragraph -->\n<p>Enjoy a lip-smacking breakfast.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Get transferred to Cherrapunji.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>On the way, visit the breathtaking Laitlum Canyon and Mawkdok Dympep Viewpoint.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>After this, grasp a stunning view of Nohkalikai falls, the Garden of caves, Arwah Caves, and Seven Sisters' fall if time permits.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Overnight stay at Cherrapunji.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Cherrapunji - Nongriat Trek - Cherrapunji",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast at 7 am, proceed to Tyrna village.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Start the trek to the Double Decker Root Bridge (Nongriat) with the local guide.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The hike involves climbing up the 3500 steps and ends back at the same village by evening.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Overnight stay at Cherrapunji.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Cherrapunji - Mawlynnong - Dawki",
+          "content": "<!-- wp:paragraph -->\n<p>Again, rush to the breakfast area.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Get ready and leave for the&nbsp;<em>Dill Chahta hai</em>&nbsp;Fort and make plans there to visit Goa daily.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will also do cycling right at the Para Road (<em>Dear Zindagi</em>).</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Visit those aesthetic colorful homes, talk to locals, know their culture and slow life in Goa.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The evening will be at Dauna Paula watching the most beautiful sunset of your life.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>End our day in Casino or Tittos lane in Baga beach.&nbsp;Both Entry fees are not included in the package.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Return to Hotel.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Shnongpdeng - Jowai – Shillong",
+          "content": "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Wake up to see the beauty of East Khasi Hills, and have breakfast.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>You can do multiple adventure activities (on your own) like Kayaking, Boating, Ziplining, and Cliff jumping, etc., over here.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Start for Jowai to visit Krang Suri Waterfalls, which is described as India's most magical waterfall.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>You can get drenched and swim in the natural pools at the waterfall.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Travel back to Shillong after witnessing these attractive places.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Overnight stay at Shillong.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Shillong - Guwahati Airport Drop",
+          "content": "<!-- wp:paragraph -->\n<p>Morning after breakfast, the group heads towards Guwahati Airport around 9 am.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>It's a 4-5 hours drive to the airport, and the group is expected to reach the Airport by 3 pm.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Kindly book your flights post 5 pm.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Bid farewell to the trip.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>Note:</strong>&nbsp;It is advised to spend a maximum of 25-40 minutes at one sightseeing place to cover all mentioned locations.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        }
+      ],
+      "trip_info": [],
+      "file_downloads": [],
+      "trip_extra_services": [],
+      "price_types": {
+        "per-person": "Per Person",
+        "per-group": "Per Group"
+      }
+    }
+  }
+}

@@ -1,0 +1,923 @@
+{
+  "id": 3756,
+  "slug": "winter-spiti",
+  "url": "https://traveldevils.in/trip/winter-spiti/",
+  "title": "Winter Spiti",
+  "code": "WTE-2886",
+  "modified": "2026-03-03T09:39:40",
+  "duration": {
+    "days": 7,
+    "nights": 6,
+    "duration_unit": "days",
+    "duration_type": "both"
+  },
+  "price": 16999,
+  "sale_price": 0,
+  "has_sale": false,
+  "currency": "INR",
+  "min_pax": 1,
+  "max_pax": "",
+  "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11.png",
+  "destinations": [
+    "Spiti"
+  ],
+  "trip_types": [
+    "Domestic Trip",
+    "Winter Spiti"
+  ],
+  "trip_duration": [
+    "7 Days 6 Nights"
+  ],
+  "difficulty": [],
+  "activities": [],
+  "upcoming": [],
+  "overview_html": "<!-- wp:paragraph -->\n<p>Winter in Spiti Valley transforms this high-altitude Himachal Pradesh cold desert into a surreal, serene, and, extreme white wonderland. With temperatures plummeting to <img src=\"blob:https://traveldevils.in/ba5ca87d-0255-4b4a-b6b7-ed16716b9abb\">−20∘C or lower, travelers can witness frozen rivers,, snow-covered ancient monasteries like Key and Tabo, and the best opportunities to spot elusive snow leopards.</p>\n<!-- /wp:paragraph -->",
+  "overview": "Winter in Spiti Valley transforms this high-altitude Himachal Pradesh cold desert into a surreal, serene, and, extreme white wonderland. With temperatures plummeting to\n!\n−20∘C or lower, travelers can witness frozen rivers,, snow-covered ancient monasteries like Key and Tabo, and the best opportunities to spot elusive snow leopards.\n",
+  "highlights": [
+    "The region becomes a silent, snow-covered, and, desolate landscape, creating a stark, beautiful, and,, challenging environment for, adventurers.",
+    "The main route from Manali is closed; travel is via Shimla through Kinnaur, which requires a reliable  4 × 4 4 × 4  vehicle due to treacherous ice-covered roads.",
+    "Due to extreme cold, most hotels are closed, making authentic village homestays the primary,, and often, only accommodation option.",
+    "Wildlife spotting (snow leopard), visiting frozen waterfalls (like Lingti), exploring, snow-covered monasteries, and stargazing.",
+    "This is an, extreme, winter, experience; expect limited water, no running water in bathrooms, and, basic, hearty, local food."
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "DEPARTURE FROM DELHI",
+      "content": "Leave from Delhi between 09:00 to 11:30 pm in the evening.\n"
+    },
+    {
+      "day": 2,
+      "title": "REACH SHIMLA-TRANSFER TO SANGLA/CHITKUL",
+      "content": "Reach Shimla early morning between 8:00 to 9:00 am & transfer to Sangla.\nVisit Kinnaur gate and get some cool photographs.\nReach Sangla by evening and check into your hotels, freshen up & relax.\nNight Breifing session for the following day.\n"
+    },
+    {
+      "day": 3,
+      "title": "CHITKUL EXPLORATION-KHAB-NAKO",
+      "content": "Early morning freshen up & get ready for the day.\nHave breakfast and leave for Chitkul Exploration.\nLeave for Tabo via khab Sangam, Nako Exploration.\nReach Tabo & check into your Hotel/Homestay.\nDinner and night briefing.\n"
+    },
+    {
+      "day": 4,
+      "title": "CHITKUL EXPLORATION-KHAB-NAKO",
+      "content": "Early morning freshen up & leave for kaza.\nVisit the Tabo Monastery & Tabo caves which are 1000year old & have meditation session.\nVisit Dhanker Monastery which was a capital of spiti in the past.\nReach Kaza, check into your homestay, dinner and overnight stay at Kaza.\n"
+    },
+    {
+      "day": 5,
+      "title": "CHICHAM BRIDGE - KEY MONASTERY",
+      "content": "Wake up Early morning & head towards sightseeing of Spiti Valley.\nVisit the iconic monastery known as - Key Monastery.\nHead towards the highest suspension bridge in asia (Chicham Bridge).\nCome back to kaza and go for Self exploration in Kaza market.\nCome to homestay dinner and overnight stay at kaza.\n"
+    },
+    {
+      "day": 6,
+      "title": "HIKKIM - KOMIC - LANGZA",
+      "content": "Early morning freshen up & get ready for the day.\nHead towards visiting the Highest post office in the world & write to your loved ones.\nNext, visit the highest village in the world know as Komic and Langza whic is known to be the fossil village of india.\nCome back to kaza, have dinner & overnight stay.\n"
+    },
+    {
+      "day": 7,
+      "title": "KAZA TO KALPA",
+      "content": "Today Morning, pack your bags and leave for Kalpa.\nEnroute we will cover Gue Monastery.\nReach kalpa and check into your hotel.\nTake some rest Dinner and overnight stay.\n"
+    },
+    {
+      "day": 8,
+      "title": "SHIMLA TO DELHI TRANSFER",
+      "content": "Wake up early, have breakfast & explore Sucide point & transfer to shimla.\nReach shimla and depart for delhi via volvo.\n"
+    }
+  ],
+  "includes": [
+    "Transfer in AC bus from Delhi to Shimla & back.",
+    "Entire sightseeing from tempo traveler.",
+    "Accommodations for 6 nights-7 days.",
+    "Total 12 meals during the trip.",
+    "All inner line permits for the trip.",
+    "Team captain throughout the trip.",
+    "Oxygen cylinder 24/7 in tempo traveler.",
+    "Driver night charges, toll taxes, parking, fuel."
+  ],
+  "excludes": [
+    "5 % GST is applicable extra",
+    "Extra Drinks, Food, Tea and Snacks.",
+    "Tickets for any sightseeing or extra activity outside the camp area.",
+    "Travel Insurance & other benefits.",
+    "Medical expenses (apart from first aid) and insurance of any",
+    "kind. Tips, laundry, liquors, wines, mineral water, telephone",
+    "charges, camera fee and items of personal nature.",
+    "Anything which is not mentioned in inclusions.",
+    "Cost escalation due any unforeseen reason like landslide, road closure, natural",
+    "calamity etc."
+  ],
+  "faqs": [],
+  "packages": [
+    {
+      "name": "Backpacking Trip",
+      "is_primary": true,
+      "pricing": [
+        {
+          "label": "Quad Sharing",
+          "price": 16999,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 18999,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan Solo Rider",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan With Pillion",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Sitting Coach",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 17999,
+          "sale_price": "",
+          "type": "per-person"
+        }
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "package": "Backpacking Trip",
+      "count": 1097,
+      "first": "2026-09-23",
+      "last": "2029-09-23",
+      "dates": null
+    }
+  ],
+  "trip_extras": [],
+  "images": [
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1024x394.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1536x591.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-300x115.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-768x295.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-300x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-80x80.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159-292x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-1024x768.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-300x225.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-768x576.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11.png"
+  ],
+  "page_markdown": "[\n!\n ](https://traveldevils.in)\n\n- [Home](https://traveldevils.in/)\n- [Upcoming Trips](https://traveldevils.in/upcoming-trips/)\n- [International Trips](https://traveldevils.in/international-trips/)\n- [Backpacking Trips](https://traveldevils.in/backpacking-trips/)\n- [Corporate Trip](https://traveldevils.in/corporate-trip/)\n- [About Us](https://traveldevils.in/about-us/)\n- [Contact Us](https://traveldevils.in/contact-us/)\n- [My Account](https://traveldevils.in/my-account/)\nX\n\n!\n\n [ Overview ](#)\n [ Itinerary ](#)\n [ Inclusion/Exclusion ](#)\n\n##  [ Overview ](#)\n\n##  [ Itinerary ](#)\n\n##  [ Inclusion/Exclusion ](#)\n\n## Overview\n\nWinter in Spiti Valley transforms this high-altitude Himachal Pradesh cold desert into a surreal, serene, and, extreme white wonderland. With temperatures plummeting to\n!\n−20∘C or lower, travelers can witness frozen rivers,, snow-covered ancient monasteries like Key and Tabo, and the best opportunities to spot elusive snow leopards.\n\n### Highlights\n\n- The region becomes a silent, snow-covered, and, desolate landscape, creating a stark, beautiful, and,, challenging environment for, adventurers.\n- The main route from Manali is closed; travel is via Shimla through Kinnaur, which requires a reliable 4 × 4 4 × 4 vehicle due to treacherous ice-covered roads.\n- Due to extreme cold, most hotels are closed, making authentic village homestays the primary,, and often, only accommodation option.\n- Wildlife spotting (snow leopard), visiting frozen waterfalls (like Lingti), exploring, snow-covered monasteries, and stargazing.\n- This is an, extreme, winter, experience; expect limited water, no running water in bathrooms, and, basic, hearty, local food.\n\n## Itinerary\n\n Expand all\n\n Day 0 :\n  DEPARTURE FROM DELHI\n\nLeave from Delhi between 09:00 to 11:30 pm in the evening.\n\n Day 01 :\n  REACH SHIMLA-TRANSFER TO SANGLA/CHITKUL\n\nReach Shimla early morning between 8:00 to 9:00 am & transfer to Sangla.\nVisit Kinnaur gate and get some cool photographs.\nReach Sangla by evening and check into your hotels, freshen up & relax.\nNight Breifing session for the following day.\n\n Day 02 :\n  CHITKUL EXPLORATION-KHAB-NAKO\n\nEarly morning freshen up & get ready for the day.\nHave breakfast and leave for Chitkul Exploration.\nLeave for Tabo via khab Sangam, Nako Exploration.\nReach Tabo & check into your Hotel/Homestay.\nDinner and night briefing.\n\n Day 03 :\n  CHITKUL EXPLORATION-KHAB-NAKO\n\nEarly morning freshen up & leave for kaza.\nVisit the Tabo Monastery & Tabo caves which are 1000year old & have meditation session.\nVisit Dhanker Monastery which was a capital of spiti in the past.\nReach Kaza, check into your homestay, dinner and overnight stay at Kaza.\n\n Day 04 :\n  CHICHAM BRIDGE - KEY MONASTERY\n\nWake up Early morning & head towards sightseeing of Spiti Valley.\nVisit the iconic monastery known as - Key Monastery.\nHead towards the highest suspension bridge in asia (Chicham Bridge).\nCome back to kaza and go for Self exploration in Kaza market.\nCome to homestay dinner and overnight stay at kaza.\n\n Day 05 :\n  HIKKIM - KOMIC - LANGZA\n\nEarly morning freshen up & get ready for the day.\nHead towards visiting the Highest post office in the world & write to your loved ones.\nNext, visit the highest village in the world know as Komic and Langza whic is known to be the fossil village of india.\nCome back to kaza, have dinner & overnight stay.\n\n Day 06 :\n  KAZA TO KALPA\n\nToday Morning, pack your bags and leave for Kalpa.\nEnroute we will cover Gue Monastery.\nReach kalpa and check into your hotel.\nTake some rest Dinner and overnight stay.\n\n Day 07 :\n  SHIMLA TO DELHI TRANSFER\n\nWake up early, have breakfast & explore Sucide point & transfer to shimla.\nReach shimla and depart for delhi via volvo.\n\n##\n\n### Inclusions\n\n- Transfer in AC bus from Delhi to Shimla & back.\n- Entire sightseeing from tempo traveler.\n- Accommodations for 6 nights-7 days.\n- Total 12 meals during the trip.\n- All inner line permits for the trip.\n- Team captain throughout the trip.\n- Oxygen cylinder 24/7 in tempo traveler.\n- Driver night charges, toll taxes, parking, fuel.\n\n### Exclusions\n\n- 5 % GST is applicable extra\n- Extra Drinks, Food, Tea and Snacks.\n- Tickets for any sightseeing or extra activity outside the camp area.\n- Travel Insurance & other benefits.\n- Medical expenses (apart from first aid) and insurance of any\n- kind. Tips, laundry, liquors, wines, mineral water, telephone\n- charges, camera fee and items of personal nature.\n- Anything which is not mentioned in inclusions.\n- Inclusion/Exclusion escalation due any unforeseen reason like landslide, road closure, natural\n- calamity etc.\n\n-  [    Date & Time    ](#wte-booking-datetime)\n-  [    Package Type    ](#wte-booking-packages)\n\n   Back  Continue\n\n  From   ₹16999\n/ Quad Sharing\n  From   ₹18999\n/ Dual Sharing\n  From   ₹17999\n/ Triple Sharing\n\n   Check Availability\n\n## Useful Links\n\n-  [ Home ](https://traveldevils.in/)\n-  [ Upcoming Trips ](https://traveldevils.in/upcoming-trips/)\n-  [ International Trips ](https://traveldevils.in/international-trips/)\n-  [ Domestic Trips ](https://traveldevils.in/domestic-trip/)\n-  [ About Us ](https://traveldevils.in/about-us/)\n-  [ Contact Us ](https://traveldevils.in/contact-us/)\n\n## Unique Links\n\n-  [ Privacy Policy ](https://traveldevils.in/privacy-policy-2/)\n-  [ Terms & Conditions ](https://traveldevils.in/terms-conditions/)\n-  [ Return Policy ](https://traveldevils.in/return-policy/)\n-  [ Refund Process ](https://traveldevils.in/refund-policy/)\n-  [ Cancallation Policy  ](https://traveldevils.in/cancellation-policy/)\n\n## Domestic Trip\n\n-  [ Rajasthan ](https://traveldevils.in/domestic-trip/rajasthan/)\n-  [ Meghalaya ](https://traveldevils.in/domestic-trip/meghalaya/)\n-  [ Ladakh ](https://traveldevils.in/domestic-trip/ladakh/)\n-  [ Sikkim ](https://traveldevils.in/domestic-trip/sikkim/)\n-  [ Delhi ](https://traveldevils.in/domestic-trip/delhi/)\n-  [ Goa ](https://traveldevils.in/domestic-trip/goa/)\n-  [ Himachal ](https://traveldevils.in/domestic-trip/himachal/)\n\n## International Trip\n\n-  [ Bali ](https://traveldevils.in/international-trips/bali/)\n-  [ Bhutan ](https://traveldevils.in/international-trips/bhutan/)\n-  [ Dubai ](https://traveldevils.in/international-trips/dubai/)\n-  [ Sri Lanka ](https://traveldevils.in/international-trips/sri-lanka/)\n-  [ India ](https://traveldevils.in/international-trips/india/)\n-  [ Vietnam ](https://traveldevils.in/international-trips/vietnam/)\n-  [ Thailand ](https://traveldevils.in/international-trips/thailand/)\n\n!\n\n## Travel Devils\n\n-  +91 70428 52209\n-  info@traveldevils.in\n\n-\n-\n\n© 2026 Travel Devils All rights reserved.\n\nWhatsApp us\n",
+  "raw": {
+    "wp": {
+      "id": 3756,
+      "date": "2026-03-03T09:10:44",
+      "date_gmt": "2026-03-03T09:10:44",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3756"
+      },
+      "modified": "2026-03-03T09:39:40",
+      "modified_gmt": "2026-03-03T09:39:40",
+      "slug": "winter-spiti",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/winter-spiti/",
+      "title": {
+        "rendered": "Winter Spiti"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3759,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        147
+      ],
+      "destination": [
+        171
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        172
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [],
+      "class_list": [
+        "post-3756",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-7-days-6-nights",
+        "destination-spiti",
+        "trip_types-domestic-trip",
+        "trip_types-winter-spiti"
+      ],
+      "acf": [],
+      "packages_ids": [
+        3757
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "enabled": false,
+        "duration": 0,
+        "duration_unit": "days"
+      },
+      "booked-seats": [],
+      "code": "WTE-2886",
+      "price": 16999,
+      "has_sale": false,
+      "sale_price": 0,
+      "discount_percent": 0,
+      "currency": {
+        "code": "INR",
+        "symbol": "&#8377;"
+      },
+      "duration": {
+        "days": 7,
+        "nights": 6,
+        "duration_unit": "days",
+        "duration_type": "both"
+      },
+      "min_pax": 1,
+      "max_pax": "",
+      "discount_value": 0,
+      "discount_label": "0% Off",
+      "primary_category": 166,
+      "available_times": {
+        "type": "default",
+        "items": [
+          "2021-1-01",
+          "2021-2-01",
+          "2021-3-01",
+          "2021-4-01",
+          "2021-5-01",
+          "2021-6-01",
+          "2021-7-01",
+          "2021-8-01",
+          "2021-9-01",
+          "2021-10-01",
+          "2021-11-01",
+          "2021-12-01"
+        ]
+      },
+      "description": "<!-- wp:paragraph -->\n<p>Winter in Spiti Valley transforms this high-altitude Himachal Pradesh cold desert into a surreal, serene, and, extreme white wonderland. With temperatures plummeting to <img src=\"blob:https://traveldevils.in/ba5ca87d-0255-4b4a-b6b7-ed16716b9abb\">−20∘C or lower, travelers can witness frozen rivers,, snow-covered ancient monasteries like Key and Tabo, and the best opportunities to spot elusive snow leopards.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": "Transfer in AC bus from Delhi to Shimla & back.\nEntire sightseeing from tempo traveler.\nAccommodations for 6 nights-7 days.\nTotal 12 meals during the trip.\nAll inner line permits for the trip.\nTeam captain throughout the trip.\nOxygen cylinder 24/7 in tempo traveler.\nDriver night charges, toll taxes, parking, fuel.",
+      "cost_excludes": "5 % GST is applicable extra\nExtra Drinks, Food, Tea and Snacks.\nTickets for any sightseeing or extra activity outside the camp area.\nTravel Insurance & other benefits.\nMedical expenses (apart from first aid) and insurance of any\nkind. Tips, laundry, liquors, wines, mineral water, telephone\ncharges, camera fee and items of personal nature.\nAnything which is not mentioned in inclusions.\nCost escalation due any unforeseen reason like landslide, road closure, natural\ncalamity etc.",
+      "itineraries": [
+        {
+          "title": "DEPARTURE FROM DELHI",
+          "content": "<!-- wp:paragraph -->\n<p>Leave from Delhi between 09:00 to 11:30 pm in the evening.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "REACH SHIMLA-TRANSFER TO SANGLA/CHITKUL",
+          "content": "<!-- wp:paragraph -->\n<p>Reach Shimla early morning between 8:00 to 9:00 am &amp; transfer to Sangla.<br>Visit Kinnaur gate and get some cool photographs.<br>Reach Sangla by evening and check into your hotels, freshen up &amp; relax.<br>Night Breifing session for the following day.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "CHITKUL EXPLORATION-KHAB-NAKO",
+          "content": "<!-- wp:paragraph -->\n<p>Early morning freshen up &amp; get ready for the day.<br>Have breakfast and leave for Chitkul Exploration.<br>Leave for Tabo via khab Sangam, Nako Exploration.<br>Reach Tabo &amp; check into your Hotel/Homestay.<br>Dinner and night briefing.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "CHITKUL EXPLORATION-KHAB-NAKO",
+          "content": "<!-- wp:paragraph -->\n<p>Early morning freshen up &amp; leave for kaza.<br>Visit the Tabo Monastery &amp; Tabo caves which are 1000year old &amp; have meditation session.<br>Visit Dhanker Monastery which was a capital of spiti in the past.<br>Reach Kaza, check into your homestay, dinner and overnight stay at Kaza.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "CHICHAM BRIDGE - KEY MONASTERY",
+          "content": "<!-- wp:paragraph -->\n<p>Wake up Early morning &amp; head towards sightseeing of Spiti Valley.<br>Visit the iconic monastery known as - Key Monastery.<br>Head towards the highest suspension bridge in asia (Chicham Bridge).<br>Come back to kaza and go for Self exploration in Kaza market.<br>Come to homestay dinner and overnight stay at kaza.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "HIKKIM - KOMIC - LANGZA",
+          "content": "<!-- wp:paragraph -->\n<p>Early morning freshen up &amp; get ready for the day.<br>Head towards visiting the Highest post office in the world &amp; write to your loved ones.<br>Next, visit the highest village in the world know as Komic and Langza whic is known to be the fossil village of india.<br>Come back to kaza, have dinner &amp; overnight stay.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "KAZA TO KALPA",
+          "content": "<!-- wp:paragraph -->\n<p>Today Morning, pack your bags and leave for Kalpa.<br>Enroute we will cover Gue Monastery.<br>Reach kalpa and check into your hotel.<br>Take some rest Dinner and overnight stay.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "SHIMLA TO DELHI TRANSFER",
+          "content": "<!-- wp:paragraph -->\n<p>Wake up early, have breakfast &amp; explore Sucide point &amp; transfer to shimla.<br>Reach shimla and depart for delhi via volvo.</p>\n<!-- /wp:paragraph -->"
+        }
+      ],
+      "faqs": [],
+      "is_featured": false,
+      "featured_image": {
+        "width": 1200,
+        "height": 900,
+        "file": "2026/03/Kanatal-Tehri-11.png",
+        "filesize": 1474256,
+        "sizes": {
+          "medium": {
+            "file": "Kanatal-Tehri-11-300x225.png",
+            "width": 300,
+            "height": 225,
+            "filesize": 101429,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-300x225.png"
+          },
+          "large": {
+            "file": "Kanatal-Tehri-11-1024x768.png",
+            "width": 1024,
+            "height": 768,
+            "filesize": 963121,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-1024x768.png"
+          },
+          "thumbnail": {
+            "file": "Kanatal-Tehri-11-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 36764,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-150x150.png"
+          },
+          "medium_large": {
+            "file": "Kanatal-Tehri-11-768x576.png",
+            "width": 768,
+            "height": 576,
+            "filesize": 557454,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-768x576.png"
+          },
+          "trip-thumb-size": {
+            "file": "Kanatal-Tehri-11-374x226.png",
+            "width": 374,
+            "height": 226,
+            "filesize": 135107,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-374x226.png"
+          },
+          "destination-thumb-size": {
+            "file": "Kanatal-Tehri-11-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 594931,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-600x810.png"
+          },
+          "destination-thumb-trip-size": {
+            "file": "Kanatal-Tehri-11-410x250.png",
+            "width": 410,
+            "height": 250,
+            "filesize": 160263,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-410x250.png"
+          },
+          "activities-thumb-size": {
+            "file": "Kanatal-Tehri-11-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 594931,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-600x810.png"
+          },
+          "trip-single-size": {
+            "file": "Kanatal-Tehri-11-990x490.png",
+            "width": 990,
+            "height": 490,
+            "filesize": 726778,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-990x490.png"
+          },
+          "meafe-featured-page": {
+            "file": "Kanatal-Tehri-11-500x410.png",
+            "width": 500,
+            "height": 410,
+            "filesize": 270954,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-500x410.png"
+          },
+          "meafe-testimonial-two": {
+            "file": "Kanatal-Tehri-11-272x316.png",
+            "width": 272,
+            "height": 316,
+            "filesize": 120749,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-272x316.png"
+          },
+          "meafe-blog-one": {
+            "file": "Kanatal-Tehri-11-370x247.png",
+            "width": 370,
+            "height": 247,
+            "filesize": 139560,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-370x247.png"
+          },
+          "meafe-blog-two": {
+            "file": "Kanatal-Tehri-11-197x278.png",
+            "width": 197,
+            "height": 278,
+            "filesize": 80800,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-197x278.png"
+          },
+          "meafe-category-tab": {
+            "file": "Kanatal-Tehri-11-355x355.png",
+            "width": 355,
+            "height": 355,
+            "filesize": 171308,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-355x355.png"
+          },
+          "meafe-category-grid": {
+            "file": "Kanatal-Tehri-11-370x370.png",
+            "width": 370,
+            "height": 370,
+            "filesize": 184410,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-370x370.png"
+          },
+          "meafe-category-grid-one": {
+            "file": "Kanatal-Tehri-11-570x530.png",
+            "width": 570,
+            "height": 530,
+            "filesize": 380822,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-570x530.png"
+          },
+          "meafe-category-grid-two": {
+            "file": "Kanatal-Tehri-11-270x180.png",
+            "width": 270,
+            "height": 180,
+            "filesize": 79085,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-270x180.png"
+          },
+          "meafe-category-grid-three": {
+            "file": "Kanatal-Tehri-11-570x320.png",
+            "width": 570,
+            "height": 320,
+            "filesize": 277398,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-570x320.png"
+          },
+          "meafe-category-grid-lay-three": {
+            "file": "Kanatal-Tehri-11-170x170.png",
+            "width": 170,
+            "height": 170,
+            "filesize": 46268,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-170x170.png"
+          },
+          "meafe-post-modules-small-img": {
+            "file": "Kanatal-Tehri-11-300x300.png",
+            "width": 300,
+            "height": 300,
+            "filesize": 126045,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-300x300.png"
+          },
+          "travil_80X80": {
+            "file": "Kanatal-Tehri-11-80x80.png",
+            "width": 80,
+            "height": 80,
+            "filesize": 11841,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-80x80.png"
+          },
+          "travil_424X370": {
+            "file": "Kanatal-Tehri-11-424x370.png",
+            "width": 424,
+            "height": 370,
+            "filesize": 211042,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-424x370.png"
+          },
+          "travil-shop-single": {
+            "file": "Kanatal-Tehri-11-620x500.png",
+            "width": 620,
+            "height": 500,
+            "filesize": 397193,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11-620x500.png"
+          },
+          "full": {
+            "file": "Kanatal-Tehri-11.png",
+            "width": 1200,
+            "height": 900,
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3756",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/types/trip"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/users/3"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/comments?post=3756"
+          }
+        ],
+        "version-history": [
+          {
+            "count": 1,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3756/revisions"
+          }
+        ],
+        "predecessor-version": [
+          {
+            "id": 3758,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3756/revisions/3758"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/media/3759"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/media?parent=3756"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "new_upcoming_trips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/new_upcoming_trips?post=3756"
+          },
+          {
+            "taxonomy": "trip_duration",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_duration?post=3756"
+          },
+          {
+            "taxonomy": "destination",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/destination?post=3756"
+          },
+          {
+            "taxonomy": "activities",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/activities?post=3756"
+          },
+          {
+            "taxonomy": "trip_types",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_types?post=3756"
+          },
+          {
+            "taxonomy": "difficulty",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/difficulty?post=3756"
+          },
+          {
+            "taxonomy": "trip_tag",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_tag?post=3756"
+          },
+          {
+            "taxonomy": "upcomingtrips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/wptravelengine_custom_taxonomy_upcomingtrips?post=3756"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    "wte_v2": {
+      "id": 3756,
+      "date": "2026-03-03T09:10:44",
+      "date_gmt": "2026-03-03T09:10:44",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3756"
+      },
+      "modified": "2026-03-03T09:39:40",
+      "modified_gmt": "2026-03-03T09:39:40",
+      "slug": "winter-spiti",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/winter-spiti/",
+      "title": {
+        "rendered": "Winter Spiti"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3759,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        147
+      ],
+      "destination": [
+        171
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        172
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [],
+      "class_list": [
+        "post-3756",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-7-days-6-nights",
+        "destination-spiti",
+        "trip_types-domestic-trip",
+        "trip_types-winter-spiti"
+      ],
+      "packages_ids": [
+        3757
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "period": 0,
+        "unit": "days"
+      },
+      "booked-seats": [],
+      "fsd": {
+        "hide": false
+      },
+      "trip_code": "WTE-2886",
+      "overview": "<!-- wp:paragraph -->\n<p>Winter in Spiti Valley transforms this high-altitude Himachal Pradesh cold desert into a surreal, serene, and, extreme white wonderland. With temperatures plummeting to <img src=\"blob:https://traveldevils.in/ba5ca87d-0255-4b4a-b6b7-ed16716b9abb\">−20∘C or lower, travelers can witness frozen rivers,, snow-covered ancient monasteries like Key and Tabo, and the best opportunities to spot elusive snow leopards.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": [
+        "Transfer in AC bus from Delhi to Shimla & back.",
+        "Entire sightseeing from tempo traveler.",
+        "Accommodations for 6 nights-7 days.",
+        "Total 12 meals during the trip.",
+        "All inner line permits for the trip.",
+        "Team captain throughout the trip.",
+        "Oxygen cylinder 24/7 in tempo traveler.",
+        "Driver night charges, toll taxes, parking, fuel."
+      ],
+      "cost_excludes": [
+        "5 % GST is applicable extra",
+        "Extra Drinks, Food, Tea and Snacks.",
+        "Tickets for any sightseeing or extra activity outside the camp area.",
+        "Travel Insurance & other benefits.",
+        "Medical expenses (apart from first aid) and insurance of any",
+        "kind. Tips, laundry, liquors, wines, mineral water, telephone",
+        "charges, camera fee and items of personal nature.",
+        "Anything which is not mentioned in inclusions.",
+        "Cost escalation due any unforeseen reason like landslide, road closure, natural",
+        "calamity etc."
+      ],
+      "duration": {
+        "period": 7,
+        "unit": "days",
+        "nights": 6
+      },
+      "_s_duration": "168",
+      "age_limit": {
+        "min": 0,
+        "max": 0
+      },
+      "participants": {
+        "min": 1,
+        "max": ""
+      },
+      "capacity_per_category": {
+        "enabled": false,
+        "mode": "same",
+        "limits": [],
+        "package_limits": []
+      },
+      "trip_map": {
+        "images": [],
+        "iframe": ""
+      },
+      "highlights": [
+        "The region becomes a silent, snow-covered, and, desolate landscape, creating a stark, beautiful, and,, challenging environment for, adventurers.",
+        "The main route from Manali is closed; travel is via Shimla through Kinnaur, which requires a reliable  4 × 4 4 × 4  vehicle due to treacherous ice-covered roads.",
+        "Due to extreme cold, most hotels are closed, making authentic village homestays the primary,, and often, only accommodation option.",
+        "Wildlife spotting (snow leopard), visiting frozen waterfalls (like Lingti), exploring, snow-covered monasteries, and stargazing.",
+        "This is an, extreme, winter, experience; expect limited water, no running water in bathrooms, and, basic, hearty, local food."
+      ],
+      "faqs": [],
+      "gallery": [],
+      "video_gallery": [],
+      "itinerary_description": "",
+      "itineraries": [
+        {
+          "title": "DEPARTURE FROM DELHI",
+          "content": "<!-- wp:paragraph -->\n<p>Leave from Delhi between 09:00 to 11:30 pm in the evening.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "REACH SHIMLA-TRANSFER TO SANGLA/CHITKUL",
+          "content": "<!-- wp:paragraph -->\n<p>Reach Shimla early morning between 8:00 to 9:00 am &amp; transfer to Sangla.<br>Visit Kinnaur gate and get some cool photographs.<br>Reach Sangla by evening and check into your hotels, freshen up &amp; relax.<br>Night Breifing session for the following day.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "CHITKUL EXPLORATION-KHAB-NAKO",
+          "content": "<!-- wp:paragraph -->\n<p>Early morning freshen up &amp; get ready for the day.<br>Have breakfast and leave for Chitkul Exploration.<br>Leave for Tabo via khab Sangam, Nako Exploration.<br>Reach Tabo &amp; check into your Hotel/Homestay.<br>Dinner and night briefing.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "CHITKUL EXPLORATION-KHAB-NAKO",
+          "content": "<!-- wp:paragraph -->\n<p>Early morning freshen up &amp; leave for kaza.<br>Visit the Tabo Monastery &amp; Tabo caves which are 1000year old &amp; have meditation session.<br>Visit Dhanker Monastery which was a capital of spiti in the past.<br>Reach Kaza, check into your homestay, dinner and overnight stay at Kaza.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "CHICHAM BRIDGE - KEY MONASTERY",
+          "content": "<!-- wp:paragraph -->\n<p>Wake up Early morning &amp; head towards sightseeing of Spiti Valley.<br>Visit the iconic monastery known as - Key Monastery.<br>Head towards the highest suspension bridge in asia (Chicham Bridge).<br>Come back to kaza and go for Self exploration in Kaza market.<br>Come to homestay dinner and overnight stay at kaza.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "HIKKIM - KOMIC - LANGZA",
+          "content": "<!-- wp:paragraph -->\n<p>Early morning freshen up &amp; get ready for the day.<br>Head towards visiting the Highest post office in the world &amp; write to your loved ones.<br>Next, visit the highest village in the world know as Komic and Langza whic is known to be the fossil village of india.<br>Come back to kaza, have dinner &amp; overnight stay.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "KAZA TO KALPA",
+          "content": "<!-- wp:paragraph -->\n<p>Today Morning, pack your bags and leave for Kalpa.<br>Enroute we will cover Gue Monastery.<br>Reach kalpa and check into your hotel.<br>Take some rest Dinner and overnight stay.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "SHIMLA TO DELHI TRANSFER",
+          "content": "<!-- wp:paragraph -->\n<p>Wake up early, have breakfast &amp; explore Sucide point &amp; transfer to shimla.<br>Reach shimla and depart for delhi via volvo.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        }
+      ],
+      "trip_info": [],
+      "file_downloads": [],
+      "trip_extra_services": [],
+      "price_types": {
+        "per-person": "Per Person",
+        "per-group": "Per Group"
+      }
+    }
+  }
+}

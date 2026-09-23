@@ -1,0 +1,768 @@
+{
+  "id": 3362,
+  "slug": "chakrata-1-nights-2-days",
+  "url": "https://traveldevils.in/trip/chakrata-1-nights-2-days/",
+  "title": "Chakrata",
+  "code": "WT-001",
+  "modified": "2026-02-25T06:45:54",
+  "duration": {
+    "days": 2,
+    "nights": 1,
+    "duration_unit": "days",
+    "duration_type": "both"
+  },
+  "price": 4499,
+  "sale_price": 0,
+  "has_sale": false,
+  "currency": "INR",
+  "min_pax": 1,
+  "max_pax": "",
+  "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/1-2.png",
+  "destinations": [
+    "Chakrata",
+    "India"
+  ],
+  "trip_types": [
+    "Domestic Trip",
+    "Uttarakhand"
+  ],
+  "trip_duration": [
+    "2 Days 1 Nights"
+  ],
+  "difficulty": [
+    "Medium"
+  ],
+  "activities": [],
+  "upcoming": [],
+  "overview_html": "<!-- wp:paragraph -->\n<p>Chakrata is a cantonment town and also a sub district/tehsil, in Dehradun district in the state of Uttarakhand, India. It lies between the Tons and Yamuna rivers, at an elevation of 2118 m, 98 km from the state capital, Dehradun. Chakrata was originally a cantonment of the British Indian Army.</p>\n<!-- /wp:paragraph -->",
+  "overview": "Chakrata is a cantonment town and also a sub district/tehsil, in Dehradun district in the state of Uttarakhand, India. It lies between the Tons and Yamuna rivers, at an elevation of 2118 m, 98 km from the state capital, Dehradun. Chakrata was originally a cantonment of the British Indian Army.\n",
+  "highlights": [
+    "Tiger Falls",
+    "Moila Top",
+    "Chirmiri Neck Top",
+    "Budher Caves",
+    "Chakrata Market",
+    "DJ / Bonfire Night"
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Reach Chakrata | Bhudher Cave Trek",
+      "content": "Reach Chakrata in morning. Check-in the resort, rest for a while.\nAfter some rest, drive towards Budher cave (a hike of 5km).\nIn evening, return back to resort.\nIn evening enjoy bonfire with snacks and some music. Conclude\nwith dinner and overnight stay.\n"
+    },
+    {
+      "day": 2,
+      "title": "Visit to tiger waterfall & chirmiri neck top",
+      "content": "After breakfast, check out from resort and visit highest waterfalls\nin Uttarakhand, known as Tiger Falls.\nLater, move towards Chirmiri Neck Top, enjoy scenic sunset. and\nafterwards depart for Dellhi.\nReach Delhi by early morning.\n"
+    }
+  ],
+  "includes": [
+    "All Travel & Transfers in Ac traveller/Bus.",
+    "1 night Stay in Resort at Chakrata.",
+    "Meals - 1 breakfast, 1 Dinner and evening snacks.",
+    "Trek to Budher Caves",
+    "Visit to Chirmiri Neck Top & Tiger waterfalls",
+    "Bonfire and music",
+    "Assistance of Trip Cordinator throughout the trip",
+    "24 X 7 Customer support"
+  ],
+  "excludes": [
+    "Any meal/food item other than the the package inclusions",
+    "Any entry ticket to monuments & public places",
+    "Charges of videos/photos during Paragliding",
+    "Any expense that is not mentioned in the package inclusion",
+    "Any extra cost that occurs due to natural calamity or any such unseen situation",
+    "that is beyond control"
+  ],
+  "faqs": [],
+  "packages": [
+    {
+      "name": "Group Trip",
+      "is_primary": true,
+      "pricing": [
+        {
+          "label": "Quad Sharing",
+          "price": 4499,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 4899,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan Solo Rider",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan With Pillion",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Sitting Coach",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 4699,
+          "sale_price": "",
+          "type": "per-person"
+        }
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "package": "Group Trip",
+      "count": 1097,
+      "first": "2026-09-23",
+      "last": "2029-09-23",
+      "dates": null
+    }
+  ],
+  "trip_extras": [],
+  "images": [
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1024x394.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1536x591.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-300x115.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-768x295.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-300x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-80x80.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159-292x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/1-2-1024x768.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/1-2-300x225.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/1-2-768x576.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/1-2.png"
+  ],
+  "page_markdown": "[\n!\n ](https://traveldevils.in)\n\n- [Home](https://traveldevils.in/)\n- [Upcoming Trips](https://traveldevils.in/upcoming-trips/)\n- [International Trips](https://traveldevils.in/international-trips/)\n- [Backpacking Trips](https://traveldevils.in/backpacking-trips/)\n- [Corporate Trip](https://traveldevils.in/corporate-trip/)\n- [About Us](https://traveldevils.in/about-us/)\n- [Contact Us](https://traveldevils.in/contact-us/)\n- [My Account](https://traveldevils.in/my-account/)\nX\n\n!\n\n [ Overview ](#)\n [ Itinerary ](#)\n [ Inclusion/Exclusion ](#)\n\n##  [ Overview ](#)\n\n##  [ Itinerary ](#)\n\n##  [ Inclusion/Exclusion ](#)\n\n## Overview\n\nChakrata is a cantonment town and also a sub district/tehsil, in Dehradun district in the state of Uttarakhand, India. It lies between the Tons and Yamuna rivers, at an elevation of 2118 m, 98 km from the state capital, Dehradun. Chakrata was originally a cantonment of the British Indian Army.\n\n### Highlights\n\n- Tiger Falls\n- Moila Top\n- Chirmiri Neck Top\n- Budher Caves\n- Chakrata Market\n- DJ / Bonfire Night\n\n## Itinerary\n\n Expand all\n\n Day 01 :\n  Reach Chakrata | Bhudher Cave Trek\n\nReach Chakrata in morning. Check-in the resort, rest for a while.\nAfter some rest, drive towards Budher cave (a hike of 5km).\nIn evening, return back to resort.\nIn evening enjoy bonfire with snacks and some music. Conclude\nwith dinner and overnight stay.\n\n Day 02 :\n  Visit to tiger waterfall & chirmiri neck top\n\nAfter breakfast, check out from resort and visit highest waterfalls\nin Uttarakhand, known as Tiger Falls.\nLater, move towards Chirmiri Neck Top, enjoy scenic sunset. and\nafterwards depart for Dellhi.\nReach Delhi by early morning.\n\n##\n\n### Inclusions\n\n- All Travel & Transfers in Ac traveller/Bus.\n- 1 night Stay in Resort at Chakrata.\n- Meals - 1 breakfast, 1 Dinner and evening snacks.\n- Trek to Budher Caves\n- Visit to Chirmiri Neck Top & Tiger waterfalls\n- Bonfire and music\n- Assistance of Trip Cordinator throughout the trip\n- 24 X 7 Customer support\n\n### Exclusions\n\n- Any meal/food item other than the the package inclusions\n- Any entry ticket to monuments & public places\n- Charges of videos/photos during Paragliding\n- Any expense that is not mentioned in the package inclusion\n- Any extra Inclusion/Exclusion that occurs due to natural calamity or any such unseen situation\n- that is beyond control\n\n-  [    Date & Time    ](#wte-booking-datetime)\n-  [    Package Type    ](#wte-booking-packages)\n\n   Back  Continue\n\n  From   ₹4499\n/ Quad Sharing\n  From   ₹4899\n/ Dual Sharing\n  From   ₹4699\n/ Triple Sharing\n\n   Check Availability\n\n## Useful Links\n\n-  [ Home ](https://traveldevils.in/)\n-  [ Upcoming Trips ](https://traveldevils.in/upcoming-trips/)\n-  [ International Trips ](https://traveldevils.in/international-trips/)\n-  [ Domestic Trips ](https://traveldevils.in/domestic-trip/)\n-  [ About Us ](https://traveldevils.in/about-us/)\n-  [ Contact Us ](https://traveldevils.in/contact-us/)\n\n## Unique Links\n\n-  [ Privacy Policy ](https://traveldevils.in/privacy-policy-2/)\n-  [ Terms & Conditions ](https://traveldevils.in/terms-conditions/)\n-  [ Return Policy ](https://traveldevils.in/return-policy/)\n-  [ Refund Process ](https://traveldevils.in/refund-policy/)\n-  [ Cancallation Policy  ](https://traveldevils.in/cancellation-policy/)\n\n## Domestic Trip\n\n-  [ Rajasthan ](https://traveldevils.in/domestic-trip/rajasthan/)\n-  [ Meghalaya ](https://traveldevils.in/domestic-trip/meghalaya/)\n-  [ Ladakh ](https://traveldevils.in/domestic-trip/ladakh/)\n-  [ Sikkim ](https://traveldevils.in/domestic-trip/sikkim/)\n-  [ Delhi ](https://traveldevils.in/domestic-trip/delhi/)\n-  [ Goa ](https://traveldevils.in/domestic-trip/goa/)\n-  [ Himachal ](https://traveldevils.in/domestic-trip/himachal/)\n\n## International Trip\n\n-  [ Bali ](https://traveldevils.in/international-trips/bali/)\n-  [ Bhutan ](https://traveldevils.in/international-trips/bhutan/)\n-  [ Dubai ](https://traveldevils.in/international-trips/dubai/)\n-  [ Sri Lanka ](https://traveldevils.in/international-trips/sri-lanka/)\n-  [ India ](https://traveldevils.in/international-trips/india/)\n-  [ Vietnam ](https://traveldevils.in/international-trips/vietnam/)\n-  [ Thailand ](https://traveldevils.in/international-trips/thailand/)\n\n!\n\n## Travel Devils\n\n-  +91 70428 52209\n-  info@traveldevils.in\n\n-\n-\n\n© 2026 Travel Devils All rights reserved.\n\nWhatsApp us\n",
+  "raw": {
+    "wp": {
+      "id": 3362,
+      "date": "2026-02-11T10:18:18",
+      "date_gmt": "2026-02-11T10:18:18",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3362"
+      },
+      "modified": "2026-02-25T06:45:54",
+      "modified_gmt": "2026-02-25T06:45:54",
+      "slug": "chakrata-1-nights-2-days",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/chakrata-1-nights-2-days/",
+      "title": {
+        "rendered": "Chakrata"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3481,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        142
+      ],
+      "destination": [
+        160,
+        37
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        88
+      ],
+      "difficulty": [
+        7
+      ],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [],
+      "class_list": [
+        "post-3362",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-2-days-1-nights",
+        "destination-chakrata",
+        "destination-india",
+        "trip_types-domestic-trip",
+        "trip_types-uttarakhand",
+        "difficulty-medium"
+      ],
+      "acf": [],
+      "packages_ids": [
+        3378
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "enabled": false,
+        "duration": 0,
+        "duration_unit": "days"
+      },
+      "booked-seats": [],
+      "code": "WT-001",
+      "price": 4499,
+      "has_sale": false,
+      "sale_price": 0,
+      "discount_percent": 0,
+      "currency": {
+        "code": "INR",
+        "symbol": "&#8377;"
+      },
+      "duration": {
+        "days": 2,
+        "nights": 1,
+        "duration_unit": "days",
+        "duration_type": "both"
+      },
+      "min_pax": 1,
+      "max_pax": "",
+      "discount_value": 0,
+      "discount_label": "0% Off",
+      "primary_category": 166,
+      "available_times": {
+        "type": "default",
+        "items": [
+          "2021-1-01",
+          "2021-2-01",
+          "2021-3-01",
+          "2021-4-01",
+          "2021-5-01",
+          "2021-6-01",
+          "2021-7-01",
+          "2021-8-01",
+          "2021-9-01",
+          "2021-10-01",
+          "2021-11-01",
+          "2021-12-01"
+        ]
+      },
+      "description": "<!-- wp:paragraph -->\n<p>Chakrata is a cantonment town and also a sub district/tehsil, in Dehradun district in the state of Uttarakhand, India. It lies between the Tons and Yamuna rivers, at an elevation of 2118 m, 98 km from the state capital, Dehradun. Chakrata was originally a cantonment of the British Indian Army.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": "All Travel & Transfers in Ac traveller/Bus.\n1 night Stay in Resort at Chakrata.\nMeals - 1 breakfast, 1 Dinner and evening snacks.\nTrek to Budher Caves\nVisit to Chirmiri Neck Top & Tiger waterfalls\nBonfire and music\nAssistance of Trip Cordinator throughout the trip\n24 X 7 Customer support",
+      "cost_excludes": "Any meal/food item other than the the package inclusions\nAny entry ticket to monuments & public places\nCharges of videos/photos during Paragliding\nAny expense that is not mentioned in the package inclusion\nAny extra cost that occurs due to natural calamity or any such unseen situation\nthat is beyond control",
+      "itineraries": [
+        {
+          "title": "Reach Chakrata | Bhudher Cave Trek",
+          "content": "<!-- wp:paragraph -->\n<p>Reach Chakrata in morning. Check-in the resort, rest for a while.<br>After some rest, drive towards Budher cave (a hike of 5km).<br>In evening, return back to resort.<br>In evening enjoy bonfire with snacks and some music. Conclude<br>with dinner and overnight stay.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Visit to tiger waterfall & chirmiri neck top",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast, check out from resort and visit highest waterfalls<br>in Uttarakhand, known as Tiger Falls.<br>Later, move towards Chirmiri Neck Top, enjoy scenic sunset. and<br>afterwards depart for Dellhi.<br>Reach Delhi by early morning.</p>\n<!-- /wp:paragraph -->"
+        }
+      ],
+      "faqs": [],
+      "is_featured": false,
+      "featured_image": {
+        "width": 1200,
+        "height": 900,
+        "file": "2026/02/1-2.png",
+        "filesize": 1838657,
+        "sizes": {
+          "medium": {
+            "file": "1-2-300x225.png",
+            "width": 300,
+            "height": 225,
+            "filesize": 129393,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-300x225.png"
+          },
+          "large": {
+            "file": "1-2-1024x768.png",
+            "width": 1024,
+            "height": 768,
+            "filesize": 1271389,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-1024x768.png"
+          },
+          "thumbnail": {
+            "file": "1-2-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 45295,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-150x150.png"
+          },
+          "medium_large": {
+            "file": "1-2-768x576.png",
+            "width": 768,
+            "height": 576,
+            "filesize": 753810,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-768x576.png"
+          },
+          "trip-thumb-size": {
+            "file": "1-2-374x226.png",
+            "width": 374,
+            "height": 226,
+            "filesize": 165678,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-374x226.png"
+          },
+          "destination-thumb-size": {
+            "file": "1-2-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 727303,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-600x810.png"
+          },
+          "destination-thumb-trip-size": {
+            "file": "1-2-410x250.png",
+            "width": 410,
+            "height": 250,
+            "filesize": 198844,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-410x250.png"
+          },
+          "activities-thumb-size": {
+            "file": "1-2-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 727303,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-600x810.png"
+          },
+          "trip-single-size": {
+            "file": "1-2-990x490.png",
+            "width": 990,
+            "height": 490,
+            "filesize": 867275,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-990x490.png"
+          },
+          "meafe-featured-page": {
+            "file": "1-2-500x410.png",
+            "width": 500,
+            "height": 410,
+            "filesize": 362672,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-500x410.png"
+          },
+          "meafe-testimonial-two": {
+            "file": "1-2-272x316.png",
+            "width": 272,
+            "height": 316,
+            "filesize": 154776,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-272x316.png"
+          },
+          "meafe-blog-one": {
+            "file": "1-2-370x247.png",
+            "width": 370,
+            "height": 247,
+            "filesize": 174887,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-370x247.png"
+          },
+          "meafe-blog-two": {
+            "file": "1-2-197x278.png",
+            "width": 197,
+            "height": 278,
+            "filesize": 101698,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-197x278.png"
+          },
+          "meafe-category-tab": {
+            "file": "1-2-355x355.png",
+            "width": 355,
+            "height": 355,
+            "filesize": 224521,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-355x355.png"
+          },
+          "meafe-category-grid": {
+            "file": "1-2-370x370.png",
+            "width": 370,
+            "height": 370,
+            "filesize": 242470,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-370x370.png"
+          },
+          "meafe-category-grid-one": {
+            "file": "1-2-570x530.png",
+            "width": 570,
+            "height": 530,
+            "filesize": 508689,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-570x530.png"
+          },
+          "meafe-category-grid-two": {
+            "file": "1-2-270x180.png",
+            "width": 270,
+            "height": 180,
+            "filesize": 96249,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-270x180.png"
+          },
+          "meafe-category-grid-three": {
+            "file": "1-2-570x320.png",
+            "width": 570,
+            "height": 320,
+            "filesize": 344378,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-570x320.png"
+          },
+          "meafe-category-grid-lay-three": {
+            "file": "1-2-170x170.png",
+            "width": 170,
+            "height": 170,
+            "filesize": 57352,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-170x170.png"
+          },
+          "meafe-post-modules-small-img": {
+            "file": "1-2-300x300.png",
+            "width": 300,
+            "height": 300,
+            "filesize": 163049,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-300x300.png"
+          },
+          "travil_80X80": {
+            "file": "1-2-80x80.png",
+            "width": 80,
+            "height": 80,
+            "filesize": 14007,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-80x80.png"
+          },
+          "travil_424X370": {
+            "file": "1-2-424x370.png",
+            "width": 424,
+            "height": 370,
+            "filesize": 279965,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-424x370.png"
+          },
+          "travil-shop-single": {
+            "file": "1-2-620x500.png",
+            "width": 620,
+            "height": 500,
+            "filesize": 535427,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2-620x500.png"
+          },
+          "full": {
+            "file": "1-2.png",
+            "width": 1200,
+            "height": 900,
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/1-2.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3362",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/types/trip"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/users/3"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/comments?post=3362"
+          }
+        ],
+        "version-history": [
+          {
+            "count": 2,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3362/revisions"
+          }
+        ],
+        "predecessor-version": [
+          {
+            "id": 3385,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3362/revisions/3385"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/media/3481"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/media?parent=3362"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "new_upcoming_trips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/new_upcoming_trips?post=3362"
+          },
+          {
+            "taxonomy": "trip_duration",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_duration?post=3362"
+          },
+          {
+            "taxonomy": "destination",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/destination?post=3362"
+          },
+          {
+            "taxonomy": "activities",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/activities?post=3362"
+          },
+          {
+            "taxonomy": "trip_types",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_types?post=3362"
+          },
+          {
+            "taxonomy": "difficulty",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/difficulty?post=3362"
+          },
+          {
+            "taxonomy": "trip_tag",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_tag?post=3362"
+          },
+          {
+            "taxonomy": "upcomingtrips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/wptravelengine_custom_taxonomy_upcomingtrips?post=3362"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    "wte_v2": {
+      "id": 3362,
+      "date": "2026-02-11T10:18:18",
+      "date_gmt": "2026-02-11T10:18:18",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3362"
+      },
+      "modified": "2026-02-25T06:45:54",
+      "modified_gmt": "2026-02-25T06:45:54",
+      "slug": "chakrata-1-nights-2-days",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/chakrata-1-nights-2-days/",
+      "title": {
+        "rendered": "Chakrata"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3481,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        142
+      ],
+      "destination": [
+        160,
+        37
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        88
+      ],
+      "difficulty": [
+        7
+      ],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [],
+      "class_list": [
+        "post-3362",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-2-days-1-nights",
+        "destination-chakrata",
+        "destination-india",
+        "trip_types-domestic-trip",
+        "trip_types-uttarakhand",
+        "difficulty-medium"
+      ],
+      "packages_ids": [
+        3378
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "period": 0,
+        "unit": "days"
+      },
+      "booked-seats": [],
+      "fsd": {
+        "hide": false
+      },
+      "trip_code": "WT-001",
+      "overview": "<!-- wp:paragraph -->\n<p>Chakrata is a cantonment town and also a sub district/tehsil, in Dehradun district in the state of Uttarakhand, India. It lies between the Tons and Yamuna rivers, at an elevation of 2118 m, 98 km from the state capital, Dehradun. Chakrata was originally a cantonment of the British Indian Army.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": [
+        "All Travel & Transfers in Ac traveller/Bus.",
+        "1 night Stay in Resort at Chakrata.",
+        "Meals - 1 breakfast, 1 Dinner and evening snacks.",
+        "Trek to Budher Caves",
+        "Visit to Chirmiri Neck Top & Tiger waterfalls",
+        "Bonfire and music",
+        "Assistance of Trip Cordinator throughout the trip",
+        "24 X 7 Customer support"
+      ],
+      "cost_excludes": [
+        "Any meal/food item other than the the package inclusions",
+        "Any entry ticket to monuments & public places",
+        "Charges of videos/photos during Paragliding",
+        "Any expense that is not mentioned in the package inclusion",
+        "Any extra cost that occurs due to natural calamity or any such unseen situation",
+        "that is beyond control"
+      ],
+      "duration": {
+        "period": 2,
+        "unit": "days",
+        "nights": 1
+      },
+      "_s_duration": "48",
+      "age_limit": {
+        "min": 0,
+        "max": 0
+      },
+      "participants": {
+        "min": 1,
+        "max": ""
+      },
+      "capacity_per_category": {
+        "enabled": false,
+        "mode": "same",
+        "limits": [],
+        "package_limits": []
+      },
+      "trip_map": {
+        "images": [],
+        "iframe": ""
+      },
+      "highlights": [
+        "Tiger Falls",
+        "Moila Top",
+        "Chirmiri Neck Top",
+        "Budher Caves",
+        "Chakrata Market",
+        "DJ / Bonfire Night"
+      ],
+      "faqs": [],
+      "gallery": [],
+      "video_gallery": [],
+      "itinerary_description": "",
+      "itineraries": [
+        {
+          "title": "Reach Chakrata | Bhudher Cave Trek",
+          "content": "<!-- wp:paragraph -->\n<p>Reach Chakrata in morning. Check-in the resort, rest for a while.<br>After some rest, drive towards Budher cave (a hike of 5km).<br>In evening, return back to resort.<br>In evening enjoy bonfire with snacks and some music. Conclude<br>with dinner and overnight stay.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Visit to tiger waterfall & chirmiri neck top",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast, check out from resort and visit highest waterfalls<br>in Uttarakhand, known as Tiger Falls.<br>Later, move towards Chirmiri Neck Top, enjoy scenic sunset. and<br>afterwards depart for Dellhi.<br>Reach Delhi by early morning.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        }
+      ],
+      "trip_info": [],
+      "file_downloads": [],
+      "trip_extra_services": [],
+      "price_types": {
+        "per-person": "Per Person",
+        "per-group": "Per Group"
+      }
+    }
+  }
+}

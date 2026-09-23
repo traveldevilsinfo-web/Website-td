@@ -1,26 +1,261 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Brand tokens (from traveldevils.in: primary #DC061D + black, Nunito). Change them here only. */
+@theme {
+  --color-brand: #dc061d;
+  --color-brand-dark: #b00417;
+  --color-accent: #ffb400;
+  --color-ink: #151415;
+  --color-muted: #6b7280;
+  --color-line: #e5e7eb;
+  --color-surface: #f5f5f7;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+
+  /* Motion: critically-damped feel (no overshoot) for UI; slight spring only for momentum-y moments. */
+  --ease-out-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.3, 0.64, 1);
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -8px rgb(0 0 0 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.04), 0 22px 44px -12px rgb(0 0 0 / 0.25);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  interpolate-size: allow-keywords; /* lets <details> animate to height:auto where supported */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: var(--color-ink);
 }
+
+/* ---------- Type: size-specific tracking & leading ---------- */
+.display {
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.headline {
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---------- Materials ---------- */
+.glass {
+  background: rgb(255 255 255 / 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+/* Heavier material for the site header: a large surface over busy photos needs more opacity to stay legible. */
+/* The blur lives on ::before so the header isn't a "backdrop root": that lets the mega-menu panels
+   inside it blur the page behind them (nested backdrop-filters otherwise only see their parent). */
+.glass-bar { box-shadow: 0 1px 0 rgb(0 0 0 / 0.06), 0 6px 20px -12px rgb(0 0 0 / 0.25); }
+.glass-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgb(255 255 255 / 0.92);
+  backdrop-filter: saturate(180%) blur(24px);
+}
+/* Dropdown / mega-menu panels float over anything (text, photos), so they're the thickest material. */
+.glass-panel {
+  background: rgb(255 255 255 / 0.98);
+  backdrop-filter: saturate(180%) blur(28px);
+}
+.glass-light {
+  background: rgb(255 255 255 / 0.86);
+  backdrop-filter: saturate(180%) blur(24px);
+}
+.glass-dark {
+  background: rgb(20 20 22 / 0.45);
+  backdrop-filter: saturate(160%) blur(18px);
+}
+
+/* ---------- Response: feedback on press, instantly ---------- */
+.press {
+  transition: transform 160ms var(--ease-out-smooth), background-color 160ms, box-shadow 200ms;
+}
+.press:active {
+  transform: scale(0.97);
+  transition-duration: 60ms;
+}
+
+/* Card: lift + image drift. Transform/opacity only (compositor friendly). */
+.card {
+  box-shadow: var(--shadow-card);
+  transition: transform 450ms var(--ease-out-smooth), box-shadow 450ms var(--ease-out-smooth);
+}
+.card img { transition: transform 900ms var(--ease-out-smooth); }
+@media (hover: hover) {
+  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+  .card:hover img { transform: scale(1.05); }
+}
+.card:active { transform: scale(0.98); transition-duration: 80ms; }
+
+/* ---------- Rails: native scroll-snap = native momentum ---------- */
+.rail {
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--rail-pad, 1rem);
+  padding-inline: var(--rail-pad, 1rem);
+  scrollbar-width: none;
+}
+.rail::-webkit-scrollbar { display: none; }
+.rail > * { scroll-snap-align: start; }
+/* item widths: show a peek of the next card on small screens */
+.rail[data-size="card"] { grid-auto-columns: 78%; }
+.rail[data-size="wide"] { grid-auto-columns: 88%; }
+.rail[data-size="quote"] { grid-auto-columns: 85%; }
+@media (min-width: 640px) {
+  .rail[data-size="card"] { grid-auto-columns: 44%; }
+  .rail[data-size="wide"], .rail[data-size="quote"] { grid-auto-columns: 60%; }
+}
+@media (min-width: 1024px) {
+  .rail[data-size="card"] { grid-auto-columns: calc((100% - 2 * var(--rail-pad, 1rem) - 3rem) / 4); }
+  .rail[data-size="wide"] { grid-auto-columns: calc((100% - 2 * var(--rail-pad, 1rem) - 2rem) / 3); }
+  .rail[data-size="quote"] { grid-auto-columns: calc((100% - 2 * var(--rail-pad, 1rem) - 2rem) / 3); }
+}
+
+/* ---------- Reveal on scroll (CSS scroll-driven; no JS) ---------- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Hero Ken Burns + crossfade */
+@keyframes kenburns {
+  from { transform: scale(1.12); }
+  to { transform: scale(1); }
+}
+.hero-slide { opacity: 0; transition: opacity 1200ms ease; }
+.hero-slide[data-active="true"] { opacity: 1; }
+.hero-slide[data-active="true"] img { animation: kenburns 7s var(--ease-out-smooth) both; }
+
+/* Rotating word */
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(0.4em); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+.word-in { display: inline-block; animation: word-in 600ms var(--ease-out-smooth) both; }
+
+/* ---------- Accordion (details) ---------- */
+details.acc::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition: block-size 380ms var(--ease-out-smooth), content-visibility 380ms allow-discrete;
+}
+details.acc[open]::details-content { block-size: auto; }
+details.acc > summary { list-style: none; cursor: pointer; }
+details.acc > summary::-webkit-details-marker { display: none; }
+details.acc .chev { transition: transform 300ms var(--ease-out-smooth); }
+details.acc[open] .chev { transform: rotate(180deg); }
+
+/* ---------- Dialogs: materialize (scale + blur) and leave the same way ---------- */
+dialog {
+  opacity: 0;
+  transform: scale(0.96) translateY(8px);
+  filter: blur(4px);
+  transition: opacity 260ms var(--ease-out-smooth), transform 320ms var(--ease-out-smooth), filter 260ms,
+    overlay 320ms allow-discrete, display 320ms allow-discrete;
+}
+dialog[open] { opacity: 1; transform: none; filter: none; }
+@starting-style {
+  dialog[open] { opacity: 0; transform: scale(0.96) translateY(8px); filter: blur(4px); }
+}
+dialog::backdrop {
+  background: rgb(0 0 0 / 0);
+  backdrop-filter: blur(0);
+  transition: background 320ms, backdrop-filter 320ms, overlay 320ms allow-discrete, display 320ms allow-discrete;
+}
+dialog[open]::backdrop { background: rgb(0 0 0 / 0.5); backdrop-filter: blur(6px); }
+@starting-style {
+  dialog[open]::backdrop { background: rgb(0 0 0 / 0); backdrop-filter: blur(0); }
+}
+
+/* Top sale bar: a diagonal light streak sweeps across every few seconds */
+.topbar::after {
+  content: "";
+  position: absolute;
+  inset: -50% auto -50% -30%;
+  width: 18%;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.35), transparent);
+  transform: skewX(-20deg);
+  animation: sweep 5s var(--ease-out-smooth) infinite;
+  pointer-events: none;
+}
+@keyframes sweep {
+  0% { left: -30%; }
+  45%, 100% { left: 130%; }
+}
+@media (prefers-reduced-motion: reduce) { .topbar::after { display: none; } }
+
+/* Mega menu panels grow from their trigger */
+.menu-panel {
+  transform-origin: top left;
+  transform: translateY(-6px) scale(0.98);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 180ms var(--ease-out-smooth), transform 260ms var(--ease-out-smooth), visibility 0s 260ms;
+}
+.menu-panel.mega { transform-origin: top center; }
+.group:hover > .menu-panel,
+.group:focus-within > .menu-panel {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+/* ---------- Markdown content ---------- */
+.prose-admin h2 { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; margin: 1.5rem 0 0.5rem; }
+.prose-admin h3 { font-size: 1.1rem; font-weight: 800; margin: 1.1rem 0 0.4rem; }
+.prose-admin p { margin: 0.65rem 0; line-height: 1.75; }
+.prose-admin ul { list-style: disc; padding-left: 1.25rem; margin: 0.6rem 0; }
+.prose-admin ol { list-style: decimal; padding-left: 1.25rem; margin: 0.6rem 0; }
+.prose-admin li { margin: 0.25rem 0; line-height: 1.65; }
+.prose-admin a { color: var(--color-brand); text-decoration: underline; text-underline-offset: 2px; }
+.prose-admin img { border-radius: 1rem; margin: 1rem 0; max-width: 100%; }
+.prose-admin strong { font-weight: 800; }
+
+/* ---------- Accessibility preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-slide { transition: opacity 400ms ease !important; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .glass, .glass-bar::before, .glass-panel, .glass-light { background: #fff; backdrop-filter: none; }
+  .glass-dark { background: rgb(20 20 22 / 0.92); backdrop-filter: none; }
+}
+@media (prefers-contrast: more) {
+  .glass { background: #fff; border-bottom: 1px solid #000; }
+}
+
+/* Mega menu: content swaps with a short cross-fade when the hovered category changes */
+@keyframes fade-swap { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.fade-swap { animation: fade-swap 220ms var(--ease-out-smooth) both; }

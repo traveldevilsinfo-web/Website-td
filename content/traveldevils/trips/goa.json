@@ -1,0 +1,861 @@
+{
+  "id": 3727,
+  "slug": "goa",
+  "url": "https://traveldevils.in/trip/goa/",
+  "title": "Goa",
+  "code": "WTE-2886",
+  "modified": "2026-03-03T08:02:42",
+  "duration": {
+    "days": 5,
+    "nights": 4,
+    "duration_unit": "days",
+    "duration_type": "both"
+  },
+  "price": 11499,
+  "sale_price": 0,
+  "has_sale": false,
+  "currency": "INR",
+  "min_pax": 1,
+  "max_pax": "",
+  "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8.png",
+  "destinations": [
+    "Goa"
+  ],
+  "trip_types": [
+    "Domestic Trip",
+    "Goa"
+  ],
+  "trip_duration": [
+    "5 Days 4 Nights"
+  ],
+  "difficulty": [],
+  "activities": [],
+  "upcoming": [],
+  "overview_html": "<!-- wp:paragraph -->\n<p>Goa is India's smallest state by area, but one of its most popular travel destinations, known for its beaches, vibrant nightlife, and Portuguese heritage. Located on the western coast of India along the Arabian Sea, it attracts millions of visitors each year for its unique mix of relaxation, adventure, and culture.<br>Historically, Goa was a Portuguese colony for over 450 years, which is reflected in its architecture, churches, cuisine, and laid-back lifestyle. Old Goa is home to UNESCO World Heritage churches like the Basilica of Bom Jesus and Se Cathedral, which showcase baroque and Portuguese influences.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>from The coastline is dotted with beaches that cater to different moods lively and party-driven stretches like Baga, Calangute, and Anjuna, to quieter, scenic ones like Palolem, Agonda, and Morjim. Water sports such as parasailing, jet skiing, and scuba diving are also popular.<br>Goa is equally famous for its nightlife and music scene, with beach shacks, nightclubs, and electronic music festivals drawing both domestic and international crowds. The state is also known for its flea markets, yoga retreats, and wellness resorts.</p>\n<!-- /wp:paragraph -->",
+  "overview": "Goa is India's smallest state by area, but one of its most popular travel destinations, known for its beaches, vibrant nightlife, and Portuguese heritage. Located on the western coast of India along the Arabian Sea, it attracts millions of visitors each year for its unique mix of relaxation, adventure, and culture.\nHistorically, Goa was a Portuguese colony for over 450 years, which is reflected in its architecture, churches, cuisine, and laid-back lifestyle. Old Goa is home to UNESCO World Heritage churches like the Basilica of Bom Jesus and Se Cathedral, which showcase baroque and Portuguese influences.\n\nfrom The coastline is dotted with beaches that cater to different moods lively and party-driven stretches like Baga, Calangute, and Anjuna, to quieter, scenic ones like Palolem, Agonda, and Morjim. Water sports such as parasailing, jet skiing, and scuba diving are also popular.\nGoa is equally famous for its nightlife and music scene, with beach shacks, nightclubs, and electronic music festivals drawing both domestic and international crowds. The state is also known for its flea markets, yoga retreats, and wellness resorts.\n",
+  "highlights": [
+    "Visit Cabo de Rama beach with a small hike",
+    " Kayaking",
+    "Watching the sunset at Dauna Paula",
+    "Casino or Tittos lane (entry fees excluded)",
+    "Hike to a beautiful lake at Arambol beach, a dip, optional trekking, local market shopping"
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Departure from Pune/Bangalore",
+      "content": "The group assembles at the pick-up point. You'll meet the team captains, and a small tour briefing session would be provided. You can also join directly in Goa.\n"
+    },
+    {
+      "day": 2,
+      "title": "Goa with strangers",
+      "content": "We will check in to our hotel and will be welcomed by a delicious lunch.\n\nWe will rush to the nearest beach because \"beach dekhne hee to aaye the\".\n\nBack to the hotel for the pool party.\n\nNote: Wear Shades of blue or green for the pool Party.\n\nPost that, we will leave for clubbing in any one of the famous clubs of Goa.\n\nBack to the hotel by early morning, say around 3.\n"
+    },
+    {
+      "day": 3,
+      "title": "Offbeat plus market day",
+      "content": "Wake up and run towards the breakfast area.\n\nWe will first go to Arambol beach, start our 20-minute hike crossing a not-at-all dense forest, and reach a beautiful lake.\n\nTake a dip there, relax for a while, and trekking enthusiasts can go trek more and discover hidden spots. Trust me, they are more beautiful than this beautiful lake.\n\nLater on, we will cover the Goa local market, do some shopping, buy hippy stuff, and later regret it.\n\nRelax for a while near the beach, as the day is about to end, and now you have 3 options:\nOption 1: Dance like anything in a nearby shack in Arambol beach.\nOption 2: Let's decorate our picnic spot right in front of the sea (a bedsheet, some scented candles, give an aesthetic vibe), look at the stars, talk about lives, or just stay quiet and hear the sea talk.\nOption 3: We will go to Titos Lane.\n\nWe will plan according to the vibe and mood of the group, or what if we can tick both out of our bucket list.\n\nBack to the hotel.\n"
+    },
+    {
+      "day": 4,
+      "title": "Not so offbeat",
+      "content": "Again, rush to the breakfast area.\n\nGet ready and leave for the Dill Chahta hai Fort and make plans there to visit Goa daily.\n\nWe will also do cycling right at the Para Road (Dear Zindagi).\n\nVisit those aesthetic colorful homes, talk to locals, know their culture and slow life in Goa.\n\nThe evening will be at Dauna Paula watching the most beautiful sunset of your life.\n\nEnd our day in Casino or Tittos lane in Baga beach. Both Entry fees are not included in the package.\n\nReturn to Hotel.\n"
+    },
+    {
+      "day": 5,
+      "title": "South, We are coming !!",
+      "content": "Rush To breakfast area.\n\nOn our way to South Goa, We will visit Cabo de Rama beach, it's a small hike.\n\nDo Kayaking there.\n\nOvernight stay in south goa.\n"
+    },
+    {
+      "day": 6,
+      "title": "Last moments",
+      "content": "Morning walk near the beach (if waking up early).\n\nWe will visit Butterfly Beach and that's it. Trip ends there, and we will leave for our Home.\n"
+    }
+  ],
+  "includes": [
+    "Road trip from Pune, Bangalore, Hyderabad and Pune in AC vehicles.",
+    "4 Night, 3 to 4 Star Resort stay.",
+    "4 Breakfasts, 1 Lunch & 1 Dinner.",
+    "Trip Captains.",
+    "Local Sightseeing.",
+    "All internal travel within Goa with fuel and driver.",
+    "24*7 Travel Assistance.",
+    "Pool Party in Hotel."
+  ],
+  "excludes": [
+    "Meals not mentioned in this itinerary.",
+    "Expenses caused due to any unforeseen circumstances.",
+    "Entry, Food and drinks at clubs GST.",
+    "Casino entry.",
+    "Club entry.",
+    "Alcoholic beverages."
+  ],
+  "faqs": [],
+  "packages": [
+    {
+      "name": "Backpacking Trip",
+      "is_primary": true,
+      "pricing": [
+        {
+          "label": "Dual Sharing",
+          "price": 11499,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Quad Sharing",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan Solo Rider",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan With Pillion",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Sitting Coach",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 12999,
+          "sale_price": "",
+          "type": "per-person"
+        }
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "package": "Backpacking Trip",
+      "count": 1097,
+      "first": "2026-09-23",
+      "last": "2029-09-23",
+      "dates": null
+    }
+  ],
+  "trip_extras": [],
+  "images": [
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1024x394.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1536x591.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-300x115.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-768x295.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-300x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-80x80.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159-292x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-1024x768.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-300x225.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-768x576.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8.png"
+  ],
+  "page_markdown": "[\n!\n ](https://traveldevils.in)\n\n- [Home](https://traveldevils.in/)\n- [Upcoming Trips](https://traveldevils.in/upcoming-trips/)\n- [International Trips](https://traveldevils.in/international-trips/)\n- [Backpacking Trips](https://traveldevils.in/backpacking-trips/)\n- [Corporate Trip](https://traveldevils.in/corporate-trip/)\n- [About Us](https://traveldevils.in/about-us/)\n- [Contact Us](https://traveldevils.in/contact-us/)\n- [My Account](https://traveldevils.in/my-account/)\nX\n\n!\n\n [ Overview ](#)\n [ Itinerary ](#)\n [ Inclusion/Exclusion ](#)\n\n##  [ Overview ](#)\n\n##  [ Itinerary ](#)\n\n##  [ Inclusion/Exclusion ](#)\n\n## Overview\n\nGoa is India’s smallest state by area, but one of its most popular travel destinations, known for its beaches, vibrant nightlife, and Portuguese heritage. Located on the western coast of India along the Arabian Sea, it attracts millions of visitors each year for its unique mix of relaxation, adventure, and culture.\nHistorically, Goa was a Portuguese colony for over 450 years, which is reflected in its architecture, churches, cuisine, and laid-back lifestyle. Old Goa is home to UNESCO World Heritage churches like the Basilica of Bom Jesus and Se Cathedral, which showcase baroque and Portuguese influences.\n\nfrom The coastline is dotted with beaches that cater to different moods lively and party-driven stretches like Baga, Calangute, and Anjuna, to quieter, scenic ones like Palolem, Agonda, and Morjim. Water sports such as parasailing, jet skiing, and scuba diving are also popular.\nGoa is equally famous for its nightlife and music scene, with beach shacks, nightclubs, and electronic music festivals drawing both domestic and international crowds. The state is also known for its flea markets, yoga retreats, and wellness resorts.\n\n### Highlights\n\n- Visit Cabo de Rama beach with a small hike\n-  Kayaking\n- Watching the sunset at Dauna Paula\n- Casino or Tittos lane (entry fees excluded)\n- Hike to a beautiful lake at Arambol beach, a dip, optional trekking, local market shopping\n\n## Itinerary\n\n Expand all\n\n Day 01 :\n  Departure from Pune/Bangalore\n\nThe group assembles at the pick-up point. You'll meet the team captains, and a small tour briefing session would be provided. You can also join directly in Goa.\n\n Day 02 :\n  Goa with strangers\n\nWe will check in to our hotel and will be welcomed by a delicious lunch.\n\nWe will rush to the nearest beach because \"beach dekhne hee to aaye the\".\n\nBack to the hotel for the pool party.\n\nNote: Wear Shades of blue or green for the pool Party.\n\nPost that, we will leave for clubbing in any one of the famous clubs of Goa.\n\nBack to the hotel by early morning, say around 3.\n\n Day 03 :\n  Offbeat plus market day\n\nWake up and run towards the breakfast area.\n\nWe will first go to Arambol beach, start our 20-minute hike crossing a not-at-all dense forest, and reach a beautiful lake.\n\nTake a dip there, relax for a while, and trekking enthusiasts can go trek more and discover hidden spots. Trust me, they are more beautiful than this beautiful lake.\n\nLater on, we will cover the Goa local market, do some shopping, buy hippy stuff, and later regret it.\n\nRelax for a while near the beach, as the day is about to end, and now you have 3 options:\nOption 1: Dance like anything in a nearby shack in Arambol beach.\nOption 2: Let's decorate our picnic spot right in front of the sea (a bedsheet, some scented candles, give an aesthetic vibe), look at the stars, talk about lives, or just stay quiet and hear the sea talk.\nOption 3: We will go to Titos Lane.\n\nWe will plan according to the vibe and mood of the group, or what if we can tick both out of our bucket list.\n\nBack to the hotel.\n\n Day 04 :\n  Not so offbeat\n\nAgain, rush to the breakfast area.\n\nGet ready and leave for the Dill Chahta hai Fort and make plans there to visit Goa daily.\n\nWe will also do cycling right at the Para Road (Dear Zindagi).\n\nVisit those aesthetic colorful homes, talk to locals, know their culture and slow life in Goa.\n\nThe evening will be at Dauna Paula watching the most beautiful sunset of your life.\n\nEnd our day in Casino or Tittos lane in Baga beach. Both Entry fees are not included in the package.\n\nReturn to Hotel.\n\n Day 05 :\n  South, We are coming !!\n\nRush To breakfast area.\n\nOn our way to South Goa, We will visit Cabo de Rama beach, it's a small hike.\n\nDo Kayaking there.\n\nOvernight stay in south goa.\n\n Day 06 :\n  Last moments\n\nMorning walk near the beach (if waking up early).\n\nWe will visit Butterfly Beach and that's it. Trip ends there, and we will leave for our Home.\n\n##\n\n### Inclusions\n\n- Road trip from Pune, Bangalore, Hyderabad and Pune in AC vehicles.\n- 4 Night, 3 to 4 Star Resort stay.\n- 4 Breakfasts, 1 Lunch & 1 Dinner.\n- Trip Captains.\n- Local Sightseeing.\n- All internal travel within Goa with fuel and driver.\n- 24*7 Travel Assistance.\n- Pool Party in Hotel.\n\n### Exclusions\n\n- Meals not mentioned in this itinerary.\n- Expenses caused due to any unforeseen circumstances.\n- Entry, Food and drinks at clubs GST.\n- Casino entry.\n- Club entry.\n- Alcoholic beverages.\n\n-  [    Date & Time    ](#wte-booking-datetime)\n-  [    Package Type    ](#wte-booking-packages)\n\n   Back  Continue\n\n  From   ₹11499\n/ Dual Sharing\n  From   ₹12999\n/ Triple Sharing\n\n   Check Availability\n\n## Useful Links\n\n-  [ Home ](https://traveldevils.in/)\n-  [ Upcoming Trips ](https://traveldevils.in/upcoming-trips/)\n-  [ International Trips ](https://traveldevils.in/international-trips/)\n-  [ Domestic Trips ](https://traveldevils.in/domestic-trip/)\n-  [ About Us ](https://traveldevils.in/about-us/)\n-  [ Contact Us ](https://traveldevils.in/contact-us/)\n\n## Unique Links\n\n-  [ Privacy Policy ](https://traveldevils.in/privacy-policy-2/)\n-  [ Terms & Conditions ](https://traveldevils.in/terms-conditions/)\n-  [ Return Policy ](https://traveldevils.in/return-policy/)\n-  [ Refund Process ](https://traveldevils.in/refund-policy/)\n-  [ Cancallation Policy  ](https://traveldevils.in/cancellation-policy/)\n\n## Domestic Trip\n\n-  [ Rajasthan ](https://traveldevils.in/domestic-trip/rajasthan/)\n-  [ Meghalaya ](https://traveldevils.in/domestic-trip/meghalaya/)\n-  [ Ladakh ](https://traveldevils.in/domestic-trip/ladakh/)\n-  [ Sikkim ](https://traveldevils.in/domestic-trip/sikkim/)\n-  [ Delhi ](https://traveldevils.in/domestic-trip/delhi/)\n-  [ Goa ](https://traveldevils.in/domestic-trip/goa/)\n-  [ Himachal ](https://traveldevils.in/domestic-trip/himachal/)\n\n## International Trip\n\n-  [ Bali ](https://traveldevils.in/international-trips/bali/)\n-  [ Bhutan ](https://traveldevils.in/international-trips/bhutan/)\n-  [ Dubai ](https://traveldevils.in/international-trips/dubai/)\n-  [ Sri Lanka ](https://traveldevils.in/international-trips/sri-lanka/)\n-  [ India ](https://traveldevils.in/international-trips/india/)\n-  [ Vietnam ](https://traveldevils.in/international-trips/vietnam/)\n-  [ Thailand ](https://traveldevils.in/international-trips/thailand/)\n\n!\n\n## Travel Devils\n\n-  +91 70428 52209\n-  info@traveldevils.in\n\n-\n-\n\n© 2026 Travel Devils All rights reserved.\n\nWhatsApp us\n",
+  "raw": {
+    "wp": {
+      "id": 3727,
+      "date": "2026-03-03T07:39:22",
+      "date_gmt": "2026-03-03T07:39:22",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3727"
+      },
+      "modified": "2026-03-03T08:02:42",
+      "modified_gmt": "2026-03-03T08:02:42",
+      "slug": "goa",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/goa/",
+      "title": {
+        "rendered": "Goa"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3733,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        145
+      ],
+      "destination": [
+        130
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        78
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [],
+      "class_list": [
+        "post-3727",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-5-days-4-nights",
+        "destination-goa",
+        "trip_types-domestic-trip",
+        "trip_types-goa"
+      ],
+      "acf": [],
+      "packages_ids": [
+        3728
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "enabled": false,
+        "duration": 0,
+        "duration_unit": "days"
+      },
+      "booked-seats": [],
+      "code": "WTE-2886",
+      "price": 11499,
+      "has_sale": false,
+      "sale_price": 0,
+      "discount_percent": 0,
+      "currency": {
+        "code": "INR",
+        "symbol": "&#8377;"
+      },
+      "duration": {
+        "days": 5,
+        "nights": 4,
+        "duration_unit": "days",
+        "duration_type": "both"
+      },
+      "min_pax": 1,
+      "max_pax": "",
+      "discount_value": 0,
+      "discount_label": "0% Off",
+      "primary_category": 165,
+      "available_times": {
+        "type": "default",
+        "items": [
+          "2021-1-01",
+          "2021-2-01",
+          "2021-3-01",
+          "2021-4-01",
+          "2021-5-01",
+          "2021-6-01",
+          "2021-7-01",
+          "2021-8-01",
+          "2021-9-01",
+          "2021-10-01",
+          "2021-11-01",
+          "2021-12-01"
+        ]
+      },
+      "description": "<!-- wp:paragraph -->\n<p>Goa is India's smallest state by area, but one of its most popular travel destinations, known for its beaches, vibrant nightlife, and Portuguese heritage. Located on the western coast of India along the Arabian Sea, it attracts millions of visitors each year for its unique mix of relaxation, adventure, and culture.<br>Historically, Goa was a Portuguese colony for over 450 years, which is reflected in its architecture, churches, cuisine, and laid-back lifestyle. Old Goa is home to UNESCO World Heritage churches like the Basilica of Bom Jesus and Se Cathedral, which showcase baroque and Portuguese influences.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>from The coastline is dotted with beaches that cater to different moods lively and party-driven stretches like Baga, Calangute, and Anjuna, to quieter, scenic ones like Palolem, Agonda, and Morjim. Water sports such as parasailing, jet skiing, and scuba diving are also popular.<br>Goa is equally famous for its nightlife and music scene, with beach shacks, nightclubs, and electronic music festivals drawing both domestic and international crowds. The state is also known for its flea markets, yoga retreats, and wellness resorts.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": "Road trip from Pune, Bangalore, Hyderabad and Pune in AC vehicles.\n4 Night, 3 to 4 Star Resort stay.\n4 Breakfasts, 1 Lunch & 1 Dinner.\nTrip Captains.\nLocal Sightseeing.\nAll internal travel within Goa with fuel and driver.\n24*7 Travel Assistance.\nPool Party in Hotel.",
+      "cost_excludes": "Meals not mentioned in this itinerary.\nExpenses caused due to any unforeseen circumstances.\nEntry, Food and drinks at clubs GST.\nCasino entry.\nClub entry.\nAlcoholic beverages.",
+      "itineraries": [
+        {
+          "title": "Departure from Pune/Bangalore",
+          "content": "<!-- wp:paragraph -->\n<p>The group assembles at the pick-up point.&nbsp;You'll meet the team captains, and a small tour briefing session would be provided.&nbsp;You can also join directly in Goa.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Goa with strangers",
+          "content": "<!-- wp:paragraph -->\n<p>We will check in to our hotel and will be welcomed by a delicious lunch.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will rush to the nearest beach because \"beach dekhne hee to aaye the\".</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Back to the hotel for the pool party.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>Note:</strong> Wear Shades of blue or green for the pool Party.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Post that, we will leave for clubbing in any one of the famous clubs of Goa.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Back to the hotel by early morning, say around 3.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Offbeat plus market day",
+          "content": "<!-- wp:paragraph -->\n<p>Wake up and run towards the breakfast area.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will first go to Arambol beach, start our 20-minute hike crossing a not-at-all dense forest, and reach a beautiful lake.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Take a dip there, relax for a while, and trekking enthusiasts can go trek more and discover hidden spots.&nbsp;Trust me, they are more beautiful than this beautiful lake.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Later on, we will cover the Goa local market, do some shopping, buy hippy stuff, and later regret it.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Relax for a while near the beach, as the day is about to end, and now you have 3 options:<br><strong>Option 1:</strong>&nbsp;Dance like anything in a nearby shack in Arambol beach.<br><strong>Option 2:</strong>&nbsp;Let's decorate our picnic spot right in front of the sea (a bedsheet, some scented candles, give an aesthetic vibe), look at the stars, talk about lives, or just stay quiet and hear the sea talk.<br><strong>Option 3:</strong>&nbsp;We will go to Titos Lane.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will plan according to the vibe and mood of the group, or what if we can tick both out of our bucket list.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Back to the hotel.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong></strong></p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Not so offbeat",
+          "content": "<!-- wp:paragraph -->\n<p>Again, rush to the breakfast area.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Get ready and leave for the <em>Dill Chahta hai</em> Fort and make plans there to visit Goa daily.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will also do cycling right at the Para Road (<em>Dear Zindagi</em>).</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Visit those aesthetic colorful homes, talk to locals, know their culture and slow life in Goa.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The evening will be at Dauna Paula watching the most beautiful sunset of your life.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>End our day in Casino or Tittos lane in Baga beach. Both Entry fees are not included in the package.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Return to Hotel.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "South, We are coming !!",
+          "content": "<!-- wp:paragraph -->\n<p>Rush To breakfast area.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>On our way to South Goa, We will visit Cabo de Rama beach, it's a small hike.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Do Kayaking there.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Overnight stay in south goa.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Last moments",
+          "content": "<!-- wp:paragraph -->\n<p>Morning walk near the beach (if waking up early).</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will visit Butterfly Beach and that's it.&nbsp;Trip ends there, and we will leave for our Home.</p>\n<!-- /wp:paragraph -->"
+        }
+      ],
+      "faqs": [],
+      "is_featured": false,
+      "featured_image": {
+        "width": 1200,
+        "height": 900,
+        "file": "2026/03/Kanatal-Tehri-8.png",
+        "filesize": 1593104,
+        "sizes": {
+          "medium": {
+            "file": "Kanatal-Tehri-8-300x225.png",
+            "width": 300,
+            "height": 225,
+            "filesize": 101566,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-300x225.png"
+          },
+          "large": {
+            "file": "Kanatal-Tehri-8-1024x768.png",
+            "width": 1024,
+            "height": 768,
+            "filesize": 1056927,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-1024x768.png"
+          },
+          "thumbnail": {
+            "file": "Kanatal-Tehri-8-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 35354,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-150x150.png"
+          },
+          "medium_large": {
+            "file": "Kanatal-Tehri-8-768x576.png",
+            "width": 768,
+            "height": 576,
+            "filesize": 609688,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-768x576.png"
+          },
+          "trip-thumb-size": {
+            "file": "Kanatal-Tehri-8-374x226.png",
+            "width": 374,
+            "height": 226,
+            "filesize": 131427,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-374x226.png"
+          },
+          "destination-thumb-size": {
+            "file": "Kanatal-Tehri-8-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 611973,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-600x810.png"
+          },
+          "destination-thumb-trip-size": {
+            "file": "Kanatal-Tehri-8-410x250.png",
+            "width": 410,
+            "height": 250,
+            "filesize": 157507,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-410x250.png"
+          },
+          "activities-thumb-size": {
+            "file": "Kanatal-Tehri-8-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 611973,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-600x810.png"
+          },
+          "trip-single-size": {
+            "file": "Kanatal-Tehri-8-990x490.png",
+            "width": 990,
+            "height": 490,
+            "filesize": 723286,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-990x490.png"
+          },
+          "meafe-featured-page": {
+            "file": "Kanatal-Tehri-8-500x410.png",
+            "width": 500,
+            "height": 410,
+            "filesize": 288208,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-500x410.png"
+          },
+          "meafe-testimonial-two": {
+            "file": "Kanatal-Tehri-8-272x316.png",
+            "width": 272,
+            "height": 316,
+            "filesize": 120015,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-272x316.png"
+          },
+          "meafe-blog-one": {
+            "file": "Kanatal-Tehri-8-370x247.png",
+            "width": 370,
+            "height": 247,
+            "filesize": 137823,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-370x247.png"
+          },
+          "meafe-blog-two": {
+            "file": "Kanatal-Tehri-8-197x278.png",
+            "width": 197,
+            "height": 278,
+            "filesize": 78013,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-197x278.png"
+          },
+          "meafe-category-tab": {
+            "file": "Kanatal-Tehri-8-355x355.png",
+            "width": 355,
+            "height": 355,
+            "filesize": 176329,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-355x355.png"
+          },
+          "meafe-category-grid": {
+            "file": "Kanatal-Tehri-8-370x370.png",
+            "width": 370,
+            "height": 370,
+            "filesize": 190700,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-370x370.png"
+          },
+          "meafe-category-grid-one": {
+            "file": "Kanatal-Tehri-8-570x530.png",
+            "width": 570,
+            "height": 530,
+            "filesize": 412509,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-570x530.png"
+          },
+          "meafe-category-grid-two": {
+            "file": "Kanatal-Tehri-8-270x180.png",
+            "width": 270,
+            "height": 180,
+            "filesize": 75746,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-270x180.png"
+          },
+          "meafe-category-grid-three": {
+            "file": "Kanatal-Tehri-8-570x320.png",
+            "width": 570,
+            "height": 320,
+            "filesize": 278992,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-570x320.png"
+          },
+          "meafe-category-grid-lay-three": {
+            "file": "Kanatal-Tehri-8-170x170.png",
+            "width": 170,
+            "height": 170,
+            "filesize": 44410,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-170x170.png"
+          },
+          "meafe-post-modules-small-img": {
+            "file": "Kanatal-Tehri-8-300x300.png",
+            "width": 300,
+            "height": 300,
+            "filesize": 126468,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-300x300.png"
+          },
+          "travil_80X80": {
+            "file": "Kanatal-Tehri-8-80x80.png",
+            "width": 80,
+            "height": 80,
+            "filesize": 11301,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-80x80.png"
+          },
+          "travil_424X370": {
+            "file": "Kanatal-Tehri-8-424x370.png",
+            "width": 424,
+            "height": 370,
+            "filesize": 221611,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-424x370.png"
+          },
+          "travil-shop-single": {
+            "file": "Kanatal-Tehri-8-620x500.png",
+            "width": 620,
+            "height": 500,
+            "filesize": 430320,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8-620x500.png"
+          },
+          "full": {
+            "file": "Kanatal-Tehri-8.png",
+            "width": 1200,
+            "height": 900,
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3727",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/types/trip"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/users/3"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/comments?post=3727"
+          }
+        ],
+        "version-history": [
+          {
+            "count": 1,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3727/revisions"
+          }
+        ],
+        "predecessor-version": [
+          {
+            "id": 3729,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3727/revisions/3729"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/media/3733"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/media?parent=3727"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "new_upcoming_trips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/new_upcoming_trips?post=3727"
+          },
+          {
+            "taxonomy": "trip_duration",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_duration?post=3727"
+          },
+          {
+            "taxonomy": "destination",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/destination?post=3727"
+          },
+          {
+            "taxonomy": "activities",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/activities?post=3727"
+          },
+          {
+            "taxonomy": "trip_types",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_types?post=3727"
+          },
+          {
+            "taxonomy": "difficulty",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/difficulty?post=3727"
+          },
+          {
+            "taxonomy": "trip_tag",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_tag?post=3727"
+          },
+          {
+            "taxonomy": "upcomingtrips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/wptravelengine_custom_taxonomy_upcomingtrips?post=3727"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    "wte_v2": {
+      "id": 3727,
+      "date": "2026-03-03T07:39:22",
+      "date_gmt": "2026-03-03T07:39:22",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3727"
+      },
+      "modified": "2026-03-03T08:02:42",
+      "modified_gmt": "2026-03-03T08:02:42",
+      "slug": "goa",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/goa/",
+      "title": {
+        "rendered": "Goa"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3733,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        145
+      ],
+      "destination": [
+        130
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        78
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [],
+      "class_list": [
+        "post-3727",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-5-days-4-nights",
+        "destination-goa",
+        "trip_types-domestic-trip",
+        "trip_types-goa"
+      ],
+      "packages_ids": [
+        3728
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "period": 0,
+        "unit": "days"
+      },
+      "booked-seats": [],
+      "fsd": {
+        "hide": false
+      },
+      "trip_code": "WTE-2886",
+      "overview": "<!-- wp:paragraph -->\n<p>Goa is India's smallest state by area, but one of its most popular travel destinations, known for its beaches, vibrant nightlife, and Portuguese heritage. Located on the western coast of India along the Arabian Sea, it attracts millions of visitors each year for its unique mix of relaxation, adventure, and culture.<br>Historically, Goa was a Portuguese colony for over 450 years, which is reflected in its architecture, churches, cuisine, and laid-back lifestyle. Old Goa is home to UNESCO World Heritage churches like the Basilica of Bom Jesus and Se Cathedral, which showcase baroque and Portuguese influences.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>from The coastline is dotted with beaches that cater to different moods lively and party-driven stretches like Baga, Calangute, and Anjuna, to quieter, scenic ones like Palolem, Agonda, and Morjim. Water sports such as parasailing, jet skiing, and scuba diving are also popular.<br>Goa is equally famous for its nightlife and music scene, with beach shacks, nightclubs, and electronic music festivals drawing both domestic and international crowds. The state is also known for its flea markets, yoga retreats, and wellness resorts.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": [
+        "Road trip from Pune, Bangalore, Hyderabad and Pune in AC vehicles.",
+        "4 Night, 3 to 4 Star Resort stay.",
+        "4 Breakfasts, 1 Lunch & 1 Dinner.",
+        "Trip Captains.",
+        "Local Sightseeing.",
+        "All internal travel within Goa with fuel and driver.",
+        "24*7 Travel Assistance.",
+        "Pool Party in Hotel."
+      ],
+      "cost_excludes": [
+        "Meals not mentioned in this itinerary.",
+        "Expenses caused due to any unforeseen circumstances.",
+        "Entry, Food and drinks at clubs GST.",
+        "Casino entry.",
+        "Club entry.",
+        "Alcoholic beverages."
+      ],
+      "duration": {
+        "period": 5,
+        "unit": "days",
+        "nights": 4
+      },
+      "_s_duration": "120",
+      "age_limit": {
+        "min": 0,
+        "max": 0
+      },
+      "participants": {
+        "min": 1,
+        "max": ""
+      },
+      "capacity_per_category": {
+        "enabled": false,
+        "mode": "same",
+        "limits": [],
+        "package_limits": []
+      },
+      "trip_map": {
+        "images": [],
+        "iframe": ""
+      },
+      "highlights": [
+        "Visit Cabo de Rama beach with a small hike",
+        " Kayaking",
+        "Watching the sunset at Dauna Paula",
+        "Casino or Tittos lane (entry fees excluded)",
+        "Hike to a beautiful lake at Arambol beach, a dip, optional trekking, local market shopping"
+      ],
+      "faqs": [],
+      "gallery": [],
+      "video_gallery": [],
+      "itinerary_description": "",
+      "itineraries": [
+        {
+          "title": "Departure from Pune/Bangalore",
+          "content": "<!-- wp:paragraph -->\n<p>The group assembles at the pick-up point.&nbsp;You'll meet the team captains, and a small tour briefing session would be provided.&nbsp;You can also join directly in Goa.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Goa with strangers",
+          "content": "<!-- wp:paragraph -->\n<p>We will check in to our hotel and will be welcomed by a delicious lunch.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will rush to the nearest beach because \"beach dekhne hee to aaye the\".</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Back to the hotel for the pool party.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>Note:</strong> Wear Shades of blue or green for the pool Party.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Post that, we will leave for clubbing in any one of the famous clubs of Goa.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Back to the hotel by early morning, say around 3.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Offbeat plus market day",
+          "content": "<!-- wp:paragraph -->\n<p>Wake up and run towards the breakfast area.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will first go to Arambol beach, start our 20-minute hike crossing a not-at-all dense forest, and reach a beautiful lake.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Take a dip there, relax for a while, and trekking enthusiasts can go trek more and discover hidden spots.&nbsp;Trust me, they are more beautiful than this beautiful lake.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Later on, we will cover the Goa local market, do some shopping, buy hippy stuff, and later regret it.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Relax for a while near the beach, as the day is about to end, and now you have 3 options:<br><strong>Option 1:</strong>&nbsp;Dance like anything in a nearby shack in Arambol beach.<br><strong>Option 2:</strong>&nbsp;Let's decorate our picnic spot right in front of the sea (a bedsheet, some scented candles, give an aesthetic vibe), look at the stars, talk about lives, or just stay quiet and hear the sea talk.<br><strong>Option 3:</strong>&nbsp;We will go to Titos Lane.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will plan according to the vibe and mood of the group, or what if we can tick both out of our bucket list.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Back to the hotel.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong></strong></p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Not so offbeat",
+          "content": "<!-- wp:paragraph -->\n<p>Again, rush to the breakfast area.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Get ready and leave for the <em>Dill Chahta hai</em> Fort and make plans there to visit Goa daily.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will also do cycling right at the Para Road (<em>Dear Zindagi</em>).</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Visit those aesthetic colorful homes, talk to locals, know their culture and slow life in Goa.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The evening will be at Dauna Paula watching the most beautiful sunset of your life.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>End our day in Casino or Tittos lane in Baga beach. Both Entry fees are not included in the package.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Return to Hotel.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "South, We are coming !!",
+          "content": "<!-- wp:paragraph -->\n<p>Rush To breakfast area.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>On our way to South Goa, We will visit Cabo de Rama beach, it's a small hike.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Do Kayaking there.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Overnight stay in south goa.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Last moments",
+          "content": "<!-- wp:paragraph -->\n<p>Morning walk near the beach (if waking up early).</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>We will visit Butterfly Beach and that's it.&nbsp;Trip ends there, and we will leave for our Home.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        }
+      ],
+      "trip_info": [],
+      "file_downloads": [],
+      "trip_extra_services": [],
+      "price_types": {
+        "per-person": "Per Person",
+        "per-group": "Per Group"
+      }
+    }
+  }
+}

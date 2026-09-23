@@ -1,0 +1,32 @@
+{
+  "heroSlides": [
+    {"image": "/uploads/wp/2025/10/7cs9t7yqwajouehwpv2z1g73f57v_shutterstock_583745923-scaled.webp", "place": "Ladakh"},
+    {"image": "/uploads/wp/2025/10/dal-lake-kashmir.webp", "place": "Kashmir"},
+    {"image": "/uploads/wp/2025/10/duskn3kvpbifkjhumjuf-scaled.webp", "place": "Andaman"},
+    {"image": "/uploads/wp/2025/10/Sikkim-insteas-of-Ladakh-10.webp", "place": "the Himalayas"}
+  ],
+  "testimonials": [
+    {"name": "Akansha Joshi", "trip": "Chakrata", "text": "Loved my trip to Chakrata! Super peaceful, scenic, and honestly the perfect break from city life. The views, fresh air, and chill vibe made it totally worth it."},
+    {"name": "Tunisha Das", "trip": "Chakrata", "text": "Our recent trip to Chakrata with Travel Devils was nothing short of amazing! From the moment we started the journey till the last goodbye, everything was perfectly organized."},
+    {"name": "Karan Aeron", "trip": "Mukteshwar & Kainchi Dham", "text": "Had an amazing trip to Mukteshwar and Kainchi Dham! The journey was smooth and full of fun, all thanks to our Captain Naman – a great guide and companion."},
+    {"name": "Chand Kanwar Chohan", "trip": "Chakrata", "text": "Ayaan and his team Travel Devils were extremely helpful and energetic throughout the Chakrata trip. We had utmost fun."},
+    {"name": "Renuka Bhalero", "trip": "Chakrata", "text": "Had a wonderful trip to Chakrata with amazing people and great vibes. Everything was well organised and hassle-free. Ayan Bhutani, our trip captain, was extremely friendly."},
+    {"name": "Gopesh Singhal", "trip": "Chakrata", "text": "What a trip and what a captain… I could never imagine that Chakrata would be that great, but Naman bhai (our captain) made this journey so comfortable."}
+  ],
+  "faqs": [
+    {"q": "What is Travel Devils?", "a": "Travel Devils brings India’s travellers together through community-based, experiential trips. From solo adventures to squad getaways, we design journeys that hit both the heart and the bucket list."},
+    {"q": "Who can join Travel Devils trips?", "a": "Anyone! Solo travellers, couples, friends and first-time travellers are all welcome."},
+    {"q": "Can solo travellers join group trips?", "a": "Absolutely! Many of our travellers join solo and make lifelong friends along the way."},
+    {"q": "What is the group size?", "a": "Group size varies by trip but is usually between 8 and 50 travellers."},
+    {"q": "What is included in the trip package?", "a": "Trip inclusions typically cover accommodation, transportation, sightseeing, a trip captain and select meals. Exact inclusions vary by trip."},
+    {"q": "Is it safe to travel with Travel Devils?", "a": "Safety is our top priority. All trips are led by experienced trip captains and local partners."},
+    {"q": "Can I customise my trip itinerary?", "a": "Yes! Both domestic and international trips can be tailored to your preferences, travel dates and budget."},
+    {"q": "How can I contact Travel Devils for help?", "a": "You can reach us via phone, WhatsApp, email or social media. Our support team is always happy to help."}
+  ],
+  "stats": [
+    {"value": "10K+", "label": "Travellers hosted"},
+    {"value": "6+", "label": "Years on the road"},
+    {"value": "4.5★", "label": "Google rating"},
+    {"value": "2000+", "label": "Trips run"}
+  ]
+}

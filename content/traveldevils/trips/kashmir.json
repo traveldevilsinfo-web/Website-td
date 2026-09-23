@@ -1,0 +1,894 @@
+{
+  "id": 3743,
+  "slug": "kashmir",
+  "url": "https://traveldevils.in/trip/kashmir/",
+  "title": "Kashmir",
+  "code": "WTE-2886",
+  "modified": "2026-03-03T08:44:50",
+  "duration": {
+    "days": 6,
+    "nights": 5,
+    "duration_unit": "days",
+    "duration_type": "both"
+  },
+  "price": 22499,
+  "sale_price": 0,
+  "has_sale": false,
+  "currency": "INR",
+  "min_pax": 1,
+  "max_pax": "",
+  "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10.png",
+  "destinations": [
+    "Jammu &amp; Kashmir"
+  ],
+  "trip_types": [
+    "Domestic Trip",
+    "Jammu Kashmir"
+  ],
+  "trip_duration": [
+    "6 Days 5 Nights"
+  ],
+  "difficulty": [],
+  "activities": [],
+  "upcoming": [],
+  "overview_html": "<!-- wp:paragraph -->\n<p>A Kashmir backpacking trip offers breathtaking landscapes, unique culture, and adventure activities, with most itineraries focusing on <strong>Srinagar, Gulmarg, Pahalgam, and Sonamarg</strong>. Trips typically last between 5 to 7 days and can be planned for any season depending on desired activities. </p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"JustWravel\"/></figure>\n<!-- /wp:image -->",
+  "overview": "A Kashmir backpacking trip offers breathtaking landscapes, unique culture, and adventure activities, with most itineraries focusing on Srinagar, Gulmarg, Pahalgam, and Sonamarg. Trips typically last between 5 to 7 days and can be planned for any season depending on desired activities.\n",
+  "highlights": [
+    "Key activities are internal sightseeing of Aru Valley, Betaab Valley, and Chandanwari (included), and a 1-hour Shikara ride",
+    "Houseboat in Srinagar"
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "DELHI TO JAMMU",
+      "content": "- We start our journey to the place called \"HEAVEN ON EARTH - KASHMIR\" from Delhi.\n- Departure at around 8 pm.\n- Stop for dinner at a roadside restaurant.\n"
+    },
+    {
+      "day": 2,
+      "title": "JAMMU TO SRINAGAR",
+      "content": "Arrival in Jammu & transfer to Srinagar.\n\nCheck in to your hotel.\n\nHave your dinner & take rest for the night.\n"
+    },
+    {
+      "day": 3,
+      "title": "SRINAGAR - GULMARG - SRINAGAR",
+      "content": "After Breakfast proceed towards Gulmarg (The Meadow of Flowers).\n\nGulmarg has one of the most beautiful summer resort/winter Ski resorts in the valley, also the World's highest 18 Hole Golf Course.\n\nYou can have a gondola ride (excluded from the package) from Gulmarg to Khilanmarg (Alt 3100 Mt.) to have a real view at natural beauty of the summer also view of Nanga Parvat (Alt. 8137 Mt.) in Cloudless Days and full snow view in winter.\n\nBack to Srinagar and Overnight stay at hotel.\n"
+    },
+    {
+      "day": 4,
+      "title": "SRINAGAR - SONMARG - SRINAGAR",
+      "content": "After breakfast, proceed towards Sonmarg (Meadows of Gold).\n\nSonamarg lies at the head of the Sindh valley.\n\nThe drive-through here presents a spectacular face of the countryside; Sonamarg is the beginning of the enchanted journey into a natural wonderland, Surrounded by pine forest mountains upto 5300 meters high.\n\nThe valley is divided by a spur of the \"Thajiwas Range Mountains\".\n\nOne can have a pony ride to visit Thajiwas Glacier where snow remains round the year.\n\nFollowed by an overnight stay at Hotel in srinagar.\n"
+    },
+    {
+      "day": 5,
+      "title": "SRINAGAR - PAHALGAM",
+      "content": "- Morning after breakfast we drive to Pahalgam via Pampore, Avantipura and the village of Bijbehara which remains famous as the breadbasket of Kashmir.\n- We switch from the national highway 1A at Khanabal and drive through the second-largest city of Anantnag.\n- Visit Aru valley, Betaab Valley and Chandanwari (included in the package).\n- Dinner and overnight stay at Pahalgam hotel.\n"
+    },
+    {
+      "day": 6,
+      "title": "SRINAGAR SIGHTSEEING & HOUSEBOAT",
+      "content": "Checkout from the hotel & proceed for srinagar sightseeing.\n\nVisit Chashma shahi, Nishat Garden, Shalimar Garden & Shankaracharya temple.\n\nConclude your sightseeing by visiting the beautiful Hazaratbal Mosque, known for housing the hair of Prophet Mohammed.\n\nIn evening check in your houseboat & enjoy shikara ride afterwards.\n\nDinner and overnight stay in Houseboat.\n"
+    },
+    {
+      "day": 7,
+      "title": "SRINAGAR - JAMMU - DELHI",
+      "content": "- After breakfast checkout from the hotel & start your journey back to Jammu.\n- Reach Jammu & Later board the bus towards Delhi.\n"
+    }
+  ],
+  "includes": [
+    "Sleeper AC Bus transfers from Delhi to Jammu and back",
+    "Entire sightseeing by tempo traveler/ cab depending on group size",
+    "Accommodation for 5 nights on double/triple sharing",
+    "Internal sightseeing of Aru Valley, Betaab Valley and Chandanwari.",
+    "Total 10 meals (5 breakfast & 5 dinners)",
+    "Shikara ride for 1 hour",
+    "Tour leader"
+  ],
+  "excludes": [
+    "GST (5%) is applicable extra",
+    "Pickup and drop from the Srinagar airport Lunch",
+    "Gondola ride (cable car) we will assist you in the booking.",
+    "Sonmarg zero point cab",
+    "Snow Chained SUV (if required for Gulmarg or Drung)",
+    "Any activity like pony ride or any other activity. any kind of food or beverage",
+    "that is not included in the package like alcoholic drinks, mineral water,",
+    "meals/ refreshments/ lunch on the highway.",
+    "Any personal expenses like a tip to the driver, entry to monuments,",
+    "camera/video charges, laundry, telephone expenses, tips, etc.",
+    "Any cost arising due to natural calamities like land slides, road blocks etc (to",
+    "be borne directly by the guest on the spot).",
+    "Anything not mentioned in the inclusions."
+  ],
+  "faqs": [],
+  "packages": [
+    {
+      "name": "Backpacking Trip",
+      "is_primary": true,
+      "pricing": [
+        {
+          "label": "Dual Sharing",
+          "price": 22499,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Quad Sharing",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan Solo Rider",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan With Pillion",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Sitting Coach",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 20499,
+          "sale_price": "",
+          "type": "per-person"
+        }
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "package": "Backpacking Trip",
+      "count": 1097,
+      "first": "2026-09-23",
+      "last": "2029-09-23",
+      "dates": null
+    }
+  ],
+  "trip_extras": [],
+  "images": [
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1024x394.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1536x591.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-300x115.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-768x295.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-300x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-80x80.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159-292x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-1024x768.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-300x225.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-768x576.png",
+    "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10.png"
+  ],
+  "page_markdown": "[\n!\n ](https://traveldevils.in)\n\n- [Home](https://traveldevils.in/)\n- [Upcoming Trips](https://traveldevils.in/upcoming-trips/)\n- [International Trips](https://traveldevils.in/international-trips/)\n- [Backpacking Trips](https://traveldevils.in/backpacking-trips/)\n- [Corporate Trip](https://traveldevils.in/corporate-trip/)\n- [About Us](https://traveldevils.in/about-us/)\n- [Contact Us](https://traveldevils.in/contact-us/)\n- [My Account](https://traveldevils.in/my-account/)\nX\n\n!\n\n [ Overview ](#)\n [ Itinerary ](#)\n [ Inclusion/Exclusion ](#)\n\n##  [ Overview ](#)\n\n##  [ Itinerary ](#)\n\n##  [ Inclusion/Exclusion ](#)\n\n## Overview\n\nA Kashmir backpacking trip offers breathtaking landscapes, unique culture, and adventure activities, with most itineraries focusing on Srinagar, Gulmarg, Pahalgam, and Sonamarg. Trips typically last between 5 to 7 days and can be planned for any season depending on desired activities.\n\n### Highlights\n\n- Key activities are internal sightseeing of Aru Valley, Betaab Valley, and Chandanwari (included), and a 1-hour Shikara ride\n- Houseboat in Srinagar\n\n## Itinerary\n\n Expand all\n\n Day 0 :\n  DELHI TO JAMMU\n\n- We start our journey to the place called \"HEAVEN ON EARTH - KASHMIR\" from Delhi.\n- Departure at around 8 pm.\n- Stop for dinner at a roadside restaurant.\n\n Day 01 :\n  JAMMU TO SRINAGAR\n\nArrival in Jammu & transfer to Srinagar.\n\nCheck in to your hotel.\n\nHave your dinner & take rest for the night.\n\n Day 02 :\n  SRINAGAR - GULMARG - SRINAGAR\n\nAfter Breakfast proceed towards Gulmarg (The Meadow of Flowers).\n\nGulmarg has one of the most beautiful summer resort/winter Ski resorts in the valley, also the World's highest 18 Hole Golf Course.\n\nYou can have a gondola ride (excluded from the package) from Gulmarg to Khilanmarg (Alt 3100 Mt.) to have a real view at natural beauty of the summer also view of Nanga Parvat (Alt. 8137 Mt.) in Cloudless Days and full snow view in winter.\n\nBack to Srinagar and Overnight stay at hotel.\n\n Day 03 :\n  SRINAGAR - SONMARG - SRINAGAR\n\nAfter breakfast, proceed towards Sonmarg (Meadows of Gold).\n\nSonamarg lies at the head of the Sindh valley.\n\nThe drive-through here presents a spectacular face of the countryside; Sonamarg is the beginning of the enchanted journey into a natural wonderland, Surrounded by pine forest mountains upto 5300 meters high.\n\nThe valley is divided by a spur of the \"Thajiwas Range Mountains\".\n\nOne can have a pony ride to visit Thajiwas Glacier where snow remains round the year.\n\nFollowed by an overnight stay at Hotel in srinagar.\n\n Day 04 :\n  SRINAGAR - PAHALGAM\n\n- Morning after breakfast we drive to Pahalgam via Pampore, Avantipura and the village of Bijbehara which remains famous as the breadbasket of Kashmir.\n- We switch from the national highway 1A at Khanabal and drive through the second-largest city of Anantnag.\n- Visit Aru valley, Betaab Valley and Chandanwari (included in the package).\n- Dinner and overnight stay at Pahalgam hotel.\n\n Day 05 :\n  SRINAGAR SIGHTSEEING & HOUSEBOAT\n\nCheckout from the hotel & proceed for srinagar sightseeing.\n\nVisit Chashma shahi, Nishat Garden, Shalimar Garden & Shankaracharya temple.\n\nConclude your sightseeing by visiting the beautiful Hazaratbal Mosque, known for housing the hair of Prophet Mohammed.\n\nIn evening check in your houseboat & enjoy shikara ride afterwards.\n\nDinner and overnight stay in Houseboat.\n\n Day 06 :\n  SRINAGAR - JAMMU - DELHI\n\n- After breakfast checkout from the hotel & start your journey back to Jammu.\n- Reach Jammu & Later board the bus towards Delhi.\n\n##\n\n### Inclusions\n\n- Sleeper AC Bus transfers from Delhi to Jammu and back\n- Entire sightseeing by tempo traveler/ cab depending on group size\n- Accommodation for 5 nights on double/triple sharing\n- Internal sightseeing of Aru Valley, Betaab Valley and Chandanwari.\n- Total 10 meals (5 breakfast & 5 dinners)\n- Shikara ride for 1 hour\n- Tour leader\n\n### Exclusions\n\n- GST (5%) is applicable extra\n- Pickup and drop from the Srinagar airport Lunch\n- Gondola ride (cable car) we will assist you in the booking.\n- Sonmarg zero point cab\n- Snow Chained SUV (if required for Gulmarg or Drung)\n- Any activity like pony ride or any other activity. any kind of food or beverage\n- that is not included in the package like alcoholic drinks, mineral water,\n- meals/ refreshments/ lunch on the highway.\n- Any personal expenses like a tip to the driver, entry to monuments,\n- camera/video charges, laundry, telephone expenses, tips, etc.\n- Any Inclusion/Exclusion arising due to natural calamities like land slides, road blocks etc (to\n- be borne directly by the guest on the spot).\n- Anything not mentioned in the inclusions.\n\n-  [    Date & Time    ](#wte-booking-datetime)\n-  [    Package Type    ](#wte-booking-packages)\n\n   Back  Continue\n\n  From   ₹22499\n/ Dual Sharing\n  From   ₹20499\n/ Triple Sharing\n\n   Check Availability\n\n## Useful Links\n\n-  [ Home ](https://traveldevils.in/)\n-  [ Upcoming Trips ](https://traveldevils.in/upcoming-trips/)\n-  [ International Trips ](https://traveldevils.in/international-trips/)\n-  [ Domestic Trips ](https://traveldevils.in/domestic-trip/)\n-  [ About Us ](https://traveldevils.in/about-us/)\n-  [ Contact Us ](https://traveldevils.in/contact-us/)\n\n## Unique Links\n\n-  [ Privacy Policy ](https://traveldevils.in/privacy-policy-2/)\n-  [ Terms & Conditions ](https://traveldevils.in/terms-conditions/)\n-  [ Return Policy ](https://traveldevils.in/return-policy/)\n-  [ Refund Process ](https://traveldevils.in/refund-policy/)\n-  [ Cancallation Policy  ](https://traveldevils.in/cancellation-policy/)\n\n## Domestic Trip\n\n-  [ Rajasthan ](https://traveldevils.in/domestic-trip/rajasthan/)\n-  [ Meghalaya ](https://traveldevils.in/domestic-trip/meghalaya/)\n-  [ Ladakh ](https://traveldevils.in/domestic-trip/ladakh/)\n-  [ Sikkim ](https://traveldevils.in/domestic-trip/sikkim/)\n-  [ Delhi ](https://traveldevils.in/domestic-trip/delhi/)\n-  [ Goa ](https://traveldevils.in/domestic-trip/goa/)\n-  [ Himachal ](https://traveldevils.in/domestic-trip/himachal/)\n\n## International Trip\n\n-  [ Bali ](https://traveldevils.in/international-trips/bali/)\n-  [ Bhutan ](https://traveldevils.in/international-trips/bhutan/)\n-  [ Dubai ](https://traveldevils.in/international-trips/dubai/)\n-  [ Sri Lanka ](https://traveldevils.in/international-trips/sri-lanka/)\n-  [ India ](https://traveldevils.in/international-trips/india/)\n-  [ Vietnam ](https://traveldevils.in/international-trips/vietnam/)\n-  [ Thailand ](https://traveldevils.in/international-trips/thailand/)\n\n!\n\n## Travel Devils\n\n-  +91 70428 52209\n-  info@traveldevils.in\n\n-\n-\n\n© 2026 Travel Devils All rights reserved.\n\nWhatsApp us\n",
+  "raw": {
+    "wp": {
+      "id": 3743,
+      "date": "2026-03-03T08:31:09",
+      "date_gmt": "2026-03-03T08:31:09",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3743"
+      },
+      "modified": "2026-03-03T08:44:50",
+      "modified_gmt": "2026-03-03T08:44:50",
+      "slug": "kashmir",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/kashmir/",
+      "title": {
+        "rendered": "Kashmir"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3746,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        146
+      ],
+      "destination": [
+        125
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        80
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [],
+      "class_list": [
+        "post-3743",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-6-days-5-nights",
+        "destination-jammu-kashmir",
+        "trip_types-domestic-trip",
+        "trip_types-jammu-kashmir"
+      ],
+      "acf": [],
+      "packages_ids": [
+        3744
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "enabled": false,
+        "duration": 0,
+        "duration_unit": "days"
+      },
+      "booked-seats": [],
+      "code": "WTE-2886",
+      "price": 22499,
+      "has_sale": false,
+      "sale_price": 0,
+      "discount_percent": 0,
+      "currency": {
+        "code": "INR",
+        "symbol": "&#8377;"
+      },
+      "duration": {
+        "days": 6,
+        "nights": 5,
+        "duration_unit": "days",
+        "duration_type": "both"
+      },
+      "min_pax": 1,
+      "max_pax": "",
+      "discount_value": 0,
+      "discount_label": "0% Off",
+      "primary_category": 165,
+      "available_times": {
+        "type": "default",
+        "items": [
+          "2021-1-01",
+          "2021-2-01",
+          "2021-3-01",
+          "2021-4-01",
+          "2021-5-01",
+          "2021-6-01",
+          "2021-7-01",
+          "2021-8-01",
+          "2021-9-01",
+          "2021-10-01",
+          "2021-11-01",
+          "2021-12-01"
+        ]
+      },
+      "description": "<!-- wp:paragraph -->\n<p>A Kashmir backpacking trip offers breathtaking landscapes, unique culture, and adventure activities, with most itineraries focusing on <strong>Srinagar, Gulmarg, Pahalgam, and Sonamarg</strong>. Trips typically last between 5 to 7 days and can be planned for any season depending on desired activities. </p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"JustWravel\"/></figure>\n<!-- /wp:image -->",
+      "cost_includes": "Sleeper AC Bus transfers from Delhi to Jammu and back\nEntire sightseeing by tempo traveler/ cab depending on group size\nAccommodation for 5 nights on double/triple sharing\nInternal sightseeing of Aru Valley, Betaab Valley and Chandanwari.\nTotal 10 meals (5 breakfast & 5 dinners)\nShikara ride for 1 hour\nTour leader",
+      "cost_excludes": "GST (5%) is applicable extra\nPickup and drop from the Srinagar airport Lunch\nGondola ride (cable car) we will assist you in the booking.\nSonmarg zero point cab\nSnow Chained SUV (if required for Gulmarg or Drung)\nAny activity like pony ride or any other activity. any kind of food or beverage\nthat is not included in the package like alcoholic drinks, mineral water,\nmeals/ refreshments/ lunch on the highway.\nAny personal expenses like a tip to the driver, entry to monuments,\ncamera/video charges, laundry, telephone expenses, tips, etc.\nAny cost arising due to natural calamities like land slides, road blocks etc (to\nbe borne directly by the guest on the spot).\nAnything not mentioned in the inclusions.",
+      "itineraries": [
+        {
+          "title": "DELHI TO JAMMU",
+          "content": "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>We start our journey to the place called \"HEAVEN ON EARTH - KASHMIR\" from Delhi.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Departure at around 8 pm.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Stop for dinner at a roadside restaurant.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->"
+        },
+        {
+          "title": "JAMMU TO SRINAGAR",
+          "content": "<!-- wp:paragraph -->\n<p>Arrival in Jammu &amp; transfer to Srinagar.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Check in to your hotel.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Have your dinner &amp; take rest for the night.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "SRINAGAR - GULMARG - SRINAGAR",
+          "content": "<!-- wp:paragraph -->\n<p>After Breakfast proceed towards Gulmarg (The Meadow of Flowers).</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Gulmarg has one of the most beautiful summer resort/winter Ski resorts in the valley, also the World's highest 18 Hole Golf Course.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>You can have a gondola ride (excluded from the package) from Gulmarg to Khilanmarg (Alt 3100 Mt.) to have a real view at natural beauty of the summer also view of Nanga Parvat (Alt. 8137 Mt.) in Cloudless Days and full snow view in winter.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Back to Srinagar and Overnight stay at hotel.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "SRINAGAR - SONMARG - SRINAGAR",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast, proceed towards Sonmarg (Meadows of Gold).</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Sonamarg lies at the head of the Sindh valley.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The drive-through here presents a spectacular face of the countryside; Sonamarg is the beginning of the enchanted journey into a natural wonderland, Surrounded by pine forest mountains upto 5300 meters high.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The valley is divided by a spur of the \"Thajiwas Range Mountains\".</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>One can have a pony ride to visit Thajiwas Glacier where snow remains round the year.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Followed by an overnight stay at Hotel in srinagar.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "SRINAGAR - PAHALGAM",
+          "content": "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Morning after breakfast we drive to Pahalgam via Pampore, Avantipura and the village of Bijbehara which remains famous as the breadbasket of Kashmir.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>We switch from the national highway 1A at Khanabal and drive through the second-largest city of Anantnag.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Visit Aru valley, Betaab Valley and Chandanwari (included in the package).</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Dinner and overnight stay at Pahalgam hotel.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->"
+        },
+        {
+          "title": "SRINAGAR SIGHTSEEING & HOUSEBOAT",
+          "content": "<!-- wp:paragraph -->\n<p>Checkout from the hotel &amp; proceed for srinagar sightseeing.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Visit Chashma shahi, Nishat Garden, Shalimar Garden &amp; Shankaracharya temple.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Conclude your sightseeing by visiting the beautiful Hazaratbal Mosque, known for housing the hair of Prophet Mohammed.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In evening check in your houseboat &amp; enjoy shikara ride afterwards.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Dinner and overnight stay in Houseboat.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "SRINAGAR - JAMMU - DELHI",
+          "content": "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>After breakfast checkout from the hotel &amp; start your journey back to Jammu.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Reach Jammu &amp; Later board the bus towards Delhi.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->"
+        }
+      ],
+      "faqs": [],
+      "is_featured": false,
+      "featured_image": {
+        "width": 1200,
+        "height": 900,
+        "file": "2026/03/Kanatal-Tehri-10.png",
+        "filesize": 1870765,
+        "sizes": {
+          "medium": {
+            "file": "Kanatal-Tehri-10-300x225.png",
+            "width": 300,
+            "height": 225,
+            "filesize": 121450,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-300x225.png"
+          },
+          "large": {
+            "file": "Kanatal-Tehri-10-1024x768.png",
+            "width": 1024,
+            "height": 768,
+            "filesize": 1258976,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-1024x768.png"
+          },
+          "thumbnail": {
+            "file": "Kanatal-Tehri-10-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 42568,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-150x150.png"
+          },
+          "medium_large": {
+            "file": "Kanatal-Tehri-10-768x576.png",
+            "width": 768,
+            "height": 576,
+            "filesize": 725037,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-768x576.png"
+          },
+          "trip-thumb-size": {
+            "file": "Kanatal-Tehri-10-374x226.png",
+            "width": 374,
+            "height": 226,
+            "filesize": 155085,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-374x226.png"
+          },
+          "destination-thumb-size": {
+            "file": "Kanatal-Tehri-10-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 763665,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-600x810.png"
+          },
+          "destination-thumb-trip-size": {
+            "file": "Kanatal-Tehri-10-410x250.png",
+            "width": 410,
+            "height": 250,
+            "filesize": 185743,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-410x250.png"
+          },
+          "activities-thumb-size": {
+            "file": "Kanatal-Tehri-10-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 763665,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-600x810.png"
+          },
+          "trip-single-size": {
+            "file": "Kanatal-Tehri-10-990x490.png",
+            "width": 990,
+            "height": 490,
+            "filesize": 839584,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-990x490.png"
+          },
+          "meafe-featured-page": {
+            "file": "Kanatal-Tehri-10-500x410.png",
+            "width": 500,
+            "height": 410,
+            "filesize": 344158,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-500x410.png"
+          },
+          "meafe-testimonial-two": {
+            "file": "Kanatal-Tehri-10-272x316.png",
+            "width": 272,
+            "height": 316,
+            "filesize": 148269,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-272x316.png"
+          },
+          "meafe-blog-one": {
+            "file": "Kanatal-Tehri-10-370x247.png",
+            "width": 370,
+            "height": 247,
+            "filesize": 163974,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-370x247.png"
+          },
+          "meafe-blog-two": {
+            "file": "Kanatal-Tehri-10-197x278.png",
+            "width": 197,
+            "height": 278,
+            "filesize": 96701,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-197x278.png"
+          },
+          "meafe-category-tab": {
+            "file": "Kanatal-Tehri-10-355x355.png",
+            "width": 355,
+            "height": 355,
+            "filesize": 214280,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-355x355.png"
+          },
+          "meafe-category-grid": {
+            "file": "Kanatal-Tehri-10-370x370.png",
+            "width": 370,
+            "height": 370,
+            "filesize": 231828,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-370x370.png"
+          },
+          "meafe-category-grid-one": {
+            "file": "Kanatal-Tehri-10-570x530.png",
+            "width": 570,
+            "height": 530,
+            "filesize": 495997,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-570x530.png"
+          },
+          "meafe-category-grid-two": {
+            "file": "Kanatal-Tehri-10-270x180.png",
+            "width": 270,
+            "height": 180,
+            "filesize": 90598,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-270x180.png"
+          },
+          "meafe-category-grid-three": {
+            "file": "Kanatal-Tehri-10-570x320.png",
+            "width": 570,
+            "height": 320,
+            "filesize": 325076,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-570x320.png"
+          },
+          "meafe-category-grid-lay-three": {
+            "file": "Kanatal-Tehri-10-170x170.png",
+            "width": 170,
+            "height": 170,
+            "filesize": 54176,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-170x170.png"
+          },
+          "meafe-post-modules-small-img": {
+            "file": "Kanatal-Tehri-10-300x300.png",
+            "width": 300,
+            "height": 300,
+            "filesize": 154526,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-300x300.png"
+          },
+          "travil_80X80": {
+            "file": "Kanatal-Tehri-10-80x80.png",
+            "width": 80,
+            "height": 80,
+            "filesize": 13286,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-80x80.png"
+          },
+          "travil_424X370": {
+            "file": "Kanatal-Tehri-10-424x370.png",
+            "width": 424,
+            "height": 370,
+            "filesize": 265981,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-424x370.png"
+          },
+          "travil-shop-single": {
+            "file": "Kanatal-Tehri-10-620x500.png",
+            "width": 620,
+            "height": 500,
+            "filesize": 513590,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10-620x500.png"
+          },
+          "full": {
+            "file": "Kanatal-Tehri-10.png",
+            "width": 1200,
+            "height": 900,
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3743",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/types/trip"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/users/3"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/comments?post=3743"
+          }
+        ],
+        "version-history": [
+          {
+            "count": 1,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3743/revisions"
+          }
+        ],
+        "predecessor-version": [
+          {
+            "id": 3745,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3743/revisions/3745"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/media/3746"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/media?parent=3743"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "new_upcoming_trips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/new_upcoming_trips?post=3743"
+          },
+          {
+            "taxonomy": "trip_duration",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_duration?post=3743"
+          },
+          {
+            "taxonomy": "destination",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/destination?post=3743"
+          },
+          {
+            "taxonomy": "activities",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/activities?post=3743"
+          },
+          {
+            "taxonomy": "trip_types",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_types?post=3743"
+          },
+          {
+            "taxonomy": "difficulty",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/difficulty?post=3743"
+          },
+          {
+            "taxonomy": "trip_tag",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_tag?post=3743"
+          },
+          {
+            "taxonomy": "upcomingtrips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/wptravelengine_custom_taxonomy_upcomingtrips?post=3743"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    "wte_v2": {
+      "id": 3743,
+      "date": "2026-03-03T08:31:09",
+      "date_gmt": "2026-03-03T08:31:09",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3743"
+      },
+      "modified": "2026-03-03T08:44:50",
+      "modified_gmt": "2026-03-03T08:44:50",
+      "slug": "kashmir",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/kashmir/",
+      "title": {
+        "rendered": "Kashmir"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3746,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        146
+      ],
+      "destination": [
+        125
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        80
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [],
+      "class_list": [
+        "post-3743",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-6-days-5-nights",
+        "destination-jammu-kashmir",
+        "trip_types-domestic-trip",
+        "trip_types-jammu-kashmir"
+      ],
+      "packages_ids": [
+        3744
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "period": 0,
+        "unit": "days"
+      },
+      "booked-seats": [],
+      "fsd": {
+        "hide": false
+      },
+      "trip_code": "WTE-2886",
+      "overview": "<!-- wp:paragraph -->\n<p>A Kashmir backpacking trip offers breathtaking landscapes, unique culture, and adventure activities, with most itineraries focusing on <strong>Srinagar, Gulmarg, Pahalgam, and Sonamarg</strong>. Trips typically last between 5 to 7 days and can be planned for any season depending on desired activities. </p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"JustWravel\"/></figure>\n<!-- /wp:image -->",
+      "cost_includes": [
+        "Sleeper AC Bus transfers from Delhi to Jammu and back",
+        "Entire sightseeing by tempo traveler/ cab depending on group size",
+        "Accommodation for 5 nights on double/triple sharing",
+        "Internal sightseeing of Aru Valley, Betaab Valley and Chandanwari.",
+        "Total 10 meals (5 breakfast & 5 dinners)",
+        "Shikara ride for 1 hour",
+        "Tour leader"
+      ],
+      "cost_excludes": [
+        "GST (5%) is applicable extra",
+        "Pickup and drop from the Srinagar airport Lunch",
+        "Gondola ride (cable car) we will assist you in the booking.",
+        "Sonmarg zero point cab",
+        "Snow Chained SUV (if required for Gulmarg or Drung)",
+        "Any activity like pony ride or any other activity. any kind of food or beverage",
+        "that is not included in the package like alcoholic drinks, mineral water,",
+        "meals/ refreshments/ lunch on the highway.",
+        "Any personal expenses like a tip to the driver, entry to monuments,",
+        "camera/video charges, laundry, telephone expenses, tips, etc.",
+        "Any cost arising due to natural calamities like land slides, road blocks etc (to",
+        "be borne directly by the guest on the spot).",
+        "Anything not mentioned in the inclusions."
+      ],
+      "duration": {
+        "period": 6,
+        "unit": "days",
+        "nights": 5
+      },
+      "_s_duration": "144",
+      "age_limit": {
+        "min": 0,
+        "max": 0
+      },
+      "participants": {
+        "min": 1,
+        "max": ""
+      },
+      "capacity_per_category": {
+        "enabled": false,
+        "mode": "same",
+        "limits": [],
+        "package_limits": []
+      },
+      "trip_map": {
+        "images": [],
+        "iframe": ""
+      },
+      "highlights": [
+        "Key activities are internal sightseeing of Aru Valley, Betaab Valley, and Chandanwari (included), and a 1-hour Shikara ride",
+        "Houseboat in Srinagar"
+      ],
+      "faqs": [],
+      "gallery": [],
+      "video_gallery": [],
+      "itinerary_description": "",
+      "itineraries": [
+        {
+          "title": "DELHI TO JAMMU",
+          "content": "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>We start our journey to the place called \"HEAVEN ON EARTH - KASHMIR\" from Delhi.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Departure at around 8 pm.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Stop for dinner at a roadside restaurant.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "JAMMU TO SRINAGAR",
+          "content": "<!-- wp:paragraph -->\n<p>Arrival in Jammu &amp; transfer to Srinagar.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Check in to your hotel.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Have your dinner &amp; take rest for the night.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "SRINAGAR - GULMARG - SRINAGAR",
+          "content": "<!-- wp:paragraph -->\n<p>After Breakfast proceed towards Gulmarg (The Meadow of Flowers).</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Gulmarg has one of the most beautiful summer resort/winter Ski resorts in the valley, also the World's highest 18 Hole Golf Course.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>You can have a gondola ride (excluded from the package) from Gulmarg to Khilanmarg (Alt 3100 Mt.) to have a real view at natural beauty of the summer also view of Nanga Parvat (Alt. 8137 Mt.) in Cloudless Days and full snow view in winter.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Back to Srinagar and Overnight stay at hotel.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "SRINAGAR - SONMARG - SRINAGAR",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast, proceed towards Sonmarg (Meadows of Gold).</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Sonamarg lies at the head of the Sindh valley.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The drive-through here presents a spectacular face of the countryside; Sonamarg is the beginning of the enchanted journey into a natural wonderland, Surrounded by pine forest mountains upto 5300 meters high.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>The valley is divided by a spur of the \"Thajiwas Range Mountains\".</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>One can have a pony ride to visit Thajiwas Glacier where snow remains round the year.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Followed by an overnight stay at Hotel in srinagar.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "SRINAGAR - PAHALGAM",
+          "content": "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>Morning after breakfast we drive to Pahalgam via Pampore, Avantipura and the village of Bijbehara which remains famous as the breadbasket of Kashmir.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>We switch from the national highway 1A at Khanabal and drive through the second-largest city of Anantnag.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Visit Aru valley, Betaab Valley and Chandanwari (included in the package).</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Dinner and overnight stay at Pahalgam hotel.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "SRINAGAR SIGHTSEEING & HOUSEBOAT",
+          "content": "<!-- wp:paragraph -->\n<p>Checkout from the hotel &amp; proceed for srinagar sightseeing.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Visit Chashma shahi, Nishat Garden, Shalimar Garden &amp; Shankaracharya temple.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Conclude your sightseeing by visiting the beautiful Hazaratbal Mosque, known for housing the hair of Prophet Mohammed.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>In evening check in your houseboat &amp; enjoy shikara ride afterwards.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Dinner and overnight stay in Houseboat.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "SRINAGAR - JAMMU - DELHI",
+          "content": "<!-- wp:list -->\n<ul class=\"wp-block-list\"><!-- wp:list-item -->\n<li>After breakfast checkout from the hotel &amp; start your journey back to Jammu.</li>\n<!-- /wp:list-item -->\n\n<!-- wp:list-item -->\n<li>Reach Jammu &amp; Later board the bus towards Delhi.</li>\n<!-- /wp:list-item --></ul>\n<!-- /wp:list -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        }
+      ],
+      "trip_info": [],
+      "file_downloads": [],
+      "trip_extra_services": [],
+      "price_types": {
+        "per-person": "Per Person",
+        "per-group": "Per Group"
+      }
+    }
+  }
+}

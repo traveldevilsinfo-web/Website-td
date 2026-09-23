@@ -1,0 +1,1311 @@
+{
+  "destination": [
+    {
+      "id": 156,
+      "name": "Andaman",
+      "slug": "andaman",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/andaman/"
+    },
+    {
+      "id": 164,
+      "name": "auli",
+      "slug": "auli",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/auli/"
+    },
+    {
+      "id": 121,
+      "name": "Bali",
+      "slug": "bali",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/bali/"
+    },
+    {
+      "id": 30,
+      "name": "Bhutan",
+      "slug": "bhutan",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/bhutan/"
+    },
+    {
+      "id": 160,
+      "name": "Chakrata",
+      "slug": "chakrata",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/chakrata/"
+    },
+    {
+      "id": 163,
+      "name": "Chopta Tungnath",
+      "slug": "chopta-tungnath",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/chopta-tungnath/"
+    },
+    {
+      "id": 34,
+      "name": "Crotia",
+      "slug": "crotia",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/crotia/"
+    },
+    {
+      "id": 133,
+      "name": "Delhi",
+      "slug": "delhi",
+      "parent": 37,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/delhi/"
+    },
+    {
+      "id": 116,
+      "name": "Dubai",
+      "slug": "dubai",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/dubai/"
+    },
+    {
+      "id": 130,
+      "name": "Goa",
+      "slug": "goa",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/goa/"
+    },
+    {
+      "id": 122,
+      "name": "Himachal",
+      "slug": "himachal",
+      "parent": 37,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/himachal/"
+    },
+    {
+      "id": 37,
+      "name": "India",
+      "slug": "india",
+      "parent": 0,
+      "count": 7,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/"
+    },
+    {
+      "id": 177,
+      "name": "Jaisalmer",
+      "slug": "jaisalmer",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/jaisalmer/"
+    },
+    {
+      "id": 125,
+      "name": "Jammu &amp; Kashmir",
+      "slug": "jammu-kashmir",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/jammu-kashmir/"
+    },
+    {
+      "id": 38,
+      "name": "Japan",
+      "slug": "japan",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/japan/"
+    },
+    {
+      "id": 162,
+      "name": "Kanatal Tehri",
+      "slug": "kanatal-tehri",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/kanatal-tehri/"
+    },
+    {
+      "id": 132,
+      "name": "Karnataka",
+      "slug": "karnataka",
+      "parent": 37,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/karnataka/"
+    },
+    {
+      "id": 126,
+      "name": "Kerala",
+      "slug": "kerala",
+      "parent": 37,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/kerala/"
+    },
+    {
+      "id": 179,
+      "name": "Kumbhalgarh",
+      "slug": "kumbhalgarh",
+      "parent": 178,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/udaipur/kumbhalgarh/"
+    },
+    {
+      "id": 124,
+      "name": "Ladakh",
+      "slug": "ladakh",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/ladakh/"
+    },
+    {
+      "id": 50,
+      "name": "Makalu Region",
+      "slug": "makalu-region",
+      "parent": 42,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/nepal/makalu-region/"
+    },
+    {
+      "id": 119,
+      "name": "Maldives",
+      "slug": "maldives",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/maldives/"
+    },
+    {
+      "id": 127,
+      "name": "Meghalaya",
+      "slug": "meghalaya",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/meghalaya/"
+    },
+    {
+      "id": 161,
+      "name": "Mukteshwar",
+      "slug": "mukteshwar",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/mukteshwar/"
+    },
+    {
+      "id": 42,
+      "name": "Nepal",
+      "slug": "nepal",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/nepal/"
+    },
+    {
+      "id": 45,
+      "name": "Peru",
+      "slug": "peru",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/peru/"
+    },
+    {
+      "id": 46,
+      "name": "Pokhara",
+      "slug": "pokhara",
+      "parent": 42,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/nepal/pokhara/"
+    },
+    {
+      "id": 129,
+      "name": "Rajasthan",
+      "slug": "rajasthan",
+      "parent": 37,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/rajasthan/"
+    },
+    {
+      "id": 159,
+      "name": "Shimla",
+      "slug": "shimla",
+      "parent": 37,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/shimla/"
+    },
+    {
+      "id": 128,
+      "name": "Sikkim",
+      "slug": "sikkim",
+      "parent": 37,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/sikkim/"
+    },
+    {
+      "id": 155,
+      "name": "Singapore",
+      "slug": "singapore",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/singapore/"
+    },
+    {
+      "id": 171,
+      "name": "Spiti",
+      "slug": "spiti",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/spiti/"
+    },
+    {
+      "id": 118,
+      "name": "Sri Lanka",
+      "slug": "sri-lanka",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/sri-lanka/"
+    },
+    {
+      "id": 131,
+      "name": "Tamil Nadu",
+      "slug": "tamil-nadu",
+      "parent": 37,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/tamil-nadu/"
+    },
+    {
+      "id": 117,
+      "name": "Thailand",
+      "slug": "thailand",
+      "parent": 0,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/thailand/"
+    },
+    {
+      "id": 173,
+      "name": "Turtuk",
+      "slug": "turtuk",
+      "parent": 124,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/ladakh/turtuk/"
+    },
+    {
+      "id": 178,
+      "name": "Udaipur",
+      "slug": "udaipur",
+      "parent": 37,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/udaipur/"
+    },
+    {
+      "id": 123,
+      "name": "Uttarakhand",
+      "slug": "uttarakhand",
+      "parent": 37,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/india/uttarakhand/"
+    },
+    {
+      "id": 120,
+      "name": "Vietnam",
+      "slug": "vietnam",
+      "parent": 0,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/destinations/vietnam/"
+    }
+  ],
+  "trip_types": [
+    {
+      "id": 77,
+      "name": "Andaman",
+      "slug": "andaman",
+      "parent": 76,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/andaman/"
+    },
+    {
+      "id": 98,
+      "name": "April 2026",
+      "slug": "april-2026",
+      "parent": 62,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/upcoming-trips/april-2026/"
+    },
+    {
+      "id": 73,
+      "name": "Bali",
+      "slug": "bali",
+      "parent": 69,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/international-trips/bali/"
+    },
+    {
+      "id": 136,
+      "name": "Bali Tour Packages",
+      "slug": "bali-tour-packages",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/bali-tour-packages/"
+    },
+    {
+      "id": 75,
+      "name": "Bhutan",
+      "slug": "bhutan",
+      "parent": 69,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/international-trips/bhutan/"
+    },
+    {
+      "id": 140,
+      "name": "Bhutan Tour Package",
+      "slug": "bhutan-tour-package",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/bhutan-tour-package/"
+    },
+    {
+      "id": 31,
+      "name": "Budget Travel",
+      "slug": "budget-travel",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/budget-travel/"
+    },
+    {
+      "id": 33,
+      "name": "Child Friendly",
+      "slug": "child-friendly",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/child-friendly/"
+    },
+    {
+      "id": 94,
+      "name": "December 2025",
+      "slug": "december-2025",
+      "parent": 62,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/upcoming-trips/december-2025/"
+    },
+    {
+      "id": 76,
+      "name": "Domestic Trip",
+      "slug": "domestic-trip",
+      "parent": 0,
+      "count": 12,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/"
+    },
+    {
+      "id": 74,
+      "name": "Dubai",
+      "slug": "dubai",
+      "parent": 69,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/international-trips/dubai/"
+    },
+    {
+      "id": 139,
+      "name": "Dubai Tour Package",
+      "slug": "dubai-tour-package",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/dubai-tour-package/"
+    },
+    {
+      "id": 96,
+      "name": "Febuary 2026",
+      "slug": "febuary-2026",
+      "parent": 62,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/upcoming-trips/febuary-2026/"
+    },
+    {
+      "id": 78,
+      "name": "Goa",
+      "slug": "goa",
+      "parent": 76,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/goa/"
+    },
+    {
+      "id": 79,
+      "name": "Himachal",
+      "slug": "himachal",
+      "parent": 76,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/himachal/"
+    },
+    {
+      "id": 36,
+      "name": "Home stay",
+      "slug": "home-stay",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/home-stay/"
+    },
+    {
+      "id": 69,
+      "name": "International Trips",
+      "slug": "international-trips",
+      "parent": 0,
+      "count": 2,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/international-trips/"
+    },
+    {
+      "id": 80,
+      "name": "Jammu Kashmir",
+      "slug": "jammu-kashmir",
+      "parent": 76,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/jammu-kashmir/"
+    },
+    {
+      "id": 95,
+      "name": "January 2026",
+      "slug": "january-2026",
+      "parent": 62,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/upcoming-trips/january-2026/"
+    },
+    {
+      "id": 81,
+      "name": "Karnataka",
+      "slug": "karnataka",
+      "parent": 76,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/karnataka/"
+    },
+    {
+      "id": 72,
+      "name": "Kazalhstan",
+      "slug": "kazalhstan",
+      "parent": 69,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/international-trips/kazalhstan/"
+    },
+    {
+      "id": 82,
+      "name": "Kerala",
+      "slug": "kerala",
+      "parent": 76,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/kerala/"
+    },
+    {
+      "id": 83,
+      "name": "Ladakh",
+      "slug": "ladakh",
+      "parent": 76,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/ladakh/"
+    },
+    {
+      "id": 91,
+      "name": "Maldives",
+      "slug": "maldives",
+      "parent": 69,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/international-trips/maldives/"
+    },
+    {
+      "id": 97,
+      "name": "March 2026",
+      "slug": "march-2026",
+      "parent": 62,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/upcoming-trips/march-2026/"
+    },
+    {
+      "id": 99,
+      "name": "May 2026",
+      "slug": "may-2026",
+      "parent": 62,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/upcoming-trips/may-2026/"
+    },
+    {
+      "id": 84,
+      "name": "Meghalaya",
+      "slug": "meghalaya",
+      "parent": 76,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/meghalaya/"
+    },
+    {
+      "id": 41,
+      "name": "Nature Walk",
+      "slug": "nature-walk",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/nature-walk/"
+    },
+    {
+      "id": 93,
+      "name": "November 2025",
+      "slug": "november-2025",
+      "parent": 62,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/upcoming-trips/november-2025/"
+    },
+    {
+      "id": 85,
+      "name": "Rajasthan",
+      "slug": "rajasthan",
+      "parent": 76,
+      "count": 2,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/rajasthan/"
+    },
+    {
+      "id": 86,
+      "name": "Sikkim",
+      "slug": "sikkim",
+      "parent": 76,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/sikkim/"
+    },
+    {
+      "id": 92,
+      "name": "Singapore",
+      "slug": "singapore",
+      "parent": 69,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/international-trips/singapore/"
+    },
+    {
+      "id": 138,
+      "name": "Singapore Tour Package",
+      "slug": "singapore-tour-package",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/singapore-tour-package/"
+    },
+    {
+      "id": 90,
+      "name": "Sri Lanka",
+      "slug": "sri-lanka",
+      "parent": 69,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/international-trips/sri-lanka/"
+    },
+    {
+      "id": 141,
+      "name": "Sri Lanka Tour Package",
+      "slug": "sri-lanka-tour-package",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/sri-lanka-tour-package/"
+    },
+    {
+      "id": 87,
+      "name": "Tamil Nadu",
+      "slug": "tamil-nadu",
+      "parent": 76,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/tamil-nadu/"
+    },
+    {
+      "id": 71,
+      "name": "Thailand",
+      "slug": "thailand",
+      "parent": 69,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/international-trips/thailand/"
+    },
+    {
+      "id": 62,
+      "name": "Upcoming Trips",
+      "slug": "upcoming-trips",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/upcoming-trips/"
+    },
+    {
+      "id": 88,
+      "name": "Uttarakhand",
+      "slug": "uttarakhand",
+      "parent": 76,
+      "count": 5,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/uttarakhand/"
+    },
+    {
+      "id": 70,
+      "name": "Vietnam",
+      "slug": "vietnam",
+      "parent": 69,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/international-trips/vietnam/"
+    },
+    {
+      "id": 137,
+      "name": "Vietnam Tour Package",
+      "slug": "vietnam-tour-package",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/vietnam-tour-package/"
+    },
+    {
+      "id": 172,
+      "name": "Winter Spiti",
+      "slug": "winter-spiti",
+      "parent": 76,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/trip-types/domestic-trip/winter-spiti/"
+    }
+  ],
+  "trip_duration": [
+    {
+      "id": 150,
+      "name": "10 Days 9 Nights",
+      "slug": "10-days-9-nights",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/10-days-9-nights/"
+    },
+    {
+      "id": 152,
+      "name": "11 Days 10 Nights",
+      "slug": "11-days-10-nights",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/11-days-10-nights/"
+    },
+    {
+      "id": 153,
+      "name": "12 Days 11 Nights",
+      "slug": "12-days-11-nights",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/12-days-11-nights/"
+    },
+    {
+      "id": 154,
+      "name": "13 Days 12 Nights",
+      "slug": "13-days-12-nights",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/13-days-12-nights/"
+    },
+    {
+      "id": 142,
+      "name": "2 Days 1 Nights",
+      "slug": "2-days-1-nights",
+      "parent": 0,
+      "count": 3,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/2-days-1-nights/"
+    },
+    {
+      "id": 143,
+      "name": "3 Days 2 Nights",
+      "slug": "3-days-2-nights",
+      "parent": 0,
+      "count": 4,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/3-days-2-nights/"
+    },
+    {
+      "id": 144,
+      "name": "4 Days 3 Nights",
+      "slug": "4-days-3-nights",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/4-days-3-nights/"
+    },
+    {
+      "id": 145,
+      "name": "5 Days 4 Nights",
+      "slug": "5-days-4-nights",
+      "parent": 0,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/5-days-4-nights/"
+    },
+    {
+      "id": 146,
+      "name": "6 Days 5 Nights",
+      "slug": "6-days-5-nights",
+      "parent": 0,
+      "count": 2,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/6-days-5-nights/"
+    },
+    {
+      "id": 147,
+      "name": "7 Days 6 Nights",
+      "slug": "7-days-6-nights",
+      "parent": 0,
+      "count": 3,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/7-days-6-nights/"
+    },
+    {
+      "id": 148,
+      "name": "8 Days 7 Nights",
+      "slug": "8-days-7-nights",
+      "parent": 0,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/8-days-7-nights/"
+    },
+    {
+      "id": 149,
+      "name": "9 Days 8 Nights",
+      "slug": "9-days-8-nights",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip_duration/9-days-8-nights/"
+    }
+  ],
+  "difficulty": [
+    {
+      "id": 6,
+      "name": "Easy",
+      "slug": "easy",
+      "parent": 0,
+      "count": 0,
+      "description": "The trip is easy and suitable for everyone, including children and older people. It does not require any skills in mountain climbing or traversing difficult terrain.",
+      "link": "https://traveldevils.in/trip-difficulty/easy/"
+    },
+    {
+      "id": 9,
+      "name": "Extreme",
+      "slug": "extreme",
+      "parent": 0,
+      "count": 0,
+      "description": "This level is for mountaineering, backcountry and expeditions. It requires more serious physical preparation and previous experience in similar activities like climbing skills. The preliminary stage starts 3-6 months before heading out so that you can get acclimated by running exercises which will help increase endurance. You will need special clothes and gear.",
+      "link": "https://traveldevils.in/trip-difficulty/extreme/"
+    },
+    {
+      "id": 8,
+      "name": "Hard",
+      "slug": "hard",
+      "parent": 0,
+      "count": 0,
+      "description": "Physical training before the trip should begin no later than 2 months before, as you will have a height of 3,000 meters above sea level and more. Hiking is from 6 km daily with an average pace that can be maintained for hours. It is important to have physical fitness &amp; endurance. You will also need the right gear and clothes according to the weather.",
+      "link": "https://traveldevils.in/trip-difficulty/hard/"
+    },
+    {
+      "id": 7,
+      "name": "Medium",
+      "slug": "medium",
+      "parent": 0,
+      "count": 5,
+      "description": "You need to have good physical condition and be in top form. You'll also require the right clothes for weather conditions and food items such as snacks or lunch breaks from your hiking adventure; water is essential too! This type of activity takes time, so ensure you're physically able to get enough rest before starting any trips.",
+      "link": "https://traveldevils.in/trip-difficulty/medium/"
+    }
+  ],
+  "activities": [
+    {
+      "id": 35,
+      "name": "Hiking",
+      "slug": "hiking",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/activities/hiking/"
+    },
+    {
+      "id": 39,
+      "name": "Jungle Safari",
+      "slug": "jungle-safari",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/activities/jungle-safari/"
+    },
+    {
+      "id": 40,
+      "name": "Kayaking",
+      "slug": "kayaking",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/activities/kayaking/"
+    },
+    {
+      "id": 43,
+      "name": "Paragliding",
+      "slug": "paragliding",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/activities/paragliding/"
+    },
+    {
+      "id": 44,
+      "name": "Peak Climbing",
+      "slug": "peak-climbing",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/activities/peak-climbing/"
+    },
+    {
+      "id": 47,
+      "name": "Road Cycling",
+      "slug": "road-cycling",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/activities/road-cycling/"
+    },
+    {
+      "id": 49,
+      "name": "Skiing",
+      "slug": "skiing",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/activities/skiing/"
+    }
+  ],
+  "trip_tag": [
+    {
+      "id": 3,
+      "name": "Group Tour",
+      "slug": "group",
+      "parent": null,
+      "count": 0,
+      "description": "This is a group tour. Other travellers with a common interest will join this tour and travel together on a schedule.",
+      "link": "https://traveldevils.in/trip-tag/group/"
+    },
+    {
+      "id": 2,
+      "name": "Guided Tour",
+      "slug": "guided",
+      "parent": null,
+      "count": 0,
+      "description": "This is a guided tour. You will be accompanied by an expert guide.",
+      "link": "https://traveldevils.in/trip-tag/guided/"
+    },
+    {
+      "id": 4,
+      "name": "Private Tour",
+      "slug": "private",
+      "parent": null,
+      "count": 0,
+      "description": "This is a private tour where you can travel at your own pace.",
+      "link": "https://traveldevils.in/trip-tag/private/"
+    }
+  ],
+  "upcomingtrips": [
+    {
+      "id": 66,
+      "name": "December 2025",
+      "slug": "december-2025",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/upcomingtrips/december-2025/"
+    },
+    {
+      "id": 68,
+      "name": "Febuary 2026",
+      "slug": "febuary-2026",
+      "parent": 0,
+      "count": 8,
+      "description": "",
+      "link": "https://traveldevils.in/upcomingtrips/febuary-2026/"
+    },
+    {
+      "id": 67,
+      "name": "January 2026",
+      "slug": "january-2026",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/upcomingtrips/january-2026/"
+    },
+    {
+      "id": 65,
+      "name": "November 2025",
+      "slug": "november-2025",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/upcomingtrips/november-2025/"
+    },
+    {
+      "id": 64,
+      "name": "October 2025",
+      "slug": "october-2025",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/upcomingtrips/october-2025/"
+    },
+    {
+      "id": 63,
+      "name": "September 2025",
+      "slug": "september-2025",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/upcomingtrips/september-2025/"
+    }
+  ],
+  "new_upcoming_trips": [
+    {
+      "id": 158,
+      "name": "2026",
+      "slug": "2026",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/new_upcoming_trips/2026/"
+    },
+    {
+      "id": 113,
+      "name": "April 2026",
+      "slug": "april-2026",
+      "parent": 158,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/new_upcoming_trips/april-2026/"
+    },
+    {
+      "id": 111,
+      "name": "February 2026",
+      "slug": "february-2026",
+      "parent": 158,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/new_upcoming_trips/february-2026/"
+    },
+    {
+      "id": 110,
+      "name": "January 2026",
+      "slug": "january-2026",
+      "parent": 158,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/new_upcoming_trips/january-2026/"
+    },
+    {
+      "id": 114,
+      "name": "Long Duration Trips",
+      "slug": "long-duration-trips",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/new_upcoming_trips/long-duration-trips/"
+    },
+    {
+      "id": 112,
+      "name": "March 2026",
+      "slug": "march-2026",
+      "parent": 158,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/new_upcoming_trips/march-2026/"
+    },
+    {
+      "id": 115,
+      "name": "Treks",
+      "slug": "treks",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/new_upcoming_trips/treks/"
+    }
+  ],
+  "package_categories": [
+    {
+      "id": 165,
+      "name": "Dual Sharing",
+      "slug": "dual-sharing",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-packages-categories/dual-sharing/"
+    },
+    {
+      "id": 166,
+      "name": "Quad Sharing",
+      "slug": "quad-sharing",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-packages-categories/quad-sharing/"
+    },
+    {
+      "id": 175,
+      "name": "RE Himalayan Solo Rider",
+      "slug": "re-himalayan-solo-rider",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-packages-categories/re-himalayan-solo-rider/"
+    },
+    {
+      "id": 176,
+      "name": "RE Himalayan With Pillion",
+      "slug": "re-himalayan-with-pillion",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-packages-categories/re-himalayan-with-pillion/"
+    },
+    {
+      "id": 174,
+      "name": "Sitting Coach",
+      "slug": "sitting-coach",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-packages-categories/sitting-coach/"
+    },
+    {
+      "id": 167,
+      "name": "Triple Sharing",
+      "slug": "triple-sharing",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/trip-packages-categories/triple-sharing/"
+    }
+  ],
+  "categories": [
+    {
+      "id": 13,
+      "name": "Asia Tour",
+      "slug": "asia-tour",
+      "parent": 0,
+      "count": 2,
+      "description": "",
+      "link": "https://traveldevils.in/category/asia-tour/"
+    },
+    {
+      "id": 1,
+      "name": "Blog",
+      "slug": "blog",
+      "parent": 0,
+      "count": 1,
+      "description": "Your blog category",
+      "link": "https://traveldevils.in/category/blog/"
+    },
+    {
+      "id": 14,
+      "name": "Camping",
+      "slug": "camping",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/category/camping/"
+    },
+    {
+      "id": 15,
+      "name": "City Tour",
+      "slug": "city-tour",
+      "parent": 0,
+      "count": 3,
+      "description": "",
+      "link": "https://traveldevils.in/category/city-tour/"
+    },
+    {
+      "id": 16,
+      "name": "Creative Agency",
+      "slug": "creative-agency",
+      "parent": 0,
+      "count": 2,
+      "description": "",
+      "link": "https://traveldevils.in/category/creative-agency/"
+    },
+    {
+      "id": 17,
+      "name": "Sight Seeing",
+      "slug": "sight-seeing",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/category/sight-seeing/"
+    },
+    {
+      "id": 18,
+      "name": "Travel Guide",
+      "slug": "travel-guide",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/category/travel-guide/"
+    },
+    {
+      "id": 19,
+      "name": "Trekking",
+      "slug": "trekking",
+      "parent": 0,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/category/trekking/"
+    },
+    {
+      "id": 20,
+      "name": "Uncategorized",
+      "slug": "uncategorized",
+      "parent": 0,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/category/uncategorized/"
+    }
+  ],
+  "tags": [
+    {
+      "id": 21,
+      "name": "Apps",
+      "slug": "apps",
+      "parent": null,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/tag/apps/"
+    },
+    {
+      "id": 22,
+      "name": "Business",
+      "slug": "business",
+      "parent": null,
+      "count": 3,
+      "description": "",
+      "link": "https://traveldevils.in/tag/business/"
+    },
+    {
+      "id": 23,
+      "name": "Design",
+      "slug": "design",
+      "parent": null,
+      "count": 3,
+      "description": "",
+      "link": "https://traveldevils.in/tag/design/"
+    },
+    {
+      "id": 24,
+      "name": "Destination",
+      "slug": "destination",
+      "parent": null,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/tag/destination/"
+    },
+    {
+      "id": 25,
+      "name": "Explore",
+      "slug": "explore",
+      "parent": null,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/tag/explore/"
+    },
+    {
+      "id": 26,
+      "name": "Sea",
+      "slug": "sea",
+      "parent": null,
+      "count": 1,
+      "description": "",
+      "link": "https://traveldevils.in/tag/sea/"
+    },
+    {
+      "id": 27,
+      "name": "Tour",
+      "slug": "tour",
+      "parent": null,
+      "count": 3,
+      "description": "",
+      "link": "https://traveldevils.in/tag/tour/"
+    },
+    {
+      "id": 28,
+      "name": "Travel",
+      "slug": "travel",
+      "parent": null,
+      "count": 0,
+      "description": "",
+      "link": "https://traveldevils.in/tag/travel/"
+    }
+  ]
+}

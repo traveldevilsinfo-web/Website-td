@@ -1,0 +1,931 @@
+{
+  "id": 3466,
+  "slug": "vietnam",
+  "url": "https://traveldevils.in/trip/vietnam/",
+  "title": "Vietnam",
+  "code": "WTE-2886",
+  "modified": "2026-02-12T21:08:49",
+  "duration": {
+    "days": 8,
+    "nights": 7,
+    "duration_unit": "days",
+    "duration_type": "both"
+  },
+  "price": 44499,
+  "sale_price": 0,
+  "has_sale": false,
+  "currency": "INR",
+  "min_pax": 1,
+  "max_pax": "",
+  "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/7.png",
+  "destinations": [
+    "Vietnam"
+  ],
+  "trip_types": [
+    "International Trips",
+    "Vietnam"
+  ],
+  "trip_duration": [
+    "8 Days 7 Nights"
+  ],
+  "difficulty": [],
+  "activities": [],
+  "upcoming": [
+    "Febuary 2026"
+  ],
+  "overview_html": "<!-- wp:paragraph -->\n<p>Vietnam is a Southeast Asian country known for its rich history, diverse culture, and stunning natural landscapes. Stretching along the eastern coast of the Indochina Peninsula, it shares borders with China, Laos, and Cambodia, and has a long coastline along the South China Sea.<br><br>The country is famous for its mix of bustling cities and serene countryside. Hanoi, the capital, is known for its centuries-old architecture, lakes, and vibrant street food scene. Ho Chi Minh City (formerly Saigon) is the economic hub, offering a mix of French colonial landmarks and modern skyscrapers.<br><br>Culturally, Vietnam blends traditions influenced by China, France, and indigenous heritage. It's home to numerous UNESCO World Heritage Sites such as Ha Long Bay, Hoi An Ancient Town, and My Son Sanctuary. Festivals like Tet (Lunar New Year) are celebrated with great enthusiasm across the country.<br><br>Nature is another highlight: from the emerald waters and limestone cliffs of Ha Long Bay to terraced rice fields in Sapa, the sandy beaches of Da Nang and Nha Trang, and the lush Mekong Delta in the south.</p>\n<!-- /wp:paragraph -->",
+  "overview": "Vietnam is a Southeast Asian country known for its rich history, diverse culture, and stunning natural landscapes. Stretching along the eastern coast of the Indochina Peninsula, it shares borders with China, Laos, and Cambodia, and has a long coastline along the South China Sea.\n\nThe country is famous for its mix of bustling cities and serene countryside. Hanoi, the capital, is known for its centuries-old architecture, lakes, and vibrant street food scene. Ho Chi Minh City (formerly Saigon) is the economic hub, offering a mix of French colonial landmarks and modern skyscrapers.\n\nCulturally, Vietnam blends traditions influenced by China, France, and indigenous heritage. It's home to numerous UNESCO World Heritage Sites such as Ha Long Bay, Hoi An Ancient Town, and My Son Sanctuary. Festivals like Tet (Lunar New Year) are celebrated with great enthusiasm across the country.\n\nNature is another highlight: from the emerald waters and limestone cliffs of Ha Long Bay to terraced rice fields in Sapa, the sandy beaches of Da Nang and Nha Trang, and the lush Mekong Delta in the south.\n",
+  "highlights": [
+    "Ho Chi Minh City: City Stroll and Nightlife Vibes.",
+    "Cu Chi Tunnels Full Day Tour, including a visit to the War Remnants Museum.",
+    "Danang: Beach vibes at Mekai beach and exploring the Dragon bridge.",
+    "Ba Na Hills Adventure: Cable Car Ride, Golden Hand Bridge, and French Village",
+    "Bamboo Basket Boat Ride & Hoi An Ancient Town Tour, including a lantern boat ride.",
+    "Hanoi's Old Quarter and experiencing the excitement of Train Street.",
+    "Halong Bay Cruise: Kayaking and Cave Exploration, and an overnight stay.",
+    "Party at Hanoi's vibrant Beer Street"
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Ho Chi Minh",
+      "content": "Link up with your squad and dive into the colorful chaos of Ben Thanh Market.\nFuel up with Pho and the silky smooth Egg Coffee.\nAs night falls, head to Bui Vien Street, the ultimate backpacker hotspot, for a wild night out.\n"
+    },
+    {
+      "day": 2,
+      "title": "Cu Chi Tunnels Full Day Tour",
+      "content": "Step back in time to explore the legendary Cu Chi Tunnels, an underground maze that brings Vietnam War history to life.\nChannel your inner action hero at the shooting range with real AK-47s and M16s.\nContinue the journey at the War Remnants Museum for a powerful, eye-opening look into Vietnam's past.\n"
+    },
+    {
+      "day": 3,
+      "title": "Danang: Beach vibes, Breathtaking views",
+      "content": "Have breakfast and transfer to the Airport.\nAfter reaching Danang, collect your baggage and head towards your hotel at Mekai beach.\nCheck into the hotel and stroll at the scenic Mekai beach.\nLater in the evening, you can explore the Dragon bridge by yourself.\n"
+    },
+    {
+      "day": 4,
+      "title": "Ba Na Hills Adventure",
+      "content": "Step into the dreamlike world of Ba Na Hills.\nSoar above the clouds on one of the world's longest cable car rides.\nCross the stunning Golden Hand Bridge, a must-see Instagram hotspot.\nWander through the charming French Village, transporting you straight to Europe.\nAs evening arrives, return to Danang to dive into the bustling night market for street food and local treats.\n"
+    },
+    {
+      "day": 5,
+      "title": "Bamboo Basket Boat Ride & Hoi An Ancient Town Tour",
+      "content": "The morning is all yours to explore Hoi An, whether you want to shop, get a custom-made outfit, or simply enjoy the local vibe.\nIn the afternoon, get ready for an exciting adventure on traditional bamboo basket boats.\nFor a magical evening, take a peaceful lantern boat ride on the river for just $2 to $3.\nEnd the day with a relaxing walk through Hoi An's charming ancient town and discover its lovely cafés.\n"
+    },
+    {
+      "day": 6,
+      "title": "Explore Hanoi's Old Quarter and Experience the Excitement of Train Street",
+      "content": "Fly to Hanoi, Vietnam's vibrant capital.\nStroll through the bustling Old Quarter while enjoying a cup of authentic Vietnamese coffee.\nExperience the famous Train Street, where trains roll right through a narrow neighborhood.\n"
+    },
+    {
+      "day": 7,
+      "title": "Halong Bay Cruise with Kayaking and Cave Exploration",
+      "content": "Sail through the stunning Halong Bay, a UNESCO World Heritage site.\nKayak through hidden lagoons and explore ancient caves.\nEnjoy a delicious lunch on a traditional junk boat.\nEnd the day with a lively party at Hanoi's vibrant Beer Street.\nThe brief itinerary mentions an \"Overnight Stay at Phuket Exploration\", but the detailed Day 7 description does not mention Phuket.\n"
+    },
+    {
+      "day": 8,
+      "title": "Departure Day: Until Next Time!",
+      "content": "Enjoy one last breakfast with the crew before it's time to say goodbye.\nThen, transfer to the airport for your flight home, carrying unforgettable memories with you.\n"
+    }
+  ],
+  "includes": [
+    "Airport pick up & drop at the destination city.",
+    "Phi Phi day trip with lunch by Speedboat.",
+    "Four Island tour with lunch by Speedboat.",
+    "Koh Samui to Phuket Transfer by bus and ferry.",
+    "Koh Samui to Koh Phangan and back to Koh Samui by Speedboat.",
+    "Ferry and transfers from Koh Samui to Krabi.",
+    "6 nights Accommodation.",
+    "6 breakfast and 2 Lunch (1 at Phi Phi Island and 1 at Krabi Island tour).",
+    "5% GST & 5% TCS"
+  ],
+  "excludes": [
+    "National Park Fees: 400 THB for Phi Phi Island and 400 THB for the 4 Island Krabi tour.",
+    "Visa.",
+    "Full moon Party ticket (200 Baht).",
+    "Lunch & Dinners (meals other than specified in the inclusions).",
+    "RT-PCR Test (if any).",
+    "Personal and incidental expenses."
+  ],
+  "faqs": [],
+  "packages": [
+    {
+      "name": "International Trip",
+      "is_primary": true,
+      "pricing": [
+        {
+          "label": "Dual Sharing",
+          "price": 44499,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Quad Sharing",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan Solo Rider",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan With Pillion",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Sitting Coach",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Triple Sharing",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        }
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "package": "International Trip",
+      "count": 1097,
+      "first": "2026-09-23",
+      "last": "2029-09-23",
+      "dates": null
+    }
+  ],
+  "trip_extras": [],
+  "images": [
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1024x394.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1536x591.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-300x115.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-768x295.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-300x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-80x80.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159-292x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/7-1024x768.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/7-300x225.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/7-768x576.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/7.png"
+  ],
+  "page_markdown": "[\n!\n ](https://traveldevils.in)\n\n- [Home](https://traveldevils.in/)\n- [Upcoming Trips](https://traveldevils.in/upcoming-trips/)\n- [International Trips](https://traveldevils.in/international-trips/)\n- [Backpacking Trips](https://traveldevils.in/backpacking-trips/)\n- [Corporate Trip](https://traveldevils.in/corporate-trip/)\n- [About Us](https://traveldevils.in/about-us/)\n- [Contact Us](https://traveldevils.in/contact-us/)\n- [My Account](https://traveldevils.in/my-account/)\nX\n\n!\n\n [ Overview ](#)\n [ Itinerary ](#)\n [ Inclusion/Exclusion ](#)\n\n##  [ Overview ](#)\n\n##  [ Itinerary ](#)\n\n##  [ Inclusion/Exclusion ](#)\n\n## Overview\n\nVietnam is a Southeast Asian country known for its rich history, diverse culture, and stunning natural landscapes. Stretching along the eastern coast of the Indochina Peninsula, it shares borders with China, Laos, and Cambodia, and has a long coastline along the South China Sea.\n\nThe country is famous for its mix of bustling cities and serene countryside. Hanoi, the capital, is known for its centuries-old architecture, lakes, and vibrant street food scene. Ho Chi Minh City (formerly Saigon) is the economic hub, offering a mix of French colonial landmarks and modern skyscrapers.\n\nCulturally, Vietnam blends traditions influenced by China, France, and indigenous heritage. It’s home to numerous UNESCO World Heritage Sites such as Ha Long Bay, Hoi An Ancient Town, and My Son Sanctuary. Festivals like Tet (Lunar New Year) are celebrated with great enthusiasm across the country.\n\nNature is another highlight: from the emerald waters and limestone cliffs of Ha Long Bay to terraced rice fields in Sapa, the sandy beaches of Da Nang and Nha Trang, and the lush Mekong Delta in the south.\n\n### Highlights\n\n- Ho Chi Minh City: City Stroll and Nightlife Vibes.\n- Cu Chi Tunnels Full Day Tour, including a visit to the War Remnants Museum.\n- Danang: Beach vibes at Mekai beach and exploring the Dragon bridge.\n- Ba Na Hills Adventure: Cable Car Ride, Golden Hand Bridge, and French Village\n- Bamboo Basket Boat Ride & Hoi An Ancient Town Tour, including a lantern boat ride.\n- Hanoi's Old Quarter and experiencing the excitement of Train Street.\n- Halong Bay Cruise: Kayaking and Cave Exploration, and an overnight stay.\n- Party at Hanoi's vibrant Beer Street\n\n## Itinerary\n\n Expand all\n\n Day 01 :\n  Ho Chi Minh\n\nLink up with your squad and dive into the colorful chaos of Ben Thanh Market.\nFuel up with Pho and the silky smooth Egg Coffee.\nAs night falls, head to Bui Vien Street, the ultimate backpacker hotspot, for a wild night out.\n\n Day 02 :\n  Cu Chi Tunnels Full Day Tour\n\nStep back in time to explore the legendary Cu Chi Tunnels, an underground maze that brings Vietnam War history to life.\nChannel your inner action hero at the shooting range with real AK-47s and M16s.\nContinue the journey at the War Remnants Museum for a powerful, eye-opening look into Vietnam's past.\n\n Day 03 :\n  Danang: Beach vibes, Breathtaking views\n\nHave breakfast and transfer to the Airport.\nAfter reaching Danang, collect your baggage and head towards your hotel at Mekai beach.\nCheck into the hotel and stroll at the scenic Mekai beach.\nLater in the evening, you can explore the Dragon bridge by yourself.\n\n Day 04 :\n  Ba Na Hills Adventure\n\nStep into the dreamlike world of Ba Na Hills.\nSoar above the clouds on one of the world's longest cable car rides.\nCross the stunning Golden Hand Bridge, a must-see Instagram hotspot.\nWander through the charming French Village, transporting you straight to Europe.\nAs evening arrives, return to Danang to dive into the bustling night market for street food and local treats.\n\n Day 05 :\n  Bamboo Basket Boat Ride & Hoi An Ancient Town Tour\n\nThe morning is all yours to explore Hoi An, whether you want to shop, get a custom-made outfit, or simply enjoy the local vibe.\nIn the afternoon, get ready for an exciting adventure on traditional bamboo basket boats.\nFor a magical evening, take a peaceful lantern boat ride on the river for just $2 to $3.\nEnd the day with a relaxing walk through Hoi An's charming ancient town and discover its lovely cafés.\n\n Day 06 :\n  Explore Hanoi's Old Quarter and Experience the Excitement of Train Street\n\nFly to Hanoi, Vietnam's vibrant capital.\nStroll through the bustling Old Quarter while enjoying a cup of authentic Vietnamese coffee.\nExperience the famous Train Street, where trains roll right through a narrow neighborhood.\n\n Day 07 :\n  Halong Bay Cruise with Kayaking and Cave Exploration\n\nSail through the stunning Halong Bay, a UNESCO World Heritage site.\nKayak through hidden lagoons and explore ancient caves.\nEnjoy a delicious lunch on a traditional junk boat.\nEnd the day with a lively party at Hanoi's vibrant Beer Street.\nThe brief itinerary mentions an \"Overnight Stay at Phuket Exploration\", but the detailed Day 7 description does not mention Phuket.\n\n Day 08 :\n  Departure Day: Until Next Time!\n\nEnjoy one last breakfast with the crew before it's time to say goodbye.\nThen, transfer to the airport for your flight home, carrying unforgettable memories with you.\n\n##\n\n### Inclusions\n\n- Airport pick up & drop at the destination city.\n- Phi Phi day trip with lunch by Speedboat.\n- Four Island tour with lunch by Speedboat.\n- Koh Samui to Phuket Transfer by bus and ferry.\n- Koh Samui to Koh Phangan and back to Koh Samui by Speedboat.\n- Ferry and transfers from Koh Samui to Krabi.\n- 6 nights Accommodation.\n- 6 breakfast and 2 Lunch (1 at Phi Phi Island and 1 at Krabi Island tour).\n- 5% GST & 5% TCS\n\n### Exclusions\n\n- National Park Fees: 400 THB for Phi Phi Island and 400 THB for the 4 Island Krabi tour.\n- Visa.\n- Full moon Party ticket (200 Baht).\n- Lunch & Dinners (meals other than specified in the inclusions).\n- RT-PCR Test (if any).\n- Personal and incidental expenses.\n\n-  [    Date & Time    ](#wte-booking-datetime)\n-  [    Package Type    ](#wte-booking-packages)\n\n   Back  Continue\n\n  From   ₹44499\n/ Dual Sharing\n\n   Check Availability\n\n## Useful Links\n\n-  [ Home ](https://traveldevils.in/)\n-  [ Upcoming Trips ](https://traveldevils.in/upcoming-trips/)\n-  [ International Trips ](https://traveldevils.in/international-trips/)\n-  [ Domestic Trips ](https://traveldevils.in/domestic-trip/)\n-  [ About Us ](https://traveldevils.in/about-us/)\n-  [ Contact Us ](https://traveldevils.in/contact-us/)\n\n## Unique Links\n\n-  [ Privacy Policy ](https://traveldevils.in/privacy-policy-2/)\n-  [ Terms & Conditions ](https://traveldevils.in/terms-conditions/)\n-  [ Return Policy ](https://traveldevils.in/return-policy/)\n-  [ Refund Process ](https://traveldevils.in/refund-policy/)\n-  [ Cancallation Policy  ](https://traveldevils.in/cancellation-policy/)\n\n## Domestic Trip\n\n-  [ Rajasthan ](https://traveldevils.in/domestic-trip/rajasthan/)\n-  [ Meghalaya ](https://traveldevils.in/domestic-trip/meghalaya/)\n-  [ Ladakh ](https://traveldevils.in/domestic-trip/ladakh/)\n-  [ Sikkim ](https://traveldevils.in/domestic-trip/sikkim/)\n-  [ Delhi ](https://traveldevils.in/domestic-trip/delhi/)\n-  [ Goa ](https://traveldevils.in/domestic-trip/goa/)\n-  [ Himachal ](https://traveldevils.in/domestic-trip/himachal/)\n\n## International Trip\n\n-  [ Bali ](https://traveldevils.in/international-trips/bali/)\n-  [ Bhutan ](https://traveldevils.in/international-trips/bhutan/)\n-  [ Dubai ](https://traveldevils.in/international-trips/dubai/)\n-  [ Sri Lanka ](https://traveldevils.in/international-trips/sri-lanka/)\n-  [ India ](https://traveldevils.in/international-trips/india/)\n-  [ Vietnam ](https://traveldevils.in/international-trips/vietnam/)\n-  [ Thailand ](https://traveldevils.in/international-trips/thailand/)\n\n!\n\n## Travel Devils\n\n-  +91 70428 52209\n-  info@traveldevils.in\n\n-\n-\n\n© 2026 Travel Devils All rights reserved.\n\nWhatsApp us\n",
+  "raw": {
+    "wp": {
+      "id": 3466,
+      "date": "2026-02-12T21:00:20",
+      "date_gmt": "2026-02-12T21:00:20",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3466"
+      },
+      "modified": "2026-02-12T21:08:49",
+      "modified_gmt": "2026-02-12T21:08:49",
+      "slug": "vietnam",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/vietnam/",
+      "title": {
+        "rendered": "Vietnam"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3474,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        148
+      ],
+      "destination": [
+        120
+      ],
+      "activities": [],
+      "trip_types": [
+        69,
+        70
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [
+        68
+      ],
+      "class_list": [
+        "post-3466",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-8-days-7-nights",
+        "destination-vietnam",
+        "trip_types-international-trips",
+        "trip_types-vietnam",
+        "upcomingtrips-febuary-2026"
+      ],
+      "acf": [],
+      "packages_ids": [
+        3467
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "enabled": false,
+        "duration": 0,
+        "duration_unit": "days"
+      },
+      "booked-seats": [],
+      "code": "WTE-2886",
+      "price": 44499,
+      "has_sale": false,
+      "sale_price": 0,
+      "discount_percent": 0,
+      "currency": {
+        "code": "INR",
+        "symbol": "&#8377;"
+      },
+      "duration": {
+        "days": 8,
+        "nights": 7,
+        "duration_unit": "days",
+        "duration_type": "both"
+      },
+      "min_pax": 1,
+      "max_pax": "",
+      "discount_value": 0,
+      "discount_label": "0% Off",
+      "primary_category": 165,
+      "available_times": {
+        "type": "default",
+        "items": [
+          "2021-1-01",
+          "2021-2-01",
+          "2021-3-01",
+          "2021-4-01",
+          "2021-5-01",
+          "2021-6-01",
+          "2021-7-01",
+          "2021-8-01",
+          "2021-9-01",
+          "2021-10-01",
+          "2021-11-01",
+          "2021-12-01"
+        ]
+      },
+      "description": "<!-- wp:paragraph -->\n<p>Vietnam is a Southeast Asian country known for its rich history, diverse culture, and stunning natural landscapes. Stretching along the eastern coast of the Indochina Peninsula, it shares borders with China, Laos, and Cambodia, and has a long coastline along the South China Sea.<br><br>The country is famous for its mix of bustling cities and serene countryside. Hanoi, the capital, is known for its centuries-old architecture, lakes, and vibrant street food scene. Ho Chi Minh City (formerly Saigon) is the economic hub, offering a mix of French colonial landmarks and modern skyscrapers.<br><br>Culturally, Vietnam blends traditions influenced by China, France, and indigenous heritage. It's home to numerous UNESCO World Heritage Sites such as Ha Long Bay, Hoi An Ancient Town, and My Son Sanctuary. Festivals like Tet (Lunar New Year) are celebrated with great enthusiasm across the country.<br><br>Nature is another highlight: from the emerald waters and limestone cliffs of Ha Long Bay to terraced rice fields in Sapa, the sandy beaches of Da Nang and Nha Trang, and the lush Mekong Delta in the south.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": "Airport pick up & drop at the destination city.\nPhi Phi day trip with lunch by Speedboat.\nFour Island tour with lunch by Speedboat.\nKoh Samui to Phuket Transfer by bus and ferry.\nKoh Samui to Koh Phangan and back to Koh Samui by Speedboat.\nFerry and transfers from Koh Samui to Krabi.\n6 nights Accommodation.\n6 breakfast and 2 Lunch (1 at Phi Phi Island and 1 at Krabi Island tour).\n5% GST & 5% TCS",
+      "cost_excludes": "National Park Fees: 400 THB for Phi Phi Island and 400 THB for the 4 Island Krabi tour.\nVisa.\nFull moon Party ticket (200 Baht).\nLunch & Dinners (meals other than specified in the inclusions).\nRT-PCR Test (if any).\nPersonal and incidental expenses.",
+      "itineraries": [
+        {
+          "title": "Ho Chi Minh",
+          "content": "<!-- wp:paragraph -->\n<p>Link up with your squad and dive into the colorful chaos of Ben Thanh Market.<br>Fuel up with Pho and the silky smooth Egg Coffee.<br>As night falls, head to Bui Vien Street, the ultimate backpacker hotspot, for a wild night out.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Cu Chi Tunnels Full Day Tour",
+          "content": "<!-- wp:paragraph -->\n<p>Step back in time to explore the legendary Cu Chi Tunnels, an underground maze that brings Vietnam War history to life.<br>Channel your inner action hero at the shooting range with real AK-47s and M16s.<br>Continue the journey at the War Remnants Museum for a powerful, eye-opening look into Vietnam's past.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Danang: Beach vibes, Breathtaking views",
+          "content": "<!-- wp:paragraph -->\n<p>Have breakfast and transfer to the Airport.<br>After reaching Danang, collect your baggage and head towards your hotel at Mekai beach.<br>Check into the hotel and stroll at the scenic Mekai beach.<br>Later in the evening, you can explore the Dragon bridge by yourself.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Ba Na Hills Adventure",
+          "content": "<!-- wp:paragraph -->\n<p>Step into the dreamlike world of Ba Na Hills.<br>Soar above the clouds on one of the world's longest cable car rides.<br>Cross the stunning Golden Hand Bridge, a must-see Instagram hotspot.<br>Wander through the charming French Village, transporting you straight to Europe.<br>As evening arrives, return to Danang to dive into the bustling night market for street food and local treats.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Bamboo Basket Boat Ride & Hoi An Ancient Town Tour",
+          "content": "<!-- wp:paragraph -->\n<p>The morning is all yours to explore Hoi An, whether you want to shop, get a custom-made outfit, or simply enjoy the local vibe.<br>In the afternoon, get ready for an exciting adventure on traditional bamboo basket boats.<br>For a magical evening, take a peaceful lantern boat ride on the river for just $2 to $3.<br>End the day with a relaxing walk through Hoi An's charming ancient town and discover its lovely cafés.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Explore Hanoi's Old Quarter and Experience the Excitement of Train Street",
+          "content": "<!-- wp:paragraph -->\n<p>Fly to Hanoi, Vietnam's vibrant capital.<br>Stroll through the bustling Old Quarter while enjoying a cup of authentic Vietnamese coffee.<br>Experience the famous Train Street, where trains roll right through a narrow neighborhood.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Halong Bay Cruise with Kayaking and Cave Exploration",
+          "content": "<!-- wp:paragraph -->\n<p>Sail through the stunning Halong Bay, a UNESCO World Heritage site.<br>Kayak through hidden lagoons and explore ancient caves.<br>Enjoy a delicious lunch on a traditional junk boat.<br>End the day with a lively party at Hanoi's vibrant Beer Street.<br>The brief itinerary mentions an \"Overnight Stay at Phuket Exploration\", but the detailed Day 7 description does not mention Phuket.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Departure Day: Until Next Time!",
+          "content": "<!-- wp:paragraph -->\n<p>Enjoy one last breakfast with the crew before it's time to say goodbye.<br>Then, transfer to the airport for your flight home, carrying unforgettable memories with you.</p>\n<!-- /wp:paragraph -->"
+        }
+      ],
+      "faqs": [],
+      "is_featured": false,
+      "featured_image": {
+        "width": 1200,
+        "height": 900,
+        "file": "2026/02/7.png",
+        "filesize": 1749724,
+        "sizes": {
+          "medium": {
+            "file": "7-300x225.png",
+            "width": 300,
+            "height": 225,
+            "filesize": 119866,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-300x225.png"
+          },
+          "large": {
+            "file": "7-1024x768.png",
+            "width": 1024,
+            "height": 768,
+            "filesize": 1166218,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-1024x768.png"
+          },
+          "thumbnail": {
+            "file": "7-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 42230,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-150x150.png"
+          },
+          "medium_large": {
+            "file": "7-768x576.png",
+            "width": 768,
+            "height": 576,
+            "filesize": 683522,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-768x576.png"
+          },
+          "trip-thumb-size": {
+            "file": "7-374x226.png",
+            "width": 374,
+            "height": 226,
+            "filesize": 151939,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-374x226.png"
+          },
+          "destination-thumb-size": {
+            "file": "7-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 721930,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-600x810.png"
+          },
+          "destination-thumb-trip-size": {
+            "file": "7-410x250.png",
+            "width": 410,
+            "height": 250,
+            "filesize": 181282,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-410x250.png"
+          },
+          "activities-thumb-size": {
+            "file": "7-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 721930,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-600x810.png"
+          },
+          "trip-single-size": {
+            "file": "7-990x490.png",
+            "width": 990,
+            "height": 490,
+            "filesize": 771224,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-990x490.png"
+          },
+          "meafe-featured-page": {
+            "file": "7-500x410.png",
+            "width": 500,
+            "height": 410,
+            "filesize": 334523,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-500x410.png"
+          },
+          "meafe-testimonial-two": {
+            "file": "7-272x316.png",
+            "width": 272,
+            "height": 316,
+            "filesize": 147757,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-272x316.png"
+          },
+          "meafe-blog-one": {
+            "file": "7-370x247.png",
+            "width": 370,
+            "height": 247,
+            "filesize": 160559,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-370x247.png"
+          },
+          "meafe-blog-two": {
+            "file": "7-197x278.png",
+            "width": 197,
+            "height": 278,
+            "filesize": 96989,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-197x278.png"
+          },
+          "meafe-category-tab": {
+            "file": "7-355x355.png",
+            "width": 355,
+            "height": 355,
+            "filesize": 211322,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-355x355.png"
+          },
+          "meafe-category-grid": {
+            "file": "7-370x370.png",
+            "width": 370,
+            "height": 370,
+            "filesize": 228456,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-370x370.png"
+          },
+          "meafe-category-grid-one": {
+            "file": "7-570x530.png",
+            "width": 570,
+            "height": 530,
+            "filesize": 476495,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-570x530.png"
+          },
+          "meafe-category-grid-two": {
+            "file": "7-270x180.png",
+            "width": 270,
+            "height": 180,
+            "filesize": 88875,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-270x180.png"
+          },
+          "meafe-category-grid-three": {
+            "file": "7-570x320.png",
+            "width": 570,
+            "height": 320,
+            "filesize": 313145,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-570x320.png"
+          },
+          "meafe-category-grid-lay-three": {
+            "file": "7-170x170.png",
+            "width": 170,
+            "height": 170,
+            "filesize": 53643,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-170x170.png"
+          },
+          "meafe-post-modules-small-img": {
+            "file": "7-300x300.png",
+            "width": 300,
+            "height": 300,
+            "filesize": 153674,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-300x300.png"
+          },
+          "travil_80X80": {
+            "file": "7-80x80.png",
+            "width": 80,
+            "height": 80,
+            "filesize": 12910,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-80x80.png"
+          },
+          "travil_424X370": {
+            "file": "7-424x370.png",
+            "width": 424,
+            "height": 370,
+            "filesize": 260931,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-424x370.png"
+          },
+          "travil-shop-single": {
+            "file": "7-620x500.png",
+            "width": 620,
+            "height": 500,
+            "filesize": 491496,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7-620x500.png"
+          },
+          "full": {
+            "file": "7.png",
+            "width": 1200,
+            "height": 900,
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/7.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3466",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/types/trip"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/users/3"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/comments?post=3466"
+          }
+        ],
+        "version-history": [
+          {
+            "count": 1,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3466/revisions"
+          }
+        ],
+        "predecessor-version": [
+          {
+            "id": 3469,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3466/revisions/3469"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/media/3474"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/media?parent=3466"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "new_upcoming_trips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/new_upcoming_trips?post=3466"
+          },
+          {
+            "taxonomy": "trip_duration",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_duration?post=3466"
+          },
+          {
+            "taxonomy": "destination",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/destination?post=3466"
+          },
+          {
+            "taxonomy": "activities",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/activities?post=3466"
+          },
+          {
+            "taxonomy": "trip_types",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_types?post=3466"
+          },
+          {
+            "taxonomy": "difficulty",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/difficulty?post=3466"
+          },
+          {
+            "taxonomy": "trip_tag",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_tag?post=3466"
+          },
+          {
+            "taxonomy": "upcomingtrips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/wptravelengine_custom_taxonomy_upcomingtrips?post=3466"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    "wte_v2": {
+      "id": 3466,
+      "date": "2026-02-12T21:00:20",
+      "date_gmt": "2026-02-12T21:00:20",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3466"
+      },
+      "modified": "2026-02-12T21:08:49",
+      "modified_gmt": "2026-02-12T21:08:49",
+      "slug": "vietnam",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/vietnam/",
+      "title": {
+        "rendered": "Vietnam"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3474,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        148
+      ],
+      "destination": [
+        120
+      ],
+      "activities": [],
+      "trip_types": [
+        69,
+        70
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [
+        68
+      ],
+      "class_list": [
+        "post-3466",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-8-days-7-nights",
+        "destination-vietnam",
+        "trip_types-international-trips",
+        "trip_types-vietnam",
+        "upcomingtrips-febuary-2026"
+      ],
+      "packages_ids": [
+        3467
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "period": 0,
+        "unit": "days"
+      },
+      "booked-seats": [],
+      "fsd": {
+        "hide": false
+      },
+      "trip_code": "WTE-2886",
+      "overview": "<!-- wp:paragraph -->\n<p>Vietnam is a Southeast Asian country known for its rich history, diverse culture, and stunning natural landscapes. Stretching along the eastern coast of the Indochina Peninsula, it shares borders with China, Laos, and Cambodia, and has a long coastline along the South China Sea.<br><br>The country is famous for its mix of bustling cities and serene countryside. Hanoi, the capital, is known for its centuries-old architecture, lakes, and vibrant street food scene. Ho Chi Minh City (formerly Saigon) is the economic hub, offering a mix of French colonial landmarks and modern skyscrapers.<br><br>Culturally, Vietnam blends traditions influenced by China, France, and indigenous heritage. It's home to numerous UNESCO World Heritage Sites such as Ha Long Bay, Hoi An Ancient Town, and My Son Sanctuary. Festivals like Tet (Lunar New Year) are celebrated with great enthusiasm across the country.<br><br>Nature is another highlight: from the emerald waters and limestone cliffs of Ha Long Bay to terraced rice fields in Sapa, the sandy beaches of Da Nang and Nha Trang, and the lush Mekong Delta in the south.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": [
+        "Airport pick up & drop at the destination city.",
+        "Phi Phi day trip with lunch by Speedboat.",
+        "Four Island tour with lunch by Speedboat.",
+        "Koh Samui to Phuket Transfer by bus and ferry.",
+        "Koh Samui to Koh Phangan and back to Koh Samui by Speedboat.",
+        "Ferry and transfers from Koh Samui to Krabi.",
+        "6 nights Accommodation.",
+        "6 breakfast and 2 Lunch (1 at Phi Phi Island and 1 at Krabi Island tour).",
+        "5% GST & 5% TCS"
+      ],
+      "cost_excludes": [
+        "National Park Fees: 400 THB for Phi Phi Island and 400 THB for the 4 Island Krabi tour.",
+        "Visa.",
+        "Full moon Party ticket (200 Baht).",
+        "Lunch & Dinners (meals other than specified in the inclusions).",
+        "RT-PCR Test (if any).",
+        "Personal and incidental expenses."
+      ],
+      "duration": {
+        "period": 8,
+        "unit": "days",
+        "nights": 7
+      },
+      "_s_duration": "192",
+      "age_limit": {
+        "min": 0,
+        "max": 0
+      },
+      "participants": {
+        "min": 1,
+        "max": ""
+      },
+      "capacity_per_category": {
+        "enabled": false,
+        "mode": "same",
+        "limits": [],
+        "package_limits": []
+      },
+      "trip_map": {
+        "images": [],
+        "iframe": ""
+      },
+      "highlights": [
+        "Ho Chi Minh City: City Stroll and Nightlife Vibes.",
+        "Cu Chi Tunnels Full Day Tour, including a visit to the War Remnants Museum.",
+        "Danang: Beach vibes at Mekai beach and exploring the Dragon bridge.",
+        "Ba Na Hills Adventure: Cable Car Ride, Golden Hand Bridge, and French Village",
+        "Bamboo Basket Boat Ride & Hoi An Ancient Town Tour, including a lantern boat ride.",
+        "Hanoi's Old Quarter and experiencing the excitement of Train Street.",
+        "Halong Bay Cruise: Kayaking and Cave Exploration, and an overnight stay.",
+        "Party at Hanoi's vibrant Beer Street"
+      ],
+      "faqs": [],
+      "gallery": [],
+      "video_gallery": [],
+      "itinerary_description": "",
+      "itineraries": [
+        {
+          "title": "Ho Chi Minh",
+          "content": "<!-- wp:paragraph -->\n<p>Link up with your squad and dive into the colorful chaos of Ben Thanh Market.<br>Fuel up with Pho and the silky smooth Egg Coffee.<br>As night falls, head to Bui Vien Street, the ultimate backpacker hotspot, for a wild night out.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Cu Chi Tunnels Full Day Tour",
+          "content": "<!-- wp:paragraph -->\n<p>Step back in time to explore the legendary Cu Chi Tunnels, an underground maze that brings Vietnam War history to life.<br>Channel your inner action hero at the shooting range with real AK-47s and M16s.<br>Continue the journey at the War Remnants Museum for a powerful, eye-opening look into Vietnam's past.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Danang: Beach vibes, Breathtaking views",
+          "content": "<!-- wp:paragraph -->\n<p>Have breakfast and transfer to the Airport.<br>After reaching Danang, collect your baggage and head towards your hotel at Mekai beach.<br>Check into the hotel and stroll at the scenic Mekai beach.<br>Later in the evening, you can explore the Dragon bridge by yourself.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Ba Na Hills Adventure",
+          "content": "<!-- wp:paragraph -->\n<p>Step into the dreamlike world of Ba Na Hills.<br>Soar above the clouds on one of the world's longest cable car rides.<br>Cross the stunning Golden Hand Bridge, a must-see Instagram hotspot.<br>Wander through the charming French Village, transporting you straight to Europe.<br>As evening arrives, return to Danang to dive into the bustling night market for street food and local treats.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Bamboo Basket Boat Ride & Hoi An Ancient Town Tour",
+          "content": "<!-- wp:paragraph -->\n<p>The morning is all yours to explore Hoi An, whether you want to shop, get a custom-made outfit, or simply enjoy the local vibe.<br>In the afternoon, get ready for an exciting adventure on traditional bamboo basket boats.<br>For a magical evening, take a peaceful lantern boat ride on the river for just $2 to $3.<br>End the day with a relaxing walk through Hoi An's charming ancient town and discover its lovely cafés.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Explore Hanoi's Old Quarter and Experience the Excitement of Train Street",
+          "content": "<!-- wp:paragraph -->\n<p>Fly to Hanoi, Vietnam's vibrant capital.<br>Stroll through the bustling Old Quarter while enjoying a cup of authentic Vietnamese coffee.<br>Experience the famous Train Street, where trains roll right through a narrow neighborhood.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Halong Bay Cruise with Kayaking and Cave Exploration",
+          "content": "<!-- wp:paragraph -->\n<p>Sail through the stunning Halong Bay, a UNESCO World Heritage site.<br>Kayak through hidden lagoons and explore ancient caves.<br>Enjoy a delicious lunch on a traditional junk boat.<br>End the day with a lively party at Hanoi's vibrant Beer Street.<br>The brief itinerary mentions an \"Overnight Stay at Phuket Exploration\", but the detailed Day 7 description does not mention Phuket.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Departure Day: Until Next Time!",
+          "content": "<!-- wp:paragraph -->\n<p>Enjoy one last breakfast with the crew before it's time to say goodbye.<br>Then, transfer to the airport for your flight home, carrying unforgettable memories with you.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        }
+      ],
+      "trip_info": [],
+      "file_downloads": [],
+      "trip_extra_services": [],
+      "price_types": {
+        "per-person": "Per Person",
+        "per-group": "Per Group"
+      }
+    }
+  }
+}

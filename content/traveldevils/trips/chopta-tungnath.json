@@ -1,0 +1,793 @@
+{
+  "id": 3418,
+  "slug": "chopta-tungnath",
+  "url": "https://traveldevils.in/trip/chopta-tungnath/",
+  "title": "Chopta Tungnath",
+  "code": "WTE-2886",
+  "modified": "2026-02-12T21:25:04",
+  "duration": {
+    "days": 3,
+    "nights": 2,
+    "duration_unit": "days",
+    "duration_type": "both"
+  },
+  "price": 6199,
+  "sale_price": 0,
+  "has_sale": false,
+  "currency": "INR",
+  "min_pax": 1,
+  "max_pax": "",
+  "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/4-2.png",
+  "destinations": [
+    "Chopta Tungnath",
+    "India"
+  ],
+  "trip_types": [
+    "Domestic Trip",
+    "Uttarakhand"
+  ],
+  "trip_duration": [
+    "3 Days 2 Nights"
+  ],
+  "difficulty": [
+    "Medium"
+  ],
+  "activities": [],
+  "upcoming": [
+    "Febuary 2026"
+  ],
+  "overview_html": "<!-- wp:paragraph -->\n<p>Chopta is <mark>a serene, high-altitude meadow in Uttarakhand, India, serving as the base for trekking to <a href=\"https://www.google.com/search?client=safari&amp;rls=en&amp;q=Tungnath&amp;ie=UTF-8&amp;oe=UTF-8&amp;ved=2ahUKEwiYwZTbidKSAxXv0TQHHVO9HzYQgK4QegYIAQgAEAs\">Tungnath</a>, the world’s highest Shiva temple (3,680m), and the <a href=\"https://www.google.com/search?client=safari&amp;rls=en&amp;q=Chandrashila+summit&amp;ie=UTF-8&amp;oe=UTF-8&amp;ved=2ahUKEwiYwZTbidKSAxXv0TQHHVO9HzYQgK4QegYIAQgAEAw\">Chandrashila summit</a> (3,960m)</mark>. Often called the \"Mini Switzerland of India,\" it is a popular year-round trekking destination, best visited from April to June for lush greenery or January to March for snow. </p>\n<!-- /wp:paragraph -->",
+  "overview": "Chopta is a serene, high-altitude meadow in Uttarakhand, India, serving as the base for trekking to [Tungnath](https://www.google.com/search?client=safari&rls=en&q=Tungnath&ie=UTF-8&oe=UTF-8&ved=2ahUKEwiYwZTbidKSAxXv0TQHHVO9HzYQgK4QegYIAQgAEAs), the world’s highest Shiva temple (3,680m), and the [Chandrashila summit](https://www.google.com/search?client=safari&rls=en&q=Chandrashila+summit&ie=UTF-8&oe=UTF-8&ved=2ahUKEwiYwZTbidKSAxXv0TQHHVO9HzYQgK4QegYIAQgAEAw) (3,960m). Often called the \"Mini Switzerland of India,\" it is a popular year-round trekking destination, best visited from April to June for lush greenery or January to March for snow.\n",
+  "highlights": [
+    "Tungnath Temple",
+    "Chandrashila Trek",
+    "Deorital Trek",
+    "Camps & Tents",
+    "Rishikesh"
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Devprayag Sangam | Chopta Arrival",
+      "content": "Stop at Devprayag to witness the confluence of Bhagirathi & Alaknanda rivers.\nAfter breakfast near Rudraprayag, proceed to Chopta. Check-in, relax, take a forest walk, enjoy a bonfire in the evening, and have a home-style dinner.\n"
+    },
+    {
+      "day": 2,
+      "title": "Adventure and Sightseeing",
+      "content": "Early morning, trek to Tungnath and Chandrashila Peak (weather permitting). Return to Chopta, relax, and stay overnight.\n"
+    },
+    {
+      "day": 3,
+      "title": "Drive To Sari Village| Trek To Deoriatal",
+      "content": "After breakfast, drive to Sari Village, trek to Deoriatal Lake, and return to Sari.\nBegin the return journey to Delhi with a stop in Rishikesh for exploration, cafe hopping, and visiting temples and Ganga ghats (if time permits).\nReach Delhi next day Early morning.\n"
+    }
+  ],
+  "includes": [
+    "Transportation from Delhi to Delhi: Tempo Traveler/Cab.",
+    "2 Nights accommodation: Swiss Camps/Homestay.",
+    "Experienced and cool Trip Captain/Trek Guide.",
+    "Bonfire (if weather permits) during the stay and local explorations as per itinerary.",
+    "Veg Meals: Dinner (2), Breakfast (2) and Evening Snacks (2), starting from evening Snacks on Day 1 to Breakfast on Day 3.",
+    "Driver allowances, toll taxes, parking, state taxes.",
+    "24*7 Customer support"
+  ],
+  "excludes": [
+    "Ropeway (Cable car/Chair car) to Auli.",
+    "Any meal/food item other than the package inclusions",
+    "Any entry ticket to monuments & public places"
+  ],
+  "faqs": [],
+  "packages": [
+    {
+      "name": "Group Trips",
+      "is_primary": true,
+      "pricing": [
+        {
+          "label": "Triple Sharing",
+          "price": 6199,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 6399,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Quad Sharing",
+          "price": 5799,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan Solo Rider",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan With Pillion",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Sitting Coach",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        }
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "package": "Group Trips",
+      "count": 1097,
+      "first": "2026-09-23",
+      "last": "2029-09-23",
+      "dates": null
+    }
+  ],
+  "trip_extras": [],
+  "images": [
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1024x394.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1536x591.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-300x115.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-768x295.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-300x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-80x80.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159-292x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/4-2-1024x768.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/4-2-300x225.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/4-2-768x576.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/4-2.png"
+  ],
+  "page_markdown": "[\n!\n ](https://traveldevils.in)\n\n- [Home](https://traveldevils.in/)\n- [Upcoming Trips](https://traveldevils.in/upcoming-trips/)\n- [International Trips](https://traveldevils.in/international-trips/)\n- [Backpacking Trips](https://traveldevils.in/backpacking-trips/)\n- [Corporate Trip](https://traveldevils.in/corporate-trip/)\n- [About Us](https://traveldevils.in/about-us/)\n- [Contact Us](https://traveldevils.in/contact-us/)\n- [My Account](https://traveldevils.in/my-account/)\nX\n\n!\n\n [ Overview ](#)\n [ Itinerary ](#)\n [ Inclusion/Exclusion ](#)\n\n##  [ Overview ](#)\n\n##  [ Itinerary ](#)\n\n##  [ Inclusion/Exclusion ](#)\n\n## Overview\n\nChopta is a serene, high-altitude meadow in Uttarakhand, India, serving as the base for trekking to [Tungnath](https://www.google.com/search?client=safari&rls=en&q=Tungnath&ie=UTF-8&oe=UTF-8&ved=2ahUKEwiYwZTbidKSAxXv0TQHHVO9HzYQgK4QegYIAQgAEAs), the world’s highest Shiva temple (3,680m), and the [Chandrashila summit](https://www.google.com/search?client=safari&rls=en&q=Chandrashila+summit&ie=UTF-8&oe=UTF-8&ved=2ahUKEwiYwZTbidKSAxXv0TQHHVO9HzYQgK4QegYIAQgAEAw) (3,960m). Often called the “Mini Switzerland of India,” it is a popular year-round trekking destination, best visited from April to June for lush greenery or January to March for snow.\n\n### Highlights\n\n- Tungnath Temple\n- Chandrashila Trek\n- Deorital Trek\n- Camps & Tents\n- Rishikesh\n\n## Itinerary\n\n Expand all\n\n Day 01 :\n  Devprayag Sangam | Chopta Arrival\n\nStop at Devprayag to witness the confluence of Bhagirathi & Alaknanda rivers.\nAfter breakfast near Rudraprayag, proceed to Chopta. Check-in, relax, take a forest walk, enjoy a bonfire in the evening, and have a home-style dinner.\n\n Day 02 :\n  Adventure and Sightseeing\n\nEarly morning, trek to Tungnath and Chandrashila Peak (weather permitting). Return to Chopta, relax, and stay overnight.\n\n Day 03 :\n  Drive To Sari Village| Trek To Deoriatal\n\nAfter breakfast, drive to Sari Village, trek to Deoriatal Lake, and return to Sari.\nBegin the return journey to Delhi with a stop in Rishikesh for exploration, cafe hopping, and visiting temples and Ganga ghats (if time permits).\nReach Delhi next day Early morning.\n\n##\n\n### Inclusions\n\n- Transportation from Delhi to Delhi: Tempo Traveler/Cab.\n- 2 Nights accommodation: Swiss Camps/Homestay.\n- Experienced and cool Trip Captain/Trek Guide.\n- Bonfire (if weather permits) during the stay and local explorations as per itinerary.\n- Veg Meals: Dinner (2), Breakfast (2) and Evening Snacks (2), starting from evening Snacks on Day 1 to Breakfast on Day 3.\n- Driver allowances, toll taxes, parking, state taxes.\n- 24*7 Customer support\n\n### Exclusions\n\n- Ropeway (Cable car/Chair car) to Auli.\n- Any meal/food item other than the package inclusions\n- Any entry ticket to monuments & public places\n\n-  [    Date & Time    ](#wte-booking-datetime)\n-  [    Package Type    ](#wte-booking-packages)\n\n   Back  Continue\n\n  From   ₹6199\n/ Triple Sharing\n  From   ₹6399\n/ Dual Sharing\n  From   ₹5799\n/ Quad Sharing\n\n   Check Availability\n\n## Useful Links\n\n-  [ Home ](https://traveldevils.in/)\n-  [ Upcoming Trips ](https://traveldevils.in/upcoming-trips/)\n-  [ International Trips ](https://traveldevils.in/international-trips/)\n-  [ Domestic Trips ](https://traveldevils.in/domestic-trip/)\n-  [ About Us ](https://traveldevils.in/about-us/)\n-  [ Contact Us ](https://traveldevils.in/contact-us/)\n\n## Unique Links\n\n-  [ Privacy Policy ](https://traveldevils.in/privacy-policy-2/)\n-  [ Terms & Conditions ](https://traveldevils.in/terms-conditions/)\n-  [ Return Policy ](https://traveldevils.in/return-policy/)\n-  [ Refund Process ](https://traveldevils.in/refund-policy/)\n-  [ Cancallation Policy  ](https://traveldevils.in/cancellation-policy/)\n\n## Domestic Trip\n\n-  [ Rajasthan ](https://traveldevils.in/domestic-trip/rajasthan/)\n-  [ Meghalaya ](https://traveldevils.in/domestic-trip/meghalaya/)\n-  [ Ladakh ](https://traveldevils.in/domestic-trip/ladakh/)\n-  [ Sikkim ](https://traveldevils.in/domestic-trip/sikkim/)\n-  [ Delhi ](https://traveldevils.in/domestic-trip/delhi/)\n-  [ Goa ](https://traveldevils.in/domestic-trip/goa/)\n-  [ Himachal ](https://traveldevils.in/domestic-trip/himachal/)\n\n## International Trip\n\n-  [ Bali ](https://traveldevils.in/international-trips/bali/)\n-  [ Bhutan ](https://traveldevils.in/international-trips/bhutan/)\n-  [ Dubai ](https://traveldevils.in/international-trips/dubai/)\n-  [ Sri Lanka ](https://traveldevils.in/international-trips/sri-lanka/)\n-  [ India ](https://traveldevils.in/international-trips/india/)\n-  [ Vietnam ](https://traveldevils.in/international-trips/vietnam/)\n-  [ Thailand ](https://traveldevils.in/international-trips/thailand/)\n\n!\n\n## Travel Devils\n\n-  +91 70428 52209\n-  info@traveldevils.in\n\n-\n-\n\n© 2026 Travel Devils All rights reserved.\n\nWhatsApp us\n",
+  "raw": {
+    "wp": {
+      "id": 3418,
+      "date": "2026-02-11T18:24:11",
+      "date_gmt": "2026-02-11T18:24:11",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3418"
+      },
+      "modified": "2026-02-12T21:25:04",
+      "modified_gmt": "2026-02-12T21:25:04",
+      "slug": "chopta-tungnath",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/chopta-tungnath/",
+      "title": {
+        "rendered": "Chopta Tungnath"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3484,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        143
+      ],
+      "destination": [
+        163,
+        37
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        88
+      ],
+      "difficulty": [
+        7
+      ],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [
+        68
+      ],
+      "class_list": [
+        "post-3418",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-3-days-2-nights",
+        "destination-chopta-tungnath",
+        "destination-india",
+        "trip_types-domestic-trip",
+        "trip_types-uttarakhand",
+        "difficulty-medium",
+        "upcomingtrips-febuary-2026"
+      ],
+      "acf": [],
+      "packages_ids": [
+        3419
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "enabled": false,
+        "duration": 0,
+        "duration_unit": "days"
+      },
+      "booked-seats": [],
+      "code": "WTE-2886",
+      "price": 6199,
+      "has_sale": false,
+      "sale_price": 0,
+      "discount_percent": 0,
+      "currency": {
+        "code": "INR",
+        "symbol": "&#8377;"
+      },
+      "duration": {
+        "days": 3,
+        "nights": 2,
+        "duration_unit": "days",
+        "duration_type": "both"
+      },
+      "min_pax": 1,
+      "max_pax": "",
+      "discount_value": 0,
+      "discount_label": "0% Off",
+      "primary_category": 167,
+      "available_times": {
+        "type": "default",
+        "items": [
+          "2021-1-01",
+          "2021-2-01",
+          "2021-3-01",
+          "2021-4-01",
+          "2021-5-01",
+          "2021-6-01",
+          "2021-7-01",
+          "2021-8-01",
+          "2021-9-01",
+          "2021-10-01",
+          "2021-11-01",
+          "2021-12-01"
+        ]
+      },
+      "description": "<!-- wp:paragraph -->\n<p>Chopta is <mark>a serene, high-altitude meadow in Uttarakhand, India, serving as the base for trekking to <a href=\"https://www.google.com/search?client=safari&amp;rls=en&amp;q=Tungnath&amp;ie=UTF-8&amp;oe=UTF-8&amp;ved=2ahUKEwiYwZTbidKSAxXv0TQHHVO9HzYQgK4QegYIAQgAEAs\">Tungnath</a>, the world’s highest Shiva temple (3,680m), and the <a href=\"https://www.google.com/search?client=safari&amp;rls=en&amp;q=Chandrashila+summit&amp;ie=UTF-8&amp;oe=UTF-8&amp;ved=2ahUKEwiYwZTbidKSAxXv0TQHHVO9HzYQgK4QegYIAQgAEAw\">Chandrashila summit</a> (3,960m)</mark>. Often called the \"Mini Switzerland of India,\" it is a popular year-round trekking destination, best visited from April to June for lush greenery or January to March for snow. </p>\n<!-- /wp:paragraph -->",
+      "cost_includes": "Transportation from Delhi to Delhi: Tempo Traveler/Cab.\n2 Nights accommodation: Swiss Camps/Homestay.\nExperienced and cool Trip Captain/Trek Guide.\nBonfire (if weather permits) during the stay and local explorations as per itinerary.\nVeg Meals: Dinner (2), Breakfast (2) and Evening Snacks (2), starting from evening Snacks on Day 1 to Breakfast on Day 3.\nDriver allowances, toll taxes, parking, state taxes.\n24*7 Customer support",
+      "cost_excludes": "Ropeway (Cable car/Chair car) to Auli.\nAny meal/food item other than the package inclusions\nAny entry ticket to monuments & public places",
+      "itineraries": [
+        {
+          "title": "Devprayag Sangam | Chopta Arrival",
+          "content": "<!-- wp:paragraph -->\n<p>Stop at Devprayag to witness the confluence of Bhagirathi &amp; Alaknanda rivers.<br>After breakfast near Rudraprayag, proceed to Chopta. Check-in, relax, take a forest walk, enjoy a bonfire in the evening, and have a home-style dinner.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Adventure and Sightseeing",
+          "content": "<!-- wp:paragraph -->\n<p>Early morning, trek to Tungnath and Chandrashila Peak (weather permitting). Return to Chopta, relax, and stay overnight.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Drive To Sari Village| Trek To Deoriatal",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast, drive to Sari Village, trek to Deoriatal Lake, and return to Sari.<br>Begin the return journey to Delhi with a stop in Rishikesh for exploration, cafe hopping, and visiting temples and Ganga ghats (if time permits).<br>Reach Delhi next day Early morning.</p>\n<!-- /wp:paragraph -->"
+        }
+      ],
+      "faqs": [],
+      "is_featured": false,
+      "featured_image": {
+        "width": 1200,
+        "height": 900,
+        "file": "2026/02/4-2.png",
+        "filesize": 1221222,
+        "sizes": {
+          "medium": {
+            "file": "4-2-300x225.png",
+            "width": 300,
+            "height": 225,
+            "filesize": 88837,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-300x225.png"
+          },
+          "large": {
+            "file": "4-2-1024x768.png",
+            "width": 1024,
+            "height": 768,
+            "filesize": 807880,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-1024x768.png"
+          },
+          "thumbnail": {
+            "file": "4-2-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 34918,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-150x150.png"
+          },
+          "medium_large": {
+            "file": "4-2-768x576.png",
+            "width": 768,
+            "height": 576,
+            "filesize": 475760,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-768x576.png"
+          },
+          "trip-thumb-size": {
+            "file": "4-2-374x226.png",
+            "width": 374,
+            "height": 226,
+            "filesize": 114065,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-374x226.png"
+          },
+          "destination-thumb-size": {
+            "file": "4-2-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 554065,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-600x810.png"
+          },
+          "destination-thumb-trip-size": {
+            "file": "4-2-410x250.png",
+            "width": 410,
+            "height": 250,
+            "filesize": 134776,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-410x250.png"
+          },
+          "activities-thumb-size": {
+            "file": "4-2-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 554065,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-600x810.png"
+          },
+          "trip-single-size": {
+            "file": "4-2-990x490.png",
+            "width": 990,
+            "height": 490,
+            "filesize": 567266,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-990x490.png"
+          },
+          "meafe-featured-page": {
+            "file": "4-2-500x410.png",
+            "width": 500,
+            "height": 410,
+            "filesize": 239634,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-500x410.png"
+          },
+          "meafe-testimonial-two": {
+            "file": "4-2-272x316.png",
+            "width": 272,
+            "height": 316,
+            "filesize": 115286,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-272x316.png"
+          },
+          "meafe-blog-one": {
+            "file": "4-2-370x247.png",
+            "width": 370,
+            "height": 247,
+            "filesize": 118285,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-370x247.png"
+          },
+          "meafe-blog-two": {
+            "file": "4-2-197x278.png",
+            "width": 197,
+            "height": 278,
+            "filesize": 78750,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-197x278.png"
+          },
+          "meafe-category-tab": {
+            "file": "4-2-355x355.png",
+            "width": 355,
+            "height": 355,
+            "filesize": 159362,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-355x355.png"
+          },
+          "meafe-category-grid": {
+            "file": "4-2-370x370.png",
+            "width": 370,
+            "height": 370,
+            "filesize": 171698,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-370x370.png"
+          },
+          "meafe-category-grid-one": {
+            "file": "4-2-570x530.png",
+            "width": 570,
+            "height": 530,
+            "filesize": 346981,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-570x530.png"
+          },
+          "meafe-category-grid-two": {
+            "file": "4-2-270x180.png",
+            "width": 270,
+            "height": 180,
+            "filesize": 68240,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-270x180.png"
+          },
+          "meafe-category-grid-three": {
+            "file": "4-2-570x320.png",
+            "width": 570,
+            "height": 320,
+            "filesize": 226311,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-570x320.png"
+          },
+          "meafe-category-grid-lay-three": {
+            "file": "4-2-170x170.png",
+            "width": 170,
+            "height": 170,
+            "filesize": 43640,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-170x170.png"
+          },
+          "meafe-post-modules-small-img": {
+            "file": "4-2-300x300.png",
+            "width": 300,
+            "height": 300,
+            "filesize": 116732,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-300x300.png"
+          },
+          "travil_80X80": {
+            "file": "4-2-80x80.png",
+            "width": 80,
+            "height": 80,
+            "filesize": 11652,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-80x80.png"
+          },
+          "travil_424X370": {
+            "file": "4-2-424x370.png",
+            "width": 424,
+            "height": 370,
+            "filesize": 190179,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-424x370.png"
+          },
+          "travil-shop-single": {
+            "file": "4-2-620x500.png",
+            "width": 620,
+            "height": 500,
+            "filesize": 347925,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2-620x500.png"
+          },
+          "full": {
+            "file": "4-2.png",
+            "width": 1200,
+            "height": 900,
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/4-2.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3418",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/types/trip"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/users/3"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/comments?post=3418"
+          }
+        ],
+        "version-history": [
+          {
+            "count": 1,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3418/revisions"
+          }
+        ],
+        "predecessor-version": [
+          {
+            "id": 3421,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3418/revisions/3421"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/media/3484"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/media?parent=3418"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "new_upcoming_trips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/new_upcoming_trips?post=3418"
+          },
+          {
+            "taxonomy": "trip_duration",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_duration?post=3418"
+          },
+          {
+            "taxonomy": "destination",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/destination?post=3418"
+          },
+          {
+            "taxonomy": "activities",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/activities?post=3418"
+          },
+          {
+            "taxonomy": "trip_types",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_types?post=3418"
+          },
+          {
+            "taxonomy": "difficulty",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/difficulty?post=3418"
+          },
+          {
+            "taxonomy": "trip_tag",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_tag?post=3418"
+          },
+          {
+            "taxonomy": "upcomingtrips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/wptravelengine_custom_taxonomy_upcomingtrips?post=3418"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    "wte_v2": {
+      "id": 3418,
+      "date": "2026-02-11T18:24:11",
+      "date_gmt": "2026-02-11T18:24:11",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3418"
+      },
+      "modified": "2026-02-12T21:25:04",
+      "modified_gmt": "2026-02-12T21:25:04",
+      "slug": "chopta-tungnath",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/chopta-tungnath/",
+      "title": {
+        "rendered": "Chopta Tungnath"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3484,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        143
+      ],
+      "destination": [
+        163,
+        37
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        88
+      ],
+      "difficulty": [
+        7
+      ],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [
+        68
+      ],
+      "class_list": [
+        "post-3418",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-3-days-2-nights",
+        "destination-chopta-tungnath",
+        "destination-india",
+        "trip_types-domestic-trip",
+        "trip_types-uttarakhand",
+        "difficulty-medium",
+        "upcomingtrips-febuary-2026"
+      ],
+      "packages_ids": [
+        3419
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "period": 0,
+        "unit": "days"
+      },
+      "booked-seats": [],
+      "fsd": {
+        "hide": false
+      },
+      "trip_code": "WTE-2886",
+      "overview": "<!-- wp:paragraph -->\n<p>Chopta is <mark>a serene, high-altitude meadow in Uttarakhand, India, serving as the base for trekking to <a href=\"https://www.google.com/search?client=safari&amp;rls=en&amp;q=Tungnath&amp;ie=UTF-8&amp;oe=UTF-8&amp;ved=2ahUKEwiYwZTbidKSAxXv0TQHHVO9HzYQgK4QegYIAQgAEAs\">Tungnath</a>, the world’s highest Shiva temple (3,680m), and the <a href=\"https://www.google.com/search?client=safari&amp;rls=en&amp;q=Chandrashila+summit&amp;ie=UTF-8&amp;oe=UTF-8&amp;ved=2ahUKEwiYwZTbidKSAxXv0TQHHVO9HzYQgK4QegYIAQgAEAw\">Chandrashila summit</a> (3,960m)</mark>. Often called the \"Mini Switzerland of India,\" it is a popular year-round trekking destination, best visited from April to June for lush greenery or January to March for snow. </p>\n<!-- /wp:paragraph -->",
+      "cost_includes": [
+        "Transportation from Delhi to Delhi: Tempo Traveler/Cab.",
+        "2 Nights accommodation: Swiss Camps/Homestay.",
+        "Experienced and cool Trip Captain/Trek Guide.",
+        "Bonfire (if weather permits) during the stay and local explorations as per itinerary.",
+        "Veg Meals: Dinner (2), Breakfast (2) and Evening Snacks (2), starting from evening Snacks on Day 1 to Breakfast on Day 3.",
+        "Driver allowances, toll taxes, parking, state taxes.",
+        "24*7 Customer support"
+      ],
+      "cost_excludes": [
+        "Ropeway (Cable car/Chair car) to Auli.",
+        "Any meal/food item other than the package inclusions",
+        "Any entry ticket to monuments & public places"
+      ],
+      "duration": {
+        "period": 3,
+        "unit": "days",
+        "nights": 2
+      },
+      "_s_duration": "72",
+      "age_limit": {
+        "min": 0,
+        "max": 0
+      },
+      "participants": {
+        "min": 1,
+        "max": ""
+      },
+      "capacity_per_category": {
+        "enabled": false,
+        "mode": "same",
+        "limits": [],
+        "package_limits": []
+      },
+      "trip_map": {
+        "images": [],
+        "iframe": ""
+      },
+      "highlights": [
+        "Tungnath Temple",
+        "Chandrashila Trek",
+        "Deorital Trek",
+        "Camps & Tents",
+        "Rishikesh"
+      ],
+      "faqs": [],
+      "gallery": [],
+      "video_gallery": [],
+      "itinerary_description": "",
+      "itineraries": [
+        {
+          "title": "Devprayag Sangam | Chopta Arrival",
+          "content": "<!-- wp:paragraph -->\n<p>Stop at Devprayag to witness the confluence of Bhagirathi &amp; Alaknanda rivers.<br>After breakfast near Rudraprayag, proceed to Chopta. Check-in, relax, take a forest walk, enjoy a bonfire in the evening, and have a home-style dinner.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Adventure and Sightseeing",
+          "content": "<!-- wp:paragraph -->\n<p>Early morning, trek to Tungnath and Chandrashila Peak (weather permitting). Return to Chopta, relax, and stay overnight.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Drive To Sari Village| Trek To Deoriatal",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast, drive to Sari Village, trek to Deoriatal Lake, and return to Sari.<br>Begin the return journey to Delhi with a stop in Rishikesh for exploration, cafe hopping, and visiting temples and Ganga ghats (if time permits).<br>Reach Delhi next day Early morning.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        }
+      ],
+      "trip_info": [],
+      "file_downloads": [],
+      "trip_extra_services": [],
+      "price_types": {
+        "per-person": "Per Person",
+        "per-group": "Per Group"
+      }
+    }
+  }
+}

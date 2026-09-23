@@ -1,0 +1,305 @@
+[
+  {
+    "slug": "udaipur-kumbhalgarh",
+    "title": "Udaipur Kumbhalgarh",
+    "price": 7999,
+    "duration": {
+      "days": 3,
+      "nights": 2,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "India",
+      "Kumbhalgarh",
+      "Udaipur"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Rajasthan"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-14.png",
+    "url": "https://traveldevils.in/trip/udaipur-kumbhalgarh/"
+  },
+  {
+    "slug": "jaisalmer",
+    "title": "Jaisalmer",
+    "price": 7499,
+    "duration": {
+      "days": 3,
+      "nights": 2,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "India",
+      "Jaisalmer"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Rajasthan"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-13.png",
+    "url": "https://traveldevils.in/trip/jaisalmer/"
+  },
+  {
+    "slug": "leh-to-leh",
+    "title": "Leh to Leh",
+    "price": 18999,
+    "duration": {
+      "days": 7,
+      "nights": 6,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "Ladakh",
+      "Turtuk"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Ladakh"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-12.png",
+    "url": "https://traveldevils.in/trip/leh-to-leh/"
+  },
+  {
+    "slug": "winter-spiti",
+    "title": "Winter Spiti",
+    "price": 16999,
+    "duration": {
+      "days": 7,
+      "nights": 6,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "Spiti"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Winter Spiti"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-11.png",
+    "url": "https://traveldevils.in/trip/winter-spiti/"
+  },
+  {
+    "slug": "kashmir",
+    "title": "Kashmir",
+    "price": 22499,
+    "duration": {
+      "days": 6,
+      "nights": 5,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "Jammu &amp; Kashmir"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Jammu Kashmir"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-10.png",
+    "url": "https://traveldevils.in/trip/kashmir/"
+  },
+  {
+    "slug": "meghalya",
+    "title": "Meghalya",
+    "price": 22499,
+    "duration": {
+      "days": 6,
+      "nights": 5,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "Meghalaya"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Meghalaya"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-9.png",
+    "url": "https://traveldevils.in/trip/meghalya/"
+  },
+  {
+    "slug": "goa",
+    "title": "Goa",
+    "price": 11499,
+    "duration": {
+      "days": 5,
+      "nights": 4,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "Goa"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Goa"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/03/Kanatal-Tehri-8.png",
+    "url": "https://traveldevils.in/trip/goa/"
+  },
+  {
+    "slug": "jibhi",
+    "title": "Jibhi",
+    "price": "",
+    "duration": {
+      "days": 1,
+      "nights": 0,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [],
+    "trip_types": [],
+    "featured_image": null,
+    "url": "https://traveldevils.in/trip/jibhi/"
+  },
+  {
+    "slug": "vietnam",
+    "title": "Vietnam",
+    "price": 44499,
+    "duration": {
+      "days": 8,
+      "nights": 7,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "Vietnam"
+    ],
+    "trip_types": [
+      "International Trips",
+      "Vietnam"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/7.png",
+    "url": "https://traveldevils.in/trip/vietnam/"
+  },
+  {
+    "slug": "thailand",
+    "title": "Thailand",
+    "price": 44499,
+    "duration": {
+      "days": 7,
+      "nights": 6,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "Thailand"
+    ],
+    "trip_types": [
+      "International Trips"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/6.png",
+    "url": "https://traveldevils.in/trip/thailand/"
+  },
+  {
+    "slug": "chopta-tungnath",
+    "title": "Chopta Tungnath",
+    "price": 6199,
+    "duration": {
+      "days": 3,
+      "nights": 2,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "Chopta Tungnath",
+      "India"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Uttarakhand"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/4-2.png",
+    "url": "https://traveldevils.in/trip/chopta-tungnath/"
+  },
+  {
+    "slug": "auli",
+    "title": "Auli",
+    "price": 7999,
+    "duration": {
+      "days": 3,
+      "nights": 2,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "auli",
+      "India"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Uttarakhand"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/5-1.png",
+    "url": "https://traveldevils.in/trip/auli/"
+  },
+  {
+    "slug": "mukteshwar-kainchi-dham",
+    "title": "Mukteshwar",
+    "price": 4999,
+    "duration": {
+      "days": 2,
+      "nights": 1,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "India",
+      "Mukteshwar"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Uttarakhand"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/3-2.png",
+    "url": "https://traveldevils.in/trip/mukteshwar-kainchi-dham/"
+  },
+  {
+    "slug": "kanatal-tehri",
+    "title": "Kanatal Tehri",
+    "price": 4999,
+    "duration": {
+      "days": 2,
+      "nights": 1,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "India",
+      "Kanatal Tehri"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Uttarakhand"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/2-2.png",
+    "url": "https://traveldevils.in/trip/kanatal-tehri/"
+  },
+  {
+    "slug": "chakrata-1-nights-2-days",
+    "title": "Chakrata",
+    "price": 4499,
+    "duration": {
+      "days": 2,
+      "nights": 1,
+      "duration_unit": "days",
+      "duration_type": "both"
+    },
+    "destinations": [
+      "Chakrata",
+      "India"
+    ],
+    "trip_types": [
+      "Domestic Trip",
+      "Uttarakhand"
+    ],
+    "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/1-2.png",
+    "url": "https://traveldevils.in/trip/chakrata-1-nights-2-days/"
+  }
+]

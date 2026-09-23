@@ -1,0 +1,770 @@
+{
+  "id": 3395,
+  "slug": "mukteshwar-kainchi-dham",
+  "url": "https://traveldevils.in/trip/mukteshwar-kainchi-dham/",
+  "title": "Mukteshwar",
+  "code": "WTE-2886",
+  "modified": "2026-02-12T21:26:13",
+  "duration": {
+    "days": 2,
+    "nights": 1,
+    "duration_unit": "days",
+    "duration_type": "both"
+  },
+  "price": 4999,
+  "sale_price": 0,
+  "has_sale": false,
+  "currency": "INR",
+  "min_pax": 1,
+  "max_pax": "",
+  "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/3-2.png",
+  "destinations": [
+    "India",
+    "Mukteshwar"
+  ],
+  "trip_types": [
+    "Domestic Trip",
+    "Uttarakhand"
+  ],
+  "trip_duration": [
+    "2 Days 1 Nights"
+  ],
+  "difficulty": [
+    "Medium"
+  ],
+  "activities": [],
+  "upcoming": [
+    "Febuary 2026"
+  ],
+  "overview_html": "<!-- wp:paragraph -->\n<p>The two places are approximately 50-60 km from each other, making them an ideal trip for pilgrims and nature lovers. Mukteshwar is famous for its 350-year-old Shiva temple and panoramic views of the Himalayas, while Kainchi Dham is home to the ashram of Neem Karoli Baba, known for its serenity. </p>\n<!-- /wp:paragraph -->",
+  "overview": "The two places are approximately 50-60 km from each other, making them an ideal trip for pilgrims and nature lovers. Mukteshwar is famous for its 350-year-old Shiva temple and panoramic views of the Himalayas, while Kainchi Dham is home to the ashram of Neem Karoli Baba, known for its serenity.\n",
+  "highlights": [
+    "Kainchi Dham",
+    "Balugarh Waterfall",
+    "Chowli ki jaali",
+    "Mukteshwar Temple",
+    "Nainital / Bhimtal",
+    ""
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Arrival in Mukteshwar",
+      "content": "Morning: Arrive in Mukteshwar and check into your camps or rooms.\nAfternoon: Head out for a short 1.5 km hike to a local waterfall. After the hike, visit Chauli ki Jali and the Mukteshwar Temple, renowned for their breathtaking views and cultural significance.\nEvening: Return to your accommodation for a relaxing bonfire and music session. Dinner will be served, followed by an overnight stay.\n"
+    },
+    {
+      "day": 2,
+      "title": "Adventure and Sightseeing",
+      "content": "Morning: After breakfast, check out and engage in thrilling adventure activities.\nAfternoon: Visit Kainchi Dham, a revered site known for its spiritual ambiance. Later, proceed to either Nainital or Bhimtal for some leisurely sightseeing.\nEvening: Depart for Delhi at 9:00 PM.\nNext Day Early Morning: Arrival in Delhi\n"
+    }
+  ],
+  "includes": [
+    "Round-trip transfers from Delhi.",
+    "One-night accommodation in Swiss camps or rooms.",
+    "Meals: One breakfast, one dinner, and an evening high tea.",
+    "Sightseeing as per the itinerary.",
+    "Bonfire and music evening.",
+    "Enthusiastic and experienced trip captain."
+  ],
+  "excludes": [
+    "Any personal Expenses / Adventure activities.",
+    "Anything not mentioned in the itinerary.",
+    "Any kind of entry tickets / fees.",
+    "Any Meals & Drinks other than Inclusion.",
+    "5% GST Extra"
+  ],
+  "faqs": [],
+  "packages": [
+    {
+      "name": "Group Trip",
+      "is_primary": true,
+      "pricing": [
+        {
+          "label": "Quad Sharing",
+          "price": 4999,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 5399,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan Solo Rider",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan With Pillion",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Sitting Coach",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 5199,
+          "sale_price": "",
+          "type": "per-person"
+        }
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "package": "Group Trip",
+      "count": 1097,
+      "first": "2026-09-23",
+      "last": "2029-09-23",
+      "dates": null
+    }
+  ],
+  "trip_extras": [],
+  "images": [
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1024x394.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1536x591.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-300x115.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-768x295.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-300x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-80x80.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159-292x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/3-2-1024x768.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/3-2-300x225.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/3-2-768x576.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/3-2.png"
+  ],
+  "page_markdown": "[\n!\n ](https://traveldevils.in)\n\n- [Home](https://traveldevils.in/)\n- [Upcoming Trips](https://traveldevils.in/upcoming-trips/)\n- [International Trips](https://traveldevils.in/international-trips/)\n- [Backpacking Trips](https://traveldevils.in/backpacking-trips/)\n- [Corporate Trip](https://traveldevils.in/corporate-trip/)\n- [About Us](https://traveldevils.in/about-us/)\n- [Contact Us](https://traveldevils.in/contact-us/)\n- [My Account](https://traveldevils.in/my-account/)\nX\n\n!\n\n [ Overview ](#)\n [ Itinerary ](#)\n [ Inclusion/Exclusion ](#)\n\n##  [ Overview ](#)\n\n##  [ Itinerary ](#)\n\n##  [ Inclusion/Exclusion ](#)\n\n## Overview\n\nThe two places are approximately 50-60 km from each other, making them an ideal trip for pilgrims and nature lovers. Mukteshwar is famous for its 350-year-old Shiva temple and panoramic views of the Himalayas, while Kainchi Dham is home to the ashram of Neem Karoli Baba, known for its serenity.\n\n### Highlights\n\n- Kainchi Dham\n- Balugarh Waterfall\n- Chowli ki jaali\n- Mukteshwar Temple\n- Nainital / Bhimtal\n\n## Itinerary\n\n Expand all\n\n Day 01 :\n  Arrival in Mukteshwar\n\nMorning: Arrive in Mukteshwar and check into your camps or rooms.\nAfternoon: Head out for a short 1.5 km hike to a local waterfall. After the hike, visit Chauli ki Jali and the Mukteshwar Temple, renowned for their breathtaking views and cultural significance.\nEvening: Return to your accommodation for a relaxing bonfire and music session. Dinner will be served, followed by an overnight stay.\n\n Day 02 :\n  Adventure and Sightseeing\n\nMorning: After breakfast, check out and engage in thrilling adventure activities.\nAfternoon: Visit Kainchi Dham, a revered site known for its spiritual ambiance. Later, proceed to either Nainital or Bhimtal for some leisurely sightseeing.\nEvening: Depart for Delhi at 9:00 PM.\nNext Day Early Morning: Arrival in Delhi\n\n##\n\n### Inclusions\n\n- Round-trip transfers from Delhi.\n- One-night accommodation in Swiss camps or rooms.\n- Meals: One breakfast, one dinner, and an evening high tea.\n- Sightseeing as per the itinerary.\n- Bonfire and music evening.\n- Enthusiastic and experienced trip captain.\n\n### Exclusions\n\n- Any personal Expenses / Adventure activities.\n- Anything not mentioned in the itinerary.\n- Any kind of entry tickets / fees.\n- Any Meals & Drinks other than Inclusion.\n- 5% GST Extra\n\n-  [    Date & Time    ](#wte-booking-datetime)\n-  [    Package Type    ](#wte-booking-packages)\n\n   Back  Continue\n\n  From   ₹4999\n/ Quad Sharing\n  From   ₹5399\n/ Dual Sharing\n  From   ₹5199\n/ Triple Sharing\n\n   Check Availability\n\n## Useful Links\n\n-  [ Home ](https://traveldevils.in/)\n-  [ Upcoming Trips ](https://traveldevils.in/upcoming-trips/)\n-  [ International Trips ](https://traveldevils.in/international-trips/)\n-  [ Domestic Trips ](https://traveldevils.in/domestic-trip/)\n-  [ About Us ](https://traveldevils.in/about-us/)\n-  [ Contact Us ](https://traveldevils.in/contact-us/)\n\n## Unique Links\n\n-  [ Privacy Policy ](https://traveldevils.in/privacy-policy-2/)\n-  [ Terms & Conditions ](https://traveldevils.in/terms-conditions/)\n-  [ Return Policy ](https://traveldevils.in/return-policy/)\n-  [ Refund Process ](https://traveldevils.in/refund-policy/)\n-  [ Cancallation Policy  ](https://traveldevils.in/cancellation-policy/)\n\n## Domestic Trip\n\n-  [ Rajasthan ](https://traveldevils.in/domestic-trip/rajasthan/)\n-  [ Meghalaya ](https://traveldevils.in/domestic-trip/meghalaya/)\n-  [ Ladakh ](https://traveldevils.in/domestic-trip/ladakh/)\n-  [ Sikkim ](https://traveldevils.in/domestic-trip/sikkim/)\n-  [ Delhi ](https://traveldevils.in/domestic-trip/delhi/)\n-  [ Goa ](https://traveldevils.in/domestic-trip/goa/)\n-  [ Himachal ](https://traveldevils.in/domestic-trip/himachal/)\n\n## International Trip\n\n-  [ Bali ](https://traveldevils.in/international-trips/bali/)\n-  [ Bhutan ](https://traveldevils.in/international-trips/bhutan/)\n-  [ Dubai ](https://traveldevils.in/international-trips/dubai/)\n-  [ Sri Lanka ](https://traveldevils.in/international-trips/sri-lanka/)\n-  [ India ](https://traveldevils.in/international-trips/india/)\n-  [ Vietnam ](https://traveldevils.in/international-trips/vietnam/)\n-  [ Thailand ](https://traveldevils.in/international-trips/thailand/)\n\n!\n\n## Travel Devils\n\n-  +91 70428 52209\n-  info@traveldevils.in\n\n-\n-\n\n© 2026 Travel Devils All rights reserved.\n\nWhatsApp us\n",
+  "raw": {
+    "wp": {
+      "id": 3395,
+      "date": "2026-02-11T12:29:31",
+      "date_gmt": "2026-02-11T12:29:31",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3395"
+      },
+      "modified": "2026-02-12T21:26:13",
+      "modified_gmt": "2026-02-12T21:26:13",
+      "slug": "mukteshwar-kainchi-dham",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/mukteshwar-kainchi-dham/",
+      "title": {
+        "rendered": "Mukteshwar"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3483,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        142
+      ],
+      "destination": [
+        37,
+        161
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        88
+      ],
+      "difficulty": [
+        7
+      ],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [
+        68
+      ],
+      "class_list": [
+        "post-3395",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-2-days-1-nights",
+        "destination-india",
+        "destination-mukteshwar",
+        "trip_types-domestic-trip",
+        "trip_types-uttarakhand",
+        "difficulty-medium",
+        "upcomingtrips-febuary-2026"
+      ],
+      "acf": [],
+      "packages_ids": [
+        3396
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "enabled": false,
+        "duration": 0,
+        "duration_unit": "days"
+      },
+      "booked-seats": [],
+      "code": "WTE-2886",
+      "price": 4999,
+      "has_sale": false,
+      "sale_price": 0,
+      "discount_percent": 0,
+      "currency": {
+        "code": "INR",
+        "symbol": "&#8377;"
+      },
+      "duration": {
+        "days": 2,
+        "nights": 1,
+        "duration_unit": "days",
+        "duration_type": "both"
+      },
+      "min_pax": 1,
+      "max_pax": "",
+      "discount_value": 0,
+      "discount_label": "0% Off",
+      "primary_category": 166,
+      "available_times": {
+        "type": "default",
+        "items": [
+          "2021-1-01",
+          "2021-2-01",
+          "2021-3-01",
+          "2021-4-01",
+          "2021-5-01",
+          "2021-6-01",
+          "2021-7-01",
+          "2021-8-01",
+          "2021-9-01",
+          "2021-10-01",
+          "2021-11-01",
+          "2021-12-01"
+        ]
+      },
+      "description": "<!-- wp:paragraph -->\n<p>The two places are approximately 50-60 km from each other, making them an ideal trip for pilgrims and nature lovers. Mukteshwar is famous for its 350-year-old Shiva temple and panoramic views of the Himalayas, while Kainchi Dham is home to the ashram of Neem Karoli Baba, known for its serenity. </p>\n<!-- /wp:paragraph -->",
+      "cost_includes": "Round-trip transfers from Delhi.\nOne-night accommodation in Swiss camps or rooms.\nMeals: One breakfast, one dinner, and an evening high tea.\nSightseeing as per the itinerary.\nBonfire and music evening.\nEnthusiastic and experienced trip captain.",
+      "cost_excludes": "Any personal Expenses / Adventure activities.\nAnything not mentioned in the itinerary.\nAny kind of entry tickets / fees.\nAny Meals & Drinks other than Inclusion.\n5% GST Extra",
+      "itineraries": [
+        {
+          "title": "Arrival in Mukteshwar",
+          "content": "<!-- wp:paragraph -->\n<p>Morning: Arrive in Mukteshwar and check into your camps or rooms.<br>Afternoon: Head out for a short 1.5 km hike to a local waterfall. After the hike, visit Chauli ki Jali and the Mukteshwar Temple, renowned for their breathtaking views and cultural significance.<br>Evening: Return to your accommodation for a relaxing bonfire and music session. Dinner will be served, followed by an overnight stay.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Adventure and Sightseeing",
+          "content": "<!-- wp:paragraph -->\n<p>Morning: After breakfast, check out and engage in thrilling adventure activities.<br>Afternoon: Visit Kainchi Dham, a revered site known for its spiritual ambiance. Later, proceed to either Nainital or Bhimtal for some leisurely sightseeing.<br>Evening: Depart for Delhi at 9:00 PM.<br>Next Day Early Morning: Arrival in Delhi</p>\n<!-- /wp:paragraph -->"
+        }
+      ],
+      "faqs": [],
+      "is_featured": false,
+      "featured_image": {
+        "width": 1200,
+        "height": 900,
+        "file": "2026/02/3-2.png",
+        "filesize": 1609274,
+        "sizes": {
+          "medium": {
+            "file": "3-2-300x225.png",
+            "width": 300,
+            "height": 225,
+            "filesize": 107913,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-300x225.png"
+          },
+          "large": {
+            "file": "3-2-1024x768.png",
+            "width": 1024,
+            "height": 768,
+            "filesize": 1090220,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-1024x768.png"
+          },
+          "thumbnail": {
+            "file": "3-2-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 38680,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-150x150.png"
+          },
+          "medium_large": {
+            "file": "3-2-768x576.png",
+            "width": 768,
+            "height": 576,
+            "filesize": 630227,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-768x576.png"
+          },
+          "trip-thumb-size": {
+            "file": "3-2-374x226.png",
+            "width": 374,
+            "height": 226,
+            "filesize": 136873,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-374x226.png"
+          },
+          "destination-thumb-size": {
+            "file": "3-2-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 671021,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-600x810.png"
+          },
+          "destination-thumb-trip-size": {
+            "file": "3-2-410x250.png",
+            "width": 410,
+            "height": 250,
+            "filesize": 163544,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-410x250.png"
+          },
+          "activities-thumb-size": {
+            "file": "3-2-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 671021,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-600x810.png"
+          },
+          "trip-single-size": {
+            "file": "3-2-990x490.png",
+            "width": 990,
+            "height": 490,
+            "filesize": 718992,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-990x490.png"
+          },
+          "meafe-featured-page": {
+            "file": "3-2-500x410.png",
+            "width": 500,
+            "height": 410,
+            "filesize": 301044,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-500x410.png"
+          },
+          "meafe-testimonial-two": {
+            "file": "3-2-272x316.png",
+            "width": 272,
+            "height": 316,
+            "filesize": 131616,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-272x316.png"
+          },
+          "meafe-blog-one": {
+            "file": "3-2-370x247.png",
+            "width": 370,
+            "height": 247,
+            "filesize": 144655,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-370x247.png"
+          },
+          "meafe-blog-two": {
+            "file": "3-2-197x278.png",
+            "width": 197,
+            "height": 278,
+            "filesize": 86356,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-197x278.png"
+          },
+          "meafe-category-tab": {
+            "file": "3-2-355x355.png",
+            "width": 355,
+            "height": 355,
+            "filesize": 188933,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-355x355.png"
+          },
+          "meafe-category-grid": {
+            "file": "3-2-370x370.png",
+            "width": 370,
+            "height": 370,
+            "filesize": 204206,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-370x370.png"
+          },
+          "meafe-category-grid-one": {
+            "file": "3-2-570x530.png",
+            "width": 570,
+            "height": 530,
+            "filesize": 431685,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-570x530.png"
+          },
+          "meafe-category-grid-two": {
+            "file": "3-2-270x180.png",
+            "width": 270,
+            "height": 180,
+            "filesize": 81016,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-270x180.png"
+          },
+          "meafe-category-grid-three": {
+            "file": "3-2-570x320.png",
+            "width": 570,
+            "height": 320,
+            "filesize": 280144,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-570x320.png"
+          },
+          "meafe-category-grid-lay-three": {
+            "file": "3-2-170x170.png",
+            "width": 170,
+            "height": 170,
+            "filesize": 48649,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-170x170.png"
+          },
+          "meafe-post-modules-small-img": {
+            "file": "3-2-300x300.png",
+            "width": 300,
+            "height": 300,
+            "filesize": 136815,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-300x300.png"
+          },
+          "travil_80X80": {
+            "file": "3-2-80x80.png",
+            "width": 80,
+            "height": 80,
+            "filesize": 12170,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-80x80.png"
+          },
+          "travil_424X370": {
+            "file": "3-2-424x370.png",
+            "width": 424,
+            "height": 370,
+            "filesize": 233066,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-424x370.png"
+          },
+          "travil-shop-single": {
+            "file": "3-2-620x500.png",
+            "width": 620,
+            "height": 500,
+            "filesize": 447468,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2-620x500.png"
+          },
+          "full": {
+            "file": "3-2.png",
+            "width": 1200,
+            "height": 900,
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/3-2.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3395",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/types/trip"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/users/3"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/comments?post=3395"
+          }
+        ],
+        "version-history": [
+          {
+            "count": 3,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3395/revisions"
+          }
+        ],
+        "predecessor-version": [
+          {
+            "id": 3402,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3395/revisions/3402"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/media/3483"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/media?parent=3395"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "new_upcoming_trips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/new_upcoming_trips?post=3395"
+          },
+          {
+            "taxonomy": "trip_duration",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_duration?post=3395"
+          },
+          {
+            "taxonomy": "destination",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/destination?post=3395"
+          },
+          {
+            "taxonomy": "activities",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/activities?post=3395"
+          },
+          {
+            "taxonomy": "trip_types",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_types?post=3395"
+          },
+          {
+            "taxonomy": "difficulty",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/difficulty?post=3395"
+          },
+          {
+            "taxonomy": "trip_tag",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_tag?post=3395"
+          },
+          {
+            "taxonomy": "upcomingtrips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/wptravelengine_custom_taxonomy_upcomingtrips?post=3395"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    "wte_v2": {
+      "id": 3395,
+      "date": "2026-02-11T12:29:31",
+      "date_gmt": "2026-02-11T12:29:31",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3395"
+      },
+      "modified": "2026-02-12T21:26:13",
+      "modified_gmt": "2026-02-12T21:26:13",
+      "slug": "mukteshwar-kainchi-dham",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/mukteshwar-kainchi-dham/",
+      "title": {
+        "rendered": "Mukteshwar"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3483,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        142
+      ],
+      "destination": [
+        37,
+        161
+      ],
+      "activities": [],
+      "trip_types": [
+        76,
+        88
+      ],
+      "difficulty": [
+        7
+      ],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [
+        68
+      ],
+      "class_list": [
+        "post-3395",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-2-days-1-nights",
+        "destination-india",
+        "destination-mukteshwar",
+        "trip_types-domestic-trip",
+        "trip_types-uttarakhand",
+        "difficulty-medium",
+        "upcomingtrips-febuary-2026"
+      ],
+      "packages_ids": [
+        3396
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "period": 0,
+        "unit": "days"
+      },
+      "booked-seats": [],
+      "fsd": {
+        "hide": false
+      },
+      "trip_code": "WTE-2886",
+      "overview": "<!-- wp:paragraph -->\n<p>The two places are approximately 50-60 km from each other, making them an ideal trip for pilgrims and nature lovers. Mukteshwar is famous for its 350-year-old Shiva temple and panoramic views of the Himalayas, while Kainchi Dham is home to the ashram of Neem Karoli Baba, known for its serenity. </p>\n<!-- /wp:paragraph -->",
+      "cost_includes": [
+        "Round-trip transfers from Delhi.",
+        "One-night accommodation in Swiss camps or rooms.",
+        "Meals: One breakfast, one dinner, and an evening high tea.",
+        "Sightseeing as per the itinerary.",
+        "Bonfire and music evening.",
+        "Enthusiastic and experienced trip captain."
+      ],
+      "cost_excludes": [
+        "Any personal Expenses / Adventure activities.",
+        "Anything not mentioned in the itinerary.",
+        "Any kind of entry tickets / fees.",
+        "Any Meals & Drinks other than Inclusion.",
+        "5% GST Extra"
+      ],
+      "duration": {
+        "period": 2,
+        "unit": "days",
+        "nights": 1
+      },
+      "_s_duration": "48",
+      "age_limit": {
+        "min": 0,
+        "max": 0
+      },
+      "participants": {
+        "min": 1,
+        "max": ""
+      },
+      "capacity_per_category": {
+        "enabled": false,
+        "mode": "same",
+        "limits": [],
+        "package_limits": []
+      },
+      "trip_map": {
+        "images": [],
+        "iframe": ""
+      },
+      "highlights": [
+        "Kainchi Dham",
+        "Balugarh Waterfall",
+        "Chowli ki jaali",
+        "Mukteshwar Temple",
+        "Nainital / Bhimtal",
+        ""
+      ],
+      "faqs": [],
+      "gallery": [],
+      "video_gallery": [],
+      "itinerary_description": "",
+      "itineraries": [
+        {
+          "title": "Arrival in Mukteshwar",
+          "content": "<!-- wp:paragraph -->\n<p>Morning: Arrive in Mukteshwar and check into your camps or rooms.<br>Afternoon: Head out for a short 1.5 km hike to a local waterfall. After the hike, visit Chauli ki Jali and the Mukteshwar Temple, renowned for their breathtaking views and cultural significance.<br>Evening: Return to your accommodation for a relaxing bonfire and music session. Dinner will be served, followed by an overnight stay.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Adventure and Sightseeing",
+          "content": "<!-- wp:paragraph -->\n<p>Morning: After breakfast, check out and engage in thrilling adventure activities.<br>Afternoon: Visit Kainchi Dham, a revered site known for its spiritual ambiance. Later, proceed to either Nainital or Bhimtal for some leisurely sightseeing.<br>Evening: Depart for Delhi at 9:00 PM.<br>Next Day Early Morning: Arrival in Delhi</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        }
+      ],
+      "trip_info": [],
+      "file_downloads": [],
+      "trip_extra_services": [],
+      "price_types": {
+        "per-person": "Per Person",
+        "per-group": "Per Group"
+      }
+    }
+  }
+}

@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Travel Devils website
 
-## Getting Started
+Next.js 16 + Postgres. Public site plus a built-in admin CMS at `/admin`. See [PLAN.md](PLAN.md) for the roadmap.
 
-First, run the development server:
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local        # set DATABASE_URL
+createdb traveldevils             # or use Supabase/Neon
+npm run db:migrate
+npm run admin:create -- you@example.com "Your Name" 'a-strong-password'
+npm run dev                        # site: /   admin: /admin
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+PDF itinerary import needs `ANTHROPIC_API_KEY` in `.env.local` (get one at console.anthropic.com). Everything else works without it.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Optional: load the old traveldevils.in content (trips, pages, images):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+python3 scripts/extract-traveldevils.py   # snapshot → content/traveldevils (≈1 GB media, git-ignored)
+npm run import:td                         # upsert into the DB; safe to re-run
+```
 
-## Learn More
+## Admin (`/admin`)
 
-To learn more about Next.js, take a look at the following resources:
+| Section | What it does |
+|---|---|
+| Trips | Everything on a trip page: pricing packages & tiers, departure batches, itinerary (distance/meals/stay per day), inclusions, things to carry, pickup points, notes, trek specs, FAQs, gallery, video, itinerary PDF, SEO. Draft/publish, duplicate. **Import from PDF** fills the whole form from an itinerary PDF; review, edit, then Save. |
+| Destinations / Categories | Listing pages (`/{category}/{india\|international}/{destination}`): intro, SEO content, FAQs. |
+| Blog / Pages | Markdown editor with preview and image insert. |
+| Media | Upload library (images, mp4, pdf ≤ 25 MB), alt text. |
+| Leads | Enquiries from the site: status, notes, call/WhatsApp links, CSV export. |
+| Settings | Phone, WhatsApp, email, socials, header badge, homepage hero slides / stats / testimonials / FAQs, default cancellation policy (admins only). |
+| Users | Admins and editors (admins only). |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Bookings & payments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Trip page → **Book now** → `/booking/{trip}`: route, batch, sharing & traveller count, coupon, pay in full or booking amount →
+phone OTP login → traveller details → Razorpay → `/booking/confirmed/{code}`. Customers see and pay balances at `/account`.
 
-## Deploy on Vercel
+- Prices are recalculated on the server (`lib/pricing.ts`, covered by `npm test`); the browser's numbers are never trusted.
+- A payment is confirmed only by a valid Razorpay signature (`/api/payments/verify`) or webhook (`/api/payments/webhook`); both are idempotent.
+- Seats are deducted on first successful payment under a row lock. If a batch fills during payment the booking is flagged **needs attention** in Admin → Bookings.
+- Admin → Bookings: travellers, payments, record offline (UPI/cash/bank) payments, cancel (returns seats; refund in the Razorpay dashboard). Admin → Coupons.
+- Settings → Online booking: GST % and an on/off switch.
+- **No keys = test mode** in development: OTP is printed in the server console and a "Simulate payment" button replaces Razorpay. Production requires `RAZORPAY_*` and `MSG91_*` (see `.env.example`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy: Supabase + Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Everything runs on the Travel Devils accounts; no CLI login needed, it's all dashboards plus one local command.
+
+1. **Supabase** (supabase.com → New project, region Mumbai `ap-south-1`).
+   - Project Settings → API: copy the **URL** and the **service_role** key.
+   - Connect (top bar): copy the **Session pooler** string (port 5432) and the **Transaction pooler** string (port 6543).
+2. **Copy this site into Supabase** (schema, all trips/pages/settings, every uploaded file). Create `.env.supabase`:
+   ```
+   SUPABASE_DB_URL=<session pooler string>
+   SUPABASE_URL=https://<ref>.supabase.co
+   SUPABASE_SERVICE_ROLE_KEY=<service_role key>
+   ```
+   then `npm run supabase:push`. It creates a public `media` bucket and uploads `./uploads` (files over 50 MB are
+   skipped on the free plan; re-upload them compressed or upgrade). Row Level Security is switched on for every
+   table so Supabase's public Data API can't read anything; the app connects directly and isn't affected.
+3. **Vercel** (vercel.com → Add New → Project → import the GitHub repo, framework Next.js). Environment variables:
+   `DATABASE_URL` (transaction pooler string), `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL`
+   (https://traveldevils.in), plus `ANTHROPIC_API_KEY`, `RAZORPAY_*`, `MSG91_*`, `OTP_SECRET` from `.env.example`. Deploy.
+4. Domains: add `traveldevils.in` in Vercel → Domains and set the DNS records it shows. Point the Razorpay webhook at
+   `https://traveldevils.in/api/payments/webhook`.
+
+How it fits: uploads go browser → Supabase Storage via a signed URL (so Vercel's 4.5 MB body limit doesn't apply), and
+`/uploads/*` is rewritten to the bucket, so every existing image URL keeps working. Locally, without `SUPABASE_*`, files
+stay in `./uploads`.
+
+## Commands
+
+- `npm run db:generate` after editing `db/schema.ts`, then `npm run db:migrate`
+- `npm test` runs the self-checks (lead validation, password hashing)
+- `npm run db:studio` opens a raw DB browser
+
+## Deploying
+
+Uploads are written to `UPLOAD_DIR` on disk, so use a host with a persistent volume (VPS, Railway, Render, Fly). On Vercel, replace `saveUpload()` in `lib/uploads.ts` with S3/R2.

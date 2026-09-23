@@ -1,0 +1,889 @@
+{
+  "id": 3449,
+  "slug": "thailand",
+  "url": "https://traveldevils.in/trip/thailand/",
+  "title": "Thailand",
+  "code": "WTE-2886",
+  "modified": "2026-02-12T21:09:23",
+  "duration": {
+    "days": 7,
+    "nights": 6,
+    "duration_unit": "days",
+    "duration_type": "both"
+  },
+  "price": 44499,
+  "sale_price": 0,
+  "has_sale": false,
+  "currency": "INR",
+  "min_pax": 1,
+  "max_pax": "",
+  "featured_image": "https://traveldevils.in/wp-content/uploads/2026/02/6.png",
+  "destinations": [
+    "Thailand"
+  ],
+  "trip_types": [
+    "International Trips"
+  ],
+  "trip_duration": [
+    "7 Days 6 Nights"
+  ],
+  "difficulty": [],
+  "activities": [],
+  "upcoming": [
+    "Febuary 2026"
+  ],
+  "overview_html": "<!-- wp:paragraph -->\n<p>The gorgeous beaches that surround Phuket, which is nestled in the lap of the great Andaman Sea, have long worked like a charm for all beach lovers. Because it is Thailand's largest island, it is also the most active in the country.<br><br>The Sino-colonial palaces, as well as Big Buddha and Wat Chalong, offer a glimpse of Phuket's eclectic culture. When you visit Phi Phi Island, which was featured in Leonardo Dicaprio's hit film The Beach, share the screens of Hollywood movies.<br>Seeing the beautiful limestone karsts rising skyward from the sea, as well as the soothing flora that covers the majority of the island, provides a sense of tranquilly that one can only imagine. When you witness the waves breaking on the breathtakingly gorgeous coral reefs, you'll be lost in the splendour of Phi Phi Island.<br><br>While you're here, take advantage of the different things the area has to offer to keep your adrenaline pumping. Visit the Thai island of Koh Phangan for a colourful 7-day tour that includes a full moon party, snorkelling, and adventure activities like zip line and snorkelling.</p>\n<!-- /wp:paragraph -->",
+  "overview": "The gorgeous beaches that surround Phuket, which is nestled in the lap of the great Andaman Sea, have long worked like a charm for all beach lovers. Because it is Thailand's largest island, it is also the most active in the country.\n\nThe Sino-colonial palaces, as well as Big Buddha and Wat Chalong, offer a glimpse of Phuket's eclectic culture. When you visit Phi Phi Island, which was featured in Leonardo Dicaprio's hit film The Beach, share the screens of Hollywood movies.\nSeeing the beautiful limestone karsts rising skyward from the sea, as well as the soothing flora that covers the majority of the island, provides a sense of tranquilly that one can only imagine. When you witness the waves breaking on the breathtakingly gorgeous coral reefs, you'll be lost in the splendour of Phi Phi Island.\n\nWhile you're here, take advantage of the different things the area has to offer to keep your adrenaline pumping. Visit the Thai island of Koh Phangan for a colourful 7-day tour that includes a full moon party, snorkelling, and adventure activities like zip line and snorkelling.\n",
+  "highlights": [
+    "Airport pick-up and drop-off at the destination city",
+    "Phi Phi day trip with lunch by Speedboat.",
+    "Four Island tour with lunch by Speedboat."
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Arrival in Phuket | Transfer To Krabi",
+      "content": "Arrive at Phuket Airport and get assisted at the immigration counter for a Thailand tourist Visa.\nA representative will meet you and accompany you to your Krabi hotel (approx. 3-hour road journey).\nCheck-in and spend the evening at Ao Nang beach, and visit Krabi's nightlife (by your own).\nOvernight stay at the Krabi Hotel.\n"
+    },
+    {
+      "day": 2,
+      "title": "4 Island Tour By Speed Boat | Stay at Krabi",
+      "content": "Have breakfast at the hotel.\nTake a 4 Island tour by Speedboat from Krabi to watch the sunset.\nVisit Chicken Island, Koh Poda, Tup Island, and Cave Beaches.\nEnjoy a walk on the sandbar and snorkel in the turquoise waters.\nOvernight stay in Krabi.\n"
+    },
+    {
+      "day": 3,
+      "title": "Koh Samui | Exploring the Island Full Moon Party",
+      "content": "After breakfast, transfer to Koh Samui on a SIC (Seat-In-Coach) basis.\nCheck into rooms and change into beachwear.\nAttend the Overnight Full Moon Party at Koh Phangan Beach.\n"
+    },
+    {
+      "day": 4,
+      "title": "A Leisure Day in Koh Samui",
+      "content": "This day is for rejuvenating after the full night party.\nTransfer from Haad Rinn beach to Koh Samui via Speedboat.\nEnjoy the beach surroundings and zestful environment.\nOvernight stay at Koh Samui.\n"
+    },
+    {
+      "day": 5,
+      "title": "Koh Samui To Phuket | City Walk And Pub Crawl",
+      "content": "Experience the scenic beauty and oceanic route from Koh Samui to Phuket by ferry.\nThe transfer includes Koh Samui pier to Surat Thani pier (1 hour) and Surat Thani to Phuket hotel by van (4.5 hours).\nIn the evening, wander through the most famous spot in Phuket: Bangla Walking Street and Patong Beach.\nEnjoy beach shows and the happening street.\nVisit Illuzion club, ranked among the world's top 13 clubs.\nOvernight stay at Phuket.\n"
+    },
+    {
+      "day": 6,
+      "title": "Phi-Phi Island Tour By Speed Boat | Overnight Stay at Phuket",
+      "content": "After breakfast, the theme is Sunning, Swimming, and Snorkeling.\nMorning pick-up from the hotel is between 6:00 AM and 8:00 AM.\nVisit the Phi Phi Islands.\nThe itinerary includes the stunning Phi Leh Lagoon, surrounded by limestone cliffs, and Maya Bay (famous from the movie 'The Beach').\nComplete the trip by snorkeling among native fish and coral gardens.\nAfter the island time, hit the city's night clubs to enjoy the party culture.\nOvernight stay at a Phuket hotel.\n"
+    },
+    {
+      "day": 7,
+      "title": "Departure from Phuket Airport",
+      "content": "Take your ride from Phuket to catch your flights.\n"
+    }
+  ],
+  "includes": [
+    "Airport pick up & drop at the destination city.",
+    "Phi Phi day trip with lunch by Speedboat.",
+    "Four Island tour with lunch by Speedboat.",
+    "Koh Samui to Phuket Transfer by bus and ferry.",
+    "Koh Samui to Koh Phangan and back to Koh Samui by Speedboat.",
+    "Ferry and transfers from Koh Samui to Krabi.",
+    "6 nights Accommodation.",
+    "6 breakfast and 2 Lunch (1 at Phi Phi Island and 1 at Krabi Island tour).",
+    "5% GST & 5% TCS"
+  ],
+  "excludes": [
+    "National Park Fees: 400 THB for Phi Phi Island and 400 THB for the 4 Island Krabi tour.",
+    "Visa.",
+    "Full moon Party ticket (200 Baht).",
+    "Lunch & Dinners (meals other than specified in the inclusions).",
+    "RT-PCR Test (if any).",
+    "Personal and incidental expenses."
+  ],
+  "faqs": [],
+  "packages": [
+    {
+      "name": "International Trip",
+      "is_primary": true,
+      "pricing": [
+        {
+          "label": "Dual Sharing",
+          "price": 44499,
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Quad Sharing",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan Solo Rider",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "RE Himalayan With Pillion",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Sitting Coach",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        },
+        {
+          "label": "Triple Sharing",
+          "price": "",
+          "sale_price": "",
+          "type": "per-person"
+        }
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "package": "International Trip",
+      "count": 1097,
+      "first": "2026-09-23",
+      "last": "2029-09-23",
+      "dates": null
+    }
+  ],
+  "trip_extras": [],
+  "images": [
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1024x394.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-1536x591.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-300x115.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1-768x295.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-1.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-300x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/10/Frame-38-e1770022994688-80x80.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159-292x300.png",
+    "https://traveldevils.in/wp-content/uploads/2025/11/Frame-39-e1770839402159.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/6-1024x768.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/6-300x225.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/6-768x576.png",
+    "https://traveldevils.in/wp-content/uploads/2026/02/6.png"
+  ],
+  "page_markdown": "[\n!\n ](https://traveldevils.in)\n\n- [Home](https://traveldevils.in/)\n- [Upcoming Trips](https://traveldevils.in/upcoming-trips/)\n- [International Trips](https://traveldevils.in/international-trips/)\n- [Backpacking Trips](https://traveldevils.in/backpacking-trips/)\n- [Corporate Trip](https://traveldevils.in/corporate-trip/)\n- [About Us](https://traveldevils.in/about-us/)\n- [Contact Us](https://traveldevils.in/contact-us/)\n- [My Account](https://traveldevils.in/my-account/)\nX\n\n!\n\n [ Overview ](#)\n [ Itinerary ](#)\n [ Inclusion/Exclusion ](#)\n\n##  [ Overview ](#)\n\n##  [ Itinerary ](#)\n\n##  [ Inclusion/Exclusion ](#)\n\n## Overview\n\nThe gorgeous beaches that surround Phuket, which is nestled in the lap of the great Andaman Sea, have long worked like a charm for all beach lovers. Because it is Thailand’s largest island, it is also the most active in the country.\n\nThe Sino-colonial palaces, as well as Big Buddha and Wat Chalong, offer a glimpse of Phuket’s eclectic culture. When you visit Phi Phi Island, which was featured in Leonardo Dicaprio’s hit film The Beach, share the screens of Hollywood movies.\nSeeing the beautiful limestone karsts rising skyward from the sea, as well as the soothing flora that covers the majority of the island, provides a sense of tranquilly that one can only imagine. When you witness the waves breaking on the breathtakingly gorgeous coral reefs, you’ll be lost in the splendour of Phi Phi Island.\n\nWhile you’re here, take advantage of the different things the area has to offer to keep your adrenaline pumping. Visit the Thai island of Koh Phangan for a colourful 7-day tour that includes a full moon party, snorkelling, and adventure activities like zip line and snorkelling.\n\n### Highlights\n\n- Airport pick-up and drop-off at the destination city\n- Phi Phi day trip with lunch by Speedboat.\n- Four Island tour with lunch by Speedboat.\n\n## Itinerary\n\n Expand all\n\n Day 01 :\n  Arrival in Phuket | Transfer To Krabi\n\nArrive at Phuket Airport and get assisted at the immigration counter for a Thailand tourist Visa.\nA representative will meet you and accompany you to your Krabi hotel (approx. 3-hour road journey).\nCheck-in and spend the evening at Ao Nang beach, and visit Krabi's nightlife (by your own).\nOvernight stay at the Krabi Hotel.\n\n Day 02 :\n  4 Island Tour By Speed Boat | Stay at Krabi\n\nHave breakfast at the hotel.\nTake a 4 Island tour by Speedboat from Krabi to watch the sunset.\nVisit Chicken Island, Koh Poda, Tup Island, and Cave Beaches.\nEnjoy a walk on the sandbar and snorkel in the turquoise waters.\nOvernight stay in Krabi.\n\n Day 03 :\n  Koh Samui | Exploring the Island Full Moon Party\n\nAfter breakfast, transfer to Koh Samui on a SIC (Seat-In-Coach) basis.\nCheck into rooms and change into beachwear.\nAttend the Overnight Full Moon Party at Koh Phangan Beach.\n\n Day 04 :\n  A Leisure Day in Koh Samui\n\nThis day is for rejuvenating after the full night party.\nTransfer from Haad Rinn beach to Koh Samui via Speedboat.\nEnjoy the beach surroundings and zestful environment.\nOvernight stay at Koh Samui.\n\n Day 05 :\n  Koh Samui To Phuket | City Walk And Pub Crawl\n\nExperience the scenic beauty and oceanic route from Koh Samui to Phuket by ferry.\nThe transfer includes Koh Samui pier to Surat Thani pier (1 hour) and Surat Thani to Phuket hotel by van (4.5 hours).\nIn the evening, wander through the most famous spot in Phuket: Bangla Walking Street and Patong Beach.\nEnjoy beach shows and the happening street.\nVisit Illuzion club, ranked among the world's top 13 clubs.\nOvernight stay at Phuket.\n\n Day 06 :\n  Phi-Phi Island Tour By Speed Boat | Overnight Stay at Phuket\n\nAfter breakfast, the theme is Sunning, Swimming, and Snorkeling.\nMorning pick-up from the hotel is between 6:00 AM and 8:00 AM.\nVisit the Phi Phi Islands.\nThe itinerary includes the stunning Phi Leh Lagoon, surrounded by limestone cliffs, and Maya Bay (famous from the movie 'The Beach').\nComplete the trip by snorkeling among native fish and coral gardens.\nAfter the island time, hit the city's night clubs to enjoy the party culture.\nOvernight stay at a Phuket hotel.\n\n Day 07 :\n  Departure from Phuket Airport\n\nTake your ride from Phuket to catch your flights.\n\n##\n\n### Inclusions\n\n- Airport pick up & drop at the destination city.\n- Phi Phi day trip with lunch by Speedboat.\n- Four Island tour with lunch by Speedboat.\n- Koh Samui to Phuket Transfer by bus and ferry.\n- Koh Samui to Koh Phangan and back to Koh Samui by Speedboat.\n- Ferry and transfers from Koh Samui to Krabi.\n- 6 nights Accommodation.\n- 6 breakfast and 2 Lunch (1 at Phi Phi Island and 1 at Krabi Island tour).\n- 5% GST & 5% TCS\n\n### Exclusions\n\n- National Park Fees: 400 THB for Phi Phi Island and 400 THB for the 4 Island Krabi tour.\n- Visa.\n- Full moon Party ticket (200 Baht).\n- Lunch & Dinners (meals other than specified in the inclusions).\n- RT-PCR Test (if any).\n- Personal and incidental expenses.\n\n-  [    Date & Time    ](#wte-booking-datetime)\n-  [    Package Type    ](#wte-booking-packages)\n\n   Back  Continue\n\n  From   ₹44499\n/ Dual Sharing\n\n   Check Availability\n\n## Useful Links\n\n-  [ Home ](https://traveldevils.in/)\n-  [ Upcoming Trips ](https://traveldevils.in/upcoming-trips/)\n-  [ International Trips ](https://traveldevils.in/international-trips/)\n-  [ Domestic Trips ](https://traveldevils.in/domestic-trip/)\n-  [ About Us ](https://traveldevils.in/about-us/)\n-  [ Contact Us ](https://traveldevils.in/contact-us/)\n\n## Unique Links\n\n-  [ Privacy Policy ](https://traveldevils.in/privacy-policy-2/)\n-  [ Terms & Conditions ](https://traveldevils.in/terms-conditions/)\n-  [ Return Policy ](https://traveldevils.in/return-policy/)\n-  [ Refund Process ](https://traveldevils.in/refund-policy/)\n-  [ Cancallation Policy  ](https://traveldevils.in/cancellation-policy/)\n\n## Domestic Trip\n\n-  [ Rajasthan ](https://traveldevils.in/domestic-trip/rajasthan/)\n-  [ Meghalaya ](https://traveldevils.in/domestic-trip/meghalaya/)\n-  [ Ladakh ](https://traveldevils.in/domestic-trip/ladakh/)\n-  [ Sikkim ](https://traveldevils.in/domestic-trip/sikkim/)\n-  [ Delhi ](https://traveldevils.in/domestic-trip/delhi/)\n-  [ Goa ](https://traveldevils.in/domestic-trip/goa/)\n-  [ Himachal ](https://traveldevils.in/domestic-trip/himachal/)\n\n## International Trip\n\n-  [ Bali ](https://traveldevils.in/international-trips/bali/)\n-  [ Bhutan ](https://traveldevils.in/international-trips/bhutan/)\n-  [ Dubai ](https://traveldevils.in/international-trips/dubai/)\n-  [ Sri Lanka ](https://traveldevils.in/international-trips/sri-lanka/)\n-  [ India ](https://traveldevils.in/international-trips/india/)\n-  [ Vietnam ](https://traveldevils.in/international-trips/vietnam/)\n-  [ Thailand ](https://traveldevils.in/international-trips/thailand/)\n\n!\n\n## Travel Devils\n\n-  +91 70428 52209\n-  info@traveldevils.in\n\n-\n-\n\n© 2026 Travel Devils All rights reserved.\n\nWhatsApp us\n",
+  "raw": {
+    "wp": {
+      "id": 3449,
+      "date": "2026-02-12T20:42:52",
+      "date_gmt": "2026-02-12T20:42:52",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3449"
+      },
+      "modified": "2026-02-12T21:09:23",
+      "modified_gmt": "2026-02-12T21:09:23",
+      "slug": "thailand",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/thailand/",
+      "title": {
+        "rendered": "Thailand"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3473,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        147
+      ],
+      "destination": [
+        117
+      ],
+      "activities": [],
+      "trip_types": [
+        69
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [
+        68
+      ],
+      "class_list": [
+        "post-3449",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-7-days-6-nights",
+        "destination-thailand",
+        "trip_types-international-trips",
+        "upcomingtrips-febuary-2026"
+      ],
+      "acf": [],
+      "packages_ids": [
+        3450
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "enabled": false,
+        "duration": 0,
+        "duration_unit": "days"
+      },
+      "booked-seats": [],
+      "code": "WTE-2886",
+      "price": 44499,
+      "has_sale": false,
+      "sale_price": 0,
+      "discount_percent": 0,
+      "currency": {
+        "code": "INR",
+        "symbol": "&#8377;"
+      },
+      "duration": {
+        "days": 7,
+        "nights": 6,
+        "duration_unit": "days",
+        "duration_type": "both"
+      },
+      "min_pax": 1,
+      "max_pax": "",
+      "discount_value": 0,
+      "discount_label": "0% Off",
+      "primary_category": 165,
+      "available_times": {
+        "type": "default",
+        "items": [
+          "2021-1-01",
+          "2021-2-01",
+          "2021-3-01",
+          "2021-4-01",
+          "2021-5-01",
+          "2021-6-01",
+          "2021-7-01",
+          "2021-8-01",
+          "2021-9-01",
+          "2021-10-01",
+          "2021-11-01",
+          "2021-12-01"
+        ]
+      },
+      "description": "<!-- wp:paragraph -->\n<p>The gorgeous beaches that surround Phuket, which is nestled in the lap of the great Andaman Sea, have long worked like a charm for all beach lovers. Because it is Thailand's largest island, it is also the most active in the country.<br><br>The Sino-colonial palaces, as well as Big Buddha and Wat Chalong, offer a glimpse of Phuket's eclectic culture. When you visit Phi Phi Island, which was featured in Leonardo Dicaprio's hit film The Beach, share the screens of Hollywood movies.<br>Seeing the beautiful limestone karsts rising skyward from the sea, as well as the soothing flora that covers the majority of the island, provides a sense of tranquilly that one can only imagine. When you witness the waves breaking on the breathtakingly gorgeous coral reefs, you'll be lost in the splendour of Phi Phi Island.<br><br>While you're here, take advantage of the different things the area has to offer to keep your adrenaline pumping. Visit the Thai island of Koh Phangan for a colourful 7-day tour that includes a full moon party, snorkelling, and adventure activities like zip line and snorkelling.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": "Airport pick up & drop at the destination city.\nPhi Phi day trip with lunch by Speedboat.\nFour Island tour with lunch by Speedboat.\nKoh Samui to Phuket Transfer by bus and ferry.\nKoh Samui to Koh Phangan and back to Koh Samui by Speedboat.\nFerry and transfers from Koh Samui to Krabi.\n6 nights Accommodation.\n6 breakfast and 2 Lunch (1 at Phi Phi Island and 1 at Krabi Island tour).\n5% GST & 5% TCS",
+      "cost_excludes": "National Park Fees: 400 THB for Phi Phi Island and 400 THB for the 4 Island Krabi tour.\nVisa.\nFull moon Party ticket (200 Baht).\nLunch & Dinners (meals other than specified in the inclusions).\nRT-PCR Test (if any).\nPersonal and incidental expenses.",
+      "itineraries": [
+        {
+          "title": "Arrival in Phuket | Transfer To Krabi",
+          "content": "<!-- wp:paragraph -->\n<p>Arrive at Phuket Airport and get assisted at the immigration counter for a Thailand tourist Visa.<br>A representative will meet you and accompany you to your Krabi hotel (approx. 3-hour road journey).<br>Check-in and spend the evening at Ao Nang beach, and visit Krabi's nightlife (by your own).<br>Overnight stay at the Krabi Hotel.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "4 Island Tour By Speed Boat | Stay at Krabi",
+          "content": "<!-- wp:paragraph -->\n<p>Have breakfast at the hotel.<br>Take a 4 Island tour by Speedboat from Krabi to watch the sunset.<br>Visit Chicken Island, Koh Poda, Tup Island, and Cave Beaches.<br>Enjoy a walk on the sandbar and snorkel in the turquoise waters.<br>Overnight stay in Krabi.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Koh Samui | Exploring the Island Full Moon Party",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast, transfer to Koh Samui on a SIC (Seat-In-Coach) basis.<br>Check into rooms and change into beachwear.<br>Attend the Overnight Full Moon Party at Koh Phangan Beach.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "A Leisure Day in Koh Samui",
+          "content": "<!-- wp:paragraph -->\n<p>This day is for rejuvenating after the full night party.<br>Transfer from Haad Rinn beach to Koh Samui via Speedboat.<br>Enjoy the beach surroundings and zestful environment.<br>Overnight stay at Koh Samui.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Koh Samui To Phuket | City Walk And Pub Crawl",
+          "content": "<!-- wp:paragraph -->\n<p>Experience the scenic beauty and oceanic route from Koh Samui to Phuket by ferry.<br>The transfer includes Koh Samui pier to Surat Thani pier (1 hour) and Surat Thani to Phuket hotel by van (4.5 hours).<br>In the evening, wander through the most famous spot in Phuket: Bangla Walking Street and Patong Beach.<br>Enjoy beach shows and the happening street.<br>Visit Illuzion club, ranked among the world's top 13 clubs.<br>Overnight stay at Phuket.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Phi-Phi Island Tour By Speed Boat | Overnight Stay at Phuket",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast, the theme is Sunning, Swimming, and Snorkeling.<br>Morning pick-up from the hotel is between 6:00 AM and 8:00 AM.<br>Visit the Phi Phi Islands.<br>The itinerary includes the stunning Phi Leh Lagoon, surrounded by limestone cliffs, and Maya Bay (famous from the movie 'The Beach').<br>Complete the trip by snorkeling among native fish and coral gardens.<br>After the island time, hit the city's night clubs to enjoy the party culture.<br>Overnight stay at a Phuket hotel.</p>\n<!-- /wp:paragraph -->"
+        },
+        {
+          "title": "Departure from Phuket Airport",
+          "content": "<!-- wp:paragraph -->\n<p>Take your ride from Phuket to catch your flights.</p>\n<!-- /wp:paragraph -->"
+        }
+      ],
+      "faqs": [],
+      "is_featured": false,
+      "featured_image": {
+        "width": 1200,
+        "height": 900,
+        "file": "2026/02/6.png",
+        "filesize": 1650613,
+        "sizes": {
+          "medium": {
+            "file": "6-300x225.png",
+            "width": 300,
+            "height": 225,
+            "filesize": 109487,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-300x225.png"
+          },
+          "large": {
+            "file": "6-1024x768.png",
+            "width": 1024,
+            "height": 768,
+            "filesize": 1095414,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-1024x768.png"
+          },
+          "thumbnail": {
+            "file": "6-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 39783,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-150x150.png"
+          },
+          "medium_large": {
+            "file": "6-768x576.png",
+            "width": 768,
+            "height": 576,
+            "filesize": 631868,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-768x576.png"
+          },
+          "trip-thumb-size": {
+            "file": "6-374x226.png",
+            "width": 374,
+            "height": 226,
+            "filesize": 140089,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-374x226.png"
+          },
+          "destination-thumb-size": {
+            "file": "6-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 686362,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-600x810.png"
+          },
+          "destination-thumb-trip-size": {
+            "file": "6-410x250.png",
+            "width": 410,
+            "height": 250,
+            "filesize": 166824,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-410x250.png"
+          },
+          "activities-thumb-size": {
+            "file": "6-600x810.png",
+            "width": 600,
+            "height": 810,
+            "filesize": 686362,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-600x810.png"
+          },
+          "trip-single-size": {
+            "file": "6-990x490.png",
+            "width": 990,
+            "height": 490,
+            "filesize": 734052,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-990x490.png"
+          },
+          "meafe-featured-page": {
+            "file": "6-500x410.png",
+            "width": 500,
+            "height": 410,
+            "filesize": 306576,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-500x410.png"
+          },
+          "meafe-testimonial-two": {
+            "file": "6-272x316.png",
+            "width": 272,
+            "height": 316,
+            "filesize": 136080,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-272x316.png"
+          },
+          "meafe-blog-one": {
+            "file": "6-370x247.png",
+            "width": 370,
+            "height": 247,
+            "filesize": 146859,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-370x247.png"
+          },
+          "meafe-blog-two": {
+            "file": "6-197x278.png",
+            "width": 197,
+            "height": 278,
+            "filesize": 89674,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-197x278.png"
+          },
+          "meafe-category-tab": {
+            "file": "6-355x355.png",
+            "width": 355,
+            "height": 355,
+            "filesize": 194974,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-355x355.png"
+          },
+          "meafe-category-grid": {
+            "file": "6-370x370.png",
+            "width": 370,
+            "height": 370,
+            "filesize": 210632,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-370x370.png"
+          },
+          "meafe-category-grid-one": {
+            "file": "6-570x530.png",
+            "width": 570,
+            "height": 530,
+            "filesize": 441585,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-570x530.png"
+          },
+          "meafe-category-grid-two": {
+            "file": "6-270x180.png",
+            "width": 270,
+            "height": 180,
+            "filesize": 82442,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-270x180.png"
+          },
+          "meafe-category-grid-three": {
+            "file": "6-570x320.png",
+            "width": 570,
+            "height": 320,
+            "filesize": 291311,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-570x320.png"
+          },
+          "meafe-category-grid-lay-three": {
+            "file": "6-170x170.png",
+            "width": 170,
+            "height": 170,
+            "filesize": 50187,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-170x170.png"
+          },
+          "meafe-post-modules-small-img": {
+            "file": "6-300x300.png",
+            "width": 300,
+            "height": 300,
+            "filesize": 141403,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-300x300.png"
+          },
+          "travil_80X80": {
+            "file": "6-80x80.png",
+            "width": 80,
+            "height": 80,
+            "filesize": 12531,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-80x80.png"
+          },
+          "travil_424X370": {
+            "file": "6-424x370.png",
+            "width": 424,
+            "height": 370,
+            "filesize": 238858,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-424x370.png"
+          },
+          "travil-shop-single": {
+            "file": "6-620x500.png",
+            "width": 620,
+            "height": 500,
+            "filesize": 452075,
+            "mime_type": "image/png",
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6-620x500.png"
+          },
+          "full": {
+            "file": "6.png",
+            "width": 1200,
+            "height": 900,
+            "source_url": "https://traveldevils.in/wp-content/uploads/2026/02/6.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3449",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/types/trip"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/users/3"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/comments?post=3449"
+          }
+        ],
+        "version-history": [
+          {
+            "count": 1,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3449/revisions"
+          }
+        ],
+        "predecessor-version": [
+          {
+            "id": 3452,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip/3449/revisions/3452"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/media/3473"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "https://traveldevils.in/wp-json/wp/v2/media?parent=3449"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "new_upcoming_trips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/new_upcoming_trips?post=3449"
+          },
+          {
+            "taxonomy": "trip_duration",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_duration?post=3449"
+          },
+          {
+            "taxonomy": "destination",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/destination?post=3449"
+          },
+          {
+            "taxonomy": "activities",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/activities?post=3449"
+          },
+          {
+            "taxonomy": "trip_types",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_types?post=3449"
+          },
+          {
+            "taxonomy": "difficulty",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/difficulty?post=3449"
+          },
+          {
+            "taxonomy": "trip_tag",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/trip_tag?post=3449"
+          },
+          {
+            "taxonomy": "upcomingtrips",
+            "embeddable": true,
+            "href": "https://traveldevils.in/wp-json/wp/v2/wptravelengine_custom_taxonomy_upcomingtrips?post=3449"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    "wte_v2": {
+      "id": 3449,
+      "date": "2026-02-12T20:42:52",
+      "date_gmt": "2026-02-12T20:42:52",
+      "guid": {
+        "rendered": "https://traveldevils.in/?post_type=trip&#038;p=3449"
+      },
+      "modified": "2026-02-12T21:09:23",
+      "modified_gmt": "2026-02-12T21:09:23",
+      "slug": "thailand",
+      "status": "publish",
+      "type": "trip",
+      "link": "https://traveldevils.in/trip/thailand/",
+      "title": {
+        "rendered": "Thailand"
+      },
+      "content": {
+        "rendered": "",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "",
+        "protected": false
+      },
+      "author": 3,
+      "featured_media": 3473,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "new_upcoming_trips": [],
+      "trip_duration": [
+        147
+      ],
+      "destination": [
+        117
+      ],
+      "activities": [],
+      "trip_types": [
+        69
+      ],
+      "difficulty": [],
+      "trip_tag": [],
+      "wptravelengine_custom_taxonomy_upcomingtrips": [
+        68
+      ],
+      "class_list": [
+        "post-3449",
+        "trip",
+        "type-trip",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry",
+        "trip_duration-7-days-6-nights",
+        "destination-thailand",
+        "trip_types-international-trips",
+        "upcomingtrips-febuary-2026"
+      ],
+      "packages_ids": [
+        3450
+      ],
+      "trip_extras": [],
+      "cut_off_time": {
+        "period": 0,
+        "unit": "days"
+      },
+      "booked-seats": [],
+      "fsd": {
+        "hide": false
+      },
+      "trip_code": "WTE-2886",
+      "overview": "<!-- wp:paragraph -->\n<p>The gorgeous beaches that surround Phuket, which is nestled in the lap of the great Andaman Sea, have long worked like a charm for all beach lovers. Because it is Thailand's largest island, it is also the most active in the country.<br><br>The Sino-colonial palaces, as well as Big Buddha and Wat Chalong, offer a glimpse of Phuket's eclectic culture. When you visit Phi Phi Island, which was featured in Leonardo Dicaprio's hit film The Beach, share the screens of Hollywood movies.<br>Seeing the beautiful limestone karsts rising skyward from the sea, as well as the soothing flora that covers the majority of the island, provides a sense of tranquilly that one can only imagine. When you witness the waves breaking on the breathtakingly gorgeous coral reefs, you'll be lost in the splendour of Phi Phi Island.<br><br>While you're here, take advantage of the different things the area has to offer to keep your adrenaline pumping. Visit the Thai island of Koh Phangan for a colourful 7-day tour that includes a full moon party, snorkelling, and adventure activities like zip line and snorkelling.</p>\n<!-- /wp:paragraph -->",
+      "cost_includes": [
+        "Airport pick up & drop at the destination city.",
+        "Phi Phi day trip with lunch by Speedboat.",
+        "Four Island tour with lunch by Speedboat.",
+        "Koh Samui to Phuket Transfer by bus and ferry.",
+        "Koh Samui to Koh Phangan and back to Koh Samui by Speedboat.",
+        "Ferry and transfers from Koh Samui to Krabi.",
+        "6 nights Accommodation.",
+        "6 breakfast and 2 Lunch (1 at Phi Phi Island and 1 at Krabi Island tour).",
+        "5% GST & 5% TCS"
+      ],
+      "cost_excludes": [
+        "National Park Fees: 400 THB for Phi Phi Island and 400 THB for the 4 Island Krabi tour.",
+        "Visa.",
+        "Full moon Party ticket (200 Baht).",
+        "Lunch & Dinners (meals other than specified in the inclusions).",
+        "RT-PCR Test (if any).",
+        "Personal and incidental expenses."
+      ],
+      "duration": {
+        "period": 7,
+        "unit": "days",
+        "nights": 6
+      },
+      "_s_duration": "168",
+      "age_limit": {
+        "min": 0,
+        "max": 0
+      },
+      "participants": {
+        "min": 1,
+        "max": ""
+      },
+      "capacity_per_category": {
+        "enabled": false,
+        "mode": "same",
+        "limits": [],
+        "package_limits": []
+      },
+      "trip_map": {
+        "images": [],
+        "iframe": ""
+      },
+      "highlights": [
+        "Airport pick-up and drop-off at the destination city",
+        "Phi Phi day trip with lunch by Speedboat.",
+        "Four Island tour with lunch by Speedboat."
+      ],
+      "faqs": [],
+      "gallery": [],
+      "video_gallery": [],
+      "itinerary_description": "",
+      "itineraries": [
+        {
+          "title": "Arrival in Phuket | Transfer To Krabi",
+          "content": "<!-- wp:paragraph -->\n<p>Arrive at Phuket Airport and get assisted at the immigration counter for a Thailand tourist Visa.<br>A representative will meet you and accompany you to your Krabi hotel (approx. 3-hour road journey).<br>Check-in and spend the evening at Ao Nang beach, and visit Krabi's nightlife (by your own).<br>Overnight stay at the Krabi Hotel.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "4 Island Tour By Speed Boat | Stay at Krabi",
+          "content": "<!-- wp:paragraph -->\n<p>Have breakfast at the hotel.<br>Take a 4 Island tour by Speedboat from Krabi to watch the sunset.<br>Visit Chicken Island, Koh Poda, Tup Island, and Cave Beaches.<br>Enjoy a walk on the sandbar and snorkel in the turquoise waters.<br>Overnight stay in Krabi.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Koh Samui | Exploring the Island Full Moon Party",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast, transfer to Koh Samui on a SIC (Seat-In-Coach) basis.<br>Check into rooms and change into beachwear.<br>Attend the Overnight Full Moon Party at Koh Phangan Beach.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "A Leisure Day in Koh Samui",
+          "content": "<!-- wp:paragraph -->\n<p>This day is for rejuvenating after the full night party.<br>Transfer from Haad Rinn beach to Koh Samui via Speedboat.<br>Enjoy the beach surroundings and zestful environment.<br>Overnight stay at Koh Samui.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Koh Samui To Phuket | City Walk And Pub Crawl",
+          "content": "<!-- wp:paragraph -->\n<p>Experience the scenic beauty and oceanic route from Koh Samui to Phuket by ferry.<br>The transfer includes Koh Samui pier to Surat Thani pier (1 hour) and Surat Thani to Phuket hotel by van (4.5 hours).<br>In the evening, wander through the most famous spot in Phuket: Bangla Walking Street and Patong Beach.<br>Enjoy beach shows and the happening street.<br>Visit Illuzion club, ranked among the world's top 13 clubs.<br>Overnight stay at Phuket.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Phi-Phi Island Tour By Speed Boat | Overnight Stay at Phuket",
+          "content": "<!-- wp:paragraph -->\n<p>After breakfast, the theme is Sunning, Swimming, and Snorkeling.<br>Morning pick-up from the hotel is between 6:00 AM and 8:00 AM.<br>Visit the Phi Phi Islands.<br>The itinerary includes the stunning Phi Leh Lagoon, surrounded by limestone cliffs, and Maya Bay (famous from the movie 'The Beach').<br>Complete the trip by snorkeling among native fish and coral gardens.<br>After the island time, hit the city's night clubs to enjoy the party culture.<br>Overnight stay at a Phuket hotel.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        },
+        {
+          "title": "Departure from Phuket Airport",
+          "content": "<!-- wp:paragraph -->\n<p>Take your ride from Phuket to catch your flights.</p>\n<!-- /wp:paragraph -->",
+          "period": 0,
+          "unit": "hour",
+          "sleep_mode": {
+            "field_id": "",
+            "description": ""
+          },
+          "meals_included": [],
+          "images": [],
+          "overnights": [
+            {
+              "location": "",
+              "altitude": 0
+            }
+          ]
+        }
+      ],
+      "trip_info": [],
+      "file_downloads": [],
+      "trip_extra_services": [],
+      "price_types": {
+        "per-person": "Per Person",
+        "per-group": "Per Group"
+      }
+    }
+  }
+}

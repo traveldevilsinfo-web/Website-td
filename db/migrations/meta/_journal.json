@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790156459207,
+      "tag": "0000_plain_inhumans",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790157511476,
+      "tag": "0001_luxuriant_young_avengers",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790160711613,
+      "tag": "0002_glossy_randall_flagg",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1790162201325,
+      "tag": "0003_powerful_hiroim",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1790166067383,
+      "tag": "0004_enable_rls",
+      "breakpoints": true
+    }
+  ]
+}
