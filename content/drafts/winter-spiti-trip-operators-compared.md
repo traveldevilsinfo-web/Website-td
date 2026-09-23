@@ -10,7 +10,7 @@ We compared four operators' Winter Spiti group trips: **Travel Devils, JustWrave
 
 - **Shortest and lowest starting price:** Travel Devils, 6N/7D from ₹16,999 (quad sharing), with a departure every Friday.
 - **Longest and most relaxed:** JustWravel, 8N/9D from ₹21,500, with extra nights in Kinnaur on the way up and down.
-- **Similar length, different route:** Go4Explore, 6N/7D from ₹17,999 (quad sharing), adding Sarahan and an overnight in Tabo.
+- **Similar length, different route:** Go4Explore, 6N/7D from ₹17,999 (quad sharing), adding Sarahan and Kibber.
 - **WanderOn:** its Spiti packages page says "From ₹16,499", but we couldn't open its Winter Spiti trip pages to compare.
 
 ## Side by side
@@ -41,15 +41,13 @@ Prices as shown on each operator's trip page on 24 September 2026, before coupon
 |---|---|---|---|
 | 1 | Overnight bus from Delhi | Overnight bus to Shimla | Overnight bus to Shimla |
 | 2 | Sangla / Chitkul | Chitkul / Sangla | Sarahan |
-| 3 | Via Khab to Nako | Kalpa | Sangla |
-| 4 | Kaza side (see note) | Nako | Tabo |
+| 3 | Tabo (via Chitkul, Khab and Nako) | Kalpa | Sangla |
+| 4 | Kaza (via Tabo Monastery and Dhankar) | Nako | Tabo |
 | 5 | Kaza (Chicham Bridge, Key Monastery) | Kaza | Kaza |
 | 6 | Kaza (Hikkim, Komic, Langza) | Kaza (sightseeing) | Kaza (sightseeing) |
 | 7 | Kalpa | Kalpa | Kalpa |
 | 8 | Overnight bus to Delhi | Shimla | Overnight bus to Delhi |
 | 9 | | Arrive Delhi | |
-
-Note: our own itinerary page currently repeats the Day 3 title on Day 4; we're correcting it.
 
 ### Places on the plan
 
@@ -60,8 +58,8 @@ Note: our own itinerary page currently repeats the Day 3 title on Day 4; we're c
 | Kalpa | ✓ | ✓ | ✓ |
 | Khab (Sangam) | ✓ | | ✓ |
 | Nako | ✓ | ✓ | ✓ |
-| Tabo | | ✓ | ✓ |
-| Dhankar | | ✓ | ✓ |
+| Tabo | ✓ | ✓ | ✓ |
+| Dhankar | ✓ | ✓ | ✓ |
 | Key Monastery | ✓ | ✓ | ✓ |
 | Kibber | | | ✓ |
 | Chicham Bridge | ✓ | ✓ | ✓ |
@@ -71,11 +69,11 @@ Winter plans are weather-dependent everywhere: high villages like Langza, Hikkim
 
 ## What each trip is best for
 
-**Travel Devils: shortest trip, lowest starting price, weekly dates.** Seven days door to door, from ₹16,999 on quad sharing, with a departure every Friday so you can pick your week. The plan covers the classic winter highlights (Chitkul, Nako, Key Monastery, Chicham Bridge and the high villages of Langza, Hikkim and Komic) with two days around Kaza. Good if you have limited leave. [See the Travel Devils Winter Spiti trip](/backpacking-trips/india/spiti/winter-spiti)
+**Travel Devils: shortest trip, lowest starting price, weekly dates.** Seven days door to door, from ₹16,999 on quad sharing, with a departure every Friday so you can pick your week. The plan covers the classic winter highlights (Chitkul, Nako, a night in Tabo, Dhankar, Key Monastery, Chicham Bridge and the high villages of Langza, Hikkim and Komic) with three nights around Kaza. Good if you have limited leave. [See the Travel Devils Winter Spiti trip](/backpacking-trips/india/spiti/winter-spiti)
 
 **JustWravel: more time, gentler pace.** Nine days with extra nights at Kalpa and Shimla, which breaks up the long drives and gives you more time to acclimatise. Starts at ₹21,500, and it's the only one of the three with no-cost EMI. [JustWravel Winter Spiti](https://www.justwravel.com/backpacking-trips/india/himachal-pradesh/spiti-valley-road-trip-in-winter)
 
-**Go4Explore: a different route up.** Same length as ours, but it stops at Sarahan and spends a night in Tabo, and adds Kibber. From ₹17,999 on quad sharing. [Go4Explore Winter Spiti](https://go4explore.com/trips/winter-spiti)
+**Go4Explore: a different route up.** Same length as ours, but it stops at Sarahan on the way up and adds Kibber. From ₹17,999 on quad sharing. [Go4Explore Winter Spiti](https://go4explore.com/trips/winter-spiti)
 
 **WanderOn:** check [wanderon.in](https://wanderon.in/india-trips/spiti-valley-tour-packages) for its current Winter Spiti route and price.
 
@@ -99,7 +97,7 @@ All three operators whose pages we read add **5% GST** on top. Also plan for:
 
 1. **Count your leave.** Seven days or nine?
 2. **Compare the price you'll actually pay:** add GST and pick the same sharing type on each.
-3. **Check which villages matter to you:** Tabo, Dhankar and Kibber aren't on every plan.
+3. **Check which places matter to you:** Sarahan, Kibber and extra nights in Kalpa aren't on every plan.
 4. **Check the dates:** weekly departures or a specific batch.
 5. **Read the cancellation policy** before paying the booking amount.
 
