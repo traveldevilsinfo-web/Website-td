@@ -88,10 +88,18 @@ export function CustomTripDialog({ destinations, whatsapp }: { destinations: str
     };
     const onEvent = (e: Event) => open((e as CustomEvent<{ destination?: string }>).detail?.destination);
     const onHash = () => { if (location.hash === PLAN_HASH) { history.replaceState(null, "", location.pathname + location.search); open(); } };
+    // Next's <Link> changes the hash with pushState (no hashchange), so catch clicks on any #plan-my-trip link too.
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as Element).closest?.("a[href]");
+      if (a?.getAttribute("href")?.endsWith(PLAN_HASH)) { e.preventDefault(); open(); }
+    };
     window.addEventListener("open-custom-trip", onEvent);
     window.addEventListener("hashchange", onHash);
+    document.addEventListener("click", onClick, true);
     onHash();
-    return () => { window.removeEventListener("open-custom-trip", onEvent); window.removeEventListener("hashchange", onHash); };
+    return () => {
+      window.removeEventListener("open-custom-trip", onEvent); window.removeEventListener("hashchange", onHash); document.removeEventListener("click", onClick, true);
+    };
   }, []);
 
   const validate = (s: number) => {

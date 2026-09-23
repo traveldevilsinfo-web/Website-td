@@ -248,6 +248,13 @@ dialog[open]::backdrop { background: rgb(0 0 0 / 0.5); backdrop-filter: blur(6px
 .prose-admin img { border-radius: 1rem; margin: 1rem 0; max-width: 100%; }
 .prose-admin strong { font-weight: 800; }
 .prose-admin em { color: var(--color-muted); }
+/* Long-form blog reading: calmer rhythm, anchors clear the sticky header */
+.prose-blog { line-height: 1.8; }
+.prose-blog h2 { font-size: 1.75rem; margin: 2.5rem 0 0.75rem; scroll-margin-top: calc(7rem + var(--topbar-h, 0px)); }
+.prose-blog h3 { font-size: 1.3rem; margin: 1.75rem 0 0.5rem; }
+.prose-blog p { margin: 1rem 0; }
+.prose-blog > p:first-child { font-size: 1.15em; }
+.prose-blog img { border-radius: 1.5rem; margin: 1.75rem 0; }
 .prose-admin blockquote { margin: 1rem 0; padding: 0.75rem 1rem; border-left: 4px solid var(--color-accent); background: var(--color-surface); border-radius: 0 0.75rem 0.75rem 0; }
 /* Policy tables (e.g. cancellation slabs): scroll sideways on phones instead of overflowing */
 .prose-admin table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1rem 0; font-size: 0.95em; }

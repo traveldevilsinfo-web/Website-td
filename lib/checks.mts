@@ -170,3 +170,14 @@ assert.equal(corporateSchema.safeParse({ ...corp, tripType: "Party" }).success, 
 assert.equal(corporateSchema.safeParse({ ...corp, month: "next week" }).success, false);
 assert.match(corporateSummary({ ...corp, phone: "9876543210", teamSize: 40, destination: "", duration: "2 nights", month: "2026-12", budget: "₹10,000–20,000", remarks: "" }), /Company: Acme Pvt Ltd[\s\S]*Team size: 40[\s\S]*Destination: Open to ideas[\s\S]*When: December 2026 · 2 nights/);
 console.log("corporate enquiry checks passed");
+
+// ---------------- blog helpers
+const { withHeadingIds, readMinutes, tripsForPost } = await import("./blog");
+const toc = withHeadingIds("<h2>Best time to visit</h2><p>x</p><h2>Best time to visit</h2><h2>Cost &amp; budget</h2>");
+assert.deepEqual(toc.toc.map((x) => x.id), ["best-time-to-visit", "best-time-to-visit-2", "cost-budget"]);
+assert.equal(toc.toc[2].text, "Cost & budget");
+assert.match(toc.html, /<h2 id="best-time-to-visit-2">/);
+assert.equal(readMinutes("word ".repeat(440)), 2);
+const tr = [{ title: "Winter Spiti", destinationName: "Spiti" }, { title: "Goa", destinationName: "Goa" }, { title: "Auli", destinationName: "Uttarakhand" }];
+assert.deepEqual(tripsForPost({ title: "Spiti in winter: complete guide", tags: [], category: null, content: "Also near Auli, a goal for many." }, tr).map((x) => x.title), ["Winter Spiti", "Auli"]); // "goa" inside "goal" must not match
+console.log("blog helper checks passed");

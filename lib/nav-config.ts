@@ -89,8 +89,8 @@ export const defaultNav: NavConfig = navConfigSchema.parse({
     {
       type: "mega", label: "Customized",
       tabs: [
-        { title: "Domestic Tours", subtitle: "Private trips across India", icon: "map", color: "blue", href: "/contact", filter: { region: "india" }, gridTitle: "Domestic tour destinations", listTitle: "Popular right now" },
-        { title: "International Tours", subtitle: "Your dates, your group", icon: "globe", color: "green", href: "/contact", filter: { region: "international" }, gridTitle: "International tour destinations", listTitle: "Popular right now" },
+        { title: "Domestic Tours", subtitle: "Private trips across India", icon: "map", color: "blue", href: "#plan-my-trip", filter: { region: "india" }, gridTitle: "Domestic tour destinations", listTitle: "Popular right now" },
+        { title: "International Tours", subtitle: "Your dates, your group", icon: "globe", color: "green", href: "#plan-my-trip", filter: { region: "international" }, gridTitle: "International tour destinations", listTitle: "Popular right now" },
         { title: "Honeymoon Packages", subtitle: "India & international", icon: "heart", color: "pink", href: "/honeymoon-trips", filter: { tag: "honeymoon" }, gridTitle: "Honeymoon destinations", listTitle: "Popular right now" },
       ],
     },

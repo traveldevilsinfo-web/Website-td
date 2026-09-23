@@ -32,7 +32,7 @@ export function Footer({ settings, nav, legal }: { settings: SiteSettings; nav: 
           <div key={c.title}>
             <p className="eyebrow mb-4 text-white">{c.title}</p>
             <ul className="space-y-2 text-sm">
-              {c.links.map((l) => <li key={l.href}><Link href={l.href} className="hover:text-white">{l.label}</Link></li>)}
+              {c.links.map((l) => <li key={l.label + l.href}><Link href={l.href} className="hover:text-white">{l.label}</Link></li>)}
             </ul>
           </div>
         ))}
