@@ -3,7 +3,7 @@
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 import { normalizePhone } from "@/lib/lead";
-import { getCustomer, logoutCustomer, requestOtp, verifyOtp } from "@/lib/customer-auth";
+import { getCustomer, loginCustomer, logoutCustomer, registerCustomer } from "@/lib/customer-auth";
 import { checkoutSchema, confirmPayment, createBooking, quoteSelection, selectionSchema, startBalancePayment, type PaymentStart } from "@/lib/bookings";
 import { QuoteError, type Quote } from "@/lib/pricing";
 import { testPaymentsAllowed } from "@/lib/razorpay";
@@ -26,24 +26,35 @@ export async function getQuote(input: unknown): Promise<Result<Quote>> {
   }
 }
 
-export async function sendOtp(rawPhone: string): Promise<Result<{ phone: string }>> {
-  const phone = normalizePhone(rawPhone);
-  if (!phone) return { ok: false, message: "Enter a valid 10-digit mobile number." };
-  const r = await requestOtp(phone);
-  return r.ok ? { ok: true, data: { phone } } : r;
+type Who = { phone: string; name: string | null; email: string | null };
+const who = async (id: number): Promise<Who> =>
+  (await db.select({ phone: t.customers.phone, name: t.customers.name, email: t.customers.email }).from(t.customers).where(eq(t.customers.id, id)))[0];
+
+const signUpSchema = z.object({
+  name: z.string().trim().min(2, "Enter your full name").max(80),
+  email: z.string().trim().email("Enter a valid email").max(120),
+  phone: z.string().transform((p, ctx) => normalizePhone(p) ?? (ctx.addIssue({ code: "custom", message: "Enter a valid 10-digit mobile number" }), z.NEVER)),
+  password: z.string().min(8, "Password needs at least 8 characters").max(200),
+  remember: z.boolean().default(true),
+});
+
+export async function signUp(input: unknown): Promise<Result<Who>> {
+  const p = signUpSchema.safeParse(input);
+  if (!p.success) return { ok: false, message: p.error.issues[0]?.message ?? "Check the form." };
+  const r = await registerCustomer(p.data, p.data.remember);
+  return r.ok ? { ok: true, data: await who(r.customerId) } : r;
 }
 
-export async function checkOtp(phone: string, code: string): Promise<Result<{ name: string | null; email: string | null }>> {
-  if (!/^\d{6}$/.test(code.trim())) return { ok: false, message: "Enter the 6-digit code." };
-  const r = await verifyOtp(phone, code);
-  if (!r.ok) return r;
-  const [c] = await db.select({ name: t.customers.name, email: t.customers.email }).from(t.customers).where(eq(t.customers.id, r.customerId));
-  return { ok: true, data: c };
+export async function signIn(input: unknown): Promise<Result<Who>> {
+  const p = z.object({ email: z.string().trim().max(120), password: z.string().max(200), remember: z.boolean().default(true) }).safeParse(input);
+  if (!p.success || !p.data.email || !p.data.password) return { ok: false, message: "Enter your email and password." };
+  const r = await loginCustomer(p.data.email, p.data.password, p.data.remember);
+  return r.ok ? { ok: true, data: await who(r.customerId) } : r;
 }
 
 export async function submitCheckout(input: unknown): Promise<Result<PaymentStart>> {
   const customer = await getCustomer();
-  if (!customer) return { ok: false, message: "Please log in with your phone number first." };
+  if (!customer) return { ok: false, message: "Please log in first." };
   try {
     return { ok: true, data: await createBooking(checkoutSchema.parse(input), customer) };
   } catch (e) {

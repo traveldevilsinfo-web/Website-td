@@ -37,7 +37,7 @@ export default async function BookingPage({ params, searchParams }: PageProps<"/
       batches={open.map((b) => ({ id: b.id, startDate: b.startDate, endDate: b.endDate, status: b.status, seats: b.seats, route: b.route, priceOverride: b.priceOverride }))}
       initial={{ route: str("route"), batchId: Number(str("batch")) || null, packageName: str("pkg"), tier: str("tier") }}
       customer={customer && { phone: customer.phone, name: customer.name, email: customer.email }}
-      priceNote={settings.priceNote}
+      priceNote={settings.priceNote} whatsapp={settings.whatsapp}
     />
   );
 }

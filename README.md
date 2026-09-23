@@ -37,14 +37,14 @@ npm run import:td                         # upsert into the DB; safe to re-run
 ## Bookings & payments
 
 Trip page → **Book now** → `/booking/{trip}`: route, batch, sharing & traveller count, coupon, pay in full or booking amount →
-phone OTP login → traveller details → Razorpay → `/booking/confirmed/{code}`. Customers see and pay balances at `/account`.
+email + password login / register → traveller details → Razorpay → `/booking/confirmed/{code}`. Customers see and pay balances at `/account`.
 
 - Prices are recalculated on the server (`lib/pricing.ts`, covered by `npm test`); the browser's numbers are never trusted.
 - A payment is confirmed only by a valid Razorpay signature (`/api/payments/verify`) or webhook (`/api/payments/webhook`); both are idempotent.
 - Seats are deducted on first successful payment under a row lock. If a batch fills during payment the booking is flagged **needs attention** in Admin → Bookings.
 - Admin → Bookings: travellers, payments, record offline (UPI/cash/bank) payments, cancel (returns seats; refund in the Razorpay dashboard). Admin → Coupons.
 - Settings → Online booking: GST % and an on/off switch.
-- **No keys = test mode** in development: OTP is printed in the server console and a "Simulate payment" button replaces Razorpay. Production requires `RAZORPAY_*` and `MSG91_*` (see `.env.example`).
+- **No keys = test mode** in development: a "Simulate payment" button replaces Razorpay. Production requires `RAZORPAY_*` (see `.env.example`). Traveller accounts: email + password, 5 wrong tries locks the account for 15 min; forgotten passwords go via WhatsApp for now.
 
 ## Deploy: Supabase + Vercel
 
@@ -64,7 +64,7 @@ Everything runs on the Travel Devils accounts; no CLI login needed, it's all das
    table so Supabase's public Data API can't read anything; the app connects directly and isn't affected.
 3. **Vercel** (vercel.com → Add New → Project → import the GitHub repo, framework Next.js). Environment variables:
    `DATABASE_URL` (the **Transaction pooler** string, port 6543), `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL`
-   (https://traveldevils.in), plus `ANTHROPIC_API_KEY`, `RAZORPAY_*`, `MSG91_*`, `OTP_SECRET` from `.env.example`. Deploy.
+   (https://traveldevils.in), plus `ANTHROPIC_API_KEY`, `RAZORPAY_*` from `.env.example`. Deploy.
 4. Domains: add `traveldevils.in` in Vercel → Domains and set the DNS records it shows. Point the Razorpay webhook at
    `https://traveldevils.in/api/payments/webhook`.
 

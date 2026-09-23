@@ -4,7 +4,7 @@ import { desc, eq } from "drizzle-orm";
 import { getCustomer } from "@/lib/customer-auth";
 import { db, t } from "@/lib/db";
 import { dateShort, inr } from "@/lib/format";
-import { LoginCard } from "@/components/booking/LoginCard";
+import { redirect } from "next/navigation";
 import { AccountActions, PayBalanceButton } from "@/components/booking/AccountActions";
 
 export const metadata: Metadata = { title: "My Bookings", robots: { index: false } };
@@ -13,7 +13,7 @@ const STATUS: Record<string, string> = { confirmed: "bg-green-100 text-green-800
 
 export default async function Account() {
   const me = await getCustomer();
-  if (!me) return <LoginCard title="My Bookings" next="/account" />;
+  if (!me) redirect("/login?next=/account");
   const rows = await db.select({ b: t.bookings, start: t.tripBatches.startDate, end: t.tripBatches.endDate })
     .from(t.bookings).innerJoin(t.tripBatches, eq(t.tripBatches.id, t.bookings.batchId))
     .where(eq(t.bookings.customerId, me.id)).orderBy(desc(t.bookings.createdAt));

@@ -7,7 +7,7 @@ import type { PaymentStart } from "@/lib/bookings";
 import type { Quote } from "@/lib/pricing";
 import { BATCH_LABEL, dateShort, inr, monthShort } from "@/lib/format";
 import { completeTestPayment, getQuote, submitCheckout } from "@/app/(site)/booking/actions";
-import { OtpLogin } from "./OtpLogin";
+import { AuthForm } from "./AuthForm";
 import { payWithRazorpay } from "./pay";
 
 type Tier = { label: string; price: number; salePrice?: number | null };
@@ -37,11 +37,12 @@ function Step({ n, title, done, children }: { n: number; title: string; done?: b
   );
 }
 
-export function Checkout({ trip, batches, initial, customer, priceNote }: {
+export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp }: {
   trip: CheckoutTrip; batches: Batch[];
   initial: { route: string; batchId: number | null; packageName: string; tier: string };
   customer: { phone: string; name: string | null; email: string | null } | null;
   priceNote: string;
+  whatsapp: string;
 }) {
   const router = useRouter();
   const [route, setRoute] = useState(initial.route || trip.routes[0]?.name || "");
@@ -200,13 +201,15 @@ export function Checkout({ trip, batches, initial, customer, priceNote }: {
           </div>
         </Step>
 
-        <Step n={2} title="Log in with your phone" done={!!me}>
+        <Step n={2} title="Log in or create an account" done={!!me}>
           {me ? (
-            <p className="font-semibold">Logged in as <b>+91 {me.phone}</b></p>
+            <p className="font-semibold">Logged in as <b>{me.email ?? `+91 ${me.phone}`}</b></p>
           ) : (
             <>
-              <p className="mb-4 text-sm text-muted">We&apos;ll send a one-time code. Your bookings stay in My Bookings.</p>
-              <OtpLogin onDone={(who) => { setMe(who); setContactName((n) => n || who.name || ""); setContactEmail((e) => e || who.email || ""); router.refresh(); }} />
+              <p className="mb-4 text-sm text-muted">Takes a few seconds. Your bookings and balance payments stay in My Bookings.</p>
+              <div className="max-w-md">
+                <AuthForm whatsapp={whatsapp} mode="register" onDone={(who) => { setMe(who); setContactName((n) => n || who.name || ""); setContactEmail((e) => e || who.email || ""); router.refresh(); }} />
+              </div>
             </>
           )}
         </Step>

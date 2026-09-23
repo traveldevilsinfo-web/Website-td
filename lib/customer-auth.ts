@@ -1,58 +1,72 @@
 import "server-only";
-import { createHash, randomBytes, randomInt, timingSafeEqual } from "node:crypto";
+import { createHash, randomBytes } from "node:crypto";
 import { cache } from "react";
 import { cookies } from "next/headers";
-import { and, desc, eq, gt, gte, isNull, lt, sql } from "drizzle-orm";
+import { and, eq, gt, lt } from "drizzle-orm";
 import { db, t } from "./db";
-import { sendOtpSms } from "./sms";
+import { hashPassword, verifyPassword } from "./auth-hash";
 
 const COOKIE = "td_customer";
-const SESSION_DAYS = 30;
-const OTP_TTL_MIN = 10;
-const MAX_SENDS_PER_HOUR = 5;
-const MAX_ATTEMPTS = 5;
+const REMEMBER_DAYS = 60;
+const SESSION_HOURS = 24; // without "remember me": browser-session cookie, server session ends after a day
+const MAX_FAILS = 5;
+const LOCK_MIN = 15;
 
 const sha256 = (s: string) => createHash("sha256").update(s).digest("hex");
-// Pepper so a leaked table of 6-digit hashes can't be brute-forced offline without the server secret.
-const otpHash = (phone: string, code: string) => sha256(`${process.env.OTP_SECRET ?? process.env.DATABASE_URL}:${phone}:${code}`);
+// Checked when the email doesn't exist, so a miss takes as long as a wrong password.
+const DUMMY_HASH = hashPassword("not-a-real-password");
 
-export async function requestOtp(phone: string): Promise<{ ok: true } | { ok: false; message: string }> {
-  const hourAgo = new Date(Date.now() - 3600_000);
-  const [{ n }] = await db.select({ n: sql<number>`count(*)::int` }).from(t.otpCodes)
-    .where(and(eq(t.otpCodes.phone, phone), gte(t.otpCodes.createdAt, hourAgo)));
-  if (n >= MAX_SENDS_PER_HOUR) return { ok: false, message: "Too many codes requested. Try again in an hour." };
+type AuthResult = { ok: true; customerId: number } | { ok: false; message: string };
 
-  const code = String(randomInt(100000, 1000000));
-  await db.insert(t.otpCodes).values({ phone, codeHash: otpHash(phone, code), expiresAt: new Date(Date.now() + OTP_TTL_MIN * 60_000) });
-  try {
-    await sendOtpSms(phone, code);
-  } catch (e) {
-    console.error("OTP send failed", e);
-    return { ok: false, message: "Couldn't send the code right now. Please try again or call us." };
-  }
-  return { ok: true };
+async function startSession(customerId: number, remember: boolean) {
+  const token = randomBytes(32).toString("base64url");
+  const expiresAt = new Date(Date.now() + (remember ? REMEMBER_DAYS * 864e5 : SESSION_HOURS * 3600e3));
+  await db.insert(t.customerSessions).values({ id: sha256(token), customerId, expiresAt });
+  await db.delete(t.customerSessions).where(lt(t.customerSessions.expiresAt, new Date()));
+  (await cookies()).set(COOKIE, token, {
+    httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "lax", path: "/",
+    ...(remember && { expires: expiresAt }),
+  });
 }
 
-export async function verifyOtp(phone: string, code: string): Promise<{ ok: true; customerId: number } | { ok: false; message: string }> {
-  const [row] = await db.select().from(t.otpCodes)
-    .where(and(eq(t.otpCodes.phone, phone), isNull(t.otpCodes.usedAt), gt(t.otpCodes.expiresAt, new Date())))
-    .orderBy(desc(t.otpCodes.createdAt)).limit(1);
-  if (!row) return { ok: false, message: "Code expired. Request a new one." };
-  if (row.attempts >= MAX_ATTEMPTS) return { ok: false, message: "Too many wrong attempts. Request a new code." };
+export async function registerCustomer(
+  v: { name: string; email: string; phone: string; password: string }, remember: boolean,
+): Promise<AuthResult> {
+  const email = v.email.toLowerCase();
+  const [byEmail] = await db.select({ id: t.customers.id }).from(t.customers).where(eq(t.customers.email, email));
+  if (byEmail) return { ok: false, message: "An account with this email already exists. Log in instead." };
+  const [byPhone] = await db.select({ id: t.customers.id, hash: t.customers.passwordHash }).from(t.customers).where(eq(t.customers.phone, v.phone));
+  if (byPhone?.hash) return { ok: false, message: "This mobile number already has an account. Log in with its email." };
 
-  const a = Buffer.from(row.codeHash), b = Buffer.from(otpHash(phone, code.trim()));
-  if (a.length !== b.length || !timingSafeEqual(a, b)) {
-    await db.update(t.otpCodes).set({ attempts: row.attempts + 1 }).where(eq(t.otpCodes.id, row.id));
-    return { ok: false, message: "That code isn't right." };
+  const values = { name: v.name, email, phone: v.phone, passwordHash: await hashPassword(v.password) };
+  // A phone-only record (from the older OTP login) is claimed; otherwise a new customer.
+  const [c] = byPhone
+    ? await db.update(t.customers).set(values).where(eq(t.customers.id, byPhone.id)).returning({ id: t.customers.id })
+    : await db.insert(t.customers).values(values).returning({ id: t.customers.id });
+  await startSession(c.id, remember);
+  return { ok: true, customerId: c.id };
+}
+
+export async function loginCustomer(emailRaw: string, password: string, remember: boolean): Promise<AuthResult> {
+  const email = emailRaw.trim().toLowerCase();
+  const [c] = await db.select().from(t.customers).where(eq(t.customers.email, email));
+  if (c?.lockedUntil && c.lockedUntil > new Date()) {
+    const mins = Math.ceil((c.lockedUntil.getTime() - Date.now()) / 60_000);
+    return { ok: false, message: `Too many wrong attempts. Try again in ${mins} minute${mins === 1 ? "" : "s"}.` };
   }
-  await db.update(t.otpCodes).set({ usedAt: new Date() }).where(eq(t.otpCodes.id, row.id));
-
-  const [c] = await db.insert(t.customers).values({ phone }).onConflictDoUpdate({ target: t.customers.phone, set: { phone } }).returning({ id: t.customers.id });
-  const token = randomBytes(32).toString("base64url");
-  const expiresAt = new Date(Date.now() + SESSION_DAYS * 864e5);
-  await db.insert(t.customerSessions).values({ id: sha256(token), customerId: c.id, expiresAt });
-  await db.delete(t.customerSessions).where(lt(t.customerSessions.expiresAt, new Date()));
-  (await cookies()).set(COOKIE, token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "lax", path: "/", expires: expiresAt });
+  const good = await verifyPassword(password, c?.passwordHash ?? (await DUMMY_HASH));
+  if (!c || !c.passwordHash || !good) {
+    if (c) {
+      const fails = c.failedLogins + 1;
+      await db.update(t.customers).set({
+        failedLogins: fails >= MAX_FAILS ? 0 : fails,
+        lockedUntil: fails >= MAX_FAILS ? new Date(Date.now() + LOCK_MIN * 60_000) : null,
+      }).where(eq(t.customers.id, c.id));
+    }
+    return { ok: false, message: "Email or password is incorrect." };
+  }
+  if (c.failedLogins || c.lockedUntil) await db.update(t.customers).set({ failedLogins: 0, lockedUntil: null }).where(eq(t.customers.id, c.id));
+  await startSession(c.id, remember);
   return { ok: true, customerId: c.id };
 }
 
@@ -70,4 +84,11 @@ export async function logoutCustomer() {
   const token = jar.get(COOKIE)?.value;
   if (token) await db.delete(t.customerSessions).where(eq(t.customerSessions.id, sha256(token)));
   jar.delete(COOKIE);
+}
+
+/** Admin: set a traveller's password and sign them out everywhere (no email service yet, so resets go via the team). */
+export async function setCustomerPassword(customerId: number, password: string) {
+  await db.update(t.customers).set({ passwordHash: await hashPassword(password), failedLogins: 0, lockedUntil: null })
+    .where(eq(t.customers.id, customerId));
+  await db.delete(t.customerSessions).where(eq(t.customerSessions.customerId, customerId));
 }

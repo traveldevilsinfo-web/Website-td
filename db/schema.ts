@@ -207,7 +207,10 @@ export const customers = pgTable("customers", {
   id: serial("id").primaryKey(),
   phone: text("phone").notNull().unique(), // 10-digit Indian mobile
   name: text("name"),
-  email: text("email"),
+  email: text("email").unique(), // lowercased; the login id
+  passwordHash: text("password_hash"),
+  failedLogins: integer("failed_logins").notNull().default(0),
+  lockedUntil: timestamp("locked_until", { withTimezone: true }),
   createdAt: timestamps.createdAt,
 });
 
@@ -217,19 +220,6 @@ export const customerSessions = pgTable("customer_sessions", {
   expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
 });
 
-export const otpCodes = pgTable(
-  "otp_codes",
-  {
-    id: serial("id").primaryKey(),
-    phone: text("phone").notNull(),
-    codeHash: text("code_hash").notNull(),
-    attempts: integer("attempts").notNull().default(0),
-    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
-    usedAt: timestamp("used_at", { withTimezone: true }),
-    createdAt: timestamps.createdAt,
-  },
-  (t) => [index("otp_phone_idx").on(t.phone, t.createdAt)],
-);
 
 export const couponTypeEnum = pgEnum("coupon_type", ["percent", "flat"]);
 export const coupons = pgTable("coupons", {

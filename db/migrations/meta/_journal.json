@@ -36,6 +36,13 @@
       "when": 1790166067383,
       "tag": "0004_enable_rls",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1790172681151,
+      "tag": "0005_customer_passwords",
+      "breakpoints": true
     }
   ]
 }
