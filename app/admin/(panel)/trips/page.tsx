@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { and, asc, desc, eq, ilike, sql, type SQL } from "drizzle-orm";
 import { db, t } from "@/lib/db";
-import { tripHref } from "@/lib/format";
-import { PageHeader, StatusBadge, Table, btnPrimary, input } from "@/components/admin/ui";
-import { duplicateTrip, setTripStatus } from "./actions";
+import { addDays, tripHref, WEEKDAYS } from "@/lib/format";
+import { PageHeader, StatusBadge, Table, btnGhost, btnPrimary, input } from "@/components/admin/ui";
+import { addWeeklyDepartures, duplicateTrip, setTripStatus } from "./actions";
 
 const today = () => new Date().toISOString().slice(0, 10);
 
@@ -46,6 +46,27 @@ export default async function TripsPage({ searchParams }: PageProps<"/admin/trip
   return (
     <>
       <PageHeader title="Trips" action={<Link href="/admin/trips/new" className={btnPrimary}>+ New trip</Link>} />
+      {typeof sp.added === "string" && (
+        <p role="status" className="mb-4 rounded-md bg-green-50 p-3 text-sm font-medium text-green-800">
+          {sp.added === "0" ? "Nothing to add: every trip already has those dates." : `Added ${sp.added} departures ✓ They're live on the site.`}
+        </p>
+      )}
+      <details className="mb-4 rounded-lg border border-gray-200 bg-white">
+        <summary className="cursor-pointer px-4 py-3 text-sm font-semibold">Weekly departures for all trips</summary>
+        <form action={addWeeklyDepartures} className="flex flex-wrap items-end gap-3 border-t border-gray-100 px-4 py-4">
+          <p className="w-full text-xs text-gray-600">Adds a departure on this weekday to <b>every</b> trip until the chosen date (end dates follow each trip&apos;s length). Dates a trip already has are skipped, so it&apos;s safe to run again to extend the calendar. Fine-tune single trips in their Departures section.</p>
+          <label className="text-xs text-gray-600">Every
+            <select name="weekday" defaultValue={5} className={`${input} mt-0.5 block w-36`}>{WEEKDAYS.map((w, i) => <option key={w} value={i}>{w}</option>)}</select>
+          </label>
+          <label className="text-xs text-gray-600">Until
+            <input type="date" name="until" required defaultValue={addDays(today(), 182)} className={`${input} mt-0.5 block w-40`} />
+          </label>
+          <label className="text-xs text-gray-600">Seats each
+            <input type="number" name="seats" min={1} defaultValue={20} className={`${input} mt-0.5 block w-24`} />
+          </label>
+          <button className={btnGhost}>Add to all trips</button>
+        </form>
+      </details>
       <form className="mb-4 flex flex-wrap gap-2">
         <input name="q" defaultValue={q} placeholder="Search trips…" className={`${input} max-w-xs`} />
         <select name="status" defaultValue={status} className={`${input} max-w-48`}>

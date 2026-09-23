@@ -125,3 +125,14 @@ const body = '{"event":"payment.captured"}';
 assert.equal(verifyWebhookSignature(body, createHmac("sha256", "wh").update(body).digest("hex"), "wh"), true);
 assert.equal(verifyWebhookSignature(body + " ", createHmac("sha256", "wh").update(body).digest("hex"), "wh"), false);
 console.log("signature checks passed");
+
+// ---------------- departure dates
+const { weeklyDates, addDays, repeatLabel } = await import("./format");
+assert.deepEqual(weeklyDates(5, "2026-09-23", "2026-10-10"), ["2026-09-25", "2026-10-02", "2026-10-09"]); // Wed → Fridays
+assert.deepEqual(weeklyDates(5, "2026-09-25", "2026-10-02"), ["2026-10-02"]); // strictly after a Friday
+assert.deepEqual(weeklyDates(5, "2026-09-23", "2026-09-24"), []);
+assert.equal(addDays("2026-12-31", 1), "2027-01-01");
+assert.equal(addDays("2027-03-27", 2), "2027-03-29"); // no DST drift
+assert.equal(repeatLabel(["2026-09-25", "2026-10-02", "2026-10-09"]), "Every Friday");
+assert.equal(repeatLabel(["2026-09-25", "2026-10-03", "2026-10-09"]), null);
+console.log("departure date checks passed");

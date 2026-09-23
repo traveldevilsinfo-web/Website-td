@@ -2,11 +2,12 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { and, eq, notInArray } from "drizzle-orm";
+import { and, eq, gte, notInArray } from "drizzle-orm";
 import { z } from "zod";
 import { requireUser } from "@/lib/auth";
 import { db, t } from "@/lib/db";
 import { errorMessage, faqSchema, form, seoFrom, slugify, type ActionState } from "@/lib/admin";
+import { addDays, weeklyDates } from "@/lib/format";
 
 const num = z.union([z.number(), z.string()]).transform((v) => (v === "" || v == null ? null : Number(v))).pipe(z.number().int().nonnegative().nullable());
 
@@ -103,6 +104,12 @@ export async function saveTrip(id: number | null, _prev: ActionState, f: FormDat
 
       // Sync batches: update existing by id, insert new, delete removed.
       const keep = batches.filter((b) => b.id).map((b) => Number(b.id));
+      if (id) {
+        const booked = await tx.selectDistinct({ start: t.tripBatches.startDate }).from(t.tripBatches)
+          .innerJoin(t.bookings, eq(t.bookings.batchId, t.tripBatches.id))
+          .where(and(eq(t.tripBatches.tripId, id), keep.length ? notInArray(t.tripBatches.id, keep) : undefined));
+        if (booked.length) throw new Error(`${booked.map((b) => b.start).join(", ")} already ${booked.length === 1 ? "has" : "have"} bookings. Set ${booked.length === 1 ? "it" : "them"} to “Closed” instead of removing.`);
+      }
       await tx.delete(t.tripBatches).where(and(eq(t.tripBatches.tripId, row.id), keep.length ? notInArray(t.tripBatches.id, keep) : undefined));
       for (const { id: bid, ...b } of batches) {
         const v = { ...b, tripId: row.id, priceOverride: b.priceOverride ?? null, note: b.note || null, route: b.route || null };
@@ -141,4 +148,28 @@ export async function setTripStatus(id: number, status: "draft" | "published") {
   await requireUser();
   await db.update(t.trips).set({ status }).where(eq(t.trips.id, id));
   revalidatePath("/", "layout");
+}
+
+/** Trips list → "Weekly departures": adds every <weekday> until <date> to every trip, skipping dates a trip already has. */
+export async function addWeeklyDepartures(f: FormData) {
+  await requireUser();
+  const r = form(f);
+  const today = new Date().toISOString().slice(0, 10);
+  const weekday = Math.min(6, Math.max(0, r.int("weekday") ?? 5));
+  const seats = Math.min(200, Math.max(1, r.int("seats") ?? 20));
+  const until = r.str("until") ?? "";
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(until)) redirect("/admin/trips?added=0");
+  const dates = weeklyDates(weekday, today, until < addDays(today, 400) ? until : addDays(today, 400));
+
+  const [trips, existing] = await Promise.all([
+    db.select({ id: t.trips.id, days: t.trips.durationDays }).from(t.trips),
+    db.select({ tripId: t.tripBatches.tripId, start: t.tripBatches.startDate }).from(t.tripBatches).where(gte(t.tripBatches.startDate, today)),
+  ]);
+  const have = new Set(existing.map((e) => `${e.tripId}:${e.start}`));
+  const rows = trips.flatMap((tr) => dates.filter((d) => !have.has(`${tr.id}:${d}`)).map((d) => ({
+    tripId: tr.id, startDate: d, endDate: addDays(d, Math.max(0, tr.days - 1)), seats, status: "available" as const,
+  })));
+  if (rows.length) await db.insert(t.tripBatches).values(rows);
+  revalidatePath("/", "layout");
+  redirect(`/admin/trips?added=${rows.length}`);
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BATCH_LABEL, dateShort, durationLabel, inr, tripHref } from "@/lib/format";
+import { CalendarDays } from "lucide-react";
+import { BATCH_LABEL, dateShort, durationLabel, inr, repeatLabel, tripHref } from "@/lib/format";
 import { OpenLeadButton } from "@/components/LeadDialog";
 
 export type CardTrip = {
@@ -16,7 +17,8 @@ const Pin = () => (
 
 export function TripCard({ trip, priority, className = "" }: { trip: CardTrip; priority?: boolean; className?: string }) {
   const price = trip.salePrice ?? trip.basePrice;
-  const next = trip.batches[0];
+  const open = trip.batches.filter((b) => b.status !== "sold_out");
+  const next = open[0];
   const badge = trip.tags.includes("new-launch") ? "New" : next?.status === "filling_fast" ? "Filling fast" : trip.tags.includes("best-seller") ? "Best seller" : null;
   return (
     <Link href={tripHref(trip)} className={`card group flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white ${className}`}>
@@ -32,12 +34,21 @@ export function TripCard({ trip, priority, className = "" }: { trip: CardTrip; p
       <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
         {trip.destinationName && <p className="flex items-center gap-1 text-xs font-bold text-muted"><Pin />{trip.destinationName}</p>}
         <h3 className="headline mt-1 text-lg leading-snug">{trip.title}</h3>
-        {(trip.startLocation || next) && (
-          <p className="mt-1 text-xs font-semibold text-muted">
-            {trip.startLocation && `${trip.startLocation} → ${trip.endLocation || trip.startLocation}`}
-            {trip.startLocation && next && " · "}
-            {next && `Next: ${dateShort(next.start)}`}
-          </p>
+        {trip.startLocation && (
+          <p className="mt-1 text-xs font-semibold text-muted">{trip.startLocation} → {trip.endLocation || trip.startLocation}</p>
+        )}
+        {open.length > 0 && (
+          <div className="mt-3 rounded-2xl bg-surface px-3 py-2.5">
+            <p className="text-xs font-extrabold text-brand">
+              <RepeatBadge label={repeatLabel(open.map((b) => b.start)) ?? `${open.length} upcoming date${open.length === 1 ? "" : "s"}`} className="[&_svg]:size-3.5" />
+            </p>
+            <p className="mt-1.5 flex flex-wrap items-center gap-1">
+              {open.slice(0, 3).map((b) => (
+                <span key={b.start} className="rounded-full bg-white px-2 py-0.5 text-[11px] font-bold text-ink ring-1 ring-line">{dateShort(b.start)}</span>
+              ))}
+              {open.length > 3 && <span className="px-1 text-[11px] font-bold text-muted">+{open.length - 3} more</span>}
+            </p>
+          </div>
         )}
         <div className="mt-auto flex items-end justify-between pt-4">
           <div>
@@ -137,5 +148,13 @@ export function PageHero({ title, intro, image, crumbs }: { title: string; intro
         {intro && <p className="mt-5 max-w-2xl text-lg text-white/80 sm:text-xl">{intro}</p>}
       </div>
     </section>
+  );
+}
+
+export function RepeatBadge({ label, className = "" }: { label: string; className?: string }) {
+  return (
+    <span className={`inline-flex items-center gap-1.5 ${className}`}>
+      <CalendarDays className="size-4 shrink-0" aria-hidden />{label}
+    </span>
   );
 }

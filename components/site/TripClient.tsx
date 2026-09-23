@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { OpenLeadButton } from "@/components/LeadDialog";
-import { BATCH_LABEL, dateShort, inr, monthShort } from "@/lib/format";
+import { BATCH_LABEL, dateDay, dateShort, inr, monthShort } from "@/lib/format";
 
 /* ------------------------------------------------------------------ Gallery + lightbox */
 
@@ -185,12 +185,12 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
       {bs.length > 0 && (
         <fieldset className="mt-5">
           <div className="mb-2 flex items-center justify-between gap-2">
-            <legend className="eyebrow text-muted">Batches</legend>
+            <legend className="eyebrow shrink-0 text-muted">Departure date</legend>
             {months.length > 1 && (
-              <div className="flex flex-wrap justify-end gap-1">
-                <button type="button" onClick={() => setMonth("all")} className={pill(month === "all")}>All</button>
-                {months.slice(0, 5).map((m) => (
-                  <button key={m} type="button" onClick={() => setMonth(m)} className={pill(month === m)}>{monthShort(m + "-01")}</button>
+              <div className="-mr-1 flex min-w-0 gap-1 overflow-x-auto pr-1 [scrollbar-width:none]">
+                <button type="button" onClick={() => setMonth("all")} className={`${pill(month === "all")} shrink-0`}>All</button>
+                {months.map((m) => (
+                  <button key={m} type="button" onClick={() => setMonth(m)} className={`${pill(month === m)} shrink-0`}>{monthShort(m + "-01")}</button>
                 ))}
               </div>
             )}
@@ -199,7 +199,8 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
             {shown.map((x) => (
               <button key={x.id} type="button" disabled={x.status === "sold_out"} aria-pressed={x.id === b} onClick={() => setB(x.id)}
                 className={`${chip(x.id === b)} disabled:cursor-not-allowed disabled:opacity-40`}>
-                <span className="block">{dateShort(x.startDate)} – {dateShort(x.endDate)}</span>
+                <span className="block">{dateDay(x.startDate)}</span>
+                <span className={`block text-xs font-semibold ${x.id === b ? "text-white/70" : "text-muted"}`}>→ {dateDay(x.endDate)}</span>
                 <span className={`text-xs font-bold ${x.id === b ? "text-white/70" : x.status === "filling_fast" ? "text-amber-600" : "text-green-700"}`}>{BATCH_LABEL[x.status]}</span>
               </button>
             ))}

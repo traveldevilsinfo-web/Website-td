@@ -5,6 +5,29 @@ export const durationLabel = (d: number, n: number) => (n ? `${n}N/${d}D` : `${d
 export const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 export const monthShort = (iso: string) => new Date(iso + "T00:00:00").toLocaleString("en-IN", { month: "short" });
 export const dateShort = (iso: string) => new Date(iso + "T00:00:00").toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+/** "Fri, 26 Sep" */
+export const dateDay = (iso: string) => new Date(iso + "T00:00:00").toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" });
+
+// ---- Departure dates. ISO yyyy-mm-dd strings, computed in UTC so the server's timezone can't shift a day.
+export const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const utc = (iso: string) => new Date(iso + "T00:00:00Z");
+export const addDays = (iso: string, n: number) => new Date(utc(iso).getTime() + n * 864e5).toISOString().slice(0, 10);
+export const weekdayOf = (iso: string) => utc(iso).getUTCDay();
+
+/** Every `weekday` (0 = Sunday) strictly after `after`, up to and including `until`. */
+export function weeklyDates(weekday: number, after: string, until: string): string[] {
+  let d = addDays(after, ((weekday - weekdayOf(after) + 6) % 7) + 1);
+  const out: string[] = [];
+  for (; d <= until; d = addDays(d, 7)) out.push(d);
+  return out;
+}
+
+/** "Every Friday" when the upcoming departures all fall on one weekday (3+ of them), else null. */
+export function repeatLabel(starts: string[]): string | null {
+  if (starts.length < 3) return null;
+  const w = weekdayOf(starts[0]);
+  return starts.every((s) => weekdayOf(s) === w) ? `Every ${WEEKDAYS[w]}` : null;
+}
 
 type TripPath = { slug: string; categorySlug: string | null; region: string | null; destinationSlug: string | null };
 /** /{category}/{india|international}/{destination}/{trip}. Falls back to /trips/{slug} for unassigned trips. */

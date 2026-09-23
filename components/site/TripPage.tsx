@@ -4,12 +4,13 @@ import type { getTrip } from "@/lib/queries";
 import { getSettings } from "@/lib/settings";
 import { getCategories, getPosts, getTrips } from "@/lib/queries";
 import { tableFilled, type PolicyTable } from "@/lib/site";
-import { durationLabel, inr } from "@/lib/format";
+import { dateDay, durationLabel, inr, repeatLabel } from "@/lib/format";
 import { md } from "@/lib/markdown";
 import { OpenLeadButton } from "@/components/LeadDialog";
 import { Rail } from "./Rail";
 import { ExpandAll, Gallery, PriceCard, SectionTabs, ShareButton } from "./TripClient";
-import { SectionHead, TripCard } from "./ui";
+import { Departures } from "./Departures";
+import { RepeatBadge, SectionHead, TripCard } from "./ui";
 
 type Data = NonNullable<Awaited<ReturnType<typeof getTrip>>>;
 
@@ -58,8 +59,13 @@ export async function TripPage({ data }: { data: Data }) {
   const blogs = [...posts.filter((p) => needle.some((n) => p.title.toLowerCase().includes(n) || p.tags.map((t) => t.toLowerCase()).includes(n))), ...posts]
     .filter((p, i, a) => a.indexOf(p) === i).slice(0, 3);
 
+  const open = batches.filter((b) => b.status !== "sold_out");
+  const repeat = repeatLabel(batches.map((b) => b.startDate));
+  const lastMonth = batches.length ? new Date(batches[batches.length - 1].startDate + "T00:00:00").toLocaleDateString("en-IN", { month: "short", year: "numeric" }) : "";
+
   const sections = [
     { id: "overview", label: "Overview" },
+    batches.length && { id: "dates", label: "Dates" },
     trip.itinerary.length && { id: "itinerary", label: "Itinerary" },
     (trip.includes.length || trip.excludes.length) && { id: "inclusions", label: "Inclusions & Exclusions" },
     (cancelTable || cancelText) && { id: "policy", label: "Cancellation Policy" },
@@ -110,6 +116,11 @@ export async function TripPage({ data }: { data: Data }) {
                 </a>
               )}
               {category && <span className="rounded-full bg-surface px-3.5 py-1.5">{category.name}</span>}
+              {open.length > 0 && (
+                <a href="#dates" className="press rounded-full bg-brand/10 px-3.5 py-1.5 text-brand hover:bg-brand/15">
+                  <RepeatBadge label={repeat ? `${repeat} · next ${dateDay(open[0].startDate)}` : `Next: ${dateDay(open[0].startDate)}`} />
+                </a>
+              )}
             </div>
           </div>
           <ShareButton title={trip.title} />
@@ -143,6 +154,13 @@ export async function TripPage({ data }: { data: Data }) {
               </dl>
             )}
           </Block>
+
+          {batches.length > 0 && (
+            <Block id="dates" title="Upcoming departures"
+              action={<p className="text-right text-sm font-bold text-muted">{repeat ? `${repeat} till ${lastMonth}` : `${open.length} dates`}</p>}>
+              <Departures slug={trip.slug} batches={batches} bookable={settings.bookingsEnabled} />
+            </Block>
+          )}
 
           {trip.itinerary.length > 0 && (
             <Block id="itinerary" title="Day-wise itinerary" action={<ExpandAll target="itinerary-days" />}>

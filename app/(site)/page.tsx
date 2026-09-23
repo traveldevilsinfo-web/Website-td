@@ -38,7 +38,7 @@ export default async function Home() {
   const scheduled = trips.filter((t) => t.batches.length).sort((a, b) => a.batches[0].start.localeCompare(b.batches[0].start));
   const upcoming = scheduled.length ? scheduled : trips;
   const months = [...new Set(scheduled.flatMap((t) => t.batches.map((b) => b.start.slice(0, 7))))].sort().slice(0, 8)
-    .map((key) => ({ key, label: new Date(key + "-01T00:00:00").toLocaleString("en-IN", { month: "short", year: "2-digit" }) }));
+    .map((key, _, all) => ({ key, label: new Date(key + "-01T00:00:00").toLocaleString("en-IN", { month: "short" }) + (key.slice(0, 4) !== all[0].slice(0, 4) ? ` ’${key.slice(2, 4)}` : "") }));
 
   const rails = cats.map((c) => ({ cat: c, trips: trips.filter((t) => t.categorySlug === c.slug) })).filter((r) => r.trips.length);
 

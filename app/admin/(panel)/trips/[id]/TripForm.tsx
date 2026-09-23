@@ -7,6 +7,7 @@ import { SaveForm } from "@/components/admin/SaveForm";
 import { ListEditor, ListRows, PricingEditor } from "@/components/admin/ListEditor";
 import { GalleryField, ImageField, putFile } from "@/components/admin/Media";
 import { MarkdownField } from "@/components/admin/MarkdownField";
+import { DeparturesEditor } from "@/components/admin/DeparturesEditor";
 import { Field, SeoSection, Section, input } from "@/components/admin/ui";
 
 export type { TripFormValues };
@@ -145,20 +146,8 @@ export function TripForm({ initial, cats, dests, action, isNew }: {
           <PricingEditor name="pricing" routes={routeNames} initial={v.pricing.map((p) => ({ name: p.name, route: p.route ?? "", tiers: p.tiers.map((x) => ({ ...x, salePrice: x.salePrice ?? "" })) }))} />
         </Section>
 
-        <Section id="batches" title="Departure batches" description="Fixed departure dates. Leave empty for on-request / customised trips.">
-          <ListEditor name="batches" addLabel="Add batch" itemLabel="Batch" initial={v.batches}
-            fields={[
-              { name: "startDate", label: "Start", type: "date", width: "sm:col-span-1" },
-              { name: "endDate", label: "End", type: "date", width: "sm:col-span-1" },
-              { name: "seats", label: "Seats", type: "number", width: "sm:col-span-1" },
-              { name: "status", label: "Status", type: "select", width: "sm:col-span-1", options: [
-                { value: "available", label: "Available" }, { value: "filling_fast", label: "Filling fast" },
-                { value: "sold_out", label: "Sold out" }, { value: "closed", label: "Closed (hidden)" },
-              ] },
-              { name: "priceOverride", label: "Special price ₹ (optional)", type: "number", width: "sm:col-span-1" },
-              { name: "route", label: "Route", type: "select", width: "sm:col-span-1", options: [{ value: "", label: "All routes" }, ...routeNames.map((r) => ({ value: r, label: r }))] },
-              { name: "note", label: "Note (optional)" },
-            ]} />
+        <Section id="batches" title="Departure dates" description="Fixed departures shown on the trip page, cards and checkout. Leave empty for on-request / customised trips.">
+          <DeparturesEditor name="batches" initial={v.batches} routes={routeNames} durationDays={v.durationDays} />
         </Section>
 
         <Section id="media" title="Photos, video & PDF">
