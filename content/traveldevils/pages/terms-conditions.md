@@ -16,28 +16,28 @@ URL: https://traveldevils.in/terms-conditions/
 - [My Account](https://traveldevils.in/my-account/)
 X
 
-Tripping cube and it’s organizers strictly prohibit the utilization of any Narcotics and Banned Substances during the tours and would not be responsible for any adversities due to the same.
+Travel Devils and it’s organizers strictly prohibit the utilization of any Narcotics and Banned Substances during the tours and would not be responsible for any adversities due to the same.
 
 Weapon, Fireworks and toxic substances are not allowed at this tour Management would not be responsible for any person who has been found guilty under the Indian Law.
 
 The organizers reserve the rights to cancel the trip anytime without any refund if his/her actions violates any rules or in case of any misbehaviour with other co-travellers.
 
-Tripping cube is not responsible for your whereabouts or safety if you are not under the supervision of the concerned company representative.
+Travel Devils is not responsible for your whereabouts or safety if you are not under the supervision of the concerned company representative.
 
 Any Loss to the Property materials such as pillows, mattress or any property belonging to the property will be subject to full payment of Product MRP.
 
-Tripping cube won’t be responsible for any loss or damage of Goods belonging to the travellers.
+Travel Devils won’t be responsible for any loss or damage of Goods belonging to the travellers.
 
 All guests must carry a Govt issued Valid ID Card.
 
-Only traveller staying with Tripping cube will be allowed in the Property and if you intend to bring guests from outside, you’ll have to Pre notify us.
+Only traveller staying with Travel Devils will be allowed in the Property and if you intend to bring guests from outside, you’ll have to Pre notify us.
 
 Management accepts no responsibility for injuries or the loss/theft of any personal property during the tour.
 
-Trippingcube is not responsible for any delays or alterations in the program or indirectly incurred expenses incases such as natural hazards,accidents, weather conditions, landslides, political closure or any
+Travel Devils is not responsible for any delays or alterations in the program or indirectly incurred expenses incases such as natural hazards,accidents, weather conditions, landslides, political closure or any
 untoward incident.
 
-Trippingcube is not responsible for any delay in reaching the destination due to traffic, sightseeing/activities ofthe day may get cancelled if we don’t reach the destination on time.
+Travel Devils is not responsible for any delay in reaching the destination due to traffic, sightseeing/activities ofthe day may get cancelled if we don’t reach the destination on time.
 
 Trip organizer/coordinator has complete right to change the itinerary as per on the spot condition & availability of ticket slots.
 

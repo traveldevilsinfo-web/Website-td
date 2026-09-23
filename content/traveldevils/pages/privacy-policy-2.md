@@ -18,7 +18,7 @@ X
 
 Last Updated: Dec 15, 2025
 
-TrippingCube values your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our website and services.
+Travel Devils values your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our website and services.
 
 ## Information We Collect
 
@@ -44,7 +44,7 @@ We may use trusted third-party tools (payment gateways, analytics, marketing too
 
 ## Contact
 
-Email: [sales@trippingcube.com] Phone: +91 9643080080
+Email: [info@traveldevils.in] Phone: +91 70428 52209
 
 ## Useful Links
 

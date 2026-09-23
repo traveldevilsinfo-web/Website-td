@@ -52,6 +52,11 @@ export async function savePage(id: number | null, _prev: ActionState, f: FormDat
     coverImage: r.str("coverImage"),
     seo: seoFrom(f),
   };
+  // Drafted pages mark facts only the business can supply as [[CONFIRM: …]]; never let one go live unfilled.
+  const blanks = values.content.match(/\[\[CONFIRM[^\]]*\]\]/g);
+  if (values.status === "published" && blanks) {
+    return { ok: false, message: `Fill the ${blanks.length} [[CONFIRM …]] placeholder${blanks.length === 1 ? "" : "s"} before publishing (first: ${blanks[0].slice(2, 70)}…).` };
+  }
   let newId: number;
   try {
     const [row] = id

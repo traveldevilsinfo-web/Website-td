@@ -40,7 +40,7 @@ Travel Devils is a growing tribe of adventure - seekers exploring the raw beauty
 
 #####   Customer Satisfaction
 
- The very reason Travel Devils was established was because the founders, in their initial phase of career, had experienced what it is to live a mundane 9-5 life. To have been in the shoes of your customers gives a firm understanding of what they need, hence WanderOn thrives to provide exactly the same, maybe even more! This is the sole reason why we’ve managed to garner more than 3000 reviews across with a rating of 4.9/5 on all social platforms.
+ The very reason Travel Devils was established was because the founders, in their initial phase of career, had experienced what it is to live a mundane 9-5 life. To have been in the shoes of your customers gives a firm understanding of what they need, hence Travel Devils thrives to provide exactly the same, maybe even more! This is the sole reason why we’ve managed to garner more than 3000 reviews across with a rating of 4.9/5 on all social platforms.
 
 #####   Transparency
 
@@ -204,7 +204,7 @@ Tag the friend who’d choose the mountains over everything. 👀🏔️
  ](https://www.instagram.com/p/DdDaVvEGhQx/)
   Load More    [  Follow on Instagram ](https://www.instagram.com/traveldevils.in/)
 
-      TrippingCube Timeline
+      Travel Devils Timeline
 
 ## Our Journey So Far
 
@@ -218,7 +218,7 @@ The world hit pause due to Covid. Travel stopped but our hope did not. We kept t
 
 ### 2021
 
-A powerful new chapter. Mr. Amit Jindal joined hands with our founders, bringing energy and expertise that helped strengthen TrippingCube’s foundation.
+A powerful new chapter. Mr. Amit Jindal joined hands with our founders, bringing energy and expertise that helped strengthen Travel Devils’s foundation.
 
 ### 2022
 
@@ -238,21 +238,21 @@ This year is all about spreading happiness through travel — new places, new sm
 
  Our story
 
-## The Story of TrippingCube
+## The Story of Travel Devils
 
-      TrippingCube Story
+      Travel Devils Story
 
 ## Our Beginning
 
-Every great journey begins with a dream — and ours started with one too. Back in 2019, Ashwani Singh envisioned a travel company that didn’t just plan trips, but created memories that lingered long after the suitcases were unpacked. That vision gave birth to TrippingCube.
+Every great journey begins with a dream — and ours started with one too. Back in 2019, Ashwani Singh envisioned a travel company that didn’t just plan trips, but created memories that lingered long after the suitcases were unpacked. That vision gave birth to Travel Devils.
 
 ## The Pause
 
-Then 2020 arrived, and the world pressed pause. Travel stopped. Plans froze. But dreams? They didn’t. TrippingCube’s heartbeat remained, quietly waiting for the world to open its doors again.
+Then 2020 arrived, and the world pressed pause. Travel stopped. Plans froze. But dreams? They didn’t. Travel Devils’s heartbeat remained, quietly waiting for the world to open its doors again.
 
 ## A New Beginning
 
-In 2021, three dreamers — Ashwani, Mayank, and Anshuman — joined forces with Amit Jindal, a corporate travel expert. Together, they reignited TrippingCube with a bigger dream and bolder vision.
+In 2021, three dreamers — Ashwani, Mayank, and Anshuman — joined forces with Amit Jindal, a corporate travel expert. Together, they reignited Travel Devils with a bigger dream and bolder vision.
 
 ## Our Vision
 
@@ -260,11 +260,11 @@ We weren’t aiming to be just another travel company. We wanted to make every j
 
 ## Spreading Happiness
 
-That’s how TrippingCube truly took off — spreading happiness through travel, across the world. From international adventures to domestic escapes, from group departures to signature corporate offsites, we’ve grown into a community united by one simple truth: “Travel isn’t just about the places we go, it’s about the people we become along the way.”
+That’s how Travel Devils truly took off — spreading happiness through travel, across the world. From international adventures to domestic escapes, from group departures to signature corporate offsites, we’ve grown into a community united by one simple truth: “Travel isn’t just about the places we go, it’s about the people we become along the way.”
 
 ## Our Promise
 
-Here’s to the dreamers who built TrippingCube, the travelers who made it their home, and the journeys that still await us. Because with every trip, we’re not just ticking destinations — we’re creating stories worth telling.
+Here’s to the dreamers who built Travel Devils, the travelers who made it their home, and the journeys that still await us. Because with every trip, we’re not just ticking destinations — we’re creating stories worth telling.
 
  Our Founders
 
@@ -274,19 +274,19 @@ Here’s to the dreamers who built TrippingCube, the travelers who made it their
 
 ##### Amit Jindal
 
-I’ve always believed that travel isn’t a break from life — it’s what makes life more meaningful. Every trip we plan at TrippingCube is a reminder that there’s always more to explore, learn, and feel
+I’ve always believed that travel isn’t a break from life — it’s what makes life more meaningful. Every trip we plan at Travel Devils is a reminder that there’s always more to explore, learn, and feel
 
 !
 
 ##### Ashwani Singh
 
-I always wanted to start something that went beyond business — something that brought joy, adventure, and connection. TrippingCube is that dream, turned into miles and memories.”
+I always wanted to start something that went beyond business — something that brought joy, adventure, and connection. Travel Devils is that dream, turned into miles and memories.”
 
 !
 
 ##### Kanika Sharma
 
-We started TrippingCube with a simple goal — to make travel effortless, exciting, and meaningful. Every journey we curate is a step closer to that dream.
+We started Travel Devils with a simple goal — to make travel effortless, exciting, and meaningful. Every journey we curate is a step closer to that dream.
 
 !
 

@@ -4,6 +4,8 @@ export const legalLinks: NavLink[] = [
   { label: "Terms & Conditions", href: "/terms-and-condition" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Payment Policy", href: "/payment-policy" },
+  { label: "Cancellation Policy", href: "/cancellation-policy" },
+  { label: "Refund Policy", href: "/refund-policy" },
 ];
 
 // Lead form options (also the server-side allow-list).

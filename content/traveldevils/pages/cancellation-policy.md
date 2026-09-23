@@ -16,15 +16,15 @@ URL: https://traveldevils.in/cancellation-policy/
 - [My Account](https://traveldevils.in/my-account/)
 X
 
-- Cancellation requests must be sent in writing via email to [sales@trippingcube.com]
+- Cancellation requests must be sent in writing via email to [info@traveldevils.in]
 - Cancellation charges vary based on trip type, destination, and time of cancellation
 - Some promotional or discounted packages may be non-refundable
-TrippingCube reserves the right to cancel trips due to unavoidable circumstances. In such cases, suitable alternatives or refunds will be offered as per policy.
+Travel Devils reserves the right to cancel trips due to unavoidable circumstances. In such cases, suitable alternatives or refunds will be offered as per policy.
 
 If you have any questions regarding these policies, please contact us at:
 
-📧 [sales@trippingcube.com]
-📞 +91 9643080080
+📧 [info@traveldevils.in]
+📞 +91 70428 52209
 
 ## Useful Links
 

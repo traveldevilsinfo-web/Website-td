@@ -247,6 +247,12 @@ dialog[open]::backdrop { background: rgb(0 0 0 / 0.5); backdrop-filter: blur(6px
 .prose-admin a { color: var(--color-brand); text-decoration: underline; text-underline-offset: 2px; }
 .prose-admin img { border-radius: 1rem; margin: 1rem 0; max-width: 100%; }
 .prose-admin strong { font-weight: 800; }
+.prose-admin em { color: var(--color-muted); }
+.prose-admin blockquote { margin: 1rem 0; padding: 0.75rem 1rem; border-left: 4px solid var(--color-accent); background: var(--color-surface); border-radius: 0 0.75rem 0.75rem 0; }
+/* Policy tables (e.g. cancellation slabs): scroll sideways on phones instead of overflowing */
+.prose-admin table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1rem 0; font-size: 0.95em; }
+.prose-admin th, .prose-admin td { border: 1px solid var(--color-line); padding: 0.55rem 0.8rem; text-align: left; vertical-align: top; }
+.prose-admin th { background: var(--color-surface); font-weight: 800; }
 
 /* ---------- Accessibility preferences ---------- */
 @media (prefers-reduced-motion: reduce) {

@@ -141,8 +141,9 @@ for (const [src, slug] of Object.entries(PAGES)) {
   const p = await read(`pages/${src}.json`).catch(() => null);
   if (!p) continue;
   const content = localUrl(clean(p.markdown)) ?? "";
+  // Never overwrite a page that already exists: it has been rewritten in the admin (content/drafts/*.md).
   await sql`insert into pages (slug, title, status, content) values (${slug}, ${decode(p.title)}, 'draft', ${content})
-            on conflict (slug) do update set title = excluded.title, content = excluded.content`;
+            on conflict (slug) do nothing`;
   console.log("page:", slug);
 }
 

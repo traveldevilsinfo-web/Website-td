@@ -16,7 +16,7 @@ URL: https://traveldevils.in/return-policy/
 - [My Account](https://traveldevils.in/my-account/)
 X
 
-TrippingCube does not deal in physical goods. Hence, returns are not applicable. All services provided are travel-related and intangible in nature.
+Travel Devils does not deal in physical goods. Hence, returns are not applicable. All services provided are travel-related and intangible in nature.
 
 ## Useful Links
 
