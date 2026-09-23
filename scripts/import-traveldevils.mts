@@ -156,7 +156,7 @@ const site = {
   announcement: null,
   socials: { instagram: "https://www.instagram.com/traveldevils.in/", facebook: "https://www.facebook.com/travel.devils/" },
   defaultCancellationPolicy: "",
-  ...JSON.parse(await readFile("scripts/home-content.json", "utf8")), // hero slides, testimonials, FAQs, stats from the old site
+  ...JSON.parse(await readFile("scripts/home-content.json", "utf8")), // hero slides, testimonials and FAQs from the old site; stats confirmed by the owner (Sep 2026)
 };
 // Existing keys (edited in Admin → Settings) win over these defaults.
 await sql`insert into settings (key, value) values ('site', ${sql.json(site)})

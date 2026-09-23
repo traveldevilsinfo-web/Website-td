@@ -8,6 +8,12 @@ Travel Devils is a growing tribe of adventure seekers exploring the Himalayas an
 
 College days shape who we become: the values, the dreams and the fire to build something of our own. Those same values brought together a group of travel-obsessed explorers who wanted to change how young India travels. The result is a travel community people genuinely connect with.
 
+## Travel Devils in numbers
+
+- **10K+** travellers hosted
+- **2000+** trips run
+- **6+** years on the road
+- **4.5★** Google rating
 
 ## How our trips work
 
