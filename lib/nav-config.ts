@@ -104,7 +104,7 @@ export const defaultNav: NavConfig = navConfigSchema.parse({
         { label: "Christmas & New Year", subtitle: "Ring it in the mountains", icon: "snowflake", color: "teal", href: "/christmas-and-new-year-trips-and-treks" },
       ],
     },
-    { type: "link", label: "Corporate", href: "/corporate-program" },
+    { type: "link", label: "Corporate", href: "/corporate-trips" },
     {
       type: "dropdown", label: "More",
       links: [

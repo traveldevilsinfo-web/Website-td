@@ -187,6 +187,11 @@ export type CustomTripDetails = {
   departure: string; checkIn: string; checkOut: string; remarks: string; // dates yyyy-mm-dd
 };
 
+/** Answers from the corporate enquiry form on /corporate-trips. */
+export type CorporateDetails = {
+  company: string; teamSize: number; tripType: string; duration: string; month: string; budget: string; remarks: string;
+};
+
 export const leads = pgTable(
   "leads",
   {
@@ -202,8 +207,8 @@ export const leads = pgTable(
     sourcePath: text("source_path"),
     status: text("status").notNull().default("new"), // new | contacted | converted | lost
     notes: text("notes"),
-    kind: text("kind").notNull().default("enquiry"), // enquiry | custom_trip (quote request from the trip planner)
-    details: jsonb("details").$type<CustomTripDetails>(),
+    kind: text("kind").notNull().default("enquiry"), // enquiry | custom_trip (trip planner) | corporate (corporate enquiry)
+    details: jsonb("details").$type<CustomTripDetails | CorporateDetails>(),
     createdAt: timestamps.createdAt,
   },
   (t) => [index("leads_created_idx").on(t.createdAt)],

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { CustomTripDetails } from "@/db/schema";
+import type { CorporateDetails, CustomTripDetails } from "@/db/schema";
 import { budgets, tripCategories } from "./site";
 
 export type Lead = {
@@ -99,5 +99,37 @@ export function customTripSummary(v: { destination: string | null; name: string;
     `Check-out: ${d(v.checkOut)}`,
     `Category: ${v.hotel}`,
     v.remarks && `Remarks: ${v.remarks}`,
+  ].filter(Boolean).join("\n");
+}
+
+// ---------------- corporate enquiry (/corporate-trips)
+export const CORPORATE_TRIP_TYPES = ["Corporate offsite", "Team outing (day trip)", "Incentive trip", "MICE / conference", "Business travel"] as const;
+export const CORPORATE_DURATIONS = ["Day outing", "1 night", "2 nights", "3+ nights", "Not sure yet"] as const;
+export const CORPORATE_BUDGETS = ["Under ₹5,000", "₹5,000–10,000", "₹10,000–20,000", "₹20,000–50,000", "₹50,000+", "Not sure yet"] as const;
+
+export const corporateSchema = z.object({
+  company: z.string().trim().min(2, "Enter your company name").max(100),
+  name: z.string().trim().min(2, "Enter your name").max(80),
+  email: z.string().trim().email("Enter a valid work email").max(120),
+  phone: z.string().transform((p, ctx) => normalizePhone(p) ?? (ctx.addIssue({ code: "custom", message: "Enter a valid 10-digit mobile number" }), z.NEVER)),
+  teamSize: z.coerce.number().int().min(2, "Team size should be at least 2").max(5000),
+  tripType: z.enum(CORPORATE_TRIP_TYPES, { message: "Pick what you're planning" }),
+  destination: z.string().trim().max(80).default(""),
+  month: z.string().regex(/^(\d{4}-\d{2})?$/, "Pick a month").default(""),
+  duration: z.enum(CORPORATE_DURATIONS).default("Not sure yet"),
+  budget: z.enum(CORPORATE_BUDGETS).default("Not sure yet"),
+  remarks: z.string().trim().max(1500).default(""),
+  optIn: z.boolean().default(false),
+  sourcePath: z.string().max(200).default(""),
+});
+
+const monthLabel = (m: string) => (m ? new Date(m + "-01T00:00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" }) : "Flexible");
+
+/** Plain-text summary for the team's WhatsApp / email reply. */
+export function corporateSummary(v: { name: string; phone: string; email: string | null; destination: string | null } & CorporateDetails) {
+  return [
+    `Company: ${v.company}`, `Contact: ${v.name}, +91 ${v.phone}${v.email ? `, ${v.email}` : ""}`,
+    `Planning: ${v.tripType}`, `Team size: ${v.teamSize}`, `Destination: ${v.destination || "Open to ideas"}`,
+    `When: ${monthLabel(v.month)} · ${v.duration}`, `Budget per person: ${v.budget}`, v.remarks && `Notes: ${v.remarks}`,
   ].filter(Boolean).join("\n");
 }

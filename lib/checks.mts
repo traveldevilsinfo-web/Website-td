@@ -157,3 +157,16 @@ assert.match(text, /No\. of Pax: 3\nNo\. of Rooms: 2/);
 assert.match(text, /Category: 4 star/);
 assert.match(text, /Remarks: Veg food/);
 console.log("custom trip checks passed");
+
+// ---------------- corporate enquiry
+const { corporateSchema, corporateSummary } = await import("./lead");
+const corp = { company: "Acme Pvt Ltd", name: "Riya Sen", email: "riya@acme.in", phone: "98765 43210", teamSize: "40", tripType: "Corporate offsite" };
+const cp = corporateSchema.safeParse(corp);
+assert.ok(cp.success);
+assert.equal(cp.success && cp.data.teamSize, 40);
+assert.equal(cp.success && cp.data.duration, "Not sure yet"); // optional fields default
+assert.equal(corporateSchema.safeParse({ ...corp, teamSize: "1" }).success, false);
+assert.equal(corporateSchema.safeParse({ ...corp, tripType: "Party" }).success, false);
+assert.equal(corporateSchema.safeParse({ ...corp, month: "next week" }).success, false);
+assert.match(corporateSummary({ ...corp, phone: "9876543210", teamSize: 40, destination: "", duration: "2 nights", month: "2026-12", budget: "₹10,000–20,000", remarks: "" }), /Company: Acme Pvt Ltd[\s\S]*Team size: 40[\s\S]*Destination: Open to ideas[\s\S]*When: December 2026 · 2 nights/);
+console.log("corporate enquiry checks passed");

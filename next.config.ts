@@ -25,8 +25,13 @@ const nextConfig: NextConfig = {
     };
   },
   async redirects() {
-    // Trip slug typo fixed (Meghalya → Meghalaya); keep old links and any indexing working.
-    return [{ source: "/backpacking-trips/india/meghalaya/meghalya", destination: "/backpacking-trips/india/meghalaya/meghalaya", permanent: true }];
+    // Keep old links and anything Google indexed working.
+    return [
+      { source: "/backpacking-trips/india/meghalaya/meghalya", destination: "/backpacking-trips/india/meghalaya/meghalaya", permanent: true },
+      // Old WordPress corporate URL (traveldevils.in/corporate-trip/) and the draft CMS page both land on the corporate page.
+      { source: "/corporate-trip", destination: "/corporate-trips", permanent: true },
+      { source: "/corporate-program", destination: "/corporate-trips", permanent: true },
+    ];
   },
   async headers() {
     return [

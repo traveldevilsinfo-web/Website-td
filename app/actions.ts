@@ -1,7 +1,7 @@
 "use server";
 
 import { db, t } from "@/lib/db";
-import { customTripSchema, parseLead } from "@/lib/lead";
+import { corporateSchema, customTripSchema, parseLead } from "@/lib/lead";
 
 export type LeadState = { ok: boolean; message: string };
 
@@ -42,6 +42,30 @@ export async function submitCustomTrip(input: unknown, honeypot = ""): Promise<C
     return { ok: true, ref: row.id };
   } catch (e) {
     console.error("Custom trip insert failed", e);
+    return { ok: false, message: "Something went wrong. Please WhatsApp or call us." };
+  }
+}
+
+export type CorporateResult = { ok: true; ref: number } | { ok: false; message: string; field?: string };
+
+/** Corporate enquiry → a lead of kind "corporate" with the brief in `details`. */
+export async function submitCorporate(input: unknown, honeypot = ""): Promise<CorporateResult> {
+  if (honeypot) return { ok: true, ref: 0 };
+  const p = corporateSchema.safeParse(input);
+  if (!p.success) {
+    const i = p.error.issues[0];
+    return { ok: false, message: i?.message ?? "Please check the form.", field: String(i?.path[0] ?? "") };
+  }
+  const v = p.data;
+  try {
+    const [row] = await db.insert(t.leads).values({
+      kind: "corporate", name: v.name, phone: v.phone, email: v.email, destination: v.destination || null,
+      category: "Corporate", travelMonth: v.month || null, budget: null, marketingOptIn: v.optIn, sourcePath: v.sourcePath || null,
+      details: { company: v.company, teamSize: v.teamSize, tripType: v.tripType, duration: v.duration, month: v.month, budget: v.budget, remarks: v.remarks },
+    }).returning({ id: t.leads.id });
+    return { ok: true, ref: row.id };
+  } catch (e) {
+    console.error("Corporate enquiry insert failed", e);
     return { ok: false, message: "Something went wrong. Please WhatsApp or call us." };
   }
 }

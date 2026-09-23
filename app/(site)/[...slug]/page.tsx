@@ -7,11 +7,15 @@ import { og } from "@/lib/seo";
 import { getCategory, getDestination, getDestinationsWithTrips, getPage, getTrip, getTrips, tripIdsDepartingIn } from "@/lib/queries";
 import { ListingPage } from "@/components/site/ListingPage";
 import { TripPage } from "@/components/site/TripPage";
+import { CorporatePage } from "@/components/site/CorporatePage";
+import { getSettings } from "@/lib/settings";
 import { PageHero } from "@/components/site/ui";
 
 export const revalidate = 300;
 
 const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
+/** This category renders as a corporate landing page with an enquiry form instead of a trip grid. */
+const CORPORATE = "corporate-trips";
 
 /**
  * URL map (JustWravel-style):
@@ -109,6 +113,11 @@ export async function generateMetadata({ params }: PageProps<"/[...slug]">): Pro
       };
     }
     case "category":
+      if (r.cat.slug === CORPORATE) return meta({
+        title: r.cat.seo.title || "Corporate Trips, Offsites & Team Outings",
+        description: r.cat.seo.description || "Corporate offsites, team outings, incentive tours and MICE across India and abroad. Share your brief and Travel Devils plans everything end to end.",
+        canonical: `/${CORPORATE}`, image: r.cat.heroImage ?? undefined,
+      });
       return meta({ title: r.cat.seo.title || r.cat.name, description: describe(r.trips, r.cat.name, r.cat.seo.description || r.cat.intro), canonical: `/${r.cat.slug}`, image: cover(r.trips, r.cat.heroImage), noindex: !r.trips.length });
     case "region":
       return meta({ title: `${r.cat.name} in ${cap(r.region)}`, description: describe(r.trips, `${r.cat.name} in ${cap(r.region)}`), canonical: `/${r.cat.slug}/${r.region}`, image: cover(r.trips, r.cat.heroImage), noindex: !r.trips.length });
@@ -144,6 +153,12 @@ export default async function CatchAll({ params }: PageProps<"/[...slug]">) {
     }
 
     case "category": {
+      if (r.cat.slug === CORPORATE) {
+        const [all, settings] = await Promise.all([getDestinationsWithTrips(), getSettings()]);
+        // Destination hero photos are clean landscapes; trip covers are posters with text, so they're a last resort.
+        const hero = r.cat.heroImage ?? all.find((d) => d.heroImage)?.heroImage ?? all.find((d) => d.cover)?.cover;
+        return <CorporatePage trips={r.trips} dests={all} image={hero} whatsapp={settings.whatsapp} />;
+      }
       const dests = (await getDestinationsWithTrips()).filter((d) => d.categories.includes(r.cat.slug));
       return (
         <ListingPage title={r.cat.name} intro={r.cat.intro} image={r.cat.heroImage} trips={r.trips} content={r.cat.content} faqs={r.cat.faqs}

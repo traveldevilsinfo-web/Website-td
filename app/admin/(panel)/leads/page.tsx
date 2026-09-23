@@ -2,7 +2,8 @@ import Link from "next/link";
 import { and, desc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
 import { Download, Mail, MessageCircle, Phone, Search } from "lucide-react";
 import { db, t } from "@/lib/db";
-import { customTripSummary } from "@/lib/lead";
+import { corporateSummary, customTripSummary } from "@/lib/lead";
+import type { CorporateDetails, CustomTripDetails } from "@/db/schema";
 import { Badge, EmptyState, PageHeader, StatusBadge, btnGhost, input } from "@/components/admin/ui";
 import { updateLead } from "../admin-actions";
 
@@ -10,6 +11,7 @@ const STATUSES = ["new", "contacted", "converted", "lost"];
 const KINDS = [
   { key: "", label: "All" },
   { key: "custom_trip", label: "Custom trip quotes" },
+  { key: "corporate", label: "Corporate" },
   { key: "enquiry", label: "Quick enquiries" },
 ] as const;
 
@@ -19,7 +21,7 @@ export default async function LeadsPage({ searchParams }: PageProps<"/admin/lead
   const sp = await searchParams;
   const q = typeof sp.q === "string" ? sp.q : "";
   const status = typeof sp.status === "string" && STATUSES.includes(sp.status) ? sp.status : "";
-  const kind = sp.kind === "custom_trip" || sp.kind === "enquiry" ? sp.kind : "";
+  const kind = sp.kind === "custom_trip" || sp.kind === "enquiry" || sp.kind === "corporate" ? sp.kind : "";
   const where: SQL[] = [];
   if (status) where.push(eq(t.leads.status, status));
   if (kind) where.push(eq(t.leads.kind, kind));
@@ -71,8 +73,11 @@ export default async function LeadsPage({ searchParams }: PageProps<"/admin/lead
 
       <div className="space-y-3">
         {rows.map((l) => {
-          const d = l.kind === "custom_trip" ? l.details : null;
-          const reply = d
+          const d = l.kind === "custom_trip" ? (l.details as CustomTripDetails) : null;
+          const corp = l.kind === "corporate" ? (l.details as CorporateDetails) : null;
+          const reply = corp
+            ? `Hi ${l.name.split(" ")[0]}, thanks for reaching out to Travel Devils about your team trip! Here's the brief we noted:\n\n${corporateSummary({ ...corp, name: l.name, phone: l.phone, email: l.email, destination: l.destination })}\n\nWe're putting together a proposal for ${corp.company}.`
+            : d
             ? `Hi ${l.name.split(" ")[0]}, thanks for your custom trip request with Travel Devils! Here's what we noted:\n\n${customTripSummary({ ...d, destination: l.destination, name: l.name, phone: l.phone, email: l.email })}\n\nWe're preparing your quotation.`
             : `Hi ${l.name.split(" ")[0]}, this is Travel Devils. Thanks for your enquiry${l.destination ? ` about ${l.destination}` : ""}!`;
           return (
@@ -82,10 +87,11 @@ export default async function LeadsPage({ searchParams }: PageProps<"/admin/lead
                   <div className="flex flex-wrap items-center gap-2">
                     <h2 className="text-base font-bold">{l.name}</h2>
                     <StatusBadge status={l.status} />
-                    {d ? <Badge tone="blue">Custom trip quote</Badge> : <Badge>Enquiry</Badge>}
+                    {corp ? <Badge tone="amber">Corporate</Badge> : d ? <Badge tone="blue">Custom trip quote</Badge> : <Badge>Enquiry</Badge>}
                   </div>
                   <p className="mt-0.5 text-sm text-gray-600">
-                    {d ? <><b className="text-gray-900">{l.destination}</b> · {d.nights}N/{d.nights + 1}D · {d.pax} pax · {d.hotel}</>
+                    {corp ? <><b className="text-gray-900">{corp.company}</b> · {corp.teamSize} people · {corp.tripType}</>
+                      : d ? <><b className="text-gray-900">{l.destination}</b> · {d.nights}N/{d.nights + 1}D · {d.pax} pax · {d.hotel}</>
                       : [l.category, l.destination, l.travelMonth, l.budget].filter(Boolean).join(" · ") || "No trip details"}
                   </p>
                 </div>
@@ -94,7 +100,7 @@ export default async function LeadsPage({ searchParams }: PageProps<"/admin/lead
                   <a href={`https://wa.me/${l.phone.length === 10 ? "91" + l.phone : l.phone}?text=${encodeURIComponent(reply)}`} target="_blank"
                     className={`${btnGhost} !text-green-700`} aria-label={`WhatsApp ${l.name}`}><MessageCircle className="size-4" aria-hidden /><span className="max-sm:hidden">WhatsApp</span></a>
                   {l.email && (
-                    <a href={`mailto:${l.email}?subject=${encodeURIComponent(`Your ${l.destination ?? "trip"} quotation from Travel Devils`)}&body=${encodeURIComponent(reply)}`}
+                    <a href={`mailto:${l.email}?subject=${encodeURIComponent(corp ? `Your team trip proposal from Travel Devils` : `Your ${l.destination ?? "trip"} quotation from Travel Devils`)}&body=${encodeURIComponent(reply)}`}
                       className={btnGhost} aria-label={`Email ${l.name}`}><Mail className="size-4" aria-hidden /></a>
                   )}
                 </div>
@@ -117,6 +123,27 @@ export default async function LeadsPage({ searchParams }: PageProps<"/admin/lead
                     <div className="col-span-full bg-white px-3 py-2.5">
                       <dt className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Remarks</dt>
                       <dd className="whitespace-pre-line text-gray-800">{d.remarks}</dd>
+                    </div>
+                  )}
+                </dl>
+              )}
+
+              {corp && (
+                <dl className="mx-5 mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-gray-100 bg-gray-100 text-sm sm:grid-cols-4">
+                  {[
+                    ["Company", corp.company], ["Team size", String(corp.teamSize)], ["Planning", corp.tripType], ["Duration", corp.duration],
+                    ["Destination", l.destination ?? "Open to ideas"], ["When", corp.month ? new Date(corp.month + "-01T00:00:00").toLocaleDateString("en-IN", { month: "long", year: "numeric" }) : "Flexible"],
+                    ["Budget / person", corp.budget], ["Email", l.email ?? "—"],
+                  ].map(([k, v]) => (
+                    <div key={k} className="bg-white px-3 py-2.5">
+                      <dt className="text-[11px] font-bold uppercase tracking-wider text-gray-400">{k}</dt>
+                      <dd className="truncate font-semibold text-gray-900" title={v}>{v}</dd>
+                    </div>
+                  ))}
+                  {corp.remarks && (
+                    <div className="col-span-full bg-white px-3 py-2.5">
+                      <dt className="text-[11px] font-bold uppercase tracking-wider text-gray-400">Notes</dt>
+                      <dd className="whitespace-pre-line text-gray-800">{corp.remarks}</dd>
                     </div>
                   )}
                 </dl>

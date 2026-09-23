@@ -22,7 +22,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url("/upcoming-trips", latest(trips)),
     ...months.map((m) => url(`/upcoming-trips/${MONTHS[m - 1]}`)),
     ...(posts.length ? [url("/blog", posts[0].updatedAt)] : []), // an empty blog is noindexed
-    ...cats.map((c) => url(`/${c.slug}`, latest(trips.filter((x) => x.categorySlug === c.slug)))).filter((_, i) => trips.some((x) => x.categorySlug === cats[i].slug)),
+    ...cats.map((c) => url(`/${c.slug}`, latest(trips.filter((x) => x.categorySlug === c.slug))))
+      .filter((_, i) => cats[i].slug === "corporate-trips" || trips.some((x) => x.categorySlug === cats[i].slug)), // corporate is a landing page
     // A destination in a single category is canonicalised to that category page, so list only that one.
     ...dests.flatMap((d) => {
       const inDest = trips.filter((x) => x.destinationSlug === d.slug);

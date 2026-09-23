@@ -124,8 +124,10 @@ export default async function Dashboard({ searchParams }: PageProps<"/admin">) {
               {leads.map((l) => (
                 <li key={l.id} className="flex items-center gap-3 px-5 py-3">
                   <div className="min-w-0 flex-1">
-                    <p className="flex items-center gap-2 truncate text-sm font-bold">{l.name}{l.status === "new" && <StatusBadge status="new" />}{l.kind === "custom_trip" && <Badge tone="blue">Quote</Badge>}</p>
-                    <p className="truncate text-xs text-gray-500">{(l.details ? [l.destination, `${l.details.pax} pax`, `${l.details.nights}N`, l.details.hotel] : [l.destination, l.category, l.travelMonth]).filter(Boolean).join(" · ") || "General enquiry"} · {ago(l.createdAt)}</p>
+                    <p className="flex items-center gap-2 truncate text-sm font-bold">{l.name}{l.status === "new" && <StatusBadge status="new" />}{l.kind === "custom_trip" && <Badge tone="blue">Quote</Badge>}{l.kind === "corporate" && <Badge tone="amber">Corporate</Badge>}</p>
+                    <p className="truncate text-xs text-gray-500">{(l.details && "pax" in l.details ? [l.destination, `${l.details.pax} pax`, `${l.details.nights}N`, l.details.hotel]
+                      : l.details && "company" in l.details ? [l.details.company, `${l.details.teamSize} people`, l.details.tripType]
+                      : [l.destination, l.category, l.travelMonth]).filter(Boolean).join(" · ") || "General enquiry"} · {ago(l.createdAt)}</p>
                   </div>
                   <a href={`tel:+91${l.phone}`} aria-label={`Call ${l.name}`} className="grid size-8 place-items-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50"><Phone className="size-4" /></a>
                   <a href={`https://wa.me/91${l.phone}`} target="_blank" aria-label={`WhatsApp ${l.name}`} className="grid size-8 place-items-center rounded-lg border border-gray-200 text-green-600 hover:bg-green-50"><MessageCircle className="size-4" /></a>
