@@ -3,6 +3,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { cache } from "react";
 import { COLLECTIONS, MONTHS, tripHref } from "@/lib/format";
 import { md } from "@/lib/markdown";
+import { og } from "@/lib/seo";
 import { getCategory, getDestination, getDestinationsWithTrips, getPage, getTrip, getTrips, tripIdsDepartingIn } from "@/lib/queries";
 import { ListingPage } from "@/components/site/ListingPage";
 import { TripPage } from "@/components/site/TripPage";
@@ -61,26 +62,71 @@ const resolve = cache(async (segs: string[]) => {
   return null;
 });
 
+type Listed = Awaited<ReturnType<typeof getTrips>>;
+
+/** Search snippet for listing pages: hand-written text when it's long enough, else built from the listed trips. */
+function describe(trips: Listed, subject: string, written?: string | null) {
+  const clean = written?.replace(/[#*_\[\]()]/g, "").replace(/\s+/g, " ").trim() ?? "";
+  if (clean.length >= 110) return clip(clean);
+  if (!trips.length) return clip(`${clean ? clean + " " : ""}${subject} by Travel Devils: small groups, trip captains and all-inclusive packages. New departures coming soon.`);
+  const prices = trips.map((t) => t.salePrice ?? t.basePrice).filter((n): n is number => !!n);
+  const from = prices.length ? ` from ₹${Math.min(...prices).toLocaleString("en-IN")}` : "";
+  const names = trips.slice(0, 3).map((t) => t.title).join(", ");
+  const summary = `${trips.length} ${subject.toLowerCase()} trip${trips.length === 1 ? "" : "s"}${from}: ${names}. Group departures with stays, travel and meals included.`;
+  const text = clean ? `${clean} ${summary}` : summary;
+  return clip(text.length < 110 ? `${text} Small groups, trip captains, easy online booking.` : text);
+}
+const clip = (t: string) => (t.length > 160 ? t.slice(0, 157).replace(/[ ,.:;]+\S*$/, "") + "…" : t);
+const cover = (trips: Listed, own?: string | null) => (own || trips.find((t) => t.coverImage)?.coverImage) ?? undefined;
+
+/** A destination whose trips all sit in one category duplicates that category's destination page: canonical goes there. */
+async function destinationCanonical(slug: string) {
+  const d = (await getDestinationsWithTrips()).find((x) => x.slug === slug);
+  const cats = d?.categories.filter(Boolean) ?? [];
+  return d && cats.length === 1 ? `/${cats[0]}/${d.region}/${d.slug}` : `/destinations/${slug}`;
+}
+
+function meta(v: { title: string; description?: string; canonical: string; image?: string; noindex?: boolean }): Metadata {
+  return {
+    title: v.title, description: v.description,
+    alternates: { canonical: v.canonical },
+    openGraph: og({ title: v.title, description: v.description, url: v.canonical, image: v.image }),
+    ...(v.noindex && { robots: { index: false, follow: true } }),
+  };
+}
+
 export async function generateMetadata({ params }: PageProps<"/[...slug]">): Promise<Metadata> {
   const r = await resolve((await params).slug);
   if (!r) return {};
   switch (r.kind) {
     case "trip": {
       const t = r.data.trip;
+      const canonical = tripHref({ slug: t.slug, categorySlug: r.data.category?.slug ?? null, region: r.data.destination?.region ?? null, destinationSlug: r.data.destination?.slug ?? null });
+      const title = t.seo.title || `${t.title} | ${t.durationNights}N/${t.durationDays}D`;
       return {
-        title: t.seo.title || `${t.title} | ${t.durationNights}N/${t.durationDays}D`,
-        description: t.seo.description || t.overview?.replace(/[#*_\[\]()]/g, "").slice(0, 155),
-        openGraph: { images: [t.seo.ogImage || t.coverImage || ""].filter(Boolean) },
-        alternates: { canonical: tripHref({ slug: t.slug, categorySlug: r.data.category?.slug ?? null, region: r.data.destination?.region ?? null, destinationSlug: r.data.destination?.slug ?? null }) },
+        ...meta({ title, description: t.seo.description || t.overview?.replace(/[#*_\[\]()]/g, "").replace(/\s+/g, " ").trim().slice(0, 158), canonical, image: t.seo.ogImage || t.coverImage || undefined }),
+        twitter: { card: "summary_large_image" },
       };
     }
-    case "category": return { title: r.cat.seo.title || r.cat.name, description: r.cat.seo.description || r.cat.intro || undefined };
-    case "region": return { title: `${r.cat.name} in ${cap(r.region)}` };
-    case "catDest": return { title: r.dest.seo.title || `${r.dest.name} ${r.cat.name}`, description: r.dest.seo.description || r.dest.intro || undefined };
-    case "destination": return { title: r.dest.seo.title || `${r.dest.name} Trips & Tour Packages`, description: r.dest.seo.description || r.dest.intro || undefined };
-    case "month": return { title: r.month ? `Trips in ${cap(r.month)}` : "Upcoming Group Trips" };
-    case "collection": return { title: COLLECTIONS[r.slug].title, description: COLLECTIONS[r.slug].intro };
-    case "page": return { title: r.page.seo.title || r.page.title, description: r.page.seo.description };
+    case "category":
+      return meta({ title: r.cat.seo.title || r.cat.name, description: describe(r.trips, r.cat.name, r.cat.seo.description || r.cat.intro), canonical: `/${r.cat.slug}`, image: cover(r.trips, r.cat.heroImage), noindex: !r.trips.length });
+    case "region":
+      return meta({ title: `${r.cat.name} in ${cap(r.region)}`, description: describe(r.trips, `${r.cat.name} in ${cap(r.region)}`), canonical: `/${r.cat.slug}/${r.region}`, image: cover(r.trips, r.cat.heroImage), noindex: !r.trips.length });
+    case "catDest":
+      return meta({ title: r.dest.seo.title || `${r.dest.name} ${r.cat.name}`, description: describe(r.trips, `${r.dest.name} ${r.cat.name}`, r.dest.seo.description || r.dest.intro), canonical: `/${r.cat.slug}/${r.dest.region}/${r.dest.slug}`, image: cover(r.trips, r.dest.heroImage) });
+    case "destination":
+      return meta({ title: r.dest.seo.title || `${r.dest.name} Trips & Tour Packages`, description: describe(r.trips, r.dest.name, r.dest.seo.description || r.dest.intro), canonical: await destinationCanonical(r.dest.slug), image: cover(r.trips, r.dest.heroImage) });
+    case "month":
+      return meta({
+        title: r.month ? `Trips in ${cap(r.month)}` : "Upcoming Group Trips",
+        description: describe(r.trips, r.month ? `${cap(r.month)} group` : "Upcoming group"),
+        canonical: r.month ? `/upcoming-trips/${r.month}` : "/upcoming-trips", image: cover(r.trips),
+        noindex: !r.trips.length, // empty months are thin pages
+      });
+    case "collection":
+      return meta({ title: COLLECTIONS[r.slug].title, description: describe(r.trips, COLLECTIONS[r.slug].title, COLLECTIONS[r.slug].intro), canonical: `/${r.slug}`, image: cover(r.trips), noindex: !r.trips.length });
+    case "page":
+      return meta({ title: r.page.seo.title || r.page.title, description: r.page.seo.description || r.page.content.replace(/[#*_\[\]()>]/g, "").replace(/\s+/g, " ").trim().slice(0, 158) || undefined, canonical: `/${r.page.slug}`, image: r.page.coverImage ?? undefined });
   }
 }
 

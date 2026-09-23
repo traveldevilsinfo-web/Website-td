@@ -2,10 +2,20 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getPosts } from "@/lib/queries";
+import { og } from "@/lib/seo";
 import { CtaBand, PageHero } from "@/components/site/ui";
 
 export const revalidate = 300;
-export const metadata: Metadata = { title: "Travel Blog", description: "Travel guides, itineraries and stories from the Travel Devils crew." };
+export async function generateMetadata(): Promise<Metadata> {
+  const any = (await getPosts(1)).length > 0;
+  return {
+    title: "Travel Blog",
+    description: "Travel guides, itineraries and honest tips from Travel Devils trip captains: best time to visit, costs, packing lists and routes across India and abroad.",
+    alternates: { canonical: "/blog" },
+    openGraph: og({ title: "Travel Blog | Travel Devils", url: "/blog" }),
+    ...(!any && { robots: { index: false, follow: true } }), // no posts yet: keep the empty page out of Google
+  };
+}
 
 export default async function BlogIndex() {
   const posts = await getPosts();
@@ -18,7 +28,7 @@ export default async function BlogIndex() {
         {lead && (
           <Link href={`/blog/${lead.slug}`} className="card group mb-10 grid overflow-hidden rounded-[2rem] bg-white md:grid-cols-2">
             <div className="relative aspect-[16/10] overflow-hidden bg-surface md:aspect-auto">
-              {lead.coverImage && <Image src={lead.coverImage} alt="" fill priority sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />}
+              {lead.coverImage && <Image src={lead.coverImage} alt="" fill loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />}
             </div>
             <div className="flex flex-col justify-center p-8 md:p-12">
               {lead.category && <p className="eyebrow text-brand">{lead.category}</p>}

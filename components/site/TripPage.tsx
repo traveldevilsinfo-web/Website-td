@@ -4,7 +4,7 @@ import type { getTrip } from "@/lib/queries";
 import { getSettings } from "@/lib/settings";
 import { getCategories, getPosts, getTrips } from "@/lib/queries";
 import { tableFilled, type PolicyTable } from "@/lib/site";
-import { dateDay, durationLabel, inr, repeatLabel } from "@/lib/format";
+import { dateDay, durationLabel, inr, repeatLabel, tripHref } from "@/lib/format";
 import { md } from "@/lib/markdown";
 import { OpenLeadButton } from "@/components/LeadDialog";
 import { Rail } from "./Rail";
@@ -79,11 +79,27 @@ export async function TripPage({ data }: { data: Data }) {
     destination && category && { label: destination.name, href: `/${category.slug}/${destination.region}/${destination.slug}` },
   ].filter(Boolean) as { label: string; href: string }[];
 
+  // Structured data needs absolute URLs (relative breadcrumb items are invalid for Google).
+  const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const abs = (u: string) => (/^https?:\/\//.test(u) ? u : site + u);
+  const url = abs(tripHref({ slug: trip.slug, categorySlug: category?.slug ?? null, region: destination?.region ?? null, destinationSlug: destination?.slug ?? null }));
+  const plain = (t: string | null | undefined) => t?.replace(/[#*_>\[\]()]/g, "").replace(/\s+/g, " ").trim();
   const jsonLd = [
     {
-      "@context": "https://schema.org", "@type": "TouristTrip", name: trip.title, description: trip.seo.description ?? trip.overview?.slice(0, 200),
-      image: images.slice(0, 5), touristType: category?.name,
-      offers: price ? { "@type": "Offer", price, priceCurrency: "INR", availability: "https://schema.org/InStock" } : undefined,
+      "@context": "https://schema.org", "@type": "TouristTrip", name: trip.title, url,
+      description: trip.seo.description || plain(trip.overview)?.slice(0, 300),
+      image: images.slice(0, 5).map(abs), touristType: category?.name,
+      provider: { "@type": "TravelAgency", "@id": `${site}/#org`, name: "Travel Devils", url: site },
+      ...(trip.itinerary.length && {
+        itinerary: {
+          "@type": "ItemList", numberOfItems: trip.itinerary.length,
+          itemListElement: trip.itinerary.map((d, i) => ({ "@type": "ListItem", position: i + 1, name: `Day ${i + 1}: ${d.title}` })),
+        },
+      }),
+      offers: price ? {
+        "@type": "Offer", price, priceCurrency: "INR", url, availability: batches.length ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+        ...(batches[0] && { availabilityStarts: batches[0].startDate }),
+      } : undefined,
     },
     trip.faqs.length && {
       "@context": "https://schema.org", "@type": "FAQPage",
@@ -91,7 +107,7 @@ export async function TripPage({ data }: { data: Data }) {
     },
     {
       "@context": "https://schema.org", "@type": "BreadcrumbList",
-      itemListElement: [...crumbs, { label: trip.title }].map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.label, item: "href" in c ? c.href : undefined })),
+      itemListElement: [...crumbs, { label: trip.title, href: url }].map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.label, item: abs(c.href) })),
     },
   ].filter(Boolean);
 
@@ -117,7 +133,7 @@ export async function TripPage({ data }: { data: Data }) {
               )}
               {category && <span className="rounded-full bg-surface px-3.5 py-1.5">{category.name}</span>}
               {open.length > 0 && (
-                <a href="#dates" className="press rounded-full bg-brand/10 px-3.5 py-1.5 text-brand hover:bg-brand/15">
+                <a href="#dates" className="press rounded-full bg-brand/10 px-3.5 py-1.5 text-brand-dark hover:bg-brand/15">
                   <RepeatBadge label={repeat ? `${repeat} · next ${dateDay(open[0].startDate)}` : `Next: ${dateDay(open[0].startDate)}`} />
                 </a>
               )}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { md } from "@/lib/markdown";
+import { og } from "@/lib/seo";
 import { getPost, getPosts } from "@/lib/queries";
 import { CtaBand } from "@/components/site/ui";
 
@@ -11,7 +12,11 @@ export const revalidate = 300;
 export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): Promise<Metadata> {
   const p = await getPost((await params).slug);
   if (!p) return {};
-  return { title: p.seo.title || p.title, description: p.seo.description || p.excerpt || undefined, openGraph: { images: [p.seo.ogImage || p.coverImage || ""].filter(Boolean), type: "article" } };
+  return {
+    title: p.seo.title || p.title, description: p.seo.description || p.excerpt || undefined,
+    alternates: { canonical: `/blog/${p.slug}` },
+    openGraph: { ...og({ title: p.seo.title || p.title, description: p.seo.description || p.excerpt || undefined, url: `/blog/${p.slug}`, image: p.seo.ogImage || p.coverImage }), type: "article" },
+  };
 }
 
 export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
@@ -31,7 +36,7 @@ export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
       </article>
       {post.coverImage && (
         <div className="relative mx-auto mt-10 aspect-[16/9] max-w-5xl overflow-hidden rounded-[2rem] bg-surface sm:mx-4 lg:mx-auto">
-          <Image src={post.coverImage} alt="" fill priority sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
+          <Image src={post.coverImage} alt="" fill loading="eager" fetchPriority="high" sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
         </div>
       )}
       <div className="prose-admin mx-auto max-w-3xl px-4 py-12 text-[18px]" dangerouslySetInnerHTML={{ __html: md(post.content) }} />

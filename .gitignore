@@ -45,3 +45,6 @@ next-env.d.ts
 /content/traveldevils/media/
 /content/traveldevils/html/
 /uploads/
+
+# local SEO audit output
+/website-td.vercel.app-audit/

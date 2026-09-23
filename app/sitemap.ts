@@ -1,27 +1,38 @@
 import type { MetadataRoute } from "next";
-import { COLLECTIONS, tripHref } from "@/lib/format";
-import { getCategories, getDestinationsWithTrips, getPosts, getTrips } from "@/lib/queries";
+import { COLLECTIONS, MONTHS, tripHref } from "@/lib/format";
+import { getCategories, getDestinationsWithTrips, getPosts, getTrips, monthsWithDepartures } from "@/lib/queries";
 import { db, t } from "@/lib/db";
 import { eq } from "drizzle-orm";
 
 export const revalidate = 3600;
 
+/** Only canonical, non-empty URLs, with lastmod (priority is ignored by Google, so it's left out). */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-  const [trips, cats, dests, posts, pages] = await Promise.all([
+  const [trips, cats, dests, posts, pages, months] = await Promise.all([
     getTrips({ limit: 5000 }), getCategories(), getDestinationsWithTrips(), getPosts(5000),
     db.select({ slug: t.pages.slug, updatedAt: t.pages.updatedAt }).from(t.pages).where(eq(t.pages.status, "published")),
+    monthsWithDepartures(),
   ]);
-  const url = (path: string, priority = 0.7, lastModified?: Date) => ({ url: base + path, priority, lastModified });
+  const url = (path: string, lastModified?: Date) => ({ url: base + path, ...(lastModified && { lastModified }) });
+  const latest = (list: typeof trips) => (list.length ? new Date(Math.max(...list.map((x) => x.updatedAt.getTime()))) : undefined);
+
   return [
-    url("/", 1),
-    url("/upcoming-trips", 0.9),
-    url("/blog", 0.6),
-    ...cats.map((c) => url(`/${c.slug}`, 0.9)),
-    ...dests.flatMap((d) => [url(`/destinations/${d.slug}`, 0.8), ...d.categories.filter(Boolean).map((c) => url(`/${c}/${d.region}/${d.slug}`, 0.8))]),
-    ...Object.keys(COLLECTIONS).map((s) => url(`/${s}`, 0.6)),
-    ...trips.map((tr) => url(tripHref(tr), 0.9)),
-    ...posts.map((p) => url(`/blog/${p.slug}`, 0.6, p.updatedAt)),
-    ...pages.map((p) => url(`/${p.slug}`, 0.4, p.updatedAt)),
+    url("/", latest(trips)),
+    url("/upcoming-trips", latest(trips)),
+    ...months.map((m) => url(`/upcoming-trips/${MONTHS[m - 1]}`)),
+    ...(posts.length ? [url("/blog", posts[0].updatedAt)] : []), // an empty blog is noindexed
+    ...cats.map((c) => url(`/${c.slug}`, latest(trips.filter((x) => x.categorySlug === c.slug)))).filter((_, i) => trips.some((x) => x.categorySlug === cats[i].slug)),
+    // A destination in a single category is canonicalised to that category page, so list only that one.
+    ...dests.flatMap((d) => {
+      const inDest = trips.filter((x) => x.destinationSlug === d.slug);
+      const c = d.categories.filter(Boolean);
+      return [...(c.length > 1 ? [url(`/destinations/${d.slug}`, latest(inDest))] : []), ...c.map((cs) => url(`/${cs}/${d.region}/${d.slug}`, latest(inDest.filter((x) => x.categorySlug === cs))))];
+    }),
+    ...Object.entries(COLLECTIONS).map(([s, c]) => ({ s, list: trips.filter((x) => (c.tag ? x.tags.includes(c.tag) : c.sale ? x.salePrice != null : false)) }))
+      .filter((c) => c.list.length).map((c) => url(`/${c.s}`, latest(c.list))),
+    ...trips.map((tr) => url(tripHref(tr), tr.updatedAt)),
+    ...posts.map((p) => url(`/blog/${p.slug}`, p.updatedAt)),
+    ...pages.map((p) => url(`/${p.slug}`, p.updatedAt)),
   ];
 }

@@ -55,8 +55,9 @@ export function Departures({ slug, batches, bookable }: { slug: string; batches:
               {off ? (
                 <div aria-label={label} className="rounded-3xl border border-line p-4 opacity-50">{body}</div>
               ) : (
-                <a href={href} aria-label={`${bookable ? "Book" : "Enquire for"} ${label}`}
-                  className="press card block rounded-3xl border border-line bg-white p-4 transition-colors hover:border-ink">
+                // Name comes from the visible text (plus a hidden verb) so voice control matches what's on screen.
+                <a href={href} className="press card block rounded-3xl border border-line bg-white p-4 transition-colors hover:border-ink">
+                  <span className="sr-only">{bookable ? "Book " : "Enquire for "}</span>
                   {body}
                 </a>
               )}

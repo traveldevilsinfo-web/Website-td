@@ -27,7 +27,7 @@ export function Gallery({ images, title }: { images: string[]; title: string }) 
           className="relative block h-[clamp(260px,52vw,560px)] w-full overflow-hidden rounded-[2rem] bg-ink">
           {/* Soft backdrop: a 32px render stretched up is naturally blurry. No CSS blur filter (too costly at this size). */}
           <Image src={first} alt="" fill sizes="32px" className="scale-110 object-cover opacity-60" aria-hidden />
-          <Image src={first} alt={title} fill priority sizes="(max-width: 1280px) 100vw, 1280px" className="object-contain" />
+          <Image src={first} alt={title} fill loading="eager" fetchPriority="high" sizes="(max-width: 1280px) 100vw, 1280px" className="object-contain" />
         </button>
         <LightboxDialog dialog={dialog} track={track} images={images} title={title} step={step} />
       </div>
@@ -40,13 +40,13 @@ export function Gallery({ images, title }: { images: string[]; title: string }) 
       <div className="rail gap-2 [--rail-pad:1rem] [grid-auto-columns:88%] md:hidden">
         {images.map((src, i) => (
           <button key={src + i} onClick={() => open(i)} className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface" aria-label={`Open photo ${i + 1}`}>
-            <Image src={src} alt={`${title} photo ${i + 1}`} fill priority={i === 0} sizes="88vw" className="object-cover" />
+            <Image src={src} alt={`${title} photo ${i + 1}`} fill loading={i === 0 ? "eager" : undefined} fetchPriority={i === 0 ? "high" : undefined} sizes="88vw" className="object-cover" />
           </button>
         ))}
       </div>
       <div className="mx-auto hidden h-[480px] max-w-7xl grid-cols-4 grid-rows-2 gap-2 px-4 md:grid">
         <button onClick={() => open(0)} className="group relative col-span-2 row-span-2 overflow-hidden rounded-l-[2rem] bg-surface" aria-label="Open photo 1">
-          <Image src={first} alt={title} fill priority sizes="50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+          <Image src={first} alt={title} fill loading="eager" fetchPriority="high" sizes="50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
         </button>
         {rest.slice(0, 4).map((src, i) => (
           <button key={src + i} onClick={() => open(i + 1)} aria-label={`Open photo ${i + 2}`}

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { footerColumns, type ResolvedItem } from "@/lib/nav";
-import { legalLinks, type SiteSettings } from "@/lib/site";
+import type { NavLink, SiteSettings } from "@/lib/site";
 import { Logo, tel } from "./Header";
 
-export function Footer({ settings, nav }: { settings: SiteSettings; nav: ResolvedItem[] }) {
+export function Footer({ settings, nav, legal }: { settings: SiteSettings; nav: ResolvedItem[]; legal: NavLink[] }) {
   const columns = footerColumns(nav);
   const socials = Object.entries(settings.socials).filter(([, url]) => url);
 
@@ -40,7 +40,7 @@ export function Footer({ settings, nav }: { settings: SiteSettings; nav: Resolve
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Travel Devils. All rights reserved.</p>
-          <ul className="flex flex-wrap gap-5">{legalLinks.map((l) => <li key={l.href}><Link href={l.href} className="hover:text-white">{l.label}</Link></li>)}</ul>
+          <ul className="flex flex-wrap gap-5">{legal.map((l) => <li key={l.href}><Link href={l.href} className="hover:text-white">{l.label}</Link></li>)}</ul>
         </div>
       </div>
     </footer>

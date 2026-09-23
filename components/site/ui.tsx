@@ -24,7 +24,7 @@ export function TripCard({ trip, priority, className = "" }: { trip: CardTrip; p
     <Link href={tripHref(trip)} className={`card group flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white ${className}`}>
       <div className="relative aspect-[4/3] overflow-hidden bg-surface">
         {trip.coverImage && (
-          <Image src={trip.coverImage} alt={trip.title} fill priority={priority} sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 320px" className="object-cover" />
+          <Image src={trip.coverImage} alt={trip.title} fill loading={priority ? "eager" : undefined} fetchPriority={priority ? "high" : undefined} sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 320px" className="object-cover" />
         )}
         <div className="absolute inset-x-3 top-3 flex items-start justify-between gap-2">
           <span className="glass rounded-full px-3 py-1 text-xs font-extrabold text-ink shadow-sm">{durationLabel(trip.durationDays, trip.durationNights)}</span>
@@ -131,7 +131,7 @@ export function BatchPill({ start, status }: { start: string; status: string }) 
 export function PageHero({ title, intro, image, crumbs }: { title: string; intro?: string | null; image?: string | null; crumbs?: { label: string; href?: string }[] }) {
   return (
     <section className="relative isolate overflow-hidden bg-ink text-white">
-      {image && <Image src={image} alt="" fill priority sizes="100vw" className="-z-10 object-cover opacity-60" />}
+      {image && <Image src={image} alt="" fill loading="eager" fetchPriority="high" sizes="100vw" className="-z-10 object-cover opacity-60" />}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/30 via-black/20 to-black/70" />
       <div className="mx-auto max-w-7xl px-4 pb-14 pt-16 sm:pb-20 sm:pt-24">
         {crumbs && (

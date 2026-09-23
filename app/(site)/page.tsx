@@ -1,8 +1,10 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { COLLECTIONS, inr } from "@/lib/format";
 import { getCategories, getDestinationsWithTrips, getPosts, getTrips } from "@/lib/queries";
 import { getSettings } from "@/lib/settings";
+import { og } from "@/lib/seo";
 import { Hero } from "@/components/site/Hero";
 import { Rail } from "@/components/site/Rail";
 import { UpcomingTabs } from "@/components/site/UpcomingTabs";
@@ -10,12 +12,20 @@ import { CtaBand, Faqs, SectionHead, TripCard } from "@/components/site/ui";
 
 export const revalidate = 300;
 
+export const metadata: Metadata = {
+  description: "Group trips, Himalayan treks, weekend getaways from Delhi and international tours with weekly departures. Small groups, trip captains, all-inclusive packages.",
+  alternates: { canonical: "/" },
+  openGraph: og({ url: "/", title: "Travel Devils | Group Trips, Treks & Tour Packages" }),
+};
+
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
 const STYLES = [
   { title: "Mountain escapes", text: "Weekend trips, treks and Himachal–Uttarakhand group tours.", href: "/weekend-getaways", emoji: "🏔️" },
   { title: "Adventure", text: "Paragliding, rafting, trekking, camping under the stars.", href: "/backpacking-trips", emoji: "🪂" },
   { title: "Community vibes", text: "Bonfires, games and a squad you'll keep for life.", href: "/upcoming-trips", emoji: "🔥" },
   { title: "International", text: "Thailand, Vietnam, Bali and beyond, the Travel Devils way.", href: "/international-trips", emoji: "✈️" },
-  { title: "Customised trips", text: "Your dates, your group, your style. Tailor-made for you.", href: "/contact", emoji: "🧭" },
+  { title: "Customised trips", text: "Your dates, your group, your style. Tailor-made for you.", href: "#plan-my-trip", emoji: "🧭" },
 ];
 
 const WHY = [
@@ -24,6 +34,9 @@ const WHY = [
   { title: "Solo? You're in good company", text: "Most of our travellers join solo and leave with friends. Group sizes stay between 8 and 50." },
   { title: "All-inclusive, no surprises", text: "Stays, travel, sightseeing and meals are listed upfront, so you know exactly what you pay for." },
 ];
+
+const Tile = ({ href, ...rest }: { href: string; className: string; children: React.ReactNode }) =>
+  href.startsWith("#") ? <a href={href} {...rest} /> : <Link href={href} {...rest} />;
 
 export default async function Home() {
   const [settings, trips, cats, dests, posts] = await Promise.all([
@@ -42,8 +55,21 @@ export default async function Home() {
 
   const rails = cats.map((c) => ({ cat: c, trips: trips.filter((t) => t.categorySlug === c.slug) })).filter((r) => r.trips.length);
 
+  // Brand entity for Google / AI answers: who we are, how to reach us, where we're listed.
+  const sameAs = Object.values(settings.socials).filter(Boolean);
+  const jsonLd = [
+    {
+      "@context": "https://schema.org", "@type": "TravelAgency", "@id": `${SITE}/#org`, name: "Travel Devils", url: SITE,
+      logo: `${SITE}/logo.png`, image: `${SITE}/logo.png`, telephone: settings.phone || undefined, email: settings.email || undefined,
+      ...(settings.address && { address: settings.address }), ...(sameAs.length && { sameAs }),
+      contactPoint: settings.phone ? { "@type": "ContactPoint", telephone: settings.phone, contactType: "customer service", areaServed: "IN", availableLanguage: ["en", "hi"] } : undefined,
+    },
+    { "@context": "https://schema.org", "@type": "WebSite", "@id": `${SITE}/#website`, name: "Travel Devils", url: SITE, publisher: { "@id": `${SITE}/#org` }, inLanguage: "en-IN" },
+  ];
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <Hero copy={settings.hero} slides={slides} stats={settings.stats}
         popular={dests.slice(0, 6).map((d) => ({ label: d.name, href: `/destinations/${d.slug}`, image: d.heroImage ?? d.cover, meta: `${d.trips} trip${d.trips === 1 ? "" : "s"}` }))} />
 
@@ -79,14 +105,15 @@ export default async function Home() {
         <h2 className="headline mb-10 max-w-2xl text-3xl sm:text-[2.6rem]">However you like to travel, there&apos;s a trip for you.</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {STYLES.map((s, i) => (
-            <Link key={s.title} href={s.href}
+            // "#…" opens the Plan my trip questionnaire, which needs a real hashchange, so a plain <a>
+            <Tile key={s.title} href={s.href}
               className={`card press group flex flex-col justify-between rounded-[1.75rem] p-6 ${i === 0 ? "bg-ink text-white lg:col-span-2 lg:row-span-2" : "bg-surface"}`}>
               <span className={`text-4xl ${i === 0 ? "lg:text-6xl" : ""}`} aria-hidden>{s.emoji}</span>
               <div className="mt-10">
                 <h3 className={`headline ${i === 0 ? "text-3xl lg:text-4xl" : "text-xl"}`}>{s.title}</h3>
                 <p className={`mt-2 text-sm leading-relaxed ${i === 0 ? "text-white/70 lg:text-base" : "text-muted"}`}>{s.text}</p>
               </div>
-            </Link>
+            </Tile>
           ))}
         </div>
       </section>

@@ -33,7 +33,7 @@ export function Logo({ dark }: { dark?: boolean }) {
           <span className="text-xl font-extrabold lowercase tracking-tight text-white">travel <span className="text-brand">devils.</span></span>
         </>
       ) : (
-        <Image src={logo} alt="Travel Devils" priority sizes="120px" className="h-10 w-auto sm:h-11" />
+        <Image src={logo} alt="Travel Devils" loading="eager" sizes="120px" className="h-10 w-auto sm:h-11" />
       )}
     </Link>
   );

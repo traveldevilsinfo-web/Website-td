@@ -28,7 +28,7 @@ export function LoginCard({ next, whatsapp, image, travellers, mode: initial = "
 
   return (
     <section className="relative isolate -mt-px overflow-hidden bg-ink text-white">
-      {image && <Image src={image} alt="" fill priority sizes="100vw" className="-z-10 object-cover" />}
+      {image && <Image src={image} alt="" fill loading="eager" fetchPriority="high" sizes="100vw" className="-z-10 object-cover" />}
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/75 via-black/45 to-black/25" />
 
       <div className="mx-auto grid min-h-[calc(100svh-5rem)] max-w-7xl items-center gap-10 px-4 py-12 lg:grid-cols-[1fr_28rem] lg:py-16">

@@ -28,7 +28,7 @@ export const getTrips = cache(async (f: {
       id: t.trips.id, slug: t.trips.slug, title: t.trips.title, coverImage: t.trips.coverImage, gallery: t.trips.gallery,
       basePrice: t.trips.basePrice, salePrice: t.trips.salePrice, durationDays: t.trips.durationDays, durationNights: t.trips.durationNights,
       startLocation: t.trips.startLocation, endLocation: t.trips.endLocation, tags: t.trips.tags, featured: t.trips.featured,
-      categorySlug: t.categories.slug, categoryName: t.categories.name,
+      categorySlug: t.categories.slug, categoryName: t.categories.name, updatedAt: t.trips.updatedAt,
       destinationSlug: t.destinations.slug, destinationName: t.destinations.name, region: t.destinations.region,
       batches: sql<{ start: string; status: string }[]>`coalesce((
         select json_agg(json_build_object('start', b.start_date, 'status', b.status) order by b.start_date)
@@ -110,3 +110,14 @@ export const getPost = cache(async (slug: string) =>
   (await db.select().from(t.posts).where(and(eq(t.posts.slug, slug), eq(t.posts.status, "published"))))[0] ?? null);
 export const getPage = cache(async (slug: string) =>
   (await db.select().from(t.pages).where(and(eq(t.pages.slug, slug), eq(t.pages.status, "published"))))[0] ?? null);
+
+/** Slugs of live CMS pages (so links to drafts aren't shown). */
+export const getPublishedPageSlugs = cache(async () =>
+  new Set((await db.select({ slug: t.pages.slug }).from(t.pages).where(eq(t.pages.status, "published"))).map((p) => p.slug)));
+
+/** Months (1-12) that have an upcoming, open departure. */
+export async function monthsWithDepartures() {
+  const rows = await db.selectDistinct({ m: sql<number>`extract(month from ${t.tripBatches.startDate})::int` }).from(t.tripBatches)
+    .where(and(gte(t.tripBatches.startDate, today()), sql`${t.tripBatches.status} <> 'closed'`));
+  return rows.map((r) => r.m);
+}

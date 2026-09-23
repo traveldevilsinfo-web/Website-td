@@ -21,7 +21,7 @@ export function UpcomingTabs({ trips, months }: { trips: CardTrip[]; months: { k
         ))}
       </div>
       <Rail label="Upcoming trips" key={active}>
-        {shown.map((t, i) => <TripCard key={t.id} trip={t} priority={i < 2} />)}
+        {shown.map((t) => <TripCard key={t.id} trip={t} />)}
       </Rail>
     </>
   );
