@@ -80,6 +80,9 @@ body {
   backdrop-filter: saturate(160%) blur(18px);
 }
 
+/* Fieldsets default to min-width: min-content, so wide children (scroll rows) would stretch their card. */
+fieldset { min-width: 0; }
+
 /* ---------- Response: feedback on press, instantly ---------- */
 .press {
   transition: transform 160ms var(--ease-out-smooth), background-color 160ms, box-shadow 200ms;
