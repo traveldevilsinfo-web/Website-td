@@ -8,14 +8,6 @@ Travel Devils is a growing tribe of adventure seekers exploring the Himalayas an
 
 College days shape who we become: the values, the dreams and the fire to build something of our own. Those same values brought together a group of travel-obsessed explorers who wanted to change how young India travels. The result is a travel community people genuinely connect with.
 
-[[CONFIRM: founding story in 2–3 lines, e.g. "Started in 20XX by <founder names> after …"]]
-
-## Travel Devils in numbers
-
-- **[[CONFIRM: number]]+** travellers hosted
-- **[[CONFIRM: number]]+** trips run
-- **[[CONFIRM: number]]** years on the road
-- **[[CONFIRM: rating]]★** on Google ([[CONFIRM: number of reviews]] reviews)
 
 ## How our trips work
 
@@ -38,9 +30,6 @@ College days shape who we become: the values, the dreams and the fire to build s
 
 **Freedom from hassles.** Life is full of rulebooks. On our trips we take care of the logistics so you get to experience the raw, unplanned joy of travel.
 
-## Meet the team
-
-[[CONFIRM: founders and key trip captains: name, role, one line each, with photos. Real people here are the strongest trust signal on the page]]
 
 ## Get in touch
 
@@ -48,4 +37,3 @@ College days shape who we become: the values, the dreams and the fire to build s
 
 Follow the journey on [Instagram](https://www.instagram.com/traveldevils.in/) and [Facebook](https://www.facebook.com/travel.devils/).
 
-[[CONFIRM: registered business name and office address, e.g. "Travel Devils is a brand of <Company Pvt Ltd>, <address>"]]

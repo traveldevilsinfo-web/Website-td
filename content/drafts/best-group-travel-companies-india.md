@@ -25,7 +25,6 @@ Below we compare four Indian group-travel companies that run fixed departures: *
 | International group trips | Yes (Thailand, Vietnam) | Yes (e.g. Thailand, Bali, Bhutan) | Yes (20+ countries listed) | Yes |
 | Corporate trips / MICE | Yes | Yes | Yes | Yes |
 | Custom / personalised trips | Yes (online trip planner) | Yes (custom itineraries) | Not verified | Not verified |
-| In business since (as stated on site) | [[CONFIRM: year]] | 2015 | 2017 | Not verified |
 
 "Not verified" means we couldn't confirm it from the company's own website, not that they don't offer it.
 

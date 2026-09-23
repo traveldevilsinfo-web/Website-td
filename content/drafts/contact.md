@@ -6,9 +6,6 @@ Planning a trip, got a question about a booking, or want a quote for your group?
 - **Also reachable on:** [+91 98117 83209](tel:+919811783209)
 - **Email:** [info@traveldevils.in](mailto:info@traveldevils.in)
 - **Instagram:** [@traveldevils.in](https://www.instagram.com/traveldevils.in/)
-- **Hours:** [[CONFIRM: support hours, e.g. Mon–Sat, 10 am – 7 pm IST]]
-
-**Office:** [[CONFIRM: office address, or remove this line if you don't have a walk-in office]]
 
 Want a custom trip? [Fill in our trip planner](#plan-my-trip) (destination, dates, group size, hotel category) and we'll send you our best quotation.
 
@@ -38,4 +35,4 @@ Safety is our top priority. Every trip is led by an experienced trip captain and
 Yes. Both domestic and international trips can be tailored to your dates, group and budget. [Plan a custom trip](#plan-my-trip).
 
 **How do I cancel or change a booking?**
-Email [info@traveldevils.in](mailto:info@traveldevils.in) with your booking ID. See our [Cancellation Policy](/cancellation-policy) and [Refund Policy](/refund-policy) for charges and timelines.
+Email [info@traveldevils.in](mailto:info@traveldevils.in) with your booking ID. Our team will confirm any cancellation charges and refund timelines for your booking.
