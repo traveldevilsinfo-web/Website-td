@@ -101,6 +101,6 @@ Yes. Travel Devils and JustWravel both offer custom itineraries; with us, you ca
 
 ---
 
-Related: [Best group travel companies in India, compared](/best-group-travel-companies-india)
+Related: [Winter Spiti trip: operators compared](/winter-spiti-trip-operators-compared) · [Best group travel companies in India, compared](/best-group-travel-companies-india)
 
 Spotted something out of date? Tell us at [info@traveldevils.in](mailto:info@traveldevils.in) and we'll correct it.

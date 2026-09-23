@@ -105,6 +105,6 @@ Yes. Most travellers on these trips join solo or in pairs.
 
 ---
 
-Related: [WanderOn alternatives: 3 group trip companies to compare](/wanderon-alternatives)
+Related: [Winter Spiti trip: operators compared](/winter-spiti-trip-operators-compared) · [WanderOn alternatives: 3 group trip companies to compare](/wanderon-alternatives)
 
 Spotted something out of date? Tell us at [info@traveldevils.in](mailto:info@traveldevils.in) and we'll correct it.
