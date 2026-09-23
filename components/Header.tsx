@@ -7,6 +7,7 @@ import { OpenCustomTrip } from "./CustomTripDialog";
 import { MobileMenu } from "./MobileMenu";
 import { TopBar } from "./TopBar";
 import { MegaPanel } from "./nav/MegaMenu";
+import { DesktopNav } from "./nav/DesktopNav";
 import { Badge, NavIcon } from "./nav/NavIcon";
 import { SearchButton } from "./nav/SearchButton";
 import logo from "@/public/logo.png";
@@ -129,9 +130,9 @@ export function Header({ settings, nav }: { settings: SiteSettings; nav: Resolve
       <div className="relative mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:h-[4.5rem]">
         <Logo />
 
-        <nav aria-label="Main" className="hidden flex-1 items-center justify-center gap-0.5 lg:flex">
+        <DesktopNav className="hidden flex-1 items-center justify-center gap-0.5 lg:flex">
           {nav.map((item) => <DesktopItem key={item.label} item={item} />)}
-        </nav>
+        </DesktopNav>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-0">
           <a href={tel(settings.phone)} className="press hidden items-center gap-2 rounded-full py-1 pl-1 pr-3 hover:bg-black/5 xl:flex">

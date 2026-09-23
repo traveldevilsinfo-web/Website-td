@@ -28,7 +28,8 @@ export function TopBar({ messages, bg, fg }: { messages: Msg[]; bg: string; fg: 
       {m.href ? (
         external
           ? <a href={m.href} target="_blank" rel="noopener noreferrer" className={cls}>{content}</a>
-          : <Link href={m.href} className={cls}>{content}</Link>
+          // "#…" links (e.g. #plan-my-trip) must be plain anchors so the hashchange that opens dialogs fires
+          : m.href.startsWith("#") ? <a href={m.href} className={cls}>{content}</a> : <Link href={m.href} className={cls}>{content}</Link>
       ) : (
         <p className={cls}>{content}</p>
       )}

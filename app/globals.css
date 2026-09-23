@@ -229,6 +229,13 @@ dialog[open]::backdrop { background: rgb(0 0 0 / 0.5); backdrop-filter: blur(6px
   visibility: visible;
   transition-delay: 0s;
 }
+/* A link in the panel was clicked: fade out even though the pointer is still over it (DesktopNav). */
+.group[data-dismissed] > .menu-panel {
+  transform: translateY(-6px) scale(0.98);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 180ms var(--ease-out-smooth), transform 260ms var(--ease-out-smooth), visibility 0s 260ms;
+}
 
 /* ---------- Markdown content ---------- */
 .prose-admin h2 { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; margin: 1.5rem 0 0.5rem; }
