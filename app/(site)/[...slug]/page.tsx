@@ -9,6 +9,7 @@ import { ListingPage } from "@/components/site/ListingPage";
 import { TripPage } from "@/components/site/TripPage";
 import { CorporatePage } from "@/components/site/CorporatePage";
 import { AboutPage } from "@/components/site/AboutPage";
+import { ContactPage } from "@/components/site/ContactPage";
 import { getSettings } from "@/lib/settings";
 import { PageHero } from "@/components/site/ui";
 
@@ -197,6 +198,7 @@ export default async function CatchAll({ params }: PageProps<"/[...slug]">) {
       return <ListingPage title={c.title} intro={c.intro} trips={r.trips} crumbs={[{ label: "Home", href: "/" }, { label: c.title }]} />;
     }
     case "page": {
+      if (r.page.slug === "contact") return <ContactPage settings={await getSettings()} />;
       if (r.page.slug === "about") {
         // Designed page; the CMS page still controls publishing, title and SEO.
         const [settings, cats, dests, trips] = await Promise.all([getSettings(), getCategories(), getDestinationsWithTrips(), getTrips()]);
