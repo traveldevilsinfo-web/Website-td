@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { CalendarDays, ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { OpenLeadButton } from "@/components/LeadDialog";
 import { BATCH_LABEL, dateDay, dateShort, inr, monthShort } from "@/lib/format";
@@ -106,6 +107,7 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
   const [p, setP] = useState(0);
   const [t, setT] = useState(0);
   const [month, setMonth] = useState("all");
+  const [datesOpen, setDatesOpen] = useState(false);
   const [b, setB] = useState<number | null>(bs.find((x) => x.status !== "sold_out")?.id ?? null);
 
   const pkg = pkgs[Math.min(p, pkgs.length - 1)];
@@ -183,34 +185,43 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
       )}
 
       {bs.length > 0 && (
-        <fieldset className="mt-5">
-          <div className="mb-2 flex items-baseline justify-between gap-2">
-            <legend className="eyebrow text-muted">Departure date</legend>
-            <a href="#dates" className="text-xs font-extrabold text-brand hover:underline max-lg:hidden">Calendar</a>
-          </div>
-          {months.length > 1 && (
-            <div className="-mx-6 mb-3 flex gap-1 overflow-x-auto px-6 [mask-image:linear-gradient(to_right,transparent,black_1.5rem,black_calc(100%-1.5rem),transparent)] [scrollbar-width:none]">
-              <button type="button" aria-pressed={month === "all"} onClick={() => setMonth("all")} className={`${pill(month === "all")} shrink-0`}>All</button>
-              {months.map((m) => (
-                <button key={m} type="button" aria-pressed={month === m} onClick={() => setMonth(m)} className={`${pill(month === m)} shrink-0`}>
-                  {monthShort(m + "-01")}{m.slice(0, 4) !== months[0].slice(0, 4) && ` ’${m.slice(2, 4)}`}
+        // Collapsed to the chosen date; opens to pick another, closes again on pick.
+        <details className="acc mt-5 rounded-2xl border border-line" open={datesOpen} onToggle={(e) => setDatesOpen(e.currentTarget.open)}>
+          <summary className="press flex items-center gap-3 rounded-2xl px-4 py-3">
+            <CalendarDays className="size-5 shrink-0 text-brand" aria-hidden />
+            <span className="min-w-0 flex-1">
+              <span className="eyebrow block text-muted">Departure date</span>
+              <span className="block truncate text-sm font-extrabold">{batch ? dateDay(batch.startDate) : "Pick a date"}</span>
+              {batch && <span className="block truncate text-xs font-semibold text-muted">Back {dateDay(batch.endDate)} · {bs.filter((x) => x.status !== "sold_out").length} dates</span>}
+            </span>
+            <span className="text-xs font-extrabold text-brand">{datesOpen ? "Done" : "Change"}</span>
+            <ChevronDown className="chev size-4 shrink-0 text-muted" aria-hidden />
+          </summary>
+          <div className="px-4 pb-4">
+            {months.length > 1 && (
+              <div className="-mx-4 mb-3 flex gap-1 overflow-x-auto px-4 [mask-image:linear-gradient(to_right,transparent,black_1rem,black_calc(100%-1rem),transparent)] [scrollbar-width:none]">
+                <button type="button" aria-pressed={month === "all"} onClick={() => setMonth("all")} className={`${pill(month === "all")} shrink-0`}>All</button>
+                {months.map((m) => (
+                  <button key={m} type="button" aria-pressed={month === m} onClick={() => setMonth(m)} className={`${pill(month === m)} shrink-0`}>
+                    {monthShort(m + "-01")}{m.slice(0, 4) !== months[0].slice(0, 4) && ` ’${m.slice(2, 4)}`}
+                  </button>
+                ))}
+              </div>
+            )}
+            <div className="grid max-h-64 grid-cols-2 gap-2 overflow-y-auto pr-1">
+              {shown.map((x) => (
+                <button key={x.id} type="button" disabled={x.status === "sold_out"} aria-pressed={x.id === b} onClick={() => { setB(x.id); setDatesOpen(false); }}
+                  className={`${chip(x.id === b)} disabled:cursor-not-allowed disabled:opacity-40`}>
+                  <span className="block">{dateDay(x.startDate)}</span>
+                  <span className={`block text-xs font-semibold ${x.id === b ? "text-white/70" : "text-muted"}`}>Back {dateDay(x.endDate)}</span>
+                  {x.status !== "available" && (
+                    <span className={`text-xs font-bold ${x.id === b ? "text-white/70" : x.status === "filling_fast" ? "text-amber-600" : "text-muted"}`}>{BATCH_LABEL[x.status]}</span>
+                  )}
                 </button>
               ))}
             </div>
-          )}
-          <div className="grid max-h-64 grid-cols-2 gap-2 overflow-y-auto pr-1">
-            {shown.map((x) => (
-              <button key={x.id} type="button" disabled={x.status === "sold_out"} aria-pressed={x.id === b} onClick={() => setB(x.id)}
-                className={`${chip(x.id === b)} disabled:cursor-not-allowed disabled:opacity-40`}>
-                <span className="block">{dateDay(x.startDate)}</span>
-                <span className={`block text-xs font-semibold ${x.id === b ? "text-white/70" : "text-muted"}`}>→ {dateDay(x.endDate)}</span>
-                {x.status !== "available" && (
-                  <span className={`text-xs font-bold ${x.id === b ? "text-white/70" : x.status === "filling_fast" ? "text-amber-600" : "text-muted"}`}>{BATCH_LABEL[x.status]}</span>
-                )}
-              </button>
-            ))}
           </div>
-        </fieldset>
+        </details>
       )}
 
       <div className="mt-6 grid gap-2">

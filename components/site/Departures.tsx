@@ -44,7 +44,7 @@ export function Departures({ slug, batches, bookable }: { slug: string; batches:
                 <span className="text-xs font-bold text-muted">{d(b.startDate, { month: "short" })}</span>
               </span>
               <span className="mt-1 block text-4xl font-extrabold leading-none tracking-tight">{d(b.startDate, { day: "numeric" })}</span>
-              <span className="mt-2 block text-xs font-semibold text-muted">→ {d(b.endDate, { weekday: "short", day: "numeric", month: "short" })}</span>
+              <span className="mt-2 block text-xs font-semibold text-muted">Back {d(b.endDate, { weekday: "short", day: "numeric", month: "short" })}</span>
               {b.route && <span className="mt-1 block truncate text-xs font-semibold text-muted">{b.route}</span>}
               <span className={`mt-3 inline-block rounded-full px-2 py-0.5 text-[11px] font-extrabold ${off ? "bg-gray-100 text-muted" : few || b.status === "filling_fast" ? "bg-amber-50 text-amber-700" : "bg-green-50 text-green-700"}`}>{tag}</span>
             </>

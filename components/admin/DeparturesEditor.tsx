@@ -16,18 +16,18 @@ export function DeparturesEditor({ name, initial, routes, durationDays }: {
   name: string; initial: Batch[]; routes: string[]; durationDays: number;
 }) {
   const [rows, setRows] = useState<Batch[]>(() => [...initial].sort((a, b) => a.startDate.localeCompare(b.startDate)));
-  const [gen, setGen] = useState(() => ({ weekday: 5, until: addDays(today(), 182), seats: 20, route: "" }));
+  // Default: overnight journey out and back, so the group is home the morning after the last day.
+  const [gen, setGen] = useState(() => ({ weekday: 5, until: addDays(today(), 182), seats: 20, route: "", back: durationDays + 1 }));
   const [showPast, setShowPast] = useState(false);
   const [now] = useState(today);
 
   const set = (i: number, patch: Partial<Batch>) => setRows(rows.map((r, j) => (j === i ? { ...r, ...patch } : r)));
   const past = rows.filter((r) => r.startDate && r.startDate < now).length;
-  const nights = Math.max(0, durationDays - 1);
 
   const generate = () => {
     const have = new Set(rows.filter((r) => (r.route ?? "") === gen.route).map((r) => r.startDate));
     const fresh = weeklyDates(gen.weekday, now, gen.until).filter((d) => !have.has(d)).map((d): Batch => ({
-      startDate: d, endDate: addDays(d, nights), seats: gen.seats, status: "available", priceOverride: "", note: "", route: gen.route,
+      startDate: d, endDate: addDays(d, gen.back), seats: gen.seats, status: "available", priceOverride: "", note: "", route: gen.route,
     }));
     setRows([...rows, ...fresh].sort((a, b) => a.startDate.localeCompare(b.startDate)));
   };
@@ -38,7 +38,7 @@ export function DeparturesEditor({ name, initial, routes, durationDays }: {
 
       <div className="rounded-lg border border-dashed border-gray-300 bg-gray-50 p-4">
         <p className="text-sm font-semibold">Repeat weekly</p>
-        <p className="mb-3 text-xs text-gray-600">Adds a departure on every chosen weekday from tomorrow until the end date. Dates already listed are skipped. End date = start + {nights} night{nights === 1 ? "" : "s"} (from “Days” above).</p>
+        <p className="mb-3 text-xs text-gray-600">Adds a departure on every chosen weekday from tomorrow until the end date. Dates already listed are skipped. “Back after” sets the return date: trip days + 1 when the group leaves at night and is home the morning after the last day (1N/2D Friday → Monday).</p>
         <div className="flex flex-wrap items-end gap-2">
           <label className="text-xs text-gray-600">Every
             <select value={gen.weekday} onChange={(e) => setGen({ ...gen, weekday: Number(e.target.value) })} className={`${cell} mt-0.5 block w-36`}>
@@ -47,6 +47,9 @@ export function DeparturesEditor({ name, initial, routes, durationDays }: {
           </label>
           <label className="text-xs text-gray-600">Until
             <input type="date" value={gen.until} min={now} onChange={(e) => setGen({ ...gen, until: e.target.value })} className={`${cell} mt-0.5 block w-40`} />
+          </label>
+          <label className="text-xs text-gray-600">Back after (days)
+            <input type="number" min={0} value={gen.back} onChange={(e) => setGen({ ...gen, back: Math.max(0, Number(e.target.value) || 0) })} className={`${cell} mt-0.5 block w-24`} />
           </label>
           <label className="text-xs text-gray-600">Seats each
             <input type="number" min={1} value={gen.seats} onChange={(e) => setGen({ ...gen, seats: Number(e.target.value) || 1 })} className={`${cell} mt-0.5 block w-24`} />
@@ -90,7 +93,7 @@ export function DeparturesEditor({ name, initial, routes, durationDays }: {
             {rows.map((r, i) => (!showPast && r.startDate && r.startDate < now ? null : (
               <tr key={r.id ?? `n${i}-${r.startDate}`} className={r.startDate && r.startDate < now ? "opacity-50" : ""}>
                 <td className="px-2 py-1.5">
-                  <input type="date" aria-label="Start date" value={r.startDate} onChange={(e) => set(i, { startDate: e.target.value, endDate: e.target.value ? addDays(e.target.value, nights) : r.endDate })} className={cell} />
+                  <input type="date" aria-label="Start date" value={r.startDate} onChange={(e) => set(i, { startDate: e.target.value, endDate: e.target.value ? addDays(e.target.value, gen.back) : r.endDate })} className={cell} />
                   {r.startDate && <span className="mt-0.5 block text-[11px] text-gray-500">{WEEKDAYS[weekdayOf(r.startDate)]}</span>}
                 </td>
                 <td className="px-2 py-1.5">

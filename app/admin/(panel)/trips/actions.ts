@@ -158,6 +158,7 @@ export async function addWeeklyDepartures(f: FormData) {
   const weekday = Math.min(6, Math.max(0, r.int("weekday") ?? 5));
   const seats = Math.min(200, Math.max(1, r.int("seats") ?? 20));
   const until = r.str("until") ?? "";
+  const overnight = r.bool("overnight"); // leave at night, home the morning after the last day
   if (!/^\d{4}-\d{2}-\d{2}$/.test(until)) redirect("/admin/trips?added=0");
   const dates = weeklyDates(weekday, today, until < addDays(today, 400) ? until : addDays(today, 400));
 
@@ -167,7 +168,7 @@ export async function addWeeklyDepartures(f: FormData) {
   ]);
   const have = new Set(existing.map((e) => `${e.tripId}:${e.start}`));
   const rows = trips.flatMap((tr) => dates.filter((d) => !have.has(`${tr.id}:${d}`)).map((d) => ({
-    tripId: tr.id, startDate: d, endDate: addDays(d, Math.max(0, tr.days - 1)), seats, status: "available" as const,
+    tripId: tr.id, startDate: d, endDate: addDays(d, overnight ? tr.days + 1 : Math.max(0, tr.days - 1)), seats, status: "available" as const,
   })));
   if (rows.length) await db.insert(t.tripBatches).values(rows);
   revalidatePath("/", "layout");

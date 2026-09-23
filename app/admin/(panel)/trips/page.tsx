@@ -54,7 +54,7 @@ export default async function TripsPage({ searchParams }: PageProps<"/admin/trip
       <details className="mb-4 rounded-lg border border-gray-200 bg-white">
         <summary className="cursor-pointer px-4 py-3 text-sm font-semibold">Weekly departures for all trips</summary>
         <form action={addWeeklyDepartures} className="flex flex-wrap items-end gap-3 border-t border-gray-100 px-4 py-4">
-          <p className="w-full text-xs text-gray-600">Adds a departure on this weekday to <b>every</b> trip until the chosen date (end dates follow each trip&apos;s length). Dates a trip already has are skipped, so it&apos;s safe to run again to extend the calendar. Fine-tune single trips in their Departures section.</p>
+          <p className="w-full text-xs text-gray-600">Adds a departure on this weekday to <b>every</b> trip until the chosen date (return dates follow each trip&apos;s length). Dates a trip already has are skipped, so it&apos;s safe to run again to extend the calendar. Fine-tune single trips in their Departures section.</p>
           <label className="text-xs text-gray-600">Every
             <select name="weekday" defaultValue={5} className={`${input} mt-0.5 block w-36`}>{WEEKDAYS.map((w, i) => <option key={w} value={i}>{w}</option>)}</select>
           </label>
@@ -63,6 +63,10 @@ export default async function TripsPage({ searchParams }: PageProps<"/admin/trip
           </label>
           <label className="text-xs text-gray-600">Seats each
             <input type="number" name="seats" min={1} defaultValue={20} className={`${input} mt-0.5 block w-24`} />
+          </label>
+          <label className="flex items-center gap-2 pb-2 text-xs text-gray-700">
+            <input type="checkbox" name="overnight" defaultChecked className="accent-brand" />
+            Overnight journey: back the morning after the last day (1N/2D Fri → Mon)
           </label>
           <button className={btnGhost}>Add to all trips</button>
         </form>
