@@ -52,7 +52,7 @@ Everything runs on the Travel Devils accounts; no CLI login needed, it's all das
 
 1. **Supabase** (supabase.com → New project, region Mumbai `ap-south-1`).
    - Project Settings → API: copy the **URL** and the **service_role** key.
-   - Connect (top bar): copy the **Session pooler** string (port 5432).
+   - Connect (top bar): copy the **Session pooler** string (port 5432, for the copy below) and the **Transaction pooler** string (port 6543, for Vercel).
 2. **Copy this site into Supabase** (schema, all trips/pages/settings, every uploaded file). Create `.env.supabase`:
    ```
    SUPABASE_DB_URL=<session pooler string>
@@ -63,7 +63,7 @@ Everything runs on the Travel Devils accounts; no CLI login needed, it's all das
    skipped on the free plan; re-upload them compressed or upgrade). Row Level Security is switched on for every
    table so Supabase's public Data API can't read anything; the app connects directly and isn't affected.
 3. **Vercel** (vercel.com → Add New → Project → import the GitHub repo, framework Next.js). Environment variables:
-   `DATABASE_URL` (the **Session pooler** string, port 5432; the transaction pooler hangs builds), `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL`
+   `DATABASE_URL` (the **Transaction pooler** string, port 6543), `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL`
    (https://traveldevils.in), plus `ANTHROPIC_API_KEY`, `RAZORPAY_*`, `MSG91_*`, `OTP_SECRET` from `.env.example`. Deploy.
 4. Domains: add `traveldevils.in` in Vercel → Domains and set the DNS records it shows. Point the Razorpay webhook at
    `https://traveldevils.in/api/payments/webhook`.
