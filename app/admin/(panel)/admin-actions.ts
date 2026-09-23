@@ -71,6 +71,10 @@ export async function saveSettings(_prev: ActionState, f: FormData): Promise<Act
       },
       heroSlides: r.json("heroSlides", z.array(z.object({ image: z.string().trim().min(1, "image required"), place: z.string().trim().min(1, "place required") })).max(8)),
       stats: r.json("stats", z.array(z.object({ value: z.string().trim().min(1), label: z.string().trim().min(1) })).max(6)),
+      team: r.json("team", z.array(z.object({
+        name: z.string().trim().min(1, "team member name required").max(60), role: z.string().trim().max(60).default(""),
+        bio: z.string().trim().max(240).default(""), photo: z.string().trim().max(300).default(""),
+      })).max(24)),
       testimonials: r.json("testimonials", z.array(z.object({ name: z.string().trim().min(1), text: z.string().trim().min(1), trip: z.string().optional() })).max(30)),
       faqs: r.json("faqs", faqSchema),
       cancellationTable: r.json("cancellationTable", policyTable),

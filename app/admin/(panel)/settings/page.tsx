@@ -62,6 +62,10 @@ export default async function SettingsPage() {
             <ListEditor name="stats" addLabel="Add stat" itemLabel="Stat" initial={s.stats}
               fields={[{ name: "value", label: "Value (e.g. 10K+)", width: "sm:col-span-1" }, { name: "label", label: "Label", width: "sm:col-span-3" }]} />
           </Section>
+          <Section title="About page: team" description="Founders and trip captains shown on /about, in this order. Only add people who agreed to appear. Photo: upload a square photo (400px+) in Media, copy its URL here.">
+            <ListEditor name="team" addLabel="Add team member" itemLabel="Person" initial={s.team}
+              fields={[{ name: "name", label: "Name" }, { name: "role", label: "Role (e.g. Co-founder, Trip captain)" }, { name: "photo", label: "Photo URL", width: "sm:col-span-4" }, { name: "bio", label: "One line about them", type: "textarea" }]} />
+          </Section>
           <Section title="Homepage: testimonials" description="Real reviews only (e.g. copied from Google).">
             <Field label="Google reviews link" hint="Adds a “Read Google reviews” button"><input name="reviewsUrl" type="url" defaultValue={s.reviewsUrl} className={input} /></Field>
             <ListEditor name="testimonials" addLabel="Add testimonial" itemLabel="Review" initial={s.testimonials}

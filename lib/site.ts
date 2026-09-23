@@ -65,6 +65,7 @@ export const defaultSettings = {
   paymentTable: { columns: windows, rows: emptyRows(["Booking amount", "50% payment", "75% payment", "100% payment"]), notes: "" } as PolicyTable,
   priceNote: "", // e.g. "+5% GST", shown next to prices
   memories: [] as string[], // traveller photos for the "Memories for life" strip
+  team: [] as { name: string; role: string; bio: string; photo: string }[], // About page; section hidden while empty
   gstPercent: 0, // added at checkout on (subtotal − discount)
   bookingsEnabled: true, // off = trip pages show "Enquire" only
 };

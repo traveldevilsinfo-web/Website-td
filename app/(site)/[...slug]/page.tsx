@@ -4,10 +4,11 @@ import { cache } from "react";
 import { COLLECTIONS, MONTHS, tripHref } from "@/lib/format";
 import { md } from "@/lib/markdown";
 import { og } from "@/lib/seo";
-import { getCategory, getDestination, getDestinationsWithTrips, getPage, getTrip, getTrips, tripIdsDepartingIn } from "@/lib/queries";
+import { getCategories, getCategory, getDestination, getDestinationsWithTrips, getPage, getTrip, getTrips, tripIdsDepartingIn } from "@/lib/queries";
 import { ListingPage } from "@/components/site/ListingPage";
 import { TripPage } from "@/components/site/TripPage";
 import { CorporatePage } from "@/components/site/CorporatePage";
+import { AboutPage } from "@/components/site/AboutPage";
 import { getSettings } from "@/lib/settings";
 import { PageHero } from "@/components/site/ui";
 
@@ -195,12 +196,23 @@ export default async function CatchAll({ params }: PageProps<"/[...slug]">) {
       const c = COLLECTIONS[r.slug];
       return <ListingPage title={c.title} intro={c.intro} trips={r.trips} crumbs={[{ label: "Home", href: "/" }, { label: c.title }]} />;
     }
-    case "page":
+    case "page": {
+      if (r.page.slug === "about") {
+        // Designed page; the CMS page still controls publishing, title and SEO.
+        const [settings, cats, dests, trips] = await Promise.all([getSettings(), getCategories(), getDestinationsWithTrips(), getTrips()]);
+        const photos = dests.map((d) => d.heroImage).filter((x): x is string => !!x);
+        return (
+          <AboutPage settings={settings} heroImage={r.page.coverImage ?? photos[0]} storyImage={photos[1] ?? photos[0]}
+            categories={cats.map((c) => ({ slug: c.slug, name: c.name, trips: trips.filter((t) => t.categorySlug === c.slug).length }))
+              .filter((c) => c.trips > 0 || c.slug === "corporate-trips")} />
+        );
+      }
       return (
         <>
           <PageHero title={r.page.title} image={r.page.coverImage} crumbs={[{ label: "Home", href: "/" }, { label: r.page.title }]} />
           <article className="prose-admin mx-auto max-w-3xl px-4 py-14 text-[17px]" dangerouslySetInnerHTML={{ __html: md(r.page.content) }} />
         </>
       );
+    }
   }
 }
