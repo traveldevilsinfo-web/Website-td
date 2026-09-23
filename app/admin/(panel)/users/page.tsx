@@ -10,7 +10,7 @@ export default async function UsersPage() {
   const rows = await db.select({ id: t.users.id, name: t.users.name, email: t.users.email, role: t.users.role, createdAt: t.users.createdAt }).from(t.users).orderBy(asc(t.users.createdAt));
   return (
     <>
-      <PageHeader title="Users" />
+      <PageHeader title="Team" />
       <p className="mb-4 text-sm text-gray-500"><b>Editors</b> manage trips, blog, pages, media and leads. <b>Admins</b> can also change site settings and users.</p>
       <Table head={["Name", "Email", "Role", ""]}>
         {rows.map((u) => (
@@ -23,7 +23,7 @@ export default async function UsersPage() {
         ))}
       </Table>
       <div className="mt-8">
-        <SaveForm action={createUser} submitLabel="Add user">
+        <SaveForm action={createUser} submitLabel="Add user" inline>
           <Section title="Add a user">
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Name"><input name="name" required className={input} /></Field>

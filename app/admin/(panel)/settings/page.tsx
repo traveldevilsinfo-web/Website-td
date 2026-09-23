@@ -103,7 +103,7 @@ export default async function SettingsPage() {
         <p className="mb-6 rounded-md bg-gray-100 p-3 text-sm text-gray-600">Site settings can only be changed by an admin.</p>
       )}
       <div className="mt-8 max-w-md">
-        <SaveForm action={changeOwnPassword} submitLabel="Change my password">
+        <SaveForm action={changeOwnPassword} submitLabel="Change my password" inline>
           <Section title="My password">
             <Field label="New password" hint="At least 10 characters"><input name="password" type="password" minLength={10} autoComplete="new-password" className={input} /></Field>
           </Section>

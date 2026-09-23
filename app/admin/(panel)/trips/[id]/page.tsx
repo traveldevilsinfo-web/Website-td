@@ -3,7 +3,7 @@ import { asc, eq } from "drizzle-orm";
 import { db, t } from "@/lib/db";
 import { tripHref } from "@/lib/format";
 import { ConfirmButton } from "@/components/admin/SaveForm";
-import { PageHeader, btnGhost } from "@/components/admin/ui";
+import { Notice, PageHeader, btnGhost } from "@/components/admin/ui";
 import { deleteTrip, duplicateTrip, saveTrip } from "../actions";
 import { TripForm, type TripFormValues } from "./TripForm";
 
@@ -42,7 +42,7 @@ export default async function TripEditor({ params, searchParams }: PageProps<"/a
   return (
     <>
       <PageHeader
-        back="/admin/trips"
+        back="/admin/trips" backLabel="All trips"
         title={trip ? trip.title : "New trip"}
         action={trip && (
           <div className="flex gap-2">
@@ -56,8 +56,8 @@ export default async function TripEditor({ params, searchParams }: PageProps<"/a
           </div>
         )}
       />
-      {created && <p className="mb-4 rounded-md bg-green-50 p-3 text-sm text-green-800">Trip created. Keep editing below.</p>}
-      {saved && !created && <p role="status" className="mb-4 rounded-md bg-green-50 p-3 text-sm font-medium text-green-800">Saved ✓ Changes are live on the site.</p>}
+      {created && <Notice>Trip created. Keep editing below.</Notice>}
+      {saved && !created && <Notice>Saved. Changes are live on the website.</Notice>}
       <TripForm key={trip?.updatedAt.getTime() ?? "new"} initial={initial} cats={cats} dests={dests} action={saveTrip.bind(null, id)} isNew={!trip} />
     </>
   );

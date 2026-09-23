@@ -4,7 +4,7 @@ import { desc, eq } from "drizzle-orm";
 import { db, t } from "@/lib/db";
 import { dateShort, inr } from "@/lib/format";
 import { ConfirmButton, SaveForm } from "@/components/admin/SaveForm";
-import { Field, PageHeader, Section, StatusBadge, Table, input } from "@/components/admin/ui";
+import { Field, Notice, PageHeader, Section, StatusBadge, Table, input } from "@/components/admin/ui";
 import { addOfflinePayment, cancelBookingAction, saveBookingNotes } from "../actions";
 
 export default async function BookingDetail({ params }: PageProps<"/admin/bookings/[id]">) {
@@ -22,7 +22,7 @@ export default async function BookingDetail({ params }: PageProps<"/admin/bookin
       <PageHeader back="/admin/bookings" title={`${b.code} · ${b.tripTitle}`}
         action={b.status !== "cancelled" && <form action={cancelBookingAction.bind(null, b.id)}><ConfirmButton message="Cancel this booking and release its seats? Refunds are issued from the Razorpay dashboard.">Cancel booking</ConfirmButton></form>} />
       {b.status === "needs_attention" && (
-        <p className="mb-4 rounded-md bg-amber-50 p-3 text-sm text-amber-900"><b>Paid but the batch was full at payment time.</b> Move the traveller to another batch (cancel + rebook) or refund from Razorpay.</p>
+        <Notice tone="amber"><b>Paid, but the departure was full at payment time.</b> Move the traveller to another date (cancel + rebook) or refund from Razorpay.</Notice>
       )}
       <div className="grid gap-4 lg:grid-cols-2">
         <Section title="Booking">
@@ -69,7 +69,7 @@ export default async function BookingDetail({ params }: PageProps<"/admin/bookin
 
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
         {b.status !== "cancelled" && due > 0 && (
-          <SaveForm action={addOfflinePayment.bind(null, b.id)} submitLabel="Record payment">
+          <SaveForm action={addOfflinePayment.bind(null, b.id)} submitLabel="Record payment" inline>
             <Section title="Record an offline payment" description="Cash, bank transfer or UPI received outside the website.">
               <div className="grid gap-3 sm:grid-cols-3">
                 <Field label="Amount ₹"><input name="amount" inputMode="numeric" defaultValue={due} className={input} /></Field>
