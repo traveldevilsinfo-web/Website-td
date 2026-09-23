@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Phone, UserRound } from "lucide-react";
 import type { ResolvedItem } from "@/lib/nav";
-import type { SiteSettings } from "@/lib/site";
+import { inWindow, type SiteSettings } from "@/lib/site";
 import { OpenCustomTrip } from "./CustomTripDialog";
 import { MobileMenu } from "./MobileMenu";
 import { TopBar } from "./TopBar";
@@ -15,10 +15,7 @@ import icon from "@/app/icon.png";
 
 /** Enabled, has messages, and inside its optional start/end window. */
 function topBarLive(b: SiteSettings["topBar"]) {
-  const now = Date.now();
-  return b.enabled && b.messages.length > 0
-    && (!b.startsAt || Date.parse(b.startsAt) <= now)
-    && (!b.endsAt || Date.parse(b.endsAt) > now);
+  return b.enabled && b.messages.length > 0 && inWindow(b.startsAt, b.endsAt);
 }
 
 export const tel = (p: string) => `tel:${p.replace(/[^\d+]/g, "")}`;

@@ -4,7 +4,7 @@ import { SaveForm } from "@/components/admin/SaveForm";
 import { MarkdownField } from "@/components/admin/MarkdownField";
 import { ListEditor } from "@/components/admin/ListEditor";
 import { TableEditor } from "@/components/admin/TableEditor";
-import { GalleryField } from "@/components/admin/Media";
+import { GalleryField, ImageField } from "@/components/admin/Media";
 import { Field, PageHeader, Section, input } from "@/components/admin/ui";
 import { changeOwnPassword, saveSettings } from "../admin-actions";
 
@@ -35,6 +35,21 @@ export default async function SettingsPage() {
               <Field label="Text colour"><input type="color" name="topBarFg" defaultValue={s.topBar.fg} className="h-10 w-full cursor-pointer rounded-md border border-gray-300" /></Field>
               <Field label="Starts (optional)"><input type="datetime-local" name="topBarStart" defaultValue={s.topBar.startsAt.slice(0, 16)} className={input} /></Field>
               <Field label="Ends (optional)"><input type="datetime-local" name="topBarEnd" defaultValue={s.topBar.endsAt.slice(0, 16)} className={input} /></Field>
+            </div>
+          </Section>
+          <Section title="Offer pop-up" description="A sale banner with a short enquiry form, shown once to each visitor a few seconds after they arrive (not on checkout, login or account pages). Anyone who closes it won't see it again for 3 days; changing the banner or title shows it again. Enquiries land in Leads.">
+            <label className="flex items-center gap-2 text-sm font-medium">
+              <input type="checkbox" name="popupEnabled" defaultChecked={s.popup.enabled} className="size-4 accent-brand" /> Show the offer pop-up
+            </label>
+            <Field label="Banner image" hint="Portrait or square, 800px+ wide. The sale text can be part of the image. Hidden on small phones."><ImageField name="popupImage" initial={s.popup.image} /></Field>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Field label="Title"><input name="popupTitle" defaultValue={s.popup.title} maxLength={60} className={input} /></Field>
+              <Field label="Coupon code (optional)"><input name="popupCode" defaultValue={s.popup.code} maxLength={30} placeholder="e.g. MONSOON10" className={input} /></Field>
+            </div>
+            <Field label="Offer line (optional)"><input name="popupText" defaultValue={s.popup.text} maxLength={200} placeholder="e.g. Flat ₹2,000 off all Spiti departures till 30 Sept" className={input} /></Field>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Field label="Starts (optional)"><input type="datetime-local" name="popupStart" defaultValue={s.popup.startsAt.slice(0, 16)} className={input} /></Field>
+              <Field label="Ends (optional)"><input type="datetime-local" name="popupEnd" defaultValue={s.popup.endsAt.slice(0, 16)} className={input} /></Field>
             </div>
           </Section>
           <Section title="Social links">

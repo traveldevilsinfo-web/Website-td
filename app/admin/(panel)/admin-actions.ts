@@ -65,6 +65,15 @@ export async function saveSettings(_prev: ActionState, f: FormData): Promise<Act
         startsAt: ist("topBarStart"),
         endsAt: ist("topBarEnd"),
       },
+      popup: {
+        enabled: r.bool("popupEnabled"),
+        image: r.str("popupImage") ?? "",
+        title: (r.str("popupTitle") ?? "").slice(0, 60) || "Plan your next trip",
+        text: (r.str("popupText") ?? "").slice(0, 200),
+        code: (r.str("popupCode") ?? "").slice(0, 30),
+        startsAt: ist("popupStart"),
+        endsAt: ist("popupEnd"),
+      },
       hero: {
         eyebrow: r.str("heroEyebrow") ?? "", title: r.str("heroTitle") ?? "", subtitle: r.str("heroSubtitle") ?? "",
         video: r.str("heroVideo") ?? "",

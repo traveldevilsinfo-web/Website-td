@@ -43,6 +43,16 @@ export const defaultSettings = {
     startsAt: "",
     endsAt: "",
   },
+  /** Offer pop-up shown once per visitor shortly after they arrive (Admin → Settings → Offer pop-up). */
+  popup: {
+    enabled: false,
+    image: "", // sale banner, portrait or square works best
+    title: "Plan your next trip",
+    text: "",
+    code: "", // optional coupon code shown as a chip
+    startsAt: "",
+    endsAt: "",
+  },
   socials: {} as Partial<Record<"instagram" | "facebook" | "youtube" | "linkedin", string>>,
   defaultCancellationPolicy: "",
   hero: {
@@ -69,6 +79,10 @@ export const defaultSettings = {
   gstPercent: 0, // added at checkout on (subtotal − discount)
   bookingsEnabled: true, // off = trip pages show "Enquire" only
 };
+
+/** Inside an optional ISO start/end window (for the top bar and offer pop-up). */
+export const inWindow = (startsAt: string, endsAt: string, now = Date.now()) =>
+  (!startsAt || Date.parse(startsAt) <= now) && (!endsAt || Date.parse(endsAt) > now);
 
 /** A table counts as filled once any cell has text. */
 export const tableFilled = (t?: PolicyTable | null) => !!t?.rows.some((r) => r.cells.some((c) => c.trim()));

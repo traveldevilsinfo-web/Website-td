@@ -3,7 +3,8 @@ import { Footer, WhatsAppButton } from "@/components/Footer";
 import { LeadDialog } from "@/components/LeadDialog";
 import { CustomTripDialog } from "@/components/CustomTripDialog";
 import { getDestinationsWithTrips, getPublishedPageSlugs } from "@/lib/queries";
-import { legalLinks } from "@/lib/site";
+import { inWindow, legalLinks } from "@/lib/site";
+import { OfferPopup } from "@/components/OfferPopup";
 import { getNav } from "@/lib/nav";
 import { getSettings } from "@/lib/settings";
 
@@ -16,6 +17,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       <Footer settings={settings} nav={nav} legal={legalLinks.filter((l) => published.has(l.href.slice(1)))} />
       <WhatsAppButton number={settings.whatsapp} />
       <LeadDialog />
+      {settings.popup.enabled && inWindow(settings.popup.startsAt, settings.popup.endsAt) && <OfferPopup {...settings.popup} />}
       <CustomTripDialog destinations={dests.map((d) => d.name)} whatsapp={settings.whatsapp} />
     </>
   );
