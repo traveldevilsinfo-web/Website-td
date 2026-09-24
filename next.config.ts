@@ -82,6 +82,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     // Keep old links and anything Google indexed working.
     return [
+      // www → bare domain (one canonical host)
+      ...(prodHost ? [{ source: "/:path*", has: [{ type: "host" as const, value: `www.${prodHost}` }], destination: `https://${prodHost}/:path*`, permanent: true }] : []),
       { source: "/backpacking-trips/india/meghalaya/meghalya", destination: "/backpacking-trips/india/meghalaya/meghalaya", permanent: true },
       // Old WordPress corporate URL (traveldevils.in/corporate-trip/) and the draft CMS page both land on the corporate page.
       { source: "/corporate-trip", destination: "/corporate-trips", permanent: true },
