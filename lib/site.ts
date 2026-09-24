@@ -87,3 +87,23 @@ export const inWindow = (startsAt: string, endsAt: string, now = Date.now()) =>
 /** A table counts as filled once any cell has text. */
 export const tableFilled = (t?: PolicyTable | null) => !!t?.rows.some((r) => r.cells.some((c) => c.trim()));
 export type SiteSettings = typeof defaultSettings;
+
+/** Review/listing profiles that aren't social networks (schema sameAs, contact page). */
+export const LISTINGS = {
+  justdial: "https://www.justdial.com/Ghaziabad/Travel-Devils-Abhay-Khand-4-Indirapuram/011PXX11-XX11-220205151038-C6M9_BZDET",
+  linkedin: "https://in.linkedin.com/company/travel-devils",
+};
+
+/** Settings address (lines: street…, "Locality, City", "State PIN") → schema.org PostalAddress. */
+export function postalAddress(text: string) {
+  const lines = text.split(/\n|,(?=[^,]*\d{6}\s*$)/).map((l) => l.trim()).filter(Boolean);
+  const last = lines.at(-1) ?? "";
+  const pin = last.match(/\b\d{6}\b/)?.[0];
+  const region = pin ? last.replace(pin, "").replace(/,\s*$/, "").trim() : undefined;
+  const city = lines.length > 2 ? lines.at(-2)!.split(",").at(-1)!.trim() : undefined;
+  const street = lines.slice(0, pin ? -1 : undefined).join(", ").replace(new RegExp(`,\\s*${city}$`), "");
+  return { "@type": "PostalAddress", streetAddress: street, addressLocality: city, addressRegion: region || undefined, postalCode: pin, addressCountry: "IN" };
+}
+
+export const mapsUrl = (address: string) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Travel Devils, ${address.replace(/\n/g, ", ")}`)}`;

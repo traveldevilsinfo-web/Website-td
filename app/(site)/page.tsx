@@ -10,6 +10,7 @@ import { Rail } from "@/components/site/Rail";
 import { UpcomingTabs } from "@/components/site/UpcomingTabs";
 import { CtaBand, SectionHead, TripCard } from "@/components/site/ui";
 import { Faqs } from "@/components/site/Faqs";
+import { LISTINGS, mapsUrl, postalAddress } from "@/lib/site";
 
 export const revalidate = 300;
 
@@ -57,12 +58,13 @@ export default async function Home() {
   const rails = cats.map((c) => ({ cat: c, trips: trips.filter((t) => t.categorySlug === c.slug) })).filter((r) => r.trips.length);
 
   // Brand entity for Google / AI answers: who we are, how to reach us, where we're listed.
-  const sameAs = Object.values(settings.socials).filter(Boolean);
+  const sameAs = [...Object.values(settings.socials).filter(Boolean), LISTINGS.justdial, LISTINGS.linkedin];
   const jsonLd = [
     {
       "@context": "https://schema.org", "@type": "TravelAgency", "@id": `${SITE}/#org`, name: "Travel Devils", url: SITE,
       logo: `${SITE}/logo.png`, image: `${SITE}/logo.png`, telephone: settings.phone || undefined, email: settings.email || undefined,
-      ...(settings.address && { address: settings.address }), ...(sameAs.length && { sameAs }),
+      ...(settings.address && { address: postalAddress(settings.address), hasMap: mapsUrl(settings.address) }), sameAs,
+      areaServed: ["Delhi", "Ghaziabad", "Noida", "Gurugram", "Faridabad"].map((name) => ({ "@type": "City", name })),
       contactPoint: settings.phone ? { "@type": "ContactPoint", telephone: settings.phone, contactType: "customer service", areaServed: "IN", availableLanguage: ["en", "hi"] } : undefined,
     },
     { "@context": "https://schema.org", "@type": "WebSite", "@id": `${SITE}/#website`, name: "Travel Devils", url: SITE, publisher: { "@id": `${SITE}/#org` }, inLanguage: "en-IN" },

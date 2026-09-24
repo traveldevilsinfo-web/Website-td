@@ -1,8 +1,8 @@
-_Last updated: [[CONFIRM: date you publish this]]_
+_Last updated: 24 September 2026_
 
 We know plans change. This policy explains what happens if you cancel a booking, and what happens if we have to change or cancel a trip.
 
-> **Before you publish:** the charges below are the slabs on the current traveldevils.in terms page. [[CONFIRM: that these slabs are your actual policy, or replace them]]. If a trip page shows its own cancellation table, that trip-specific table applies to that trip.
+If a trip page shows its own cancellation table, that trip-specific table applies to that trip.
 
 ## How to cancel
 
@@ -28,7 +28,8 @@ Anything you've paid above the applicable charge is refunded as described in our
 
 ## Changing your date or transferring your seat
 
-[[CONFIRM: your rule, e.g. "You can move to another departure of the same trip once, free of charge, up to 15 days before departure, subject to seats. Transferring your seat to a friend is allowed until 7 days before departure."]]
+- **Change of date:** you can move to another departure of the same trip **once, free of charge, up to 15 days before departure**, subject to seats. Any difference in price for the new date is payable or refundable.
+- **Seat transfer:** you can transfer your seat to a friend **until 7 days before departure**. Send their name, age and contact details to [info@traveldevils.in](mailto:info@traveldevils.in) with your booking ID.
 
 ## If we change or cancel a trip
 

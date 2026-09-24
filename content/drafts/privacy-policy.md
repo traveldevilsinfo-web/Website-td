@@ -1,8 +1,8 @@
-_Last updated: [[CONFIRM: date you publish this]]_
+_Last updated: 24 September 2026_
 
 Travel Devils ("we", "us") respects your privacy. This policy explains what personal data we collect through traveldevils.in and our trips, why, and the choices you have. It's written to meet India's Digital Personal Data Protection Act, 2023 and the IT Rules, 2011.
 
-Travel Devils is a brand of [[CONFIRM: registered company / firm name]], [[CONFIRM: registered address]].
+Travel Devils, 247, D Mall, Niti Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201014, is responsible for your data (the "data fiduciary" under the DPDP Act).
 
 ## What we collect
 
@@ -40,11 +40,11 @@ We never sell your personal data.
 
 ## Cookies
 
-We use essential cookies only: one keeps you logged in to your account, and one keeps our team logged in to our admin area. We don't use advertising cookies. [[CONFIRM: update this section if you add Google Analytics, Meta Pixel or similar]]
+We use essential cookies only: one keeps you logged in to your account, and one keeps our team logged in to our admin area. We don't use advertising cookies.
 
 ## How long we keep it
 
-Enquiries: up to [[CONFIRM: e.g. 2 years]]. Bookings and payment records: as long as tax and accounting laws require (usually 8 years). Account data: until you ask us to delete your account.
+Enquiries: up to 2 years. Bookings and payment records: 8 years, as Indian tax and accounting laws require. Account data: until you ask us to delete your account.
 
 ## Your rights
 
@@ -64,9 +64,10 @@ Data is sent over HTTPS and stored with access limited to our team. Passwords ar
 
 ## Grievance Officer
 
-- **Name:** [[CONFIRM: name]]
-- **Email:** [[CONFIRM: email]]
-- **Address:** [[CONFIRM: address]]
+- **Name:** Grievance Officer, Travel Devils
+- **Email:** [info@traveldevils.in](mailto:info@traveldevils.in) (subject: "Grievance")
+- **Phone:** [+91 97118 75589](tel:+919711875589)
+- **Address:** 247, D Mall, Niti Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201014
 
 We acknowledge complaints within 24 hours and resolve them within 15 days.
 

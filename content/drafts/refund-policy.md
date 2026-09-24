@@ -1,4 +1,4 @@
-_Last updated: [[CONFIRM: date you publish this]]_
+_Last updated: 24 September 2026_
 
 This policy explains when you're eligible for a refund and how long it takes.
 
@@ -17,7 +17,7 @@ This policy explains when you're eligible for a refund and how long it takes.
 
 ## How refunds are paid
 
-- Refunds go back to the **original payment method** (card, UPI, net banking or wallet) through our payment partner, Razorpay. Payments you made by bank transfer or UPI directly to us are refunded to the same account.
+- Refunds go back to the **original payment method** (card, UPI, net banking or wallet) through our payment partner, Razorpay.
 - Approved refunds are processed within **7–14 working days** of approval. Your bank may take a few more days to show it.
 - We'll confirm the refund amount and date by email.
 

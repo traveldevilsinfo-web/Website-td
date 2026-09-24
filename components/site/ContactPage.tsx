@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {
-  ArrowRight, ArrowUpRight, BriefcaseBusiness, CalendarCheck, Compass, Mail, MessageCircle, Mountain, Phone, PhoneCall,
+  ArrowRight, ArrowUpRight, BriefcaseBusiness, CalendarCheck, Compass, Mail, MapPin, MessageCircle, Mountain, Phone, PhoneCall, Star,
 } from "lucide-react";
-import type { SiteSettings } from "@/lib/site";
+import { LISTINGS, mapsUrl, type SiteSettings } from "@/lib/site";
 import { OpenCustomTrip } from "@/components/CustomTripDialog";
 import { OpenLeadButton } from "@/components/LeadDialog";
 import { Faqs } from "./Faqs";
@@ -26,6 +26,8 @@ const tel = (p: string) => `tel:${p.replace(/[^\d+]/g, "")}`;
 /** /contact: fastest channels first, then routes each common reason for getting in touch to the page that handles it. */
 export function ContactPage({ settings }: { settings: SiteSettings }) {
   const wa = `https://wa.me/${settings.whatsapp}?text=${encodeURIComponent("Hi Travel Devils! I have a question.")}`;
+  const waNumber = settings.whatsapp.replace(/^91(\d{5})(\d{5})$/, "+91 $1 $2");
+  const rating = settings.stats.find((x) => /google/i.test(x.label));
   // lucide dropped brand logos, so socials are text links
   const socials = ([["instagram", "Instagram"], ["facebook", "Facebook"], ["youtube", "YouTube"], ["linkedin", "LinkedIn"]] as const)
     .filter(([k]) => settings.socials[k]).map(([k, label]) => ({ href: settings.socials[k]!, label }));
@@ -60,7 +62,7 @@ export function ContactPage({ settings }: { settings: SiteSettings }) {
                 </span>
                 <span>
                   <span className="block text-2xl font-extrabold">WhatsApp us</span>
-                  <span className="mt-1 flex items-center gap-1.5 font-bold text-white/90">{settings.phone}<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden /></span>
+                  <span className="mt-1 flex items-center gap-1.5 font-bold text-white/90">{waNumber}<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden /></span>
                 </span>
               </a>
             </li>
@@ -82,6 +84,36 @@ export function ContactPage({ settings }: { settings: SiteSettings }) {
               </a>
             </li>
           </ul>
+
+          {settings.address && (
+            <div className="mt-4 flex flex-col gap-6 rounded-[2rem] bg-white p-7 ring-1 ring-line md:flex-row md:items-center md:justify-between">
+              <div className="flex gap-4">
+                <MapPin className="size-9 shrink-0 text-brand" aria-hidden />
+                <div>
+                  <p className="text-2xl font-extrabold">Visit us</p>
+                  <address className="mt-1 whitespace-pre-line font-semibold not-italic text-muted">{settings.address}</address>
+                  <a href={mapsUrl(settings.address)} target="_blank" rel="noopener" className="mt-2 inline-flex items-center gap-1.5 text-sm font-extrabold text-brand-dark hover:underline">
+                    Get directions<ArrowUpRight className="size-4" aria-hidden />
+                  </a>
+                </div>
+              </div>
+              <ul className="flex flex-wrap gap-2 md:justify-end">
+                {settings.reviewsUrl && (
+                  <li>
+                    <a href={settings.reviewsUrl} target="_blank" rel="noopener" className="press flex items-center gap-2 rounded-full bg-surface px-4 py-2.5 text-sm font-extrabold ring-1 ring-line hover:ring-ink/20">
+                      <Star className="size-4 fill-amber-400 text-amber-400" aria-hidden />{rating ? `${rating.value.replace("★", "")} on Google` : "Google reviews"}
+                      {rating && <span className="font-semibold text-muted">· {rating.label.replace(/^google rating\s*·\s*/i, "")}</span>}
+                    </a>
+                  </li>
+                )}
+                <li>
+                  <a href={LISTINGS.justdial} target="_blank" rel="noopener" className="press flex items-center gap-2 rounded-full bg-surface px-4 py-2.5 text-sm font-extrabold ring-1 ring-line hover:ring-ink/20">
+                    Reviews on Justdial<ArrowUpRight className="size-4" aria-hidden />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
       </section>
 

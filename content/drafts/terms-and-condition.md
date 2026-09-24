@@ -1,6 +1,6 @@
-_Last updated: [[CONFIRM: date you publish this]]_
+_Last updated: 24 September 2026_
 
-These terms apply to every enquiry, booking and trip with Travel Devils, a brand of [[CONFIRM: registered company / firm name]] ("Travel Devils", "we", "us"). By booking you agree to them on behalf of everyone in your booking.
+These terms apply to every enquiry, booking and trip with Travel Devils, 247, D Mall, Niti Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201014 ("Travel Devils", "we", "us"). By booking you agree to them on behalf of everyone in your booking.
 
 ## 1. Bookings
 
@@ -37,7 +37,7 @@ Narcotics, banned substances, weapons, fireworks and toxic substances are strict
 
 - Travel, especially in the mountains, involves risk. We work with experienced trip captains and trusted local partners, but we aren't liable for injury, illness, loss, theft or damage to personal belongings, or for delays and extra costs caused by events outside our control (natural events, accidents, strikes, government orders, supplier failures).
 - We're not responsible for travellers who leave the group or aren't under the supervision of our trip captain.
-- We strongly recommend travel insurance, and it's mandatory for [[CONFIRM: e.g. international trips / treks above X m, or delete]].
+- We strongly recommend travel insurance for every trip, especially treks, high-altitude and international trips.
 - Our total liability for any claim is limited to the amount you paid us for that booking.
 
 ## 7. Photos and videos
@@ -50,8 +50,10 @@ Keep your account password private. Content on this website (text, photos, logos
 
 ## 9. Governing law
 
-These terms are governed by the laws of India. Disputes are subject to the courts of [[CONFIRM: city, e.g. New Delhi]].
+These terms are governed by the laws of India. Disputes are subject to the exclusive jurisdiction of the courts at Ghaziabad, Uttar Pradesh.
 
 ## 10. Contact
 
-[info@traveldevils.in](mailto:info@traveldevils.in) · +91 70428 52209
+Travel Devils, 247, D Mall, Niti Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201014
+
+[info@traveldevils.in](mailto:info@traveldevils.in) · Call [+91 97118 75589](tel:+919711875589) · WhatsApp +91 70428 52209

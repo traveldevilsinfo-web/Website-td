@@ -186,3 +186,9 @@ assert.equal(sf?.before.trim(), "Intro.");
 assert.match(sf!.after, /^More trips below\.\n\n## Sources/);
 assert.equal(splitFaqs("## Cost\n\ntext"), null);
 console.log("blog helper checks passed");
+
+// ---------------- address → schema
+const { postalAddress } = await import("./site");
+assert.deepEqual(postalAddress("247, D Mall, Niti Khand\nIndirapuram, Ghaziabad\nUttar Pradesh 201014"),
+  { "@type": "PostalAddress", streetAddress: "247, D Mall, Niti Khand, Indirapuram", addressLocality: "Ghaziabad", addressRegion: "Uttar Pradesh", postalCode: "201014", addressCountry: "IN" });
+console.log("address checks passed");

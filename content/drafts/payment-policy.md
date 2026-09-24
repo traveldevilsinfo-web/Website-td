@@ -1,4 +1,4 @@
-_Last updated: [[CONFIRM: date you publish this]]_
+_Last updated: 24 September 2026_
 
 ## Prices
 
@@ -19,21 +19,15 @@ Your seat is confirmed as soon as the payment succeeds. You'll see your booking 
 
 ## Balance payment
 
-The balance must be paid **[[CONFIRM: e.g. at least 7 days before departure]]**. If the balance isn't paid by then, we may release your seat, and the booking amount is kept as per our [Cancellation Policy](/cancellation-policy).
+The balance must be paid **at least 7 days before departure**. If the balance isn't paid by then, we may release your seat, and the booking amount is kept as per our [Cancellation Policy](/cancellation-policy).
 
-## Paying offline
+## Stay safe from payment fraud
 
-You can also pay by bank transfer or UPI directly to Travel Devils. Only pay into the accounts below, and share the payment screenshot with your booking ID on WhatsApp so we can record it.
-
-- **Account name:** [[CONFIRM: account name]]
-- **Bank / account number / IFSC:** [[CONFIRM: bank details]]
-- **UPI ID:** [[CONFIRM: UPI ID]]
-
-Our team will never ask you to pay into a personal account or send an OTP.
+All payments are made on this website through Razorpay. Our team will never ask you to pay into a personal bank account or UPI ID, or to share an OTP. If anyone does, don't pay, and report it to [info@traveldevils.in](mailto:info@traveldevils.in).
 
 ## Invoices
 
-[[CONFIRM: e.g. "A GST invoice in the name of <Company Pvt Ltd> (GSTIN <number>) is emailed after full payment."]]
+Every payment is recorded against your booking ID in [My Bookings](/account). If you need an invoice for your booking, email [info@traveldevils.in](mailto:info@traveldevils.in) with your booking ID.
 
 ## Failed or duplicate payments
 
