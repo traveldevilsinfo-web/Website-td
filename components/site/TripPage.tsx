@@ -54,9 +54,11 @@ export async function TripPage({ data }: { data: Data }) {
   const hasKnow = !!(trip.reportingPoint || trip.pickupPoints.length || trip.importantNotes || trip.routes.length);
   const route0 = trip.routes[0];
   const pickup = route0 ? `${route0.from || trip.startLocation} → ${route0.to || trip.endLocation || route0.from}` : trip.startLocation ? `${trip.startLocation} → ${trip.endLocation || trip.startLocation}` : null;
-  // Blogs about this destination first, then the latest.
-  const needle = [destination?.name, ...trip.tags].filter(Boolean).map((x) => x!.toLowerCase());
-  const blogs = [...posts.filter((p) => needle.some((n) => p.title.toLowerCase().includes(n) || p.tags.map((t) => t.toLowerCase()).includes(n))), ...posts]
+  // Guides that link to this trip first, then ones about the destination, then the latest.
+  const needle = [trip.title, destination?.name, ...trip.tags].filter(Boolean).map((x) => x!.toLowerCase());
+  const linksHere = new RegExp(`\\]\\([^)]*/${trip.slug}\\)`);
+  const blogs = [...posts.filter((p) => linksHere.test(p.content)),
+    ...posts.filter((p) => needle.some((n) => p.title.toLowerCase().includes(n) || p.tags.map((t) => t.toLowerCase()).includes(n))), ...posts]
     .filter((p, i, a) => a.indexOf(p) === i).slice(0, 3);
 
   const open = batches.filter((b) => b.status !== "sold_out");
