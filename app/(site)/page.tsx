@@ -10,6 +10,8 @@ import { Rail } from "@/components/site/Rail";
 import { UpcomingTabs } from "@/components/site/UpcomingTabs";
 import { CtaBand, SectionHead, TripCard } from "@/components/site/ui";
 import { Faqs } from "@/components/site/Faqs";
+import { TripAccordion } from "@/components/site/TripAccordion";
+import { Reels } from "@/components/site/Reels";
 import { LISTINGS, mapsUrl, postalAddress } from "@/lib/site";
 
 export const revalidate = 300;
@@ -95,10 +97,30 @@ export default async function Home() {
         <UpcomingTabs trips={upcoming} months={months} />
       </section>
 
+      {settings.reels.length > 0 && (
+        <section className="reveal pt-24">
+          <div className="mx-auto mb-10 max-w-2xl px-4 text-center">
+            <p className="eyebrow text-brand">On Instagram</p>
+            <h2 className="headline mt-2 text-3xl sm:text-[2.6rem]">Straight from our trips</h2>
+            <p className="mt-3 text-muted">Real moments from real departures. Tap a reel to play it.</p>
+          </div>
+          <Reels reels={settings.reels} />
+          {settings.socials.instagram && (
+            <p className="mt-6 text-center">
+              <a href={settings.socials.instagram} target="_blank" rel="noopener" className="press inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-extrabold text-white hover:bg-black">
+                Follow @{settings.socials.instagram.replace(/\/$/, "").split("/").pop()} on Instagram
+              </a>
+            </p>
+          )}
+        </section>
+      )}
+
       {rails.map(({ cat, trips: list }) => (
         <section key={cat.id} className="reveal pt-16">
           <SectionHead title={cat.name} subtitle={cat.intro ?? undefined} href={`/${cat.slug}`} />
-          <Rail label={cat.name}>{list.map((t) => <TripCard key={t.id} trip={t} />)}</Rail>
+          {cat.slug === "international-trips"
+            ? <TripAccordion trips={list} />
+            : <Rail label={cat.name}>{list.map((t) => <TripCard key={t.id} trip={t} />)}</Rail>}
         </section>
       ))}
 

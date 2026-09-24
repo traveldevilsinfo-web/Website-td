@@ -62,6 +62,8 @@ export const defaultSettings = {
     video: "", // mp4 URL (Media → upload → copy URL); photos below are the fallback/poster
   },
   heroSlides: [] as { image: string; place: string }[],
+  /** Homepage "on Instagram" strip; hidden while empty. video = uploaded MP4 (vertical 9:16), poster = cover image. */
+  reels: [] as { video: string; poster: string; caption: string; href: string }[],
   stats: [
     { value: "10K+", label: "Travellers hosted" },
     { value: "6+", label: "Years on the road" },

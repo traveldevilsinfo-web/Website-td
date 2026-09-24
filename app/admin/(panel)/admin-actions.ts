@@ -78,6 +78,10 @@ export async function saveSettings(_prev: ActionState, f: FormData): Promise<Act
         eyebrow: r.str("heroEyebrow") ?? "", title: r.str("heroTitle") ?? "", subtitle: r.str("heroSubtitle") ?? "",
         video: r.str("heroVideo") ?? "",
       },
+      reels: r.json("reels", z.array(z.object({
+        video: z.string().trim().min(1, "reel video URL required").max(300), poster: z.string().trim().max(300).default(""),
+        caption: z.string().trim().max(90).default(""), href: z.string().trim().max(300).default(""),
+      })).max(12)),
       heroSlides: r.json("heroSlides", z.array(z.object({ image: z.string().trim().min(1, "image required"), place: z.string().trim().min(1, "place required") })).max(8)),
       stats: r.json("stats", z.array(z.object({ value: z.string().trim().min(1), label: z.string().trim().min(1) })).max(6)),
       team: r.json("team", z.array(z.object({

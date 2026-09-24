@@ -73,6 +73,10 @@ export default async function SettingsPage() {
             <ListEditor name="heroSlides" addLabel="Add slide" itemLabel="Slide" initial={s.heroSlides}
               fields={[{ name: "image", label: "Image URL", width: "sm:col-span-3" }, { name: "place", label: "Place", width: "sm:col-span-1" }]} />
           </Section>
+          <Section title="Homepage: Instagram reels" description="The curved reel strip on the homepage (hidden while empty). Download your reel from Instagram, upload the MP4 in Media (vertical 9:16, ideally under 15 MB) and paste its URL. Add a cover image so the strip loads fast, and the reel's Instagram link so people can like and follow.">
+            <ListEditor name="reels" addLabel="Add reel" itemLabel="Reel" initial={s.reels}
+              fields={[{ name: "video", label: "Video URL (MP4)", width: "sm:col-span-2" }, { name: "poster", label: "Cover image URL", width: "sm:col-span-2" }, { name: "caption", label: "Caption (short)", width: "sm:col-span-2" }, { name: "href", label: "Instagram link", width: "sm:col-span-2" }]} />
+          </Section>
           <Section title="Homepage: stats" description="Shown in the hero and the “Why Travel Devils” section.">
             <ListEditor name="stats" addLabel="Add stat" itemLabel="Stat" initial={s.stats}
               fields={[{ name: "value", label: "Value (e.g. 10K+)", width: "sm:col-span-1" }, { name: "label", label: "Label", width: "sm:col-span-3" }]} />
