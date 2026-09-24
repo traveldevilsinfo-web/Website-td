@@ -5,7 +5,7 @@ import {
 import type { SiteSettings } from "@/lib/site";
 import { OpenCustomTrip } from "@/components/CustomTripDialog";
 import { OpenLeadButton } from "@/components/LeadDialog";
-import { Faqs } from "./ui";
+import { Faqs } from "./Faqs";
 
 // Second line listed on the current traveldevils.in contact page.
 const ALT_PHONE = "+91 98117 83209";
@@ -127,7 +127,7 @@ export function ContactPage({ settings }: { settings: SiteSettings }) {
         </section>
       )}
 
-      <Faqs items={FAQS} />
+      <Faqs items={FAQS} cta={false} />
     </>
   );
 }

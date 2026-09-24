@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Faq } from "@/db/schema";
 import { md } from "@/lib/markdown";
-import { CtaBand, Faqs, PageHero, TripCard, type CardTrip } from "./ui";
+import { CtaBand, PageHero, TripCard, type CardTrip } from "./ui";
+import { Faqs } from "./Faqs";
 
 /** Shared layout for category / destination / month / collection pages. */
 export function ListingPage({ title, intro, image, crumbs, trips, chips, content, faqs, empty }: {

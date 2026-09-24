@@ -7,11 +7,12 @@ import { og } from "@/lib/seo";
 import { eq } from "drizzle-orm";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { db, t } from "@/lib/db";
-import { tripsForPost, withHeadingIds } from "@/lib/blog";
+import { splitFaqs, tripsForPost, withHeadingIds } from "@/lib/blog";
 import { getPost, getPosts, getTrips } from "@/lib/queries";
 import { BlogCard, BlogMeta } from "@/components/site/BlogCard";
 import { ShareButton } from "@/components/site/TripClient";
 import { CtaBand, TripCard } from "@/components/site/ui";
+import { FaqList } from "@/components/site/Faqs";
 
 export const revalidate = 300;
 
@@ -36,7 +37,11 @@ export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
   const more = [...all.filter((p) => p.id !== post.id && p.category && p.category === post.category), ...all.filter((p) => p.id !== post.id)]
     .filter((p, i, a) => a.indexOf(p) === i).slice(0, 3);
   const related = tripsForPost(post, trips);
-  const { html, toc } = withHeadingIds(md(post.content));
+  // "## FAQs" becomes an accordion between the text before and after it; the contents list keeps its order.
+  const faq = splitFaqs(post.content);
+  const head = withHeadingIds(md(faq ? faq.before : post.content));
+  const tail = faq ? withHeadingIds(md(faq.after)) : null;
+  const toc = [...head.toc, ...(faq ? [{ id: "faqs", text: faq.title }] : []), ...(tail?.toc ?? [])];
   const by = author && !/admin/i.test(author) ? author : "Travel Devils team";
 
   const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -92,7 +97,16 @@ export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
       )}
 
       <div className={`mx-auto grid max-w-6xl gap-12 px-4 py-12 sm:py-16 ${toc.length > 1 ? "lg:grid-cols-[1fr_17rem]" : ""}`}>
-        <article className={`prose-admin prose-blog min-w-0 text-[18px] ${toc.length > 1 ? "" : "mx-auto max-w-3xl"}`} dangerouslySetInnerHTML={{ __html: html }} />
+        <article className={`min-w-0 ${toc.length > 1 ? "" : "mx-auto max-w-3xl"}`}>
+          <div className="prose-admin prose-blog text-[18px]" dangerouslySetInnerHTML={{ __html: head.html }} />
+          {faq && (
+            <>
+              <h2 id="faqs" className="headline mb-5 mt-10 scroll-mt-[calc(7rem+var(--topbar-h,0px))] text-[1.75rem]">{faq.title}</h2>
+              <FaqList items={faq.faqs} />
+              {tail && <div className="prose-admin prose-blog text-[18px]" dangerouslySetInnerHTML={{ __html: tail.html }} />}
+            </>
+          )}
+        </article>
         {toc.length > 1 && (
           <aside className="max-lg:hidden">
             <div className="sticky top-32 space-y-4">

@@ -172,7 +172,7 @@ assert.match(corporateSummary({ ...corp, phone: "9876543210", teamSize: 40, dest
 console.log("corporate enquiry checks passed");
 
 // ---------------- blog helpers
-const { withHeadingIds, readMinutes, tripsForPost } = await import("./blog");
+const { withHeadingIds, readMinutes, tripsForPost, splitFaqs } = await import("./blog");
 const toc = withHeadingIds("<h2>Best time to visit</h2><p>x</p><h2>Best time to visit</h2><h2>Cost &amp; budget</h2>");
 assert.deepEqual(toc.toc.map((x) => x.id), ["best-time-to-visit", "best-time-to-visit-2", "cost-budget"]);
 assert.equal(toc.toc[2].text, "Cost & budget");
@@ -180,4 +180,9 @@ assert.match(toc.html, /<h2 id="best-time-to-visit-2">/);
 assert.equal(readMinutes("word ".repeat(440)), 2);
 const tr = [{ title: "Winter Spiti", destinationName: "Spiti" }, { title: "Goa", destinationName: "Goa" }, { title: "Auli", destinationName: "Uttarakhand" }];
 assert.deepEqual(tripsForPost({ title: "Spiti in winter: complete guide", tags: [], category: null, content: "Also near Auli, a goal for many." }, tr).map((x) => x.title), ["Winter Spiti", "Auli"]); // "goa" inside "goal" must not match
+const sf = splitFaqs("Intro.\n\n## FAQs\n\n**Is it cold?**\nVery.\n\n**Snow?** Often, not always.\n\nMore trips below.\n\n## Sources\n\n- a");
+assert.deepEqual(sf?.faqs, [{ q: "Is it cold?", a: "Very." }, { q: "Snow?", a: "Often, not always." }]);
+assert.equal(sf?.before.trim(), "Intro.");
+assert.match(sf!.after, /^More trips below\.\n\n## Sources/);
+assert.equal(splitFaqs("## Cost\n\ntext"), null);
 console.log("blog helper checks passed");

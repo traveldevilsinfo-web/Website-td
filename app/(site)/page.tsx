@@ -8,7 +8,8 @@ import { og } from "@/lib/seo";
 import { Hero } from "@/components/site/Hero";
 import { Rail } from "@/components/site/Rail";
 import { UpcomingTabs } from "@/components/site/UpcomingTabs";
-import { CtaBand, Faqs, SectionHead, TripCard } from "@/components/site/ui";
+import { CtaBand, SectionHead, TripCard } from "@/components/site/ui";
+import { Faqs } from "@/components/site/Faqs";
 
 export const revalidate = 300;
 

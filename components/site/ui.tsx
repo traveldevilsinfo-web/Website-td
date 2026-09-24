@@ -85,28 +85,6 @@ export function SectionHead({ eyebrow, title, subtitle, href, hrefLabel = "View 
   );
 }
 
-export function Faqs({ items, title = "Questions, answered" }: { items: { q: string; a: string }[]; title?: string }) {
-  if (!items.length) return null;
-  return (
-    <section className="reveal mx-auto max-w-3xl px-4 py-20">
-      <h2 className="headline mb-8 text-center text-3xl sm:text-[2.6rem]">{title}</h2>
-      <div className="divide-y divide-line rounded-3xl border border-line bg-white">
-        {items.map((f, i) => (
-          <details key={i} className="acc group px-6">
-            <summary className="flex items-center justify-between gap-4 py-5 text-left text-[17px] font-extrabold">
-              {f.q}
-              <span className="chev grid size-8 shrink-0 place-items-center rounded-full bg-surface text-muted" aria-hidden>
-                <svg viewBox="0 0 12 12" className="size-3"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
-              </span>
-            </summary>
-            <p className="pb-5 leading-relaxed text-muted">{f.a}</p>
-          </details>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 export function CtaBand({ title = "Can't find your kind of trip?", text = "Tell us your dates, group and budget. We'll design it end to end." }: { title?: string; text?: string }) {
   return (
     <section className="reveal mx-auto max-w-7xl px-4 py-12">

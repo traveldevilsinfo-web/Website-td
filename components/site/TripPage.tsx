@@ -10,6 +10,7 @@ import { OpenLeadButton } from "@/components/LeadDialog";
 import { Rail } from "./Rail";
 import { ExpandAll, Gallery, PriceCard, SectionTabs, ShareButton } from "./TripClient";
 import { Departures } from "./Departures";
+import { FaqList } from "./Faqs";
 import { RepeatBadge, SectionHead, TripCard } from "./ui";
 
 type Data = NonNullable<Awaited<ReturnType<typeof getTrip>>>;
@@ -288,14 +289,7 @@ export async function TripPage({ data }: { data: Data }) {
 
           {trip.faqs.length > 0 && (
             <Block id="faqs" title="FAQs">
-              <div className="divide-y divide-line rounded-3xl border border-line">
-                {trip.faqs.map((f, i) => (
-                  <details key={i} className="acc px-6">
-                    <summary className="flex items-center justify-between gap-4 py-5 font-extrabold">{f.q}<span className="chev text-muted" aria-hidden>⌄</span></summary>
-                    <div className="prose-admin pb-5 text-muted" dangerouslySetInnerHTML={{ __html: md(f.a) }} />
-                  </details>
-                ))}
-              </div>
+              <FaqList items={trip.faqs} />
             </Block>
           )}
 

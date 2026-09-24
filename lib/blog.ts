@@ -31,3 +31,21 @@ export function tripsForPost<T extends { title: string; destinationName: string 
   };
   return trips.map((t) => ({ t, s: score(t) })).filter((x) => x.s > 0).sort((a, b) => b.s - a.s).slice(0, limit).map((x) => x.t);
 }
+
+/** Splits a post's "## FAQs" section into "**Question?**\nAnswer" pairs (rendered as an accordion) and the markdown around it. */
+export function splitFaqs(markdown: string) {
+  const h = markdown.match(/^## (FAQs?|Frequently asked questions)\s*$/im);
+  if (!h) return null;
+  const start = h.index! + h[0].length;
+  const next = markdown.slice(start).search(/^## /m);
+  const end = next < 0 ? markdown.length : start + next;
+  const faqs: { q: string; a: string }[] = [];
+  const rest: string[] = [];
+  for (const block of markdown.slice(start, end).split(/\n\s*\n/).map((b) => b.trim()).filter(Boolean)) {
+    const m = block.match(/^\*\*(.+?\?)\*\*\s*([\s\S]+)$/);
+    if (m) faqs.push({ q: m[1].trim(), a: m[2].trim() });
+    else rest.push(block); // intro/outro paragraphs stay as normal text after the list
+  }
+  if (!faqs.length) return null;
+  return { title: h[1], before: markdown.slice(0, h.index), faqs, after: [...rest, markdown.slice(end)].join("\n\n") };
+}

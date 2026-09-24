@@ -4,7 +4,8 @@ import {
   Award, BriefcaseBusiness, ClipboardList, Handshake, HeartHandshake, Mountain, PartyPopper, Plane, Presentation, ShieldCheck, Sparkles, UsersRound,
 } from "lucide-react";
 import type { getDestinationsWithTrips, getTrips } from "@/lib/queries";
-import { Faqs, SectionHead, TripCard } from "./ui";
+import { SectionHead, TripCard } from "./ui";
+import { Faqs } from "./Faqs";
 import { Rail } from "./Rail";
 import { CorporateEnquiry } from "./CorporateEnquiry";
 

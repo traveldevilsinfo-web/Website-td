@@ -173,6 +173,9 @@ details.acc > summary { list-style: none; cursor: pointer; }
 details.acc > summary::-webkit-details-marker { display: none; }
 details.acc .chev { transition: transform 300ms var(--ease-out-smooth); }
 details.acc[open] .chev { transform: rotate(180deg); }
+/* FAQ plus turns into a close mark */
+details.acc .faq-icon { transition: transform 300ms var(--ease-out-smooth), background-color 200ms ease, color 200ms ease; }
+details.acc[open] .faq-icon { transform: rotate(45deg); background: var(--color-ink); color: #fff; }
 
 /* ---------- Dialogs: materialize (scale + blur) and leave the same way ---------- */
 dialog {
@@ -253,7 +256,7 @@ dialog[open]::backdrop { background: rgb(0 0 0 / 0.5); backdrop-filter: blur(6px
 .prose-blog h2 { font-size: 1.75rem; margin: 2.5rem 0 0.75rem; scroll-margin-top: calc(7rem + var(--topbar-h, 0px)); }
 .prose-blog h3 { font-size: 1.3rem; margin: 1.75rem 0 0.5rem; }
 .prose-blog p { margin: 1rem 0; }
-.prose-blog > p:first-child { font-size: 1.15em; }
+.prose-blog:first-child > p:first-child { font-size: 1.15em; }
 .prose-blog img { border-radius: 1.5rem; margin: 1.75rem 0; }
 .prose-admin blockquote { margin: 1rem 0; padding: 0.75rem 1rem; border-left: 4px solid var(--color-accent); background: var(--color-surface); border-radius: 0 0.75rem 0.75rem 0; }
 /* Policy tables (e.g. cancellation slabs): scroll sideways on phones instead of overflowing */
