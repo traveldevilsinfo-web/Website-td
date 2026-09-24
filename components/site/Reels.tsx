@@ -8,7 +8,7 @@ import type { SiteSettings } from "@/lib/site";
 type Reel = SiteSettings["reels"][number];
 
 /**
- * Instagram reels on a curved "ribbon": swipe or use the arrows; the reel in the middle plays (muted until
+ * Instagram reels on a full-width curved "vortex" strip: swipe or use the arrows; the reel in the middle plays (muted until
  * you unmute), the rest show their cover. Only one video loads at a time, and only while the section is on screen.
  */
 export function Reels({ reels }: { reels: Reel[] }) {
@@ -69,19 +69,20 @@ export function Reels({ reels }: { reels: Reel[] }) {
         <defs>
           {/* taller at the edges than the middle: the strip looks bent towards you */}
           <clipPath id="reel-ribbon" clipPathUnits="objectBoundingBox">
-            <path d="M0,0 Q0.5,0.09 1,0 L1,1 Q0.5,0.91 0,1 Z" />
+            <path d="M0,0 Q0.5,0.18 1,0 L1,1 Q0.5,0.82 0,1 Z" />
           </clipPath>
         </defs>
       </svg>
 
-      <div className="relative [clip-path:url(#reel-ribbon)] max-sm:[clip-path:none]">
-        <div ref={track} className="flex snap-x snap-mandatory gap-3 overflow-x-auto py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [--w:clamp(13rem,62vw,17rem)] sm:[--w:clamp(14rem,22vw,18rem)]"
-          style={{ paddingInline: "calc(50% - var(--w) / 2)" }} aria-label="Instagram reels" role="region">
+      <div className="relative">
+        {/* full-bleed strip, 5 across on desktop, cut into a concave "vortex" so the edges bend towards you */}
+        <div ref={track} className="flex snap-x snap-mandatory gap-2 overflow-x-auto [clip-path:url(#reel-ribbon)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [--w:72%] sm:[--w:calc((100%-1rem)/3)] lg:[--w:calc((100%-2rem)/5)]"
+          aria-label="Instagram reels" role="region">
           {reels.map((r, i) => {
             const on = i === active;
             return (
-              <figure key={r.video + i} className={`relative aspect-[9/16] w-[var(--w)] shrink-0 snap-center overflow-hidden rounded-3xl bg-ink transition-[transform,opacity] duration-500 ease-[var(--ease-out-smooth)] ${on ? "scale-100" : "scale-[0.94] opacity-80"}`}>
-                {r.poster && <Image src={r.poster} alt="" fill sizes="(max-width: 640px) 62vw, 18rem" className="object-cover" />}
+              <figure key={r.video + i} className="relative aspect-[9/16] w-[var(--w)] shrink-0 snap-center overflow-hidden bg-ink">
+                {r.poster && <Image src={r.poster} alt="" fill sizes="(max-width: 640px) 72vw, (max-width: 1024px) 33vw, 20vw" className="object-cover" />}
                 {on && autoplay && (
                   <video key={r.video} src={r.video} poster={r.poster || undefined} autoPlay muted={muted} loop playsInline preload="auto"
                     className="absolute inset-0 size-full object-cover" />
@@ -118,16 +119,16 @@ export function Reels({ reels }: { reels: Reel[] }) {
             );
           })}
         </div>
-      </div>
 
-      {reels.length > 1 && (
-        <div className="mt-6 flex justify-center gap-2">
-          <button type="button" onClick={() => go(active - 1)} disabled={active === 0} aria-label="Previous reel"
-            className="press grid size-11 place-items-center rounded-full bg-white ring-1 ring-line hover:ring-ink/30 disabled:opacity-40"><ChevronLeft className="size-5" /></button>
-          <button type="button" onClick={() => go(active + 1)} disabled={active === reels.length - 1} aria-label="Next reel"
-            className="press grid size-11 place-items-center rounded-full bg-white ring-1 ring-line hover:ring-ink/30 disabled:opacity-40"><ChevronRight className="size-5" /></button>
-        </div>
-      )}
+        {reels.length > 1 && (
+          <>
+            <button type="button" onClick={() => go(active - 1)} disabled={active === 0} aria-label="Previous reel"
+              className="press absolute left-3 top-1/2 z-10 grid size-12 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-ink shadow-lg backdrop-blur-md hover:bg-white disabled:pointer-events-none disabled:opacity-0 sm:left-6"><ChevronLeft className="size-6" /></button>
+            <button type="button" onClick={() => go(active + 1)} disabled={active === reels.length - 1} aria-label="Next reel"
+              className="press absolute right-3 top-1/2 z-10 grid size-12 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-ink shadow-lg backdrop-blur-md hover:bg-white disabled:pointer-events-none disabled:opacity-0 sm:right-6"><ChevronRight className="size-6" /></button>
+          </>
+        )}
+      </div>
     </div>
   );
 }
