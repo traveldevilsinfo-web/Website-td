@@ -17,7 +17,7 @@ The simplest way to reach Kainchi Dham from Delhi is by road: it's roughly 320�
 - **Nearest airport:** Pantnagar, about 70–75 km
 - **Best months:** March to June and September to November for pleasant weather
 - **Busiest day of the year:** 15 June, the ashram's foundation day
-- **Easiest option:** our [Mukteshwar & Kainchi Dham weekend trip](/weekend-getaways/india/uttarakhand/mukteshwar-kainchi-dham), from ₹4,999 per person, leaving Delhi every Friday night
+- **Easiest option:** our [Mukteshwar & Kainchi Dham weekend trip](/weekend-getaways/india/uttarakhand/mukteshwar-kainchi-dham), from ₹5,199 per person, leaving Delhi every Friday night
 
 ## Quick answer
 
@@ -103,14 +103,14 @@ Because Day 2 falls on a Sunday, expect the weekend shuttle arrangement near Kai
 
 | | Details |
 |---|---|
-| **Price** | From ₹4,999 per person (quad sharing); ₹5,199 triple; ₹5,399 dual; 5% GST extra |
+| **Price** | From ₹5,199 per person (quad sharing); ₹5,399 triple; ₹5,599 double; 5% GST extra |
 | **Included** | Round-trip transfers from Delhi, 1 night in Swiss camps or rooms, 1 breakfast, 1 dinner, evening high tea, sightseeing as per itinerary, bonfire and music evening, trip captain |
 | **Not included** | Personal expenses and adventure activities, entry tickets or fees, other meals and drinks, anything not in the itinerary |
 | **Departures** | Every Friday |
 
 Want a different Friday-night escape? Our guide to [weekend trips from Delhi](/blog/weekend-trips-from-delhi) compares all of them. If you prefer a proper trek, see our [Chopta Tungnath trip guide](/blog/chopta-tungnath-trip-from-delhi).
 
-Ready to go? Book the [Mukteshwar & Kainchi Dham weekend trip](/weekend-getaways/india/uttarakhand/mukteshwar-kainchi-dham), from ₹4,999 per person, or use our [custom trip planner](#plan-my-trip) for private dates. Questions first? [Contact us](/contact).
+Ready to go? Book the [Mukteshwar & Kainchi Dham weekend trip](/weekend-getaways/india/uttarakhand/mukteshwar-kainchi-dham), from ₹5,199 per person, or use our [custom trip planner](#plan-my-trip) for private dates. Questions first? [Contact us](/contact).
 
 ## FAQs
 

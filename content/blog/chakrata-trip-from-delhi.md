@@ -7,7 +7,7 @@
  "cover": "/uploads/wp/2026/02/1-2.png"}
 ---
 
-A Chakrata trip from Delhi fits in one weekend: leave Friday night, drive roughly 320–340 km via Dehradun and Kalsi, and you're in the hills by Saturday morning. Two days is enough for Tiger Falls, the Budher caves hike and a sunset at Chilmiri Neck, and you're back in Delhi early on Monday. Our [Chakrata weekend trip](/weekend-getaways/india/uttarakhand/chakrata) starts from ₹4,499 per person.
+A Chakrata trip from Delhi fits in one weekend: leave Friday night, drive roughly 320–340 km via Dehradun and Kalsi, and you're in the hills by Saturday morning. Two days is enough for Tiger Falls, the Budher caves hike and a sunset at Chilmiri Neck, and you're back in Delhi early on Monday. Our [Chakrata weekend trip](/weekend-getaways/india/uttarakhand/chakrata) starts from ₹4,999 per person.
 
 **At a glance**
 
@@ -18,8 +18,8 @@ A Chakrata trip from Delhi fits in one weekend: leave Friday night, drive roughl
 | Altitude | 2,118 m (Chakrata town) |
 | Best months | March to June, and October to February for cold, clear days; snow is most likely late December to February |
 | Difficulty | Easy to moderate (one hike of about 5 km on our itinerary) |
-| Cost from | ₹4,499 per person (quad sharing), Travel Devils group trip |
-| Starts from | Delhi; your exact reporting point and time are shared after booking |
+| Cost from | ₹4,999 per person (quad sharing, 5% GST extra), Travel Devils group trip |
+| Starts from | Vaishali Metro Station, Delhi; reporting 10:30 PM |
 
 ## Why Chakrata
 
@@ -57,7 +57,7 @@ Deoban is a forested ridge about 13–16 km from Chakrata at roughly 2,800–2,9
 
 This is the itinerary from our [Chakrata trip page](/weekend-getaways/india/uttarakhand/chakrata).
 
-**Friday night: leave Delhi.** Your exact reporting point and time are shared after booking. Try to sleep on the drive.
+**Friday night: leave Delhi.** Report at Vaishali Metro Station by 10:30 PM. Try to sleep on the drive.
 
 **Day 1 (Saturday): reach Chakrata, Budher caves hike.**
 - Reach Chakrata in the morning, check in at the resort and rest for a while.
@@ -101,9 +101,11 @@ What that means in practice:
 
 | Sharing | Price |
 |---|---|
-| Quad | ₹4,499 |
-| Triple | ₹4,699 |
-| Dual | ₹4,899 |
+| Quad | ₹4,999 |
+| Triple | ₹5,199 |
+| Double | ₹5,499 |
+
+5% GST is extra.
 
 Prices can change, so check the [trip page](/weekend-getaways/india/uttarakhand/chakrata) for the latest price and upcoming Friday departures.
 

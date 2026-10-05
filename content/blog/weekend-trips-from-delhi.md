@@ -13,8 +13,8 @@ The easiest weekend trips from Delhi leave on Friday night, so you wake up in th
 
 - **Duration:** 1N/2D (back Monday morning) or 2N/3D (back Tuesday morning)
 - **Departures:** every Friday night
-- **Cost from:** ₹4,499 (Chakrata) to ₹7,999 (Auli) per person
-- **Under ₹5,000:** Chakrata; Kanatal Tehri and Mukteshwar are ₹4,999 plus 5% GST
+- **Cost from:** ₹4,999 (Chakrata) to ₹7,999 (Auli) per person
+- **Cheapest:** Chakrata at ₹4,999; Kanatal Tehri and Mukteshwar are ₹5,199 (5% GST extra on all three)
 - **Under ₹8,000:** all seven
 - **Difficulty:** easy (Kanatal, Rajasthan) to moderate (Chopta Tungnath)
 - **Starts from:** Delhi (Udaipur–Kumbhalgarh runs to and from Gurugram); your exact reporting point and time are shared after booking
@@ -34,9 +34,9 @@ Distances are approximate road distances from Delhi, as of September 2026. Diffe
 
 | Trip | Duration | Price from (per person) | Distance from Delhi | Best months | Effort |
 |---|---|---|---|---|---|
-| [Chakrata](/weekend-getaways/india/uttarakhand/chakrata) | 1N/2D | ₹4,499 | ~320–340 km | Mar–Jun, Oct–Feb | Easy–moderate: one ~5 km hike to Budher caves |
-| [Kanatal Tehri](/weekend-getaways/india/uttarakhand/kanatal-tehri) | 1N/2D | ₹4,999 + 5% GST | ~300–325 km | Mar–Jun, Oct–Feb | Easy: camp activities and lake time, no trek |
-| [Mukteshwar & Kainchi Dham](/weekend-getaways/india/uttarakhand/mukteshwar-kainchi-dham) | 1N/2D | ₹4,999 + 5% GST | ~340–350 km | Mar–Jun, Oct–Feb | Easy: one 1.5 km hike to a waterfall |
+| [Chakrata](/weekend-getaways/india/uttarakhand/chakrata) | 1N/2D | ₹4,999 + 5% GST | ~320–340 km | Mar–Jun, Oct–Feb | Easy–moderate: one ~5 km hike to Budher caves |
+| [Kanatal Tehri](/weekend-getaways/india/uttarakhand/kanatal-tehri) | 1N/2D | ₹5,199 + 5% GST | ~300–325 km | Mar–Jun, Oct–Feb | Easy: camp activities and lake time, no trek |
+| [Mukteshwar & Kainchi Dham](/weekend-getaways/india/uttarakhand/mukteshwar-kainchi-dham) | 1N/2D | ₹5,199 + 5% GST | ~340–350 km | Mar–Jun, Oct–Feb | Easy: one 1.5 km hike to a waterfall |
 | [Chopta Tungnath](/weekend-getaways/india/uttarakhand/chopta-tungnath) | 2N/3D | ₹5,799 | ~415–425 km | Apr–Jun, Oct–Nov; snow Jan–Mar | Moderate: high-altitude trek to Tungnath and Chandrashila, plus Deoriatal |
 | [Auli](/weekend-getaways/india/uttarakhand/auli) | 2N/3D | ₹7,999 | ~500–525 km (to Joshimath and Govindghat) | Jan–Mar for snow; Apr–Jun, Oct–Dec for views | Moderate: the longest mountain drive, plus the Gorson Bugyal trek |
 | [Jaisalmer](/weekend-getaways/india/rajasthan/jaisalmer) | 2N/3D | ₹6,999 | ~770–800 km | Oct–Mar | Easy on foot, long on the road |
@@ -101,7 +101,7 @@ These patterns come straight from each trip's listed inclusions. Always read the
 
 ## How to choose
 
-- **Tightest budget:** Chakrata at ₹4,499.
+- **Tightest budget:** Chakrata at ₹4,999 plus GST.
 - **No Monday leave:** stick to the 1N/2D trips (Chakrata, Kanatal Tehri, Mukteshwar).
 - **You want a real trek:** Chopta Tungnath. Train for a few weeks if you don't walk regularly.
 - **You want snow:** Auli or Chopta between January and March. Chakrata sometimes gets snow on its higher ridges.
@@ -114,8 +114,8 @@ Want different dates, a private group or a company offsite? Use our [trip planne
 
 ## FAQs
 
-**Which weekend trips from Delhi cost under ₹5,000?**
-Chakrata starts at ₹4,499 per person. Kanatal Tehri and Mukteshwar–Kainchi Dham start at ₹4,999 plus 5% GST, which comes to about ₹5,249.
+**Which is the cheapest weekend trip from Delhi?**
+Chakrata, from ₹4,999 per person on quad sharing. Kanatal Tehri and Mukteshwar–Kainchi Dham start at ₹5,199. 5% GST is extra on all three.
 
 **Which weekend trips from Delhi cost under ₹8,000?**
 All seven. Chopta Tungnath starts at ₹5,799, Jaisalmer at ₹6,999, Udaipur–Kumbhalgarh at ₹7,499 and Auli at ₹7,999 per person.
