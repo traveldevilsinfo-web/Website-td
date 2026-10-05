@@ -19,7 +19,7 @@ const oldSite: [string, string][] = [
   // trips: /trips/:slug redirects on to each trip's canonical URL
   ["/trip/chakrata-1-nights-2-days", "/trips/chakrata"],
   ["/trip/meghalya", "/trips/meghalaya"],
-  ["/trip/jibhi", "/weekend-getaways"],
+  ["/trip/jibhi", "/trips/jibhi-tirthan"],
   ["/trip/:slug", "/trips/:slug"],
   // destinations
   ["/destinations/india/ladakh/:rest*", `${IN}/ladakh`],

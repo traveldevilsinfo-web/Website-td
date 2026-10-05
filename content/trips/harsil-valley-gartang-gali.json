@@ -1,0 +1,156 @@
+{
+  "category": "weekend-getaways",
+  "destination": "uttarakhand",
+  "durationDays": 3,
+  "durationNights": 2,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 4,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "harsil-valley-gartang-gali",
+  "title": "Harsil Valley & Gartang Gali",
+  "tags": [
+    "harsil",
+    "gartang-gali",
+    "gangotri",
+    "2n3d"
+  ],
+  "reportingPoint": "Departure is in the evening from Delhi. The exact pickup point and time are shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 9499,
+  "bookingAmount": 4800,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 9499,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 10999,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 11499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/harsil-valley-gartang-gali-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/harsil-valley-gartang-gali-2.jpg"
+  ],
+  "highlights": [
+    "Gartang Gali trek from Lanka Bridge (2.5 km)",
+    "Gangotri Temple and Surya Kund",
+    "Lama Top trek (2.5 km) and Bagori Village",
+    "Khedi waterfall on the way to Harsil",
+    "Bonfire evening in Harsil",
+    "2 nights stay in Harsil"
+  ],
+  "overview": "A long weekend in the upper Bhagirathi valley: this **2 Nights / 3 Days** Harsil Valley and Gartang Gali group trip leaves Delhi in the evening and travels overnight. The departure time and location are shared once your booking is confirmed.\n\nDay 1 reaches Uttarkashi in the morning for breakfast, stops at Khedi waterfall and gets to Harsil by evening for a bonfire and dinner. Day 2 covers the 2.5 km Gartang Gali trek from Lanka Bridge, Gangotri Temple and Surya Kund. Day 3 is the 2.5 km trek to Lama Top and a visit to Bagori Village before the late-afternoon drive back, reaching Delhi early the next morning. AC transport, 2 nights in Harsil, 2 breakfasts, 2 dinners, Gangotri registration and a trip coordinator are included. Prices start at ₹9,499 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Departure from Delhi",
+      "content": "The departure time and location are shared once your booking is confirmed.\nDepart for Harsil.\nOvernight journey from Delhi to Harsil."
+    },
+    {
+      "title": "Uttarkashi and reach Harsil Valley",
+      "content": "Reach Uttarkashi by morning. Freshen up and have breakfast.\nResume the journey to Harsil Valley, with a stop at Khedi waterfall on the way.\nReach Harsil in the evening.\nCheck in at the campsite or homestay. There is a short 500-metre trek to the homestay.\nExplore the local Harsil village if time permits.\nEnjoy a bonfire in the evening, followed by dinner.\nOvernight stay."
+    },
+    {
+      "title": "Gartang Gali, Gangotri and Surya Kund",
+      "content": "Wake up early and have breakfast.\nDrive to Lanka Bridge, where the Gartang Gali trek starts. The trek is 2.5 km. Gartang Gali is a skywalk near the Indo-China border.\nHead to Gangotri Temple. Gangotri is a small town in Uttarkashi with the temple of Goddess Ganga at its heart.\nVisit Surya Kund, a short trek near Gangotri.\nReturn to the stay in Harsil.\nDinner and overnight stay."
+    },
+    {
+      "title": "Lama Top and Bagori Village | Return to Delhi",
+      "content": "Wake up early in the morning and have breakfast.\nTrek to Lama Top, a 2.5 km trek.\nVisit Bagori Village.\nBoard the vehicle for Delhi in the late afternoon.\nStop for dinner on the way, around Rishikesh or Chamba.\nReach Delhi early the next morning, where the trip ends."
+    }
+  ],
+  "includes": [
+    "AC transportation from Delhi to Delhi",
+    "2 nights stay at Harsil (homestay or hotel)",
+    "Sightseeing as per the itinerary",
+    "Meals: 2 breakfasts and 2 dinners",
+    "Gangotri registration",
+    "Bonfire",
+    "Trip coordinator",
+    "24x7 support"
+  ],
+  "excludes": [
+    "5% GST",
+    "Any porter charges",
+    "Expenses for adventure activities, cable car and private cabs",
+    "Early check-in at the hotel",
+    "Expenses of a personal nature",
+    "Additional accommodation or food costs caused by any travel delay",
+    "Lunch and any other meals not mentioned in the inclusions",
+    "Any airfare, rail fare or transportation outside the itinerary",
+    "Parking and monument entry fees during sightseeing",
+    "Additional costs due to flight cancellations, landslides, roadblocks and other natural calamities",
+    "Any other services not specified in the inclusions"
+  ],
+  "importantNotes": "- Extra mattresses are provided for triple and quad sharing.\n- There is a short 500-metre trek to the homestay in Harsil.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "The trip leaves Delhi in the evening and travels overnight towards Harsil. The departure time and location are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Harsil Valley & Gartang Gali trip cost?",
+      "a": "₹9,499 per person on quad sharing, ₹10,999 on triple sharing and ₹11,499 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "AC transportation from Delhi to Delhi, 2 nights in Harsil in a homestay or hotel, sightseeing as per the itinerary, 2 breakfasts and 2 dinners, Gangotri registration, a bonfire, a trip coordinator and 24x7 support. Lunches, parking and monument entry fees are not included."
+    },
+    {
+      "q": "How much trekking is there?",
+      "a": "Day 2 has the Gartang Gali trek, 2.5 km starting from Lanka Bridge, and a short trek to Surya Kund near Gangotri. Day 3 has the 2.5 km trek to Lama Top. There is also a short 500-metre trek to the homestay on arrival."
+    },
+    {
+      "q": "Where do we stay?",
+      "a": "Both nights are in Harsil, in a homestay or hotel. Extra mattresses are provided for triple and quad sharing, and early check-in is not included."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

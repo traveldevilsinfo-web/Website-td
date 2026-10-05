@@ -1,0 +1,145 @@
+{
+  "category": "treks",
+  "destination": "himachal-pradesh",
+  "durationDays": 3,
+  "durationNights": 2,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 4,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "yulla-kanda-trek",
+  "title": "Yulla Kanda Trek",
+  "tags": [
+    "yulla-kanda",
+    "kinnaur",
+    "2n3d",
+    "trek"
+  ],
+  "reportingPoint": "Departure is in the evening from Delhi. The exact pickup point and time are shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 6999,
+  "bookingAmount": 3500,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 6999,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 7499,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 7999,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/yulla-kanda-trek-1.jpg",
+  "gallery": [],
+  "highlights": [
+    "Trek to the Krishna temple at Yulla Kanda",
+    "24 km round-trip trek, up to 13,500 ft",
+    "Easy to moderate difficulty",
+    "1 night camping at Yulla Kanda Base Camp",
+    "1 night in a hotel at Tapri",
+    "2 breakfasts, 1 lunch and 2 dinners"
+  ],
+  "overview": "A short trek in Kinnaur: this **2 Nights / 3 Days** Yulla Kanda group trek leaves Delhi at night for an overnight journey to Tapri/Yulla. The trek is 24 km round trip, reaches a height of 13,500 ft and is rated easy to moderate.\n\nDay 1 is for arriving, checking into the hotel and resting. On Day 2 you drive 30 minutes to Yulla Village and trek about 10 km (4–6 hours) to Yulla Base Camp, where you stay in tents. Day 3 starts with an early trek to the Krishna temple, known as the world's highest Krishna temple, then the walk back to Yulla Village and the evening departure for Delhi. Transport, one hotel night, one camping night, the listed meals and a trip captain are included. Prices start at ₹6,999 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Departure from Delhi",
+      "content": "Depart from Delhi at night.\nOvernight journey to Tapri/Yulla in the Kinnaur district."
+    },
+    {
+      "title": "Arrival and stay in Tapri/Yulla",
+      "content": "Morning: arrive in Tapri/Yulla in the late morning.\nAfternoon: check into your hotel, rest and prepare for the trek the following day.\nEvening: free time to explore nearby areas or relax at the hotel.\nMeals: dinner.\nStay: hotel in Tapri/Yulla."
+    },
+    {
+      "title": "Trek from Yulla Village to Yulla Base Camp",
+      "content": "Morning: after breakfast, check out from the hotel and drive to Yulla Village (30 minutes).\nDaytime: begin the trek of approximately 10 km, which takes about 4–6 hours.\nHave a packed lunch on the trail or on reaching the base camp.\nEvening: dinner at the base camp and an overnight stay in camp tents.\nMeals: breakfast, lunch and dinner.\nStay: camping at Yulla Base Camp."
+    },
+    {
+      "title": "Trek to Krishna temple and return to Delhi",
+      "content": "Morning: start early and trek to the Krishna temple, known as the world's highest Krishna temple.\nSpend some time exploring the surroundings, then head back to the campsite for breakfast.\nAfternoon: trek back to Yulla Village, then drive to Tapri and freshen up at the hotel.\nEvening: depart for Delhi.\nMeals: breakfast."
+    }
+  ],
+  "includes": [
+    "All transfers from Delhi to Delhi by bus, Tempo Traveller or taxi",
+    "Meals: 2 breakfasts, 1 lunch and 2 dinners",
+    "1 night stay in a hotel at Tapri",
+    "1 night camping at Yulla Kanda Base Camp",
+    "Trip captain to lead and assist throughout the trip",
+    "24x7 customer support"
+  ],
+  "excludes": [
+    "5% GST",
+    "Offloading fees for backpacks (₹250 per day per bag)",
+    "Any personal costs",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- Extra mattresses are provided for triple and quad sharing.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "The trip departs from Delhi at night for an overnight journey to Tapri/Yulla in the Kinnaur district, arriving in the late morning. The exact pickup point and time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Yulla Kanda Trek trip cost?",
+      "a": "₹6,999 per person on quad sharing, ₹7,499 on triple sharing and ₹7,999 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "All transfers from Delhi to Delhi by bus, Tempo Traveller or taxi, 1 night in a hotel at Tapri, 1 night camping at Yulla Kanda Base Camp, 2 breakfasts, 1 lunch and 2 dinners, a trip captain throughout and 24x7 customer support."
+    },
+    {
+      "q": "How long and how difficult is the trek?",
+      "a": "The trek is 24 km round trip, reaches a height of 13,500 ft and is rated easy to moderate. The Day 2 walk from Yulla Village to the base camp is approximately 10 km and takes about 4–6 hours."
+    },
+    {
+      "q": "Do I have to carry my own backpack?",
+      "a": "Offloading is not part of the package. If you want your backpack carried, the offloading fee is ₹250 per day per bag."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

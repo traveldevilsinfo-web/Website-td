@@ -1,0 +1,152 @@
+{
+  "category": "weekend-getaways",
+  "destination": "himachal-pradesh",
+  "durationDays": 3,
+  "durationNights": 2,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 4,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "jibhi-tirthan",
+  "title": "Jibhi, Jalori & Tirthan",
+  "tags": [
+    "jibhi",
+    "tirthan",
+    "jalori-pass",
+    "2n3d"
+  ],
+  "reportingPoint": "Departure is in the evening from Delhi. The exact pickup point and time are shared once your booking is confirmed. Pickup from Chandigarh is also available.",
+  "pickupPoints": [],
+  "basePrice": 7199,
+  "bookingAmount": 3600,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 7199,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 7699,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 8199,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/jibhi-tirthan-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/jibhi-tirthan-2.jpg",
+    "/uploads/2026/10/jibhi-tirthan-3.jpg",
+    "/uploads/2026/10/jibhi-tirthan-4.jpg"
+  ],
+  "highlights": [
+    "Jibhi Waterfall and Mini Thailand",
+    "Jalori Pass via Shoja",
+    "Raghupur Fort trek",
+    "Choie Waterfall trek in Tirthan Valley",
+    "Bonfire with light music",
+    "2 nights hotel stay in Jibhi - Tirthan"
+  ],
+  "overview": "A Himachal weekend across three valleys: this **2 Nights / 3 Days** Jibhi, Jalori and Tirthan group trip leaves Delhi in the evening, with departure also listed from Chandigarh. The group assembles at the pickup point, gets a short briefing from the trip leader and travels overnight.\n\nDay 1 reaches Jibhi in the morning and covers Jibhi Waterfall, Mini Thailand and a riverside walk, with a bonfire and light music in the evening. Day 2 goes to Jalori Pass via Shoja for the Raghupur Fort trek. Day 3 is the Choie Waterfall trek in Tirthan Valley before the drive back, reaching Delhi or Chandigarh the next morning. Travel in an AC vehicle, a 2-night hotel stay, sightseeing and a trip captain are included. Prices start at ₹7,199 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Delhi to Jibhi | Overnight journey",
+      "content": "Departure in the evening.\nThe group assembles at the pickup point.\nA short briefing from the trip leader.\nHalt for dinner on the way (not included)."
+    },
+    {
+      "title": "Jibhi Waterfall, cafe hopping and bonfire with light music",
+      "content": "Reach in the morning.\nBy noon, leave for Jibhi Waterfall and Mini Thailand and spend some time there.\nTake in the view of the valley and go for a riverside walk.\nEnjoy a bonfire with light music.\nDinner and overnight stay."
+    },
+    {
+      "title": "Jalori Pass via Shoja | Raghupur Fort trek",
+      "content": "Start the day early with the sunrise.\nAfter breakfast, depart for Jalori Pass.\nTrek to Raghupur Fort, which has a 360° view of the Kullu and Mandi region.\nReturn to the stay.\nDinner and overnight stay."
+    },
+    {
+      "title": "Tirthan Valley | Choie Waterfall trek | Departure",
+      "content": "Wake up and have breakfast.\nCheck out and leave for the Choie Waterfall trek in Tirthan Valley.\nDepart from Tirthan Valley.\nReach Delhi or Chandigarh the next morning."
+    }
+  ],
+  "includes": [
+    "2 nights hotel stay in Jibhi - Tirthan",
+    "Transfers in an AC Tempo Traveller or bus, depending on group size",
+    "All sightseeing mentioned in the itinerary",
+    "Meals as per the itinerary: dinner on Days 1 and 2, breakfast on Days 2 and 3",
+    "Bonfire and music party",
+    "Trip captain"
+  ],
+  "excludes": [
+    "5% GST",
+    "Any food and beverage charge not included in the package",
+    "Adventure activity costs",
+    "Entry tickets to the viewpoints",
+    "4x4 vehicle cost at the time of snow",
+    "Any expense not mentioned in the inclusions",
+    "Extra costs caused by natural calamity or any situation beyond our control"
+  ],
+  "importantNotes": "- Early check-in at the stay is subject to availability.\n- Extra mattresses are provided for triple and quad sharing.\n- The AC will not work in hilly areas.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "Departure is in the evening from Delhi, and the trip is also listed with departure from Chandigarh. The group assembles at the pickup point, and the exact pickup point and time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Jibhi, Jalori & Tirthan trip cost?",
+      "a": "₹7,199 per person on quad sharing, ₹7,699 on triple sharing and ₹8,199 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "A 2-night hotel stay in Jibhi - Tirthan, transfers in an AC Tempo Traveller or bus depending on group size, all sightseeing mentioned in the itinerary, dinner on Days 1 and 2 and breakfast on Days 2 and 3, a bonfire and music party, and a trip captain. The dinner halt on the outbound journey is not included."
+    },
+    {
+      "q": "Which treks are part of the trip?",
+      "a": "Day 2 has the trek to Raghupur Fort from Jalori Pass, and Day 3 has the Choie Waterfall trek in Tirthan Valley. Wear comfortable trekking or sports shoes."
+    },
+    {
+      "q": "Are adventure activities and entry tickets included?",
+      "a": "No. Adventure activity costs and entry tickets to the viewpoints are not included. If a 4x4 vehicle is needed because of snow, that cost is also extra."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

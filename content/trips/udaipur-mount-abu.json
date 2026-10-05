@@ -1,0 +1,150 @@
+{
+  "category": "weekend-getaways",
+  "destination": "rajasthan",
+  "durationDays": 3,
+  "durationNights": 2,
+  "startLocation": "Gurugram",
+  "endLocation": "Gurugram",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 4,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "udaipur-mount-abu",
+  "title": "Udaipur & Mount Abu",
+  "tags": [
+    "udaipur",
+    "mount-abu",
+    "2n3d"
+  ],
+  "reportingPoint": "Departure is in the evening from Gurugram. The exact pickup point and time are shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 7499,
+  "bookingAmount": 3800,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 7499,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 7999,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 8499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/udaipur-mount-abu-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/udaipur-mount-abu-2.jpg",
+    "/uploads/2026/10/udaipur-mount-abu-3.jpg",
+    "/uploads/2026/10/udaipur-mount-abu-4.jpg"
+  ],
+  "highlights": [
+    "Lake Pichola, City Palace, Jagdish Temple and Gangaur Ghat",
+    "Culture and folk art performance at Bagore Ki Haveli, or the local flea market",
+    "Day trip to Mount Abu: Nakki Lake, Dilwara Jain temples and Mall Road",
+    "Bahubali Hills, Badi Lake, Saheliyon ki Bari and Fateh Sagar Lake",
+    "2 nights in a hotel in Udaipur",
+    "2 breakfasts and 2 dinners"
+  ],
+  "overview": "Udaipur's lakes and a day in Mount Abu: this **2 Nights / 3 Days** group trip starts from Gurugram with an overnight journey in an AC deluxe vehicle. The exact pickup point and time are shared once your booking is confirmed.\n\nDay 1 covers Lake Pichola, City Palace, Jagdish Temple and Gangaur Ghat, with an evening at Bagore Ki Haveli or the local flea market. Day 2 is a day trip to Mount Abu (a 4–5 hour drive) for Nakki Lake, the Dilwara Jain temples and Mall Road, returning to Udaipur for the night. Day 3 visits Bahubali Hills, Badi Lake, Saheliyon ki Bari and Fateh Sagar Lake before the 6 PM departure. Transport, 2 nights in a hotel in Udaipur, 2 breakfasts, 2 dinners and a tour curator are included. Prices start at ₹7,499 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Departure to Udaipur | Overnight journey",
+      "content": "Depart in an AC deluxe vehicle.\nOvernight journey to Udaipur.\nHalt for dinner on the way (not included)."
+    },
+    {
+      "title": "Reach Udaipur | City tour",
+      "content": "Reach Udaipur and check in at the hotel.\nRelax and freshen up.\nLeave for Udaipur sightseeing: visit Lake Pichola, City Palace, Jagdish Temple and Gangaur Ghat.\nIn the evening, either watch the culture and folk art performance at Bagore Ki Haveli (7–8 PM) or explore the local flea market.\nReturn to the hotel.\nDinner and overnight stay at the hotel."
+    },
+    {
+      "title": "Mount Abu day trip | Back to Udaipur",
+      "content": "Wake up early and have breakfast.\nLeave for Mount Abu (a 4–5 hour drive).\nVisit Nakki Lake, the Dilwara Jain temples and Mount Abu Mall Road.\nAfter sightseeing, depart for Udaipur.\nDinner and overnight stay."
+    },
+    {
+      "title": "Udaipur city tour and departure",
+      "content": "After breakfast, leave for Udaipur local sightseeing.\nVisit Bahubali Hills, Badi Lake, Saheliyon ki Bari and Fateh Sagar Lake.\nExplore the Fateh Sagar Lake market, where you can try Udaipur's local cuisine.\nDepart by 6 PM.\nOvernight journey to Gurugram, with a halt for dinner on the way (not included)."
+    }
+  ],
+  "includes": [
+    "2 nights' hotel stay in Udaipur",
+    "4 meals: 2 breakfasts and 2 dinners",
+    "All transport and sightseeing to and from Gurugram in an AC vehicle",
+    "Sightseeing as mentioned in the itinerary",
+    "Tour curator"
+  ],
+  "excludes": [
+    "5% GST",
+    "Dinner during the overnight journeys",
+    "Alcoholic beverages",
+    "Personal and medical expenses",
+    "Expenses caused by conditions beyond our control, such as road blockages, road accidents or landslides (borne by the customer on the spot)",
+    "Costs from a change in itinerary due to landslides, roadblocks or factors beyond human control",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "The trip starts from Gurugram with an overnight journey to Udaipur in an AC deluxe vehicle. The exact pickup point and time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Udaipur and Mount Abu trip cost?",
+      "a": "₹7,499 per person on quad sharing, ₹7,999 on triple sharing and ₹8,499 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "2 nights in a hotel in Udaipur, 2 breakfasts and 2 dinners, all transport and sightseeing to and from Gurugram in an AC vehicle, the sightseeing listed in the itinerary and a tour curator. Dinner halts on the overnight journeys are not included."
+    },
+    {
+      "q": "Where do we stay?",
+      "a": "Both nights are in a hotel in Udaipur. Mount Abu is a day trip on Day 2, and you return to Udaipur for dinner and the night."
+    },
+    {
+      "q": "How long is the drive to Mount Abu?",
+      "a": "About 4–5 hours from Udaipur. You leave early after breakfast, visit Nakki Lake, the Dilwara Jain temples and Mall Road, and drive back to Udaipur the same day."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

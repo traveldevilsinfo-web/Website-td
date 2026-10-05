@@ -1,0 +1,155 @@
+{
+  "category": "weekend-getaways",
+  "destination": "uttarakhand",
+  "durationDays": 3,
+  "durationNights": 2,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 4,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "chopta-tungnath",
+  "title": "Chopta Tungnath",
+  "tags": [
+    "chopta-tungnath",
+    "2n3d",
+    "trek"
+  ],
+  "reportingPoint": "Vaishali Metro Station, Delhi. Reporting time: 9:00 PM on the departure night.",
+  "pickupPoints": [
+    "Vaishali Metro Station, Delhi"
+  ],
+  "basePrice": 6499,
+  "bookingAmount": 3300,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 6499,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 6999,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 7499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/wp/2026/02/4-2.png",
+  "gallery": [
+    "/uploads/2026/10/chopta-tungnath-1.jpg",
+    "/uploads/2026/10/chopta-tungnath-2.jpg",
+    "/uploads/2026/10/chopta-tungnath-3.jpg",
+    "/uploads/2026/10/chopta-tungnath-4.jpg"
+  ],
+  "highlights": [
+    "Trek to Tungnath Mahadev Temple and Chandrashila Peak (weather permitting)",
+    "Trek to Deoriatal Lake from Sari Village",
+    "Devprayag, the confluence of the Bhagirathi and Alaknanda rivers",
+    "Forest walk and bonfire evening in Chopta",
+    "Stop in Rishikesh on the way back (if time permits)",
+    "2 nights in Swiss camps or a homestay"
+  ],
+  "overview": "A trekking weekend in Uttarakhand: this **2 Nights / 3 Days** Chopta Tungnath group trip leaves Delhi at night and returns early in the morning after Day 3. You board the bus or traveller at Vaishali Metro Station (reporting 9:00 PM) and travel overnight.\n\nDay 1 stops at Devprayag to see the confluence of the Bhagirathi and Alaknanda rivers, then continues to Chopta for a forest walk, a bonfire and a home-style dinner. Day 2 is the early-morning trek to Tungnath and Chandrashila Peak, weather permitting. Day 3 is the drive to Sari Village and the trek to Deoriatal Lake, followed by the return journey with a stop in Rishikesh if time permits. Transport, 2 nights in Swiss camps or a homestay, the listed veg meals and a trip captain or trek guide are included. Prices start at ₹6,499 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Delhi to Chopta | Overnight journey",
+      "content": "Board the bus or traveller from Vaishali Metro Station, Delhi.\nReporting time: 9:00 PM."
+    },
+    {
+      "title": "Devprayag Sangam | Chopta arrival",
+      "content": "Stop at Devprayag to see the confluence of the Bhagirathi and Alaknanda rivers.\nAfter breakfast near Rudraprayag, proceed to Chopta.\nCheck in and relax.\nTake a forest walk.\nEnjoy a bonfire in the evening and have a home-style dinner."
+    },
+    {
+      "title": "Trek to Chandrashila via Tungnath Mahadev Temple",
+      "content": "Early in the morning, trek to Tungnath and Chandrashila Peak (weather permitting).\nReturn to Chopta and relax.\nOvernight stay in Chopta."
+    },
+    {
+      "title": "Drive to Sari Village | Trek to Deoriatal | Depart for Delhi",
+      "content": "After breakfast, drive to Sari Village.\nTrek to Deoriatal Lake and return to Sari.\nBegin the return journey to Delhi, with a stop in Rishikesh for exploration, cafe hopping and visits to temples and the Ganga ghats (if time permits).\nReach Delhi early the next morning."
+    }
+  ],
+  "includes": [
+    "Transportation from Delhi to Delhi by Tempo Traveller or cab",
+    "2 nights accommodation in Swiss camps or a homestay",
+    "Experienced trip captain or trek guide",
+    "Bonfire during the stay (if weather permits) and local explorations as per the itinerary",
+    "Veg meals: 2 dinners, 2 breakfasts and 2 evening snacks, from evening snacks on Day 1 to breakfast on Day 3",
+    "Driver allowances, toll taxes, parking and state taxes",
+    "24x7 customer support"
+  ],
+  "excludes": [
+    "5% GST",
+    "Any extra meals apart from the ones mentioned in the inclusions",
+    "Travel insurance and items of a personal nature like porterage, tips and laundry",
+    "Entry fees, optional activities, room heaters or tickets, unless quoted in the inclusions",
+    "Cost of a snow-chained or 4x4 vehicle if needed due to heavy snowfall",
+    "Extra costs caused by natural calamity, weather conditions, riots, roadblocks, landslides or any other situation beyond our control",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "You board the bus or traveller at Vaishali Metro Station, Delhi. Reporting time is 9:00 PM on the departure night, and the journey to Chopta is overnight."
+    },
+    {
+      "q": "How much does the Chopta Tungnath trip cost?",
+      "a": "₹6,499 per person on quad sharing, ₹6,999 on triple sharing and ₹7,499 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "Transportation from Delhi to Delhi by Tempo Traveller or cab, 2 nights in Swiss camps or a homestay, a trip captain or trek guide, a bonfire if the weather permits, local explorations as per the itinerary, driver allowances, tolls, parking and state taxes, and 24x7 customer support. Veg meals are 2 dinners, 2 breakfasts and 2 evening snacks, from evening snacks on Day 1 to breakfast on Day 3."
+    },
+    {
+      "q": "Which treks are part of the trip?",
+      "a": "Day 2 is the early-morning trek to Tungnath and Chandrashila Peak, which depends on the weather. Day 3 has the trek from Sari Village to Deoriatal Lake and back. Wear comfortable trekking or sports shoes."
+    },
+    {
+      "q": "Where do we stay?",
+      "a": "Both nights are in Chopta, in Swiss camps or a homestay. Room heaters are not included."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}
