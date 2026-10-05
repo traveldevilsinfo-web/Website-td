@@ -1,0 +1,143 @@
+{
+  "category": "treks",
+  "destination": "uttarakhand",
+  "durationDays": 6,
+  "durationNights": 5,
+  "startLocation": "Haridwar",
+  "endLocation": "Haridwar",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "slug": "valley-of-flowers-trek",
+  "title": "Valley of Flowers Trek",
+  "tags": [
+    "valley-of-flowers",
+    "hemkund-sahib",
+    "monsoon-trek",
+    "trek"
+  ],
+  "reportingPoint": "Haridwar. Departure is at 6:30 AM on Day 1, and the group returns to Haridwar by the evening of Day 6. The exact meeting point is shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 10499,
+  "bookingAmount": 5300,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Standard Sharing",
+          "price": 10499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/valley-of-flowers-trek-1.jpg",
+  "gallery": [],
+  "highlights": [
+    "Trek into the Valley of Flowers, a UNESCO World Heritage Site",
+    "Trek to Hemkund Sahib Gurudwara (4,329 m)",
+    "Two nights at Govindghat and three nights at Ghangaria",
+    "Alpine flowers in bloom during the monsoon",
+    "Pick-up and drop transfers from Haridwar to Haridwar",
+    "All meals, permits, trekking equipment and a certified trek leader"
+  ],
+  "overview": "The Valley of Flowers is a UNESCO World Heritage Site in the Garhwal Himalayas, part of the Nanda Devi biosphere and national park, and is known for its alpine flowers, which are in full bloom during the monsoon. This **5 Nights / 6 Days** trek also visits Hemkund Sahib. It runs Haridwar to Haridwar: you need to reach Haridwar on your own, and the group leaves at 6:30 AM on Day 1.\n\nDay 1 is the 290 km drive to Govindghat, which takes about 11 hours. Day 2 is a 4 km drive to Pulna and a 9 km trek to Ghangaria. Day 3 is the 4 km trek into the Valley of Flowers and back to Ghangaria. Day 4 is the 6 km trek to Hemkund Sahib (4,329 m), returning to Ghangaria by evening. Day 5 is the 9 km trek back to Govindghat, and Day 6 is the drive back to Haridwar by evening. Transfers from Haridwar, all meals, permits, trekking equipment and a trek leader are included. Batches run from June to September, with departures every Friday. Prices start at ₹10,499 per person (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Haridwar to Govindghat (290 km drive)",
+      "content": "Drive distance: 290 km. Drive time: about 11 hours.\nLeave Haridwar early, at 6:30 AM.\nReach Govindghat and check in to the hotel.\nDinner and rest before the trek."
+    },
+    {
+      "title": "Govindghat to Ghangaria via Pulna",
+      "content": "Drive distance: 4 km. Trek distance: 9 km.\nAfter breakfast, take the short 4 km drive to Pulna, where the trek starts.\nTrek 9 km to Ghangaria on a well-marked path.\nOvernight in Ghangaria."
+    },
+    {
+      "title": "Trek to the Valley of Flowers",
+      "content": "Trek distance: 4 km.\nStart early in the morning for the Valley of Flowers.\nSpend the day in the valley among the alpine flowers and mountain scenery.\nTrek back to Ghangaria for the night."
+    },
+    {
+      "title": "Trek to Hemkund Sahib",
+      "content": "Altitude: 4,329 m. Trek distance: 6 km.\nTrek to Hemkund Sahib; the climb is challenging and goes above the treeline.\nVisit the Gurudwara.\nReturn to Ghangaria by evening."
+    },
+    {
+      "title": "Return to Govindghat",
+      "content": "Trek distance: 9 km.\nTrek back to Govindghat.\nRest at the hotel and visit the local spiritual sites in the evening."
+    },
+    {
+      "title": "Govindghat to Haridwar",
+      "content": "After breakfast, begin the return journey to Haridwar.\nArrive in Haridwar by evening, where the trip ends."
+    }
+  ],
+  "includes": [
+    "Pick-up and drop transfers from Haridwar to Haridwar",
+    "Camping stay during the trek",
+    "Dome tent on triple sharing or alpine tent on quad sharing",
+    "Campfire at the camps (if available)",
+    "All 3 meals plus snacks",
+    "Trekking permit, forest permit and campsite fees",
+    "Trekking equipment (tents, sleeping bags, ice axes, ropes, etc.)",
+    "Expert trek leader certified in basic/advanced mountaineering courses",
+    "Trek crew (guides, chefs, assistants, porters/mules)",
+    "Safety gear (first aid, medical kit, oxygen cylinders, stretcher, etc.)",
+    "Trek certificate of completion"
+  ],
+  "excludes": [
+    "5% GST",
+    "Mule offloading fee of ₹400 per day for a bag weighing up to 10 kg",
+    "Trek insurance (₹320 per person)",
+    "Single or double sharing tent (extra cost)",
+    "Food on the way during the pick-up and drop drives",
+    "Personal expenses",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- This trek runs Haridwar to Haridwar. You need to reach Haridwar on your own before the 6:30 AM departure on Day 1.\n- Mule offloading costs ₹400 per day for a bag weighing up to 10 kg.\n- Trek insurance is ₹320 per person.\n- The trek to Hemkund Sahib (4,329 m) on Day 4 is challenging.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trek start?",
+      "a": "The trek starts from Haridwar, with departure at 6:30 AM on Day 1 for the 290 km drive to Govindghat. The group returns to Haridwar by the evening of Day 6. You travel to and from Haridwar yourself. The exact meeting point is shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Valley of Flowers Trek cost?",
+      "a": "₹10,499 per person. 5% GST is extra. A single or double sharing tent costs extra."
+    },
+    {
+      "q": "When does the trek run?",
+      "a": "Batches run from June to September, with departures every Friday. The valley is best seen during the monsoon, when the flowers are in full bloom, and August is the most popular month."
+    },
+    {
+      "q": "How long is the trek?",
+      "a": "Day 2 is a 9 km trek from Pulna to Ghangaria. Day 3 is a 4 km trek into the Valley of Flowers, returning to Ghangaria. Day 4 is a 6 km trek to Hemkund Sahib at 4,329 m, which is the challenging day, returning to Ghangaria by evening. Day 5 is the 9 km trek back to Govindghat."
+    },
+    {
+      "q": "What is included?",
+      "a": "Pick-up and drop transfers from Haridwar to Haridwar, stay during the trek, all 3 meals plus snacks, trekking and forest permits, campsite fees, trekking equipment, a certified trek leader, a trek crew, safety gear and a trek certificate of completion. Mule offloading (₹400 per day for a bag up to 10 kg) and food on the way during the drives are not included."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    }
+  ]
+}

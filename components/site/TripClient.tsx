@@ -37,12 +37,15 @@ export function Gallery({ images, title }: { images: string[]; title: string }) 
   return (
     <>
       {/* Mobile: swipeable strip. Desktop: mosaic. */}
-      <div className="rail gap-2 [--rail-pad:1rem] [grid-auto-columns:88%] md:hidden">
+      {/* wrapper hides it on desktop: .rail's own display rule beats a md:hidden on the same element */}
+      <div className="md:hidden">
+      <div className="rail gap-2 [--rail-pad:1rem] [grid-auto-columns:88%]">
         {images.map((src, i) => (
           <button key={src + i} onClick={() => open(i)} className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface" aria-label={`Open photo ${i + 1}`}>
             <Image src={src} alt={`${title} photo ${i + 1}`} fill loading={i === 0 ? "eager" : undefined} fetchPriority={i === 0 ? "high" : undefined} sizes="88vw" className="object-cover" />
           </button>
         ))}
+      </div>
       </div>
       <div className="mx-auto hidden h-[480px] max-w-7xl grid-cols-4 grid-rows-2 gap-2 px-4 md:grid">
         <button onClick={() => open(0)} className="group relative col-span-2 row-span-2 overflow-hidden rounded-l-[2rem] bg-surface" aria-label="Open photo 1">

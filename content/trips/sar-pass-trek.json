@@ -1,0 +1,149 @@
+{
+  "category": "treks",
+  "destination": "himachal-pradesh",
+  "durationDays": 5,
+  "durationNights": 4,
+  "startLocation": "Kasol",
+  "endLocation": "Kasol",
+  "thingsToCarry": [
+    "Non-skid, deep-treaded hiking shoes (1 pair)",
+    "Lightweight slippers or sandals (1 pair)",
+    "Personal toiletries kit (small towel, toilet paper, paper soap, bar soap, toothbrush, toothpaste, cold cream and similar items)",
+    "Track pants",
+    "Full-sleeve T-shirts (1 for every two days of trekking)",
+    "Undergarments (1 per day of trekking)",
+    "Rainwear (jacket and pants), raincoat and umbrella",
+    "Sun cap",
+    "Dry fruits, nuts and chocolate bars",
+    "Personal medicines, if any (consult your doctor before joining the trek)",
+    "Sunscreen lotion and lip balm",
+    "Plastic bags",
+    "Power bank",
+    "Camera"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "slug": "sar-pass-trek",
+  "title": "Sar Pass Trek",
+  "tags": [
+    "sar-pass",
+    "kasol",
+    "parvati-valley",
+    "trek"
+  ],
+  "reportingPoint": "Kasol. The exact meeting point and reporting time are shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 6499,
+  "bookingAmount": 3300,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 6499,
+          "salePrice": null
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 7499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/sar-pass-trek-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/sar-pass-trek-2.jpg",
+    "/uploads/2026/10/sar-pass-trek-3.jpg"
+  ],
+  "highlights": [
+    "Cross Sar Pass at 13,800 ft",
+    "Guesthouse night in Grahan village",
+    "Camping at Mung Thach, Nagaru and Biskeri Thach",
+    "Trail through rhododendron and pine forest, meadows and snow",
+    "Views of the Chandrakhani range from Mung Thach and of Manikaran from Nagaru",
+    "All meals, permits, trekking equipment and a certified trek leader"
+  ],
+  "overview": "Sar Pass is a 13,800 ft pass above Kasol, a village in the Kullu region of Himachal Pradesh, and the trek to it is usually done in the summer months (April to June), when there is snow on the route. This **4 Nights / 5 Days** trek runs Kasol to Kasol: you need to reach Kasol on your own, and the meeting point and reporting time are shared once your booking is confirmed.\n\nDay 1 is the trek from Kasol to Grahan village, with a night in a local guesthouse. Day 2 climbs through forest to the camp at Mung Thach, and Day 3 continues up a steep ridge to the Nagaru campsite. Day 4 is the early climb in snow to Sar Pass, followed by the descent to the camp at Biskeri Thach. Day 5 comes down through Pulga, Tulga and Barshaini and returns to Kasol. Camping, all meals, permits, trekking equipment and a trek leader are included. Departures are every Saturday and Sunday. Prices start at ₹6,499 per person on triple sharing (5% GST extra); dual sharing is ₹7,499 per person.",
+  "itinerary": [
+    {
+      "title": "Trek from Kasol to Grahan village",
+      "content": "Start from Kasol and trek along the left bank of the Grahan Nallah.\nThe first part of the trail is straightforward and is used regularly by locals.\nAway from the river, the trail gets rockier and climbs into a rhododendron forest, which blooms in season.\nReach Grahan village, the last settlement with mobile network on the route.\nOvernight stay at a local guesthouse in Grahan."
+    },
+    {
+      "title": "Trek from Grahan village to Mung Thach",
+      "content": "Leave Grahan and head north towards Mung Thach on a trail commonly used by villagers.\nGet the first views of distant points such as Sar Top and the Nagaru ridge.\nThe trail gets steeper and more demanding as it climbs through dense forest.\nMung Thach has views of the Chandrakhani range.\nOvernight camping in the forest at Mung Thach."
+    },
+    {
+      "title": "Trek from Mung Thach to Nagaru",
+      "content": "Trek from Mung Thach towards Nagaru; the path may be under snow.\nThe route includes a steep climb up a ridge, which needs care, especially in snow.\nReach the Nagaru campsite, with views of Manikaran and the surrounding mountains.\nThe camp faces north, so expect a cold night.\nOvernight camping at Nagaru."
+    },
+    {
+      "title": "Nagaru to Biskeri Thach via Sar Pass",
+      "content": "Start early for the steep ascent in snow to Sar Pass.\nTake in the panoramic views from the pass and stop for photographs.\nThe descent includes a slide down towards Biskeri, done with proper precautions.\nContinue through valleys and across streams to Biskeri Thach.\nOvernight camping among the meadows and pine forest at Biskeri Thach."
+    },
+    {
+      "title": "Trek from Biskeri Thach to Kasol",
+      "content": "Trek down from Biskeri Thach through dense forest and cross a brook.\nThe path splits towards the twin villages of Pulga and Tulga, divided by the creek, and continues to Barshaini.\nCross the Parvati River and return to Kasol, where the trek ends."
+    }
+  ],
+  "includes": [
+    "Pick-up and drop transfers from Kasol to Kasol",
+    "Camping stay during the trek",
+    "Dome tent on triple sharing or alpine tent on quad sharing",
+    "Campfire at the camps (if available)",
+    "All 3 meals plus snacks",
+    "Trekking permit, forest permit and campsite fees",
+    "Trekking equipment (tents, sleeping bags, ice axes, ropes, etc.)",
+    "Expert trek leader certified in basic/advanced mountaineering courses",
+    "Trek crew (guides, chefs, assistants, porters/mules)",
+    "Safety gear (first aid, medical kit, oxygen cylinders, stretcher, etc.)",
+    "Trek certificate of completion"
+  ],
+  "excludes": [
+    "5% GST",
+    "Food during the pick-up and drop transfers",
+    "Porter or mule charges",
+    "Single or double sharing tent (extra cost)",
+    "Any optional activities",
+    "Insurance",
+    "Personal expenses",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- This trek runs Kasol to Kasol. You need to reach Kasol on your own.\n- Grahan is the last village with mobile network on the route.\n- The trail between Mung Thach, Nagaru and Sar Pass is steep and can be under snow.\n- Porter or mule charges for carrying your bag are not included.\n- Consult your doctor before joining the trek, and carry your own medicines.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where does the trek start and how do I get there?",
+      "a": "The trek starts and ends in Kasol, in the Kullu region of Himachal Pradesh. You travel to and from Kasol yourself. The exact meeting point and reporting time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Sar Pass Trek cost?",
+      "a": "₹6,499 per person on triple sharing and ₹7,499 per person on dual sharing. 5% GST is extra."
+    },
+    {
+      "q": "When does the trek run?",
+      "a": "Departures are every Saturday and Sunday. The trek is usually done in the summer months, from April to June, when there is snow on the route."
+    },
+    {
+      "q": "How high is Sar Pass?",
+      "a": "Sar Pass is at an elevation of 13,800 ft. It is crossed on Day 4, with an early start from Nagaru and a steep ascent in snow."
+    },
+    {
+      "q": "What is included?",
+      "a": "Pick-up and drop transfers from Kasol to Kasol, a guesthouse night in Grahan and camping at Mung Thach, Nagaru and Biskeri Thach (dome tents on triple sharing or alpine tents on quad sharing), all 3 meals plus snacks, trekking and forest permits, campsite fees, trekking equipment, a certified trek leader, a trek crew, safety gear and a trek certificate of completion. Porter or mule charges, insurance and food during the transfers are not included."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "Non-skid, deep-treaded hiking shoes, lightweight slippers or sandals, track pants, full-sleeve T-shirts, rainwear, a sun cap, sunscreen and lip balm, a toiletries kit, dry fruits and chocolate bars, a power bank and your personal medicines. Carry a valid government-approved photo ID as well. The full list is under Things To Pack."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    }
+  ]
+}

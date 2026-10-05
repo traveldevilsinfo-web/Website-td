@@ -1,0 +1,246 @@
+{
+  "category": "biking-trips",
+  "destination": "ladakh",
+  "durationDays": 12,
+  "durationNights": 11,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Down jacket: 1 (comfortable down to -15°C)",
+    "Trousers: 2 to 3 (winter woollen trek pants)",
+    "T-shirts: 3",
+    "Woollen fleece: 2",
+    "Waterproof woollen gloves: 1 pair",
+    "Sun cap: 1",
+    "Woollen cap: 1 (carry an extra one for layering)",
+    "Woollen neck warmer or bandana: 1",
+    "Quick-dry napkin or towel: 1",
+    "Undergarments: 3 to 4 pairs",
+    "Thermal inner wear: 2 pairs",
+    "Helmet, if you have opted for a bike"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "slug": "manali-zanskar-leh-umling-la-11n12d",
+  "title": "Manali, Zanskar & Leh via Umling La (11N/12D)",
+  "tags": [
+    "ladakh",
+    "zanskar",
+    "manali",
+    "leh",
+    "umling-la",
+    "tso-moriri",
+    "bike-trip"
+  ],
+  "reportingPoint": "The Volvo bus to Manali leaves Delhi at 7:30 PM. The exact boarding point is shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 16000,
+  "bookingAmount": 8000,
+  "pricing": [
+    {
+      "name": "Own Bike",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 16000,
+          "salePrice": null
+        },
+        {
+          "label": "Twin Sharing",
+          "price": 18500,
+          "salePrice": null
+        },
+        {
+          "label": "Single Sharing",
+          "price": 23500,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "Solo Rider",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 28000,
+          "salePrice": null
+        },
+        {
+          "label": "Twin Sharing",
+          "price": 30500,
+          "salePrice": null
+        },
+        {
+          "label": "Single Sharing",
+          "price": 35500,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "Dual Rider",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 25500,
+          "salePrice": null
+        },
+        {
+          "label": "Twin Sharing",
+          "price": 28000,
+          "salePrice": null
+        },
+        {
+          "label": "Single Sharing",
+          "price": 33000,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "SUV / Tempo Traveller",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 19000,
+          "salePrice": null
+        },
+        {
+          "label": "Twin Sharing",
+          "price": 21500,
+          "salePrice": null
+        },
+        {
+          "label": "Single Sharing",
+          "price": 26500,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/manali-zanskar-leh-umling-la-11n12d-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/manali-zanskar-leh-umling-la-11n12d-2.jpg",
+    "/uploads/2026/10/manali-zanskar-leh-umling-la-11n12d-3.jpg",
+    "/uploads/2026/10/manali-zanskar-leh-umling-la-11n12d-4.jpg"
+  ],
+  "highlights": [
+    "Manali to Leh with a night at Gumbok Rangan",
+    "Nubra Valley over Khardung La, with Diskit Monastery and the Hunder sand dunes",
+    "Night in a lakeside camp at Pangong Tso",
+    "Rezang La War Memorial and two nights in Hanle",
+    "Ride to Umling La",
+    "Tso Moriri via the hot springs of Puga Valley"
+  ],
+  "overview": "This **11 Nights / 12 Days** road trip is a loop from Manali to Leh and back, going out past Gumbok Rangan and returning through Hanle, Umling La, Tso Moriri and Sarchu. You can ride your own bike, ride a rented bike solo or with a pillion, or travel in an SUV or Tempo Traveller. The package includes Volvo transfers from Delhi to Manali and back: the bus leaves Delhi at 7:30 PM, and you reach Delhi again in the morning after the last evening in Manali. Batches run from May to September.\n\nAfter a day in Manali, you collect the bikes and ride through Atal Tunnel and Keylong to camps at Gumbok Rangan, then on to Leh. From Leh the route goes over Khardung La to Nubra Valley, along the Shyok river to Pangong Tso, and past Chushul and the Rezang La War Memorial to Hanle. A day's ride takes you up to Umling La and back to Hanle, before you continue through Puga Valley to Tso Moriri, across the Moore Plains to Sarchu and over Baralacha La to Manali. Prices start at ₹16,000 per person on triple sharing with your own bike (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Delhi to Manali",
+      "content": "Leave Delhi for Manali by Volvo bus at 7:30 PM.\nOvernight journey to Manali."
+    },
+    {
+      "title": "Manali sightseeing and self exploration",
+      "content": "Check in to the hotel (12 noon), freshen up and relax.\nAfter breakfast, explore Manali on your own.\nPlaces to visit: Hadimba Temple, Jogni Waterfall, Vashisht Temple and Mall Road.\nDinner, a briefing for the next day and an overnight stay."
+    },
+    {
+      "title": "Manali to Gumbok Rangan",
+      "content": "Wake up early, collect the bikes and check out from the hotel.\nRide on the Leh–Manali Highway.\nDrive through Atal Tunnel into Lahaul Valley and along the Chandra river to Keylong, the district headquarters of Lahaul & Spiti.\nArrive by evening.\nOvernight stay in camps at Gumbok Rangan or a homestay in Purne."
+    },
+    {
+      "title": "Gumbok Rangan to Leh",
+      "content": "After breakfast at the stay, get ready to leave for Leh.\nTravel over high-altitude roads and passes towards Leh.\nArrive by late evening.\nCheck in at a hotel in Leh."
+    },
+    {
+      "title": "Leh to Nubra Valley via Khardung La",
+      "content": "Distance: 125 km. Duration: 5 to 6 hours.\nAfter breakfast, head towards Nubra Valley.\nRide over Khardung La and spend some time at the top.\nRide to Diskit Monastery for a view over Nubra Valley.\nStop at the Hunder sand dunes, where you can take a double-humped camel ride in the cold desert.\nDinner and an overnight stay in camps or cottages at Diskit."
+    },
+    {
+      "title": "Nubra Valley to Pangong Tso via Shyok",
+      "content": "After breakfast, drive to Pangong Lake along the Shyok river.\nArrive at Pangong Lake, known for its changing colours.\nVisit the spots where films such as 3 Idiots were shot.\nSpend the night at a lakeside camp."
+    },
+    {
+      "title": "Pangong Tso to Hanle via Rezang La",
+      "content": "Ride along the shore of Pangong Tso, passing through Maan, Merak and Chushul.\nPay tribute at the Rezang La War Memorial, which honours the soldiers of the 1962 Indo-China War.\nContinue to the remote village of Hanle, home to an astronomical observatory.\nSpend the evening at leisure and watch the night sky.\nDinner and an overnight stay in a tent or room."
+    },
+    {
+      "title": "Hanle to Umling La and back",
+      "content": "Ride to Umling La, known as one of the highest motorable roads in the world.\nSpend some time at the top for the views and photographs.\nHead back to Hanle for dinner and an overnight stay."
+    },
+    {
+      "title": "Hanle to Tso Moriri",
+      "content": "After breakfast, begin the ride.\nPass through Puga Valley, known for its hot springs.\nContinue towards Tso Moriri as the landscape changes.\nDinner and an overnight stay."
+    },
+    {
+      "title": "Tso Moriri to Sarchu",
+      "content": "Wake up early and leave for Sarchu after breakfast.\nCross the Moore Plains, a flat, straight stretch of road about 40 km long.\nAfter lunch at Pang, cross Lachung La and Nakee La.\nJust before Sarchu, descend the Gata Loops (21 hairpin bends at 4,669 m).\nReach Sarchu and check in at the camps.\nDinner and an overnight stay."
+    },
+    {
+      "title": "Sarchu to Manali",
+      "content": "Wake up early and leave after breakfast for a long day on the road.\nDrive over Baralacha La, one of the more challenging passes on the Leh–Manali Highway.\nPass Suraj Tal, a small lake at the top of Baralacha La.\nDrive through Zingzing Bar, Patsio and Darcha, and over Rohtang La, to reach Manali.\nCheck in to the hotel.\nDinner and an overnight stay."
+    },
+    {
+      "title": "Manali self exploration and departure",
+      "content": "After a relaxed morning and breakfast, you can head out for local sightseeing in Manali.\nPlaces you can visit: Hidimba Devi Temple, Jogni Waterfall, Vashisht Temple and Mall Road.\nSpend some time cafe hopping in the streets of Old Manali.\nLeave for Delhi in the evening."
+    },
+    {
+      "title": "Arrival in Delhi",
+      "content": "Reach Delhi in the morning after the overnight journey."
+    }
+  ],
+  "includes": [
+    "Accommodation in double or triple sharing rooms in hotels and camps",
+    "Volvo transfers from Delhi to Manali and back",
+    "Bike rental for 9 days, including fuel, from Manali to Manali (for the biking option)",
+    "Entire travel from Manali to Manali (for the SUV / Tempo Traveller option)",
+    "Mechanical backup",
+    "RE mechanic with spare parts for minor repairs on the way",
+    "Riding gear: helmets, elbow guards and knee pads",
+    "All inner line permits for the trip",
+    "Oxygen cylinder in the vehicle, available 24x7 for emergencies",
+    "Team captain throughout the trip"
+  ],
+  "excludes": [
+    "5% GST",
+    "Anything not mentioned in the itinerary",
+    "Meals not specified in the itinerary",
+    "Entry charges and monument fees",
+    "Personal expenses and tips",
+    "Room heater charges",
+    "Any cost arising from unforeseen circumstances, including medical emergencies and acts of God"
+  ],
+  "importantNotes": "- Prices are per person on triple sharing. Twin sharing is ₹2,500 per person extra and single sharing is ₹7,500 extra.\n- Hotel check-in in Manali is at 12 noon. After check-in you can explore on your own.\n- **Any damage to the bike is borne by the rider.**\n- You will be travelling through high-altitude cold desert. Consult your doctor before the trip, be physically fit, and tell us about any existing health condition before travelling.\n- Medical facilities are very limited in these remote areas. We help arrange logistics in a medical emergency, but we are not responsible for the emergency and the expenses are borne by the traveller.\n- The itinerary advises Diamox 250 mg (acetazolamide) twice a day, after breakfast and after dinner, starting at least two days before the journey to Leh and continuing for two days after arriving. Check with your doctor before taking it.\n- Avoid physical exertion on your first two days in Leh.\n- Drink at least 2 to 3 litres of water a day, and avoid alcohol, smoking and sedatives.\n- Eat a light meal on the first day at altitude to avoid indigestion.\n- If you notice symptoms of HAPE, HACE or AMS, consult a doctor immediately.\n- An oxygen cylinder is kept in the backup vehicle for emergencies. We recommend carrying portable oxygen as well.\n- Riding gear is provided, but we recommend bringing your own helmet for comfort.\n- Only postpaid mobile networks (Jio, Airtel, BSNL) work in the region.\n- Keep luggage to about 60 litres. You will need to move it between the backup vehicle and the stays.\n- An extra mattress is provided for the third person in triple sharing rooms.\n- Hotels in Ladakh are more basic than in other parts of the country. Stays are subject to availability; if a booked hotel is unavailable, you are moved to a comparable property.\n- Breakfast on the last day depends on your departure time.\n- The itinerary can change because of weather, road conditions, the physical ability of participants or other disruptions. We may change the schedule in the interest of safety and comfort, without changing the overall duration.\n- Rates can change if services or hotels change. Any increase caused by changes you request, such as the number of guests or the hotel, is paid by the traveller.\n- Rescheduling: a change requested at least 15 days before the travel date carries a 30% rescheduling fee. Bookings can't be rescheduled within 15 days of the travel date. If you reschedule and later cancel, the cancellation policy applies and the rescheduling fee isn't refunded.\n- In a force majeure situation (natural disaster, political unrest or similar), we may reschedule the tour or offer an alternative itinerary.",
+  "faqs": [
+    {
+      "q": "Where does the trip start and end, and how do I get there?",
+      "a": "You reach Delhi on your own. The package includes the overnight Volvo from Delhi to Manali, which leaves at 7:30 PM, and the Volvo back. The ride itself starts and ends in Manali, and you reach Delhi in the morning after the last evening in Manali."
+    },
+    {
+      "q": "What are the travel options and what do they cost?",
+      "a": "Per person on triple sharing: ₹16,000 with your own bike, ₹28,000 as a solo rider on a rented bike, ₹25,500 as one of two riders sharing a rented bike, and ₹19,000 in an SUV or Tempo Traveller. 5% GST is extra."
+    },
+    {
+      "q": "What do twin and single sharing cost?",
+      "a": "Twin sharing is ₹2,500 per person extra and single sharing is ₹7,500 extra, on top of the triple sharing price for your travel option. An extra mattress is provided for the third person in triple sharing rooms."
+    },
+    {
+      "q": "What is included?",
+      "a": "Stays in hotels and camps on double or triple sharing, Volvo transfers from Delhi to Manali and back, inner line permits, a team captain, mechanical backup with a mechanic and spare parts, riding gear and an oxygen cylinder for emergencies. The biking option adds bike rental for 9 days with fuel; the SUV / Tempo Traveller option covers the travel from Manali to Manali."
+    },
+    {
+      "q": "Are the bike, fuel and riding gear provided?",
+      "a": "On the biking option, bike rental for 9 days from Manali to Manali is included with fuel. Helmets, elbow guards and knee pads are provided, though we recommend bringing your own gear for comfort. Any damage to the bike is paid for by the rider."
+    },
+    {
+      "q": "Where do we stay?",
+      "a": "A hotel in Manali, camps at Gumbok Rangan or a homestay in Purne, a hotel in Leh, camps or cottages at Diskit, a lakeside camp at Pangong Tso, a tent or room in Hanle for two nights, a stay at Tso Moriri, camps at Sarchu and a hotel in Manali again."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost by net banking or UPI, and pay the rest 4 days before the trip. 5% GST is extra."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "category": "treks",
+  "destination": "uttarakhand",
+  "durationDays": 3,
+  "durationNights": 2,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "slug": "madhyamaheshwar-trek",
+  "title": "Madhyamaheshwar Trek",
+  "tags": [
+    "madhyamaheshwar",
+    "panch-kedar",
+    "2n3d",
+    "trek"
+  ],
+  "reportingPoint": "Departure is in the evening from Delhi; the overnight journey starts between 8 PM and 9 PM. The exact pickup point and time are shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 6999,
+  "bookingAmount": 3500,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 6999,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 6999,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 7999,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/madhyamaheshwar-trek-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/madhyamaheshwar-trek-2.jpg",
+    "/uploads/2026/10/madhyamaheshwar-trek-3.jpg",
+    "/uploads/2026/10/madhyamaheshwar-trek-4.jpg"
+  ],
+  "highlights": [
+    "Trek to Madhyamaheshwar Temple, known as Dwitiya Kedar (16 km one way from Ransi)",
+    "Early-morning climb to Budha Madhyamaheshwar for views of Chaukhamba, Kedarnath and Mandani peaks",
+    "Evening aarti at Madhyamaheshwar Temple",
+    "Devprayag Sangam, Dhari Devi Temple and Omkareshwar Temple in Ukhimath on the way",
+    "Homestay nights in Ransi and near the temple",
+    "Tempo Traveller from Delhi, 5 meals and a dedicated tour guide"
+  ],
+  "overview": "Madhyamaheshwar, known as Dwitiya Kedar or the second abode of Shiva, is a temple reached by a 16 km trek from the village of Ransi. This **2 Nights / 3 Days** group departure starts from Delhi: the group meets at the pickup point for a short briefing and leaves by Tempo Traveller between 8 PM and 9 PM for the overnight journey to Ransi.\n\nDay 1 is the drive via Rishikesh, with halts at Devprayag Sangam, Dhari Devi Temple and Omkareshwar Temple in Ukhimath, and a homestay night in Ransi. Day 2 is the trek to Madhyamaheshwar Temple: 6 km downhill to Goundhar and then a 10 km steep ascent, with the evening aarti and a homestay night near the temple. Day 3 starts with the 2 km climb to Budha Madhyamaheshwar, followed by the trek back to Ransi and the overnight drive to Delhi, arriving around 6-7 AM the next morning. Batches run from April to July. Prices start at ₹6,999 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Departure from Delhi to Ransi (overnight journey)",
+      "content": "Gather at the designated pickup point in Delhi.\nMeet the team captain and attend a short orientation about the trip.\nAfter the briefing, leave between 8 PM and 9 PM for the overnight journey to Ransi by Tempo Traveller."
+    },
+    {
+      "title": "En route sightseeing | Arrival in Ransi",
+      "content": "Reach Rishikesh in the morning and stop for breakfast.\nContinue towards Ransi, with halts at Devprayag Sangam and Dhari Devi Temple.\nVisit Omkareshwar Temple in Ukhimath, where the idols of Kedarnath Ji and Madhyamaheshwar Ji are kept after the temple gates close for winter.\nAfter darshan, drive on to Ransi and check in to the homestay.\nDinner and overnight stay in Ransi."
+    },
+    {
+      "title": "Trek to Madhyamaheshwar | Overnight stay near the temple",
+      "content": "Trek distance: 16 km one way.\nStart the trek at 5:00 AM after chai and bun.\nThe first 6 km are downhill to Goundhar (about 2 hours). Breakfast at Goundhar.\nContinue with a 10 km steep ascent (7-8 hours) to Madhyamaheshwar Temple.\nReach by evening and check in to a local homestay near the temple.\nAttend the evening aarti and take blessings at the temple.\nDinner and overnight stay at the homestay."
+    },
+    {
+      "title": "Budha Madhyamaheshwar trek | Return to Ransi and depart for Delhi",
+      "content": "Wake up at 4:00 AM and trek 2 km to Budha Madhyamaheshwar (a steep climb of about 1 hour).\nBudha Madhyamaheshwar is known for its wide Himalayan views, including Chaukhamba, Kedarnath and Mandani peaks.\nReturn to the homestay near the temple for breakfast.\nTrek down to Ransi (about 8 hours), with lunch at Goundhar on the way.\nFreshen up in shared rooms at Ransi, then depart for Delhi.\nArrive in Delhi early the next morning (6-7 AM)."
+    }
+  ],
+  "includes": [
+    "Accommodation for 2 nights: 1 night in Ransi and 1 night near Madhyamaheshwar Temple",
+    "5 meals: 2 breakfasts, 2 dinners and 1 lunch",
+    "Dedicated tour guide throughout the trip",
+    "All transfers to and from Delhi in a Tempo Traveller",
+    "All sightseeing mentioned in the itinerary"
+  ],
+  "excludes": [
+    "5% GST",
+    "Travel or medical insurance, rescue, evacuation, hospitalisation or any medical emergency expenses",
+    "Meals during the journey from Delhi to Ransi and back",
+    "Any lunch or meal not mentioned in the inclusions",
+    "Charges for porter, pony, palki, tips, laundry, camera fee, forest fee, entry fee and similar",
+    "Anything not mentioned in the inclusions and itinerary"
+  ],
+  "importantNotes": "- Stays near Madhyamaheshwar Temple are basic local homestays with 5-6 beds in one room, so that night is on a sharing basis only, with separate rooms for men and women.\n- Extra mattresses are provided for triple and quad sharing.\n- Day 2 is a 16 km trek one way, including a 10 km steep ascent of 7-8 hours, and Day 3 is about 8 hours of trekking back to Ransi.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "The trip starts from Delhi. The group gathers at the pickup point for a short briefing and the overnight journey to Ransi by Tempo Traveller starts between 8 PM and 9 PM. The exact pickup point and time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Madhyamaheshwar Trek cost?",
+      "a": "₹6,999 per person on quad sharing, ₹6,999 on triple sharing and ₹7,999 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "All transfers to and from Delhi in a Tempo Traveller, 2 nights of accommodation (1 night in Ransi and 1 night near Madhyamaheshwar Temple), 5 meals (2 breakfasts, 2 dinners and 1 lunch), a dedicated tour guide throughout and all sightseeing mentioned in the itinerary."
+    },
+    {
+      "q": "How long is the trek?",
+      "a": "The trek from Ransi to Madhyamaheshwar Temple is 16 km one way: the first 6 km are downhill to Goundhar (about 2 hours), followed by a 10 km steep ascent of 7-8 hours. On Day 3 there is a 2 km steep climb of about 1 hour to Budha Madhyamaheshwar, and the trek back down to Ransi takes about 8 hours."
+    },
+    {
+      "q": "Where do we stay?",
+      "a": "The first night is in a homestay in Ransi. The second night is in a basic local homestay near Madhyamaheshwar Temple, where rooms have 5-6 beds, so that night is on a sharing basis only, with separate rooms for men and women."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

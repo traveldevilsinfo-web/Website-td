@@ -1,0 +1,156 @@
+{
+  "category": "treks",
+  "destination": "uttarakhand",
+  "durationDays": 8,
+  "durationNights": 7,
+  "startLocation": "Dehradun",
+  "endLocation": "Sangla",
+  "thingsToCarry": [
+    "Non-skid, deep-treaded hiking shoes (1 pair)",
+    "Lightweight slippers or sandals (1 pair)",
+    "Personal toiletries kit (small towel, toilet paper, paper soap, bar soap, toothbrush, toothpaste, cold cream and similar items)",
+    "Track pants",
+    "Full-sleeve T-shirts (1 for every two days of trekking)",
+    "Undergarments (1 per day of trekking)",
+    "Rainwear (jacket and pants), raincoat and umbrella",
+    "Sun cap",
+    "Dry fruits, nuts and chocolate bars",
+    "Personal medicines, if any (consult your doctor before joining the trek)",
+    "Sunscreen lotion and lip balm",
+    "Plastic bags",
+    "Power bank",
+    "Camera"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "slug": "rupin-pass-trek",
+  "title": "Rupin Pass Trek",
+  "tags": [
+    "rupin-pass",
+    "dhaula",
+    "sangla",
+    "trek"
+  ],
+  "reportingPoint": "Dehradun. The exact meeting point and reporting time are shared once your booking is confirmed. The trek ends at Sangla on Day 8.",
+  "pickupPoints": [],
+  "basePrice": 16499,
+  "bookingAmount": 8300,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Standard Sharing",
+          "price": 16499,
+          "salePrice": null
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 17499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/rupin-pass-trek-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/rupin-pass-trek-2.jpg",
+    "/uploads/2026/10/rupin-pass-trek-3.jpg"
+  ],
+  "highlights": [
+    "Cross Rupin Pass at 15,250 ft",
+    "Views of the Kinnaur Kailash range from the pass",
+    "Kinnauri-style temple at Sewa village",
+    "Rupin waterfall views from the Saruwas Thatch campsite",
+    "Trail from Dhaula through Sewa, Jhaka and Dhanderas Thatch to Sangla",
+    "Camping, vegetarian meals, permits, trekking equipment and a certified trek leader"
+  ],
+  "overview": "Rupin Pass is a mountain pass in Himachal Pradesh at around 15,250 ft, and the trek to it starts from Dhaula in Uttarakhand and finishes at Sangla. This **7 Nights / 8 Days** trek is graded easy to moderate. It starts from Dehradun: you need to reach Dehradun on your own on Day 1 and travel on to Dhaula for the first night at the campsite.\n\nDay 2 is the 7 km trek from Dhaula to Sewa (6,300 ft) and Day 3 the 9 km trek to Jhaka (8,700 ft). Days 4 to 6 climb through Saruwas Thatch (11,150 ft) and Dhanderas Thatch (11,680 ft) to the Upper Waterfall camp (13,120 ft). Day 7 crosses Rupin Pass (15,250 ft) and descends to Ronti Gad, a 10 km day of about 11 hours. Day 8 is the 12 km descent to Sangla, where the trek ends. Camping, vegetarian meals on the trek, permits, trekking equipment and a trek leader are included. Batches run from May to September, with daily departures. Prices start at ₹16,499 per person (5% GST extra); dual sharing accommodation costs ₹1,000 extra per person.",
+  "itinerary": [
+    {
+      "title": "Arrival in Dehradun | Dehradun to Dhaula",
+      "content": "Arrive in Dehradun, for example by train from Delhi.\nTravel from Dehradun to Dhaula. One option is a bus from Dehradun to Naitwar, followed by a shared jeep ride to Dhaula village.\nOvernight stay at the campsite in Dhaula."
+    },
+    {
+      "title": "Trek from Dhaula to Sewa",
+      "content": "Altitude: 6,300 ft. Trek duration: 7 hours. Trek distance: 7 km.\nThe trek starts from a point just outside Dhaula.\nPass a few villages along the trail; after a while the Rupin River comes into view, flowing through a canyon about 500 ft below.\nWalk along the left side of the valley, past apple and apricot trees.\nStop at a small shop on the way for tea and light snacks.\nReach Sewa, a village a short distance above the bed of the Rupin River, with a small temple in the Kinnauri style.\nContinue along the trail to the stream near the village."
+    },
+    {
+      "title": "Trek from Sewa to Jhaka",
+      "content": "Altitude: 8,700 ft. Trek duration: 7 hours. Trek distance: 9 km.\nWalk along crop fields in the morning and enter the forest.\nReach a wooden bridge known as \"No Man's Place\" because it belongs to no state.\nContinue to Gosangu and on towards Kwar: cross the river on a bridge and take the track that leads up to the village.\nFrom Kwar, join the steeply climbing trail to Jiksun village, along the right bank of the river.\nAfter another hour of walking, reach Jhaka village and camp for the night."
+    },
+    {
+      "title": "Trek from Jhaka to Saruwas Thatch",
+      "content": "Altitude: 11,150 ft. Trek duration: 5 hours. Trek distance: 6 km.\nThe trail descends at first and becomes steeper and more difficult as it approaches a tributary of the main river.\nWalk through the forest to a snowfield.\nFollow the snow bridge into a rhododendron forest.\nA few more kilometres of walking bring you to the Saruwas Thatch campsite.\nOvernight at the campsite, with views of the Rupin waterfall."
+    },
+    {
+      "title": "Trek from Saruwas Thatch to Dhanderas Thatch",
+      "content": "Altitude: 11,680 ft. Trek duration: 4 hours. Trek distance: 5 km.\nWalk through maple and blue pine forest in the morning.\nCross the bridge over the river to move from the right side of the valley to the left.\nThe maple forest gives way to silver birch and rhododendron, and then to alpine meadows.\nIn the blooming season the meadows have wild flowers and blue poppies.\nReach the campsite for the overnight stay."
+    },
+    {
+      "title": "Dhanderas Thatch to Upper Waterfall camp",
+      "content": "Altitude: 13,120 ft. Trek duration: 2-3 hours.\nSet out for the Upper Waterfall camp after acclimatising at Dhanderas.\nCross patches of snow and fields of marigold flowers to reach a snow trail.\nAfter a short but steep ascent, reach the campsite and rest for the night."
+    },
+    {
+      "title": "Upper Waterfall camp to Ronti Gad via Rupin Pass",
+      "content": "Altitude: 15,250 ft. Trek duration: 11 hours. Trek distance: 10 km.\nThe trail gets narrower and steeper, and this is a harder day than the earlier ones.\nThe route passes through boulder sections; if there is snow on the ground, a rope is used for support.\nReach Rupin Pass, with views of the Kinnaur Kailash range.\nDescend to the alpine meadows and camp overnight at Ronti Gad."
+    },
+    {
+      "title": "Ronti Gad to Sangla via Sangla Kanda",
+      "content": "Altitude: 8,800 ft. Trek duration: 6 hours. Trek distance: 12 km.\nDescend towards Sangla, with views of the Sangla Valley.\nThe trail gets steeper as it drops towards Sangla, so walk carefully and at a comfortable pace.\nAbout an hour and a half of downhill walking brings a drop of more than 1,500 ft.\nThe trek ends on reaching Sangla.\nFrom Sangla you can stay on in the town or travel onwards to Shimla."
+    }
+  ],
+  "includes": [
+    "Camping stay during the trek",
+    "All meals during the trek (vegetarian)",
+    "Campfire at the camps (if available)",
+    "Trekking permit and forest campsite fees",
+    "Trekking equipment (tents, sleeping bags, ice axes, ropes, etc.)",
+    "Expert trek leader certified in basic/advanced mountaineering courses",
+    "Trek crew (guides, chefs, assistants, porters/mules)",
+    "Safety gear (first aid, medical kit, oxygen cylinders, stretcher, etc.)",
+    "Trek certificate of completion"
+  ],
+  "excludes": [
+    "5% GST",
+    "Backpack offloading fee of ₹300 per day per bag",
+    "Food on the way during the pick-up and drop journeys",
+    "Personal expenses",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- You need to reach Dehradun on your own on Day 1. The trek ends at Sangla on Day 8, and onward travel from Sangla is not part of the listed inclusions.\n- The trek is graded easy to moderate and reaches 15,250 ft at Rupin Pass. Day 7, the pass crossing, is a 10 km day of about 11 hours.\n- Backpack offloading costs ₹300 per day per bag.\n- Consult your doctor before joining the trek, and carry your own medicines.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where does the trek start and end?",
+      "a": "The trek starts from Dehradun on Day 1, with the first night at the campsite in Dhaula, and ends at Sangla on Day 8. You travel to Dehradun yourself, for example by train from Delhi, and go on to Dhaula from there; one option is a bus from Dehradun to Naitwar, followed by a shared jeep ride to Dhaula village. The exact meeting point and reporting time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Rupin Pass Trek cost?",
+      "a": "₹16,499 per person. Dual sharing accommodation is ₹1,000 extra per person, which makes it ₹17,499. 5% GST is extra."
+    },
+    {
+      "q": "How difficult is the trek and how high does it go?",
+      "a": "The trek is graded easy to moderate. The highest point is Rupin Pass at 15,250 ft, crossed on Day 7, which is a 10 km day of about 11 hours on a narrower, steeper trail."
+    },
+    {
+      "q": "How much trekking is there each day?",
+      "a": "Day 2 is 7 km (7 hours) to Sewa, Day 3 is 9 km (7 hours) to Jhaka, Day 4 is 6 km (5 hours) to Saruwas Thatch, Day 5 is 5 km (4 hours) to Dhanderas Thatch, Day 6 is 2-3 hours to the Upper Waterfall camp, Day 7 is 10 km (11 hours) over Rupin Pass to Ronti Gad and Day 8 is 12 km (6 hours) down to Sangla."
+    },
+    {
+      "q": "What is included?",
+      "a": "Camping during the trek, vegetarian meals on the trek, a campfire where available, trekking permit and forest campsite fees, trekking equipment (tents, sleeping bags, ice axes, ropes), a certified trek leader, a trek crew, safety gear and a trek certificate of completion. Backpack offloading (₹300 per day per bag) and food on the way during the pick-up and drop journeys are not included."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "Non-skid, deep-treaded hiking shoes, lightweight slippers or sandals, track pants, full-sleeve T-shirts, rainwear, a sun cap, sunscreen and lip balm, a toiletries kit, dry fruits and chocolate bars, a power bank and your personal medicines. Carry a valid government-approved photo ID as well. The full list is under Things To Pack."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    }
+  ]
+}

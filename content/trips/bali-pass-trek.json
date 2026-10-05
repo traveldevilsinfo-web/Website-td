@@ -1,0 +1,153 @@
+{
+  "category": "treks",
+  "destination": "uttarakhand",
+  "durationDays": 8,
+  "durationNights": 7,
+  "startLocation": "Dehradun",
+  "endLocation": "Dehradun",
+  "thingsToCarry": [
+    "Non-skid, deep-treaded hiking shoes (1 pair)",
+    "Lightweight slippers or sandals (1 pair)",
+    "Personal toiletries kit (small towel, toilet paper, paper soap, bar soap, toothbrush, toothpaste, cold cream and similar items)",
+    "Track pants",
+    "Full-sleeve T-shirts (1 for every two days of trekking)",
+    "Undergarments (1 per day of trekking)",
+    "Rainwear (jacket and pants), raincoat and umbrella",
+    "Sun cap",
+    "Dry fruits, nuts and chocolate bars",
+    "Personal medicines, if any (consult your doctor before joining the trek)",
+    "Sunscreen lotion and lip balm",
+    "Plastic bags",
+    "Power bank",
+    "Camera"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "slug": "bali-pass-trek",
+  "title": "Bali Pass Trek",
+  "tags": [
+    "bali-pass",
+    "sankri",
+    "har-ki-dun",
+    "trek"
+  ],
+  "reportingPoint": "Dehradun. The drive to Sankri leaves early in the morning on Day 1. The exact pickup point and time are shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 21999,
+  "bookingAmount": 11000,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Standard Sharing",
+          "price": 21999,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/bali-pass-trek-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/bali-pass-trek-2.jpg",
+    "/uploads/2026/10/bali-pass-trek-3.jpg"
+  ],
+  "highlights": [
+    "Cross Bali Pass (4,940 m), which links the Har Ki Dun valley with Yamunotri",
+    "Camps at Devsu Thach meadows and Ruinsara Tal",
+    "Views of Swargarohini, Kalanag and Bandarpoonch",
+    "Night at Odari, a natural rock shelter used by shepherds",
+    "Finish at Jan Ki Chatti, with an optional visit to the Yamunotri temple",
+    "Vegetarian meals, permits, trekking equipment and a certified trek leader"
+  ],
+  "overview": "Bali Pass, at 4,940 metres in Uttarakhand, links the Har Ki Dun valley with Yamunotri. The trail starts from Sankri and passes the Ruinsara valley, the Devsu Thach meadows and Ruinsara Tal before the pass. This **7 Nights / 8 Days** trek runs from Dehradun to Dehradun: you need to reach Dehradun on your own, and the group leaves early on Day 1 for the 220 km drive to Sankri. Batches run every Saturday and Sunday.\n\nDay 1 is the drive to Sankri and a hotel night. Day 2 is a ride to Taluka and the trek to Cheludgad. Day 3 reaches the Devsu Thach meadows and Day 4 reaches Ruinsara Tal. Day 5 is a harder day to Odari. Day 6 climbs to Bali Pass and descends, with roped sections, to Upper Damini. Day 7 descends to Jan Ki Chatti, and Day 8 is the drive back to Dehradun. Some sections need ropes and an ice axe, which are provided. Camping, vegetarian meals on the trek, permits, trekking equipment and a trek leader are included. Prices start at ₹21,999 per person (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Dehradun to Sankri (220 km drive)",
+      "content": "Leave Dehradun early in the morning.\nDrive 220 km to Sankri, the base camp for the trek, inside the Govind Wildlife Sanctuary.\nExplore the local market and the village after you arrive.\nOvernight stay in a pre-booked hotel in Sankri."
+    },
+    {
+      "title": "Sankri to Cheludgad via Taluka",
+      "content": "Ride from Sankri to Taluka, where the trail begins.\nTrek to Cheludgad through forest, with views of snow-capped peaks.\nThe trail is a mix of flat stretches and steep climbs through meadows and woodland."
+    },
+    {
+      "title": "Cheludgad to Devsu Thach",
+      "content": "Trek on moderate trails with river crossings and forest paths.\nReach the meadows of Devsu Thach.\nCamp for the night at Devsu Thach."
+    },
+    {
+      "title": "Devsu Thach to Ruinsara Tal",
+      "content": "Trek down to the Ruinsara River.\nContinue through gorges and meadows towards Ruinsara Lake.\nCamp near Ruinsara Tal, which is surrounded by alpine meadows."
+    },
+    {
+      "title": "Ruinsara Tal to Odari",
+      "content": "A challenging day over mixed terrain, including river crossings and avalanche zones.\nViews of the Swargarohini range along the way.\nReach Odari, a natural shelter used by shepherds, set among ice fields."
+    },
+    {
+      "title": "Odari to Bali Pass | Descend to Upper Damini",
+      "content": "The climb to Bali Pass is the most strenuous part of the trek, over snowy paths and ice fields.\nFrom the pass, take in 360-degree views of the surrounding peaks and valleys.\nDescend to Upper Damini. The descent includes roped sections."
+    },
+    {
+      "title": "Upper Damini to Jan Ki Chatti",
+      "content": "Descend through the forest to Lower Damini.\nJoin the old Yamunotri road.\nYou can visit the Yamunotri temple or continue directly to Jan Ki Chatti.\nThe trekking part of the trip ends at Jan Ki Chatti."
+    },
+    {
+      "title": "Jan Ki Chatti to Dehradun",
+      "content": "Drive from Jan Ki Chatti back to Dehradun.\nThe trip ends in Dehradun."
+    }
+  ],
+  "includes": [
+    "Camping stay during the trek",
+    "Hotel stay in Sankri on Day 1",
+    "Transport from Dehradun to Sankri and from Jan Ki Chatti to Dehradun",
+    "Vegetarian meals on the trek",
+    "Campfire at the camps (if available)",
+    "Trekking permit and campsite fees",
+    "Trekking equipment (tents, sleeping bags, ice axes, ropes, etc.)",
+    "Expert trek leader certified in basic/advanced mountaineering courses",
+    "Trek crew (guides, chefs, assistants, porters/mules)",
+    "Safety gear (first aid, medical kit, oxygen cylinders, stretcher, etc.)",
+    "Trek certificate of completion"
+  ],
+  "excludes": [
+    "5% GST",
+    "Backpack offloading fee of ₹250 per day per bag",
+    "Food on the way during the pick-up and drop drives",
+    "Personal expenses",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- This trek runs Dehradun to Dehradun. You travel to and from Dehradun on your own.\n- The climb to Bali Pass is difficult. Some sections need ropes and an ice axe, and parts of the route cross boulder fields, avalanche zones and areas prone to landslides.\n- Backpack offloading costs ₹250 per day per bag.\n- Consult your doctor before joining the trek, and carry your own medicines.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where does the trek start, and how do I reach?",
+      "a": "The trek runs Dehradun to Dehradun, so you travel to and from Dehradun yourself. On Day 1 the group leaves Dehradun early in the morning for the 220 km drive to Sankri, the base camp. The exact pickup point and time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Bali Pass Trek cost?",
+      "a": "₹21,999 per person. 5% GST is extra."
+    },
+    {
+      "q": "How difficult is the trek?",
+      "a": "The climb to the top of Bali Pass is difficult, and Day 6 is the most strenuous day, over snowy paths and ice fields with roped sections on the descent. Day 5 to Odari is also a challenging day with river crossings and avalanche zones. Some parts of the route need ropes and an ice axe."
+    },
+    {
+      "q": "How high is Bali Pass?",
+      "a": "Bali Pass is at an elevation of 4,940 metres."
+    },
+    {
+      "q": "What is included?",
+      "a": "Camping during the trek, a hotel night in Sankri, vegetarian meals on the trek, a campfire where available, trekking permit and campsite fees, trekking equipment (tents, sleeping bags, ice axes, ropes), a certified trek leader, a trek crew, safety gear and a trek certificate of completion. Food during the drives and backpack offloading (₹250 per day per bag) are not included."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "Non-skid, deep-treaded hiking shoes, slippers or sandals, track pants, full-sleeve T-shirts, rainwear, a sun cap, sunscreen and lip balm, a toiletries kit, dry fruits and chocolate bars, a power bank and your personal medicines. Carry a valid government-approved photo ID as well. The full list is under Things To Pack."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    }
+  ]
+}

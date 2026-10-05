@@ -1,0 +1,161 @@
+{
+  "category": "treks",
+  "destination": "uttarakhand",
+  "durationDays": 5,
+  "durationNights": 4,
+  "startLocation": "Dehradun",
+  "endLocation": "Dehradun",
+  "thingsToCarry": [
+    "Backpack",
+    "Trekking shoes (1 pair)",
+    "Trekking pole",
+    "LED torch",
+    "Water bottle (one litre)",
+    "Lunch box",
+    "Basic medications (or prescribed ones, if any)",
+    "Trekking jacket (1)",
+    "Warm layers",
+    "Two trek pants",
+    "Full-sleeve dry-fit T-shirts",
+    "Thermals (1 pair)",
+    "Sunglasses",
+    "Sunscreen lotion (SPF 50/70)",
+    "Lip balm (SPF 30)",
+    "Synthetic hand gloves",
+    "Woollen cap",
+    "Three pairs of socks",
+    "Raincoat or poncho (a must)"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 4,
+    "weeks": 12,
+    "seats": 20
+  },
+  "slug": "kedarkantha-trek",
+  "title": "Kedarkantha Trek",
+  "tags": [
+    "kedarkantha",
+    "sankri",
+    "winter-trek",
+    "trek"
+  ],
+  "reportingPoint": "Dehradun. Transport is by shared taxi from Dehradun to Sankri on Day 1. The exact pickup point and time are shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 5499,
+  "bookingAmount": 2800,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Standard Sharing",
+          "price": 5499,
+          "salePrice": null
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 6499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/kedarkantha-trek-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/kedarkantha-trek-2.jpg",
+    "/uploads/2026/10/kedarkantha-trek-3.jpg"
+  ],
+  "highlights": [
+    "Sunrise climb to the Kedarkantha summit (12,500 ft / 3,810 m)",
+    "Camping at Juda Ka Talab and Kedarkantha Base Camp",
+    "Views of Swargarohini, Bandarpoonch and Black Peak",
+    "Homestay night in Sankri village",
+    "Trail through pine and maple forest, meadows and rhododendron trees",
+    "Vegetarian meals, permits, camping and technical equipment, and certified trek leaders"
+  ],
+  "overview": "Kedarkantha is a well-known winter trek in the Garhwal Himalayas of Uttarakhand, with snow on the trail from December to April and a summit at 12,500 ft (3,810 m). It starts from Sankri village and is graded easy to moderate. This **4 Nights / 5 Days** trek runs from Dehradun to Dehradun by shared taxi: you need to reach Dehradun on your own, and the group drives about 200 km to Sankri on Day 1. Batches run every Friday, and every day from November to February.\n\nDay 1 is the drive to Sankri and a homestay night. Day 2 is a 4 km trek to Juda Ka Talab (8,900 ft). Day 3 is a 4 km trek to Kedarkantha Base Camp (11,200 ft). Day 4 starts around 3-4 AM for the summit at sunrise, then descends to Juda Ka Talab. Day 5 is the walk down to Sankri and the drive back to Dehradun by evening. Transport from Dehradun, the homestay and tents, vegetarian meals on the trek, permits, equipment and trek leaders are included. Prices start at ₹5,499 per person (5% GST extra); dual sharing accommodation costs ₹1,000 extra per person.",
+  "itinerary": [
+    {
+      "title": "Dehradun to Sankri (about 200 km drive)",
+      "content": "Distance: about 200 km. Travel time: 7-8 hours by car.\nReach Sankri and check in to the homestay.\nSpend the evening around the village and prepare for the trek.\nDinner and overnight stay in Sankri."
+    },
+    {
+      "title": "Sankri to Juda Ka Talab camp",
+      "content": "Altitude: about 8,900 ft. Trek distance: about 4 km. Trek duration: 3-4 hours.\nAfter breakfast, start the trek from Sankri through pine and maple forest.\nThe trail has gradual ascents and passes through meadows.\nReach Juda Ka Talab, a high-altitude lake surrounded by forest.\nDinner and overnight stay in tents at Juda Ka Talab."
+    },
+    {
+      "title": "Juda Ka Talab to Kedarkantha Base Camp",
+      "content": "Altitude: about 11,200 ft. Trek distance: about 4 km. Trek duration: 3-4 hours.\nStart after breakfast towards Kedarkantha Base Camp.\nThe trail has steep ascents and opens to views of snow-covered peaks.\nWalk through snow-covered meadows and rhododendron trees.\nReach Kedarkantha Base Camp by afternoon.\nSpend the evening acclimatising, with views of the surrounding peaks.\nDinner and overnight stay in tents at the base camp."
+    },
+    {
+      "title": "Summit climb (12,500 ft) | Return to Juda Ka Talab",
+      "content": "Altitude: summit at about 12,500 ft. Trek distance: about 6 km round trip (3 km up and 3 km down). Trek duration: 6-7 hours.\nStart early, around 3-4 AM, to reach the summit for sunrise.\nThe trail to the summit is steep, with 360-degree views of the Himalayan ranges from the top.\nSpend some time at the summit, then descend to Kedarkantha Base Camp for lunch.\nContinue the descent to Juda Ka Talab.\nDinner and overnight stay in tents at Juda Ka Talab."
+    },
+    {
+      "title": "Juda Ka Talab to Sankri | Drive to Dehradun",
+      "content": "Trek distance: about 4 km. Trek duration: 2-3 hours.\nAfter breakfast, trek downhill from Juda Ka Talab to Sankri.\nReach Kotgaon/Sankri by mid-morning, where the vehicle will be waiting.\nDrive back to Dehradun and arrive by evening."
+    }
+  ],
+  "includes": [
+    "Transport from Dehradun to Dehradun by shared taxi",
+    "Forest permits and entrance fees",
+    "Stay in a homestay or hotel (shared) and in tents on triple sharing",
+    "Vegetarian meals throughout the trek",
+    "Camping equipment: dome tents, sleeping bags, liners and toilet tents",
+    "Trek support team: helper and kitchen team",
+    "Emergency oxygen cylinder and first aid kit",
+    "Technical equipment: crampons, helmet, ice axe, carabiner, rope, harness and shovel",
+    "Certified trek leaders and guides"
+  ],
+  "excludes": [
+    "5% GST",
+    "Personal insurance and medicine kit",
+    "Personal expenses",
+    "Meals during transit",
+    "Mule or porter charges for personal luggage",
+    "Emergency evacuation charges",
+    "Double sharing rooms",
+    "Rental gear",
+    "Personal transport"
+  ],
+  "importantNotes": "- This trek runs Dehradun to Dehradun. You travel to and from Dehradun on your own.\n- The summit day starts around 3-4 AM and takes 6-7 hours before the further descent to Juda Ka Talab.\n- A raincoat or poncho is a must.\n- Mule or porter charges for personal luggage and emergency evacuation charges are extra.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where does the trek start, and how do I reach?",
+      "a": "The trek starts from Sankri village, and transport is included from Dehradun to Dehradun by shared taxi. You travel to and from Dehradun yourself. On Day 1 the drive to Sankri is about 200 km and takes 7-8 hours. The exact pickup point and time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Kedarkantha Trek cost?",
+      "a": "₹5,499 per person. Dual sharing accommodation is ₹1,000 extra per person, which makes it ₹6,499. 5% GST is extra."
+    },
+    {
+      "q": "How difficult is the trek, and is it suitable for beginners?",
+      "a": "The trek is graded easy to moderate and is beginner-friendly. The trail to the summit on Day 4 is steep, and that day starts around 3-4 AM."
+    },
+    {
+      "q": "How high is the summit, and how long are the trek days?",
+      "a": "The maximum altitude is 12,500 ft (3,810 m) at the Kedarkantha summit. Days 2 and 3 are about 4 km each in 3-4 hours, to Juda Ka Talab (8,900 ft) and Kedarkantha Base Camp (11,200 ft). The summit climb is about 6 km round trip in 6-7 hours, and the last day is about 4 km downhill in 2-3 hours."
+    },
+    {
+      "q": "What is included?",
+      "a": "Shared taxi transport from Dehradun to Dehradun, a shared homestay or hotel in Sankri, tents on triple sharing, vegetarian meals throughout the trek, forest permits and entrance fees, camping equipment, technical equipment such as crampons, helmet, ice axe and rope, an emergency oxygen cylinder and first aid kit, a helper and kitchen team, and certified trek leaders and guides. Meals during transit are not included."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A backpack, trekking shoes, a trekking pole, an LED torch, a one-litre water bottle, a lunch box, a trekking jacket, warm layers, thermals, two trek pants, full-sleeve dry-fit T-shirts, gloves, a woollen cap, three pairs of socks, sunglasses, sunscreen, lip balm and your medicines. A raincoat or poncho is a must. Carry a valid government-approved photo ID as well."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    }
+  ]
+}

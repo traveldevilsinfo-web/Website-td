@@ -1,0 +1,153 @@
+{
+  "category": "treks",
+  "destination": "uttarakhand",
+  "durationDays": 6,
+  "durationNights": 5,
+  "startLocation": "Rishikesh",
+  "endLocation": "Rishikesh",
+  "thingsToCarry": [
+    "Non-skid, deep-treaded hiking shoes (1 pair)",
+    "Lightweight slippers or sandals (1 pair)",
+    "Personal toiletries kit (small towel, toilet paper, paper soap, bar soap, toothbrush, toothpaste, cold cream and similar items)",
+    "Track pants",
+    "Full-sleeve T-shirts (1 for every two days of trekking)",
+    "Undergarments (1 per day of trekking)",
+    "Rainwear (jacket and pants), raincoat and umbrella",
+    "Sun cap",
+    "Dry fruits, nuts and chocolate bars",
+    "Personal medicines, if any (consult your doctor before joining the trek)",
+    "Sunscreen lotion and lip balm",
+    "Plastic bags",
+    "Power bank",
+    "Camera"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "slug": "kuari-pass-trek",
+  "title": "Kuari Pass Trek",
+  "tags": [
+    "kuari-pass",
+    "joshimath",
+    "trek"
+  ],
+  "reportingPoint": "Rishikesh Railway Station. Reporting time: 6:30 AM to 7:30 AM on Day 1. Drop at the same point between 6:30 PM and 7:30 PM on Day 6. Please reach Rishikesh a day before.",
+  "pickupPoints": [
+    "Rishikesh Railway Station"
+  ],
+  "basePrice": 9999,
+  "bookingAmount": 5000,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Standard Sharing",
+          "price": 9999,
+          "salePrice": null
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 10999,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/kuari-pass-trek-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/kuari-pass-trek-2.jpg",
+    "/uploads/2026/10/kuari-pass-trek-3.jpg"
+  ],
+  "highlights": [
+    "Trek to Kuari Pass in the Chamoli district of the Garhwal Himalayas",
+    "Walk through the Auli and Gurson meadows",
+    "Views of Nanda Devi, Trishul, Chaukhamba, Neelkanth and Dronagiri",
+    "Camps at Gulling, Khullara and Tali Top",
+    "Two lodge nights in Joshimath",
+    "All 3 meals plus snacks, permits, trekking equipment and a certified trek leader"
+  ],
+  "overview": "Kuari Pass is in the Chamoli district of the Garhwal Himalayas, and the route is also known as the Lord Curzon trail. The trek goes from Joshimath through the Auli and Gurson meadows, oak and deodar forest and snow to the pass. This **5 Nights / 6 Days** trek starts and ends at Rishikesh Railway Station: you need to reach Rishikesh on your own, ideally a day before, and reporting is between 6:30 AM and 7:30 AM on Day 1. Batches run from May to September, with departures every day.\n\nDay 1 is the 300 km drive to Joshimath and a lodge night. Day 2 is a short drive and a 6-7 km trek to Gulling campsite. Day 3 is a 6-7 km trek to Khullara. Day 4 climbs to Kuari Pass and walks down to camp. Day 5 treks down to Dhak and drives to Joshimath, and Day 6 is the drive back to Rishikesh. Transfers, camping, meals, permits, trekking equipment and a trek leader are included. Prices start at ₹9,999 per person (5% GST extra); dual sharing accommodation costs ₹1,000 extra per person.",
+  "itinerary": [
+    {
+      "title": "Drive to Joshimath (about 300 km)",
+      "content": "Distance: approximately 300 km. Drive time: about 8 to 9 hours.\nMeet at the pickup point by 7:00 AM.\nDrive to Joshimath past Devprayag and Rudraprayag, with the Ganga and Alaknanda rivers alongside the road.\nOvernight stay in a lodge at Joshimath."
+    },
+    {
+      "title": "Joshimath to Gulling | Trek",
+      "content": "Trek distance: about 6-7 km. Trek duration: about 5-6 hours.\nAfter an early breakfast, take a short drive to the start of the trek.\nHike through the green slopes of Gulling and across the Auli meadows.\nPass through the woods, with views of Nanda Devi and other peaks, before the open meadows of Gurson.\nDescend through oak, chestnut, deodar and maple trees to the Gulling campsite.\nOvernight stay in tents."
+    },
+    {
+      "title": "Gulling to Khullara | Trek",
+      "content": "Trek distance: approximately 6-7 km. Trek duration: approximately 4-5 hours.\nAfter breakfast, start the climb to Khullara through sheep pastures.\nFrom Khullara you can see Chaukhamba, Kedarnath, Neelkanth, Dronagiri, Haathi-Ghodi and other mountains.\nOvernight stay in tents."
+    },
+    {
+      "title": "Khullara to Kuari Pass and Tali Top | Trek",
+      "content": "Trek distance: around 7-8 km. Trek duration: around 7-8 hours.\nBreakfast at 5:00 AM, then start the climb over steep, rocky terrain towards Kuari Pass.\nWalk through deep snow on the way up, with views of Nanda Devi and Trishul.\nAfter time at the pass, walk down to the camp.\nIf you reach the base camp early, you can trek down to the Tali Top camp."
+    },
+    {
+      "title": "Tali Top to Dhak | Drive to Joshimath",
+      "content": "After breakfast, hike down through small villages and dense thickets to Dhak, on the road that connects Joshimath and the Niti-Malari valley.\nStop at Tugasi and Kharsi to learn about the local culture.\nDrive from Dhak to Joshimath.\nHot dinner, a hot shower and an overnight stay in a lodge at Joshimath."
+    },
+    {
+      "title": "Joshimath to Rishikesh by road",
+      "content": "Leave Joshimath at 7:00 AM.\nDrive to Rishikesh, where the trek ends.\nDrop between 6:30 PM and 7:30 PM (timings can change with weather and road conditions)."
+    }
+  ],
+  "includes": [
+    "Pick-up and drop transfers",
+    "Camping stay during the trek",
+    "Dome tent on triple sharing or alpine tent on quad sharing",
+    "Campfire at the camps (if available)",
+    "All 3 meals plus snacks",
+    "Trekking permit, forest permit and campsite fees",
+    "Trekking equipment (tents, sleeping bags, ice axes, ropes, etc.)",
+    "Expert trek leader certified in basic/advanced mountaineering courses",
+    "Trek crew (guides, chefs, assistants, porters/mules)",
+    "Safety gear (first aid, medical kit, oxygen cylinders, stretcher, etc.)",
+    "Trek certificate of completion"
+  ],
+  "excludes": [
+    "5% GST",
+    "Mule offloading fee of ₹500 per day for a bag weighing up to 10 kg",
+    "Trek insurance (₹3,200 per person)",
+    "Single or double sharing tent (extra cost)",
+    "Food on the way during the pick-up and drop drives",
+    "Personal expenses",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- The meeting and drop point is Rishikesh Railway Station. Please reach Rishikesh a day before to avoid any delays.\n- Reporting and drop timings can change with weather and road conditions.\n- Mule offloading costs ₹500 per day for a bag weighing up to 10 kg.\n- Consult your doctor before joining the trek, and carry your own medicines.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trek start?",
+      "a": "The meeting point is Rishikesh Railway Station. Reporting time is 6:30 AM to 7:30 AM on Day 1, and the drop on Day 6 is between 6:30 PM and 7:30 PM. Timings can change with weather and road conditions."
+    },
+    {
+      "q": "Do I need to reach Rishikesh on my own?",
+      "a": "Yes. You travel to and from the meeting point yourself. Please reach Rishikesh a day before to avoid any delays."
+    },
+    {
+      "q": "How much does the Kuari Pass Trek cost?",
+      "a": "₹9,999 per person. Dual sharing accommodation is ₹1,000 extra per person, which makes it ₹10,999. 5% GST is extra."
+    },
+    {
+      "q": "How long are the trek days?",
+      "a": "Day 2 is about 6-7 km in 5-6 hours to Gulling. Day 3 is about 6-7 km in 4-5 hours to Khullara. Day 4, the pass day, is around 7-8 km in 7-8 hours and starts with a 5:00 AM breakfast. Day 5 is the walk down to Dhak, followed by the drive to Joshimath."
+    },
+    {
+      "q": "What is included?",
+      "a": "Pick-up and drop transfers, camping in dome tents (triple sharing) or alpine tents (quad sharing), lodge nights in Joshimath, all 3 meals plus snacks, trekking and forest permits, campsite fees, trekking equipment, a certified trek leader, a trek crew, safety gear and a trek certificate of completion. Trek insurance (₹3,200 per person) and mule offloading (₹500 per day) are not included."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "Non-skid, deep-treaded hiking shoes, slippers or sandals, track pants, full-sleeve T-shirts, rainwear, a sun cap, sunscreen and lip balm, a toiletries kit, dry fruits and chocolate bars, a power bank and your personal medicines. Carry a valid government-approved photo ID as well. The full list is under Things To Pack."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    }
+  ]
+}

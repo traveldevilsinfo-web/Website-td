@@ -1,0 +1,162 @@
+{
+  "category": "treks",
+  "destination": "himachal-pradesh",
+  "durationDays": 5,
+  "durationNights": 4,
+  "startLocation": "Manali",
+  "endLocation": "Manali",
+  "thingsToCarry": [
+    "Non-skid, deep-treaded hiking shoes (1 pair)",
+    "Lightweight slippers or sandals (1 pair)",
+    "Personal toiletries kit (small towel, toilet paper, paper soap, bar soap, toothbrush, toothpaste, cold cream and similar items)",
+    "Track pants",
+    "Full-sleeve T-shirts (1 for every two days of trekking)",
+    "Undergarments (1 per day of trekking)",
+    "Rainwear (jacket and pants), raincoat and umbrella",
+    "Sun cap",
+    "Dry fruits, nuts and chocolate bars",
+    "Personal medicines, if any (consult your doctor before joining the trek)",
+    "Sunscreen lotion and lip balm",
+    "Plastic bags",
+    "Power bank",
+    "Camera"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "slug": "hampta-pass-trek",
+  "title": "Hampta Pass Trek",
+  "tags": [
+    "hampta-pass",
+    "manali",
+    "chandratal",
+    "trek"
+  ],
+  "reportingPoint": "Manali. Pickup is arranged between 6:00 AM and 8:00 AM on Day 1. The exact pickup point is shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 6499,
+  "bookingAmount": 3300,
+  "pricing": [
+    {
+      "name": "From Manali",
+      "tiers": [
+        {
+          "label": "Standard Sharing",
+          "price": 6499,
+          "salePrice": null
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 7499,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "From Delhi",
+      "tiers": [
+        {
+          "label": "Standard Sharing",
+          "price": 9499,
+          "salePrice": null
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 10499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/hampta-pass-trek-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/hampta-pass-trek-2.jpg",
+    "/uploads/2026/10/hampta-pass-trek-3.jpg"
+  ],
+  "highlights": [
+    "Cross Hampta Pass (14,100 ft / 4,298 m)",
+    "Camps at Chika, Balu Ka Ghera, Sia Goru and Chatru",
+    "Visit to Chandra Tal, if road and weather conditions permit",
+    "Views of Indrasan Peak and its glacier from the pass",
+    "A route that goes from the pine forests near Manali to the dry landscape of Lahaul and Spiti",
+    "All 3 meals plus snacks, permits, trekking equipment and a certified trek leader"
+  ],
+  "overview": "The Hampta Pass trek starts in the pine forests near Manali and ends in the dry, desert-like landscape on the Spiti side, crossing the pass at 14,100 ft (4,298 m). From Manali it is a **4 Nights / 5 Days** trek, Manali to Manali. On the Manali package you reach Manali on your own, and pickup is arranged between 6:00 AM and 8:00 AM on Day 1. A package from Delhi is also offered. Batches run from May to September, with departures every day.\n\nDay 1 is the 16 km drive to Jobra and a 2 km trek to Chika campsite. Day 2 is the trek to Balu Ka Ghera. Day 3 crosses Hampta Pass and descends to Sia Goru. Day 4 descends to Chatru, with a visit to Chandra Tal if road and weather conditions permit. Day 5 is the 85 km drive back to Manali. Transfers from Manali, camping, meals, permits, trekking equipment and a trek leader are included. Prices start at ₹6,499 per person from Manali and ₹9,499 from Delhi (5% GST extra); dual sharing accommodation costs ₹1,000 extra per person.",
+  "itinerary": [
+    {
+      "title": "Manali to Jobra by road | Trek to Chika",
+      "content": "Altitude: Manali 6,730 ft / 2,050 m, Jobra 9,800 ft / 2,987 m, Chika 10,100 ft / 3,078 m.\nAltitude gain: 3,070 ft / 937 m from Manali to Jobra and 300 ft / 91 m from Jobra to Chika.\nDistance: about 16 km by road from Manali to Jobra, then a 2 km trek to Chika. Total time: 4-5 hours including the drive.\nTrek grade: easy to moderate, a gradual ascent suitable for beginners and first-time trekkers.\nPickup from Manali between 6:00 AM and 8:00 AM.\nDrive to Jobra past forests and apple orchards.\nTrek from Jobra through pine forest, over wooden bridges and across open meadows.\nReach Chika campsite beside the Rani Nallah stream.\nDinner and overnight stay at the campsite."
+    },
+    {
+      "title": "Chika to Balu Ka Ghera",
+      "content": "Altitude: Chika 10,100 ft / 3,078 m, Balu Ka Ghera 11,900 ft / 3,627 m. Altitude gain: 1,800 ft / 549 m.\nTrek distance: 8.5 km. Trek duration: around 6 hours.\nTrek grade: gradual to moderate.\nAfter breakfast, start a mild hike that runs through forest for most of the way.\nThe Dhauladhar range and snow-capped peaks come into view as you climb.\nReach the meadows at Balu Ka Ghera and pitch tents for the night.\nMeals: breakfast, lunch and dinner."
+    },
+    {
+      "title": "Balu Ka Ghera to Sia Goru over Hampta Pass",
+      "content": "Altitude: Balu Ka Ghera 11,900 ft / 3,627 m, Hampta Pass 14,100 ft / 4,298 m, Sia Goru 12,900 ft / 3,932 m.\nAltitude gain: 2,200 ft / 662 m from Balu Ka Ghera to Hampta Pass, then a 1,200 ft / 366 m descent to Sia Goru.\nTrek distance: 7 km. Trek duration: approximately 10 hours.\nTrek grade: moderate to difficult.\nClimb to Hampta Pass, with views of Indrasan Peak and its glacier.\nIt is usually windy and cold at the top, so the group doesn't stay long.\nFrom the crest, look out over the barren landscape of Lahaul and Spiti.\nDescend to the Sia Goru campsite in about 2 hours. The path is slippery and rocky, so go carefully; the descent is hard on the knees.\nMeals: breakfast, lunch and dinner. Overnight stay at the campsite."
+    },
+    {
+      "title": "Sia Goru to Chatru | Chandra Tal visit",
+      "content": "Trek duration: 6 to 7 hours.\nTrek from Sia Goru to Chatru, a relatively easy descent through the Hampta Valley.\nThe Pir Panjal range is ahead of you until you reach the Chatru campsite, with wildflowers and small streams along the path.\nChatru is a junction on the routes to Rohtang Pass, Hampta Pass and Spiti.\nIf road and weather conditions permit, travel from Chatru to Chandra Tal.\nAfter time at the lake, return to Chatru for the night.\nMeals: breakfast, lunch and dinner. Overnight stay at the campsite."
+    },
+    {
+      "title": "Chatru to Manali",
+      "content": "Altitude: Chatru 11,000 ft / 3,353 m, Manali 6,730 ft / 2,050 m. Altitude difference: 4,270 ft / 1,303 m.\nDistance: 85 km by road. Time taken: approximately 4-7 hours.\nDrive from the Chatru campsite back to Manali.\nReach Manali late in the afternoon, where the trek ends.\nMeals: breakfast only. Lunch on the way is not included."
+    }
+  ],
+  "includes": [
+    "Pick-up and drop transfers from Manali to Manali",
+    "Camping stay during the trek",
+    "Dome tent on triple sharing or alpine tent on quad sharing",
+    "Campfire at the camps (if available)",
+    "All 3 meals plus snacks",
+    "Trekking permit, forest permit and campsite fees",
+    "Trekking equipment (tents, sleeping bags, ice axes, ropes, etc.)",
+    "Expert trek leader certified in basic/advanced mountaineering courses",
+    "Trek crew (guides, chefs, assistants, porters/mules)",
+    "Safety gear (first aid, medical kit, oxygen cylinders, stretcher, etc.)",
+    "Trek certificate of completion"
+  ],
+  "excludes": [
+    "5% GST",
+    "Mule offloading fee of ₹400 per day for a bag weighing up to 10 kg",
+    "Single or double sharing tent (extra cost)",
+    "Food on the way during the pick-up and drop drives",
+    "Personal expenses",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- On the Manali package you travel to and from Manali on your own. Pickup on Day 1 is between 6:00 AM and 8:00 AM.\n- The Chandra Tal visit on Day 4 depends on road and weather conditions.\n- Day 3, the pass crossing, is graded moderate to difficult and takes about 10 hours. The descent to Sia Goru is slippery and rocky.\n- Mule offloading costs ₹400 per day for a bag weighing up to 10 kg.\n- Trek insurance is listed at ₹320 per person.\n- Consult your doctor before joining the trek, and carry your own medicines.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where does the trek start, and how do I reach?",
+      "a": "The trek runs Manali to Manali. On the Manali package you reach Manali on your own, and pickup is arranged from Manali between 6:00 AM and 8:00 AM on Day 1. The exact pickup point is shared once your booking is confirmed. A package from Delhi is also available."
+    },
+    {
+      "q": "How much does the Hampta Pass Trek cost?",
+      "a": "From Manali it is ₹6,499 per person, and from Delhi it is ₹9,499 per person. Dual sharing accommodation is ₹1,000 extra per person, which makes it ₹7,499 from Manali and ₹10,499 from Delhi. 5% GST is extra."
+    },
+    {
+      "q": "How difficult is the trek?",
+      "a": "Day 1 from Jobra to Chika is easy to moderate and suitable for beginners and first-time trekkers. Day 2 to Balu Ka Ghera is gradual to moderate. Day 3, the pass crossing, is moderate to difficult: 7 km in approximately 10 hours."
+    },
+    {
+      "q": "What is the highest point?",
+      "a": "Hampta Pass, at 14,100 ft / 4,298 m. The camps are at Chika (10,100 ft), Balu Ka Ghera (11,900 ft), Sia Goru (12,900 ft) and Chatru (11,000 ft)."
+    },
+    {
+      "q": "Is Chandra Tal included?",
+      "a": "The plan for Day 4 is to travel from Chatru to Chandra Tal and return to Chatru for the night. This happens only if road and weather conditions permit."
+    },
+    {
+      "q": "What is included?",
+      "a": "Pick-up and drop transfers from Manali to Manali, camping in dome tents (triple sharing) or alpine tents (quad sharing), all 3 meals plus snacks, trekking and forest permits, campsite fees, trekking equipment, a certified trek leader, a trek crew, safety gear and a trek certificate of completion. Day 1 has dinner only and Day 5 has breakfast only."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    }
+  ]
+}
