@@ -18,6 +18,8 @@ const IN = "/backpacking-trips/india", WK = "/weekend-getaways/india", INTL = "/
 const oldSite: [string, string][] = [
   // trips: /trips/:slug redirects on to each trip's canonical URL
   ["/trip/chakrata-1-nights-2-days", "/trips/chakrata"],
+  ["/trip/leh-to-leh", "/biking-trips/india/ladakh/leh-to-leh-turtuk-6n7d"],
+  ["/backpacking-trips/india/ladakh/leh-to-leh", "/biking-trips/india/ladakh/leh-to-leh-turtuk-6n7d"],
   ["/trip/meghalya", "/trips/meghalaya"],
   ["/trip/jibhi", "/trips/jibhi-tirthan"],
   ["/trip/:slug", "/trips/:slug"],
@@ -88,6 +90,8 @@ const nextConfig: NextConfig = {
       // Old WordPress corporate URL (traveldevils.in/corporate-trip/) and the draft CMS page both land on the corporate page.
       { source: "/corporate-trip", destination: "/corporate-trips", permanent: true },
       { source: "/corporate-program", destination: "/corporate-trips", permanent: true },
+      // Chopta Tungnath moved from Weekend Getaways to Himalayan Treks (Oct 2026).
+      { source: "/weekend-getaways/india/uttarakhand/chopta-tungnath", destination: "/treks/india/uttarakhand/chopta-tungnath", permanent: true },
       ...oldSite.map(([source, destination]) => ({ source, destination, permanent: true })),
     ];
   },

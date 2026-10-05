@@ -85,7 +85,7 @@ export default async function Home() {
             <Link key={cat.slug} href={`/${cat.slug}`} className="press rounded-full bg-surface px-5 py-2.5 text-sm font-extrabold hover:bg-line">{cat.name}</Link>
           ))}
           <Link href="/upcoming-trips" className="press rounded-full bg-surface px-5 py-2.5 text-sm font-extrabold hover:bg-line">Upcoming</Link>
-          {Object.entries(COLLECTIONS).map(([slug, c]) => (
+          {Object.entries(COLLECTIONS).filter(([, c]) => trips.some((t) => (c.tag ? t.tags.includes(c.tag) : c.sale && t.salePrice != null))).map(([slug, c]) => (
             <Link key={slug} href={`/${slug}`} className="press rounded-full bg-surface px-5 py-2.5 text-sm font-extrabold hover:bg-line">{c.title}</Link>
           ))}
         </div>

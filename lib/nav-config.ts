@@ -57,53 +57,104 @@ export type NavItemConfig = NavConfig["items"][number];
 export type MegaTabConfig = z.infer<typeof tab>;
 export type NavLinkConfig = z.infer<typeof link>;
 
-/** Starting menu, modelled on JustWravel's header, using Travel Devils' real trips. */
+/** Starting menu. Tabs follow the trip categories; destination tiles fill in automatically from published trips. */
+const WK = "/weekend-getaways/india", BP = "/backpacking-trips/india", TR = "/treks/india", LD = "/biking-trips/india/ladakh";
 export const defaultNav: NavConfig = navConfigSchema.parse({
   items: [
     {
       type: "mega", label: "Group Trips",
       tabs: [
         {
-          title: "Backpacking Trips", subtitle: "India & International", icon: "backpack", color: "blue", href: "/backpacking-trips",
-          filter: { category: "backpacking-trips" }, gridTitle: "Backpacking trips destinations",
-          listTitle: "Trending destinations",
+          title: "Weekend Getaways", subtitle: "1N/2D and 2N/3D from Delhi", icon: "mountain", color: "green", href: "/weekend-getaways",
+          filter: { category: "weekend-getaways" }, gridTitle: "Weekend getaway destinations",
+          listTitle: "By duration",
           list: [
-            { label: "Leh to Leh", subtitle: "7 days · Turtuk & Pangong", href: "/backpacking-trips/india/ladakh/leh-to-leh" },
-            { label: "Winter Spiti", subtitle: "7 days in the snow desert", href: "/backpacking-trips/india/spiti/winter-spiti" },
-            { label: "Kashmir", subtitle: "6 days · Gulmarg & Pahalgam", href: "/backpacking-trips/india/jammu-and-kashmir/kashmir" },
+            { label: "1N/2D Trips", subtitle: "Leave Friday night, back Monday morning", href: "/1n2d-trips" },
+            { label: "2N/3D Trips", subtitle: "Leave Friday night, back Tuesday morning", href: "/2n3d-trips" },
           ],
-          sideTitle: "Quick weekend escapes",
+          sideTitle: "Popular picks",
           side: [
-            { label: "Chakrata", subtitle: "2 days from Delhi", href: "/weekend-getaways/india/uttarakhand/chakrata" },
-            { label: "Chopta Tungnath", subtitle: "3 days · trek + camping", href: "/weekend-getaways/india/uttarakhand/chopta-tungnath" },
+            { label: "Chakrata", subtitle: "1N/2D · Tiger Falls & Budher Cave", href: `${WK}/uttarakhand/chakrata` },
+            { label: "Kasol Tosh", subtitle: "2N/3D · Parvati Valley", href: `${WK}/himachal-pradesh/kasol-tosh` },
+            { label: "Udaipur Kumbhalgarh", subtitle: "2N/3D · Lakes & forts", href: `${WK}/rajasthan/udaipur-kumbhalgarh` },
           ],
-          promo: { image: "/uploads/wp/2025/10/7cs9t7yqwajouehwpv2z1g73f57v_shutterstock_583745923-scaled.webp", title: "Upcoming group trips", subtitle: "Fixed departures every month", cta: "View all trips", href: "/upcoming-trips" },
+          promo: { image: "/uploads/2026/10/kasol-tosh-1.jpg", title: "Upcoming group trips", subtitle: "Departures every Friday", cta: "View all trips", href: "/upcoming-trips" },
         },
-        { title: "Weekend Getaways", subtitle: "2–3 day escapes from Delhi", icon: "mountain", color: "green", href: "/weekend-getaways", filter: { category: "weekend-getaways" }, gridTitle: "Weekend getaway destinations" },
-        { title: "Bike Trips", subtitle: "Ladakh, Spiti, Zanskar", icon: "bike", color: "red", href: "/biking-trips", filter: { category: "biking-trips" }, gridTitle: "Bike trip destinations" },
-        { title: "Himalayan Treks", subtitle: "Himachal, Uttarakhand & more", icon: "footprints", color: "teal", href: "/treks", filter: { category: "treks" }, gridTitle: "Trek destinations" },
-        { title: "All Girls Trips", subtitle: "Women-only trips", icon: "sparkles", color: "amber", href: "/all-girls-trips", filter: { tag: "all-girls" }, gridTitle: "All girls trip destinations" },
-        { title: "International Trips", subtitle: "Thailand, Vietnam & more", icon: "plane", color: "violet", href: "/international-trips", filter: { category: "international-trips" }, gridTitle: "International destinations" },
+        {
+          title: "Backpacking Trips", subtitle: "3N/4D trips from Delhi", icon: "backpack", color: "blue", href: "/backpacking-trips",
+          filter: { category: "backpacking-trips" }, gridTitle: "Backpacking trip destinations",
+          listTitle: "Popular picks",
+          list: [
+            { label: "Kedarnath", subtitle: "3N/4D · Temple trek", href: `${BP}/uttarakhand/kedarnath` },
+            { label: "Shimla, Chitkul & Kalpa", subtitle: "3N/4D · Kinnaur", href: `${BP}/himachal-pradesh/shimla-chitkul-kalpa` },
+            { label: "Kasol, Kheerganga & Tosh", subtitle: "3N/4D · Parvati Valley", href: `${BP}/himachal-pradesh/kasol-kheerganga-tosh` },
+          ],
+          sideTitle: "By duration",
+          side: [{ label: "All 3N/4D Trips", subtitle: "Back Wednesday morning", href: "/3n4d-trips" }],
+        },
+        {
+          title: "Himalayan Treks", subtitle: "Uttarakhand & Himachal", icon: "footprints", color: "teal", href: "/treks",
+          filter: { category: "treks" }, gridTitle: "Trek destinations",
+          listTitle: "Weekend treks",
+          list: [
+            { label: "Chopta Tungnath", subtitle: "2N/3D · Tungnath & Chandrashila", href: `${TR}/uttarakhand/chopta-tungnath` },
+            { label: "McLeodganj Triund Trek", subtitle: "2N/3D", href: `${TR}/himachal-pradesh/mcleodganj-triund-trek` },
+            { label: "Kasol Kheerganga Trek", subtitle: "2N/3D", href: `${TR}/himachal-pradesh/kasol-kheerganga-trek` },
+          ],
+          sideTitle: "Longer treks",
+          side: [
+            { label: "Kedarkantha Trek", subtitle: "4N/5D · Winter trek", href: `${TR}/uttarakhand/kedarkantha-trek` },
+            { label: "Dayara Bugyal Trek", subtitle: "3N/4D · From Dehradun", href: `${TR}/uttarakhand/dayara-bugyal-trek` },
+            { label: "Valley of Flowers Trek", subtitle: "5N/6D · Monsoon trek", href: `${TR}/uttarakhand/valley-of-flowers-trek` },
+          ],
+        },
+        {
+          title: "Ladakh Bike Trips", subtitle: "By bike or SUV", icon: "bike", color: "red", href: "/biking-trips",
+          filter: { category: "biking-trips" }, gridTitle: "Bike trip destinations",
+          listTitle: "Leh to Leh",
+          list: [
+            { label: "Leh to Leh with Turtuk (5N/6D)", subtitle: "Nubra, Turtuk & Pangong", href: `${LD}/leh-to-leh-turtuk-5n6d` },
+            { label: "Leh to Leh with Turtuk (6N/7D)", subtitle: "With Sham Valley", href: `${LD}/leh-to-leh-turtuk-6n7d` },
+            { label: "Leh to Leh via Umling La (7N/8D)", subtitle: "Hanle & Tso Moriri", href: `${LD}/leh-to-leh-umling-la-7n8d` },
+          ],
+          sideTitle: "Highway circuits",
+          side: [
+            { label: "Manali – Leh – Srinagar", subtitle: "9N/10D", href: `${LD}/manali-leh-srinagar-turtuk-9n10d` },
+            { label: "Srinagar – Leh – Manali", subtitle: "10N/11D", href: `${LD}/srinagar-leh-manali-turtuk-10n11d` },
+            { label: "Manali, Zanskar & Umling La", subtitle: "11N/12D", href: `${LD}/manali-zanskar-leh-umling-la-11n12d` },
+          ],
+        },
+        {
+          title: "Spiritual Trips", subtitle: "Temples & pilgrimage places", icon: "sparkles", color: "amber", href: "/spiritual-trips",
+          filter: { tag: "spiritual" }, gridTitle: "Spiritual trip destinations",
+          listTitle: "Popular picks",
+          list: [
+            { label: "Kedarnath", subtitle: "3N/4D", href: `${BP}/uttarakhand/kedarnath` },
+            { label: "Mukteshwar & Kainchi Dham", subtitle: "1N/2D", href: `${WK}/uttarakhand/mukteshwar-kainchi-dham` },
+            { label: "Rishikesh & Haridwar", subtitle: "1N/2D · Ganga Aarti", href: `${WK}/uttarakhand/rishikesh` },
+          ],
+        },
       ],
     },
     {
-      type: "mega", label: "Customized",
-      tabs: [
-        { title: "Domestic Tours", subtitle: "Private trips across India", icon: "map", color: "blue", href: "#plan-my-trip", filter: { region: "india" }, gridTitle: "Domestic tour destinations", listTitle: "Popular right now" },
-        { title: "International Tours", subtitle: "Your dates, your group", icon: "globe", color: "green", href: "#plan-my-trip", filter: { region: "international" }, gridTitle: "International tour destinations", listTitle: "Popular right now" },
-        { title: "Honeymoon Packages", subtitle: "India & international", icon: "heart", color: "pink", href: "/honeymoon-trips", filter: { tag: "honeymoon" }, gridTitle: "Honeymoon destinations", listTitle: "Popular right now" },
+      type: "dropdown", label: "By Duration",
+      links: [
+        { label: "1N/2D Trips", subtitle: "One-night weekend trips", icon: "calendar", color: "green", href: "/1n2d-trips" },
+        { label: "2N/3D Trips", subtitle: "Two-night trips and treks", icon: "calendar", color: "blue", href: "/2n3d-trips" },
+        { label: "3N/4D Trips", subtitle: "Three-night trips and treks", icon: "calendar", color: "violet", href: "/3n4d-trips" },
+        { label: "5 Days & Longer", subtitle: "Ladakh and long treks", icon: "map", color: "red", href: "/long-trips" },
+        { label: "Upcoming Trips", subtitle: "Departures by month", icon: "flame", color: "amber", href: "/upcoming-trips" },
+      ],
+    },
+    {
+      type: "dropdown", label: "Customized",
+      links: [
+        { label: "Domestic Tours", subtitle: "Private trips across India", icon: "map", color: "blue", href: "#plan-my-trip" },
+        { label: "International Tours", subtitle: "Your dates, your group", icon: "globe", color: "green", href: "#plan-my-trip" },
+        { label: "Honeymoon Packages", subtitle: "India & international", icon: "heart", color: "pink", href: "#plan-my-trip" },
       ],
     },
     { type: "highlight", label: "Early Bird Sale", badge: "Is live", href: "/early-bird-offers", hidden: true },
-    {
-      type: "dropdown", label: "Trending",
-      links: [
-        { label: "Best Sellers", subtitle: "Most booked group trips", icon: "star", color: "amber", href: "/best-sellers" },
-        { label: "Upcoming Trips", subtitle: "Departures by month", icon: "calendar", color: "blue", href: "/upcoming-trips" },
-        { label: "New Launches", subtitle: "Fresh routes", icon: "megaphone", color: "green", href: "/new-launches", badge: "Live!" },
-        { label: "Christmas & New Year", subtitle: "Ring it in the mountains", icon: "snowflake", color: "teal", href: "/christmas-and-new-year-trips-and-treks" },
-      ],
-    },
     { type: "link", label: "Corporate", href: "/corporate-trips" },
     {
       type: "dropdown", label: "More",

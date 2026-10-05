@@ -16,7 +16,7 @@ A Chopta Tungnath trip from Delhi fits neatly into a long weekend. Chopta is abo
 - **Difficulty:** easy to moderate, with a steep final push to Chandrashila
 - **Highest point:** Chandrashila, about 3,960–4,000 m
 - **Cost:** from ₹5,799 per person on our group trip (quad sharing)
-- **Starts from:** Delhi, every Friday. See our [Chopta Tungnath trip](/weekend-getaways/india/uttarakhand/chopta-tungnath)
+- **Starts from:** Delhi, every Friday. See our [Chopta Tungnath trip](/treks/india/uttarakhand/chopta-tungnath)
 
 ## Trek at a glance
 
@@ -49,7 +49,7 @@ A few landmarks along the way:
 
 ## Our 2N/3D itinerary
 
-Our [Chopta Tungnath trip](/weekend-getaways/india/uttarakhand/chopta-tungnath) leaves Delhi every Friday night by tempo traveller or cab and gets you back early on Tuesday morning.
+Our [Chopta Tungnath trip](/treks/india/uttarakhand/chopta-tungnath) leaves Delhi every Friday night by tempo traveller or cab and gets you back early on Tuesday morning.
 
 **Day 1: Devprayag Sangam and Chopta arrival.** Stop at Devprayag to see the Bhagirathi and Alaknanda meet. After breakfast near Rudraprayag, carry on to Chopta. Check in, rest, take a forest walk, and end the day with a bonfire (weather permitting) and a home-style dinner.
 
@@ -128,7 +128,7 @@ Our group trip from Delhi is priced per person:
 
 Prices can change, so check the trip page for the latest.
 
-Ready to go? Our [Chopta Tungnath trip](/weekend-getaways/india/uttarakhand/chopta-tungnath) leaves Delhi every Friday night and starts from ₹5,799 per person. Want different dates or a private group? Use our [custom trip planner](#plan-my-trip) or [contact us](/contact).
+Ready to go? Our [Chopta Tungnath trip](/treks/india/uttarakhand/chopta-tungnath) leaves Delhi every Friday night and starts from ₹5,799 per person. Want different dates or a private group? Use our [custom trip planner](#plan-my-trip) or [contact us](/contact).
 
 ## FAQs
 

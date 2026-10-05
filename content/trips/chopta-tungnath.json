@@ -1,5 +1,5 @@
 {
-  "category": "weekend-getaways",
+  "category": "treks",
   "destination": "uttarakhand",
   "durationDays": 3,
   "durationNights": 2,
@@ -35,7 +35,8 @@
   "tags": [
     "chopta-tungnath",
     "2n3d",
-    "trek"
+    "trek",
+    "spiritual"
   ],
   "reportingPoint": "Vaishali Metro Station, Delhi. Reporting time: 9:00 PM on the departure night.",
   "pickupPoints": [
