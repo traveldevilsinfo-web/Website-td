@@ -64,7 +64,7 @@ export function HeroSearch({ popular }: { popular: SearchHit[] }) {
           onFocus={() => setOpen(true)} onKeyDown={onKey}
           role="combobox" aria-expanded={show} aria-controls={`${id}-list`} aria-autocomplete="list"
           aria-activedescendant={active >= 0 ? `${id}-${active}` : undefined} aria-label="Search trips and destinations"
-          placeholder="Where do you want to go? Spiti, Kashmir, Bali…"
+          placeholder="Where do you want to go? Kasol, Kedarnath, Ladakh…"
           className="min-w-0 flex-1 bg-transparent py-3 text-base font-bold text-white outline-none placeholder:font-semibold placeholder:text-white/60"
         />
         {q && (

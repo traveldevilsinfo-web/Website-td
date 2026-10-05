@@ -26,9 +26,9 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 const STYLES = [
   { title: "Mountain escapes", text: "Weekend trips, treks and Himachal–Uttarakhand group tours.", href: "/weekend-getaways", emoji: "🏔️" },
-  { title: "Adventure", text: "Paragliding, rafting, trekking, camping under the stars.", href: "/backpacking-trips", emoji: "🪂" },
+  { title: "Himalayan treks", text: "From two-day summit hikes to week-long pass crossings.", href: "/treks", emoji: "🥾" },
   { title: "Community vibes", text: "Bonfires, games and a squad you'll keep for life.", href: "/upcoming-trips", emoji: "🔥" },
-  { title: "International", text: "Thailand, Vietnam, Bali and beyond, the Travel Devils way.", href: "/international-trips", emoji: "✈️" },
+  { title: "Ladakh road trips", text: "Leh, Nubra, Turtuk and Pangong by bike or SUV.", href: "/biking-trips", emoji: "🏍️" },
   { title: "Customised trips", text: "Your dates, your group, your style. Tailor-made for you.", href: "#plan-my-trip", emoji: "🧭" },
 ];
 
