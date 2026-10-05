@@ -1,0 +1,153 @@
+{
+  "category": "backpacking-trips",
+  "destination": "uttarakhand",
+  "durationDays": 4,
+  "durationNights": 3,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 5,
+    "weeks": 5,
+    "seats": 20
+  },
+  "slug": "kedarnath",
+  "title": "Kedarnath",
+  "tags": [
+    "kedarnath",
+    "3n4d"
+  ],
+  "reportingPoint": "Akshardham Metro Station, Delhi. Departure is around 9:00 PM on the departure night.",
+  "pickupPoints": [
+    "Akshardham Metro Station, Delhi"
+  ],
+  "basePrice": 11499,
+  "bookingAmount": 5800,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 11499,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 11999,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 12499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/kedarnath-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/kedarnath-2.jpg",
+    "/uploads/2026/10/kedarnath-3.jpg",
+    "/uploads/2026/10/kedarnath-4.jpg"
+  ],
+  "highlights": [
+    "Visit to the Shri Kedarnath shrine",
+    "Gaurikund to Kedarnath trek (19-20 km)",
+    "Ardh Narishwar temple at Guptkashi",
+    "Drive via Devprayag and Rudraprayag along the Alaknanda and Mandakini rivers",
+    "Hotel stays at Guptkashi and Kedarnath"
+  ],
+  "overview": "A group trip to Shri Kedarnath from Delhi: this **3 Nights / 4 Days** trip leaves Akshardham Metro Station, Delhi around 9 PM and travels overnight to Guptkashi.\n\nDay 1 follows the Devprayag and Rudraprayag route to Guptkashi, with a visit to the Ardh Narishwar temple and a hotel stay. Day 2 is the drive to Sonprayag, a local jeep to Gaurikund and the 19-20 km trek to Kedarnath, where you visit the shrine and stay the night; a helicopter is the other option, at your own cost. Day 3 returns to Sonprayag and Guptkashi after the morning pooja. Day 4 is the drive back to Delhi after breakfast. Prices start at ₹11,499 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Departure from Delhi",
+      "content": "Report at the departure point and meet our representative.\nLeave Akshardham Metro Station, Delhi around 9 PM.\nOvernight journey from Delhi to Guptkashi."
+    },
+    {
+      "title": "Reach Guptkashi",
+      "content": "Drive up to Guptkashi via the Devprayag and Rudraprayag route, with views of the Alaknanda and Mandakini rivers.\nVisit the Ardh Narishwar temple at Guptkashi and offer prayers.\nCheck in to the hotel and rest for the night."
+    },
+    {
+      "title": "Gaurikund to Kedarnath trek (19-20 km)",
+      "content": "After breakfast, drive to Sonprayag.\nTake a local jeep from Sonprayag to Gaurikund, the starting point of the trek.\nTrek from Gaurikund to Kedarnath (19-20 km).\nThe other way to reach the shrine is by helicopter (cost not included); you are dropped at the helipad in the morning after breakfast.\nTell the driver how long your trek or flight will take, so he can park and pick you up the next day.\nVisit the shrine and spend some time at the dham.\nCheck in to a hotel for the night."
+    },
+    {
+      "title": "Kedarnath to Guptkashi",
+      "content": "After the morning pooja and breakfast, check out of the hotel.\nReturn from Kedarnath by the same route and take a local jeep to Sonprayag.\nThe driver picks you up at the pre-decided place for the drive back to Guptkashi.\nCheck in to the hotel. The rest of the day is free to rest."
+    },
+    {
+      "title": "Guptkashi to Delhi",
+      "content": "After breakfast, start the journey back to Delhi.\nThe trip ends in Delhi."
+    }
+  ],
+  "includes": [
+    "Neat, clean and hygienic accommodation",
+    "Transport from Delhi to Delhi for 3 nights and 4 days (from the designated meeting point)",
+    "2 breakfasts and 2 dinners",
+    "Point-to-point sightseeing as per the programme, as far as time allows",
+    "All tolls, taxes, parking and driver allowances"
+  ],
+  "excludes": [
+    "5% GST",
+    "Helicopter tickets to Kedarnath",
+    "Pickup and drop from your hometown",
+    "Personal costs such as tips, personal medication and phone calls",
+    "Porters or mules during the trek (personal luggage up to 12 kg per bag per person can be carried for ₹350 per day per bag)",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- AC will not work in hilly areas.\n- Sightseeing is covered as far as the time frame allows.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "Report at the departure point at Akshardham Metro Station, Delhi and meet our representative. The trip leaves around 9 PM for an overnight journey to Guptkashi."
+    },
+    {
+      "q": "How much does the Kedarnath trip cost?",
+      "a": "₹11,499 per person on quad sharing, ₹11,999 on triple sharing and ₹12,499 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "Accommodation, transport from Delhi to Delhi for 3 nights and 4 days, 2 breakfasts and 2 dinners, point-to-point sightseeing as per the programme, and all tolls, taxes, parking and driver allowances."
+    },
+    {
+      "q": "How do we reach Kedarnath from Guptkashi?",
+      "a": "You are driven to Sonprayag, take a local jeep to Gaurikund and trek from there to Kedarnath, which the itinerary lists as 19-20 km. You return by the same route the next day."
+    },
+    {
+      "q": "Can I take a helicopter instead of trekking?",
+      "a": "Yes, but helicopter tickets are not included in the package. If you choose the helicopter, you are dropped at the helipad in the morning after breakfast. Porters or mules for luggage are also extra, at ₹350 per day per bag of up to 12 kg."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

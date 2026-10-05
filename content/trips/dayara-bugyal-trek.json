@@ -1,0 +1,156 @@
+{
+  "category": "treks",
+  "destination": "uttarakhand",
+  "durationDays": 4,
+  "durationNights": 3,
+  "startLocation": "Dehradun",
+  "endLocation": "Dehradun",
+  "thingsToCarry": [
+    "Non-skid, deep-treaded hiking shoes (1 pair)",
+    "Lightweight slippers or sandals (1 pair)",
+    "Personal toiletries kit (small towel, toilet paper, paper soap, bar soap, toothbrush, toothpaste, cold cream and similar items)",
+    "Track pants",
+    "Full-sleeve T-shirts (1 for every two days of trekking)",
+    "Undergarments (1 per day of trekking)",
+    "Rainwear (jacket and pants), raincoat and umbrella",
+    "Sun cap",
+    "Dry fruits, nuts and chocolate bars",
+    "Personal medicines, if any (consult your doctor before joining the trek)",
+    "Sunscreen lotion and lip balm",
+    "Plastic bags",
+    "Power bank",
+    "Camera"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      6,
+      0
+    ],
+    "returnAfterDays": 3,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "dayara-bugyal-trek",
+  "title": "Dayara Bugyal Trek",
+  "tags": [
+    "dayara-bugyal",
+    "uttarkashi",
+    "3n4d",
+    "trek"
+  ],
+  "reportingPoint": "Prince Chowk, Dehradun. Reporting time: 6:30 AM to 7:30 AM on Day 1. Drop at the same point between 6:30 PM and 7:30 PM on Day 4. Please reach Dehradun a day before.",
+  "pickupPoints": [
+    "Prince Chowk, Dehradun"
+  ],
+  "basePrice": 6999,
+  "bookingAmount": 3500,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Standard Sharing",
+          "price": 6999,
+          "salePrice": null
+        },
+        {
+          "label": "Dual Sharing",
+          "price": 7999,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/dayara-bugyal-trek-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/dayara-bugyal-trek-2.jpg",
+    "/uploads/2026/10/dayara-bugyal-trek-3.jpg",
+    "/uploads/2026/10/dayara-bugyal-trek-4.jpg"
+  ],
+  "highlights": [
+    "Trek to the Dayara Bugyal meadows (3,700 m / 12,100 ft)",
+    "Two nights of camping at Gui campsite (2,900 m)",
+    "Views of Mt Srikanth, Draupadi Ka Danda, Jaonli and Bandarpoonch",
+    "Guesthouse night in Raithal Village",
+    "Trail through terraced fields and oak and maple forest",
+    "All meals, permits, trekking equipment and a certified trek leader"
+  ],
+  "overview": "Dayara Bugyal is an alpine meadow in the Garhwal Himalayas of Uttarakhand, reached by a trail that passes villages, temples and oak forests. This **3 Nights / 4 Days** trek runs from Dehradun to Dehradun: you need to reach Dehradun on your own, ideally a day before, and the group leaves Prince Chowk at 6:30 AM on Day 1.\n\nDay 1 is the 182 km drive to Raithal Village (2,176 m), with a guesthouse stay and a trek briefing. Day 2 is the 4.3 km trek to Gui campsite (2,900 m). Day 3 climbs to the Dayara Bugyal top (3,700 m) and returns to Gui for the night. Day 4 descends to Raithal and drives back to Dehradun by evening. Transfers from Dehradun, camping, all meals, permits, trekking equipment and a trek leader are included. Prices start at ₹6,999 per person (5% GST extra); dual sharing accommodation costs ₹1,000 extra per person.",
+  "itinerary": [
+    {
+      "title": "Dehradun to Raithal Village (182 km drive)",
+      "content": "Altitude: 2,176 m / 7,142 ft. Drive time: 8-9 hours.\nLeave Prince Chowk, Dehradun at 6:30 AM.\nDrive via Suwakholi, Moryana Top and Bhatwari, with views of the Gangotri range, mustard fields and the Bhagirathi River.\nReach Raithal Village in the Uttarkashi region and settle into the guesthouse.\nEvening briefing on the trek itinerary, trekking tips and environmental conservation.\nPermits and paperwork for the trek are sorted on this day."
+    },
+    {
+      "title": "Trek from Raithal to Gui campsite",
+      "content": "Altitude: 2,900 m / 9,500 ft. Trek duration: 4-5 hours. Trek distance: 4.3 km.\nAfter breakfast, set out on the well-marked trail from Raithal to Gui.\nWalk through terraced fields and a forest of oak and maple, with glimpses of Mt Srikanth and Bandarpoonch.\nThe trail is a steady climb.\nReach Gui campsite, set up tents and have a warm lunch.\nLater, explore the nearby Gui Lake at sunset."
+    },
+    {
+      "title": "Trek to Dayara Bugyal top and return to Gui",
+      "content": "Altitude: 3,700 m / 12,100 ft. Trek duration: 8 hours. Trek distance: 4.3 km.\nStart after breakfast with a packed lunch.\nClimb to the Dayara Bugyal alpine meadows, with views of Bandarpoonch and Black Peak.\nReach Bakaria Top, the summit of this trek, for views of the Gangotri range including Draupadi Ka Danda and Mt Jaonli.\nHave lunch at the top, then retrace your steps to Gui campsite."
+    },
+    {
+      "title": "Descend to Raithal Village | Drive to Dehradun",
+      "content": "Trek duration: 3-4 hours. Trek distance: 4.5 km.\nAfter breakfast at Gui, begin the gentle descent to Raithal Village.\nHave a hot lunch at Raithal.\nDrive back to Dehradun and arrive by evening.\nDrop at Prince Chowk between 6:30 PM and 7:30 PM (timings can change with weather and road conditions)."
+    }
+  ],
+  "includes": [
+    "Pick-up and drop transfers from Dehradun to Dehradun",
+    "Camping stay during the trek",
+    "Dome tent on triple sharing or alpine tent on quad sharing",
+    "Campfire at the camps (if available)",
+    "All 3 meals plus snacks",
+    "Trekking permit, forest permit and campsite fees",
+    "Trekking equipment (tents, sleeping bags, ice axes, ropes, etc.)",
+    "Expert trek leader certified in basic/advanced mountaineering courses",
+    "Trek crew (guides, chefs, assistants, porters/mules)",
+    "Safety gear (first aid, medical kit, oxygen cylinders, stretcher, etc.)",
+    "Trek certificate of completion"
+  ],
+  "excludes": [
+    "5% GST",
+    "Mule offloading fee of ₹500 per day for a bag weighing up to 10 kg",
+    "Trek insurance (₹3,200 per person)",
+    "Single or double sharing tent (extra cost)",
+    "Food on the way during the pick-up and drop drives",
+    "Personal expenses",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantNotes": "- This trek runs Dehradun to Dehradun. Please reach Dehradun a day before to avoid any delays.\n- Reporting and drop timings can change with weather and road conditions.\n- Consult your doctor before joining the trek, and carry your own medicines.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trek start?",
+      "a": "The meeting point is Prince Chowk, Dehradun. Reporting time is 6:30 AM to 7:30 AM on Day 1, and the drive to Raithal Village starts at 6:30 AM. The drop on Day 4 is at the same point between 6:30 PM and 7:30 PM. Timings can change with weather and road conditions."
+    },
+    {
+      "q": "Do I need to reach Dehradun on my own?",
+      "a": "Yes. The trek runs Dehradun to Dehradun, so you travel to and from Dehradun yourself. Please reach Dehradun a day before to avoid any delays."
+    },
+    {
+      "q": "How much does the Dayara Bugyal Trek cost?",
+      "a": "₹6,999 per person. Dual sharing accommodation is ₹1,000 extra per person, which makes it ₹7,999. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "Pick-up and drop transfers from Dehradun to Dehradun, camping in dome tents (triple sharing) or alpine tents (quad sharing), all 3 meals plus snacks, trekking and forest permits, campsite fees, trekking equipment, a certified trek leader, a trek crew, safety gear and a trek certificate of completion."
+    },
+    {
+      "q": "How long is the trek?",
+      "a": "Day 2 is a 4.3 km trek of 4-5 hours from Raithal (2,176 m) to Gui campsite (2,900 m). Day 3 is about 8 hours to the Dayara Bugyal top (3,700 m) and back to Gui. Day 4 is a 4.5 km descent of 3-4 hours to Raithal, followed by the drive to Dehradun."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

@@ -40,6 +40,7 @@ export const BATCH_LABEL: Record<string, string> = { available: "Available", fil
 export const COLLECTIONS: Record<string, { tag?: string; sale?: boolean; title: string; intro: string }> = {
   "1n2d-trips": { tag: "1n2d", title: "1N/2D Trips", intro: "One-night weekend trips from Delhi: leave on Friday night, back early Monday morning." },
   "2n3d-trips": { tag: "2n3d", title: "2N/3D Trips", intro: "Two-night trips and treks from Delhi: leave on Friday night, back early Tuesday morning." },
+  "3n4d-trips": { tag: "3n4d", title: "3N/4D Trips", intro: "Three-night trips and treks: most leave Delhi on Friday evening and are back on Wednesday morning." },
   "best-sellers": { tag: "best-seller", title: "Best Sellers", intro: "Our most-booked group trips. Loved by travellers, run on repeat." },
   "early-bird-offers": { sale: true, title: "Early Bird Offers", intro: "Book early, pay less. Every trip currently running a discounted price." },
   "all-girls-trips": { tag: "all-girls", title: "All Girls Trips", intro: "Women-only group trips with female trip captains, safe stays and a squad you'll keep for life." },

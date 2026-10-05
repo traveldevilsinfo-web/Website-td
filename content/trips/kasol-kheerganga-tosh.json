@@ -1,0 +1,151 @@
+{
+  "category": "backpacking-trips",
+  "destination": "himachal-pradesh",
+  "durationDays": 4,
+  "durationNights": 3,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 5,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "kasol-kheerganga-tosh",
+  "title": "Kasol, Kheerganga & Tosh",
+  "tags": [
+    "kasol",
+    "kheerganga",
+    "tosh",
+    "3n4d"
+  ],
+  "reportingPoint": "Departure is in the evening from Delhi. The exact pickup point and time are shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 9999,
+  "bookingAmount": 5000,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 9999,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 10499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/kasol-kheerganga-tosh-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/kasol-kheerganga-tosh-2.jpg",
+    "/uploads/2026/10/kasol-kheerganga-tosh-3.jpg",
+    "/uploads/2026/10/kasol-kheerganga-tosh-4.jpg"
+  ],
+  "highlights": [
+    "Kheerganga trek (12 km trail from Barsheni)",
+    "Overnight camping at Kheerganga with a bonfire dinner",
+    "Evening hike to Chalal village",
+    "Kasol market and cafes by the Parvati River",
+    "Guest house night in Tosh village",
+    "Waterfall hike near Tosh"
+  ],
+  "overview": "A Parvati Valley backpacking trip: this **3 Nights / 4 Days** Kasol, Kheerganga & Tosh group trip leaves Delhi in the evening in an AC push-back vehicle and reaches Kasol the next morning. There is a dinner halt on the way, at your own cost.\n\nDay 1 is for the Kasol market and cafes, an evening hike to Chalal village and a bonfire at the stay. Day 2 is the Kheerganga trek, a 12 km trail from Barsheni, ending with dinner by a bonfire and a night in camps. Day 3 treks back down to Barsheni and drives to Tosh village for a guest house stay. Day 4 has a hike to a nearby waterfall before the return to Kasol and the overnight journey to Delhi. Prices start at ₹9,999 per person on triple sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Departure to Kasol in the evening",
+      "content": "Depart for Kasol in the evening.\nOvernight journey in an AC push-back vehicle.\nHalt for dinner on the way (not included)."
+    },
+    {
+      "title": "Reach Kasol | Local market | Chalal village | Cafe hopping",
+      "content": "Reach Kasol by morning and check in.\nLeisure time: explore the Kasol market, try the local cafes or relax by the Parvati River.\nIn the evening, hike to Chalal village for views of Parvati Valley.\nSpend time at the cafes in Kasol, then return to the stay for a bonfire.\nOvernight stay in Kasol."
+    },
+    {
+      "title": "Transfer to Barsheni | Kheerganga trek | Camping",
+      "content": "Wake up early and, after breakfast, head for Kheerganga.\nTransfer in private vehicles to Barsheni, where the trek starts.\nThe Kheerganga trail is 12 km, with a moderate difficulty level.\nWalk through Parvati Valley, surrounded by snow-capped mountains.\nReach the Kheerganga campsite and have dinner by the bonfire.\nOvernight stay in camps."
+    },
+    {
+      "title": "Trek down to Barsheni | Transfer to Tosh",
+      "content": "After breakfast, trek down to Barsheni.\nDrive to Tosh village.\nHike through the village to reach the guest house.\nDinner and bonfire."
+    },
+    {
+      "title": "Waterfall hike | Return to Kasol | Departure",
+      "content": "After breakfast, hike to the nearby waterfall and spend some time there.\nTrek down and return to Kasol.\nHead back to Delhi.\nReach Delhi by the next morning."
+    }
+  ],
+  "includes": [
+    "Accommodation for 3 nights as per the itinerary (Kasol stay, Kheerganga camps and Tosh guest house)",
+    "6 meals: 3 breakfasts and 3 dinners",
+    "Transfers to and from Delhi in an AC tempo traveller or AC deluxe bus, as per group size",
+    "All sightseeing as mentioned in the itinerary",
+    "Bonfire with music",
+    "Trip captain"
+  ],
+  "excludes": [
+    "5% GST",
+    "Any food or beverage not included in the package",
+    "Cost of adventure activities",
+    "Entry tickets to viewpoints",
+    "4x4 vehicle cost at the time of snow",
+    "Extra costs caused by natural calamity or circumstances beyond our control",
+    "Any other expense not mentioned in the inclusions"
+  ],
+  "importantNotes": "- Early check-in at the stay is subject to availability.\n- Extra mattresses are provided for triple sharing.\n- AC will not work in hilly areas.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "The trip leaves Delhi in the evening for an overnight journey to Kasol in an AC push-back vehicle. The exact pickup point and time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Kasol, Kheerganga & Tosh trip cost?",
+      "a": "₹9,999 per person on triple sharing and ₹10,499 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "3 nights of accommodation as per the itinerary, 6 meals (3 breakfasts and 3 dinners), transfers to and from Delhi in an AC tempo traveller or AC deluxe bus, sightseeing as per the itinerary, a bonfire with music and a trip captain."
+    },
+    {
+      "q": "How long is the Kheerganga trek?",
+      "a": "The Kheerganga trail is 12 km, with a moderate difficulty level. It starts from Barsheni on Day 2, and you trek back down to Barsheni on Day 3 after a night in camps."
+    },
+    {
+      "q": "Where do we stay?",
+      "a": "The first night is in Kasol, the second night is in camps at Kheerganga and the third night is in a guest house in Tosh village."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

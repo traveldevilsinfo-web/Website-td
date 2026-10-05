@@ -1,0 +1,160 @@
+{
+  "category": "treks",
+  "destination": "uttarakhand",
+  "durationDays": 4,
+  "durationNights": 3,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 5,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "munsiyari",
+  "title": "Munsiyari & Khaliya Top",
+  "tags": [
+    "munsiyari",
+    "khaliya-top",
+    "kumaon",
+    "3n4d",
+    "trek"
+  ],
+  "reportingPoint": "Departure is in the evening from Delhi. The exact pickup point and time are shared once your booking is confirmed.",
+  "pickupPoints": [],
+  "basePrice": 9999,
+  "bookingAmount": 5000,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 9999,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 10999,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 11999,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/munsiyari-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/munsiyari-2.jpg",
+    "/uploads/2026/10/munsiyari-3.jpg",
+    "/uploads/2026/10/munsiyari-4.jpg"
+  ],
+  "highlights": [
+    "Trek from Balati Bend to Khaliya Top (5 km one way, 2.5 to 3 hours)",
+    "Night in camps at Khaliya Top, with sunset and sunrise views",
+    "Optional hike to Zero Point for views of Panchachuli, Nanda Kot and Rajrambha",
+    "Kasar Devi Temple, village walk and cafes",
+    "Birthi Waterfall, Bageshwar and Sama Village on the drive to Munsiyari",
+    "Homestay nights in Kasar Devi/Almora and Munsiyari"
+  ],
+  "overview": "A Kumaon road trip with a short trek at the end: this **3 Nights / 4 Days** Munsiyari and Khaliya Top group trip leaves Delhi in the evening. You gather at the pickup point, meet the group and travel overnight through Ranikhet and Almora towards the village of Kasar Devi.\n\nDay 1 is in Kasar Devi, with the hilltop temple, a village walk, the cafes and sunset over the Kumaon valley. Day 2 is the drive to Munsiyari, with stops at Bageshwar, Sama Village and Birthi Waterfall. Day 3 is the trek from Balati Bend to Khaliya Top, 5 km one way, with an optional hike on to Zero Point and a night at the top. Day 4 starts with sunrise, then the trek down to Munsiyari and the drive back to Delhi. Transport, three nights of stay, 3 breakfasts, 3 dinners and a trip captain are included. Prices start at ₹9,999 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Delhi to Almora",
+      "content": "Gather at the designated pickup point in Delhi by evening.\nMeet your fellow travellers and begin the overnight journey towards the village of Kasar Devi, near Almora.\nOvernight drive on the hill roads of Uttarakhand, passing through towns like Ranikhet and Almora."
+    },
+    {
+      "title": "Arrival in Kasar Devi | Temple and village walk",
+      "content": "Morning: arrive and check in to your stay. Freshen up and relax after the journey.\nAfternoon: visit Kasar Devi Temple, a hilltop temple.\nVillage walk and cafe hopping: explore the local lanes and cafes.\nWatch the sunset over the Kumaon valley.\nEvening: return to your accommodation for dinner and an overnight stay."
+    },
+    {
+      "title": "Kasar Devi to Munsiyari",
+      "content": "Morning: after breakfast, begin the drive to Munsiyari.\nStop at Bageshwar, a town at the confluence of the Saryu and Gomti rivers.\nStop at Sama Village for a short halt.\nStop at Birthi Waterfall, a 126 m high fall, for photographs.\nEvening: arrive in Munsiyari, check in to your stay and relax.\nDinner and overnight stay in Munsiyari."
+    },
+    {
+      "title": "Munsiyari to Khaliya Top | Zero Point",
+      "content": "Morning: after breakfast, begin the trek from Balati Bend to Khaliya Top.\nDistance: 5 km one way. Duration: 2.5 to 3 hours.\nThe trail runs through pine forests and meadows.\nReach Khaliya Top and rest in forest huts or tents.\nOptional hike: trek further to Zero Point for views of Panchachuli, Nanda Kot and Rajrambha.\nEvening: sunset views, dinner and an overnight stay."
+    },
+    {
+      "title": "Khaliya Top to Munsiyari | Return to Delhi",
+      "content": "Early morning: watch the sunrise over the snow-capped peaks.\nAfter breakfast, trek down to Munsiyari.\nStart the return journey to Delhi by afternoon.\nReach Delhi by late night or early morning the next day."
+    }
+  ],
+  "includes": [
+    "Transportation from Delhi to Delhi",
+    "Local sightseeing and transportation",
+    "Accommodation for 3 nights: homestay at Kasar Devi/Almora, homestay at Munsiyari and camps at Khaliya Top",
+    "Meals: 3 breakfasts and 3 dinners",
+    "Trip captain throughout the journey",
+    "All permits and taxes",
+    "Mechanical support",
+    "First aid kit",
+    "24x7 customer support"
+  ],
+  "excludes": [
+    "5% GST",
+    "Travel or medical insurance, and any medical emergency",
+    "Rescue, evacuation and hospitalisation costs",
+    "Entry tickets",
+    "Lunch and any other meals not mentioned in the inclusions",
+    "Any airfare, rail fare or other transportation not mentioned in the inclusions",
+    "Anything else not mentioned in the inclusions"
+  ],
+  "importantNotes": "- Meal plan: dinner on Day 1, breakfast and dinner on Days 2 and 3, and breakfast on Day 4.\n- The night at Khaliya Top is in forest huts or tents.\n- The hike from Khaliya Top to Zero Point is optional.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "The trip leaves Delhi in the evening for an overnight drive towards Kasar Devi, near Almora. The exact pickup point and time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the Munsiyari & Khaliya Top trip cost?",
+      "a": "₹9,999 per person on quad sharing, ₹10,999 on triple sharing and ₹11,999 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "Transportation from Delhi to Delhi, local sightseeing and transportation, 3 nights of accommodation, 3 breakfasts and 3 dinners, a trip captain throughout, permits, mechanical support, a first aid kit and 24x7 customer support."
+    },
+    {
+      "q": "How long is the Khaliya Top trek?",
+      "a": "The trek from Balati Bend to Khaliya Top is 5 km one way and takes 2.5 to 3 hours, through pine forests and meadows. The hike further to Zero Point is optional. You trek back down to Munsiyari on Day 4."
+    },
+    {
+      "q": "Where do we stay?",
+      "a": "Night 1 is in a homestay at Kasar Devi/Almora, night 2 is in a homestay at Munsiyari and night 3 is in camps at Khaliya Top."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "category": "backpacking-trips",
+  "destination": "himachal-pradesh",
+  "durationDays": 4,
+  "durationNights": 3,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 5,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "mcleodganj-triund-bir",
+  "title": "McLeodganj, Triund & Bir",
+  "tags": [
+    "mcleodganj",
+    "triund",
+    "bir-billing",
+    "3n4d"
+  ],
+  "reportingPoint": "Departure is in the evening from Delhi. The exact pickup point and time are shared once your booking is confirmed. Pickup from Chandigarh is also available.",
+  "pickupPoints": [],
+  "basePrice": 9999,
+  "bookingAmount": 5000,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 9999,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 10999,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/mcleodganj-triund-bir-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/mcleodganj-triund-bir-2.jpg",
+    "/uploads/2026/10/mcleodganj-triund-bir-3.jpg",
+    "/uploads/2026/10/mcleodganj-triund-bir-4.jpg"
+  ],
+  "highlights": [
+    "Triund trek with a night in camps at Triund top",
+    "Bhagsu waterfall, Dalai Lama Monastery and the McLeodganj flea market",
+    "Dharamshala HPCA stadium, Palampur tea garden and Baijnath temple on the way to Bir",
+    "Bonfire with light music in Bir",
+    "Bir Billing, with optional paragliding (extra cost)",
+    "3 breakfasts and 3 dinners"
+  ],
+  "overview": "A long weekend across three stops in Himachal Pradesh: this **3 Nights / 4 Days** McLeodganj, Triund and Bir group trip leaves Delhi in the evening, with pickup from Chandigarh as well. It is an overnight journey to McLeodganj with a dinner halt on the way (dinner at your own cost).\n\nDay 1 is in McLeodganj: the flea market, Bhagsu waterfall, the Dalai Lama Monastery and the cafes, with a night in a hotel. Day 2 is the Triund trek, ending with a night in camps at Triund. Day 3 treks back down and drives to Bir via the Dharamshala HPCA stadium, Palampur tea garden and Baijnath temple, with a bonfire in the evening. Day 4 is for Bir Billing, where paragliding is available at extra cost, before the evening departure. Transport, three nights of stay, 3 breakfasts and 3 dinners are included. Prices start at ₹9,999 per person on triple sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Departure from Delhi / Chandigarh",
+      "content": "Departure in the evening.\nOvernight journey to McLeodganj.\nHalt for dinner on the way (not included)."
+    },
+    {
+      "title": "McLeodganj exploration | Dalai Lama Monastery",
+      "content": "Reach McLeodganj, check in to the hotel and freshen up.\nAfter some rest, explore the McLeodganj flea market.\nVisit Bhagsu waterfall, the Dalai Lama Monastery and the cafes.\nReturn to the hotel.\nDinner and overnight stay at the hotel."
+    },
+    {
+      "title": "Triund trek | Camping",
+      "content": "Freshen up and have breakfast.\nStart the Triund trek.\nTriund sits in the Dhauladhar mountains, with the Dhauladhar range on one side and the Kangra valley on the other.\nReach Triund in the evening and check in to the camps.\nDinner and overnight stay at the camps."
+    },
+    {
+      "title": "Triund to Bir",
+      "content": "Have breakfast and trek down.\nCollect your luggage from the hotel.\nLeave for Bir, visiting the Dharamshala HPCA stadium, Palampur tea garden and Baijnath temple on the way.\nReach Bir in the evening and check in to the homestay.\nEnjoy a bonfire with some light music.\nDinner and overnight stay at Bir."
+    },
+    {
+      "title": "Bir Billing | Paragliding | Departure",
+      "content": "Wake up early and have breakfast.\nHead towards the Billing paragliding take-off site (paragliding costs extra).\nThe flight takes off from Billing and lands in Bir, and takes around 15 to 30 minutes.\nSpend some time enjoying the views in Bir.\nDeparture in the evening, followed by an overnight journey back."
+    }
+  ],
+  "includes": [
+    "Accommodation: 1 night in a hotel at McLeodganj, 1 night in camps at Triund top and 1 night at Bir",
+    "6 meals: 3 breakfasts and 3 dinners",
+    "Transfers to and from in an AC tempo traveller, Toyota Innova or AC deluxe bus, as per group size",
+    "Taxi charges from McLeodganj to Bir",
+    "McLeodganj sightseeing",
+    "Bir Billing sightseeing"
+  ],
+  "excludes": [
+    "5% GST",
+    "Any food and beverage charge not included in the package",
+    "Adventure activities, including paragliding",
+    "Entry tickets to the viewpoints",
+    "4x4 vehicle cost at the time of snow",
+    "Any expense not mentioned in the inclusions",
+    "Extra costs caused by natural calamity or any situation beyond our control"
+  ],
+  "importantNotes": "- Early check-in at the stay is subject to availability.\n- Extra mattresses are provided for triple sharing.\n- AC will not work in hilly areas.\n- Paragliding at Bir Billing is optional and costs extra.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "The trip leaves Delhi in the evening for an overnight journey to McLeodganj, and pickup from Chandigarh is also available. The exact pickup point and time are shared once your booking is confirmed."
+    },
+    {
+      "q": "How much does the McLeodganj, Triund & Bir trip cost?",
+      "a": "₹9,999 per person on triple sharing and ₹10,999 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "1 night in a hotel at McLeodganj, 1 night in camps at Triund top and 1 night at Bir, 3 breakfasts and 3 dinners, transfers in an AC tempo traveller, Toyota Innova or AC deluxe bus as per group size, taxi charges from McLeodganj to Bir, and sightseeing in McLeodganj and Bir Billing."
+    },
+    {
+      "q": "Is paragliding included?",
+      "a": "No. Paragliding at Bir Billing costs extra, as do other adventure activities. The flight takes off from Billing and lands in Bir, and takes around 15 to 30 minutes."
+    },
+    {
+      "q": "Where do we stay?",
+      "a": "The first night is in a hotel in McLeodganj, the second is in camps at Triund after the trek, and the third is in Bir. Extra mattresses are provided for triple sharing."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

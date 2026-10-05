@@ -1,6 +1,7 @@
 // Creates or updates trips from content/trips/*.json (one file per trip, written from the owner's itinerary PDFs).
 //   npm run trips:load              → local DB (DATABASE_URL from .env.local)
 //   DATABASE_URL=… npm run trips:load → any other DB (e.g. Supabase)
+//   npm run trips:load -- kasol-tosh munsiyari → only those trips
 // Upserts by slug, then adds weekly departures that don't exist yet. Never deletes trips, departures or bookings.
 import { readdir, readFile } from "node:fs/promises";
 import postgres from "postgres";
@@ -18,7 +19,9 @@ type Trip = {
 };
 
 const dir = "content/trips";
-const trips = await Promise.all((await readdir(dir)).filter((f) => f.endsWith(".json")).map(async (f) => JSON.parse(await readFile(`${dir}/${f}`, "utf8")) as Trip));
+// `npm run trips:load -- slug-a slug-b` loads only those files; no arguments loads all.
+const only = process.argv.slice(2);
+const trips = await Promise.all((await readdir(dir)).filter((f) => f.endsWith(".json") && (!only.length || only.includes(f.slice(0, -5)))).map(async (f) => JSON.parse(await readFile(`${dir}/${f}`, "utf8")) as Trip));
 
 const problems: string[] = [];
 for (const t of trips) {
