@@ -43,6 +43,8 @@ export async function TripPage({ data }: { data: Data }) {
   ]);
   const more = related.length >= 3 ? related : await getTrips({ category: category?.slug, excludeId: trip.id, limit: 8 });
   const images = [trip.coverImage, ...trip.gallery].filter((x): x is string => !!x);
+  // Itineraries that open with the night departure have one entry more than the trip has days: that first entry is "Day 0".
+  const day1 = trip.itinerary.length > trip.durationDays ? 0 : 1;
   const specs = Object.entries(trip.trekSpecs).filter(([, v]) => v);
   const price = trip.salePrice ?? trip.basePrice;
   // Trip values win; otherwise fall back to the category (packing, age) and site-wide settings (policies).
@@ -96,7 +98,7 @@ export async function TripPage({ data }: { data: Data }) {
       ...(trip.itinerary.length && {
         itinerary: {
           "@type": "ItemList", numberOfItems: trip.itinerary.length,
-          itemListElement: trip.itinerary.map((d, i) => ({ "@type": "ListItem", position: i + 1, name: `Day ${i + 1}: ${d.title}` })),
+          itemListElement: trip.itinerary.map((d, i) => ({ "@type": "ListItem", position: i + 1, name: `Day ${i + day1}: ${d.title}` })),
         },
       }),
       offers: price ? {
@@ -189,10 +191,10 @@ export async function TripPage({ data }: { data: Data }) {
                     <details className="acc group rounded-3xl border border-line bg-white transition-shadow open:shadow-[var(--shadow-card)]" open={i === 0}>
                       <summary className="flex items-center gap-4 p-4 pr-5">
                         <span className="relative z-10 grid size-11 shrink-0 place-items-center rounded-full bg-ink text-sm font-extrabold text-white group-open:bg-brand">
-                          {String(i + 1).padStart(2, "0")}
+                          {String(i + day1).padStart(2, "0")}
                         </span>
                         <span className="min-w-0 flex-1">
-                          <span className="block text-xs font-bold uppercase tracking-wider text-muted">Day {i + 1}{d.distance ? ` · ${d.distance}` : ""}</span>
+                          <span className="block text-xs font-bold uppercase tracking-wider text-muted">Day {i + day1}{d.distance ? ` · ${d.distance}` : ""}</span>
                           <span className="block font-extrabold leading-snug">{d.title}</span>
                         </span>
                         <span className="chev text-muted" aria-hidden>⌄</span>

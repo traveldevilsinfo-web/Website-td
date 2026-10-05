@@ -1,0 +1,147 @@
+{
+  "category": "weekend-getaways",
+  "destination": "uttarakhand",
+  "durationDays": 2,
+  "durationNights": 1,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 3,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "mukteshwar-kainchi-dham",
+  "title": "Mukteshwar & Kainchi Dham",
+  "tags": [
+    "mukteshwar",
+    "kainchi-dham"
+  ],
+  "reportingPoint": "Vaishali Metro Station, Delhi. Reporting time: 10:30 PM on the departure night.",
+  "pickupPoints": [
+    "Vaishali Metro Station, Delhi"
+  ],
+  "basePrice": 5199,
+  "bookingAmount": 2600,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 5199,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 5399,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 5599,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/wp/2026/02/3-2.png",
+  "gallery": [
+    "/uploads/2026/10/mukteshwar-1.jpg",
+    "/uploads/2026/10/mukteshwar-2.jpg",
+    "/uploads/2026/10/mukteshwar-3.jpg",
+    "/uploads/2026/10/mukteshwar-4.jpg"
+  ],
+  "highlights": [
+    "Kainchi Dham",
+    "Chauli ki Jali",
+    "Mukteshwar Temple",
+    "Waterfall hike (1.5 km)",
+    "Nainital or Bhimtal sightseeing",
+    "Bonfire and music evening"
+  ],
+  "overview": "Two kinds of calm in one weekend: this **1 Night / 2 Days** group trip pairs the views of Mukteshwar with a visit to Kainchi Dham. You leave Delhi at night from Vaishali Metro Station (reporting 10:30 PM) and arrive in Mukteshwar the next morning.\n\nDay 1 has a short 1.5 km hike to a local waterfall, then Chauli ki Jali and the Mukteshwar Temple, and ends with a bonfire, music and dinner at your Swiss camp or room. Day 2 visits Kainchi Dham, followed by sightseeing in either Nainital or Bhimtal, before the bus leaves for Delhi at 9:00 PM. Prices start at ₹5,199 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Departure from Delhi at night",
+      "content": "Board the bus or traveller from Vaishali Metro Station, Delhi.\nReporting time: 10:30 PM."
+    },
+    {
+      "title": "Arrival in Mukteshwar",
+      "content": "Morning: arrive in Mukteshwar and check in to your camps or rooms.\nAfternoon: a short 1.5 km hike to a local waterfall. After the hike, visit Chauli ki Jali and the Mukteshwar Temple, known for their views and cultural significance.\nEvening: return to your stay for a bonfire and music session. Dinner, followed by an overnight stay."
+    },
+    {
+      "title": "Adventure, Kainchi Dham and sightseeing",
+      "content": "Morning: after breakfast, check out and try the adventure activities (at your own cost).\nAfternoon: visit Kainchi Dham. Later, proceed to either Nainital or Bhimtal for leisurely sightseeing.\nEvening: depart for Delhi at 9:00 PM.\nNext day, early morning: arrival in Delhi."
+    }
+  ],
+  "includes": [
+    "Round-trip transfers from Delhi",
+    "1 night accommodation in Swiss camps or rooms",
+    "Meals: 1 breakfast, 1 dinner and an evening high tea",
+    "Sightseeing as per the itinerary",
+    "Bonfire and music evening",
+    "Enthusiastic and experienced trip captain"
+  ],
+  "excludes": [
+    "5% GST",
+    "Personal expenses and adventure activities",
+    "Entry tickets and fees of any kind",
+    "Meals and drinks other than those included",
+    "Anything not mentioned in the itinerary"
+  ],
+  "importantNotes": "- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "You board the AC bus or traveller at Vaishali Metro Station, Delhi. Reporting time is 10:30 PM on the departure night, and you reach the hills the next morning."
+    },
+    {
+      "q": "How much does the Mukteshwar and Kainchi Dham trip cost?",
+      "a": "₹5,199 per person on quad sharing, ₹5,399 on triple sharing and ₹5,599 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "When do we visit Kainchi Dham?",
+      "a": "On Day 2, in the afternoon, after breakfast and check-out. The group then goes on to either Nainital or Bhimtal for sightseeing and leaves for Delhi at 9:00 PM."
+    },
+    {
+      "q": "What is included?",
+      "a": "Round-trip transfers from Delhi, 1 night in Swiss camps or rooms, 1 breakfast, 1 dinner and an evening high tea, sightseeing as per the itinerary, a bonfire and music evening, and a trip captain."
+    },
+    {
+      "q": "Are adventure activities included?",
+      "a": "No. Adventure activities on Day 2 are optional and paid for separately, as are entry tickets and personal expenses."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

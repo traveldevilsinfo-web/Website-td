@@ -1,0 +1,150 @@
+{
+  "category": "weekend-getaways",
+  "destination": "uttarakhand",
+  "durationDays": 2,
+  "durationNights": 1,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 3,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "kanatal-tehri",
+  "title": "Kanatal Tehri",
+  "tags": [
+    "kanatal-tehri"
+  ],
+  "reportingPoint": "Vaishali Metro Station, Delhi. Reporting time: 10:30 PM on the departure night.",
+  "pickupPoints": [
+    "Vaishali Metro Station, Delhi"
+  ],
+  "basePrice": 5199,
+  "bookingAmount": 2600,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 5199,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 5399,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 5599,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/wp/2026/02/2-2.png",
+  "gallery": [
+    "/uploads/2026/10/kanatal-tehri-1.jpg",
+    "/uploads/2026/10/kanatal-tehri-2.jpg",
+    "/uploads/2026/10/kanatal-tehri-3.jpg"
+  ],
+  "highlights": [
+    "Zip line, Burma bridge and sky cycling",
+    "Surkanda Devi Temple",
+    "Dhanaulti Eco Park",
+    "Tehri Lake water sports",
+    "Ganga Aarti at Rishikesh (time permitting)",
+    "Bonfire with light music"
+  ],
+  "overview": "Camp in the hills, try the adventure course and spend a morning at Tehri Lake: this **1 Night / 2 Days** Kanatal and Tehri group trip leaves Delhi at night from Vaishali Metro Station (reporting 10:30 PM) and returns early in the morning two days later.\n\nDay 1 has adventure activities at the campsite (zip line, Burma bridge and sky cycling are included), plus Dhanaulti Eco Park and the Surkanda Devi Temple, and ends with dinner, a bonfire and light music. Day 2 is Tehri Lake, about an hour's drive away, where water sports like jet skiing, banana rides and speed boats are available on direct payment. If time allows, the group stops in Rishikesh for Ganga Aarti on the way back. Prices start at ₹5,199 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Departure from Delhi at night",
+      "content": "Board the bus or traveller from Vaishali Metro Station, Delhi.\nReporting time: 10:30 PM."
+    },
+    {
+      "title": "Adventure activities and Surkanda Devi Temple",
+      "content": "Reach Kanatal and have breakfast.\nCheck in, freshen up and head out for adventure activities, then visit Dhanaulti Eco Park and the Surkanda Devi Temple.\nReturn to the property for evening snacks and tea.\nDinner at night with a bonfire and light music."
+    },
+    {
+      "title": "Tehri Lake (water sports)",
+      "content": "Wake up early for the morning view of Kanatal, freshen up and have breakfast.\nDrive to Tehri Lake (about 1 hour) for water sports such as jet skiing, banana ride, jet attack and speed boat, on direct payment.\nAfter Tehri Lake, depart for Rishikesh for Ganga Aarti (depending on time) and local sightseeing.\nReach Delhi by early morning."
+    }
+  ],
+  "includes": [
+    "Travel by AC bus or traveller",
+    "1 night at a Kanatal campsite",
+    "Meals: 2 breakfasts, 1 dinner and 1 evening snacks at the stay",
+    "Surkanda Devi Temple visit",
+    "Tehri Lake visit for water sports",
+    "Adventure activities: zip line, Burma bridge and sky cycling",
+    "Trip coordinator",
+    "24x7 customer support"
+  ],
+  "excludes": [
+    "5% GST",
+    "Extra drinks, food, tea and snacks",
+    "Tickets for any sightseeing or extra activity outside the camp area (including Tehri Lake water sports)",
+    "Travel insurance",
+    "Medical expenses (apart from first aid)",
+    "Tips, laundry, liquor, mineral water, telephone charges, camera fees and items of a personal nature",
+    "Anything not mentioned in the inclusions",
+    "Cost escalation due to unforeseen reasons like landslides, road closures or natural calamity"
+  ],
+  "importantNotes": "- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "You board the AC bus or traveller at Vaishali Metro Station, Delhi. Reporting time is 10:30 PM on the departure night, and you reach the hills the next morning."
+    },
+    {
+      "q": "How much does the Kanatal Tehri trip cost?",
+      "a": "₹5,199 per person on quad sharing, ₹5,399 on triple sharing and ₹5,599 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "Which activities are included?",
+      "a": "The zip line, Burma bridge and sky cycling at the camp are included. Water sports at Tehri Lake, such as jet skiing, banana rides and speed boats, are paid directly at the lake."
+    },
+    {
+      "q": "What is included?",
+      "a": "Travel by AC bus or traveller, 1 night at a Kanatal campsite, 2 breakfasts, 1 dinner and 1 evening snacks, the Surkanda Devi Temple visit, the Tehri Lake visit, the camp adventure activities, a trip coordinator and 24x7 customer support."
+    },
+    {
+      "q": "Do we stop in Rishikesh?",
+      "a": "After Tehri Lake the group heads to Rishikesh for Ganga Aarti and local sightseeing if time allows. It depends on the day's timing."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}

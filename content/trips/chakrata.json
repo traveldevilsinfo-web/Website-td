@@ -1,0 +1,147 @@
+{
+  "category": "weekend-getaways",
+  "destination": "uttarakhand",
+  "durationDays": 2,
+  "durationNights": 1,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "thingsToCarry": [
+    "Backpack or rucksack",
+    "Comfortable clothing",
+    "Raincoat and umbrella (monsoons only)",
+    "Warm woollen jackets or sweaters (depending on the season)",
+    "Comfortable trekking or sports shoes",
+    "Water bottle (avoid single-use plastic)",
+    "Quick snacks for the journey, like dry fruits and chocolates",
+    "Personal care items and toiletries",
+    "Personal medicines",
+    "Phone, camera and photography equipment",
+    "ATM card and enough cash for shopping and cafe visits",
+    "Torch, power bank and sunglasses",
+    "Identity document such as Aadhaar, driving licence or passport"
+  ],
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "status": "published",
+  "departures": {
+    "weekdays": [
+      5
+    ],
+    "returnAfterDays": 3,
+    "weeks": 24,
+    "seats": 20
+  },
+  "slug": "chakrata",
+  "title": "Chakrata",
+  "tags": [
+    "chakrata"
+  ],
+  "reportingPoint": "Vaishali Metro Station, Delhi. Reporting time: 10:30 PM on the departure night.",
+  "pickupPoints": [
+    "Vaishali Metro Station, Delhi"
+  ],
+  "basePrice": 4999,
+  "bookingAmount": 2500,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 4999,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 5199,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 5499,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/wp/2026/02/1-2.png",
+  "gallery": [
+    "/uploads/2026/10/chakrata-1.jpg",
+    "/uploads/2026/10/chakrata-2.jpg",
+    "/uploads/2026/10/chakrata-3.jpg"
+  ],
+  "highlights": [
+    "Budher Cave trek (5 km hike)",
+    "Tiger Falls",
+    "Sunset at Chirmiri Neck Top",
+    "Bonfire and music night",
+    "Resort stay in Chakrata"
+  ],
+  "overview": "A quick hill weekend from Delhi: this **1 Night / 2 Days** Chakrata group trip leaves at night and has you back in Delhi early in the morning two days later. You board the AC bus or traveller at Vaishali Metro Station (reporting 10:30 PM) and wake up in Chakrata.\n\nDay 1 is the Budher Cave trek, a hike of about 5 km, followed by a bonfire evening with snacks, music and dinner at the resort. Day 2 covers Tiger Falls and sunset at Chirmiri Neck Top before the overnight drive back. Travel, a resort stay, the listed meals and a trip coordinator are included. Prices start at ₹4,999 per person on quad sharing (5% GST extra).",
+  "itinerary": [
+    {
+      "title": "Departure from Delhi at night",
+      "content": "Board the bus or traveller from Vaishali Metro Station, Delhi.\nReporting time: 10:30 PM."
+    },
+    {
+      "title": "Reach Chakrata | Budher Cave trek",
+      "content": "Reach Chakrata in the morning. Check in to the resort and rest for a while.\nDrive towards Budher Cave for the trek (a hike of about 5 km).\nReturn to the resort in the evening.\nEnjoy a bonfire with snacks and music, then dinner and an overnight stay."
+    },
+    {
+      "title": "Tiger Falls and Chirmiri Neck Top",
+      "content": "After breakfast, check out from the resort and visit Tiger Falls, one of the highest waterfalls in Uttarakhand.\nLater, head to Chirmiri Neck Top for a scenic sunset.\nDepart for Delhi afterwards and reach by early morning."
+    }
+  ],
+  "includes": [
+    "All travel and transfers in an AC traveller or bus",
+    "1 night stay in a resort at Chakrata",
+    "Meals: 1 breakfast, 1 dinner and evening snacks",
+    "Trek to Budher Caves",
+    "Visit to Chirmiri Neck Top and Tiger Falls",
+    "Bonfire and music",
+    "Trip coordinator throughout the trip",
+    "24x7 customer support"
+  ],
+  "excludes": [
+    "5% GST",
+    "Any meal or food item other than the package inclusions",
+    "Entry tickets to monuments and public places",
+    "Charges for videos or photos during paragliding",
+    "Any expense not mentioned in the inclusions",
+    "Extra costs caused by natural calamity or any situation beyond our control"
+  ],
+  "importantNotes": "- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "You board the AC bus or traveller at Vaishali Metro Station, Delhi. Reporting time is 10:30 PM on the departure night, and you reach the hills the next morning."
+    },
+    {
+      "q": "How much does the Chakrata trip cost?",
+      "a": "₹4,999 per person on quad sharing, ₹5,199 on triple sharing and ₹5,499 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "All travel and transfers in an AC traveller or bus, 1 night in a resort at Chakrata, 1 breakfast, 1 dinner and evening snacks, the Budher Caves trek, visits to Chirmiri Neck Top and Tiger Falls, a bonfire with music, a trip coordinator throughout and 24x7 customer support."
+    },
+    {
+      "q": "What is not included?",
+      "a": "5% GST, meals beyond those listed, entry tickets to monuments and public places, and any personal expense not mentioned in the inclusions."
+    },
+    {
+      "q": "How much walking is there?",
+      "a": "Day 1 has the Budher Cave trek, a hike of about 5 km. Wear comfortable trekking or sports shoes."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+    }
+  ]
+}
