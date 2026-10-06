@@ -303,7 +303,9 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
             Book now
           </a>
         ) : null}
-        <OpenLeadButton destination={summary} className={bookable && batch
+        <OpenLeadButton trip={{ title, option: [route?.name, pkg && pkgs.length > 1 ? pkg.name : null, tier?.label].filter(Boolean).join(" · ") || undefined,
+          batches: bs.filter((x) => x.status !== "sold_out").map((x) => ({ start: x.startDate, end: x.endDate })), selected: batch?.startDate }}
+          className={bookable && batch
           ? "press rounded-2xl border border-line py-3.5 text-sm font-extrabold hover:border-ink"
           : "press rounded-2xl bg-brand py-4 text-base font-extrabold text-white shadow-lg shadow-brand/25 hover:bg-brand-dark"}>
           {bookable && batch ? "Send query" : "Enquire now"}

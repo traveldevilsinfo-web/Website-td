@@ -375,7 +375,7 @@ export async function TripPage({ data }: { data: Data }) {
         </div>
         <div className="flex gap-2">
           <a href="#book" className="press rounded-full border border-line bg-white px-4 py-3 text-sm font-extrabold">Dates</a>
-          <OpenLeadButton destination={trip.title} className="press rounded-full bg-brand px-6 py-3 text-sm font-extrabold text-white">Enquire</OpenLeadButton>
+          <OpenLeadButton trip={{ title: trip.title, batches: open.map((b) => ({ start: b.startDate, end: b.endDate })) }} className="press rounded-full bg-brand px-6 py-3 text-sm font-extrabold text-white">Enquire</OpenLeadButton>
         </div>
       </div>
       <div className="h-20 lg:hidden" />
