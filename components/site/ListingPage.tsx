@@ -1,17 +1,20 @@
 import Link from "next/link";
 import type { Faq } from "@/db/schema";
 import { md } from "@/lib/markdown";
-import { CtaBand, PageHero, TripCard, type CardTrip } from "./ui";
+import { CtaBand, PageHero, type CardTrip } from "./ui";
+import { byDuration } from "@/lib/format";
+import { TripGrid } from "./TripGrid";
 import { Faqs } from "./Faqs";
 
 /** Shared layout for category / destination / month / collection pages. */
-export function ListingPage({ title, intro, image, crumbs, trips, chips, content, faqs, empty }: {
+export function ListingPage({ title, intro, image, crumbs, trips: given, chips, content, faqs, empty }: {
   title: string; intro?: string | null; image?: string | null;
   crumbs: { label: string; href?: string }[];
   trips: CardTrip[];
   chips?: { label: string; href: string; active?: boolean }[];
   content?: string | null; faqs?: Faq[]; empty?: string;
 }) {
+  const trips = [...given].sort(byDuration); // every list runs shortest trip first (1N, 2N, 3N…)
   return (
     <>
       <PageHero title={title} intro={intro} image={image ?? trips.find((t) => t.coverImage)?.coverImage} crumbs={crumbs} />
@@ -30,12 +33,7 @@ export function ListingPage({ title, intro, image, crumbs, trips, chips, content
       )}
 
       <section className="mx-auto max-w-7xl px-4 py-12">
-        <p className="mb-6 text-sm font-bold text-muted">{trips.length} trip{trips.length === 1 ? "" : "s"}</p>
-        {trips.length ? (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {trips.map((t, i) => <div key={t.id} className="reveal"><TripCard trip={t} priority={i < 4} /></div>)}
-          </div>
-        ) : (
+        {trips.length ? <TripGrid trips={trips} /> : (
           <div className="rounded-[2rem] bg-surface p-12 text-center">
             <p className="headline text-2xl">{empty ?? "New departures are being planned."}</p>
             <p className="mt-2 text-muted">Tell us where you want to go and we&apos;ll put a trip together for you.</p>

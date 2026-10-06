@@ -192,3 +192,10 @@ const { postalAddress } = await import("./site");
 assert.deepEqual(postalAddress("247, D Mall, Niti Khand\nIndirapuram, Ghaziabad\nUttar Pradesh 201014"),
   { "@type": "PostalAddress", streetAddress: "247, D Mall, Niti Khand, Indirapuram", addressLocality: "Ghaziabad", addressRegion: "Uttar Pradesh", postalCode: "201014", addressCountry: "IN" });
 console.log("address checks passed");
+
+// ---------------- trip list order: 1N first, then cheapest
+const { byDuration } = await import("./format");
+const tl = [{ n: "c", durationNights: 2, durationDays: 3, basePrice: 7000, salePrice: null }, { n: "a", durationNights: 1, durationDays: 2, basePrice: 5200, salePrice: null },
+  { n: "b", durationNights: 1, durationDays: 2, basePrice: 6000, salePrice: 4999 }, { n: "d", durationNights: 7, durationDays: 8, basePrice: 1000, salePrice: null }];
+assert.deepEqual([...tl].sort(byDuration).map((x) => x.n), ["b", "a", "c", "d"]);
+console.log("trip order checks passed");

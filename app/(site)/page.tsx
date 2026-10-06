@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { COLLECTIONS, inr } from "@/lib/format";
+import { byDuration, COLLECTIONS, inr } from "@/lib/format";
 import { getCategories, getDestinationsWithTrips, getPosts, getTrips } from "@/lib/queries";
 import { getSettings } from "@/lib/settings";
 import { og } from "@/lib/seo";
@@ -57,7 +57,8 @@ export default async function Home() {
   const months = [...new Set(scheduled.flatMap((t) => t.batches.map((b) => b.start.slice(0, 7))))].sort().slice(0, 8)
     .map((key, _, all) => ({ key, label: new Date(key + "-01T00:00:00").toLocaleString("en-IN", { month: "short" }) + (key.slice(0, 4) !== all[0].slice(0, 4) ? ` ’${key.slice(2, 4)}` : "") }));
 
-  const rails = cats.map((c) => ({ cat: c, trips: trips.filter((t) => t.categorySlug === c.slug) })).filter((r) => r.trips.length);
+  // Each category row runs shortest trip first (1N, 2N, 3N…).
+  const rails = cats.map((c) => ({ cat: c, trips: trips.filter((t) => t.categorySlug === c.slug).sort(byDuration) })).filter((r) => r.trips.length);
 
   // Brand entity for Google / AI answers: who we are, how to reach us, where we're listed.
   const sameAs = [...Object.values(settings.socials).filter(Boolean), LISTINGS.justdial, LISTINGS.linkedin];

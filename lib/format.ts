@@ -1,6 +1,9 @@
 export const inr = (n: number | null | undefined) => (n == null ? "" : `₹${n.toLocaleString("en-IN")}`);
 
 export const durationLabel = (d: number, n: number) => (n ? `${n}N/${d}D` : `${d} Day${d > 1 ? "s" : ""}`);
+/** Sort order for trip lists: shortest first (1N, 2N, 3N…), then cheapest. */
+export const byDuration = <T extends { durationNights: number; durationDays: number; basePrice: number | null; salePrice: number | null }>(a: T, b: T) =>
+  a.durationNights - b.durationNights || a.durationDays - b.durationDays || (a.salePrice ?? a.basePrice ?? 0) - (b.salePrice ?? b.basePrice ?? 0);
 
 export const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 export const monthShort = (iso: string) => new Date(iso + "T00:00:00").toLocaleString("en-IN", { month: "short" });
