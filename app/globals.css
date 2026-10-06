@@ -161,6 +161,8 @@ fieldset { min-width: 0; }
   to { opacity: 1; transform: none; filter: blur(0); }
 }
 .word-in { display: inline-block; animation: word-in 600ms var(--ease-out-smooth) both; }
+/* same entrance without changing the element's display (review ticker) */
+.fade-in { animation: word-in 500ms var(--ease-out-smooth) both; }
 
 /* ---------- Accordion (details) ---------- */
 details.acc::details-content {

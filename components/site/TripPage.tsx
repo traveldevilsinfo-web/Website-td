@@ -64,6 +64,13 @@ export async function TripPage({ data }: { data: Data }) {
     ...posts.filter((p) => needle.some((n) => p.title.toLowerCase().includes(n) || p.tags.map((t) => t.toLowerCase()).includes(n))), ...posts]
     .filter((p, i, a) => a.indexOf(p) === i).slice(0, 3);
 
+  // Real traveller reviews (Settings → testimonials): ones about this trip first.
+  const about = (r: { trip?: string }) => !!r.trip && (trip.title.toLowerCase().includes(r.trip.toLowerCase().split(" ")[0]) || r.trip.toLowerCase().includes(trip.title.toLowerCase()));
+  const reviews = [...settings.testimonials.filter(about), ...settings.testimonials.filter((r) => !about(r))];
+  const google = settings.stats.find((x) => /google/i.test(x.label));
+  const rating = google && settings.reviewsUrl
+    ? { value: google.value.replace("★", "").trim(), count: google.label.replace(/^google rating\s*·\s*/i, ""), url: settings.reviewsUrl } : null;
+
   const open = batches.filter((b) => b.status !== "sold_out");
   const repeat = repeatLabel(batches.map((b) => b.startDate));
   const lastMonth = batches.length ? new Date(batches[batches.length - 1].startDate + "T00:00:00").toLocaleDateString("en-IN", { month: "short", year: "numeric" }) : "";
@@ -148,7 +155,7 @@ export async function TripPage({ data }: { data: Data }) {
         </div>
       </div>
 
-      <Gallery images={images} title={trip.title} />
+      <Gallery images={images} title={trip.title} reviews={reviews} rating={rating} />
 
       <div className="mx-auto grid max-w-7xl gap-10 px-4 pt-10 lg:grid-cols-[1fr_380px]">
         <div className="min-w-0">

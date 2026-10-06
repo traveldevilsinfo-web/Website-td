@@ -8,7 +8,47 @@ import { BATCH_LABEL, dateDay, dateShort, inr, monthShort } from "@/lib/format";
 
 /* ------------------------------------------------------------------ Gallery + lightbox */
 
-export function Gallery({ images, title }: { images: string[]; title: string }) {
+type Review = { name: string; text: string; trip?: string };
+type Rating = { value: string; count: string; url: string } | null;
+
+/** One real traveller review at a time; cross-fades every 6s (paused on hover/focus, off with reduced motion). */
+function ReviewTicker({ reviews, className = "" }: { reviews: Review[]; className?: string }) {
+  const [i, setI] = useState(0);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    if (reviews.length < 2 || paused || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const t = setInterval(() => setI((n) => (n + 1) % reviews.length), 6000);
+    return () => clearInterval(t);
+  }, [reviews.length, paused]);
+  const r = reviews[i];
+  if (!r) return null;
+  return (
+    <figure className={`flex items-center gap-5 rounded-[1.75rem] bg-white p-5 ring-1 ring-line sm:p-6 ${className}`}
+      onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={() => setPaused(false)}>
+      <blockquote key={i} className="fade-in min-w-0 flex-1 text-[15px] leading-relaxed text-ink/80 sm:text-base">
+        <p className="line-clamp-4">&ldquo;{r.text}&rdquo;</p>
+      </blockquote>
+      <figcaption key={`c${i}`} className="fade-in flex w-28 shrink-0 flex-col items-center text-center sm:w-36">
+        <span className="grid size-12 place-items-center rounded-full bg-ink text-lg font-extrabold text-white" aria-hidden>{r.name.trim()[0]?.toUpperCase()}</span>
+        <span className="mt-2 text-sm font-extrabold leading-tight">{r.name}</span>
+        {r.trip && <span className="mt-0.5 text-xs font-semibold text-muted">{r.trip}</span>}
+        {reviews.length > 1 && (
+          <span className="mt-2 flex gap-1">
+            <button type="button" onClick={() => setI((i - 1 + reviews.length) % reviews.length)} aria-label="Previous review" className="press grid size-7 place-items-center rounded-full bg-surface text-sm hover:bg-line">‹</button>
+            <button type="button" onClick={() => setI((i + 1) % reviews.length)} aria-label="Next review" className="press grid size-7 place-items-center rounded-full bg-surface text-sm hover:bg-line">›</button>
+          </span>
+        )}
+      </figcaption>
+    </figure>
+  );
+}
+
+/**
+ * Trip header photos. Desktop: big cover with the rating badge and a rotating review under it; two small photos
+ * and one large one on the right, with a button that opens every photo. Phones: swipe strip, then the review.
+ * With fewer than four photos the right column shrinks (3 → two stacked, 2 → one) and one photo stands alone.
+ */
+export function Gallery({ images, title, reviews = [], rating = null }: { images: string[]; title: string; reviews?: Review[]; rating?: Rating }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const track = useRef<HTMLDivElement>(null);
   const open = (i: number) => {
@@ -18,48 +58,77 @@ export function Gallery({ images, title }: { images: string[]; title: string }) 
   const step = (d: number) => track.current?.scrollBy({ left: d * track.current.clientWidth, behavior: "smooth" });
   if (!images.length) return null;
   const [first, ...rest] = images;
+  const side = rest.slice(0, 3); // photos 2-4
+  const last = side[side.length - 1];
+  const tile = "group relative overflow-hidden rounded-[1.75rem] bg-surface";
+  const zoom = "object-cover transition-transform duration-700 group-hover:scale-105";
 
-  // Too few photos for a mosaic: show the image whole over a blurred copy of itself.
-  if (images.length < 3) {
-    return (
-      <div className="mx-auto max-w-7xl px-4">
-        <button onClick={() => open(0)} aria-label="Open photo"
-          className="relative block h-[clamp(260px,52vw,560px)] w-full overflow-hidden rounded-[2rem] bg-ink">
-          {/* Soft backdrop: a 32px render stretched up is naturally blurry. No CSS blur filter (too costly at this size). */}
-          <Image src={first} alt="" fill sizes="32px" className="scale-110 object-cover opacity-60" aria-hidden />
-          <Image src={first} alt={title} fill loading="eager" fetchPriority="high" sizes="(max-width: 1280px) 100vw, 1280px" className="object-contain" />
-        </button>
-        <LightboxDialog dialog={dialog} track={track} images={images} title={title} step={step} />
-      </div>
-    );
-  }
+  const badge = rating && (
+    <a href={rating.url} target="_blank" rel="noopener" aria-label={`${rating.value} on Google, ${rating.count}. Read the reviews`}
+      className="press absolute bottom-4 left-4 z-10 rounded-2xl bg-black/55 px-3.5 py-2 text-white ring-1 ring-white/20 backdrop-blur-md hover:bg-black/70">
+      <span className="flex items-center gap-1.5 text-base font-extrabold leading-none">{rating.value}<span className="text-amber-400" aria-hidden>★★★★★</span></span>
+      <span className="mt-1 block text-xs font-bold text-white/85">{rating.count} on Google</span>
+    </a>
+  );
+  const photosButton = (
+    <button type="button" onClick={() => open(0)}
+      className="press absolute bottom-4 right-4 z-10 flex items-center gap-1.5 rounded-full bg-brand px-5 py-2.5 text-sm font-extrabold text-white shadow-lg hover:bg-brand-dark">
+      {images.length} Photos<span aria-hidden>›</span>
+    </button>
+  );
 
   return (
     <>
-      {/* Mobile: swipeable strip. Desktop: mosaic. */}
-      {/* wrapper hides it on desktop: .rail's own display rule beats a md:hidden on the same element */}
+      {/* Phones: swipeable strip, then the review. (Wrapper hides it on desktop: .rail's own display rule beats md:hidden.) */}
       <div className="md:hidden">
-      <div className="rail gap-2 [--rail-pad:1rem] [grid-auto-columns:88%]">
-        {images.map((src, i) => (
-          <button key={src + i} onClick={() => open(i)} className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface" aria-label={`Open photo ${i + 1}`}>
-            <Image src={src} alt={`${title} photo ${i + 1}`} fill loading={i === 0 ? "eager" : undefined} fetchPriority={i === 0 ? "high" : undefined} sizes="88vw" className="object-cover" />
-          </button>
-        ))}
+        <div>
+          <div className="rail gap-2 [--rail-pad:1rem] [grid-auto-columns:88%]">
+            {images.map((src, i) => (
+              <button key={src + i} onClick={() => open(i)} className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface" aria-label={`Open photo ${i + 1}`}>
+                <Image src={src} alt={`${title} photo ${i + 1}`} fill loading={i === 0 ? "eager" : undefined} fetchPriority={i === 0 ? "high" : undefined} sizes="88vw" className="object-cover" />
+              </button>
+            ))}
+          </div>
+        </div>
+        {reviews.length > 0 && <div className="mt-3 px-4"><ReviewTicker reviews={reviews} /></div>}
       </div>
-      </div>
-      <div className="mx-auto hidden h-[480px] max-w-7xl grid-cols-4 grid-rows-2 gap-2 px-4 md:grid">
-        <button onClick={() => open(0)} className="group relative col-span-2 row-span-2 overflow-hidden rounded-l-[2rem] bg-surface" aria-label="Open photo 1">
-          <Image src={first} alt={title} fill loading="eager" fetchPriority="high" sizes="50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-        </button>
-        {rest.slice(0, 4).map((src, i) => (
-          <button key={src + i} onClick={() => open(i + 1)} aria-label={`Open photo ${i + 2}`}
-            className={`group relative overflow-hidden bg-surface ${i === 1 ? "rounded-tr-[2rem]" : ""} ${i === 3 ? "rounded-br-[2rem]" : ""}`}>
-            <Image src={src} alt={`${title} photo ${i + 2}`} fill sizes="25vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
-            {i === 3 && images.length > 5 && (
-              <span className="glass absolute bottom-4 right-4 rounded-full px-4 py-2 text-sm font-extrabold text-ink">+{images.length - 5} photos</span>
+
+      <div className={`mx-auto hidden max-w-7xl gap-3 px-4 md:grid md:h-[540px] lg:h-[600px] ${side.length ? "md:grid-cols-[1.55fr_1fr]" : ""}`}>
+        <div className="flex min-h-0 flex-col gap-3">
+          <div className={`${tile} min-h-0 flex-1`}>
+            <button type="button" onClick={() => open(0)} aria-label="Open photo 1" className="absolute inset-0">
+              <Image src={first} alt={title} fill loading="eager" fetchPriority="high" sizes="(max-width: 1280px) 60vw, 780px" className={zoom} />
+            </button>
+            {badge}
+            {!side.length && images.length > 0 && photosButton}
+          </div>
+          {reviews.length > 0 && <ReviewTicker reviews={reviews} className="h-40 shrink-0" />}
+        </div>
+
+        {side.length > 0 && (
+          <div className={`grid min-h-0 gap-3 ${side.length === 3 ? "grid-rows-[1fr_2.05fr]" : side.length === 2 ? "grid-rows-2" : ""}`}>
+            {side.length === 3 && (
+              <div className="grid min-h-0 grid-cols-2 gap-3">
+                {side.slice(0, 2).map((src, i) => (
+                  <button key={src + i} type="button" onClick={() => open(i + 1)} aria-label={`Open photo ${i + 2}`} className={tile}>
+                    <Image src={src} alt={`${title} photo ${i + 2}`} fill sizes="20vw" className={zoom} />
+                  </button>
+                ))}
+              </div>
             )}
-          </button>
-        ))}
+            {side.length === 2 && (
+              <button type="button" onClick={() => open(1)} aria-label="Open photo 2" className={tile}>
+                <Image src={side[0]} alt={`${title} photo 2`} fill sizes="40vw" className={zoom} />
+              </button>
+            )}
+            <div className={`${tile} min-h-0`}>
+              <button type="button" onClick={() => open(side.length)} aria-label={`Open photo ${side.length + 1}`} className="absolute inset-0">
+                <Image src={last} alt={`${title} photo ${side.length + 1}`} fill sizes="40vw" className={zoom} />
+              </button>
+              {photosButton}
+            </div>
+          </div>
+        )}
       </div>
 
       <LightboxDialog dialog={dialog} track={track} images={images} title={title} step={step} />
