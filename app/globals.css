@@ -131,6 +131,24 @@ fieldset { min-width: 0; }
   .rail[data-size="quote"] { grid-auto-columns: calc((100% - 2 * var(--rail-pad, 1rem) - 2rem) / 3); }
 }
 
+/* ---------- Category cards: tilt toward the cursor, spring back on leave ---------- */
+@property --rx { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@property --ry { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.cat-card {
+  box-shadow: var(--shadow-card);
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  /* leaving: ease the angles back from wherever they are (interruptible; no keyframes) */
+  transition: --rx 600ms var(--ease-out-smooth), --ry 600ms var(--ease-out-smooth), transform 500ms var(--ease-out-smooth), box-shadow 400ms ease;
+  will-change: transform;
+}
+.cat-card[data-tilt] { transition: --rx 90ms linear, --ry 90ms linear, transform 300ms var(--ease-out-smooth), box-shadow 300ms ease; } /* tracking: near 1:1 */
+.cat-card:hover, .cat-card:focus-visible { box-shadow: var(--shadow-lift); transform: translateY(-6px) rotateX(var(--rx)) rotateY(var(--ry)); }
+.cat-card:active { transform: translateY(-2px) scale(0.985) rotateX(var(--rx)) rotateY(var(--ry)); transition-duration: 100ms; } /* answers on press, not release */
+.cat-card:focus-visible { outline: 3px solid color-mix(in srgb, var(--color-brand) 55%, transparent); outline-offset: 3px; }
+.cat-photo { -webkit-mask-image: linear-gradient(to bottom, transparent, #000 38%); mask-image: linear-gradient(to bottom, transparent, #000 38%); }
+.cat-glare { background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 0%), rgb(255 255 255 / 0.55), transparent 55%); opacity: 0; transition: opacity 400ms ease; mix-blend-mode: soft-light; }
+.cat-card[data-tilt] .cat-glare { opacity: 1; }
+
 /* ---------- Reveal on scroll (CSS scroll-driven; no JS) ---------- */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {

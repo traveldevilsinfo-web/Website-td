@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +8,7 @@ import { getSettings } from "@/lib/settings";
 import { og } from "@/lib/seo";
 import { Hero } from "@/components/site/Hero";
 import { ExploreDestinations } from "@/components/site/ExploreDestinations";
+import { ExploreCategories, type CategoryCard } from "@/components/site/ExploreCategories";
 import { Rail } from "@/components/site/Rail";
 import { UpcomingTabs } from "@/components/site/UpcomingTabs";
 import { CtaBand, SectionHead, TripCard } from "@/components/site/ui";
@@ -80,6 +82,24 @@ export default async function Home() {
     };
   }).sort((a, b) => b.trips - a.trips || a.name.localeCompare(b.name));
 
+  // "Explore categories" cards: real counts and lowest prices; the photo is a plain trip photo from that category.
+  const plain = (list: typeof trips) => list.flatMap((t) => [t.coverImage, ...t.gallery]).find((u) => u?.startsWith("/uploads/2026/")) ?? list[0]?.coverImage ?? null;
+  const facts = (list: typeof trips) => {
+    const from = Math.min(...list.map((t) => t.salePrice ?? t.basePrice ?? Infinity));
+    return `${list.length} trip${list.length === 1 ? "" : "s"}${Number.isFinite(from) ? ` · from ${inr(from)}` : ""}`;
+  };
+  const inCat = (slug: string) => trips.filter((t) => t.categorySlug === slug);
+  const spiritual = trips.filter((t) => t.tags.includes("spiritual"));
+  const categoryCards: CategoryCard[] = [
+    { slug: "weekend-getaways", title: "Weekend Getaways", tagline: "Leave Friday night, back before work.", icon: "tent" as const, tint: "#16a34a" },
+    { slug: "backpacking-trips", title: "Backpacking Trips", tagline: "Three nights in the hills with a crew.", icon: "backpack" as const, tint: "#2563eb" },
+    { slug: "treks", title: "Himalayan Treks", tagline: "From first summits to high passes.", icon: "footprints" as const, tint: "#0d9488" },
+    { slug: "biking-trips", title: "Ladakh Bike Trips", tagline: "Leh, Nubra and Pangong by bike or SUV.", icon: "bike" as const, tint: "#dc061d" },
+  ].map(({ slug, ...c }) => ({ ...c, href: `/${slug}`, list: inCat(slug) })).filter((c) => c.list.length)
+    .map(({ list, ...c }) => ({ ...c, image: plain(list), meta: facts(list) }));
+  if (spiritual.length) categoryCards.push({ title: "Spiritual Trips", tagline: "Kedarnath, Kainchi Dham and more.", href: "/spiritual-trips", icon: "sparkles", tint: "#d97706", image: plain([...spiritual].reverse()), meta: facts(spiritual) });
+  categoryCards.push({ title: "Corporate Trips", tagline: "Offsites and team outings, planned for you.", href: "/corporate-trips", icon: "briefcase", tint: "#7c3aed", image: plain(trips.filter((t) => t.destinationSlug === "rajasthan")), meta: "Get a proposal" });
+
   // Brand entity for Google / AI answers: who we are, how to reach us, where we're listed.
   const sameAs = [...Object.values(settings.socials).filter(Boolean), LISTINGS.justdial, LISTINGS.linkedin];
   const jsonLd = [
@@ -108,13 +128,25 @@ export default async function Home() {
       </section>
 
 
-      {rails.map(({ cat, trips: list }) => (
-        <section key={cat.id} className="reveal pt-16">
+      {rails.map(({ cat, trips: list }, i) => (
+        <Fragment key={cat.id}>
+        <section className="reveal pt-16">
           <SectionHead title={cat.name} subtitle={cat.intro ?? undefined} href={`/${cat.slug}`} />
           {cat.slug === "international-trips"
             ? <TripAccordion trips={list} />
             : <Rail label={cat.name}>{list.map((t) => <TripCard key={t.id} trip={t} />)}</Rail>}
         </section>
+        {i === 0 && (
+          <section className="pt-20" aria-labelledby="cats-title">
+            <div className="reveal mx-auto mb-9 max-w-2xl px-4 text-center">
+              <p className="eyebrow text-brand">Find your kind of trip</p>
+              <h2 id="cats-title" className="headline mt-2 text-3xl sm:text-[2.6rem]">Explore categories</h2>
+              <p className="mt-3 text-muted">Weekend escapes, treks, Ladakh on a bike or a temple trail. Pick a style and see every trip in it.</p>
+            </div>
+            <ExploreCategories items={categoryCards} />
+          </section>
+        )}
+        </Fragment>
       ))}
 
       {/* Travel styles: bento */}
