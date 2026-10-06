@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { byDuration, COLLECTIONS, inr } from "@/lib/format";
+import { byDuration, inr, tripHref } from "@/lib/format";
 import { getCategories, getDestinationsWithTrips, getPosts, getTrips } from "@/lib/queries";
 import { getSettings } from "@/lib/settings";
 import { og } from "@/lib/seo";
 import { Hero } from "@/components/site/Hero";
+import { ExploreDestinations } from "@/components/site/ExploreDestinations";
 import { Rail } from "@/components/site/Rail";
 import { UpcomingTabs } from "@/components/site/UpcomingTabs";
 import { CtaBand, SectionHead, TripCard } from "@/components/site/ui";
@@ -39,6 +40,9 @@ const WHY = [
   { title: "All-inclusive, no surprises", text: "Stays, travel, sightseeing and meals are listed upfront, so you know exactly what you pay for." },
 ];
 
+// Place tags whose display name isn't just the tag in title case.
+const PLACE_NAMES: Record<string, string> = { mcleodganj: "McLeodganj", "valley-of-flowers": "Valley of Flowers", ladakh: "Leh Ladakh" };
+
 const Tile = ({ href, ...rest }: { href: string; className: string; children: React.ReactNode }) =>
   href.startsWith("#") ? <a href={href} {...rest} /> : <Link href={href} {...rest} />;
 
@@ -60,6 +64,22 @@ export default async function Home() {
   // Each category row runs shortest trip first (1N, 2N, 3N…).
   const rails = cats.map((c) => ({ cat: c, trips: trips.filter((t) => t.categorySlug === c.slug).sort(byDuration) })).filter((r) => r.trips.length);
 
+  // "Explore destinations": one tile per place (a trip's first tag). A tile opens that place's trips: the same ones the
+  // site search finds for the place name (in the title, destination or tags), so the count on the tile matches the list.
+  const places = [...new Set(trips.map((t) => t.tags[0]).filter(Boolean))].map((tag) => {
+    const q = tag.replace(/-/g, " ");
+    const list = trips.filter((t) => t.title.toLowerCase().includes(q) || t.destinationName?.toLowerCase().includes(q) || t.tags.includes(tag) || t.tags.includes(q)).sort(byDuration);
+    const own = list.filter((t) => t.tags[0] === tag);
+    // a plain photo reads better in a small oval than a cover with a title printed on it
+    const photo = (t: (typeof trips)[number]) => [t.coverImage, ...t.gallery].find((u) => u?.startsWith("/uploads/2026/"));
+    return {
+      name: PLACE_NAMES[tag] ?? tag.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" "),
+      trips: list.length, image: own.map(photo).find(Boolean) ?? own[0]?.coverImage ?? null,
+      href: list.length === 1 ? tripHref(list[0]) : `/search?q=${encodeURIComponent(q)}`,
+      categories: [...new Set(list.map((t) => t.categorySlug).filter((c): c is string => !!c))],
+    };
+  }).sort((a, b) => b.trips - a.trips || a.name.localeCompare(b.name));
+
   // Brand entity for Google / AI answers: who we are, how to reach us, where we're listed.
   const sameAs = [...Object.values(settings.socials).filter(Boolean), LISTINGS.justdial, LISTINGS.linkedin];
   const jsonLd = [
@@ -79,18 +99,7 @@ export default async function Home() {
       <Hero copy={settings.hero} slides={slides} stats={settings.stats}
         popular={dests.slice(0, 6).map((d) => ({ label: d.name, href: `/destinations/${d.slug}`, image: d.heroImage ?? d.cover, meta: `${d.trips} trip${d.trips === 1 ? "" : "s"}` }))} />
 
-      {/* Quick chips, like JW's filter row */}
-      <nav aria-label="Browse" className="border-b border-line bg-white">
-        <div className="rail mx-auto max-w-7xl gap-2 py-4 [grid-auto-columns:max-content]">
-          {rails.map(({ cat }) => (
-            <Link key={cat.slug} href={`/${cat.slug}`} className="press rounded-full bg-surface px-5 py-2.5 text-sm font-extrabold hover:bg-line">{cat.name}</Link>
-          ))}
-          <Link href="/upcoming-trips" className="press rounded-full bg-surface px-5 py-2.5 text-sm font-extrabold hover:bg-line">Upcoming</Link>
-          {Object.entries(COLLECTIONS).filter(([, c]) => trips.some((t) => (c.tag ? t.tags.includes(c.tag) : c.sale && t.salePrice != null))).map(([slug, c]) => (
-            <Link key={slug} href={`/${slug}`} className="press rounded-full bg-surface px-5 py-2.5 text-sm font-extrabold hover:bg-line">{c.title}</Link>
-          ))}
-        </div>
-      </nav>
+      <ExploreDestinations places={places} tabs={rails.map(({ cat }) => ({ slug: cat.slug, label: cat.name }))} />
 
       <section className="pt-20">
         <SectionHead eyebrow="Pack your bags" title={scheduled.length ? "Upcoming group trips" : "Trips we love"}
