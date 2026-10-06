@@ -3,6 +3,7 @@ import { and, asc, desc, eq, gte, lte, sql } from "drizzle-orm";
 import { ArrowRight, CalendarDays, MessageCircle, Phone, Plus } from "lucide-react";
 import { requireUser } from "@/lib/auth";
 import { db, t } from "@/lib/db";
+import { missedCheckoutCount } from "@/lib/bookings";
 import { addDays, dateDay } from "@/lib/format";
 import { Badge, EmptyState, Notice, PageHeader, StatCard, StatusBadge, btnGhost, btnPrimary } from "@/components/admin/ui";
 
@@ -30,10 +31,10 @@ export default async function Dashboard({ searchParams }: PageProps<"/admin">) {
   const user = await requireUser();
   const { today, weekOut, weekAgo, hour, dateLabel } = clock();
 
-  const [[bk], [leadN], leads, departures, [catalog]] = await Promise.all([
+  const [[bk], [leadN], leads, departures, [catalog], missed] = await Promise.all([
     db.select({
       attention: sql<number>`count(*) filter (where ${t.bookings.status} = 'needs_attention')::int`,
-      week: sql<number>`count(*) filter (where ${t.bookings.createdAt} >= ${weekAgo} and ${t.bookings.status} <> 'cancelled')::int`,
+      week: sql<number>`count(*) filter (where ${t.bookings.createdAt} >= ${weekAgo} and ${t.bookings.status} in ('confirmed', 'needs_attention'))::int`, // paid bookings only
       month: sql<number>`coalesce(sum(${t.bookings.paid}) filter (where ${t.bookings.createdAt} >= date_trunc('month', now()) and ${t.bookings.status} <> 'cancelled'), 0)::int`,
       due: sql<number>`coalesce(sum(${t.bookings.total} - ${t.bookings.paid}) filter (where ${t.bookings.status} in ('confirmed', 'needs_attention')), 0)::int`,
     }).from(t.bookings),
@@ -49,6 +50,7 @@ export default async function Dashboard({ searchParams }: PageProps<"/admin">) {
       published: sql<number>`count(*) filter (where ${t.trips.status} = 'published')::int`,
       drafts: sql<number>`count(*) filter (where ${t.trips.status} = 'draft')::int`,
     }).from(t.trips),
+    missedCheckoutCount(),
   ]);
 
   // Departures in the next 7 days, grouped by date.
@@ -76,8 +78,9 @@ export default async function Dashboard({ searchParams }: PageProps<"/admin">) {
         </Notice>
       )}
 
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <StatCard label="New leads to call" value={leadN.n} href="/admin/leads?status=new" hint={leadN.n ? "Waiting for a first call" : "All caught up"} tone={leadN.n ? "alert" : undefined} />
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-5">
+        <StatCard label="New enquiries to call" value={leadN.n} href="/admin/leads?status=new" hint={leadN.n ? "Waiting for a first call" : "All caught up"} tone={leadN.n ? "alert" : undefined} />
+        <StatCard label="Missed checkouts" value={missed} href="/admin/missed-checkouts" hint={missed ? "Started booking, didn't pay" : "None waiting"} tone={missed ? "alert" : undefined} />
         <StatCard label="Bookings this week" value={bk.week} href="/admin/bookings" />
         <StatCard label="Collected this month" value={inr(bk.month)} href="/admin/bookings" />
         <StatCard label="Balance due" value={inr(bk.due)} href="/admin/bookings" hint="Across confirmed bookings" />
@@ -116,8 +119,8 @@ export default async function Dashboard({ searchParams }: PageProps<"/admin">) {
 
         <section className="rounded-2xl border border-gray-200/80 bg-white shadow-xs">
           <header className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
-            <h2 className="text-[15px] font-bold">Latest leads</h2>
-            <Link href="/admin/leads" className="text-xs font-semibold text-gray-500 hover:text-gray-900">All leads →</Link>
+            <h2 className="text-[15px] font-bold">Latest enquiries</h2>
+            <Link href="/admin/leads" className="text-xs font-semibold text-gray-500 hover:text-gray-900">All enquiries →</Link>
           </header>
           {leads.length ? (
             <ul className="divide-y divide-gray-100">

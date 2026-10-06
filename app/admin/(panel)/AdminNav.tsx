@@ -1,28 +1,37 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import {
-  BookOpen, CalendarCheck, ExternalLink, FileText, FolderTree, Image as ImageIcon, Inbox, LayoutDashboard, LogOut, Map, Menu,
-  Mountain, PanelsTopLeft, Settings, Tag, UserRound, Users, X,
+  BookOpen, BriefcaseBusiness, CalendarCheck, Compass, ExternalLink, FileText, FolderTree, Gift, Image as ImageIcon, Inbox, LayoutDashboard, LogOut, Map, Menu,
+  MessageSquare, Mountain, PanelsTopLeft, Settings, ShoppingCart, Tag, UserRound, Users, X,
 } from "lucide-react";
 
-type Item = { href: string; label: string; icon: typeof Map; count?: number; adminOnly?: boolean };
+/** `kind` = the ?kind= filter on /admin/leads this entry opens ("" = all enquiries). */
+type Item = { href: string; label: string; icon: typeof Map; count?: number; adminOnly?: boolean; kind?: string };
 
 export function AdminNav({ isAdmin, user, counts, logout }: {
   isAdmin: boolean; user: { name: string; email: string; role: string };
-  counts: { leads: number; attention: number }; logout: () => Promise<void>;
+  counts: { leads: number; fit: number; corporate: number; quick: number; popup: number; attention: number; missed: number }; logout: () => Promise<void>;
 }) {
   const path = usePathname();
+  const leadKind = useSearchParams().get("kind") ?? "";
   const [open, setOpen] = useState(false);
 
   const groups: { title?: string; items: Item[] }[] = [
     { items: [{ href: "/admin", label: "Dashboard", icon: LayoutDashboard }] },
     { title: "Sales", items: [
       { href: "/admin/bookings", label: "Bookings", icon: CalendarCheck, count: counts.attention },
-      { href: "/admin/leads", label: "Leads", icon: Inbox, count: counts.leads },
+      { href: "/admin/missed-checkouts", label: "Missed checkouts", icon: ShoppingCart, count: counts.missed },
       { href: "/admin/coupons", label: "Coupons", icon: Tag },
+    ] },
+    { title: "Enquiries", items: [
+      { href: "/admin/leads", label: "All enquiries", icon: Inbox, count: counts.leads, kind: "" },
+      { href: "/admin/leads?kind=custom_trip", label: "FIT / custom trips", icon: Compass, count: counts.fit, kind: "custom_trip" },
+      { href: "/admin/leads?kind=corporate", label: "Corporate", icon: BriefcaseBusiness, count: counts.corporate, kind: "corporate" },
+      { href: "/admin/leads?kind=enquiry", label: "Quick enquiries", icon: MessageSquare, count: counts.quick, kind: "enquiry" },
+      { href: "/admin/leads?kind=popup", label: "Offer pop-up", icon: Gift, count: counts.popup, kind: "popup" },
     ] },
     { title: "Trips", items: [
       { href: "/admin/trips", label: "Trips", icon: Mountain },
@@ -51,7 +60,9 @@ export function AdminNav({ isAdmin, user, counts, logout }: {
             {g.title && <p className="mb-1 px-3 text-[11px] font-bold uppercase tracking-wider text-gray-400">{g.title}</p>}
             <ul className="space-y-0.5">
               {items.map((i) => {
-                const active = i.href === "/admin" ? path === "/admin" : path.startsWith(i.href);
+                const active = i.href === "/admin" ? path === "/admin"
+                  : i.kind !== undefined ? path.startsWith("/admin/leads") && leadKind === i.kind
+                  : path.startsWith(i.href);
                 return (
                   <li key={i.href}>
                     <Link href={i.href} onClick={() => setOpen(false)} aria-current={active ? "page" : undefined}
@@ -115,7 +126,7 @@ export function AdminNav({ isAdmin, user, counts, logout }: {
         {brand}
         <button onClick={() => setOpen(true)} aria-label="Open menu" aria-expanded={open} className="relative grid size-10 place-items-center rounded-lg hover:bg-gray-100">
           <Menu className="size-5" />
-          {counts.leads + counts.attention > 0 && <span className="absolute right-1.5 top-1.5 size-2 rounded-full bg-brand" aria-hidden />}
+          {counts.leads + counts.attention + counts.missed > 0 && <span className="absolute right-1.5 top-1.5 size-2 rounded-full bg-brand" aria-hidden />}
         </button>
       </header>
       {open && (

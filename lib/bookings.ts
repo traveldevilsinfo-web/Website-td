@@ -155,3 +155,11 @@ export async function recordOfflinePayment(bookingId: number, amount: number, no
   const [p] = await db.insert(t.payments).values({ bookingId, provider: "offline", amount, note }).returning({ id: t.payments.id });
   return confirmPayment({ paymentRowId: p.id }, null);
 }
+
+/** Checkouts that were started but never paid, for departures still ahead: one per traveller + departure. */
+export async function missedCheckoutCount() {
+  const [r] = await db.select({ n: sql<number>`count(distinct (${t.bookings.customerId}, ${t.bookings.batchId}))::int` })
+    .from(t.bookings).innerJoin(t.tripBatches, eq(t.tripBatches.id, t.bookings.batchId))
+    .where(sql`${t.bookings.status} = 'pending' and ${t.bookings.paid} = 0 and ${t.tripBatches.startDate} >= current_date`);
+  return r.n;
+}

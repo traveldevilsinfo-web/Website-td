@@ -12,6 +12,7 @@ export default async function BookingsPage({ searchParams }: PageProps<"/admin/b
   const status = STATUSES.find((s) => s === sp.status) ?? "";
   const where: SQL[] = [];
   if (status) where.push(eq(t.bookings.status, status));
+  else if (!q) where.push(sql`not (${t.bookings.status} = 'pending' and ${t.bookings.paid} = 0)`); // unpaid attempts are listed under Missed checkouts
   if (q) where.push(or(ilike(t.bookings.code, `%${q}%`), ilike(t.bookings.contactName, `%${q}%`), ilike(t.bookings.contactPhone, `%${q}%`), ilike(t.bookings.tripTitle, `%${q}%`))!);
 
   const [rows, [totals]] = await Promise.all([
@@ -27,7 +28,8 @@ export default async function BookingsPage({ searchParams }: PageProps<"/admin/b
 
   return (
     <>
-      <PageHeader title="Bookings" />
+      <PageHeader title="Bookings" description="Paid and confirmed bookings. Checkouts that were started but never paid are under Missed checkouts."
+        action={<Link href="/admin/missed-checkouts" className="rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-semibold hover:bg-gray-50">Missed checkouts →</Link>} />
       <div className="mb-4 grid gap-3 sm:grid-cols-3">
         <div className="rounded-lg border border-gray-200 bg-white p-4"><p className="text-2xl font-bold">{inr(totals.collected)}</p><p className="text-sm text-gray-500">Collected</p></div>
         <div className="rounded-lg border border-gray-200 bg-white p-4"><p className="text-2xl font-bold">{inr(totals.due)}</p><p className="text-sm text-gray-500">Balance due on confirmed bookings</p></div>

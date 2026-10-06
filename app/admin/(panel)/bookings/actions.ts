@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { eq } from "drizzle-orm";
+import { and, eq, inArray } from "drizzle-orm";
 import { requireUser } from "@/lib/auth";
 import { cancelBooking, recordOfflinePayment } from "@/lib/bookings";
 import { db, t } from "@/lib/db";
@@ -28,4 +28,19 @@ export async function saveBookingNotes(bookingId: number, f: FormData) {
   await requireUser();
   await db.update(t.bookings).set({ notes: form(f).str("notes") }).where(eq(t.bookings.id, bookingId));
   revalidatePath(`/admin/bookings/${bookingId}`);
+}
+
+/** Missed checkouts: unpaid attempts only. Closing marks them cancelled (no seats were held, nothing to refund). */
+const missed = (ids: number[]) => and(inArray(t.bookings.id, ids.slice(0, 500)), eq(t.bookings.status, "pending"), eq(t.bookings.paid, 0));
+
+export async function closeMissedCheckouts(ids: number[]) {
+  await requireUser();
+  if (ids.length) await db.update(t.bookings).set({ status: "cancelled" }).where(missed(ids));
+  revalidatePath("/admin/missed-checkouts");
+}
+
+export async function saveMissedNote(ids: number[], f: FormData) {
+  await requireUser();
+  if (ids.length) await db.update(t.bookings).set({ notes: form(f).str("notes") }).where(missed(ids));
+  revalidatePath("/admin/missed-checkouts");
 }

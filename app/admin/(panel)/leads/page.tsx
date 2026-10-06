@@ -10,10 +10,13 @@ import { updateLead } from "../admin-actions";
 const STATUSES = ["new", "contacted", "converted", "lost"];
 const KINDS = [
   { key: "", label: "All" },
-  { key: "custom_trip", label: "Custom trip quotes" },
+  { key: "custom_trip", label: "FIT / custom trips" },
   { key: "corporate", label: "Corporate" },
   { key: "enquiry", label: "Quick enquiries" },
+  { key: "popup", label: "Offer pop-up" },
 ] as const;
+// Offer pop-up leads are quick enquiries whose source says so (see components/OfferPopup.tsx).
+const fromPopup = sql`coalesce(${t.leads.sourcePath}, '') ilike '%offer pop-up%'`;
 
 const day = (iso: string) => new Date(iso + "T00:00:00").toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
 
@@ -21,22 +24,25 @@ export default async function LeadsPage({ searchParams }: PageProps<"/admin/lead
   const sp = await searchParams;
   const q = typeof sp.q === "string" ? sp.q : "";
   const status = typeof sp.status === "string" && STATUSES.includes(sp.status) ? sp.status : "";
-  const kind = sp.kind === "custom_trip" || sp.kind === "enquiry" || sp.kind === "corporate" ? sp.kind : "";
+  const kind = sp.kind === "custom_trip" || sp.kind === "enquiry" || sp.kind === "corporate" || sp.kind === "popup" ? sp.kind : "";
   const where: SQL[] = [];
   if (status) where.push(eq(t.leads.status, status));
-  if (kind) where.push(eq(t.leads.kind, kind));
+  if (kind === "popup") where.push(sql`${t.leads.kind} = 'enquiry' and ${fromPopup}`);
+  else if (kind === "enquiry") where.push(sql`${t.leads.kind} = 'enquiry' and not ${fromPopup}`);
+  else if (kind) where.push(eq(t.leads.kind, kind));
   if (q) where.push(or(ilike(t.leads.name, `%${q}%`), ilike(t.leads.phone, `%${q}%`), ilike(t.leads.destination, `%${q}%`), ilike(t.leads.email, `%${q}%`))!);
 
   const [rows, counts] = await Promise.all([
     db.select().from(t.leads).where(where.length ? and(...where) : undefined).orderBy(desc(t.leads.createdAt)).limit(300),
-    db.select({ kind: t.leads.kind, n: sql<number>`count(*) filter (where ${t.leads.status} = 'new')::int` }).from(t.leads).groupBy(t.leads.kind),
+    db.select({ kind: sql<string>`case when ${t.leads.kind} = 'enquiry' and ${fromPopup} then 'popup' else ${t.leads.kind} end`, n: sql<number>`count(*) filter (where ${t.leads.status} = 'new')::int` })
+      .from(t.leads).groupBy(sql`1`),
   ]);
   const newOf = (k: string) => (k ? counts.find((c) => c.kind === k)?.n ?? 0 : counts.reduce((a, c) => a + c.n, 0));
   const href = (patch: Record<string, string>) => `?${new URLSearchParams({ ...(q && { q }), ...(status && { status }), ...(kind && { kind }), ...patch })}`;
 
   return (
     <>
-      <PageHeader title="Leads" description="Enquiries and custom trip quote requests from the website. Newest first."
+      <PageHeader title="Enquiries" description="Every enquiry from the website: FIT / custom trip quote requests, corporate, quick enquiries and offer pop-up sign-ups. Newest first."
         action={<a download href="/admin/leads/export" className={btnGhost}><Download className="size-4" aria-hidden />Export CSV</a>} />
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -87,7 +93,7 @@ export default async function LeadsPage({ searchParams }: PageProps<"/admin/lead
                   <div className="flex flex-wrap items-center gap-2">
                     <h2 className="text-base font-bold">{l.name}</h2>
                     <StatusBadge status={l.status} />
-                    {corp ? <Badge tone="amber">Corporate</Badge> : d ? <Badge tone="blue">Custom trip quote</Badge> : <Badge>Enquiry</Badge>}
+                    {corp ? <Badge tone="amber">Corporate</Badge> : d ? <Badge tone="blue">FIT / custom trip</Badge> : l.sourcePath?.includes("offer pop-up") ? <Badge tone="green">Offer pop-up</Badge> : <Badge>Enquiry</Badge>}
                   </div>
                   <p className="mt-0.5 text-sm text-gray-600">
                     {corp ? <><b className="text-gray-900">{corp.company}</b> · {corp.teamSize} people · {corp.tripType}</>
