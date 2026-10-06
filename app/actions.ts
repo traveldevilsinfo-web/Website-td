@@ -2,6 +2,7 @@
 
 import { db, t } from "@/lib/db";
 import { corporateSchema, customTripSchema, parseLead } from "@/lib/lead";
+import { alertNewLead } from "@/lib/alerts";
 
 export type LeadState = { ok: boolean; message: string };
 
@@ -18,6 +19,9 @@ export async function submitLead(_prev: LeadState, formData: FormData): Promise<
     console.error("Lead insert failed", e, parsed.lead);
     return { ok: false, message: "Something went wrong. Please call or WhatsApp us." };
   }
+  const l = parsed.lead;
+  await alertNewLead({ kind: "enquiry", name: l.name, phone: l.phone, email: l.email, destination: l.destination, sourcePath: l.sourcePath,
+    summary: [l.category, l.travelMonth && `Month: ${l.travelMonth}`, l.budget && `Budget: ${l.budget}`].filter(Boolean).join(" · ") });
   return { ok: true, message: "Thanks! Our travel expert will call you shortly." };
 }
 
@@ -39,6 +43,8 @@ export async function submitCustomTrip(input: unknown, honeypot = ""): Promise<C
       category: "Customised trip", travelMonth: v.departure.slice(0, 7), marketingOptIn: v.optIn, sourcePath: v.sourcePath || null,
       details: { nights: v.nights, pax: v.pax, rooms: v.rooms, hotel: v.hotel, departure: v.departure, checkIn: v.checkIn, checkOut: v.checkOut, remarks: v.remarks },
     }).returning({ id: t.leads.id });
+    await alertNewLead({ kind: "custom_trip", name: v.name, phone: v.phone, email: v.email, destination: v.destination, sourcePath: v.sourcePath,
+      summary: `${v.nights} nights · ${v.pax} travellers · ${v.rooms} room${v.rooms === 1 ? "" : "s"} · ${v.hotel} · departs ${v.departure}${v.remarks ? `\nRemarks: ${v.remarks}` : ""}` });
     return { ok: true, ref: row.id };
   } catch (e) {
     console.error("Custom trip insert failed", e);
@@ -63,6 +69,8 @@ export async function submitCorporate(input: unknown, honeypot = ""): Promise<Co
       category: "Corporate", travelMonth: v.month || null, budget: null, marketingOptIn: v.optIn, sourcePath: v.sourcePath || null,
       details: { company: v.company, teamSize: v.teamSize, tripType: v.tripType, duration: v.duration, month: v.month, budget: v.budget, remarks: v.remarks },
     }).returning({ id: t.leads.id });
+    await alertNewLead({ kind: "corporate", name: v.name, phone: v.phone, email: v.email, destination: v.destination, sourcePath: v.sourcePath,
+      summary: `${v.company} · ${v.teamSize} people · ${v.tripType} · ${v.duration}${v.month ? ` · ${v.month}` : ""} · budget ${v.budget}${v.remarks ? `\nNotes: ${v.remarks}` : ""}` });
     return { ok: true, ref: row.id };
   } catch (e) {
     console.error("Corporate enquiry insert failed", e);

@@ -1,5 +1,6 @@
 "use server";
 
+import { alertRecipients, alertsConfigured, sendAlert } from "@/lib/alerts";
 import { revalidatePath } from "next/cache";
 import { eq } from "drizzle-orm";
 import { hashPassword, requireUser } from "@/lib/auth";
@@ -32,6 +33,14 @@ export async function updateLead(id: number, f: FormData) {
     .set({ status: status && LEAD_STATUSES.includes(status) ? status : "new", notes: r.str("notes") })
     .where(eq(t.leads.id, id));
   revalidatePath("/admin/leads");
+}
+
+// ---------------- alerts
+export async function sendTestAlert(): Promise<ActionState> {
+  const user = await requireUser("admin");
+  if (!alertsConfigured()) return { ok: false, message: "Alerts are not set up yet: add RESEND_API_KEY and ALERT_EMAIL_TO in Vercel, then redeploy." };
+  const r = await sendAlert("Test alert", [`This is a test alert sent by ${user.name} from the admin panel.`, "If you can read this, enquiry and payment alerts will reach this inbox."]);
+  return r.ok ? { ok: true, message: `Sent to ${alertRecipients().join(", ")} ✓ Check the inbox (and spam).` } : { ok: false, message: `The email service refused it: ${r.error}` };
 }
 
 // ---------------- settings

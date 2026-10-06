@@ -5,6 +5,7 @@ import { z } from "zod";
 import { db, t } from "./db";
 import { computeQuote, QuoteError, type CouponRule, type Quote } from "./pricing";
 import { createRazorpayOrder, razorpayConfigured, razorpayKeyId, testPaymentsAllowed } from "./razorpay";
+import { alertPaymentFailed, alertPaymentReceived } from "./alerts";
 import { getSettings } from "./settings";
 
 export const selectionSchema = z.object({
@@ -106,7 +107,7 @@ export async function startBalancePayment(code: string, customerId: number) {
  * First successful payment confirms the booking and deducts seats under a row lock.
  */
 export async function confirmPayment(where: { orderId: string } | { paymentRowId: number }, gatewayPaymentId: string | null) {
-  return db.transaction(async (tx) => {
+  const result = await db.transaction(async (tx) => {
     const cond = "orderId" in where ? eq(t.payments.orderId, where.orderId) : eq(t.payments.id, where.paymentRowId);
     const [p] = await tx.select().from(t.payments).where(cond).for("update");
     if (!p) return { ok: false as const, reason: "unknown payment" };
@@ -129,12 +130,22 @@ export async function confirmPayment(where: { orderId: string } | { paymentRowId
       }
     }
     await tx.update(t.bookings).set({ paid, status, seatsHeld }).where(eq(t.bookings.id, b.id));
-    return { ok: true as const, code: b.code, already: false };
+    return {
+      ok: true as const, code: b.code, already: false,
+      alert: { id: b.id, code: b.code, tripTitle: b.tripTitle, contactName: b.contactName, contactPhone: b.contactPhone, pax: b.pax, total: b.total, amount: p.amount, paid, needsAttention: status === "needs_attention" },
+    };
   });
+  // Tell the team once per captured payment (not on the duplicate callback/webhook), after the transaction commits.
+  if (result.ok && "alert" in result && result.alert) await alertPaymentReceived(result.alert);
+  return result;
 }
 
 export async function markPaymentFailed(orderId: string) {
-  await db.update(t.payments).set({ status: "failed" }).where(and(eq(t.payments.orderId, orderId), eq(t.payments.status, "created")));
+  const [p] = await db.update(t.payments).set({ status: "failed" }).where(and(eq(t.payments.orderId, orderId), eq(t.payments.status, "created")))
+    .returning({ bookingId: t.payments.bookingId, amount: t.payments.amount });
+  if (!p) return; // already handled
+  const [b] = await db.select().from(t.bookings).where(eq(t.bookings.id, p.bookingId));
+  if (b) await alertPaymentFailed({ id: b.id, code: b.code, tripTitle: b.tripTitle, contactName: b.contactName, contactPhone: b.contactPhone, pax: b.pax, total: b.total, amount: p.amount });
 }
 
 /** Admin: cancel a booking and give its seats back. Refunds are handled in the gateway dashboard. */

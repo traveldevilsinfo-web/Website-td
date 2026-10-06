@@ -6,7 +6,8 @@ import { ListEditor } from "@/components/admin/ListEditor";
 import { TableEditor } from "@/components/admin/TableEditor";
 import { GalleryField, ImageField } from "@/components/admin/Media";
 import { Field, PageHeader, Section, input } from "@/components/admin/ui";
-import { changeOwnPassword, saveSettings } from "../admin-actions";
+import { alertRecipients, alertsConfigured } from "@/lib/alerts";
+import { changeOwnPassword, saveSettings, sendTestAlert } from "../admin-actions";
 
 export default async function SettingsPage() {
   const user = await requireUser();
@@ -124,6 +125,17 @@ export default async function SettingsPage() {
         </SaveForm>
       ) : (
         <p className="mb-6 rounded-md bg-gray-100 p-3 text-sm text-gray-600">Site settings can only be changed by an admin.</p>
+      )}
+      {user.role === "admin" && (
+        <div className="mt-8 max-w-2xl">
+          <SaveForm action={sendTestAlert} submitLabel="Send test alert" inline>
+            <Section title="Email alerts" description="The team gets an email for every new enquiry, every payment received, every failed payment, and a 9 am summary of enquiries not yet called and missed checkouts.">
+              {alertsConfigured()
+                ? <p className="rounded-md bg-green-50 p-3 text-sm text-green-800">Alerts are on. They go to <b>{alertRecipients().join(", ")}</b>.</p>
+                : <p className="rounded-md bg-amber-50 p-3 text-sm text-amber-900">Alerts are off. Add <code>RESEND_API_KEY</code> and <code>ALERT_EMAIL_TO</code> in Vercel → Settings → Environment Variables, then redeploy.</p>}
+            </Section>
+          </SaveForm>
+        </div>
       )}
       <div className="mt-8 max-w-md">
         <SaveForm action={changeOwnPassword} submitLabel="Change my password" inline>

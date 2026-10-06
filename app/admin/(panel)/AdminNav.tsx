@@ -5,7 +5,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import {
   BookOpen, BriefcaseBusiness, CalendarCheck, Compass, ExternalLink, FileText, FolderTree, Gift, Image as ImageIcon, Inbox, LayoutDashboard, LogOut, Map, Menu,
-  MessageSquare, Mountain, PanelsTopLeft, Settings, ShoppingCart, Tag, UserRound, Users, X,
+  IndianRupee, MessageSquare, Mountain, PanelsTopLeft, Settings, ShoppingCart, Tag, UserRound, Users, X,
 } from "lucide-react";
 
 /** `kind` = the ?kind= filter on /admin/leads this entry opens ("" = all enquiries). */
@@ -24,6 +24,7 @@ export function AdminNav({ isAdmin, user, counts, logout }: {
     { title: "Sales", items: [
       { href: "/admin/bookings", label: "Bookings", icon: CalendarCheck, count: counts.attention },
       { href: "/admin/missed-checkouts", label: "Missed checkouts", icon: ShoppingCart, count: counts.missed },
+      { href: "/admin/payments", label: "Payments", icon: IndianRupee },
       { href: "/admin/coupons", label: "Coupons", icon: Tag },
     ] },
     { title: "Enquiries", items: [
