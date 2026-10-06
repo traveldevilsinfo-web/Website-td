@@ -8,6 +8,8 @@ import { getSettings } from "@/lib/settings";
 import { og } from "@/lib/seo";
 import { Hero } from "@/components/site/Hero";
 import { ExploreDestinations } from "@/components/site/ExploreDestinations";
+import { InstagramFeed } from "@/components/site/InstagramFeed";
+import { getInstagramFeed } from "@/lib/instagram";
 import { ExploreCategories, type CategoryCard } from "@/components/site/ExploreCategories";
 import { Rail } from "@/components/site/Rail";
 import { UpcomingTabs } from "@/components/site/UpcomingTabs";
@@ -49,8 +51,8 @@ const Tile = ({ href, ...rest }: { href: string; className: string; children: Re
   href.startsWith("#") ? <a href={href} {...rest} /> : <Link href={href} {...rest} />;
 
 export default async function Home() {
-  const [settings, trips, cats, dests, posts] = await Promise.all([
-    getSettings(), getTrips(), getCategories(), getDestinationsWithTrips(), getPosts(3),
+  const [settings, trips, cats, dests, posts, insta] = await Promise.all([
+    getSettings(), getTrips(), getCategories(), getDestinationsWithTrips(), getPosts(3), getInstagramFeed(),
   ]);
 
   const slides = settings.heroSlides.length
@@ -186,6 +188,9 @@ export default async function Home() {
           )}
         </section>
       )}
+
+      {/* Latest Instagram posts and reels (hidden until Instagram is connected) */}
+      <InstagramFeed items={insta} profile={settings.socials.instagram} />
 
       {/* Destinations bento */}
       {dests.length > 0 && (

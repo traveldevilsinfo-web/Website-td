@@ -2,6 +2,7 @@ import { eq, sql } from "drizzle-orm";
 import { db, t } from "@/lib/db";
 import { adminUrl, sendAlert } from "@/lib/alerts";
 import { dateDay } from "@/lib/format";
+import { refreshInstagramToken } from "@/lib/instagram";
 
 /**
  * Morning summary for the team (vercel.json runs it daily at 9:00 IST): enquiries nobody has called yet,
@@ -11,6 +12,7 @@ import { dateDay } from "@/lib/format";
 export async function GET(req: Request) {
   if (!process.env.CRON_SECRET || req.headers.get("authorization") !== `Bearer ${process.env.CRON_SECRET}`) return new Response("unauthorized", { status: 401 });
 
+  const instagram = await refreshInstagramToken(); // keeps the 60-day Instagram token from expiring
   const [[leads], missed, [att]] = await Promise.all([
     db.select({ n: sql<number>`count(*)::int`, oldest: sql<string | null>`min(${t.leads.createdAt})::date::text` }).from(t.leads).where(eq(t.leads.status, "new")),
     db.selectDistinctOn([t.bookings.customerId, t.bookings.batchId], { name: t.bookings.contactName, phone: t.bookings.contactPhone, trip: t.bookings.tripTitle, total: t.bookings.total, start: t.tripBatches.startDate })
@@ -20,7 +22,7 @@ export async function GET(req: Request) {
       .orderBy(t.bookings.customerId, t.bookings.batchId, sql`${t.bookings.createdAt} desc`).limit(25),
     db.select({ n: sql<number>`count(*)::int` }).from(t.bookings).where(eq(t.bookings.status, "needs_attention")),
   ]);
-  if (!leads.n && !missed.length && !att.n) return Response.json({ sent: false, reason: "nothing waiting" });
+  if (!leads.n && !missed.length && !att.n) return Response.json({ sent: false, reason: "nothing waiting", instagram });
 
   const r = await sendAlert(`Today: ${leads.n} enquir${leads.n === 1 ? "y" : "ies"} to call, ${missed.length} missed checkout${missed.length === 1 ? "" : "s"}`, [
     att.n > 0 && `!! ${att.n} paid booking${att.n === 1 ? "" : "s"} need attention (departure was full): ${adminUrl("/bookings?status=needs_attention")}\n`,
@@ -31,5 +33,5 @@ export async function GET(req: Request) {
     ...missed.map((m) => `- ${m.name} · ${m.phone} · ${m.trip} · ${dateDay(m.start)} · ₹${m.total.toLocaleString("en-IN")}`),
     missed.length > 0 && adminUrl("/missed-checkouts"),
   ]);
-  return Response.json({ sent: r.ok, error: r.error });
+  return Response.json({ sent: r.ok, error: r.error, instagram });
 }

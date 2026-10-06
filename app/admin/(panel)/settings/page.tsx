@@ -7,11 +7,13 @@ import { TableEditor } from "@/components/admin/TableEditor";
 import { GalleryField, ImageField } from "@/components/admin/Media";
 import { Field, PageHeader, Section, input } from "@/components/admin/ui";
 import { alertRecipients, alertsConfigured } from "@/lib/alerts";
+import { instagramStatus } from "@/lib/instagram";
 import { changeOwnPassword, saveSettings, sendTestAlert } from "../admin-actions";
 
 export default async function SettingsPage() {
   const user = await requireUser();
   const s = await getSettings();
+  const ig = await instagramStatus();
   return (
     <>
       <PageHeader title="Settings" />
@@ -135,6 +137,15 @@ export default async function SettingsPage() {
                 : <p className="rounded-md bg-amber-50 p-3 text-sm text-amber-900">Alerts are off. Add <code>RESEND_API_KEY</code> and <code>ALERT_EMAIL_TO</code> in Vercel → Settings → Environment Variables, then redeploy.</p>}
             </Section>
           </SaveForm>
+        </div>
+      )}
+      {user.role === "admin" && (
+        <div className="mt-8 max-w-2xl rounded-2xl border border-gray-200/80 bg-white p-5 shadow-xs">
+          <h2 className="text-[15px] font-bold">Instagram feed</h2>
+          <p className="mt-1 text-sm text-gray-500">Shows your latest posts and reels on the homepage as thumbnails that open on Instagram.</p>
+          {ig.connected
+            ? <p className="mt-3 rounded-md bg-green-50 p-3 text-sm text-green-800">Connected.{ig.refreshedAt ? ` Access last renewed ${new Date(ig.refreshedAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}.` : " Access renews automatically every day."}</p>
+            : <p className="mt-3 rounded-md bg-amber-50 p-3 text-sm text-amber-900">Not connected. Add <code>INSTAGRAM_ACCESS_TOKEN</code> in Vercel → Settings → Environment Variables, then redeploy.</p>}
         </div>
       )}
       <div className="mt-8 max-w-md">
