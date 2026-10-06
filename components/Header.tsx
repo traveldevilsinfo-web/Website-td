@@ -11,7 +11,7 @@ import { DesktopNav } from "./nav/DesktopNav";
 import { Badge, NavIcon } from "./nav/NavIcon";
 import { SearchButton } from "./nav/SearchButton";
 import logo from "@/public/logo.png";
-import icon from "@/app/icon.png";
+import logoDark from "@/public/logo-dark.png"; // same logo with the black parts in white, for dark backgrounds
 
 /** Enabled, has messages, and inside its optional start/end window. */
 function topBarLive(b: SiteSettings["topBar"]) {
@@ -20,15 +20,12 @@ function topBarLive(b: SiteSettings["topBar"]) {
 
 export const tel = (p: string) => `tel:${p.replace(/[^\d+]/g, "")}`;
 
-/** light = full logo (white background); dark = icon + wordmark for dark surfaces. */
+/** light = full logo (white background); dark = the same logo recoloured for dark surfaces (footer). */
 export function Logo({ dark }: { dark?: boolean }) {
   return (
     <Link href="/" aria-label="Travel Devils home" className="press flex shrink-0 items-center gap-2">
       {dark ? (
-        <>
-          <Image src={icon} alt="" sizes="40px" className="h-10 w-auto" />
-          <span className="text-xl font-extrabold lowercase tracking-tight text-white">travel <span className="text-brand">devils.</span></span>
-        </>
+        <Image src={logoDark} alt="Travel Devils" sizes="140px" className="h-12 w-auto" />
       ) : (
         <Image src={logo} alt="Travel Devils" loading="eager" sizes="120px" className="h-10 w-auto sm:h-11" />
       )}
