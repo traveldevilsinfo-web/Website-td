@@ -72,7 +72,9 @@ const oldSite: [string, string][] = [
 
 const nextConfig: NextConfig = {
   turbopack: { root: __dirname }, // a stray lockfile in the home dir confuses root detection
-  images: { formats: ["image/avif", "image/webp"] }, // AVIF is ~20-30% smaller than WebP for the same quality
+  // ponytail: no Vercel image resizing. Its free quota (5K/month) ran out and Vercel took the whole site offline (Oct 2026).
+  // Photos are served as uploaded; remove this line only on a paid plan or with another image resizer.
+  images: { unoptimized: true },
   // With Supabase Storage configured, /uploads/* is served straight from the public bucket (before the local-disk route).
   async rewrites() {
     return {
