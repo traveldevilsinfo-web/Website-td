@@ -74,8 +74,11 @@ export default async function Home() {
     const q = tag.replace(/-/g, " ");
     const list = trips.filter((t) => t.title.toLowerCase().includes(q) || t.destinationName?.toLowerCase().includes(q) || t.tags.includes(tag) || t.tags.includes(q)).sort(byDuration);
     const own = list.filter((t) => t.tags[0] === tag);
-    // a plain photo reads better in a small oval than a cover with a title printed on it
-    const photo = (t: (typeof trips)[number]) => [t.coverImage, ...t.gallery].find((u) => u?.startsWith("/uploads/2026/"));
+    // the designed thumbnail (text-free) first, else a plain trip photo; a cover with a title printed on it reads badly in a small pill
+    const photo = (t: (typeof trips)[number]) => {
+      const all = [t.coverImage, ...t.gallery];
+      return all.find((u) => u?.startsWith("/uploads/thumbnails/")) ?? all.find((u) => u?.startsWith("/uploads/2026/"));
+    };
     return {
       name: PLACE_NAMES[tag] ?? tag.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" "),
       trips: list.length, image: own.map(photo).find(Boolean) ?? own[0]?.coverImage ?? null,
