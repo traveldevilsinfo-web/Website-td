@@ -72,9 +72,17 @@ const oldSite: [string, string][] = [
 
 const nextConfig: NextConfig = {
   turbopack: { root: __dirname }, // a stray lockfile in the home dir confuses root detection
-  // ponytail: no Vercel image resizing. Its free quota (5K/month) ran out and Vercel took the whole site offline (Oct 2026).
-  // Photos are served as uploaded; remove this line only on a paid plan or with another image resizer.
-  images: { unoptimized: true },
+  // Vercel resizes photos to the size each card actually needs (WebP) and keeps every version cached for a month.
+  // Kept lean on purpose so it stays inside the plan's image allowance: one format, one quality, few widths,
+  // and no query strings (so nobody can mint endless variants). The free plan once ran out of this and went offline.
+  images: {
+    formats: ["image/webp"],
+    deviceSizes: [640, 828, 1200, 1920],
+    imageSizes: [128, 256, 384],
+    qualities: [70],
+    minimumCacheTTL: 2678400, // 31 days
+    localPatterns: [{ pathname: "/**", search: "" }],
+  },
   // With Supabase Storage configured, /uploads/* is served straight from the public bucket (before the local-disk route).
   async rewrites() {
     return {
