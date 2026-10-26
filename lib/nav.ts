@@ -23,7 +23,7 @@ export const getNavConfig = cache(async (): Promise<NavConfig> => {
 });
 
 /** Top-level routes that always exist (besides categories, collections and published CMS pages). */
-const STATIC = new Set(["", "blog", "upcoming-trips", "search", "destinations", "trips"]);
+const STATIC = new Set(["", "blog", "upcoming-trips", "search", "destinations", "trips", "christmas-new-year-trips"]);
 
 /** Menu ready to render: hidden items dropped, tiles filled, links to missing/unpublished pages removed. */
 export const getNav = cache(async (): Promise<ResolvedItem[]> => {

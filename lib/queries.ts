@@ -121,3 +121,34 @@ export async function monthsWithDepartures() {
     .where(and(gte(t.tripBatches.startDate, today()), sql`${t.tripBatches.status} <> 'closed'`));
   return rows.map((r) => r.m);
 }
+
+/** The Christmas–New Year window of the coming (or current) season: 20 Dec → 3 Jan. */
+export function holidayWindow(now = new Date()) {
+  const y = now.getMonth() === 0 && now.getDate() <= 3 ? now.getFullYear() - 1 : now.getFullYear();
+  return { from: `${y}-12-20`, to: `${y + 1}-01-03`, newYear: y + 1 };
+}
+
+/** Published trips with a departure in the holiday window, each with those departures (start/end) and its holiday "from" price. */
+export const getHolidayTrips = cache(async () => {
+  const w = holidayWindow();
+  const deps = await db.select({ tripId: t.tripBatches.tripId, start: t.tripBatches.startDate, end: t.tripBatches.endDate, status: t.tripBatches.status })
+    .from(t.tripBatches)
+    .where(and(gte(t.tripBatches.startDate, w.from > today() ? w.from : today()), sql`${t.tripBatches.startDate} <= ${w.to}`, sql`${t.tripBatches.status} <> 'closed'`))
+    .orderBy(asc(t.tripBatches.startDate));
+  const ids = [...new Set(deps.map((d) => d.tripId))];
+  if (!ids.length) return { window: w, trips: [] };
+  const [cards, prices] = await Promise.all([
+    getTrips({ ids, limit: 200 }),
+    db.select({ id: t.trips.id, pricing: t.trips.pricing }).from(t.trips).where(inArray(t.trips.id, ids)),
+  ]);
+  const holidayFrom = (id: number) => {
+    const p = prices.find((x) => x.id === id)?.pricing ?? [];
+    const tiers = p.filter((o) => o.from && o.from <= w.to && (o.to ?? o.from) >= w.from).flatMap((o) => o.tiers.map((x) => x.salePrice ?? x.price));
+    return tiers.length ? Math.min(...tiers) : null;
+  };
+  return {
+    window: w,
+    trips: cards.map((c) => ({ ...c, holidayPrice: holidayFrom(c.id), holidayDates: deps.filter((d) => d.tripId === c.id).map(({ start, end, status }) => ({ start, end, status })) })),
+  };
+});
+export type HolidayTrip = Awaited<ReturnType<typeof getHolidayTrips>>["trips"][number];

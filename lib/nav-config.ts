@@ -155,6 +155,7 @@ export const defaultNav: NavConfig = navConfigSchema.parse({
       ],
     },
     { type: "highlight", label: "Early Bird Sale", badge: "Is live", href: "/early-bird-offers", hidden: true },
+    { type: "highlight", label: "Xmas & New Year", href: "/christmas-new-year-trips" },
     { type: "link", label: "Corporate", href: "/corporate-trips" },
     {
       type: "dropdown", label: "More",
