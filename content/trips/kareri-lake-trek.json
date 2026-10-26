@@ -6,21 +6,19 @@
   "startLocation": "Delhi",
   "endLocation": "Delhi",
   "thingsToCarry": [
-    "Backpack or rucksack",
-    "Comfortable clothing",
-    "Raincoat and umbrella (monsoons only)",
-    "Warm woollen jackets or sweaters (depending on the season)",
-    "Comfortable trekking or sports shoes",
-    "Water bottle (avoid single-use plastic)",
-    "Quick snacks for the journey, like dry fruits and chocolates",
-    "Personal care items and toiletries",
-    "Personal medicines",
-    "Phone, camera and photography equipment",
-    "ATM card and enough cash for shopping and cafe visits",
-    "Torch, power bank and sunglasses",
-    "Identity document such as Aadhaar, driving licence or passport"
+    "Down jacket or main jacket",
+    "Clothes and undergarments",
+    "Trekking shoes with good grip",
+    "Hat or cap",
+    "Personal medication",
+    "Thermals (upper and lower)",
+    "Socks and gloves",
+    "Slippers",
+    "Daypack",
+    "First-aid kit",
+    "Valid government photo ID (no boarding without it)"
   ],
-  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| 10 or more days before the trip | 50% of the advance |\n| 5 to 10 days before the trip | 25% of the advance |\n| Less than 5 days before the trip | No refund |\n\n- To confirm your seat, pay 50% of the trip cost. The balance is due 4 days before the trip; pending payments may cancel the booking.\n- No refund for no-shows or early check-outs, or for any inclusion not used by the traveller.\n- If we cancel a trip because of weather, political unrest or government guidelines, you get a **full credit** for a future trip instead of a refund.",
   "status": "published",
   "departures": {
     "weekdays": [
@@ -71,57 +69,53 @@
     "/uploads/2026/10/kareri-lake-trek-4.jpg"
   ],
   "highlights": [
-    "Trek to Kareri Lake (about 13 km) along Nyund Nallah",
-    "Overnight camping at the lake campsite",
+    "Trek of about 13 km to Kareri Lake (9,626 ft) along the Nyund Nallah",
+    "A night camping by the glacial lake",
     "Homestay night in Kareri Village",
-    "Leisure time by the riverside in Kareri Village",
-    "Trip coordinator throughout"
+    "Big Dhauladhar views and alpine meadows on the trail",
+    "Free time by the riverside in Kareri Village",
+    "Trip coordinator with the group"
   ],
-  "overview": "A weekend trek near Dharamshala: this **2 Nights / 3 Days** Kareri Lake Trek leaves Delhi late in the evening by tempo traveller. The overnight route runs via Chandigarh, Una and Kangra, with a short dinner halt on the way.\n\nDay 1 arrives near Dharamshala and drives on to Kareri Village, where you check in to a basic homestay and have the day at leisure. Day 2 is the trek to Kareri Lake, about 13 km along Nyund Nallah, ending with a night in camps. Day 3 starts with an early morning at the lake, then the descent to Kareri Village and an evening departure for Delhi. AC transport, one night in a homestay, one night in a camp and a trip coordinator are included. Prices start at ₹7,199 per person on quad sharing (5% GST extra).",
+  "overview": "A weekend trek from Delhi to a glacial lake in the Dhauladhars: this **2 Nights / 3 Days** Kareri Lake Trek leaves Delhi late in the evening by AC Tempo Traveller and travels overnight via Chandigarh, Una and Kangra, with a short dinner halt on the way.\n\nDay 1 arrives near Dharamshala and drives on to Kareri Village for a night in a basic homestay, with free time by the river. Day 2 is the trek of about 13 km along the Nyund Nallah to Kareri Lake (9,626 ft), with a packed lunch mid-trek and a night camping by the lake. Day 3 starts with sunrise at the lake, then the descent to Kareri Village for lunch and the evening departure, reaching Delhi early on Day 4. Prices start at ₹7,199 per person on quad sharing (5% GST extra).",
   "itinerary": [
     {
-      "title": "Departure from Delhi",
-      "content": "Late evening departure from Delhi in a tempo traveller.\nOvernight journey via Chandigarh, Una and Kangra.\nShort dinner halt on the way."
+      "title": "Departure to Kareri",
+      "content": "Late evening departure from Delhi in an AC Tempo Traveller.\nOvernight journey via Chandigarh, Una and Kangra, with a short dinner halt on the way."
     },
     {
-      "title": "Arrival in Kareri Village | Leisure day",
-      "content": "Arrive near Dharamshala and drive further to Kareri Village.\nCheck in to basic homestays surrounded by mountains and rivers.\nLeisure time to explore the village or relax by the riverside.\nEvening snacks followed by dinner."
+      "title": "Arrival in Kareri Village",
+      "content": "Arrive near Dharamshala and drive on to Kareri Village.\nCheck in to basic homestays surrounded by mountains and rivers.\nLeisure time to explore the village or relax by the riverside, then evening snacks.\nDinner and overnight stay at the homestay."
     },
     {
       "title": "Trek to Kareri Lake | Camping",
-      "content": "Early breakfast at the homestay.\nStart the trek to Kareri Lake (about 13 km) along Nyund Nallah.\nPacked lunch mid-trek.\nReach the campsite by evening.\nDinner and overnight stay in camps."
+      "content": "Early breakfast at the homestay, then start the trek.\nTrek about 13 km to Kareri Lake along the Nyund Nallah, with a packed lunch mid-trek.\nReach the campsite by evening and enjoy the alpine views.\nDinner and overnight stay in camps."
     },
     {
-      "title": "Descend to Kareri Village | Departure to Delhi",
-      "content": "Early morning at the lake, followed by breakfast.\nDescend to Kareri Village.\nLunch at the homestay.\nEvening departure for Delhi."
+      "title": "Descend | Departure to Delhi",
+      "content": "Early morning at the lake, followed by breakfast.\nDescend back to Kareri Village for lunch at the homestay.\nEvening departure for Delhi. Reach Delhi early on Day 4."
     }
   ],
   "includes": [
-    "AC transportation from Delhi to Delhi",
-    "1 night stay at a homestay",
-    "1 night stay at a camp",
-    "Sightseeing as per the itinerary",
+    "1 night homestay and 1 night camp",
+    "AC transport, Delhi to Delhi (AC off in the hills)",
     "Meals: 2 breakfasts and 2 dinners",
-    "Trip coordinator",
-    "24x7 support"
+    "All sightseeing as per the itinerary",
+    "Trip coordinator and 24x7 support",
+    "Extra mattresses for triple and quad sharing"
   ],
   "excludes": [
     "5% GST",
-    "Expenses for adventure activities, cable car and private cabs",
-    "Early check-in at the hotel",
-    "Expenses of a personal nature",
-    "Additional accommodation or food costs caused by any travel delay",
-    "Lunch and any other meals not mentioned in the inclusions",
-    "Any airfare, rail fare or transportation outside the itinerary",
-    "Parking and monument entry fees during sightseeing",
-    "Additional costs due to flight cancellations, landslides, roadblocks and other natural calamities",
-    "Any other services not specified in the inclusions"
+    "Adventure activities, cable car and private cabs",
+    "Personal expenses",
+    "Early check-in (subject to availability)",
+    "Meals outside the itinerary",
+    "Costs from delays, landslides or roadblocks, and anything not listed"
   ],
-  "importantNotes": "- Extra mattresses are provided for triple and quad sharing.\n- The homestays in Kareri Village are basic.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "importantNotes": "- Extra mattresses are provided for triple and quad sharing.\n- The homestays in Kareri Village are basic.\n- Lakeside nights get freezing, so pack warm layers.\n- Bookings are confirmed on 100% payment. The balance is due 4 days before the trip; pending payments may cancel the booking.\n- **Carry a valid government photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- Bookings cannot be transferred. Only the names given at confirmation may travel.\n- No refunds for any inclusion not used by the traveller.\n- Look after your own luggage and belongings. We are not accountable for missing items.\n- **The departure time is fixed.** Keep the trip coordinator updated and report at the pickup point 30 minutes early.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline will not be tolerated. We are a cordial travel community.\n- Travel Devils is not responsible for delays, changes or extra costs from natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents.\n- We do not provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary. We may adjust the schedule in the interest of safety, comfort and well-being.",
   "faqs": [
     {
       "q": "Where and when does the trip start?",
-      "a": "The tempo traveller leaves Delhi late in the evening and travels overnight via Chandigarh, Una and Kangra. The exact pickup point and time are shared once your booking is confirmed."
+      "a": "The AC Tempo Traveller leaves Delhi late in the evening and travels overnight via Chandigarh, Una and Kangra. The final pickup point and time are shared with confirmed travellers before the trip."
     },
     {
       "q": "How much does the Kareri Lake Trek cost?",
@@ -129,27 +123,24 @@
     },
     {
       "q": "What is included?",
-      "a": "AC transportation from Delhi to Delhi, 1 night in a homestay, 1 night in a camp, sightseeing as per the itinerary, 2 breakfasts and 2 dinners, a trip coordinator and 24x7 support."
+      "a": "AC transport from Delhi to Delhi, 1 night in a homestay and 1 night in a lakeside camp, 2 breakfasts and 2 dinners, sightseeing as per the itinerary, a trip coordinator, 24x7 support and extra mattresses for triple and quad sharing."
     },
     {
       "q": "How long is the trek?",
-      "a": "The trek from Kareri Village to Kareri Lake is about 13 km along Nyund Nallah on Day 2. You camp near the lake that night and descend to Kareri Village on Day 3."
-    },
-    {
-      "q": "Where do we stay?",
-      "a": "The first night is in a basic homestay in Kareri Village and the second night is in camps at the end of the trek to Kareri Lake. Extra mattresses are provided for triple and quad sharing."
+      "a": "About 13 km from Kareri Village to Kareri Lake (9,626 ft) along the Nyund Nallah on Day 2. You camp by the lake that night and descend to Kareri Village on Day 3."
     },
     {
       "q": "How do I book and pay?",
-      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest 4 days before the trip. 5% GST is extra on the trip price."
     },
     {
       "q": "What is the cancellation policy?",
-      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+      "a": "Cancel 10 or more days before the trip and 50% of the advance is refunded; 5 to 10 days before, 25%; under 5 days, nothing. There is no refund for no-shows or early check-outs. If we cancel for weather, political unrest or government guidelines, you get full credit for a future trip."
     },
     {
       "q": "What do I need to carry?",
-      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+      "a": "A valid government photo ID is a must: there is no boarding without it. Also pack a down or main jacket, thermals, socks and gloves, good shoes, a daypack, personal medication and a small first-aid kit. The full list is under Things To Pack."
     }
-  ]
+  ],
+  "itineraryPdf": "/uploads/itineraries/kareri-lake-trek.pdf"
 }

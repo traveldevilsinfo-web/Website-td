@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Download } from "lucide-react";
 import type { getTrip } from "@/lib/queries";
 import { getSettings } from "@/lib/settings";
 import { getCategories, getPosts, getTrips } from "@/lib/queries";
@@ -191,7 +192,15 @@ export async function TripPage({ data }: { data: Data }) {
           )}
 
           {trip.itinerary.length > 0 && (
-            <Block id="itinerary" title="Day-wise itinerary" action={<ExpandAll target="itinerary-days" />}>
+            <Block id="itinerary" title="Day-wise itinerary" action={
+              <div className="flex items-center gap-2">
+                {trip.itineraryPdf && (
+                  <a href={trip.itineraryPdf} download={`${trip.title} - Travel Devils.pdf`} className="press flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-extrabold text-white hover:bg-ink/85">
+                    <Download className="size-4" aria-hidden /> PDF
+                  </a>
+                )}
+                <ExpandAll target="itinerary-days" />
+              </div>}>
               <ol id="itinerary-days" className="relative space-y-3 before:absolute before:bottom-6 before:left-[1.4rem] before:top-6 before:w-px before:bg-line">
                 {trip.itinerary.map((d, i) => (
                   <li key={i} className="relative">
@@ -221,7 +230,9 @@ export async function TripPage({ data }: { data: Data }) {
               </ol>
               {trip.itineraryPdf && (
                 <div className="mt-6 text-center">
-                  <a href={trip.itineraryPdf} target="_blank" className="press inline-block rounded-full border-2 border-ink px-6 py-2.5 text-sm font-extrabold hover:bg-ink hover:text-white">Get PDF itinerary</a>
+                  <a href={trip.itineraryPdf} download={`${trip.title} - Travel Devils.pdf`} className="press inline-flex items-center gap-2 rounded-full border-2 border-ink px-6 py-2.5 text-sm font-extrabold hover:bg-ink hover:text-white">
+                    <Download className="size-4" aria-hidden /> Download full itinerary (PDF)
+                  </a>
                 </div>
               )}
             </Block>

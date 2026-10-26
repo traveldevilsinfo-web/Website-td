@@ -6,32 +6,39 @@
   "startLocation": "Delhi",
   "endLocation": "Delhi",
   "thingsToCarry": [
-    "Backpack or rucksack",
-    "Comfortable clothing",
-    "Raincoat and umbrella (monsoons only)",
-    "Warm woollen jackets or sweaters (depending on the season)",
-    "Comfortable trekking or sports shoes",
-    "Water bottle (avoid single-use plastic)",
-    "Quick snacks for the journey, like dry fruits and chocolates",
-    "Personal care items and toiletries",
-    "Personal medicines",
-    "Phone, camera and photography equipment",
-    "ATM card and enough cash for shopping and cafe visits",
-    "Torch, power bank and sunglasses",
-    "Identity document such as Aadhaar, driving licence or passport"
+    "Down jacket or main jacket",
+    "Clothes and undergarments",
+    "Running or outdoor shoes",
+    "Hat or cap",
+    "Personal medication",
+    "Thermals (upper and lower)",
+    "Socks and gloves",
+    "Slippers",
+    "Daypack",
+    "First-aid kit",
+    "Valid government photo ID (no boarding without it)"
   ],
-  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "cancellationPolicy": "- To confirm your seat, pay an advance of **₹3,000 per person**. The balance is due 24 hours before boarding; pending payments may cancel the booking.\n- **If you cancel, the advance is not refunded under any circumstances.**\n- No refunds for any inclusion not used by the traveller.\n- Bookings cannot be transferred. Only the names given at confirmation may travel.",
   "status": "published",
   "departures": {
-    "weekdays": [
-      5
+    "dates": [
+      "2026-10-30",
+      "2026-11-06",
+      "2026-11-13",
+      "2026-11-20",
+      "2026-11-27",
+      "2026-12-04",
+      "2026-12-11",
+      "2026-12-18",
+      "2026-12-24",
+      "2026-12-25",
+      "2026-12-30"
     ],
     "returnAfterDays": 5,
-    "weeks": 24,
     "seats": 20
   },
   "slug": "shimla-chitkul-kalpa",
-  "title": "Shimla, Chitkul & Kalpa",
+  "title": "Chitkul, Sangla & Kalpa",
   "tags": [
     "shimla",
     "chitkul",
@@ -39,22 +46,30 @@
     "kinnaur",
     "3n4d"
   ],
-  "reportingPoint": "The group assembles at the pickup point in Delhi by 8:00 PM on the departure night. The exact pickup point is shared once your booking is confirmed.",
-  "pickupPoints": [],
-  "basePrice": 11999,
-  "bookingAmount": 6000,
+  "reportingPoint": "The group assembles at the pickup point in Delhi or Chandigarh and departs around 8 PM on the departure night. The final pickup point is shared with confirmed travellers before the trip; report 30 minutes early.",
+  "pickupPoints": [
+    "Delhi",
+    "Chandigarh"
+  ],
+  "basePrice": 10500,
+  "bookingAmount": 3000,
   "pricing": [
     {
       "name": "Group Trip",
       "tiers": [
         {
+          "label": "Quad Sharing",
+          "price": 10500,
+          "salePrice": null
+        },
+        {
           "label": "Triple Sharing",
-          "price": 11999,
+          "price": 11000,
           "salePrice": null
         },
         {
           "label": "Double Sharing",
-          "price": 12499,
+          "price": 11500,
           "salePrice": null
         }
       ]
@@ -71,87 +86,81 @@
     "/uploads/2026/10/kinnaur-g8.jpg"
   ],
   "highlights": [
-    "2 nights at Chitkul and 1 night at Kalpa",
-    "Shri Bhima Kali Temple at Sarahan",
-    "Short day hike along the Baspa River in Chitkul",
-    "Roghi Suicide Point and Reckong Peo market",
-    "Kalpa village and temple, with views of the Kinner Kailash peaks",
+    "Chitkul, the last village of India",
+    "Day hike across the Baspa River, opposite the ITBP camp",
+    "Kinnaur Gate, Roghi Suicide Point and Reckong Peo market",
+    "Kalpa village and temple, with Kinner Kailash views",
+    "2 homestay nights in Chitkul / Sangla and 1 in Kalpa",
     "Bonfire and light music"
   ],
-  "overview": "A Kinnaur road trip from Delhi: this **3 Nights / 4 Days** Shimla, Chitkul and Kalpa group trip assembles at the pickup point by 8:00 PM. After meeting the team captains and a short briefing, you leave on the overnight journey. Chitkul is known as the last village of India.\n\nDay 1 reaches Sarahan in the morning for breakfast and a visit to Shri Bhima Kali Temple, then continues to Chitkul for a bonfire and dinner. Day 2 is a full day in Chitkul, with views of the Baspa Valley and a short day hike across the Baspa River. Day 3 drives to Kalpa, stopping at Roghi Suicide Point and Reckong Peo market. Day 4 heads to Shimla, with a look at the Kinner Kailash peaks on the way, and the overnight bus to Delhi. Transport, three nights of stay, 3 breakfasts, 3 dinners and a trip captain are included. Prices start at ₹11,999 per person on triple sharing (5% GST extra).",
+  "overview": "Kinnaur's high villages from Delhi or Chandigarh: this **3 Nights / 4 Days** long-weekend trip covers Chitkul, the last village of India, Baspa Valley walks and a riverside day hike, Roghi Suicide Point, Kalpa and the Kinner Kailash views. You leave around 8 PM by AC Tempo Traveller or bus and travel overnight via Shimla.\n\nDay 1 reaches Chitkul / Sangla with a stop at Kinnaur Gate, a sunset nature walk and a bonfire. Day 2 is a day hike across the Baspa River through the forest to sit by the river opposite the ITBP camp. Day 3 drives to Kalpa via Roghi Suicide Point and Reckong Peo market. Day 4 heads to Shimla past the Kinner Kailash peaks for the overnight bus to Delhi, arriving on Day 5. Stays are homestays: 2 nights in Chitkul / Sangla and 1 in Kalpa. Prices start at ₹10,500 per person on quad sharing (5% GST extra).",
   "itinerary": [
     {
-      "title": "Departure from Delhi",
-      "content": "The group assembles at the pickup point by 8:00 PM.\nMeet the team captains for a short tour briefing.\nLeave on the overnight journey towards Shimla."
+      "title": "Departure for Chitkul",
+      "content": "Assemble at the pickup point in Delhi or Chandigarh around 8 PM and meet your team captain and the group.\nOvernight journey by AC Tempo Traveller or bus.\nHalt for dinner on the way (not included)."
     },
     {
-      "title": "Reach Sarahan | Shri Bhima Kali Temple | Chitkul",
-      "content": "Reach Sarahan in the morning.\nFreshen up and have breakfast, then visit Shri Bhima Kali Temple.\nReach Chitkul in the late afternoon and relax for a while.\nYou may go out for a nature walk to see the sunset and the snow-clad mountains.\nReach the hotel or homestay in the evening.\nBonfire and dinner."
+      "title": "Reach Chitkul / Sangla",
+      "content": "Drive via Shimla, with a stop at Kinnaur Gate.\nReach Chitkul late noon and relax for a while.\nNature walk for the sunset and snow-clad mountain views.\nBack to the homestay for a bonfire and dinner."
     },
     {
-      "title": "Chitkul local exploration and day hike",
-      "content": "Sit and enjoy the view of the Baspa Valley and the snow-clad mountains from around the camp.\nReturn from the camp for lunch.\nMove to the other side of the Baspa River for a short day hike through the forest area along the river.\nSit beside the river and take in the view from the other side of the ITBP camp.\nReturn to the hotel or homestay for sunset and dinner around the bonfire."
+      "title": "Chitkul local exploration | Day hike",
+      "content": "Breakfast with views of the Baspa Valley and snow-clad mountains.\nAfter lunch, cross to the other side of the Baspa River for a short day hike through the forest, and sit by the river opposite the ITBP camp.\nBack to the homestay for the sunset and dinner around the bonfire."
     },
     {
       "title": "Chitkul to Kalpa",
-      "content": "After breakfast, leave Chitkul for Kalpa.\nStop at Roghi Suicide Point and Reckong Peo market on the way.\nContinue from Roghi Suicide Point to Kalpa.\nExplore Kalpa village and the temple.\nDinner in the evening and an overnight stay in Kalpa."
+      "content": "After breakfast, leave Chitkul for Kalpa.\nStop at Roghi Suicide Point and Reckong Peo market.\nExplore Kalpa village and its temple. Dinner and overnight stay in Kalpa."
     },
     {
-      "title": "Kalpa to Shimla | Departure to Delhi",
-      "content": "After breakfast, leave Kalpa for Shimla.\nSee the Kinner Kailash peaks on the way.\nIn the evening, board the bus to Delhi.\nOvernight bus journey from Shimla to Delhi."
+      "title": "Kalpa to Shimla | Departure",
+      "content": "After breakfast, leave Kalpa for Shimla.\nLook out for the Kinner Kailash peaks along the way.\nBoard the overnight bus from Shimla to Delhi in the evening. Arrive in Delhi on Day 5."
     }
   ],
   "includes": [
-    "Transfers to and from in an AC tempo traveller, Toyota Innova or AC deluxe bus, as per group size",
-    "Accommodation on twin or triple sharing in camps or hotels",
-    "2 nights at Chitkul and 1 night at Kalpa",
-    "Experienced and friendly trip leader/captain",
-    "Meals: 3 dinners and 3 breakfasts",
-    "Bonfire and light music",
+    "Homestays on twin or triple sharing: 2 nights in Chitkul / Sangla and 1 night in Kalpa",
+    "Meals: 3 breakfasts and 3 dinners",
+    "AC Tempo Traveller, Innova or AC deluxe bus, by group size",
+    "Experienced, friendly trip leader",
+    "Bonfire and light music (1 night)",
     "Local sightseeing as mentioned"
   ],
   "excludes": [
     "5% GST",
-    "Any food and beverage charge not included in the package",
-    "Adventure activities",
-    "Entry tickets to the viewpoints",
-    "4x4 vehicle cost at the time of snow",
-    "Any expense not mentioned in the inclusions",
-    "Extra costs caused by natural calamity or any situation beyond our control"
+    "Personal and medical expenses",
+    "4x4 vehicle if heavy snow stops our vehicle (paid on the spot)",
+    "Costs from roadblocks, accidents, landslides or itinerary changes beyond our control",
+    "Anything not mentioned in the inclusions"
   ],
-  "importantNotes": "- Early check-in at the stay is subject to availability.\n- Extra mattresses are provided for triple sharing.\n- AC will not work in hilly areas.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "importantNotes": "- Meal plan: dinner on Day 1, breakfast and dinner on Days 2 and 3, and breakfast on Day 4.\n- Extra mattresses are provided for triple and quad sharing.\n- Kinnaur nights are freezing, so pack warm layers.\n- Full payment must be made 24 hours before the trip begins. Pending payments may cancel the booking.\n- **Carry a valid government photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- Bookings cannot be transferred. Only the names given at confirmation may travel.\n- No refunds for any inclusion not used by the traveller.\n- Look after your own luggage and belongings. We are not accountable for missing items.\n- **The departure time is fixed.** Keep the trip coordinator updated and report at the pickup point 30 minutes early.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline will not be tolerated. We are a cordial travel community.\n- Travel Devils is not responsible for delays, changes or extra costs from natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents.\n- We do not provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary. We may adjust the schedule in the interest of safety, comfort and well-being.",
   "faqs": [
     {
       "q": "Where and when does the trip start?",
-      "a": "The group assembles at the pickup point in Delhi by 8:00 PM on the departure night, meets the team captains for a short briefing and then leaves on the overnight journey. The exact pickup point is shared once your booking is confirmed."
+      "a": "The group assembles at the pickup point in Delhi or Chandigarh and leaves around 8 PM, travelling overnight via Shimla. The final pickup point is shared with confirmed travellers before the trip."
     },
     {
-      "q": "How much does the Shimla, Chitkul & Kalpa trip cost?",
-      "a": "₹11,999 per person on triple sharing and ₹12,499 on double sharing. 5% GST is extra."
+      "q": "How much does the Chitkul, Sangla & Kalpa trip cost?",
+      "a": "₹10,500 per person on quad sharing, ₹11,000 on triple sharing and ₹11,500 on double sharing. 5% GST is extra."
     },
     {
       "q": "What is included?",
-      "a": "Transfers in an AC tempo traveller, Toyota Innova or AC deluxe bus as per group size, accommodation on twin or triple sharing in camps or hotels (2 nights at Chitkul and 1 night at Kalpa), 3 breakfasts and 3 dinners, bonfire and light music, local sightseeing as mentioned and a trip leader/captain."
-    },
-    {
-      "q": "Where do we stay?",
-      "a": "Two nights at Chitkul and one night at Kalpa, on twin or triple sharing in camps or hotels. Extra mattresses are provided for triple sharing."
+      "a": "2 homestay nights in Chitkul / Sangla and 1 in Kalpa, 3 breakfasts and 3 dinners, an AC Tempo Traveller, Innova or AC deluxe bus depending on group size, a trip leader, a bonfire with light music and local sightseeing."
     },
     {
       "q": "How much walking is there?",
-      "a": "Day 2 in Chitkul has a short day hike on the other side of the Baspa River, through the forest area along the river. Day 1 has an optional nature walk in Chitkul, and Day 3 includes a walk around Kalpa village."
+      "a": "A sunset nature walk on Day 1 and a short forest day hike across the Baspa River on Day 2. The rest of the trip is by road."
     },
     {
       "q": "How do I book and pay?",
-      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+      "a": "Reserve your seat with an advance of ₹3,000 per person by UPI, GPay, PhonePe, Paytm or net banking, then clear the balance 24 hours before boarding. 5% GST is extra on the trip price."
     },
     {
       "q": "What is the cancellation policy?",
-      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+      "a": "If you cancel, the ₹3,000 advance is not refunded under any circumstances. There are also no refunds for any inclusion you don't use, and bookings cannot be transferred to someone else."
     },
     {
       "q": "What do I need to carry?",
-      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+      "a": "A valid government photo ID is a must: there is no boarding without it. Also pack a down or main jacket, thermals, socks and gloves, good shoes, a daypack, personal medication and a small first-aid kit. The full list is under Things To Pack."
     }
-  ]
+  ],
+  "itineraryPdf": "/uploads/itineraries/shimla-chitkul-kalpa.pdf"
 }

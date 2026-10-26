@@ -12,7 +12,7 @@ export type QuoteInput = {
   basePrice: number | null;
   salePrice: number | null;
   bookingAmount: number | null; // per person, for "reserve now"
-  batch: { status: string; seats: number; priceOverride: number | null; route: string | null };
+  batch: { startDate: string; status: string; seats: number; priceOverride: number | null; route: string | null };
   route: string; // "" when the trip has no routes
   packageName: string; // "" when the trip has no packages
   qty: Record<string, number>; // tier label -> travellers
@@ -28,6 +28,14 @@ export type Quote = {
 };
 
 export class QuoteError extends Error {}
+
+/** Price groups for a departure: date-bound groups win for batches starting inside their window, otherwise the undated ones. */
+export function optionsForDate<T extends { from?: string; to?: string }>(options: T[], start?: string): T[] {
+  const dated = start ? options.filter((o) => o.from && o.to && start >= o.from && start <= o.to) : [];
+  if (dated.length) return dated;
+  const plain = options.filter((o) => !o.from);
+  return plain.length ? plain : options;
+}
 
 const MAX_PAX = 20;
 
@@ -47,7 +55,7 @@ export function computeQuote(q: QuoteInput): Quote {
   if (q.batch.route && q.route && q.batch.route !== q.route) throw new QuoteError("This batch belongs to a different route.");
 
   const onRoute = (r?: string) => !q.route || !r || r === q.route;
-  const pkgs = q.pricing.filter((p) => onRoute(p.route) && p.tiers.length);
+  const pkgs = optionsForDate(q.pricing.filter((p) => onRoute(p.route) && p.tiers.length), q.batch.startDate);
   let lines: BookingLine[];
 
   if (pkgs.length) {

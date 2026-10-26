@@ -6,28 +6,44 @@
   "startLocation": "Delhi",
   "endLocation": "Delhi",
   "thingsToCarry": [
-    "Backpack or rucksack",
-    "Comfortable clothing",
-    "Raincoat and umbrella (monsoons only)",
-    "Warm woollen jackets or sweaters (depending on the season)",
-    "Comfortable trekking or sports shoes",
-    "Water bottle (avoid single-use plastic)",
-    "Quick snacks for the journey, like dry fruits and chocolates",
-    "Personal care items and toiletries",
-    "Personal medicines",
-    "Phone, camera and photography equipment",
-    "ATM card and enough cash for shopping and cafe visits",
-    "Torch, power bank and sunglasses",
-    "Identity document such as Aadhaar, driving licence or passport"
+    "Down jacket or main jacket",
+    "Thermals (upper and lower)",
+    "Clothes and undergarments",
+    "Socks and gloves",
+    "Running or outdoor shoes",
+    "Slippers",
+    "Hat or cap",
+    "Daypack",
+    "Personal medication",
+    "First-aid kit",
+    "Valid government photo ID (no boarding without it)"
   ],
-  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "cancellationPolicy": "- **The ₹3,000 per person advance is not refunded under any circumstances.**\n- The full balance is due 24 hours before boarding. Pending payments may cancel the booking.\n- No refunds for any inclusion not used by the traveller.\n- Bookings can't be transferred: only the names given at confirmation may travel.",
   "status": "published",
   "departures": {
-    "weekdays": [
-      5
+    "dates": [
+      "2026-10-30",
+      "2026-11-06",
+      "2026-11-13",
+      "2026-11-20",
+      "2026-11-27",
+      "2026-12-04",
+      "2026-12-11",
+      "2026-12-18",
+      "2026-12-24",
+      "2026-12-25",
+      "2026-12-26",
+      "2026-12-27",
+      "2026-12-29",
+      "2026-12-30",
+      "2027-01-01",
+      "2027-01-08",
+      "2027-01-15",
+      "2027-01-22",
+      "2027-01-23",
+      "2027-01-29"
     ],
     "returnAfterDays": 4,
-    "weeks": 24,
     "seats": 20
   },
   "slug": "kasol-tosh",
@@ -37,30 +53,52 @@
     "tosh",
     "2n3d"
   ],
-  "reportingPoint": "Departure is in the evening from Delhi. The exact pickup point and time are shared once your booking is confirmed.",
+  "reportingPoint": "Pickup is from Delhi or Chandigarh. Departure is in the evening; the exact pickup point and time are shared with confirmed travellers before the trip.",
   "pickupPoints": [],
-  "basePrice": 7699,
-  "bookingAmount": 3900,
+  "basePrice": 7000,
+  "bookingAmount": 3000,
   "pricing": [
     {
-      "name": "Group Trip",
+      "name": "Regular Dates",
       "tiers": [
         {
           "label": "Quad Sharing",
-          "price": 7699,
+          "price": 7000,
           "salePrice": null
         },
         {
           "label": "Triple Sharing",
-          "price": 8199,
+          "price": 7500,
           "salePrice": null
         },
         {
           "label": "Double Sharing",
-          "price": 8699,
+          "price": 8000,
           "salePrice": null
         }
       ]
+    },
+    {
+      "name": "Christmas & New Year",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 8500,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 9000,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 9500,
+          "salePrice": null
+        }
+      ],
+      "from": "2026-12-22",
+      "to": "2026-12-31"
     }
   ],
   "coverImage": "/uploads/2026/10/kasol-tosh-1.jpg",
@@ -75,81 +113,84 @@
     "/uploads/2026/10/kasol-tosh-4.jpg"
   ],
   "highlights": [
-    "Kasol flea market and cafes",
-    "Riverside trail to Chalal village",
-    "Trek from Barsheni to Tosh",
-    "Tosh village and Tosh Waterfall",
-    "Manikaran Gurdwara",
+    "Kasol cafés, stalls and riverside lanes",
+    "Chalal village trail along the river (3 km)",
+    "A night in Tosh village (7,900 ft) under snow-capped peaks",
+    "Tosh Waterfall and café hopping in Tosh",
+    "Manikaran Sahib Gurudwara on the way back",
     "Bonfire evenings in Kasol and Tosh"
   ],
-  "overview": "Two villages in the Parvati Valley in one weekend: this **2 Nights / 3 Days** Kasol Tosh group trip leaves Delhi in the evening, with group trips every Friday. The group assembles at the pickup point, gets a short briefing from the trip leaders and travels overnight by Tempo Traveller to reach Kasol the next morning.\n\nDay 1 covers the Kasol flea market, nearby cafes and the riverside trail to Chalal village, then dinner with a bonfire and light music. On Day 2 you drive to Barsheni, trek to Tosh, check in to a hotel or homestay and explore the village. Day 3 has Tosh Waterfall and cafe hopping, the trek down to Barsheni and a stop at Manikaran Gurdwara before the evening return to Delhi. Prices start at ₹7,699 per person on quad sharing (5% GST extra).",
+  "overview": "Chill cafés, a riverside trail and a night in Tosh: this **2 Nights / 3 Days** Kasol Tosh group trip leaves Delhi or Chandigarh in the evening by Tempo Traveller and gets you back early on Day 4.\n\nDay 1 is for Kasol (5,180 ft): explore its lanes and cafés, walk the short 3 km Chalal village trail and end with a bonfire and light music. On Day 2 you head about 20 km to Tosh via Barshaini (the taxi from Barshaini to Tosh bridge is included), check in to a hotel or homestay and take in the Parvati Valley views from 7,900 ft. Day 3 has Tosh Waterfall and café hopping, then Manikaran Sahib Gurudwara on the way back. A Kasol hotel, a Tosh stay, 4 meals, travel and a tour curator are included. Prices start at ₹7,000 per person on quad sharing (5% GST extra), and you reserve with a ₹3,000 advance.",
   "itinerary": [
     {
       "title": "Departure to Kasol",
-      "content": "Departure in the evening.\nThe group assembles at the pickup point.\nGet a short briefing from the trip leader(s).\nHalt for dinner on the way (not included)."
+      "content": "Assemble at the pickup point in Delhi or Chandigarh, meet your team captain and the group, and depart in the evening by Tempo Traveller.\nHalt for dinner on the way (not included).\nOvernight journey."
     },
     {
       "title": "Kasol sightseeing",
-      "content": "Reach Kasol in the morning.\nCheck in at the stay, freshen up and relax for some time after the overnight journey.\nHead out for Kasol sightseeing: the Kasol flea market and nearby cafes.\nYou can also explore Chalal village, a small riverside trail of 3 km both ways.\nReturn to the stay.\nDinner is served alongside a bonfire and light music."
+      "content": "Reach Kasol in the morning, check in, freshen up and relax after the overnight journey.\nExplore Kasol and walk the short Chalal village trail (3 km).\nBack at the stay for a bonfire with light music.\nDinner and overnight stay in Kasol."
     },
     {
       "title": "Kasol to Tosh",
-      "content": "Wake up early and have breakfast.\nCheck out from the stay and leave for Barsheni (a 2-hour drive).\nFrom Barsheni, trek to Tosh.\nReach Tosh and check in to the hotel or homestay.\nExplore the village of Tosh and take in the views of Parvati Valley.\nEnjoy a bonfire, dinner and an overnight stay at Tosh."
+      "content": "Freshen up and have breakfast.\nHead to Tosh via Barshaini (about 20 km; the taxi from Barshaini to Tosh bridge is included).\nCheck in to the hotel or homestay.\nExplore Tosh and enjoy the Parvati Valley views.\nBonfire, dinner and overnight stay in Tosh."
     },
     {
-      "title": "Tosh, Manikaran and departure",
-      "content": "After an early breakfast, check out and head out for sightseeing.\nVisit Tosh Waterfall and go cafe hopping.\nTrek down to Barsheni and head towards Kasol.\nVisit Manikaran Gurdwara on the way.\nBoard the vehicle in the evening for the return journey to Delhi."
+      "title": "Tosh Waterfall, Manikaran Sahib and departure",
+      "content": "Wake up early in Tosh and have breakfast.\nVisit Tosh Waterfall and enjoy café hopping.\nHead back to Kasol via Manikaran Sahib Gurudwara, then depart for Delhi. Reach early on Day 4."
     }
   ],
   "includes": [
-    "Accommodation: 1 night stay in Kasol and 1 night stay in Tosh",
+    "1 night hotel stay in Kasol and 1 night stay in Tosh",
+    "Transfers to and from in a Tempo Traveller",
     "4 meals: 2 breakfasts and 2 dinners",
     "All sightseeing mentioned in the itinerary",
-    "Transfers to and from by Tempo Traveller",
-    "Trek from Barsheni to Tosh (6 km trek both ways)",
-    "Bonfire and light music",
-    "Tour curator"
+    "Taxi charges from Barshaini to Tosh bridge",
+    "Bonfire and music party",
+    "Tour curator",
+    "Extra mattresses for triple and quad sharing"
   ],
   "excludes": [
-    "5% GST",
-    "Any food or beverage charge not included in the package",
-    "Any expense not mentioned in the inclusions",
-    "Extra costs caused by natural calamity or circumstances beyond our control",
-    "Entry tickets to viewpoints"
+    "5% GST on booking prices",
+    "Early check-in at the stay",
+    "Entry tickets to viewpoints",
+    "Dinner on the way to Kasol",
+    "Costs from natural calamities or circumstances beyond our control",
+    "Any other expense not listed under inclusions"
   ],
-  "importantNotes": "- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "importantNotes": "- Extra mattresses are provided for triple and quad sharing.\n- Early check-in at the stay is not included.\n- **Carry a valid government-approved photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- **The departure time is fixed.** Keep your trip coordinator updated and report at the pickup point 30 minutes early.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- Look after your own luggage and belongings; we aren't accountable for missing items.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline won't be tolerated. We are a cordial travel community.\n- Travel Devils isn't responsible for delays, changes or extra costs from natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents.\n- We don't provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary; we may adjust the schedule in the interest of safety, comfort and well-being.",
   "faqs": [
     {
       "q": "Where and when does the trip start?",
-      "a": "Departure is in the evening from Delhi. The exact pickup point and time are shared once your booking is confirmed. You travel overnight and reach the hills the next morning."
+      "a": "Pickup is from Delhi or Chandigarh, with departure in the evening by Tempo Traveller and a dinner halt on the way (not included). The exact pickup point and time are shared with confirmed travellers before the trip. You reach Kasol the next morning."
     },
     {
       "q": "How much does the Kasol Tosh trip cost?",
-      "a": "₹7,699 per person on quad sharing, ₹8,199 on triple sharing and ₹8,699 on double sharing. 5% GST is extra."
+      "a": "On regular dates, ₹7,000 per person on quad sharing, ₹7,500 on triple sharing and ₹8,000 on double sharing. Christmas and New Year batches (departures from 24 to 30 December) cost ₹8,500 quad, ₹9,000 triple and ₹9,500 double. 5% GST is extra."
     },
     {
       "q": "What is included?",
-      "a": "1 night stay in Kasol and 1 night stay in Tosh, 2 breakfasts and 2 dinners, transfers by Tempo Traveller, all sightseeing mentioned in the itinerary, the trek from Barsheni to Tosh, bonfire and light music, and a tour curator. Dinner on the journey from Delhi is not included."
+      "a": "1 night in a Kasol hotel and 1 night in Tosh, transfers in a Tempo Traveller, 2 breakfasts and 2 dinners, all sightseeing in the itinerary, the taxi from Barshaini to Tosh bridge, a bonfire and music party, a tour curator, and extra mattresses for triple and quad sharing."
     },
     {
       "q": "How do we reach Tosh?",
-      "a": "On Day 2 you drive from Kasol to Barsheni, which takes about 2 hours, and then trek to Tosh. The itinerary lists it as a 6 km trek both ways. You trek back down to Barsheni on Day 3."
+      "a": "On Day 2 you travel about 20 km from Kasol to Tosh via Barshaini. The taxi from Barshaini to Tosh bridge is included."
     },
     {
       "q": "Where do we stay?",
-      "a": "The first night is in Kasol and the second night is in a hotel or homestay at Tosh."
+      "a": "The first night is in a hotel in Kasol (5,180 ft) and the second in a hotel or homestay in Tosh (7,900 ft). Extra mattresses are provided for triple and quad sharing."
     },
     {
       "q": "How do I book and pay?",
-      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+      "a": "Pay a ₹3,000 per person advance to reserve your seat, by UPI, GPay, PhonePe, Paytm or net banking, and clear the balance 24 hours before boarding. By paying the advance you accept the terms and conditions. 5% GST is extra on the trip price."
     },
     {
       "q": "What is the cancellation policy?",
-      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+      "a": "The ₹3,000 advance is not refunded under any circumstances, and there are no refunds for inclusions you don't use. Bookings can't be transferred: only the names given at confirmation may travel."
     },
     {
       "q": "What do I need to carry?",
-      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+      "a": "A valid government photo ID is a must: there is no boarding without it. Nights are cold, so pack a down jacket, thermals, socks and gloves, outdoor shoes and personal medication. The full list is under Things To Pack."
     }
-  ]
+  ],
+  "itineraryPdf": "/uploads/itineraries/kasol-tosh.pdf"
 }

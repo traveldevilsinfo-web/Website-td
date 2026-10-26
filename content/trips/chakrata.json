@@ -20,14 +20,22 @@
     "Torch, power bank and sunglasses",
     "Identity document such as Aadhaar, driving licence or passport"
   ],
-  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refunds for no-shows, early check-outs or services not used.\n- If a trip is cancelled because of political unrest, government guidelines, extreme weather or unsafe conditions, you get a **full credit** (equal to the booking amount) for a future Travel Devils trip, not a refund.",
   "status": "published",
   "departures": {
-    "weekdays": [
-      5
+    "dates": [
+      "2026-11-06",
+      "2026-11-13",
+      "2026-11-20",
+      "2026-11-27",
+      "2026-12-04",
+      "2026-12-11",
+      "2026-12-18",
+      "2026-12-24",
+      "2026-12-25",
+      "2026-12-30"
     ],
     "returnAfterDays": 3,
-    "weeks": 24,
     "seats": 20
   },
   "slug": "chakrata",
@@ -78,13 +86,13 @@
     "/uploads/2026/10/chakrata-g11.jpg"
   ],
   "highlights": [
-    "Budher Cave trek (5 km hike)",
-    "Tiger Falls",
+    "Budher Cave trek (5 km hike to the limestone caves)",
+    "Tiger Falls, one of Uttarakhand's highest waterfalls",
     "Sunset at Chirmiri Neck Top",
-    "Bonfire and music night",
-    "Resort stay in Chakrata"
+    "Bonfire with snacks and music",
+    "Resort stay in Chakrata (~2,118 m)"
   ],
-  "overview": "A quick hill weekend from Delhi: this **1 Night / 2 Days** Chakrata group trip leaves at night and has you back in Delhi early in the morning two days later. You board the AC bus or traveller at Vaishali Metro Station (reporting 10:30 PM) and wake up in Chakrata.\n\nDay 1 is the Budher Cave trek, a hike of about 5 km, followed by a bonfire evening with snacks, music and dinner at the resort. Day 2 covers Tiger Falls and sunset at Chirmiri Neck Top before the overnight drive back. Travel, a resort stay, the listed meals and a trip coordinator are included. Prices start at ₹4,999 per person on quad sharing (5% GST extra).",
+  "overview": "A weekend escape from Delhi: this **1 Night / 2 Days** Chakrata group trip leaves at night and has you back in Delhi early in the morning two days later. You board the AC bus or traveller at Vaishali Metro Station (reporting 10:30 PM) for the roughly 320 km, 9-hour drive and wake up in Chakrata (about 2,118 m).\n\nDay 1 is the Budher Cave trek, a 5 km hike to the limestone caves, followed by a bonfire evening with snacks, music and dinner at the resort. Day 2 covers Tiger Falls and sunset at Chirmiri Neck Top before the overnight drive back. Travel, a resort stay, the listed meals and a trip coordinator are included. Prices start at ₹4,999 per person on quad sharing (5% GST extra).",
   "itinerary": [
     {
       "title": "Departure from Delhi at night",
@@ -111,13 +119,12 @@
   ],
   "excludes": [
     "5% GST",
-    "Any meal or food item other than the package inclusions",
+    "Any meal or food item outside the package inclusions",
     "Entry tickets to monuments and public places",
-    "Charges for videos or photos during paragliding",
     "Any expense not mentioned in the inclusions",
-    "Extra costs caused by natural calamity or any situation beyond our control"
+    "Extra costs from natural calamities or situations beyond our control"
   ],
-  "importantNotes": "- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "importantNotes": "- **Bookings are confirmed only on 100% payment.** Pay 50% of the trip cost to reserve your seat and the balance 4 days before the trip.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your trip coordinator updated; we aren't responsible if your phone can't be reached.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- No smoking on the bus. Misconduct may end your trip with no refund.\n- Weather, road conditions and participants' fitness may change the itinerary; we may adjust the schedule for safety and comfort. All sightseeing is subject to weather and local authority guidelines.\n- In the hills the driver may switch off the AC or music for safety.\n- We have no insurance covering accidents, sickness, theft or other losses. Please arrange your own.\n- Travel Devils isn't responsible for injuries or illness during the trip or activities.\n- Any increase in entry fees, taxes, fuel or guide charges by the government after booking is charged extra.\n- Extra costs from natural calamities, breakdowns or delays beyond our control are borne by travellers, with no refund.\n- The person booking is liable for any damage to room or camp furnishings.",
   "faqs": [
     {
       "q": "Where and when does the trip start?",
@@ -133,15 +140,19 @@
     },
     {
       "q": "What is not included?",
-      "a": "5% GST, meals beyond those listed, entry tickets to monuments and public places, and any personal expense not mentioned in the inclusions."
+      "a": "5% GST, meals beyond those listed, entry tickets to monuments and public places, and any expense not mentioned in the inclusions."
     },
     {
       "q": "How much walking is there?",
       "a": "Day 1 has the Budher Cave trek, a hike of about 5 km. Wear comfortable trekking or sports shoes."
     },
     {
+      "q": "How far is Chakrata from Delhi?",
+      "a": "About 320 km, roughly 9 hours by road. You travel overnight from Delhi and reach Chakrata (about 2,118 m) in the morning."
+    },
+    {
       "q": "How do I book and pay?",
-      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+      "a": "Pay 50% of the trip cost to reserve your seat (5% GST is extra on the booking amount), by UPI, GPay, PhonePe, Paytm or net banking, and clear the balance 4 days before the trip. Your booking is confirmed once 100% is paid."
     },
     {
       "q": "What is the cancellation policy?",
@@ -151,5 +162,6 @@
       "q": "What do I need to carry?",
       "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
     }
-  ]
+  ],
+  "itineraryPdf": "/uploads/itineraries/chakrata.pdf"
 }

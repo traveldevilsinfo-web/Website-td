@@ -1,0 +1,221 @@
+{
+  "slug": "manali-leh-manali-9n10d",
+  "status": "published",
+  "category": "biking-trips",
+  "destination": "ladakh",
+  "title": "Manali to Leh to Manali (9N/10D)",
+  "tags": [
+    "ladakh",
+    "manali",
+    "leh",
+    "nubra",
+    "turtuk",
+    "pangong",
+    "bike-trip",
+    "long"
+  ],
+  "durationDays": 10,
+  "durationNights": 9,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "reportingPoint": "The AC Volvo to Manali leaves Delhi around 8 PM on Day 0, with a dinner stop on the way. You can also join from Chandigarh or Manali. The exact pickup point is shared once your booking is confirmed.",
+  "pickupPoints": [
+    "Delhi",
+    "Chandigarh",
+    "Manali"
+  ],
+  "bookingAmount": 8000,
+  "pricing": [
+    {
+      "name": "Sitting Coach (SIC)",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 33500,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "RE Himalayan with Pillion",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 22500,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "RE Himalayan Solo Rider",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 47500,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "Self Bike, Solo",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 35500,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 38500,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "Self Bike with Pillion",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 32500,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 35500,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/manali-leh-srinagar-turtuk-9n10d-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/manali-leh-srinagar-turtuk-9n10d-2.jpg",
+    "/uploads/2026/10/manali-leh-srinagar-turtuk-9n10d-3.jpg",
+    "/uploads/2026/10/manali-leh-srinagar-turtuk-9n10d-4.jpg"
+  ],
+  "itineraryPdf": "/uploads/itineraries/manali-leh-manali-9n10d.pdf",
+  "highlights": [
+    "Atal Tunnel and Baralacha La, into Lahaul on the Leh-Manali highway",
+    "Sarchu, a night under a million stars",
+    "Gata Loops and Tanglang La, a day of high passes into Leh",
+    "Khardung La (18,380 ft), then Diskit and the dunes",
+    "Turtuk, the last village on the Indo-Pak border",
+    "Pangong Tso, then Chang La at 17,800 ft"
+  ],
+  "overview": "The great Himalayan loop: the Leh-Manali highway over Baralacha and Tanglang La, Sarchu under the stars, Khardung La and Nubra, Turtuk, Pangong Tso and Chang La, by bike or by car. It is a **9 Nights / 10 Days** fixed-departure group trip, Manali to Manali, with an AC Volvo from Delhi and back included and pickup from Delhi, Chandigarh or Manali. Stays are in double or triple rooms in hotels and camps, with 15 meals across the trip.\n\nTravel in a sitting coach (SIC) by Tempo Traveller, ride a Royal Enfield Himalayan solo or with a pillion, or bring your own bike. An oxygen cylinder rides in the car 24x7, with mechanical backup and a team captain throughout. Prices start at ₹22,500 per person on triple sharing riding pillion on an RE Himalayan, or ₹33,500 by SIC (5% GST extra). Reserve your seat with ₹8,000 and pay the rest 24 hours before boarding. Batches run every week in the summer season, late May to early October, when the Leh-Manali highway is open; call us for 2027 dates.",
+  "itinerary": [
+    {
+      "title": "Delhi to Manali",
+      "content": "Depart Delhi around 8 PM in an AC Volvo, with a dinner stop on the way."
+    },
+    {
+      "title": "Manali: arrival and acclimatisation",
+      "content": "Check in, freshen up, breakfast and a short trip briefing.\nSelf-explore Manali: Vashisht Temple, Hadimba Temple, Mall Road and Jogini Waterfall.\nEarly night at the hotel to rest for the adventure ahead."
+    },
+    {
+      "title": "Manali to Sarchu",
+      "content": "Breakfast, check out and start the famous Leh-Manali highway.\nThrough the Atal Tunnel into Lahaul, past Darcha and over Baralacha Pass.\nReach Sarchu by evening for a night under a million stars at the camp."
+    },
+    {
+      "title": "Sarchu to Leh",
+      "content": "A day of high passes: the Gata Loops, Nakee La and Lachung La.\nLunch on the More plains at Pang.\nOver Tanglang La into Leh. Evening free to acclimatise; overnight in Leh."
+    },
+    {
+      "title": "Leh to Nubra via Khardung La",
+      "content": "After breakfast, ride over Khardung La (18,380 ft).\nVisit Diskit Monastery and its 100 ft Buddha; camel and ATV rides are at your own cost.\nCheck in to the campsite for dinner and an overnight stay."
+    },
+    {
+      "title": "Nubra to Turtuk and back",
+      "content": "Head to Turtuk, the last village of India on the Indo-Pak border, famous for its apricots.\nWalk the village, sun-bask by the Shyok River and visit the Balti Museum.\nBack to Nubra for dinner and an overnight stay."
+    },
+    {
+      "title": "Nubra to Pangong Tso",
+      "content": "Check out after breakfast and head to Pangong Lake, famous from 3 Idiots.\nCheck in to cottages, explore the lakeside and capture surreal views.\nA warm dinner and the night sky over the lake (weather permitting)."
+    },
+    {
+      "title": "Pangong Tso to Leh via Chang La",
+      "content": "Over Chang La (17,800 ft) to Leh, visiting Shey Palace and Thiksey Monastery.\nOvernight in Leh."
+    },
+    {
+      "title": "Leh to Jispa / Sarchu",
+      "content": "Ride from Leh to Jispa or Sarchu.\nOvernight at the camp."
+    },
+    {
+      "title": "Back to Manali and the overnight bus",
+      "content": "On to Manali, and board the overnight bus to Delhi."
+    },
+    {
+      "title": "Arrive in Delhi",
+      "content": "Arrive in Delhi. The tour ends here."
+    }
+  ],
+  "includes": [
+    "Double or triple rooms in hotels and camps",
+    "15 meals as per the meal plan",
+    "Volvo Delhi to Manali and back",
+    "Tempo Traveller Manali-Sarchu-Manali (bike option)",
+    "Bike rental for 6 days including fuel (bike option)",
+    "Entire travel Manali to Manali by Tempo Traveller (SIC option)",
+    "Mechanical backup",
+    "Oxygen cylinder in the car 24x7",
+    "All inner line permits",
+    "Team captain throughout",
+    "Riding gear: helmets, elbow guards and knee pads"
+  ],
+  "excludes": [
+    "5% GST",
+    "Unspecified meals",
+    "Room heater charges",
+    "Entry charges and monument fees",
+    "Personal expenses and tips",
+    "Extra days due to weather or snow road blocks",
+    "Any damage to the bike except engine damage",
+    "Costs from medical emergencies and acts of God"
+  ],
+  "thingsToCarry": [
+    "Down jacket or main jacket",
+    "Clothes and undergarments",
+    "Thermals (upper and lower)",
+    "Socks and gloves",
+    "Running or outdoor shoes",
+    "Hat or cap",
+    "Personal medication",
+    "Slippers",
+    "Daypack",
+    "First-aid kit",
+    "Documents: a valid government photo ID. There is no boarding without it."
+  ],
+  "importantNotes": "- **Carry a valid government photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- Prices are for triple sharing. On the own-bike options, double occupancy is ₹3,000 per person extra.\n- **Any damage to the bike, except engine damage, is borne by the rider.**\n- Prices are per person. Extra mattresses are provided for triple and quad sharing.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- Look after your own luggage and belongings. We aren't accountable for missing items.\n- The departure time is fixed. Keep the trip coordinator updated and report at the pickup point 30 minutes early.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline isn't tolerated. We are a cordial travel community.\n- Travel Devils isn't responsible for delays, changes or extra costs from natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents. Extra days due to weather or snow road blocks aren't included.\n- We don't provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary. We may adjust the schedule in the interest of safety, comfort and well-being.",
+  "cancellationPolicy": "- **The advance is not refunded under any circumstances** if you cancel.\n- The balance is due 24 hours before boarding. Pending payments may cancel the booking.\n- There is no refund for any inclusion you don't use.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- By depositing the advance you accept our terms and conditions.",
+  "faqs": [
+    {
+      "q": "Where does the trip start and end?",
+      "a": "The AC Volvo to Manali leaves Delhi around 8 PM on Day 0, and you can also be picked up from Chandigarh or Manali. The loop runs Manali to Manali, and the overnight bus brings you back to Delhi on Day 10."
+    },
+    {
+      "q": "What are the travel options and what do they cost?",
+      "a": "Per person on triple sharing: sitting coach (SIC) ₹33,500, RE Himalayan solo rider ₹47,500, RE Himalayan with pillion ₹22,500, your own bike solo ₹35,500 and your own bike with a pillion ₹32,500. On the own-bike options, double occupancy is ₹3,000 per person extra. 5% GST is extra."
+    },
+    {
+      "q": "When does it run?",
+      "a": "Summer season only, from late May to early October, when the Leh-Manali highway is open. Batches leave every week (for example 28 May to 7 June and 4 to 14 June, through 26 September to 5 October 2027). Call us for 2027 dates."
+    },
+    {
+      "q": "What is included?",
+      "a": "Double or triple rooms in hotels and camps, 15 meals, the Volvo between Delhi and Manali, bike rental for 6 days with fuel (bike option) or travel Manali to Manali by Tempo Traveller (SIC), mechanical backup, an oxygen cylinder 24x7, all inner line permits, a team captain and riding gear."
+    },
+    {
+      "q": "What is not included?",
+      "a": "5% GST, unspecified meals, room heater charges, entry and monument fees, personal expenses and tips, extra days due to weather or snow road blocks, any damage to the bike except engine damage, and costs from medical emergencies."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Pick your batch and option, then call or WhatsApp us on +91 88008 41209. Reserve your seat with an advance of ₹8,000 per person by UPI, GPay, PhonePe, Paytm or net banking, and pay the balance 24 hours before boarding. 5% GST is extra on the trip price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "The ₹8,000 advance is not refunded under any circumstances. The balance is due 24 hours before boarding, and pending payments may cancel the booking. Bookings can't be transferred."
+    }
+  ],
+  "basePrice": 22500
+}

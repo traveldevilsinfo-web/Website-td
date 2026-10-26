@@ -1,0 +1,166 @@
+{
+  "status": "published",
+  "itineraryPdf": "/uploads/itineraries/winter-spiti.pdf",
+  "slug": "winter-spiti",
+  "title": "Winter Spiti Kinnaur Kalpa (6N/7D)",
+  "category": "backpacking-trips",
+  "destination": "spiti",
+  "tags": [
+    "spiti",
+    "winter-spiti",
+    "kinnaur",
+    "kalpa",
+    "kaza",
+    "long"
+  ],
+  "durationDays": 7,
+  "durationNights": 6,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "reportingPoint": "Delhi, on the night of Day 0, for the overnight journey to Shimla. Final pickup details are shared with confirmed travellers before the trip.",
+  "pickupPoints": [
+    "Delhi"
+  ],
+  "bookingAmount": 5000,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 17999,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 19999,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/wp/2026/03/Kanatal-Tehri-11.png",
+  "gallery": [],
+  "overview": "The full winter circuit from Kinnaur to Spiti: this **6 Nights / 7 Days** group trip from Delhi runs through Sarahan, Chitkul, Nako, Tabo, Kaza and Kalpa, with frozen landscapes, the world's highest post office at Hikkim, a 500-year-old mummy at Gue and the iconic Key Monastery.\n\nYou travel overnight from Delhi to Shimla and switch to a tempo traveller for the drive to Sarahan. Day 2 goes to Chitkul / Sangla, Day 3 crosses Khab Bridge to Nako, Gue and Tabo, Day 4 visits Tabo and Dhankar on the way to Kaza, Day 5 covers Langza, Hikkim, Komic, Key Monastery and Chicham Bridge, and Day 6 heads to Kalpa for a farewell night. Day 7 is the drive to Shimla and the overnight ride back to Delhi. Six nights in hotels and homestays, 6 breakfasts and 6 dinners, inner line permits, an oxygen cylinder and a trip leader are included. Prices start at ₹17,999 per person on triple sharing.",
+  "highlights": [
+    "Chitkul, the last village before the China border",
+    "Khab Bridge, where the Spiti and Sutlej rivers meet",
+    "Gue Monastery's 500-year-old naturally preserved mummy",
+    "Tabo Caves and Tabo Monastery, the oldest in Spiti",
+    "Langza fossil village and Komic",
+    "Post a card from Hikkim, the world's highest post office",
+    "Key Monastery and Chicham Bridge",
+    "Kalpa, with Kinner Kailash views and a farewell night"
+  ],
+  "itinerary": [
+    {
+      "title": "Delhi to Shimla | Overnight journey",
+      "content": "Overnight journey from Delhi to Shimla."
+    },
+    {
+      "title": "Shimla to Sarahan",
+      "content": "Reach Shimla and transfer to the tempo traveller. Breakfast and freshen up.\nDrive through Narkanda to Sarahan, arriving by evening.\nRelax and get to know the group with stories and stargazing. Dinner and overnight stay in Sarahan."
+    },
+    {
+      "title": "Sarahan to Chitkul / Sangla",
+      "content": "Wake up early to a sunrise over Sarahan.\nAfter breakfast, drive through the gateway of Kinnaur to Chitkul, the last village near the China border, with a stopover at Sangla Market.\nCheck in, then dinner and a bonfire. Overnight in a hotel, campsite or homestay."
+    },
+    {
+      "title": "Chitkul to Tabo / Nako",
+      "content": "After breakfast, set off for Tabo.\nCross the Khab Bridge, where the Spiti and Sutlej rivers meet, and visit Nako Lake and its ancient monastery.\nAs you enter Spiti Valley, detour to Gue Village and its monastery, home to a 500-year-old naturally preserved mummy.\nArrive in Tabo for dinner and an overnight stay."
+    },
+    {
+      "title": "Tabo to Dhankar to Kaza",
+      "content": "Early morning, visit the ancient Tabo Caves for a bird's-eye view of Tabo Village.\nAfter breakfast, visit Tabo Monastery, the oldest monastery in Spiti.\nHead to Kaza with a stop at Dhankar Village and its cliff-top monastery. Reach Kaza by evening for dinner and an overnight stay."
+    },
+    {
+      "title": "Langza, Komic, Hikkim, Key and Chicham",
+      "content": "After breakfast, visit Langza (the fossil village), Hikkim (the world's highest post office) and Komic (the world's highest village with a motorable road).\nVisit Key Monastery and Chicham Bridge.\nStroll through Kaza market in the evening. Dinner and overnight stay in Kaza."
+    },
+    {
+      "title": "Kaza to Kalpa",
+      "content": "After breakfast, head to Kalpa with a stop at a waterfall on the way.\nSee the Kinner Kailash Shivling.\nCelebrate the end of the journey with a farewell night. Dinner and overnight stay in Kalpa."
+    },
+    {
+      "title": "Kalpa to Shimla to Delhi",
+      "content": "After breakfast, drive to Shimla.\nBoard the overnight tempo traveller or bus back to Delhi, reaching Delhi the next morning."
+    }
+  ],
+  "includes": [
+    "Transport: AC semi-sleeper Volvo or BharatBenz between Delhi and Shimla and a Force Traveller or SUV at all other times, or a Force Traveller or SUV for the entire journey, Delhi to Delhi",
+    "6 nights in hotels or homestays on sharing basis",
+    "Meals: 6 breakfasts and 6 dinners, from Day 1 dinner to Day 7 breakfast",
+    "Experienced trip leader, driver allowances, toll taxes, parking, state taxes and inner line permits",
+    "Oxygen cylinder and medical kit for emergencies"
+  ],
+  "excludes": [
+    "Any meals apart from those listed in the inclusions",
+    "Travel insurance and personal items like porterage, tips and laundry",
+    "Entry fees, optional activities or tickets not quoted in the inclusions",
+    "A 4x4 vehicle if heavy snowfall closes roads to heavy vehicles",
+    "Costs from natural calamity, weather, riots, roadblocks, landslides or other circumstances beyond our control",
+    "Anything not mentioned in the inclusions"
+  ],
+  "thingsToCarry": [
+    "Heavy down jacket",
+    "2 sets of thermals (upper and lower)",
+    "Fleece or sweaters and warm trousers",
+    "Woollen cap, gloves and woollen socks",
+    "Waterproof or snow shoes with good grip",
+    "Sunglasses",
+    "Sunscreen, lip balm and moisturiser",
+    "Power bank and reusable water bottle",
+    "Personal medication",
+    "Daypack",
+    "Original government photo ID (mandatory)"
+  ],
+  "importantNotes": "- **Heavy snowfall and road closures:** in case of an act of God (for example heavy snowfall closing roads to heavy vehicles), travellers must arrange and pay for a 4x4 vehicle. Travel Devils isn't responsible for such events or expenses.\n- Temperatures drop well below zero. Pack for serious cold.\n- **Zero tolerance for misconduct:** eve teasing or illegal intoxication means immediate cancellation without refund.\n- **No illegal substances:** carrying narcotics leads to cancellation without refund, and the legal consequences are yours. Hookahs and cigarettes are allowed, but no smoking inside the bus.\n- Basic medication and first aid are provided. Carry your personal medicines.\n- **An original government photo ID is mandatory** for every traveller. IDs are verified before boarding.\n- **The departure time is fixed.** Report at the pickup point 30 minutes early and keep the trip coordinator updated.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Travel Devils isn't responsible for delays, changes or extra costs from natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents.\n- We don't provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary. We may adjust the schedule in the interest of safety, comfort and well-being.",
+  "cancellationPolicy": "- Pay ₹5,000 per person to confirm your seat. The balance is due 24 hours before departure; pending payments may lead to cancellation.\n- No refunds for any inclusion you don't use.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- Misconduct, illegal intoxication or carrying narcotics leads to cancellation without refund.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "From Delhi, with an overnight journey to Shimla on Day 0. You are back in Delhi on the morning after Day 7."
+    },
+    {
+      "q": "How much does the Winter Spiti trip cost?",
+      "a": "₹17,999 per person on triple sharing and ₹19,999 on double sharing."
+    },
+    {
+      "q": "What is included?",
+      "a": "Delhi to Delhi transport, 6 nights in hotels or homestays, 6 breakfasts and 6 dinners, an experienced trip leader, driver allowances, tolls, parking, state taxes, inner line permits, and an oxygen cylinder and medical kit."
+    },
+    {
+      "q": "What happens if snow closes the road?",
+      "a": "If heavy snowfall closes roads to heavy vehicles, travellers must arrange and pay for a 4x4 vehicle."
+    },
+    {
+      "q": "How cold does it get?",
+      "a": "Temperatures drop well below zero. Pack a heavy down jacket, two sets of thermals, woollens and waterproof or snow shoes with good grip."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Pay ₹5,000 per person to reserve your seat, by UPI, GPay, PhonePe, Paytm or net banking. The balance is due 24 hours before departure."
+    }
+  ],
+  "departures": {
+    "dates": [
+      "2026-10-31",
+      "2026-11-07",
+      "2026-11-14",
+      "2026-11-21",
+      "2026-11-28",
+      "2026-12-05",
+      "2026-12-12",
+      "2026-12-19",
+      "2026-12-22",
+      "2026-12-23",
+      "2026-12-25",
+      "2026-12-26",
+      "2026-12-27",
+      "2026-12-28"
+    ],
+    "returnAfterDays": 8,
+    "seats": 20
+  },
+  "basePrice": 17999
+}

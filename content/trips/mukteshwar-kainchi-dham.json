@@ -20,14 +20,22 @@
     "Torch, power bank and sunglasses",
     "Identity document such as Aadhaar, driving licence or passport"
   ],
-  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refunds for no-shows, early check-outs or services not used.\n- If a trip is cancelled because of political unrest, government guidelines, extreme weather or unsafe conditions, you get a **full credit** (equal to the booking amount) for a future Travel Devils trip, not a refund.",
   "status": "published",
   "departures": {
-    "weekdays": [
-      5
+    "dates": [
+      "2026-11-06",
+      "2026-11-13",
+      "2026-11-20",
+      "2026-11-27",
+      "2026-12-04",
+      "2026-12-11",
+      "2026-12-18",
+      "2026-12-24",
+      "2026-12-25",
+      "2026-12-30"
     ],
     "returnAfterDays": 3,
-    "weeks": 24,
     "seats": 20
   },
   "slug": "mukteshwar-kainchi-dham",
@@ -80,8 +88,8 @@
   ],
   "highlights": [
     "Kainchi Dham",
-    "Chauli ki Jali",
-    "Mukteshwar Temple",
+    "Chauli ki Jali, a cliff-edge rock with sweeping views",
+    "Mukteshwar Temple, a hilltop Shiva temple",
     "Waterfall hike (1.5 km)",
     "Nainital or Bhimtal sightseeing",
     "Bonfire and music evening"
@@ -94,15 +102,15 @@
     },
     {
       "title": "Arrival in Mukteshwar",
-      "content": "Morning: arrive in Mukteshwar and check in to your camps or rooms.\nAfternoon: a short 1.5 km hike to a local waterfall. After the hike, visit Chauli ki Jali and the Mukteshwar Temple, known for their views and cultural significance.\nEvening: return to your stay for a bonfire and music session. Dinner, followed by an overnight stay."
+      "content": "Morning: arrive in Mukteshwar and check in to your camps or rooms.\nAfternoon: a short 1.5 km hike to a local waterfall. After the hike, visit Chauli ki Jali and the Mukteshwar Temple, known for their views and cultural significance.\nEvening: back at the stay for a bonfire and music session, high tea and dinner. Overnight stay."
     },
     {
       "title": "Adventure, Kainchi Dham and sightseeing",
-      "content": "Morning: after breakfast, check out and try the adventure activities (at your own cost).\nAfternoon: visit Kainchi Dham. Later, proceed to either Nainital or Bhimtal for leisurely sightseeing.\nEvening: depart for Delhi at 9:00 PM.\nNext day, early morning: arrival in Delhi."
+      "content": "Morning: after breakfast, check out and try some adventure activities (paid directly).\nAfternoon: visit Kainchi Dham. Later, proceed to either Nainital or Bhimtal for leisurely sightseeing.\nEvening: depart for Delhi at 9:00 PM.\nNext day, early morning: arrival in Delhi."
     }
   ],
   "includes": [
-    "Round-trip transfers from Delhi",
+    "Round-trip transfers from Delhi (Vaishali Metro)",
     "1 night accommodation in Swiss camps or rooms",
     "Meals: 1 breakfast, 1 dinner and an evening high tea",
     "Sightseeing as per the itinerary",
@@ -116,7 +124,7 @@
     "Meals and drinks other than those included",
     "Anything not mentioned in the itinerary"
   ],
-  "importantNotes": "- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "importantNotes": "- **Bookings are confirmed only on 100% payment.** Pay 50% of the trip cost to reserve your seat and the balance 4 days before the trip.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your trip coordinator updated; we aren't responsible if your phone can't be reached.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- No smoking on the bus. Misconduct may end your trip with no refund.\n- Weather, road conditions and participants' fitness may change the itinerary; we may adjust the schedule for safety and comfort. All sightseeing is subject to weather and local authority guidelines.\n- In the hills the driver may switch off the AC or music for safety.\n- We have no insurance covering accidents, sickness, theft or other losses. Please arrange your own.\n- Travel Devils isn't responsible for injuries or illness during the trip or activities.\n- Any increase in entry fees, taxes, fuel or guide charges by the government after booking is charged extra.\n- Extra costs from natural calamities, breakdowns or delays beyond our control are borne by travellers, with no refund.\n- The person booking is liable for any damage to room or camp furnishings.",
   "faqs": [
     {
       "q": "Where and when does the trip start?",
@@ -140,7 +148,7 @@
     },
     {
       "q": "How do I book and pay?",
-      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+      "a": "Pay 50% of the trip cost to reserve your seat (5% GST is extra on the booking amount), by UPI, GPay, PhonePe, Paytm or net banking, and clear the balance 4 days before the trip. Your booking is confirmed once 100% is paid."
     },
     {
       "q": "What is the cancellation policy?",
@@ -150,5 +158,6 @@
       "q": "What do I need to carry?",
       "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
     }
-  ]
+  ],
+  "itineraryPdf": "/uploads/itineraries/mukteshwar-kainchi-dham.pdf"
 }

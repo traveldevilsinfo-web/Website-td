@@ -6,21 +6,19 @@
   "startLocation": "Gurugram",
   "endLocation": "Gurugram",
   "thingsToCarry": [
-    "Backpack or rucksack",
-    "Comfortable clothing",
-    "Raincoat and umbrella (monsoons only)",
-    "Warm woollen jackets or sweaters (depending on the season)",
-    "Comfortable trekking or sports shoes",
-    "Water bottle (avoid single-use plastic)",
-    "Quick snacks for the journey, like dry fruits and chocolates",
-    "Personal care items and toiletries",
-    "Personal medicines",
-    "Phone, camera and photography equipment",
-    "ATM card and enough cash for shopping and cafe visits",
-    "Torch, power bank and sunglasses",
-    "Identity document such as Aadhaar, driving licence or passport"
+    "Down jacket or main jacket",
+    "Clothes and undergarments",
+    "Running or outdoor shoes",
+    "Hat or cap",
+    "Personal medication",
+    "Thermals (upper and lower)",
+    "Socks and gloves",
+    "Slippers",
+    "Daypack",
+    "First-aid kit",
+    "Valid government photo ID (no boarding without it)"
   ],
-  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| 10 or more days before the trip | 50% of the advance |\n| 5 to 10 days before the trip | 25% of the advance |\n| Less than 5 days before the trip | No refund |\n\n- To confirm your seat, pay 50% of the trip cost. The balance is due 4 days before the trip; pending payments may cancel the booking.\n- No refund for no-shows or early check-outs, or for any inclusion not used by the traveller.\n- If we cancel a trip because of weather, political unrest or government guidelines, you get a **full credit** for a future trip instead of a refund.",
   "status": "published",
   "departures": {
     "weekdays": [
@@ -31,7 +29,7 @@
     "seats": 20
   },
   "slug": "udaipur-kumbhalgarh",
-  "title": "Udaipur Kumbhalgarh",
+  "title": "Udaipur & Kumbhalgarh",
   "tags": [
     "udaipur",
     "kumbhalgarh",
@@ -71,81 +69,77 @@
     "/uploads/2026/10/udaipur-kumbhalgarh-4.jpg"
   ],
   "highlights": [
-    "Saheliyon ki Bari and Fateh Sagar Lake",
-    "Lake Pichola, City Palace, Jagdish Temple and Gangaur Ghat",
-    "Culture and folk art performance at Bagore Ki Haveli, or the local flea market",
-    "Kumbhalgarh Fort, a UNESCO World Heritage Site",
-    "2 nights in a hotel in Udaipur",
-    "2 breakfasts and 2 dinners"
+    "Lake Pichola and the City Palace",
+    "Jagdish Temple and Gangaur Ghat",
+    "Folk art performance at Bagore ki Haveli (7-8 PM), or the local flea market",
+    "Fateh Sagar Lake, its market and Saheliyon ki Bari",
+    "Kumbhalgarh Fort, a UNESCO site with a 38 km wall",
+    "2 nights in a hotel in Udaipur"
   ],
-  "overview": "Lakes, palaces and a hill fort in one long weekend: this **2 Nights / 3 Days** Udaipur and Kumbhalgarh group trip starts from Gurugram with an overnight journey in an AC deluxe vehicle. The exact pickup point and time are shared once your booking is confirmed.\n\nDay 1 covers Saheliyon ki Bari, Fateh Sagar Lake and its market. Day 2 is Udaipur sightseeing: Lake Pichola, City Palace, Jagdish Temple and Gangaur Ghat, with an evening at Bagore Ki Haveli or the local flea market. Day 3 visits Kumbhalgarh Fort before the overnight journey back to Gurugram. Transport, 2 nights in a hotel in Udaipur, 2 breakfasts, 2 dinners and a tour curator are included. Prices start at ₹7,499 per person on quad sharing (5% GST extra).",
+  "overview": "The City of Lakes and the Great Wall of India from Gurugram: this **2 Nights / 3 Days** group trip leaves Gurugram in the evening in an AC deluxe vehicle and travels overnight to Udaipur.\n\nDay 1 covers Saheliyon ki Bari, Fateh Sagar Lake and its market for Udaipur's local food. Day 2 is the city day: Lake Pichola, the City Palace, Jagdish Temple and Gangaur Ghat, then the folk performance at Bagore ki Haveli (7-8 PM) or the local flea market. Day 3 is Kumbhalgarh Fort, a UNESCO World Heritage Site whose 38 km wall is the second longest after the Great Wall of China, before the overnight drive back to Gurugram. Prices start at ₹7,499 per person on quad sharing (5% GST extra).",
   "itinerary": [
     {
-      "title": "Departure to Udaipur | Overnight journey",
-      "content": "Depart in an AC deluxe vehicle.\nOvernight journey to Udaipur.\nHalt for dinner on the way (not included)."
+      "title": "Departure to Udaipur",
+      "content": "Depart from Gurugram in the evening in an AC deluxe vehicle for the overnight journey to Udaipur.\nHalt for dinner on the way (not included)."
     },
     {
-      "title": "Reach Udaipur | City tour",
-      "content": "Reach Udaipur and check in at the hotel.\nRelax and freshen up.\nLeave for Udaipur sightseeing: visit Saheliyon ki Bari and Fateh Sagar Lake.\nExplore the Fateh Sagar Lake market, where you can try Udaipur's local cuisine.\nReturn to the hotel.\nDinner and overnight stay at the hotel."
+      "title": "Udaipur city tour",
+      "content": "Reach Udaipur, check in at the hotel, relax and freshen up.\nSightseeing: Saheliyon ki Bari and Fateh Sagar Lake.\nExplore the Fateh Sagar Lake market and try Udaipur's local cuisine.\nBack to the hotel for dinner and overnight stay."
     },
     {
       "title": "Udaipur sightseeing",
-      "content": "After breakfast, leave for Udaipur local sightseeing.\nVisit Lake Pichola, City Palace, Jagdish Temple and Gangaur Ghat.\nIn the evening, either watch the culture and folk art performance at Bagore Ki Haveli (7–8 PM) or explore the local flea market.\nReturn to the hotel.\nDinner and overnight stay at the hotel."
+      "content": "After breakfast, head out for local sightseeing.\nVisit Lake Pichola, the City Palace, Jagdish Temple and Gangaur Ghat.\nEvening: the folk performance at Bagore ki Haveli (7-8 PM) or the local flea market, then dinner and overnight stay."
     },
     {
-      "title": "Kumbhalgarh Fort and departure",
-      "content": "Have breakfast and check out from the hotel.\nLeave for Kumbhalgarh Fort, a UNESCO World Heritage Site whose walls extend over 38 km.\nDepart from Kumbhalgarh by evening.\nOvernight journey to Gurugram, with a halt for dinner on the way (not included)."
+      "title": "Kumbhalgarh Fort | Departure",
+      "content": "Breakfast and check out from the hotel.\nDrive to Kumbhalgarh Fort, a UNESCO World Heritage Site whose 38 km wall is the second longest after the Great Wall of China.\nLeave Kumbhalgarh in the evening for the overnight journey to Gurugram, with a halt for dinner (not included). Reach on Day 4."
     }
   ],
   "includes": [
-    "2 nights' hotel stay in Udaipur",
+    "Accommodation: 2 nights hotel stay in Udaipur",
     "4 meals: 2 breakfasts and 2 dinners",
     "All transport and sightseeing to and from Gurugram in an AC vehicle",
     "Sightseeing as mentioned in the itinerary",
-    "Tour curator"
+    "Tour curator",
+    "24x7 support"
   ],
   "excludes": [
     "5% GST",
-    "Dinner during the overnight journeys",
     "Alcoholic beverages",
+    "Costs from roadblocks, accidents or itinerary changes beyond our control",
     "Personal and medical expenses",
-    "Expenses caused by conditions beyond our control, such as road blockages, road accidents or landslides (borne by the customer on the spot)",
-    "Costs from a change in itinerary due to landslides, roadblocks or factors beyond human control",
-    "Anything not mentioned in the inclusions"
+    "Anything not mentioned in the itinerary"
   ],
-  "importantNotes": "- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "importantNotes": "- Winter evenings get chilly, so pack a warm layer.\n- Bookings are confirmed on 100% payment. The balance is due 4 days before the trip; pending payments may cancel the booking.\n- **Carry a valid government photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- Bookings cannot be transferred. Only the names given at confirmation may travel.\n- No refunds for any inclusion not used by the traveller.\n- Look after your own luggage and belongings. We are not accountable for missing items.\n- **The departure time is fixed.** Keep the trip coordinator updated and report at the pickup point 30 minutes early.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline will not be tolerated. We are a cordial travel community.\n- Travel Devils is not responsible for delays, changes or extra costs from natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents.\n- We do not provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary. We may adjust the schedule in the interest of safety, comfort and well-being.",
   "faqs": [
     {
       "q": "Where and when does the trip start?",
-      "a": "The trip starts from Gurugram with an overnight journey to Udaipur in an AC deluxe vehicle. The exact pickup point and time are shared once your booking is confirmed."
+      "a": "Departure is in the evening from Gurugram in an AC deluxe vehicle, travelling overnight to Udaipur. The final pickup point and time are shared with confirmed travellers before the trip."
     },
     {
-      "q": "How much does the Udaipur Kumbhalgarh trip cost?",
+      "q": "How much does the Udaipur & Kumbhalgarh trip cost?",
       "a": "₹7,499 per person on quad sharing, ₹7,999 on triple sharing and ₹8,499 on double sharing. 5% GST is extra."
     },
     {
       "q": "What is included?",
-      "a": "2 nights in a hotel in Udaipur, 2 breakfasts and 2 dinners, all transport and sightseeing to and from Gurugram in an AC vehicle, the sightseeing listed in the itinerary and a tour curator. Dinner halts on the overnight journeys are not included."
-    },
-    {
-      "q": "Where do we stay?",
-      "a": "Both nights are in a hotel in Udaipur. Kumbhalgarh Fort is visited on Day 3 after you check out, on the way back."
+      "a": "2 nights in a hotel in Udaipur, 2 breakfasts and 2 dinners, all transport and sightseeing to and from Gurugram in an AC vehicle, a tour curator and 24x7 support."
     },
     {
       "q": "Which places are covered?",
-      "a": "Saheliyon ki Bari and Fateh Sagar Lake on Day 1; Lake Pichola, City Palace, Jagdish Temple and Gangaur Ghat on Day 2, with the Bagore Ki Haveli performance (7–8 PM) or the local flea market in the evening; and Kumbhalgarh Fort on Day 3."
+      "a": "Saheliyon ki Bari, Fateh Sagar Lake, Lake Pichola, the City Palace, Jagdish Temple, Gangaur Ghat, Bagore ki Haveli (or the flea market) and Kumbhalgarh Fort."
     },
     {
       "q": "How do I book and pay?",
-      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest 4 days before the trip. 5% GST is extra on the trip price."
     },
     {
       "q": "What is the cancellation policy?",
-      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+      "a": "Cancel 10 or more days before the trip and 50% of the advance is refunded; 5 to 10 days before, 25%; under 5 days, nothing. There is no refund for no-shows or early check-outs. If we cancel for weather, political unrest or government guidelines, you get full credit for a future trip."
     },
     {
       "q": "What do I need to carry?",
-      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+      "a": "A valid government photo ID is a must: there is no boarding without it. Also pack a down or main jacket, thermals, socks and gloves, good shoes, a daypack, personal medication and a small first-aid kit. The full list is under Things To Pack."
     }
-  ]
+  ],
+  "itineraryPdf": "/uploads/itineraries/udaipur-kumbhalgarh.pdf"
 }

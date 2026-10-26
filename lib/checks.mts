@@ -77,14 +77,14 @@ assert.equal(m.seo.title, "Spiti Trip");
 console.log("pdf draft merge checks passed");
 
 // Booking price engine
-import { computeQuote, QuoteError, type QuoteInput } from "./pricing";
+import { computeQuote, optionsForDate, QuoteError, type QuoteInput } from "./pricing";
 const qbase: QuoteInput = {
   pricing: [
     { name: "Tempo", tiers: [{ label: "Triple", price: 10000, salePrice: 9000 }, { label: "Double", price: 12000 }] },
     { name: "Bike", route: "Leh", tiers: [{ label: "Solo", price: 30000 }] },
   ],
   basePrice: 10000, salePrice: null, bookingAmount: 2000,
-  batch: { status: "available", seats: 10, priceOverride: null, route: null },
+  batch: { startDate: "2026-11-06", status: "available", seats: 10, priceOverride: null, route: null },
   route: "", packageName: "Tempo", qty: { Triple: 2, Double: 1 }, coupon: null, gstPercent: 5, plan: "full",
 };
 let q = computeQuote(qbase);
@@ -199,3 +199,14 @@ const tl = [{ n: "c", durationNights: 2, durationDays: 3, basePrice: 7000, saleP
   { n: "b", durationNights: 1, durationDays: 2, basePrice: 6000, salePrice: 4999 }, { n: "d", durationNights: 7, durationDays: 8, basePrice: 1000, salePrice: null }];
 assert.deepEqual([...tl].sort(byDuration).map((x) => x.n), ["b", "a", "c", "d"]);
 console.log("trip order checks passed");
+
+// Holiday price groups apply only to batches starting inside their window, and replace the regular ones there.
+{
+  const opts = [{ name: "Regular" }, { name: "Xmas", from: "2026-12-22", to: "2026-12-31" }];
+  assert.deepEqual(optionsForDate(opts, "2026-12-05").map((o) => o.name), ["Regular"]);
+  assert.deepEqual(optionsForDate(opts, "2026-12-24").map((o) => o.name), ["Xmas"]);
+  assert.deepEqual(optionsForDate(opts, undefined).map((o) => o.name), ["Regular"]);
+  const xq = { ...qbase, pricing: [{ name: "Regular", tiers: [{ label: "Triple", price: 7000 }] }, { name: "Xmas", from: "2026-12-22", to: "2026-12-31", tiers: [{ label: "Triple", price: 9000 }] }], qty: { Triple: 1 }, packageName: "Regular" };
+  assert.throws(() => computeQuote({ ...xq, batch: { ...xq.batch, startDate: "2026-12-25" } }), QuoteError); // can't buy a holiday batch at the regular price
+  assert.equal(computeQuote({ ...xq, packageName: "Xmas", batch: { ...xq.batch, startDate: "2026-12-25" } }).subtotal, 9000);
+}

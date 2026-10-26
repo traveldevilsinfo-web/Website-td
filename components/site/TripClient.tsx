@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { CalendarDays, ChevronDown } from "lucide-react";
+import { CalendarDays, ChevronDown, Download } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { OpenLeadButton } from "@/components/LeadDialog";
 import { BATCH_LABEL, dateDay, dateShort, inr, monthShort } from "@/lib/format";
+import { optionsForDate } from "@/lib/pricing";
 
 /* ------------------------------------------------------------------ Gallery + lightbox */
 
@@ -160,7 +161,7 @@ function LightboxDialog({ dialog, track, images, title, step }: {
 /* ------------------------------------------------------------------ Price card */
 
 type Tier = { label: string; price: number; salePrice?: number | null };
-type Pkg = { name: string; route?: string; tiers: Tier[] };
+type Pkg = { name: string; route?: string; from?: string; to?: string; tiers: Tier[] };
 type Batch = { id: number; startDate: string; endDate: string; status: string; priceOverride: number | null; seats: number; route: string | null };
 type Route = { name: string; from: string; to: string; reporting?: string; departTime?: string; returnTime?: string };
 
@@ -173,7 +174,6 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
   const route = routes[r];
   // A package/batch with no route applies to every route.
   const onRoute = (x?: string | null) => !route || !x || x === route.name;
-  const pkgs = pricing.filter((x) => onRoute(x.route));
   const bs = batches.filter((x) => onRoute(x.route));
 
   const [p, setP] = useState(0);
@@ -182,9 +182,10 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
   const [datesOpen, setDatesOpen] = useState(false);
   const [b, setB] = useState<number | null>(bs.find((x) => x.status !== "sold_out")?.id ?? null);
 
+  const batch = bs.find((x) => x.id === b);
+  const pkgs = optionsForDate(pricing.filter((x) => onRoute(x.route)), batch?.startDate); // holiday batches get holiday prices
   const pkg = pkgs[Math.min(p, pkgs.length - 1)];
   const tier = pkg?.tiers[Math.min(t, pkg.tiers.length - 1)];
-  const batch = bs.find((x) => x.id === b);
   const listPrice = tier?.price ?? basePrice;
   const price = batch?.priceOverride ?? tier?.salePrice ?? (tier ? tier.price : salePrice ?? basePrice);
   const showStrike = listPrice && price && price < listPrice;
@@ -313,7 +314,11 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
         <a href={wa} target="_blank" rel="noopener noreferrer" className="press rounded-2xl border border-line py-3.5 text-center text-sm font-extrabold hover:border-ink">
           Ask on WhatsApp
         </a>
-        {pdf && <a href={pdf} target="_blank" className="py-2 text-center text-sm font-bold text-muted underline-offset-2 hover:text-ink hover:underline">Download itinerary (PDF)</a>}
+        {pdf && (
+          <a href={pdf} download={`${title} - Travel Devils.pdf`} className="press flex items-center justify-center gap-2 rounded-2xl border border-line py-3.5 text-sm font-extrabold hover:border-ink">
+            <Download className="size-4" aria-hidden /> Download itinerary (PDF)
+          </a>
+        )}
       </div>
     </div>
   );

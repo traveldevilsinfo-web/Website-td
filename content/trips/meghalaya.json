@@ -1,0 +1,181 @@
+{
+  "status": "published",
+  "itineraryPdf": "/uploads/itineraries/meghalaya.pdf",
+  "slug": "meghalaya",
+  "title": "Meghalaya: Shillong Dawki Cherrapunji (5N/6D)",
+  "tags": [
+    "meghalaya",
+    "shillong",
+    "dawki",
+    "cherrapunji",
+    "long"
+  ],
+  "durationDays": 6,
+  "durationNights": 5,
+  "pricing": [
+    {
+      "name": "Regular Batches",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 20500,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 22500,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "Christmas & New Year",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 23000,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 25000,
+          "salePrice": null
+        }
+      ],
+      "from": "2026-12-22",
+      "to": "2026-12-31"
+    }
+  ],
+  "overview": "A **5 Nights / 6 Days** road trip from Guwahati through the greenest corner of India: Shillong, crystal-clear Dawki, Mawlynnong (Asia's cleanest village), the Double Decker Root Bridge and Cherrapunji's waterfalls.\n\nOur representative meets you at Guwahati Airport by 11 AM on Day 1 for the drive to Shillong via Umiam Lake. Day 2 takes in Laitlum Canyon, Krang Suri and Phe Phe Falls on the way to a riverside night at Dawki; Day 3 is boating on the Umngot, Mawlynnong and the drive to Cherrapunji; Day 4 is the guided trek from Tyrna to the Double Decker Root Bridge; Day 5 covers the caves and waterfalls of Cherrapunji before returning to Shillong; and Day 6 ends at Guwahati Airport around 2 to 3 PM. Five nights (2 in Shillong, 1 in Dawki, 2 in Cherrapunji), 5 breakfasts and 1 dinner, all road travel, the trek guide and 30 minutes of boating are included. Prices start at ₹20,500 per person on triple sharing (₹23,000 on Christmas and New Year batches), plus 5% GST.",
+  "highlights": [
+    "Umiam Lake photo stop",
+    "Laitlum Canyon valley views",
+    "Krang Suri and Phe Phe Falls",
+    "Boating on the crystal-clear Umngot River at Dawki",
+    "Mawlynnong, Asia's cleanest village, and the Bamboo Sky Walk",
+    "Guided trek to the Double Decker Living Root Bridge from Tyrna",
+    "Mawsmai and Arwah Caves and the Garden of Caves",
+    "Nohkalikai and Seven Sisters Falls"
+  ],
+  "itinerary": [
+    {
+      "title": "Guwahati to Shillong",
+      "content": "Arrive at Guwahati Airport by 11 AM, where our representative meets and greets you.\nDepart for Shillong around 12 PM on a scenic drive, with a photo stop at Umiam Lake (Barapani).\nCheck in at the hotel, then free time to explore the local market at Police Bazar. Overnight in Shillong."
+    },
+    {
+      "title": "Shillong to Dawki / Shnongpdeng",
+      "content": "Breakfast at the hotel, then head towards Dawki.\nOn the way: valley views at Laitlum Canyon, the stunning Krang Suri Falls and the hidden gem Phe Phe Falls.\nReach Dawki / Shnongpdeng, check in and relax by the riverside. Dinner and overnight stay at Dawki."
+    },
+    {
+      "title": "Dawki to Mawlynnong to Cherrapunji",
+      "content": "After breakfast, go boating on the crystal-clear Umngot River (30 minutes included).\nExplore Mawlynnong, Asia's cleanest village, and walk the Bamboo Sky Walk for views over the Bangladesh plains.\nDrive on to Cherrapunji, check in and relax. Overnight in Cherrapunji."
+    },
+    {
+      "title": "Double Decker Root Bridge trek",
+      "content": "After breakfast, drive to Tyrna Village and start the trek to the Single Root Bridge.\nContinue to the iconic Double Decker Living Root Bridge and explore the forest around it, then trek back to Tyrna (about 3,300 steps each way, about 6,600 in total; guide included).\nDrive back to Cherrapunji and rest. Overnight in Cherrapunji."
+    },
+    {
+      "title": "Cherrapunji sightseeing to Shillong",
+      "content": "After breakfast, visit Mawsmai Cave, Arwah Cave and the Garden of Caves.\nViewpoints of Nohkalikai Falls and Seven Sisters Falls, the Mawkdok Dympep Valley and Eco Park.\nDrive back to Shillong. Overnight in Shillong."
+    },
+    {
+      "title": "Shillong to Guwahati Airport",
+      "content": "Breakfast and check-out around 9 AM, then drive through the hills of Meghalaya and Assam (4 to 5 hours, traffic permitting).\nArrive at Guwahati Airport around 2 to 3 PM. The tour ends. Book your return flight after 5 PM."
+    }
+  ],
+  "includes": [
+    "Pickup and drop at fixed timings",
+    "All travel as per the itinerary by tempo traveller, SUV or sedan",
+    "5 nights: 2 in Shillong, 2 in Cherrapunji, 1 in Dawki",
+    "5 breakfasts and 1 dinner (Dawki)",
+    "Nongriat (Root Bridge) trek guide",
+    "30 minutes of complimentary boating at Dawki (4 per boat)",
+    "All tolls, parking, fuel and driver allowance",
+    "Operations executive on call 24x7"
+  ],
+  "faqs": [
+    {
+      "q": "Where does the trip start and end?",
+      "a": "At Guwahati Airport. Arrive by 11 AM on Day 1; you are dropped back at the airport around 2 to 3 PM on Day 6, so book your return flight after 5 PM."
+    },
+    {
+      "q": "How much does the Meghalaya trip cost?",
+      "a": "On regular batches: ₹20,500 per person on triple sharing and ₹22,500 on double. On Christmas and New Year batches: ₹23,000 and ₹25,000. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "5 nights (Shillong, Dawki and Cherrapunji), 5 breakfasts and 1 dinner, all road travel by tempo traveller, SUV or sedan, the Root Bridge trek guide, 30 minutes of boating at Dawki, all tolls, parking, fuel and driver allowance, and an operations executive on call 24x7."
+    },
+    {
+      "q": "How hard is the Root Bridge trek?",
+      "a": "It is about 3,300 steps each way from Tyrna, around 6,600 steps in total, with a guide. Wear good outdoor shoes."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Pay ₹8,000 per person to reserve your seat, by UPI, GPay, PhonePe, Paytm or net banking. The balance is due 48 hours before departure."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "The ₹8,000 advance is non-refundable under any circumstances."
+    }
+  ],
+  "departures": {
+    "dates": [
+      "2026-10-24",
+      "2026-10-31",
+      "2026-11-07",
+      "2026-11-14",
+      "2026-11-21",
+      "2026-11-28",
+      "2026-12-05",
+      "2026-12-12",
+      "2026-12-19",
+      "2026-12-24",
+      "2026-12-27",
+      "2027-01-02",
+      "2027-01-09",
+      "2027-01-16",
+      "2027-01-23"
+    ],
+    "returnAfterDays": 5,
+    "seats": 20
+  },
+  "category": "backpacking-trips",
+  "destination": "meghalaya",
+  "startLocation": "Guwahati Airport",
+  "endLocation": "Guwahati Airport",
+  "reportingPoint": "Guwahati Airport by 11 AM on Day 1, where our representative meets you. The trip ends at Guwahati Airport; book your return flight after 5 PM.",
+  "pickupPoints": [
+    "Guwahati Airport"
+  ],
+  "bookingAmount": 8000,
+  "coverImage": "/uploads/wp/2026/03/Kanatal-Tehri-9.png",
+  "gallery": [
+    "/uploads/wp/2025/10/Roadtrip-in-Meghalaya-India.webp",
+    "/uploads/wp/2025/10/desktop-wallpaper-trip-to-meghalaya.jpg"
+  ],
+  "excludes": [
+    "5% GST",
+    "Entry fees at sightseeing places",
+    "Personal expenses such as tips, laundry, phone bills and other meals",
+    "Extra sightseeing, other pickup or drop points, or night use of the vehicle",
+    "Any additional safari or guide charges",
+    "Anything not listed under the inclusions"
+  ],
+  "thingsToCarry": [
+    "Down jacket or main jacket",
+    "Clothes and undergarments",
+    "Running or outdoor shoes (for the trek)",
+    "Hat or cap",
+    "Personal medication",
+    "Thermals (upper and lower): hill nights get chilly",
+    "Socks and gloves",
+    "Slippers",
+    "Daypack",
+    "First-aid kit",
+    "Government photo ID: driving licence, Aadhaar or Voter ID. Foreign nationals: passport and visa copy."
+  ],
+  "importantNotes": "- Full payment of the trip cost must be made before the trip begins; the balance is due 48 hours before departure.\n- No refunds for any inclusion you don't use.\n- Plan 25 to 40 minutes at each sightseeing stop so you cover every place on the list.\n- Flying back? Book your return flight after 5 PM.\n- **Carry a valid government-approved photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- **The departure time is fixed.** Report at the pickup point 30 minutes early and keep your trip coordinator updated.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline isn't tolerated. We are a cordial travel community.\n- Look after your own luggage and belongings; we can't be responsible for missing items.\n- Travel Devils isn't responsible for delays, changes or extra costs caused by natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents.\n- We don't provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary. We may adjust the schedule in the interest of safety, comfort and well-being.",
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| Any time | The advance (₹8,000 per person) is not refunded under any circumstances |\n\n- The balance is due 48 hours before departure; pending payments may cancel the booking.\n- No refunds for any inclusion you don't use.\n- Bookings can't be transferred. Only the names given at confirmation may travel.",
+  "basePrice": 20500
+}

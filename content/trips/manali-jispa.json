@@ -1,0 +1,161 @@
+{
+  "slug": "manali-jispa",
+  "title": "Manali, Jispa & Sissu",
+  "status": "published",
+  "category": "weekend-getaways",
+  "destination": "himachal-pradesh",
+  "tags": [
+    "manali",
+    "jispa",
+    "sissu",
+    "2n3d"
+  ],
+  "durationDays": 3,
+  "durationNights": 2,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "reportingPoint": "Departure is in the evening from Delhi or Chandigarh. Final pickup details are shared with confirmed travellers before the trip; report at the pickup point 30 minutes early.",
+  "pickupPoints": [
+    "Delhi",
+    "Chandigarh"
+  ],
+  "basePrice": 8000,
+  "bookingAmount": 3000,
+  "pricing": [
+    {
+      "name": "Group Trip",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 8000,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 8500,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 9000,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "overview": "A high-altitude road trip: this **2 Nights / 3 Days** weekend trip leaves Delhi or Chandigarh in the evening in an AC vehicle for an overnight journey to Manali.\n\nDay 1 covers Hadimba Temple, Old Manali and Mall Road, with cafe hopping in Old Manali. Day 2 is the big drive: through the Atal Tunnel into Lahaul, past Keylong and Jispa to Baralacha Pass (weather permitting) and Suraj Taal lake, then back to a camp in Keylong. Day 3 stops at Sissu on the way back to Manali (boating on Sissu Lake is optional and extra) before the evening departure; you reach Delhi or Chandigarh the next morning. Prices start at ₹8,000 per person on quad sharing (5% GST extra), the same for all batches.",
+  "highlights": [
+    "Hadimba Temple, Old Manali and Mall Road",
+    "Cafe hopping in Old Manali",
+    "Drive through the Atal Tunnel into Lahaul Valley",
+    "Baralacha Pass (weather permitting)",
+    "Suraj Taal lake",
+    "Sissu, with optional boating on Sissu Lake"
+  ],
+  "itinerary": [
+    {
+      "title": "Departure from Delhi / Chandigarh",
+      "content": "Assemble at the pickup point in Delhi or Chandigarh, meet your team captain and the group.\nDepart in the evening for the overnight journey to Manali in an AC vehicle.\nHalt for dinner on the way (not included)."
+    },
+    {
+      "title": "Reach Manali | Hadimba Temple | Old Manali | Mall Road",
+      "content": "Reach Manali in the morning, check in at the hotel and freshen up.\nLocal sightseeing: Hadimba Temple, Old Manali and Mall Road.\nCafe hopping in Old Manali.\nBack at the hotel for dinner and overnight stay."
+    },
+    {
+      "title": "Atal Tunnel | Jispa | Baralacha Pass | Suraj Taal | Keylong",
+      "content": "Breakfast and check out from the hotel.\nDrive through the Atal Tunnel into Lahaul Valley, then on past Keylong and Jispa to Baralacha Pass (weather permitting) and Suraj Taal lake.\nReturn to Keylong and check in to the camp.\nDinner and overnight stay."
+    },
+    {
+      "title": "Sissu | Back to Manali | Departure",
+      "content": "Wake up early, have breakfast and check out.\nDrive back towards Manali, stopping at Sissu for the scenery. Boating on Sissu Lake is optional (charges not included).\nReach Manali by evening, visit Mall Road if time permits, then depart.\nReach Delhi or Chandigarh the next morning."
+    }
+  ],
+  "includes": [
+    "Stay: 1 night in a hotel in Manali and 1 night in a camp in Keylong",
+    "4 meals: 2 breakfasts and 2 dinners",
+    "Transfers to and from in an AC vehicle",
+    "All sightseeing mentioned in the itinerary",
+    "Tour curator"
+  ],
+  "excludes": [
+    "5% GST",
+    "Food and beverages not included in the package",
+    "Adventure activities and Sissu boating",
+    "Entry tickets to viewpoints",
+    "Costs from natural calamities or circumstances beyond our control",
+    "Any other expense not listed under the inclusions"
+  ],
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "The trip leaves Delhi or Chandigarh in the evening for an overnight journey to Manali in an AC vehicle. Final pickup details are shared with confirmed travellers before the trip."
+    },
+    {
+      "q": "How much does the Manali, Jispa & Sissu trip cost?",
+      "a": "₹8,000 per person on quad sharing, ₹8,500 on triple sharing and ₹9,000 on double sharing. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "1 night in a Manali hotel and 1 night in a Keylong camp, 4 meals (2 breakfasts and 2 dinners), AC transport both ways, all sightseeing in the itinerary and a tour curator."
+    },
+    {
+      "q": "Will we definitely reach Baralacha Pass?",
+      "a": "Baralacha Pass is visited weather permitting. Lahaul gets very cold, so pack thermals, a down jacket, gloves and socks."
+    },
+    {
+      "q": "Where do we stay?",
+      "a": "Night 1 is in a hotel in Manali and night 2 in a camp in Keylong. Extra mattresses are provided for triple and quad sharing."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Reserve your seat with a ₹3,000 advance per person (UPI, GPay, PhonePe, Paytm or net banking) and pay the rest 24 hours before boarding. 5% GST is extra on the trip price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "The ₹3,000 advance is not refunded under any circumstances. There are no refunds for inclusions you don't use, and bookings can't be transferred."
+    },
+    {
+      "q": "What do I need to carry?",
+      "a": "A valid government photo ID is a must: there is no boarding without it. Also pack a down or main jacket, thermals, socks and gloves, outdoor shoes, a daypack and personal medication. The full list is under Things To Pack."
+    }
+  ],
+  "thingsToCarry": [
+    "Down jacket or main jacket",
+    "Clothes and undergarments",
+    "Running or outdoor shoes",
+    "Hat or cap",
+    "Personal medication",
+    "Thermals (upper and lower)",
+    "Socks and gloves",
+    "Slippers",
+    "Daypack",
+    "First-aid kit",
+    "Valid government photo ID (no boarding without it)"
+  ],
+  "importantNotes": "- **Carry a valid government photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- Full payment must be made 24 hours before the trip begins.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- **The departure time is fixed.** Keep the trip coordinator updated and report at the pickup point 30 minutes early.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- Extra mattresses are provided for triple and quad sharing.\n- AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline is not tolerated. We are a cordial travel community.\n- Look after your own luggage and belongings. We are not accountable for missing items.\n- Travel Devils is not responsible for delays, changes or extra costs from natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents.\n- We do not provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary. The schedule may be adjusted for safety, comfort and well-being.",
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| Any time after booking | The ₹3,000 advance is not refunded under any circumstances |\n\n- The balance is due 24 hours before boarding. Pending payments may cancel the booking.\n- No refunds for any inclusion you don't use.\n- Bookings can't be transferred. Only the names given at confirmation may travel.",
+  "itineraryPdf": "/uploads/itineraries/manali-jispa.pdf",
+  "departures": {
+    "dates": [
+      "2026-10-30",
+      "2026-11-06",
+      "2026-11-13",
+      "2026-11-20",
+      "2026-11-27",
+      "2026-12-04",
+      "2026-12-11",
+      "2026-12-18",
+      "2026-12-24",
+      "2026-12-25",
+      "2026-12-30"
+    ],
+    "returnAfterDays": 4,
+    "seats": 20
+  },
+  "coverImage": "/uploads/2026/10/manali-sissu-kasol-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/manali-sissu-kasol-3n4d-1.jpg",
+    "/uploads/2026/10/manali-leh-srinagar-turtuk-9n10d-1.jpg",
+    "/uploads/2026/10/manali-sissu-kasol-2.jpg"
+  ]
+}

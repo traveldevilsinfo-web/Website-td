@@ -6,28 +6,44 @@
   "startLocation": "Delhi",
   "endLocation": "Delhi",
   "thingsToCarry": [
-    "Backpack or rucksack",
-    "Comfortable clothing",
-    "Raincoat and umbrella (monsoons only)",
-    "Warm woollen jackets or sweaters (depending on the season)",
-    "Comfortable trekking or sports shoes",
-    "Water bottle (avoid single-use plastic)",
-    "Quick snacks for the journey, like dry fruits and chocolates",
-    "Personal care items and toiletries",
-    "Personal medicines",
-    "Phone, camera and photography equipment",
-    "ATM card and enough cash for shopping and cafe visits",
-    "Torch, power bank and sunglasses",
-    "Identity document such as Aadhaar, driving licence or passport"
+    "Down jacket or main jacket",
+    "Thermals (upper and lower)",
+    "Clothes and undergarments",
+    "Socks and gloves",
+    "Running or outdoor shoes",
+    "Slippers",
+    "Hat or cap",
+    "Daypack",
+    "Personal medication",
+    "First-aid kit",
+    "Valid government photo ID (no boarding without it)"
   ],
-  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "cancellationPolicy": "- **The ₹3,000 per person advance is not refunded under any circumstances.**\n- The full balance is due 24 hours before boarding. Pending payments may cancel the booking.\n- No refunds for any inclusion not used by the traveller.\n- Bookings can't be transferred: only the names given at confirmation may travel.",
   "status": "published",
   "departures": {
-    "weekdays": [
-      5
+    "dates": [
+      "2026-10-30",
+      "2026-11-06",
+      "2026-11-13",
+      "2026-11-20",
+      "2026-11-27",
+      "2026-12-04",
+      "2026-12-11",
+      "2026-12-18",
+      "2026-12-24",
+      "2026-12-25",
+      "2026-12-26",
+      "2026-12-27",
+      "2026-12-29",
+      "2026-12-30",
+      "2027-01-01",
+      "2027-01-08",
+      "2027-01-15",
+      "2027-01-22",
+      "2027-01-23",
+      "2027-01-29"
     ],
     "returnAfterDays": 4,
-    "weeks": 24,
     "seats": 20
   },
   "slug": "kasol-kheerganga-trek",
@@ -38,30 +54,52 @@
     "2n3d",
     "trek"
   ],
-  "reportingPoint": "Departure is in the evening from Delhi. The exact pickup point and time are shared once your booking is confirmed. Pickup from Chandigarh is also available.",
+  "reportingPoint": "Pickup is from Delhi or Chandigarh. Departure is in the evening; the exact pickup point and time are shared with confirmed travellers before the trip.",
   "pickupPoints": [],
-  "basePrice": 7199,
-  "bookingAmount": 3600,
+  "basePrice": 6500,
+  "bookingAmount": 3000,
   "pricing": [
     {
-      "name": "Group Trip",
+      "name": "Regular Dates",
       "tiers": [
         {
           "label": "Quad Sharing",
-          "price": 7199,
+          "price": 6500,
           "salePrice": null
         },
         {
           "label": "Triple Sharing",
-          "price": 7699,
+          "price": 7000,
           "salePrice": null
         },
         {
           "label": "Double Sharing",
-          "price": 8199,
+          "price": 7500,
           "salePrice": null
         }
       ]
+    },
+    {
+      "name": "Christmas & New Year",
+      "tiers": [
+        {
+          "label": "Quad Sharing",
+          "price": 7500,
+          "salePrice": null
+        },
+        {
+          "label": "Triple Sharing",
+          "price": 8000,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 9000,
+          "salePrice": null
+        }
+      ],
+      "from": "2026-12-22",
+      "to": "2026-12-31"
     }
   ],
   "coverImage": "/uploads/2026/10/kasol-kheerganga-trek-1.jpg",
@@ -76,81 +114,83 @@
     "/uploads/2026/10/kasol-kheerganga-tosh-2.jpg"
   ],
   "highlights": [
-    "Kheerganga trek from Barsheni (5-6 hours)",
-    "Overnight camping at Kheerganga",
-    "Hot water spring bath at Kheerganga",
-    "Kasol flea market and cafes",
-    "Manikaran Sahib Gurudwara",
+    "Kheerganga trek from Barshaini (~12 km one way, easy to moderate)",
+    "A night camping under the stars at Kheerganga (9,700 ft)",
+    "Kasol flea market and café hopping",
+    "Optional Chalal village trail along the Parvati River (3 km)",
+    "Manikaran Sahib Gurudwara and hot springs",
     "Bonfire and light music in Kasol"
   ],
-  "overview": "A trek weekend in the Parvati Valley: this **2 Nights / 3 Days** Kasol Kheerganga group trip leaves Delhi in the evening, with pickup from Chandigarh also available. You meet the team captains and the group at the pickup point, travel overnight by Tempo Traveller and reach Kasol the next morning.\n\nDay 1 is for Kasol: the flea market, nearby cafes and, if you like, the riverside trail to Chalal village, followed by a bonfire with light music and dinner. On Day 2 you drive to Barsheni and trek 5-6 hours up to Kheerganga for a night at the campsite. Day 3 starts with a hot water spring bath, then the trek down, a visit to Manikaran Sahib Gurudwara and the evening departure. Prices start at ₹7,199 per person on quad sharing (5% GST extra).",
+  "overview": "One trail and one night under the stars at 9,700 ft: this **2 Nights / 3 Days** Kasol Kheerganga group trip leaves Delhi or Chandigarh in the evening by Tempo Traveller and gets you back early on Day 4.\n\nDay 1 is for Kasol: the flea market, its famous cafés and an optional 3 km trail to Chalal village, followed by a bonfire with light music. On Day 2 you drive to Barshaini and trek about 12 km (easy to moderate) through dense forest along the Parvati River to Kheerganga for a night in camps. Day 3 is the trek down and a visit to Manikaran Sahib Gurudwara before the drive home. A Kasol hotel night, a Kheerganga camp night, 4 meals, travel and a tour curator are included. Prices start at ₹6,500 per person on quad sharing (5% GST extra), and you reserve with a ₹3,000 advance.",
   "itinerary": [
     {
-      "title": "Departure from Delhi / Chandigarh",
-      "content": "Departure in the evening to Kasol.\nThe group assembles at the pickup point.\nMeet the team captains and the whole group.\nHalt for dinner on the way (not included)."
+      "title": "Departure to Kasol",
+      "content": "Assemble at the pickup point in Delhi or Chandigarh, meet your team captain and the group, and depart in the evening by Tempo Traveller.\nHalt for dinner on the way (not included).\nOvernight journey."
     },
     {
-      "title": "Reach Kasol | Explore the local market | Cafe hopping",
-      "content": "Reach Kasol in the morning.\nFreshen up and relax for some time after the overnight journey.\nHead out for Kasol sightseeing: the Kasol flea market and nearby cafes.\nYou can also explore Chalal village, a small riverside trail of 3 km both ways.\nReturn to the stay, where a bonfire with light music is set up.\nDinner and overnight stay in Kasol."
+      "title": "Kasol sightseeing",
+      "content": "Reach Kasol in the morning and check in.\nHead out for local sightseeing: the Kasol flea market and popular cafés.\nOptional short hike to Chalal village (3 km trail).\nBack at the stay for a bonfire with light music, dinner and an overnight stay in Kasol."
     },
     {
-      "title": "Kheerganga | Trek from Barsheni | Camping under the stars",
-      "content": "Wake up early and have breakfast.\nCheck out and leave for Barsheni, the base point for the Kheerganga trek.\nTrek to Kheerganga top (5-6 hours from Barsheni) and reach in the evening.\nHot dinner and overnight stay at the campsite."
+      "title": "Kheerganga trek",
+      "content": "Freshen up and have breakfast.\nDrive to Barshaini and start the Kheerganga trek, a scenic trail through dense forests along the Parvati River.\nReach Kheerganga and check in to the camps.\nDinner and a night camping under the stars."
     },
     {
-      "title": "Trek down | Manikaran Sahib Gurudwara | Departure",
-      "content": "Wake up early and go for a hot water spring bath.\nHave breakfast, then start trekking down to Barsheni.\nReach Barsheni in the evening.\nTransfer to Manikaran and visit Manikaran Sahib Gurudwara.\nDepart in the evening and reach the next day."
+      "title": "Trek down, Manikaran Sahib and departure",
+      "content": "Wake up early at Kheerganga and have breakfast.\nTrek down to Barshaini.\nVisit the famous Manikaran Sahib Gurudwara, then depart. Reach Delhi early on Day 4."
     }
   ],
   "includes": [
-    "Accommodation: 1 night stay in Kasol and 1 night camp stay in Kheerganga",
-    "4 meals: 2 breakfasts and 2 dinners",
+    "1 night hotel stay in Kasol and 1 night camp stay in Kheerganga",
     "Transfers to and from in a Tempo Traveller",
+    "4 meals: 2 breakfasts and 2 dinners",
     "All sightseeing mentioned in the itinerary",
-    "Kheerganga trek",
-    "Bonfire and light music",
-    "Trip captain"
+    "Bonfire and music party",
+    "Tour curator",
+    "Extra mattresses for triple and quad sharing"
   ],
   "excludes": [
-    "5% GST",
-    "Any food or beverage charge not included in the package",
-    "Any expense not mentioned in the inclusions",
-    "Extra costs caused by natural calamity or circumstances beyond our control",
-    "Entry tickets to viewpoints"
+    "5% GST on booking prices",
+    "Early check-in at the stay",
+    "Entry tickets to viewpoints",
+    "Dinner on the way to Kasol",
+    "Costs from natural calamities or circumstances beyond our control",
+    "Any other expense not listed under inclusions"
   ],
-  "importantNotes": "- Extra mattresses are provided for triple and quad sharing.\n- **Carry a valid government-approved photo ID.** There is no boarding without it.\n- **The departure time is fixed.** Keep your phone reachable and update your trip coordinator; they will try calling you, but we can't hold the bus.\n- Smoking isn't allowed on the bus.\n- The itinerary can change because of weather, road conditions or safety. All sightseeing is subject to weather and local authority guidelines.\n- On hill roads the driver may switch off the AC or sound system. Safety comes first.\n- Travel insurance isn't included. We recommend buying it before the trip.\n- Any increase in entry fees, taxes or fuel costs by the government after booking is charged extra.\n- Extra costs from delays outside our control (natural calamity, vehicle breakdown, road closures) are borne by travellers.\n- Damage to room or camp furnishings is payable by the guest responsible.",
+  "importantNotes": "- Extra mattresses are provided for triple and quad sharing.\n- Early check-in at the stay is not included.\n- **Carry a valid government-approved photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- **The departure time is fixed.** Keep your trip coordinator updated and report at the pickup point 30 minutes early.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- Look after your own luggage and belongings; we aren't accountable for missing items.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline won't be tolerated. We are a cordial travel community.\n- Travel Devils isn't responsible for delays, changes or extra costs from natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents.\n- We don't provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary; we may adjust the schedule in the interest of safety, comfort and well-being.",
   "faqs": [
     {
       "q": "Where and when does the trip start?",
-      "a": "Departure is in the evening from Delhi. The exact pickup point and time are shared once your booking is confirmed. Pickup from Chandigarh is also available. You travel overnight and reach the hills the next morning."
+      "a": "Pickup is from Delhi or Chandigarh, with departure in the evening by Tempo Traveller and a dinner halt on the way (not included). The exact pickup point and time are shared with confirmed travellers before the trip. You reach Kasol the next morning."
     },
     {
       "q": "How much does the Kasol Kheerganga Trek trip cost?",
-      "a": "₹7,199 per person on quad sharing, ₹7,699 on triple sharing and ₹8,199 on double sharing. 5% GST is extra."
+      "a": "On regular dates, ₹6,500 per person on quad sharing, ₹7,000 on triple sharing and ₹7,500 on double sharing. Christmas and New Year batches (departures from 24 to 30 December) cost ₹7,500 quad, ₹8,000 triple and ₹9,000 double. 5% GST is extra."
     },
     {
       "q": "What is included?",
-      "a": "1 night stay in Kasol and 1 night camp stay in Kheerganga, 2 breakfasts and 2 dinners, transfers in a Tempo Traveller, all sightseeing mentioned in the itinerary, the Kheerganga trek, a bonfire with light music and a trip captain. Dinner on the journey from Delhi is not included."
+      "a": "1 night in a Kasol hotel and 1 night in a Kheerganga camp, transfers in a Tempo Traveller, 2 breakfasts and 2 dinners, all sightseeing in the itinerary, a bonfire and music party, a tour curator, and extra mattresses for triple and quad sharing."
     },
     {
       "q": "How long is the Kheerganga trek?",
-      "a": "The trek starts from Barsheni on Day 2 and takes 5-6 hours to reach Kheerganga top, where you arrive in the evening. You trek back down to Barsheni on Day 3."
+      "a": "About 12 km one way from Barshaini, rated easy to moderate, through dense forest along the Parvati River. You camp at Kheerganga (9,700 ft) on Day 2 and trek back down to Barshaini on Day 3."
     },
     {
       "q": "Where do we stay?",
-      "a": "The first night is a stay in Kasol and the second night is at a campsite in Kheerganga. Extra mattresses are provided for triple and quad sharing."
+      "a": "The first night is in a hotel in Kasol and the second at a campsite in Kheerganga. Extra mattresses are provided for triple and quad sharing."
     },
     {
       "q": "How do I book and pay?",
-      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+      "a": "Pay a ₹3,000 per person advance to reserve your seat, by UPI, GPay, PhonePe, Paytm or net banking, and clear the balance 24 hours before boarding. By paying the advance you accept the terms and conditions. 5% GST is extra on the trip price."
     },
     {
       "q": "What is the cancellation policy?",
-      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+      "a": "The ₹3,000 advance is not refunded under any circumstances, and there are no refunds for inclusions you don't use. Bookings can't be transferred: only the names given at confirmation may travel."
     },
     {
       "q": "What do I need to carry?",
-      "a": "A valid government-approved photo ID is a must: there is no boarding without it. Also pack comfortable clothes, sports or trekking shoes, a warm layer for the season, personal medicines and some cash. The full list is under Things To Pack."
+      "a": "A valid government photo ID is a must: there is no boarding without it. Nights are cold, so pack a down jacket, thermals, socks and gloves, running or outdoor shoes for the trek and personal medication. The full list is under Things To Pack."
     }
-  ]
+  ],
+  "itineraryPdf": "/uploads/itineraries/kasol-kheerganga-trek.pdf"
 }

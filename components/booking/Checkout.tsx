@@ -4,14 +4,14 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { PaymentStart } from "@/lib/bookings";
-import type { Quote } from "@/lib/pricing";
+import { optionsForDate, type Quote } from "@/lib/pricing";
 import { BATCH_LABEL, dateShort, inr, monthShort } from "@/lib/format";
 import { completeTestPayment, getQuote, submitCheckout } from "@/app/(site)/booking/actions";
 import { AuthForm } from "./AuthForm";
 import { payWithRazorpay } from "./pay";
 
 type Tier = { label: string; price: number; salePrice?: number | null };
-type Pkg = { name: string; route?: string; tiers: Tier[] };
+type Pkg = { name: string; route?: string; from?: string; to?: string; tiers: Tier[] };
 type Batch = { id: number; startDate: string; endDate: string; status: string; seats: number; route: string | null; priceOverride: number | null };
 type Route = { name: string; from: string; to: string; reporting?: string; departTime?: string };
 type Traveller = { name: string; age: string; gender: "male" | "female" | "other" | "" };
@@ -47,9 +47,9 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
   const router = useRouter();
   const [route, setRoute] = useState(initial.route || trip.routes[0]?.name || "");
   const onRoute = (x?: string | null) => !route || !x || x === route;
-  const pkgs = trip.pricing.filter((p) => onRoute(p.route) && p.tiers.length);
   const bs = batches.filter((b) => onRoute(b.route));
   const [batchId, setBatchId] = useState<number | null>(initial.batchId && bs.some((b) => b.id === initial.batchId) ? initial.batchId : bs.find((b) => b.status !== "sold_out")?.id ?? null);
+  const pkgs = optionsForDate(trip.pricing.filter((p) => onRoute(p.route) && p.tiers.length), bs.find((b) => b.id === batchId)?.startDate);
   const [pkgName, setPkgName] = useState(initial.packageName && pkgs.some((p) => p.name === initial.packageName) ? initial.packageName : pkgs[0]?.name ?? "");
   const pkg = pkgs.find((p) => p.name === pkgName) ?? pkgs[0];
   const [qty, setQty] = useState<Record<string, number>>(() => ({ [initial.tier || pkg?.tiers[0]?.label || "Per person"]: 1 }));

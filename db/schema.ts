@@ -68,7 +68,8 @@ export const destinations = pgTable("destinations", {
 
 export type ItineraryDay = { title: string; content: string; meals?: string; stay?: string; distance?: string };
 /** One travel mode / package (e.g. "Tempo Traveller", "RE Himalayan") with its occupancy tiers. `route` = TripRoute.name ("" = all routes). */
-export type PricingOption = { name: string; route?: string; tiers: { label: string; price: number; salePrice?: number | null }[] };
+/** `from`/`to` (YYYY-MM-DD): a date-bound group (e.g. Christmas & New Year) that replaces the undated groups for batches starting in that window. */
+export type PricingOption = { name: string; route?: string; from?: string; to?: string; tiers: { label: string; price: number; salePrice?: number | null }[] };
 /** Pickup & drop variant (JW "Delhi → Delhi · Change"). Batches and prices can be tied to one. */
 export type TripRoute = { name: string; from: string; to: string; reporting?: string; departTime?: string; returnTime?: string };
 export type TrekSpecs = { altitude?: string; difficulty?: string; length?: string; baseCamp?: string; bestTime?: string };

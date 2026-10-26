@@ -4,26 +4,24 @@
   "durationDays": 11,
   "durationNights": 10,
   "startLocation": "Srinagar",
-  "endLocation": "Delhi",
+  "endLocation": "Delhi / Chandigarh",
   "thingsToCarry": [
-    "Backpack or rucksack",
-    "Comfortable clothing",
-    "Raincoat and umbrella (monsoons only)",
-    "Warm woollen jackets or sweaters (depending on the season)",
-    "Comfortable trekking or sports shoes",
-    "Water bottle (avoid single-use plastic)",
-    "Quick snacks for the journey, like dry fruits and chocolates",
-    "Personal care items and toiletries",
-    "Personal medicines",
-    "Phone, camera and photography equipment",
-    "ATM card and enough cash for shopping and cafe visits",
-    "Torch, power bank and sunglasses",
-    "Identity document such as Aadhaar, driving licence or passport"
+    "Down jacket or main jacket",
+    "Clothes and undergarments",
+    "Thermals (upper and lower)",
+    "Socks and gloves",
+    "Running or outdoor shoes",
+    "Hat or cap",
+    "Personal medication",
+    "Slippers",
+    "Daypack",
+    "First-aid kit",
+    "Documents: a valid government photo ID. There is no boarding without it."
   ],
-  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| More than 10 days before the travel date | 50% of the advance |\n| 5 to 10 days before the travel date | 25% of the advance |\n| Less than 5 days before the travel date | No refund |\n\n- No refund for no-shows or early check-outs.\n- Meals, activities or services you don't use aren't adjusted or refunded.\n- If a trip is cancelled because of political unrest, government guidelines, extremely poor weather or unsafe conditions, you get a **full credit** (equal to the amount paid) to use on any future Travel Devils booking, not a cash refund.",
+  "cancellationPolicy": "- **The advance is not refunded under any circumstances** if you cancel.\n- The balance is due 24 hours before boarding. Pending payments may cancel the booking.\n- There is no refund for any inclusion you don't use.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- By depositing the advance you accept our terms and conditions.",
   "status": "published",
   "slug": "srinagar-leh-manali-turtuk-10n11d",
-  "title": "Srinagar to Leh to Manali with Turtuk (10N/11D)",
+  "title": "Srinagar, Leh & Manali (10N/11D)",
   "tags": [
     "ladakh",
     "srinagar",
@@ -33,87 +31,54 @@
     "bike-trip",
     "long"
   ],
-  "reportingPoint": "Arrive at Srinagar Airport and reach the hotel or houseboat, where our representative meets you. Reporting details are shared once your booking is confirmed.",
-  "pickupPoints": [],
-  "basePrice": 21000,
+  "reportingPoint": "The trip starts in Srinagar: arrive on Day 1 and check in to the hotel. Final reporting details are shared once your booking is confirmed. It ends in Delhi or Chandigarh after the overnight journey from Manali.",
+  "pickupPoints": [
+    "Srinagar"
+  ],
+  "basePrice": 26000,
   "bookingAmount": 8000,
   "pricing": [
     {
-      "name": "Own Bike",
+      "name": "Sitting Coach (SIC)",
       "tiers": [
         {
           "label": "Triple Sharing",
-          "price": 21000,
-          "salePrice": null
-        },
-        {
-          "label": "Twin Sharing",
-          "price": 24000,
-          "salePrice": null
-        },
-        {
-          "label": "Single Sharing",
-          "price": 31000,
+          "price": 38000,
           "salePrice": null
         }
       ]
     },
     {
-      "name": "Solo Rider",
+      "name": "RE Himalayan with Pillion",
       "tiers": [
         {
           "label": "Triple Sharing",
-          "price": 40000,
-          "salePrice": null
-        },
-        {
-          "label": "Twin Sharing",
-          "price": 43000,
-          "salePrice": null
-        },
-        {
-          "label": "Single Sharing",
-          "price": 50000,
+          "price": 38000,
           "salePrice": null
         }
       ]
     },
     {
-      "name": "Dual Rider",
+      "name": "RE Himalayan Solo Rider",
       "tiers": [
         {
           "label": "Triple Sharing",
-          "price": 30500,
-          "salePrice": null
-        },
-        {
-          "label": "Twin Sharing",
-          "price": 33500,
-          "salePrice": null
-        },
-        {
-          "label": "Single Sharing",
-          "price": 40500,
+          "price": 48000,
           "salePrice": null
         }
       ]
     },
     {
-      "name": "SUV / Tempo Traveller",
+      "name": "Own Bike (own fuel)",
       "tiers": [
         {
           "label": "Triple Sharing",
-          "price": 28500,
+          "price": 26000,
           "salePrice": null
         },
         {
-          "label": "Twin Sharing",
-          "price": 31500,
-          "salePrice": null
-        },
-        {
-          "label": "Single Sharing",
-          "price": 38500,
+          "label": "Double Sharing",
+          "price": 29000,
           "salePrice": null
         }
       ]
@@ -126,122 +91,112 @@
     "/uploads/2026/10/srinagar-leh-manali-turtuk-10n11d-4.jpg"
   ],
   "highlights": [
-    "About 1,600 km by road between Srinagar and Manali",
-    "Srinagar to Leh via Sonmarg, Zoji La, Drass, Kargil and Lamayuru",
-    "Nubra Valley over Khardung La, with Diskit Monastery and the Hundar sand dunes",
-    "Day trip to Turtuk",
-    "Night in camps at Pangong Tso",
-    "Leh–Manali Highway via Moore Plains, Gata Loops and Baralacha La"
+    "Zoji La, Drass and the Kargil War Memorial area",
+    "Kargil to Leh via Fotu La and Lamayuru, with Magnetic Hill and the Hall of Fame",
+    "Khardung La (18,380 ft), Diskit Monastery and the Hunder dunes",
+    "Turtuk, the last village on the Indo-Pak border",
+    "Pangong Tso and Chang La",
+    "The Leh-Manali highway via Tanglang La, the Gata Loops, Sarchu, Baralacha La and the Atal Tunnel"
   ],
-  "overview": "This **10 Nights / 11 Days** road trip crosses Ladakh from Srinagar to Manali, covering about 1,600 km with Leh, Nubra Valley, Turtuk and Pangong Tso on the way. The trip starts in Srinagar, not Delhi: you reach Srinagar Airport on your own and go to the hotel or houseboat, where our representative meets you. It ends in Delhi after the journey down from Manali. Batches run from July to September.\n\nFrom Srinagar you travel through Sonmarg and over Zoji La to Kargil, then on to Leh via Lamayuru, Magnetic Hill and Gurudwara Pathar Sahib. From Leh the route goes over Khardung La to Nubra Valley for two nights, with a day trip to Turtuk, then via Shyok to camps at Pangong Tso and back to Leh over Chang La. The return is on the Leh–Manali Highway, with a night in camps at Sarchu, a day in Manali and the evening departure for Delhi. Prices start at ₹21,000 per person on triple sharing with your own bike (5% GST extra).",
+  "overview": "The great crossing in reverse: Zoji La to Kargil, Fotu La to Leh, Khardung La, Nubra and Turtuk, Pangong Tso, then the Leh-Manali highway via Sarchu, by bike or by car. It is a **10 Nights / 11 Days** fixed-departure group trip that starts in Srinagar and ends in Delhi or Chandigarh after the overnight journey from Manali, with stays in hotels, camps and homestays and 15 meals across the trip.\n\nTravel in a sitting coach (SIC) by Traveller or MUV, ride a Royal Enfield Himalayan solo or with a pillion, or bring your own bike. An oxygen cylinder rides in the car 24x7, with a mechanical backup vehicle and a team captain throughout. Prices start at ₹26,000 per person on triple sharing with your own bike and fuel, or ₹38,000 by SIC (5% GST extra). Reserve your seat with ₹8,000 and pay the rest 24 hours before boarding. Batches run every week in the summer season, June to September, when the Leh-Manali highway is open; call us for 2027 dates.",
   "itinerary": [
     {
-      "title": "Arrival in Srinagar",
-      "content": "Arrive at Srinagar Airport and reach the hotel or houseboat, where our representative meets you.\nCheck in, freshen up and relax.\nYou can take a shikara ride on Dal Lake or explore the Srinagar market.\nDinner, a briefing for the next day and an overnight stay."
+      "title": "Arrive in Srinagar",
+      "content": "Arrive in Srinagar and check in to the hotel.\nRest, and overnight in Srinagar."
     },
     {
       "title": "Srinagar to Kargil",
-      "content": "Wake up early and leave for Kargil after breakfast.\nVisit Sonmarg on the way.\nCross Zoji La to Drass, known as one of the coldest inhabited places in India and often called the Gateway to Ladakh.\nAfter a lunch break, continue to Kargil.\nArrive at Kargil and check in to the hotel.\nDinner and an overnight stay."
+      "content": "After breakfast, drive towards Kargil via Sonmarg and Zoji La.\nPass through Drass and the Kargil War Memorial area.\nOvernight in Kargil."
     },
     {
       "title": "Kargil to Leh",
-      "content": "Wake up early and start for Leh after breakfast.\nDrive from Kargil to Lamayuru via Mulbek, Namika La and Fotu La.\nFrom Lamayuru, Leh is about 125 km, through the Hangroo Loops and Nimmu.\nOn the way, stop at Magnetic Hill, Gurudwara Pathar Sahib and the confluence of the rivers.\nReach Leh by evening and check in to the hotel."
+      "content": "Kargil to Leh via Fotu La and Lamayuru.\nMagnetic Hill, Gurudwara Pathar Sahib and the Hall of Fame on the way.\nOvernight at the hotel in Leh."
     },
     {
-      "title": "Leh to Nubra Valley via Khardung La",
-      "content": "After breakfast, head towards Nubra Valley.\nRide over Khardung La and spend some time at the top.\nRide to Diskit Monastery for a view over Nubra Valley.\nStop at the Hundar sand dunes, where you can take a double-humped camel ride in the cold desert.\nDinner and an overnight stay in camps or cottages."
+      "title": "Leh to Nubra Valley",
+      "content": "Ride over Khardung La to Nubra.\nVisit Diskit Monastery and take a camel ride at the Hunder dunes.\nOvernight at a Nubra camp."
     },
     {
-      "title": "Nubra to Turtuk and back",
-      "content": "After breakfast, drive towards Turtuk.\nTurtuk is the last outpost in India before Pakistan-controlled Gilgit-Baltistan, and one of the gateways to the Siachen Glacier.\nThe village differs in culture, language and history from the rest of Ladakh, and the landscape changes to narrow valleys and steep mountains.\nReturn to Nubra Valley for dinner.\nOvernight stay in camps in Nubra Valley."
+      "title": "Nubra to Turtuk and Diskit",
+      "content": "Visit Turtuk, the last village on the Indo-Pak border, then Diskit.\nBack to Nubra for the night."
     },
     {
-      "title": "Nubra to Pangong Tso via Shyok",
-      "content": "After breakfast, leave for Pangong Tso via Shyok.\nArrive at Pangong Tso in the late afternoon. The lake is known for changing colour several times a day.\nSpend the evening by the lake.\nDinner and an overnight stay in camps at Pangong."
+      "title": "Nubra to Pangong Tso",
+      "content": "Nubra to Pangong Tso via the Shyok route.\nThe lake changes colour through the day.\nOvernight in a lakeside cottage."
     },
     {
       "title": "Pangong Tso to Leh via Chang La",
-      "content": "Wake up early for the sunrise.\nAfter breakfast, head back to Leh over Chang La.\nReach Leh by evening and explore the local market and cafes on your last day in Leh.\nReturn to the hotel by evening.\nDinner and an overnight stay."
+      "content": "Sunrise at Pangong, then back to Leh via Chang La.\nOvernight at the hotel in Leh."
     },
     {
       "title": "Leh to Sarchu",
-      "content": "Wake up early and leave for Sarchu after breakfast.\nCross the Moore Plains, a flat, straight stretch of road about 30 km long.\nAfter lunch at Pang, cross Lachung La and Nakee La.\nJust before Sarchu, descend the Gata Loops (21 hairpin bends at 4,669 m).\nReach Sarchu and check in at the camps.\nDinner and an overnight stay."
+      "content": "Leh to Sarchu over Tanglang La and the Gata Loops.\nOvernight at the camp."
     },
     {
       "title": "Sarchu to Manali",
-      "content": "Wake up early and leave after breakfast for a long day on the road.\nDrive over Baralacha La, one of the more challenging passes on the Leh–Manali Highway.\nPass Suraj Tal, a small lake at the top of Baralacha La.\nDrive through Zingzing Bar, Patsio and Darcha to reach Manali.\nCheck in to the hotel.\nDinner and an overnight stay."
+      "content": "Sarchu to Manali via Baralacha La and the Atal Tunnel."
     },
     {
-      "title": "Manali self exploration and departure",
-      "content": "After a relaxed morning and breakfast, you can head out for local sightseeing in Manali.\nPlaces you can visit: Hidimba Devi Temple, Jogni Waterfall, Vashisht Temple and Mall Road.\nSpend some time cafe hopping in the streets of Old Manali.\nLeave for Delhi in the evening."
+      "title": "Manali sightseeing and departure",
+      "content": "Manali sightseeing, then the overnight journey to Delhi or Chandigarh."
     },
     {
-      "title": "Arrival in Delhi",
-      "content": "Arrive in Delhi.\nThe trip ends here."
+      "title": "Reach Delhi / Chandigarh",
+      "content": "Reach Delhi or Chandigarh. The tour ends here."
     }
   ],
   "includes": [
-    "Accommodation for 9 nights in hotels, camps or cottages and homestays, on double or triple sharing",
-    "All meals mentioned in the itinerary",
-    "Bike rent for 8 days (for the biking option)",
-    "Fuel for the bike as per the itinerary",
-    "Entire travel on the route by Traveller or MUV, depending on group size (for the non-biking option)",
-    "Driver night charges, toll tax and parking charges (for the non-biking option)",
-    "Volvo transfer between Manali and Delhi",
-    "Mechanical and luggage backup vehicle (MUV, Traveller or Bolero Camper)",
-    "RE mechanic with spare parts for minor repairs on the way",
-    "Riding gear: helmet, riding gloves (riders only), elbow guards and knee pads",
-    "All inner line permits for the trip",
-    "Ladakh Union Fee",
-    "Oxygen cylinder in the backup vehicle for emergencies",
-    "First aid kit",
-    "Complimentary bonfire night",
-    "Team captain throughout the trip",
-    "24x7 customer support"
+    "9 nights in hotels, camps or cottages and homestays",
+    "All meals mentioned in the itinerary (15 meals across the trip)",
+    "Bike rent for 8 days, Srinagar to Manali + fuel (bike option)",
+    "Srinagar to Manali by Traveller / MUV (SIC option)",
+    "Mechanical and luggage backup vehicle",
+    "Oxygen cylinder in the car 24x7",
+    "All inner line permits and the Ladakh union fee",
+    "Riding gear: helmet, gloves (riders), elbow guards and knee pads",
+    "First-aid kit and a team captain throughout",
+    "24x7 support"
   ],
   "excludes": [
     "5% GST",
-    "Anything not mentioned in the itinerary",
-    "Meals not specified in the itinerary",
+    "Unspecified meals",
+    "Room heater charges",
     "Entry charges and monument fees",
     "Personal expenses and tips",
-    "Room heater charges",
-    "Extra days of stay or food anywhere on the tour because of bad weather or roads blocked by snow",
-    "Any cost arising from unforeseen circumstances, including medical emergencies and acts of God"
+    "Extra days due to weather or snow road blocks",
+    "Any damage to the bike except engine damage",
+    "Costs from medical emergencies and acts of God"
   ],
-  "importantNotes": "- The trip starts in Srinagar. Reach Srinagar on your own on Day 1.\n- The trip ends in Delhi. Book return flights or trains leaving Delhi after 4 PM on the trip end date, and check with us before booking.\n- **Any damage to the bike is borne by the rider.**\n- Prices are per person on triple sharing. Double sharing is ₹3,000 per person extra.\n- An extra mattress is provided for the third person in triple sharing rooms.\n- Riding gear is provided, but we recommend bringing your own helmet.\n- Jackets come in two sizes only, L and XL, and size allotment is subject to availability.\n- An oxygen cylinder is kept in the vehicle for emergencies. We recommend carrying portable oxygen as well.\n- The itinerary can change because of weather, road conditions, the physical ability of participants or similar factors. We may change the schedule in the interest of safety, comfort and general wellbeing.",
+  "importantNotes": "- **Carry a valid government photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- The trip starts in Srinagar: reach Srinagar on your own on Day 1. It ends in Delhi or Chandigarh on Day 11.\n- Prices are for triple sharing. On the own-bike options, double occupancy is ₹3,000 per person extra.\n- Jackets come in two sizes only, L and XL, and size allotment is subject to availability.\n- **Any damage to the bike, except engine damage, is borne by the rider.**\n- Prices are per person. Extra mattresses are provided for triple and quad sharing.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- Look after your own luggage and belongings. We aren't accountable for missing items.\n- The departure time is fixed. Keep the trip coordinator updated and report at the pickup point 30 minutes early.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline isn't tolerated. We are a cordial travel community.\n- Travel Devils isn't responsible for delays, changes or extra costs from natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents. Extra days due to weather or snow road blocks aren't included.\n- We don't provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary. We may adjust the schedule in the interest of safety, comfort and well-being.",
   "faqs": [
     {
-      "q": "Where does the trip start and end, and how do I get there?",
-      "a": "The trip starts in Srinagar, not Delhi. You reach Srinagar Airport on your own on Day 1 and go to the hotel or houseboat, where our representative meets you. The trip ends in Delhi on Day 11, after the evening departure from Manali on Day 10. Book return flights or trains leaving Delhi after 4 PM, and check with us before booking."
+      "q": "Where does the trip start and end?",
+      "a": "The trip starts in Srinagar on Day 1; you make your own way there. It ends in Delhi or Chandigarh on Day 11, after the overnight journey from Manali."
     },
     {
       "q": "What are the travel options and what do they cost?",
-      "a": "Per person on triple sharing: ₹21,000 with your own bike, ₹40,000 as a solo rider on a rented bike, ₹30,500 as one of two riders sharing a rented bike, and ₹28,500 in an SUV or Tempo Traveller. 5% GST is extra."
+      "a": "Per person on triple sharing: sitting coach (SIC) ₹38,000, RE Himalayan with pillion ₹38,000, RE Himalayan solo rider ₹48,000, and your own bike with your own fuel ₹26,000. On the own-bike options, double occupancy is ₹3,000 per person extra. 5% GST is extra."
     },
     {
-      "q": "What do twin and single sharing cost?",
-      "a": "Twin sharing is ₹3,000 per person extra and single sharing is ₹10,000 extra, on top of the triple sharing price for your travel option. An extra mattress is provided for the third person in triple sharing rooms."
+      "q": "When does it run?",
+      "a": "Summer season only, from June to September, when the Leh-Manali highway is open. Batches leave every week (the last one for example 27 September to 7 October 2027). Call us for 2027 dates."
     },
     {
       "q": "What is included?",
-      "a": "9 nights in hotels, camps or cottages and homestays, the meals mentioned in the itinerary, inner line permits, the Ladakh Union Fee, the Volvo between Manali and Delhi, a team captain, a backup vehicle for luggage and repairs, a mechanic, an oxygen cylinder, a first aid kit and a bonfire night. The biking option adds the bike and fuel; the non-biking option covers the vehicle with driver charges, tolls and parking."
-    },
-    {
-      "q": "Is riding gear provided?",
-      "a": "Yes: helmet, riding gloves for riders, elbow guards and knee pads. Jackets come in L and XL only and are subject to availability. We recommend bringing your own helmet. Any damage to the bike is paid for by the rider."
+      "a": "9 nights in hotels, camps and homestays, all meals mentioned in the itinerary, bike rent for 8 days with fuel (bike option) or travel by Traveller / MUV (SIC), a mechanical and luggage backup vehicle, an oxygen cylinder 24x7, inner line permits and the Ladakh union fee, riding gear, a first-aid kit and a team captain."
     },
     {
       "q": "What is not included?",
-      "a": "5% GST, meals not specified in the itinerary, entry and monument fees, personal expenses and tips, room heater charges, and extra days of stay or food caused by bad weather or roads blocked by snow."
+      "a": "5% GST, unspecified meals, room heater charges, entry and monument fees, personal expenses and tips, extra days due to weather or snow road blocks, any damage to the bike except engine damage, and costs from medical emergencies."
     },
     {
       "q": "How do I book and pay?",
-      "a": "Confirm your seat by paying an advance of ₹8,000 per person. 5% GST is extra on the trip cost."
+      "a": "Pick your batch and option, then call or WhatsApp us on +91 88008 41209. Reserve your seat with an advance of ₹8,000 per person by UPI, GPay, PhonePe, Paytm or net banking, and pay the balance 24 hours before boarding. 5% GST is extra on the trip price."
     },
     {
       "q": "What is the cancellation policy?",
-      "a": "Cancel more than 10 days before the travel date and 50% of the advance is refunded; 5 to 10 days before, 25% of the advance; less than 5 days before, there is no refund. There is no refund for no-shows or early check-outs."
+      "a": "The ₹8,000 advance is not refunded under any circumstances. The balance is due 24 hours before boarding, and pending payments may cancel the booking. Bookings can't be transferred."
     }
-  ]
+  ],
+  "itineraryPdf": "/uploads/itineraries/srinagar-leh-manali-turtuk-10n11d.pdf"
 }

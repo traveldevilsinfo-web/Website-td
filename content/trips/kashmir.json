@@ -1,0 +1,215 @@
+{
+  "status": "published",
+  "itineraryPdf": "/uploads/itineraries/kashmir.pdf",
+  "slug": "kashmir",
+  "title": "Kashmir: Srinagar Gulmarg Pahalgam (5N/6D)",
+  "category": "backpacking-trips",
+  "destination": "jammu-and-kashmir",
+  "tags": [
+    "kashmir",
+    "srinagar",
+    "gulmarg",
+    "sonmarg",
+    "pahalgam",
+    "long"
+  ],
+  "durationDays": 6,
+  "durationNights": 5,
+  "startLocation": "Delhi",
+  "endLocation": "Delhi",
+  "reportingPoint": "Delhi, at 8 PM on the departure night (sleeper AC bus to Jammu). You can also board in Jammu or Srinagar at a lower price. Final pickup details are shared with confirmed travellers before the trip.",
+  "pickupPoints": [
+    "Delhi",
+    "Jammu",
+    "Srinagar"
+  ],
+  "bookingAmount": 6000,
+  "pricing": [
+    {
+      "name": "Regular Dates: Delhi to Delhi",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 20000,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 22000,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "Regular Dates: from Jammu / Srinagar",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 18000,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 20000,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "Christmas & New Year: Delhi to Delhi",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 23000,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 25000,
+          "salePrice": null
+        }
+      ],
+      "from": "2026-12-22",
+      "to": "2026-12-31"
+    },
+    {
+      "name": "Christmas & New Year: from Jammu / Srinagar",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 20000,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 22000,
+          "salePrice": null
+        }
+      ],
+      "from": "2026-12-22",
+      "to": "2026-12-31"
+    }
+  ],
+  "coverImage": "/uploads/wp/2026/03/Kanatal-Tehri-10.png",
+  "gallery": [
+    "/uploads/wp/2025/10/dal-lake-kashmir.webp"
+  ],
+  "overview": "Heaven on Earth, Delhi to Delhi: this **5 Nights / 6 Days** group trip covers Gulmarg's meadows and gondola, Sonmarg and Thajiwas Glacier, Aru, Betaab and Chandanwari in Pahalgam, the Mughal gardens of Srinagar and a night on a Dal Lake houseboat.\n\nYou leave Delhi at 8 PM by sleeper AC bus to Jammu and transfer to Srinagar on Day 1. Day 2 is Gulmarg, Day 3 Sonmarg, Day 4 Pahalgam with Aru, Betaab and Chandanwari included, and Day 5 the Srinagar gardens and a houseboat night with a 1-hour shikara ride. Day 6 is the drive back to Jammu and the bus to Delhi. Five nights in hotels and a houseboat, 5 breakfasts and 5 dinners and a tour leader are included. You can also board in Jammu or Srinagar. Prices start at ₹18,000 per person (triple sharing, from Jammu or Srinagar) and ₹20,000 Delhi to Delhi, plus 5% GST; Christmas and New Year batches cost more.",
+  "highlights": [
+    "Gulmarg, the Meadow of Flowers, with the world's highest 18-hole golf course",
+    "Optional gondola to Khilanmarg for Nanga Parbat views on clear days (own cost)",
+    "Sonmarg and Thajiwas Glacier, where snow stays all year",
+    "Aru Valley, Betaab Valley and Chandanwari in Pahalgam, included",
+    "Mughal gardens: Chashma Shahi, Nishat and Shalimar, plus Shankaracharya Temple and Hazratbal",
+    "A night on a Dal Lake houseboat with a 1-hour shikara ride"
+  ],
+  "itinerary": [
+    {
+      "title": "Delhi to Jammu | Overnight journey",
+      "content": "Assemble at the pickup point at 8 PM, meet your team captain and the group, and depart by sleeper AC bus.\nHalt for dinner on the way (not included)."
+    },
+    {
+      "title": "Jammu to Srinagar",
+      "content": "Arrive in Jammu and transfer to Srinagar, taking in the drive into the valley.\nCheck in to your hotel in Srinagar.\nDinner and overnight stay."
+    },
+    {
+      "title": "Srinagar to Gulmarg and back",
+      "content": "After breakfast, head to Gulmarg, the Meadow of Flowers, home to a famous ski resort and the world's highest 18-hole golf course.\nOptional gondola to Khilanmarg (own cost) for Nanga Parbat views on clear days.\nBack to Srinagar for dinner and an overnight stay at the hotel."
+    },
+    {
+      "title": "Srinagar to Sonmarg and back",
+      "content": "After breakfast, drive to Sonmarg, the Meadow of Gold, at the head of the Sindh valley, with pine-forested mountains up to 5,300 m.\nTake a pony ride (own cost) to Thajiwas Glacier, where snow remains all year.\nBack to Srinagar for dinner and an overnight stay at the hotel."
+    },
+    {
+      "title": "Srinagar to Pahalgam",
+      "content": "After breakfast, drive to Pahalgam via Pampore, Avantipura and Bijbehara, the breadbasket of Kashmir.\nVisit Aru Valley, Betaab Valley and Chandanwari (included).\nDinner and overnight stay at a hotel in Pahalgam."
+    },
+    {
+      "title": "Srinagar sightseeing and houseboat",
+      "content": "Check out and tour Srinagar: Chashma Shahi, Nishat Garden, Shalimar Garden, Shankaracharya Temple and Hazratbal.\nCheck in to your houseboat and enjoy a shikara ride.\nDinner and overnight stay on the houseboat."
+    },
+    {
+      "title": "Srinagar to Jammu and back to Delhi",
+      "content": "After breakfast, drive back to Jammu and board the bus to Delhi.\nReach Delhi the next day (Day 7)."
+    }
+  ],
+  "includes": [
+    "Sleeper AC bus transfers, Delhi to Jammu and back",
+    "All sightseeing by tempo traveller or cab, depending on group size",
+    "5 nights on double or triple sharing, including a houseboat stay",
+    "Aru Valley, Betaab Valley and Chandanwari",
+    "10 meals: 5 breakfasts and 5 dinners",
+    "1-hour shikara ride",
+    "Tour leader",
+    "Extra mattresses for triple and quad sharing"
+  ],
+  "excludes": [
+    "5% GST",
+    "Srinagar airport pickup and drop",
+    "Lunch and meals not listed",
+    "Gondola ride (we help you book)",
+    "Sonmarg zero point cab, and a snow-chained SUV if needed",
+    "Pony rides and other activities",
+    "Personal expenses, tips, entry fees and camera charges",
+    "Costs from landslides or road blocks (paid on the spot)"
+  ],
+  "thingsToCarry": [
+    "Down jacket or main jacket",
+    "Clothes and undergarments",
+    "Running or outdoor shoes",
+    "Hat or cap",
+    "Personal medication",
+    "Thermals (upper and lower): winter in the hills is cold",
+    "Socks and gloves",
+    "Slippers",
+    "Daypack",
+    "First-aid kit",
+    "Documents: a valid government photo ID (no boarding without it)"
+  ],
+  "importantNotes": "- Full payment must be made 24 hours before the trip begins.\n- No refunds for any inclusion you don't use.\n- **Carry a valid government-approved photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- **The departure time is fixed.** Report at the pickup point 30 minutes early and keep your trip coordinator updated.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline isn't tolerated. We are a cordial travel community.\n- Look after your own luggage and belongings; we can't be responsible for missing items.\n- Travel Devils isn't responsible for delays, changes or extra costs caused by natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents.\n- We don't provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary. We may adjust the schedule in the interest of safety, comfort and well-being.",
+  "cancellationPolicy": "| When you cancel | Refund |\n|---|---|\n| Any time | The advance (₹6,000 per person) is not refunded under any circumstances |\n\n- The balance is due 24 hours before boarding; pending payments may cancel the booking.\n- No refunds for any inclusion you don't use.\n- Bookings can't be transferred. Only the names given at confirmation may travel.",
+  "faqs": [
+    {
+      "q": "Where and when does the trip start?",
+      "a": "From Delhi at 8 PM on the departure night, by sleeper AC bus to Jammu. You can also join in Jammu or Srinagar. Leave on the first date of your batch and you are back in Delhi on the last (7 days later)."
+    },
+    {
+      "q": "How much does the Kashmir trip cost?",
+      "a": "On regular dates, Delhi to Delhi: ₹20,000 per person on triple sharing and ₹22,000 on double; from Jammu or Srinagar: ₹18,000 and ₹20,000. On Christmas and New Year batches, Delhi to Delhi: ₹23,000 and ₹25,000; from Jammu or Srinagar: ₹20,000 and ₹22,000. 5% GST is extra."
+    },
+    {
+      "q": "What is included?",
+      "a": "Sleeper AC bus Delhi to Jammu and back, sightseeing by tempo traveller or cab, 5 nights in hotels and a houseboat, 5 breakfasts and 5 dinners, Aru, Betaab and Chandanwari, a 1-hour shikara ride and a tour leader."
+    },
+    {
+      "q": "What is not included?",
+      "a": "5% GST, Srinagar airport transfers, lunches, the Gulmarg gondola, the Sonmarg zero point cab, pony rides and other activities, entry fees, tips and personal expenses."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Pay ₹6,000 per person to reserve your seat, by UPI, GPay, PhonePe, Paytm or net banking. The balance is due 24 hours before boarding."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "The ₹6,000 advance isn't refunded under any circumstances, and there are no refunds for inclusions you don't use."
+    }
+  ],
+  "departures": {
+    "dates": [
+      "2026-10-23",
+      "2026-10-30",
+      "2026-11-06",
+      "2026-11-13",
+      "2026-11-20",
+      "2026-11-27",
+      "2026-12-04",
+      "2026-12-11",
+      "2026-12-18",
+      "2026-12-24",
+      "2026-12-26"
+    ],
+    "returnAfterDays": 7,
+    "seats": 20
+  },
+  "basePrice": 18000
+}

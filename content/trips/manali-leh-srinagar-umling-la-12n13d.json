@@ -1,0 +1,213 @@
+{
+  "slug": "manali-leh-srinagar-umling-la-12n13d",
+  "status": "published",
+  "category": "biking-trips",
+  "destination": "ladakh",
+  "title": "Manali, Umling La & Srinagar (12N/13D)",
+  "tags": [
+    "ladakh",
+    "manali",
+    "leh",
+    "umling-la",
+    "hanle",
+    "tso-moriri",
+    "srinagar",
+    "bike-trip",
+    "long"
+  ],
+  "durationDays": 13,
+  "durationNights": 12,
+  "startLocation": "Delhi",
+  "endLocation": "Srinagar",
+  "reportingPoint": "The Volvo bus to Manali leaves Delhi at 6:30 PM on Day 0. The exact boarding point is shared once your booking is confirmed. The tour ends in Srinagar.",
+  "pickupPoints": [
+    "Delhi"
+  ],
+  "bookingAmount": 8000,
+  "pricing": [
+    {
+      "name": "Sitting Coach (SIC)",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 42000,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "RE Himalayan with Pillion",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 42000,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "RE Himalayan Solo Rider",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 55000,
+          "salePrice": null
+        }
+      ]
+    },
+    {
+      "name": "Self Bike, Solo",
+      "tiers": [
+        {
+          "label": "Triple Sharing",
+          "price": 30000,
+          "salePrice": null
+        },
+        {
+          "label": "Double Sharing",
+          "price": 33000,
+          "salePrice": null
+        }
+      ]
+    }
+  ],
+  "coverImage": "/uploads/2026/10/leh-to-leh-umling-la-7n8d-1.jpg",
+  "gallery": [
+    "/uploads/2026/10/manali-leh-srinagar-turtuk-9n10d-2.jpg",
+    "/uploads/2026/10/leh-to-leh-umling-la-7n8d-2.jpg",
+    "/uploads/2026/10/srinagar-leh-manali-turtuk-10n11d-2.jpg"
+  ],
+  "itineraryPdf": "/uploads/itineraries/manali-leh-srinagar-umling-la-12n13d.pdf",
+  "highlights": [
+    "Atal Tunnel and Baralacha La, into Lahaul on the Leh-Manali highway",
+    "Sarchu, a night under a million stars",
+    "Gata Loops and Tanglang La, a day of high passes into Leh",
+    "Khardung La (18,380 ft), then Diskit and the dunes",
+    "Pangong Tso, the lake that changes colour",
+    "Hanle, Umling La (the world's highest motorable road) and Tso Moriri"
+  ],
+  "overview": "The great Himalayan crossing: the Leh-Manali highway over Baralacha and Tanglang La, Khardung La and Nubra, Pangong Tso, Hanle, Umling La and Tso Moriri, then Kargil and Zoji La to Srinagar. It is a **12 Nights / 13 Days** fixed-departure group trip that starts with an overnight Volvo from Delhi to Manali and ends in Srinagar, with stays in hotels, camps and homestays and 15 meals across the trip.\n\nTravel in a sitting coach (SIC) by Traveller or MUV, ride a Royal Enfield Himalayan solo or with a pillion, or bring your own bike. An oxygen cylinder rides in the car 24x7, with a mechanical backup vehicle and a team captain throughout. Prices start at ₹30,000 per person on triple sharing with your own bike, or ₹42,000 by SIC (5% GST extra). Reserve your seat with ₹8,000 and pay the rest 24 hours before boarding. Batches run every week in the summer season, June to early October, when the Leh-Manali highway is open; call us for 2027 dates.",
+  "itinerary": [
+    {
+      "title": "Delhi to Manali",
+      "content": "Depart Delhi by Volvo bus at 6:30 PM for the overnight journey to Manali."
+    },
+    {
+      "title": "Manali: arrival and acclimatisation",
+      "content": "Check in, freshen up, breakfast and a short trip briefing.\nSelf-explore Manali: Vashisht Temple, Hadimba Temple, Mall Road and Jogini Waterfall.\nEarly night at the hotel to rest for the adventure ahead."
+    },
+    {
+      "title": "Manali to Sarchu",
+      "content": "Breakfast, check out and start the famous Leh-Manali highway.\nThrough the Atal Tunnel into Lahaul, past Darcha and over Baralacha Pass.\nReach Sarchu by evening for a night under a million stars at the camp."
+    },
+    {
+      "title": "Sarchu to Leh",
+      "content": "A day of high passes: the Gata Loops, Nakee La and Lachung La.\nLunch on the More plains at Pang.\nOver Tanglang La into Leh. Evening free to acclimatise; overnight in Leh."
+    },
+    {
+      "title": "Leh to Nubra via Khardung La",
+      "content": "After breakfast, ride over Khardung La (18,380 ft).\nVisit Diskit Monastery and its 100 ft Buddha; camel and ATV rides are at your own cost.\nCheck in to the campsite for dinner and an overnight stay."
+    },
+    {
+      "title": "Nubra to Pangong Tso via Shyok",
+      "content": "After breakfast, head to Pangong Tso via the Shyok route.\nThe lake changes colour through the day.\nDinner and overnight in a cottage."
+    },
+    {
+      "title": "Pangong Tso to Hanle",
+      "content": "Pangong to Hanle via Chushul, and a visit to the Hanle Observatory.\nOvernight at a homestay."
+    },
+    {
+      "title": "Hanle to Umling La and back",
+      "content": "Ride from Hanle to Umling La, the world's highest motorable road, and back to Hanle.\nOvernight at a homestay."
+    },
+    {
+      "title": "Hanle to Tso Moriri",
+      "content": "Ride from Hanle to Tso Moriri.\nOvernight in a cottage."
+    },
+    {
+      "title": "Tso Moriri to Leh",
+      "content": "Ride back to Leh.\nOvernight at the hotel."
+    },
+    {
+      "title": "Leh to Kargil via Fotu La",
+      "content": "Ride from Leh to Kargil over Fotu La."
+    },
+    {
+      "title": "Kargil to Srinagar via Zoji La",
+      "content": "Ride from Kargil to Srinagar over Zoji La."
+    },
+    {
+      "title": "Departure from Srinagar",
+      "content": "The tour ends in Srinagar."
+    }
+  ],
+  "includes": [
+    "12 nights in hotels, camps, cottages and homestays",
+    "All meals mentioned in the itinerary (15 meals across the trip)",
+    "Volvo bus from Delhi to Manali",
+    "Bike rent for the full route, Manali to Srinagar + fuel (bike option)",
+    "Manali to Srinagar by Traveller / MUV (SIC option)",
+    "Mechanical and luggage backup vehicle",
+    "Oxygen cylinder in the car 24x7",
+    "All inner line permits and the Ladakh union fee",
+    "Riding gear: helmet, gloves (riders), elbow guards and knee pads",
+    "First-aid kit and a team captain throughout",
+    "24x7 support"
+  ],
+  "excludes": [
+    "5% GST",
+    "Unspecified meals",
+    "Room heater charges",
+    "Entry charges and monument fees",
+    "Personal expenses and tips",
+    "Extra days due to weather or snow road blocks",
+    "Any damage to the bike except engine damage",
+    "Costs from medical emergencies and acts of God"
+  ],
+  "thingsToCarry": [
+    "Down jacket or main jacket",
+    "Clothes and undergarments",
+    "Thermals (upper and lower)",
+    "Socks and gloves",
+    "Running or outdoor shoes",
+    "Hat or cap",
+    "Personal medication",
+    "Slippers",
+    "Daypack",
+    "First-aid kit",
+    "Documents: a valid government photo ID. There is no boarding without it."
+  ],
+  "importantNotes": "- **Carry a valid government photo ID.** IDs are verified before boarding, and there is no boarding without one.\n- The trip starts with the Volvo from Delhi to Manali and ends in Srinagar. Book your own onward travel from Srinagar.\n- Prices are for triple sharing. On the own-bike options, double occupancy is ₹3,000 per person extra.\n- **Any damage to the bike, except engine damage, is borne by the rider.**\n- Prices are per person. Extra mattresses are provided for triple and quad sharing.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- Look after your own luggage and belongings. We aren't accountable for missing items.\n- The departure time is fixed. Keep the trip coordinator updated and report at the pickup point 30 minutes early.\n- The departure point and time may change. Final pickup details are shared with confirmed travellers before the trip.\n- The AC is switched off in the hills, and the driver may switch it off whenever needed for safety.\n- Drinking and smoking are strictly prohibited during the journey.\n- Misconduct or indiscipline isn't tolerated. We are a cordial travel community.\n- Travel Devils isn't responsible for delays, changes or extra costs from natural hazards, accidents, breakdowns, weather, landslides, political closures or other incidents. Extra days due to weather or snow road blocks aren't included.\n- We don't provide insurance for sickness, accidents, theft or other losses.\n- Weather, road conditions and participants' fitness may change the itinerary. We may adjust the schedule in the interest of safety, comfort and well-being.",
+  "cancellationPolicy": "- **The advance is not refunded under any circumstances** if you cancel.\n- The balance is due 24 hours before boarding. Pending payments may cancel the booking.\n- There is no refund for any inclusion you don't use.\n- Bookings can't be transferred. Only the names given at confirmation may travel.\n- By depositing the advance you accept our terms and conditions.",
+  "faqs": [
+    {
+      "q": "Where does the trip start and end?",
+      "a": "The trip starts in Delhi with the Volvo bus to Manali at 6:30 PM on Day 0, and ends in Srinagar on Day 12."
+    },
+    {
+      "q": "What are the travel options and what do they cost?",
+      "a": "Per person on triple sharing: sitting coach (SIC) ₹42,000, RE Himalayan with pillion ₹42,000, RE Himalayan solo rider ₹55,000, and your own bike, solo, ₹30,000. On the own-bike options, double occupancy is ₹3,000 per person extra. 5% GST is extra."
+    },
+    {
+      "q": "When does it run?",
+      "a": "Summer season only, from June to early October, when the Leh-Manali highway is open. Batches leave every week (for example 29 August to 10 September through 26 September to 8 October 2027). Call us for 2027 dates."
+    },
+    {
+      "q": "What is included?",
+      "a": "Stays in hotels, camps, cottages and homestays, all meals mentioned in the itinerary, the Volvo from Delhi to Manali, bike rent for the full route with fuel (bike option) or travel by Traveller / MUV (SIC), a mechanical and luggage backup vehicle, an oxygen cylinder 24x7, inner line permits and the Ladakh union fee, riding gear, a first-aid kit and a team captain."
+    },
+    {
+      "q": "What is not included?",
+      "a": "5% GST, unspecified meals, room heater charges, entry and monument fees, personal expenses and tips, extra days due to weather or snow road blocks, any damage to the bike except engine damage, and costs from medical emergencies."
+    },
+    {
+      "q": "How do I book and pay?",
+      "a": "Pick your batch and option, then call or WhatsApp us on +91 88008 41209. Reserve your seat with an advance of ₹8,000 per person by UPI, GPay, PhonePe, Paytm or net banking, and pay the balance 24 hours before boarding. 5% GST is extra on the trip price."
+    },
+    {
+      "q": "What is the cancellation policy?",
+      "a": "The ₹8,000 advance is not refunded under any circumstances. The balance is due 24 hours before boarding, and pending payments may cancel the booking. Bookings can't be transferred."
+    }
+  ],
+  "basePrice": 30000
+}
