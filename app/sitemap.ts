@@ -20,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     url("/", latest(trips)),
     url("/upcoming-trips", latest(trips)),
-    ...(trips.some((x) => x.batches.some((b) => b.start >= holidayWindow().from && b.start <= holidayWindow().to)) ? [url("/christmas-new-year-trips", latest(trips))] : []),
+    ...(trips.some((x) => x.batches.some((b) => holidayWindow().dates.includes(b.start))) ? [url("/christmas-new-year-trips", latest(trips))] : []),
     ...months.map((m) => url(`/upcoming-trips/${MONTHS[m - 1]}`)),
     ...(posts.length ? [url("/blog", posts[0].updatedAt)] : []), // an empty blog is noindexed
     ...cats.map((c) => url(`/${c.slug}`, latest(trips.filter((x) => x.categorySlug === c.slug))))

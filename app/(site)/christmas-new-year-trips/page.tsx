@@ -13,7 +13,7 @@ export const revalidate = 300;
 export async function generateMetadata(): Promise<Metadata> {
   const { newYear } = holidayWindow();
   const title = `Christmas & New Year Trips ${newYear - 1}–${String(newYear).slice(2)}`;
-  const description = `Group trips departing over Christmas and New Year ${newYear}: snow in the Himalayas, desert camps in Rajasthan and long Kashmir and Meghalaya getaways. Holiday dates and festive prices in one place.`;
+  const description = `Group trips departing on Christmas (24 & 25 Dec) and New Year (30 Dec) ${newYear - 1}: snow, bonfires and New Year in the Himalayas. Holiday dates and festive prices in one place.`;
   return { title, description, alternates: { canonical: "/christmas-new-year-trips" }, openGraph: og({ title: `${title} | Travel Devils`, description, url: "/christmas-new-year-trips" }) };
 }
 
@@ -59,7 +59,7 @@ export default async function ChristmasNewYear() {
             <span className="word-in xmas-gold block [animation-delay:120ms]">New Year under the stars.</span>
           </h1>
           <p className="fade-in mt-6 max-w-xl text-lg font-semibold text-white/75 [animation-delay:240ms]">
-            Snow, bonfires, desert camps and a countdown with a group that becomes your gang. Every Travel Devils trip leaving over the holidays, in one place.
+            Snow, bonfires and a countdown with a group that becomes your gang. Every Christmas (24 &amp; 25 Dec) and New Year (30 Dec) departure, in one place.
           </p>
           <div className="fade-in mt-8 flex flex-wrap items-end gap-x-10 gap-y-6 [animation-delay:360ms]">
             <Countdown year={year} />

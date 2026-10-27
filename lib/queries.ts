@@ -122,10 +122,10 @@ export async function monthsWithDepartures() {
   return rows.map((r) => r.m);
 }
 
-/** The Christmas–New Year window of the coming (or current) season: 20 Dec → 3 Jan. */
+/** The coming (or current) season's holiday departures: Christmas (24 & 25 Dec) and New Year (30 Dec). */
 export function holidayWindow(now = new Date()) {
   const y = now.getMonth() === 0 && now.getDate() <= 3 ? now.getFullYear() - 1 : now.getFullYear();
-  return { from: `${y}-12-20`, to: `${y + 1}-01-03`, newYear: y + 1 };
+  return { from: `${y}-12-24`, to: `${y}-12-30`, dates: [`${y}-12-24`, `${y}-12-25`, `${y}-12-30`], newYear: y + 1 };
 }
 
 /** Published trips with a departure in the holiday window, each with those departures (start/end) and its holiday "from" price. */
@@ -133,7 +133,7 @@ export const getHolidayTrips = cache(async () => {
   const w = holidayWindow();
   const deps = await db.select({ tripId: t.tripBatches.tripId, start: t.tripBatches.startDate, end: t.tripBatches.endDate, status: t.tripBatches.status, label: t.tripBatches.label, tierPrices: t.tripBatches.tierPrices })
     .from(t.tripBatches)
-    .where(and(gte(t.tripBatches.startDate, w.from > today() ? w.from : today()), sql`${t.tripBatches.startDate} <= ${w.to}`, sql`${t.tripBatches.status} <> 'closed'`))
+    .where(and(inArray(t.tripBatches.startDate, w.dates), gte(t.tripBatches.startDate, today()), sql`${t.tripBatches.status} <> 'closed'`))
     .orderBy(asc(t.tripBatches.startDate));
   const ids = [...new Set(deps.map((d) => d.tripId))];
   if (!ids.length) return { window: w, trips: [] };
