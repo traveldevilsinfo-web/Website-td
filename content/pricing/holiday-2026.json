@@ -24,7 +24,7 @@
       "prices": {
         "Quad Sharing": 5499,
         "Triple Sharing": 5699,
-        "Double Sharing": 0
+        "Double Sharing": 5899
       }
     },
     {
@@ -249,7 +249,7 @@
       "prices": {
         "Quad Sharing": 6899,
         "Triple Sharing": 7099,
-        "Double Sharing": 0
+        "Double Sharing": 7299
       },
       "inclusions": [
         "New Year party",
