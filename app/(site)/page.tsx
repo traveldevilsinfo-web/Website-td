@@ -124,13 +124,15 @@ export default async function Home() {
       <Hero copy={settings.hero} slides={slides} stats={settings.stats}
         popular={dests.slice(0, 6).map((d) => ({ label: d.name, href: `/destinations/${d.slug}`, image: d.heroImage ?? d.cover, meta: `${d.trips} trip${d.trips === 1 ? "" : "s"}` }))} />
 
-      <ExploreDestinations places={places} tabs={rails.map(({ cat }) => ({ slug: cat.slug, label: cat.name }))} />
-
-      <section className="pt-20">
+      <section className="pt-14">
         <SectionHead eyebrow="Pack your bags" title={scheduled.length ? "Upcoming group trips" : "Trips we love"}
           subtitle="Fixed departures with a crew of like-minded travellers. Pick a month and go." href="/upcoming-trips" />
         <UpcomingTabs trips={upcoming} months={months} />
       </section>
+
+      <div className="pt-6">
+        <ExploreDestinations places={places} tabs={rails.map(({ cat }) => ({ slug: cat.slug, label: cat.name }))} />
+      </div>
 
 
       {rails.map(({ cat, trips: list }, i) => (
