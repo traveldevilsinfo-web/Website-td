@@ -1,5 +1,5 @@
 {
-  "note": "Holiday batch prices (per person). Christmas = departures on 24 & 25 Dec, New Year = 30 Dec. Apply with scripts/apply-holiday-prices.mts. After this, edit prices in Admin → Trips → Departures.",
+  "note": "Holiday batch prices (per person). Christmas = departures on 24 & 25 Dec, New Year = 30 Dec. Apply with scripts/apply-holiday-prices.mts. After this, edit prices in Admin → Trips → Departures. A price of 0 means that sharing option is not offered on that date.",
   "batches": [
     {
       "slug": "chakrata",
@@ -23,7 +23,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 5499,
-        "Triple Sharing": 5699
+        "Triple Sharing": 5699,
+        "Double Sharing": 0
       }
     },
     {
@@ -35,7 +36,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 5499,
-        "Triple Sharing": 5699
+        "Triple Sharing": 5699,
+        "Double Sharing": 0
       }
     },
     {
@@ -47,7 +49,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 8199,
-        "Triple Sharing": 8699
+        "Triple Sharing": 8699,
+        "Double Sharing": 0
       }
     },
     {
@@ -59,7 +62,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 8000,
-        "Triple Sharing": 8500
+        "Triple Sharing": 8500,
+        "Double Sharing": 0
       }
     },
     {
@@ -71,7 +75,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 7500,
-        "Triple Sharing": 8000
+        "Triple Sharing": 8000,
+        "Double Sharing": 0
       }
     },
     {
@@ -83,7 +88,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 8500,
-        "Triple Sharing": 9000
+        "Triple Sharing": 9000,
+        "Double Sharing": 0
       }
     },
     {
@@ -95,7 +101,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 8000,
-        "Triple Sharing": 8500
+        "Triple Sharing": 8500,
+        "Double Sharing": 0
       }
     },
     {
@@ -107,7 +114,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 8000,
-        "Triple Sharing": 8500
+        "Triple Sharing": 8500,
+        "Double Sharing": 0
       }
     },
     {
@@ -119,7 +127,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 6500,
-        "Triple Sharing": 7000
+        "Triple Sharing": 7000,
+        "Double Sharing": 0
       }
     },
     {
@@ -131,7 +140,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 9200,
-        "Triple Sharing": 9600
+        "Triple Sharing": 9600,
+        "Double Sharing": 0
       }
     },
     {
@@ -143,7 +153,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 8500,
-        "Triple Sharing": 9000
+        "Triple Sharing": 9000,
+        "Double Sharing": 0
       }
     },
     {
@@ -155,7 +166,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 9500,
-        "Triple Sharing": 10000
+        "Triple Sharing": 10000,
+        "Double Sharing": 0
       }
     },
     {
@@ -167,7 +179,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 10500,
-        "Triple Sharing": 11500
+        "Triple Sharing": 11500,
+        "Double Sharing": 0
       }
     },
     {
@@ -179,7 +192,8 @@
       "label": "Christmas",
       "prices": {
         "Quad Sharing": 12500,
-        "Triple Sharing": 13500
+        "Triple Sharing": 13500,
+        "Double Sharing": 0
       }
     },
     {
@@ -228,7 +242,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 6899,
-        "Triple Sharing": 7099
+        "Triple Sharing": 7099,
+        "Double Sharing": 0
       }
     },
     {
@@ -239,7 +254,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 6899,
-        "Triple Sharing": 7099
+        "Triple Sharing": 7099,
+        "Double Sharing": 0
       }
     },
     {
@@ -250,7 +266,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 8199,
-        "Triple Sharing": 8699
+        "Triple Sharing": 8699,
+        "Double Sharing": 0
       }
     },
     {
@@ -261,7 +278,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 8000,
-        "Triple Sharing": 8500
+        "Triple Sharing": 8500,
+        "Double Sharing": 0
       }
     },
     {
@@ -272,7 +290,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 7500,
-        "Triple Sharing": 8000
+        "Triple Sharing": 8000,
+        "Double Sharing": 0
       }
     },
     {
@@ -283,7 +302,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 8500,
-        "Triple Sharing": 9000
+        "Triple Sharing": 9000,
+        "Double Sharing": 0
       }
     },
     {
@@ -294,7 +314,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 8000,
-        "Triple Sharing": 8500
+        "Triple Sharing": 8500,
+        "Double Sharing": 0
       }
     },
     {
@@ -305,7 +326,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 8000,
-        "Triple Sharing": 8500
+        "Triple Sharing": 8500,
+        "Double Sharing": 0
       }
     },
     {
@@ -316,7 +338,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 6500,
-        "Triple Sharing": 7000
+        "Triple Sharing": 7000,
+        "Double Sharing": 0
       }
     },
     {
@@ -327,7 +350,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 9200,
-        "Triple Sharing": 9600
+        "Triple Sharing": 9600,
+        "Double Sharing": 0
       }
     },
     {
@@ -338,7 +362,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 8500,
-        "Triple Sharing": 9000
+        "Triple Sharing": 9000,
+        "Double Sharing": 0
       }
     },
     {
@@ -349,7 +374,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 9500,
-        "Triple Sharing": 10000
+        "Triple Sharing": 10000,
+        "Double Sharing": 0
       }
     },
     {
@@ -360,7 +386,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 10500,
-        "Triple Sharing": 11500
+        "Triple Sharing": 11500,
+        "Double Sharing": 0
       }
     },
     {
@@ -371,7 +398,8 @@
       "label": "New Year",
       "prices": {
         "Quad Sharing": 12500,
-        "Triple Sharing": 13500
+        "Triple Sharing": 13500,
+        "Double Sharing": 0
       }
     },
     {
@@ -397,6 +425,174 @@
         "Triple Sharing": 11000,
         "Double Sharing": 11500
       }
+    },
+    {
+      "slug": "bir-barot",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 9000,
+        "Triple Sharing": 9500,
+        "Double Sharing": 10000
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "bir-barot",
+      "dates": [
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 9000,
+        "Triple Sharing": 9500,
+        "Double Sharing": 10000
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "manali-kasol-jibhi-4n5d",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 15000,
+        "Triple Sharing": 16000,
+        "Double Sharing": 17000
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "manali-kasol-jibhi-4n5d",
+      "dates": [
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 15000,
+        "Triple Sharing": 16000,
+        "Double Sharing": 17000
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "manali-kasol-tosh-4n5d",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 14500,
+        "Triple Sharing": 15500,
+        "Double Sharing": 16500
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "manali-kasol-tosh-4n5d",
+      "dates": [
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 14500,
+        "Triple Sharing": 15500,
+        "Double Sharing": 16500
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "meghalaya",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Triple Sharing": 23000,
+        "Double Sharing": 25000
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "meghalaya",
+      "dates": [
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Triple Sharing": 23000,
+        "Double Sharing": 25000
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "meghalaya-kaziranga",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Triple Sharing": 26500,
+        "Double Sharing": 28500
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "meghalaya-kaziranga",
+      "dates": [
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Triple Sharing": 26500,
+        "Double Sharing": 28500
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "udaipur-mount-abu",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 10500,
+        "Triple Sharing": 11000,
+        "Double Sharing": 12000
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "udaipur-mount-abu",
+      "dates": [
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 10500,
+        "Triple Sharing": 11000,
+        "Double Sharing": 12000
+      },
+      "source": "itinerary PDF holiday price"
+    },
+    {
+      "slug": "kashmir",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {},
+      "source": "label only; Kashmir holiday prices stay as its two Christmas packages (24-25 Dec)"
     }
   ]
 }

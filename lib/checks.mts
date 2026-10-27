@@ -77,7 +77,7 @@ assert.equal(m.seo.title, "Spiti Trip");
 console.log("pdf draft merge checks passed");
 
 // Booking price engine
-import { computeQuote, optionsForDate, QuoteError, unitPrice, type QuoteInput } from "./pricing";
+import { computeQuote, optionsForDate, QuoteError, tiersFor, unitPrice, type QuoteInput } from "./pricing";
 const qbase: QuoteInput = {
   pricing: [
     { name: "Tempo", tiers: [{ label: "Triple", price: 10000, salePrice: 9000 }, { label: "Double", price: 12000 }] },
@@ -220,4 +220,7 @@ console.log("trip order checks passed");
   const nq = computeQuote({ ...qbase, batch: { ...qbase.batch, tierPrices: { Triple: 9999 } } });
   assert.equal(nq.subtotal, 9999 * 2 + 12000); // Triple ×2 at the batch price, Double unchanged
 }
+// 0 = that sharing option isn't offered on this date, and can't be bought
+assert.deepEqual(tiersFor([{ label: "Triple" }, { label: "Double" }], { priceOverride: null, tierPrices: { Double: 0 } }).map((t) => t.label), ["Triple"]);
+assert.throws(() => computeQuote({ ...qbase, batch: { ...qbase.batch, tierPrices: { Double: 0 } } }), QuoteError);
 console.log("batch price checks passed");

@@ -138,7 +138,7 @@ export function DeparturesEditor({ name, initial, routes, durationDays, tierLabe
               {openPrices === i && (
                 <tr className="bg-amber-50/60">
                   <td colSpan={9} className="px-3 py-3">
-                    <p className="mb-2 text-xs text-gray-600">Prices for <b>this date only</b> (per person). Leave a box empty to use the normal price. Use it for Christmas, New Year, long weekends or a one-off offer.</p>
+                    <p className="mb-2 text-xs text-gray-600">Prices for <b>this date only</b> (per person). Leave a box empty to use the normal price; enter <b>0</b> to stop that option being booked on this date. Use it for Christmas, New Year, long weekends or a one-off offer.</p>
                     <div className="flex flex-wrap gap-3">
                       {tierLabels.map((l) => (
                         <label key={l} className="text-xs text-gray-600">{l}

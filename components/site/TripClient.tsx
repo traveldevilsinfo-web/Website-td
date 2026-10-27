@@ -5,7 +5,7 @@ import { CalendarDays, ChevronDown, Download } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { OpenLeadButton } from "@/components/LeadDialog";
 import { BATCH_LABEL, dateDay, dateShort, inr, monthShort } from "@/lib/format";
-import { optionsForDate, unitPrice } from "@/lib/pricing";
+import { optionsForDate, tiersFor, unitPrice } from "@/lib/pricing";
 
 /* ------------------------------------------------------------------ Gallery + lightbox */
 
@@ -185,7 +185,8 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
   const batch = bs.find((x) => x.id === b);
   const pkgs = optionsForDate(pricing.filter((x) => onRoute(x.route)), batch?.startDate); // holiday batches get holiday prices
   const pkg = pkgs[Math.min(p, pkgs.length - 1)];
-  const tier = pkg?.tiers[Math.min(t, pkg.tiers.length - 1)];
+  const tiers = pkg ? tiersFor(pkg.tiers, batch) : [];
+  const tier = tiers[Math.min(t, tiers.length - 1)];
   const listPrice = tier?.price ?? basePrice;
   const price = tier ? unitPrice(tier, batch) : batch?.priceOverride ?? salePrice ?? basePrice;
   const showStrike = listPrice && price && price < listPrice;
@@ -240,11 +241,11 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
         </fieldset>
       )}
 
-      {pkg && pkg.tiers.length > 0 && (
+      {tiers.length > 0 && (
         <fieldset className="mt-5">
           <legend className="eyebrow mb-2 text-muted">Sharing / option</legend>
           <div className="grid gap-2">
-            {pkg.tiers.map((x, i) => (
+            {tiers.map((x, i) => (
               <button key={x.label + i} type="button" aria-pressed={x === tier} onClick={() => setT(i)} className={`${chip(x === tier)} flex items-center justify-between gap-2`}>
                 <span>{x.label}</span>
                 <span className="text-right">

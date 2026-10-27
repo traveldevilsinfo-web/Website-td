@@ -36,6 +36,11 @@ export function unitPrice(tier: { label: string; price: number; salePrice?: numb
   return batch?.tierPrices?.[tier.label] ?? batch?.priceOverride ?? tier.salePrice ?? tier.price;
 }
 
+/** Sharing options bookable on a departure: a price of 0 for an option on that date means "not offered then". */
+export function tiersFor<T extends { label: string }>(tiers: T[], batch?: PricedBatch): T[] {
+  return tiers.filter((t) => batch?.tierPrices?.[t.label] !== 0);
+}
+
 /** Price groups for a departure: date-bound groups win for batches starting inside their window, otherwise the undated ones. */
 export function optionsForDate<T extends { from?: string; to?: string }>(options: T[], start?: string): T[] {
   const dated = start ? options.filter((o) => o.from && o.to && start >= o.from && start <= o.to) : [];
@@ -68,10 +73,11 @@ export function computeQuote(q: QuoteInput): Quote {
   if (pkgs.length) {
     const pkg = pkgs.find((p) => p.name === q.packageName) ?? (q.packageName ? null : pkgs[0]);
     if (!pkg) throw new QuoteError("Choose a package.");
-    lines = pkg.tiers
+    const tiers = tiersFor(pkg.tiers, q.batch);
+    lines = tiers
       .map((t) => ({ label: t.label, unitPrice: unitPrice(t, q.batch), qty: Math.floor(q.qty[t.label] ?? 0) }))
       .filter((l) => l.qty > 0);
-    const unknown = Object.entries(q.qty).filter(([k, v]) => v > 0 && !pkg.tiers.some((t) => t.label === k));
+    const unknown = Object.entries(q.qty).filter(([k, v]) => v > 0 && !tiers.some((t) => t.label === k));
     if (unknown.length) throw new QuoteError("Unknown sharing option selected.");
   } else {
     const unit = q.batch.priceOverride ?? q.salePrice ?? q.basePrice;

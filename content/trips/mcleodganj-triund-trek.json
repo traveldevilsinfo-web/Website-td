@@ -81,28 +81,6 @@
           "salePrice": null
         }
       ]
-    },
-    {
-      "name": "Christmas & New Year",
-      "tiers": [
-        {
-          "label": "Quad Sharing",
-          "price": 7500,
-          "salePrice": null
-        },
-        {
-          "label": "Triple Sharing",
-          "price": 8000,
-          "salePrice": null
-        },
-        {
-          "label": "Double Sharing",
-          "price": 8500,
-          "salePrice": null
-        }
-      ],
-      "from": "2026-12-22",
-      "to": "2026-12-31"
     }
   ],
   "coverImage": "/uploads/thumbnails/mcleodganj-triund-trek.jpg",
@@ -120,7 +98,7 @@
     "Dharamshala Stadium and the tea gardens",
     "Bonfire and music party in McLeodganj"
   ],
-  "overview": "A scenic weekend trek from Delhi or Chandigarh: this **2 Nights / 3 Days** trip covers McLeodganj's cafés and monasteries, Bhagsu Waterfall and a night camping on Triund Top with the Dhauladhar range at your doorstep. You leave in the evening in an AC deluxe vehicle and travel overnight.\n\nDay 1 is McLeodganj: the flea market, the Dalai Lama Temple, Bhagsu Waterfall and café hopping, ending with a bonfire and music party at the hotel. Day 2 is the Triund trek (9 km, easy to moderate, up to 9,350 ft) through pine forests and meadows, with a night in camps. Day 3 you trek down to McLeodganj (by about 2 PM), visit Dharamshala Stadium and the tea gardens, and head home, reaching Delhi early on Day 4. Prices start at ₹6,500 per person on quad sharing for regular dates and ₹7,500 for Christmas and New Year batches (5% GST extra).",
+  "overview": "A scenic weekend trek from Delhi or Chandigarh: this **2 Nights / 3 Days** trip covers McLeodganj's cafés and monasteries, Bhagsu Waterfall and a night camping on Triund Top with the Dhauladhar range at your doorstep. You leave in the evening in an AC deluxe vehicle and travel overnight.\n\nDay 1 is McLeodganj: the flea market, the Dalai Lama Temple, Bhagsu Waterfall and café hopping, ending with a bonfire and music party at the hotel. Day 2 is the Triund trek (9 km, easy to moderate, up to 9,350 ft) through pine forests and meadows, with a night in camps. Day 3 you trek down to McLeodganj (by about 2 PM), visit Dharamshala Stadium and the tea gardens, and head home, reaching Delhi early on Day 4. Prices start at ₹6,500 per person on quad sharing (5% GST extra).",
   "itinerary": [
     {
       "title": "Departure to McLeodganj",
@@ -163,7 +141,7 @@
     },
     {
       "q": "How much does the McLeodganj & Triund Trek cost?",
-      "a": "Regular dates: ₹6,500 per person on quad sharing, ₹7,000 on triple and ₹7,500 on double. Christmas and New Year batches: ₹7,500 quad, ₹8,000 triple and ₹8,500 double. 5% GST is extra."
+      "a": "Regular dates: ₹6,500 per person on quad sharing, ₹7,000 on triple and ₹7,500 on double. Christmas (24 and 25 December) and New Year (30 December) departures have their own price, shown when you pick that date. 5% GST is extra."
     },
     {
       "q": "What is included?",

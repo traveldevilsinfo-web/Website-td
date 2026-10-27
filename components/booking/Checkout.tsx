@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { PaymentStart } from "@/lib/bookings";
-import { optionsForDate, unitPrice, type Quote } from "@/lib/pricing";
+import { optionsForDate, tiersFor, unitPrice, type Quote } from "@/lib/pricing";
 import { BatchTag } from "@/components/site/TripClient";
 import { BATCH_LABEL, dateShort, inr, monthShort } from "@/lib/format";
 import { completeTestPayment, getQuote, submitCheckout } from "@/app/(site)/booking/actions";
@@ -61,7 +61,10 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
   const [me, setMe] = useState(customer);
   const [contactName, setContactName] = useState(customer?.name ?? "");
   const [contactEmail, setContactEmail] = useState(customer?.email ?? "");
-  const pax = Object.values(qty).reduce((a, b) => a + b, 0);
+  // Only count sharing options this date offers (a holiday date can drop one, e.g. Double).
+  const offered = pkg ? new Set(tiersFor(pkg.tiers, bs.find((b) => b.id === batchId)).map((x) => x.label)) : null;
+  const liveQty = offered ? Object.fromEntries(Object.entries(qty).filter(([k]) => offered.has(k))) : qty;
+  const pax = Object.values(liveQty).reduce((a, b) => a + b, 0);
   const [travellerState, setTravellers] = useState<Traveller[]>([{ name: customer?.name ?? "", age: "", gender: "" }]);
   // one row per seat, derived (typed values are kept if the count goes down and back up)
   const travellers = Array.from({ length: pax }, (_, i) => travellerState[i] ?? { name: "", age: "", gender: "" as const });
@@ -76,7 +79,7 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
   const [testPay, setTestPay] = useState<Extract<PaymentStart, { mode: "test" }> | null>(null);
 
   // Server is the source of truth for price; re-quote (debounced) whenever the selection changes.
-  const selection = { slug: trip.slug, batchId, route, packageName: pkg?.name ?? "", qty, coupon, plan };
+  const selection = { slug: trip.slug, batchId, route, packageName: pkg?.name ?? "", qty: liveQty, coupon, plan };
   const selKey = JSON.stringify(selection); // effect re-runs only when the selection's content changes
   const seq = useRef(0);
   useEffect(() => {
@@ -182,7 +185,7 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
           <div className="mt-5">
             <p className="eyebrow mb-2 text-muted">Travellers</p>
             <ul className="divide-y divide-line rounded-2xl border border-line">
-              {(pkg ? pkg.tiers : [{ label: "Per person", price: selectedBatch?.priceOverride ?? trip.salePrice ?? trip.basePrice ?? 0 } as Tier]).map((tier) => {
+              {(pkg ? tiersFor(pkg.tiers, selectedBatch) : [{ label: "Per person", price: selectedBatch?.priceOverride ?? trip.salePrice ?? trip.basePrice ?? 0 } as Tier]).map((tier) => {
                 const unit = unitPrice(tier, selectedBatch);
                 const n = qty[tier.label] ?? 0;
                 return (

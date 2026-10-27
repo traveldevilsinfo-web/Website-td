@@ -78,28 +78,6 @@
           "salePrice": null
         }
       ]
-    },
-    {
-      "name": "Christmas & New Year",
-      "tiers": [
-        {
-          "label": "Quad Sharing",
-          "price": 8000,
-          "salePrice": null
-        },
-        {
-          "label": "Triple Sharing",
-          "price": 8500,
-          "salePrice": null
-        },
-        {
-          "label": "Double Sharing",
-          "price": 9000,
-          "salePrice": null
-        }
-      ],
-      "from": "2026-12-22",
-      "to": "2026-12-31"
     }
   ],
   "coverImage": "/uploads/thumbnails/manali-sissu-kasol.jpg",
@@ -167,7 +145,7 @@
     },
     {
       "q": "How much does the Manali, Sissu & Kasol trip cost?",
-      "a": "On regular dates, ₹6,500 per person on quad sharing, ₹7,000 on triple sharing and ₹7,500 on double sharing. Christmas and New Year batches (departures from 24 to 30 December) cost ₹8,000 quad, ₹8,500 triple and ₹9,000 double. 5% GST is extra."
+      "a": "On regular dates, ₹6,500 per person on quad sharing, ₹7,000 on triple sharing and ₹7,500 on double sharing. Christmas (24 and 25 December) and New Year (30 December) departures have their own price, shown when you pick that date. 5% GST is extra."
     },
     {
       "q": "What is included?",
