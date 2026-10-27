@@ -1,0 +1,20 @@
+// Sets label + per-sharing prices on specific departures from content/pricing/<file>.json.
+//   npx tsx scripts/apply-holiday-prices.mts content/pricing/holiday-2026.json   (DATABASE_URL from .env.local unless set)
+// Only touches departures that already exist on those dates; reports any that don't.
+import { readFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
+import postgres from "postgres";
+
+if (!process.env.DATABASE_URL && existsSync(".env.local")) process.loadEnvFile(".env.local");
+type Entry = { slug: string; dates: string[]; label: string; prices: Record<string, number> };
+const { batches } = JSON.parse(await readFile(process.argv[2], "utf8")) as { batches: Entry[] };
+const sql = postgres(process.env.DATABASE_URL!, { max: 1 });
+for (const e of batches) {
+  const r = await sql`
+    update trip_batches b set label = ${e.label}, tier_prices = ${sql.json(e.prices)}
+    from trips t where t.id = b.trip_id and t.slug = ${e.slug} and b.start_date = any(${e.dates}::date[])
+    returning b.start_date::text as d`;
+  const missing = e.dates.filter((d) => !r.some((x) => x.d === d));
+  console.log(`${e.slug} ${e.label}: ${r.length} updated${missing.length ? ` · no departure on ${missing.join(", ")}` : ""}`);
+}
+await sql.end();

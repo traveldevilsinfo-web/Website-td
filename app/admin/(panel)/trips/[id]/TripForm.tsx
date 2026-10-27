@@ -147,7 +147,8 @@ export function TripForm({ initial, cats, dests, action, isNew }: {
         </Section>
 
         <Section id="batches" title="Departure dates" description="Fixed departures shown on the trip page, cards and checkout. Leave empty for on-request / customised trips.">
-          <DeparturesEditor name="batches" initial={v.batches} routes={routeNames} durationDays={v.durationDays} />
+          <DeparturesEditor name="batches" initial={v.batches} routes={routeNames} durationDays={v.durationDays}
+            tierLabels={[...new Set(v.pricing.flatMap((p) => p.tiers.map((x) => x.label)))]} />
         </Section>
 
         <Section id="media" title="Photos, video & PDF">

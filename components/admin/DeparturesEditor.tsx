@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import type { Batch } from "@/lib/trip-draft";
 import { addDays, dateDay, WEEKDAYS, weekdayOf, weeklyDates } from "@/lib/format";
 import { btnGhost, btnPrimary, input } from "./ui";
@@ -12,9 +12,10 @@ const today = () => new Date().toISOString().slice(0, 10);
 const cell = `${input} !py-1.5 !text-sm`;
 
 /** Compact table of departures + "repeat weekly" generator. Posts rows as JSON in `name`. */
-export function DeparturesEditor({ name, initial, routes, durationDays }: {
-  name: string; initial: Batch[]; routes: string[]; durationDays: number;
+export function DeparturesEditor({ name, initial, routes, durationDays, tierLabels = [] }: {
+  name: string; initial: Batch[]; routes: string[]; durationDays: number; /** sharing options from Pricing, for per-date prices */ tierLabels?: string[];
 }) {
+  const [openPrices, setOpenPrices] = useState<number | null>(null);
   const [rows, setRows] = useState<Batch[]>(() => [...initial].sort((a, b) => a.startDate.localeCompare(b.startDate)));
   // Default: overnight journey out and back, so the group is home the morning after the last day.
   const [gen, setGen] = useState(() => ({ weekday: 5, until: addDays(today(), 182), seats: 20, route: "", back: durationDays + 1 }));
@@ -78,12 +79,14 @@ export function DeparturesEditor({ name, initial, routes, durationDays }: {
         </div>
       )}
 
+      <datalist id="batch-labels"><option value="Christmas" /><option value="New Year" /><option value="Long weekend" /><option value="Diwali" /><option value="Holi" /></datalist>
       <div className="overflow-x-auto rounded-lg border border-gray-200">
         <table className="w-full min-w-[46rem] text-sm">
           <thead className="bg-gray-50 text-left text-xs text-gray-600">
             <tr>
               <th className="px-2 py-2 font-medium">Starts</th><th className="px-2 py-2 font-medium">Ends</th>
               <th className="w-20 px-2 py-2 font-medium">Seats</th><th className="px-2 py-2 font-medium">Status</th>
+              <th className="w-32 px-2 py-2 font-medium">Label</th>
               <th className="w-28 px-2 py-2 font-medium">Special ₹</th>
               {routes.length > 0 && <th className="px-2 py-2 font-medium">Route</th>}
               <th className="px-2 py-2 font-medium">Note</th><th className="w-8" />
@@ -91,7 +94,8 @@ export function DeparturesEditor({ name, initial, routes, durationDays }: {
           </thead>
           <tbody className="divide-y divide-gray-100">
             {rows.map((r, i) => (!showPast && r.startDate && r.startDate < now ? null : (
-              <tr key={r.id ?? `n${i}-${r.startDate}`} className={r.startDate && r.startDate < now ? "opacity-50" : ""}>
+              <Fragment key={r.id ?? `n${i}-${r.startDate}`}>
+              <tr className={r.startDate && r.startDate < now ? "opacity-50" : ""}>
                 <td className="px-2 py-1.5">
                   <input type="date" aria-label="Start date" value={r.startDate} onChange={(e) => set(i, { startDate: e.target.value, endDate: e.target.value ? addDays(e.target.value, gen.back) : r.endDate })} className={cell} />
                   {r.startDate && <span className="mt-0.5 block text-[11px] text-gray-500">{WEEKDAYS[weekdayOf(r.startDate)]}</span>}
@@ -106,7 +110,19 @@ export function DeparturesEditor({ name, initial, routes, durationDays }: {
                     {STATUSES.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
                   </select>
                 </td>
-                <td className="px-2 py-1.5"><input type="number" aria-label="Special price" placeholder="—" value={r.priceOverride} onChange={(e) => set(i, { priceOverride: e.target.value })} className={cell} /></td>
+                <td className="px-2 py-1.5">
+                  <input aria-label="Label" list="batch-labels" placeholder="—" value={r.label ?? ""} onChange={(e) => set(i, { label: e.target.value })} className={cell} />
+                </td>
+                <td className="px-2 py-1.5">
+                  {tierLabels.length > 0 ? (
+                    <button type="button" onClick={() => setOpenPrices(openPrices === i ? null : i)} aria-expanded={openPrices === i}
+                      className={`${cell} w-full text-left ${Object.values(r.tierPrices ?? {}).some((v) => v !== "" && v != null) ? "!border-amber-400 bg-amber-50 font-semibold" : ""}`}>
+                      {Object.values(r.tierPrices ?? {}).filter((v) => v !== "" && v != null).length || "Set"} price{Object.values(r.tierPrices ?? {}).filter((v) => v !== "" && v != null).length === 1 ? "" : "s"} ▾
+                    </button>
+                  ) : (
+                    <input type="number" aria-label="Special price" placeholder="—" value={r.priceOverride} onChange={(e) => set(i, { priceOverride: e.target.value })} className={cell} />
+                  )}
+                </td>
                 {routes.length > 0 && (
                   <td className="px-2 py-1.5">
                     <select aria-label="Route" value={r.route ?? ""} onChange={(e) => set(i, { route: e.target.value })} className={cell}>
@@ -119,9 +135,25 @@ export function DeparturesEditor({ name, initial, routes, durationDays }: {
                   <button type="button" aria-label="Remove departure" onClick={() => setRows(rows.filter((_, j) => j !== i))} className="rounded px-1.5 py-1 text-red-600 hover:bg-red-50">✕</button>
                 </td>
               </tr>
+              {openPrices === i && (
+                <tr className="bg-amber-50/60">
+                  <td colSpan={9} className="px-3 py-3">
+                    <p className="mb-2 text-xs text-gray-600">Prices for <b>this date only</b> (per person). Leave a box empty to use the normal price. Use it for Christmas, New Year, long weekends or a one-off offer.</p>
+                    <div className="flex flex-wrap gap-3">
+                      {tierLabels.map((l) => (
+                        <label key={l} className="text-xs text-gray-600">{l}
+                          <input type="number" min={0} placeholder="normal" value={r.tierPrices?.[l] ?? ""}
+                            onChange={(e) => set(i, { tierPrices: { ...r.tierPrices, [l]: e.target.value } })} className={`${cell} mt-0.5 block w-32`} />
+                        </label>
+                      ))}
+                    </div>
+                  </td>
+                </tr>
+              )}
+              </Fragment>
             )))}
             {rows.length === 0 && (
-              <tr><td colSpan={8} className="px-3 py-6 text-center text-gray-500">No departures yet. Use “Repeat weekly” above or add one date.</td></tr>
+              <tr><td colSpan={9} className="px-3 py-6 text-center text-gray-500">No departures yet. Use “Repeat weekly” above or add one date.</td></tr>
             )}
           </tbody>
         </table>

@@ -44,6 +44,9 @@ const batchSchema = z.array(z.object({
   priceOverride: num.optional(),
   route: z.string().trim().optional(),
   note: z.string().optional(),
+  label: z.string().trim().max(30).optional(),
+  // empty boxes are dropped; only filled-in prices are stored
+  tierPrices: z.record(z.string(), num).optional().transform((o) => Object.fromEntries(Object.entries(o ?? {}).filter((e): e is [string, number] => e[1] != null && e[1] > 0))),
 })).max(200);
 
 export async function saveTrip(id: number | null, _prev: ActionState, f: FormData): Promise<ActionState> {
@@ -112,7 +115,7 @@ export async function saveTrip(id: number | null, _prev: ActionState, f: FormDat
       }
       await tx.delete(t.tripBatches).where(and(eq(t.tripBatches.tripId, row.id), keep.length ? notInArray(t.tripBatches.id, keep) : undefined));
       for (const { id: bid, ...b } of batches) {
-        const v = { ...b, tripId: row.id, priceOverride: b.priceOverride ?? null, note: b.note || null, route: b.route || null };
+        const v = { ...b, tripId: row.id, priceOverride: b.priceOverride ?? null, note: b.note || null, route: b.route || null, label: b.label || null };
         if (bid) await tx.update(t.tripBatches).set(v).where(and(eq(t.tripBatches.id, Number(bid)), eq(t.tripBatches.tripId, row.id)));
         else await tx.insert(t.tripBatches).values(v);
       }

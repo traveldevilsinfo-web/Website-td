@@ -162,7 +162,7 @@ export function HolidayGrid({ trips, year }: { trips: HolidayTrip[]; year: numbe
                   <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Holiday departures">
                     {dates.map((b) => (
                       <li key={b.start} className={`rounded-full px-2.5 py-1 text-[11px] font-extrabold ${nye(b) ? "bg-[var(--x-gold)]/15 text-[var(--x-gold)] ring-1 ring-[var(--x-gold)]/40" : "bg-white/[0.07] text-white/80 ring-1 ring-white/10"} ${b.status === "sold_out" ? "line-through opacity-50" : ""}`}>
-                        {dateDay(b.start)}
+                        {dateDay(b.start)}{b.label && <span className="ml-1 opacity-80">· {b.label}</span>}
                       </li>
                     ))}
                   </ul>

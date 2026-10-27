@@ -1,7 +1,11 @@
 import type { Faq, ItineraryDay, PricingOption, Seo, TrekSpecs, TripRoute } from "@/db/schema";
 import type { TripDraft } from "./pdf-trip";
 
-export type Batch = { id?: number; startDate: string; endDate: string; seats: number | string; status: string; priceOverride: number | string; note: string; route?: string };
+export type Batch = {
+  id?: number; startDate: string; endDate: string; seats: number | string; status: string; priceOverride: number | string; note: string; route?: string;
+  /** "Christmas", "New Year"… shown on the date */ label?: string;
+  /** this departure's own price per sharing option, e.g. { "Quad Sharing": 5499 } */ tierPrices?: Record<string, number | string>;
+};
 
 export type TripFormValues = {
   title: string; slug: string; status: "draft" | "published"; categoryId: number | null; destinationId: number | null;

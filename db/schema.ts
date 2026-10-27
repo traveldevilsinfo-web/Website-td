@@ -129,6 +129,10 @@ export const tripBatches = pgTable(
     seats: integer("seats").notNull().default(20),
     status: batchStatusEnum("status").notNull().default("available"),
     priceOverride: integer("price_override"),
+    /** Special price per sharing option for this departure only, e.g. { "Quad Sharing": 5499 }. Beats every other price. */
+    tierPrices: jsonb("tier_prices").$type<Record<string, number>>().notNull().default({}),
+    /** Shown on the date, e.g. "Christmas" or "New Year". */
+    label: text("label"),
     route: text("route"), // TripRoute.name; null = every route
     note: text("note"),
   },

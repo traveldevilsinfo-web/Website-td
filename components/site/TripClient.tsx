@@ -5,7 +5,7 @@ import { CalendarDays, ChevronDown, Download } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { OpenLeadButton } from "@/components/LeadDialog";
 import { BATCH_LABEL, dateDay, dateShort, inr, monthShort } from "@/lib/format";
-import { optionsForDate } from "@/lib/pricing";
+import { optionsForDate, unitPrice } from "@/lib/pricing";
 
 /* ------------------------------------------------------------------ Gallery + lightbox */
 
@@ -162,7 +162,7 @@ function LightboxDialog({ dialog, track, images, title, step }: {
 
 type Tier = { label: string; price: number; salePrice?: number | null };
 type Pkg = { name: string; route?: string; from?: string; to?: string; tiers: Tier[] };
-type Batch = { id: number; startDate: string; endDate: string; status: string; priceOverride: number | null; seats: number; route: string | null };
+type Batch = { id: number; startDate: string; endDate: string; status: string; priceOverride: number | null; tierPrices?: Record<string, number> | null; label?: string | null; seats: number; route: string | null };
 type Route = { name: string; from: string; to: string; reporting?: string; departTime?: string; returnTime?: string };
 
 export function PriceCard({ slug, bookable, title, basePrice, salePrice, bookingAmount, pricing, batches, routes, whatsapp, pdf, priceNote }: {
@@ -187,7 +187,7 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
   const pkg = pkgs[Math.min(p, pkgs.length - 1)];
   const tier = pkg?.tiers[Math.min(t, pkg.tiers.length - 1)];
   const listPrice = tier?.price ?? basePrice;
-  const price = batch?.priceOverride ?? tier?.salePrice ?? (tier ? tier.price : salePrice ?? basePrice);
+  const price = tier ? unitPrice(tier, batch) : batch?.priceOverride ?? salePrice ?? basePrice;
   const showStrike = listPrice && price && price < listPrice;
   // "Upto ₹X OFF": biggest discount across this route's tiers (or the trip-level sale price).
   const maxOff = Math.max(0, ...pkgs.flatMap((x) => x.tiers.map((y) => (y.salePrice ? y.price - y.salePrice : 0))), basePrice && salePrice ? basePrice - salePrice : 0);
@@ -248,8 +248,8 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
               <button key={x.label + i} type="button" aria-pressed={x === tier} onClick={() => setT(i)} className={`${chip(x === tier)} flex items-center justify-between gap-2`}>
                 <span>{x.label}</span>
                 <span className="text-right">
-                  {x.salePrice ? <span className="mr-1.5 text-xs line-through opacity-60">{inr(x.price)}</span> : null}
-                  {inr(x.salePrice ?? x.price)}
+                  {unitPrice(x, batch) < x.price ? <span className="mr-1.5 text-xs line-through opacity-60">{inr(x.price)}</span> : null}
+                  {inr(unitPrice(x, batch))}
                 </span>
               </button>
             ))}
@@ -264,7 +264,10 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
             <CalendarDays className="size-5 shrink-0 text-brand" aria-hidden />
             <span className="min-w-0 flex-1">
               <span className="eyebrow block text-muted">Departure date</span>
-              <span className="block truncate text-sm font-extrabold">{batch ? dateDay(batch.startDate) : "Pick a date"}</span>
+              <span className="flex items-center gap-1.5 truncate text-sm font-extrabold">
+                {batch ? dateDay(batch.startDate) : "Pick a date"}
+                {batch?.label && <BatchTag label={batch.label} />}
+              </span>
               {batch && <span className="block truncate text-xs font-semibold text-muted">Back {dateDay(batch.endDate)} · {bs.filter((x) => x.status !== "sold_out").length} dates</span>}
             </span>
             <span className="text-xs font-extrabold text-brand">{datesOpen ? "Done" : "Change"}</span>
@@ -286,6 +289,7 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
                 <button key={x.id} type="button" disabled={x.status === "sold_out"} aria-pressed={x.id === b} onClick={() => { setB(x.id); setDatesOpen(false); }}
                   className={`${chip(x.id === b)} disabled:cursor-not-allowed disabled:opacity-40`}>
                   <span className="block">{dateDay(x.startDate)}</span>
+                  {x.label && <BatchTag label={x.label} className="mt-1" />}
                   <span className={`block text-xs font-semibold ${x.id === b ? "text-white/70" : "text-muted"}`}>Back {dateDay(x.endDate)}</span>
                   {x.status !== "available" && (
                     <span className={`text-xs font-bold ${x.id === b ? "text-white/70" : x.status === "filling_fast" ? "text-amber-600" : "text-muted"}`}>{BATCH_LABEL[x.status]}</span>
@@ -377,4 +381,10 @@ export function ShareButton({ title }: { title: string }) {
       {done ? "Link copied ✓" : "Share"}
     </button>
   );
+}
+
+/** "Christmas" / "New Year" (or any admin label) on a departure date. */
+export function BatchTag({ label, className = "" }: { label: string; className?: string }) {
+  const tone = /christmas|xmas/i.test(label) ? "bg-green-600 text-white" : /new year/i.test(label) ? "bg-amber-400 text-amber-950" : "bg-brand text-white";
+  return <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide ${tone} ${className}`}>{label}</span>;
 }

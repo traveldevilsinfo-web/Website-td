@@ -34,7 +34,7 @@ export default async function BookingPage({ params, searchParams }: PageProps<"/
         destination: destination?.name ?? null, pricing: trip.pricing, routes: trip.routes, basePrice: trip.basePrice,
         salePrice: trip.salePrice, bookingAmount: trip.bookingAmount,
       }}
-      batches={open.map((b) => ({ id: b.id, startDate: b.startDate, endDate: b.endDate, status: b.status, seats: b.seats, route: b.route, priceOverride: b.priceOverride }))}
+      batches={open.map((b) => ({ id: b.id, startDate: b.startDate, endDate: b.endDate, status: b.status, seats: b.seats, route: b.route, priceOverride: b.priceOverride, tierPrices: b.tierPrices, label: b.label }))}
       initial={{ route: str("route"), batchId: Number(str("batch")) || null, packageName: str("pkg"), tier: str("tier") }}
       customer={customer && { phone: customer.phone, name: customer.name, email: customer.email }}
       priceNote={settings.priceNote} whatsapp={settings.whatsapp}

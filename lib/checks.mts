@@ -77,7 +77,7 @@ assert.equal(m.seo.title, "Spiti Trip");
 console.log("pdf draft merge checks passed");
 
 // Booking price engine
-import { computeQuote, optionsForDate, QuoteError, type QuoteInput } from "./pricing";
+import { computeQuote, optionsForDate, QuoteError, unitPrice, type QuoteInput } from "./pricing";
 const qbase: QuoteInput = {
   pricing: [
     { name: "Tempo", tiers: [{ label: "Triple", price: 10000, salePrice: 9000 }, { label: "Double", price: 12000 }] },
@@ -210,3 +210,14 @@ console.log("trip order checks passed");
   assert.throws(() => computeQuote({ ...xq, batch: { ...xq.batch, startDate: "2026-12-25" } }), QuoteError); // can't buy a holiday batch at the regular price
   assert.equal(computeQuote({ ...xq, packageName: "Xmas", batch: { ...xq.batch, startDate: "2026-12-25" } }).subtotal, 9000);
 }
+
+// A departure's own price for a sharing option beats everything; other options keep their normal price.
+{
+  const tier = { label: "Quad", price: 5000, salePrice: 4800 };
+  assert.equal(unitPrice(tier, { priceOverride: 6000, tierPrices: { Quad: 6899 } }), 6899);
+  assert.equal(unitPrice(tier, { priceOverride: 6000, tierPrices: { Triple: 7099 } }), 6000);
+  assert.equal(unitPrice(tier, { priceOverride: null, tierPrices: {} }), 4800);
+  const nq = computeQuote({ ...qbase, batch: { ...qbase.batch, tierPrices: { Triple: 9999 } } });
+  assert.equal(nq.subtotal, 9999 * 2 + 12000); // Triple ×2 at the batch price, Double unchanged
+}
+console.log("batch price checks passed");

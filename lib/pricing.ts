@@ -12,7 +12,7 @@ export type QuoteInput = {
   basePrice: number | null;
   salePrice: number | null;
   bookingAmount: number | null; // per person, for "reserve now"
-  batch: { startDate: string; status: string; seats: number; priceOverride: number | null; route: string | null };
+  batch: { startDate: string; status: string; seats: number; priceOverride: number | null; tierPrices?: Record<string, number> | null; route: string | null };
   route: string; // "" when the trip has no routes
   packageName: string; // "" when the trip has no packages
   qty: Record<string, number>; // tier label -> travellers
@@ -28,6 +28,13 @@ export type Quote = {
 };
 
 export class QuoteError extends Error {}
+
+type PricedBatch = { priceOverride: number | null; tierPrices?: Record<string, number> | null } | null | undefined;
+/** What one traveller pays for a sharing option on a departure: that departure's own price for the option (e.g. a
+ *  Christmas batch), else its flat special price, else the sale price, else the list price. */
+export function unitPrice(tier: { label: string; price: number; salePrice?: number | null }, batch?: PricedBatch) {
+  return batch?.tierPrices?.[tier.label] ?? batch?.priceOverride ?? tier.salePrice ?? tier.price;
+}
 
 /** Price groups for a departure: date-bound groups win for batches starting inside their window, otherwise the undated ones. */
 export function optionsForDate<T extends { from?: string; to?: string }>(options: T[], start?: string): T[] {
@@ -62,7 +69,7 @@ export function computeQuote(q: QuoteInput): Quote {
     const pkg = pkgs.find((p) => p.name === q.packageName) ?? (q.packageName ? null : pkgs[0]);
     if (!pkg) throw new QuoteError("Choose a package.");
     lines = pkg.tiers
-      .map((t) => ({ label: t.label, unitPrice: q.batch.priceOverride ?? t.salePrice ?? t.price, qty: Math.floor(q.qty[t.label] ?? 0) }))
+      .map((t) => ({ label: t.label, unitPrice: unitPrice(t, q.batch), qty: Math.floor(q.qty[t.label] ?? 0) }))
       .filter((l) => l.qty > 0);
     const unknown = Object.entries(q.qty).filter(([k, v]) => v > 0 && !pkg.tiers.some((t) => t.label === k));
     if (unknown.length) throw new QuoteError("Unknown sharing option selected.");

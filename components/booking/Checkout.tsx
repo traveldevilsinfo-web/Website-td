@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { PaymentStart } from "@/lib/bookings";
-import { optionsForDate, type Quote } from "@/lib/pricing";
+import { optionsForDate, unitPrice, type Quote } from "@/lib/pricing";
+import { BatchTag } from "@/components/site/TripClient";
 import { BATCH_LABEL, dateShort, inr, monthShort } from "@/lib/format";
 import { completeTestPayment, getQuote, submitCheckout } from "@/app/(site)/booking/actions";
 import { AuthForm } from "./AuthForm";
@@ -12,7 +13,7 @@ import { payWithRazorpay } from "./pay";
 
 type Tier = { label: string; price: number; salePrice?: number | null };
 type Pkg = { name: string; route?: string; from?: string; to?: string; tiers: Tier[] };
-type Batch = { id: number; startDate: string; endDate: string; status: string; seats: number; route: string | null; priceOverride: number | null };
+type Batch = { id: number; startDate: string; endDate: string; status: string; seats: number; route: string | null; priceOverride: number | null; tierPrices?: Record<string, number> | null; label?: string | null };
 type Route = { name: string; from: string; to: string; reporting?: string; departTime?: string };
 type Traveller = { name: string; age: string; gender: "male" | "female" | "other" | "" };
 
@@ -160,7 +161,8 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
                 <button key={b.id} type="button" disabled={b.status === "sold_out"} aria-pressed={b.id === batchId} onClick={() => setBatchId(b.id)}
                   className={`${chip(b.id === batchId)} disabled:cursor-not-allowed disabled:opacity-40`}>
                   <span className="block">{dateShort(b.startDate)} – {dateShort(b.endDate)}</span>
-                  <span className={`text-xs font-bold ${b.id === batchId ? "text-white/70" : b.status === "filling_fast" ? "text-amber-600" : "text-green-700"}`}>
+                  {b.label && <BatchTag label={b.label} className="my-1" />}
+                  <span className={`block text-xs font-bold ${b.id === batchId ? "text-white/70" : b.status === "filling_fast" ? "text-amber-600" : "text-green-700"}`}>
                     {BATCH_LABEL[b.status]}{b.status !== "sold_out" && b.seats <= 6 ? ` · ${b.seats} left` : ""}
                   </span>
                 </button>
@@ -181,7 +183,7 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
             <p className="eyebrow mb-2 text-muted">Travellers</p>
             <ul className="divide-y divide-line rounded-2xl border border-line">
               {(pkg ? pkg.tiers : [{ label: "Per person", price: selectedBatch?.priceOverride ?? trip.salePrice ?? trip.basePrice ?? 0 } as Tier]).map((tier) => {
-                const unit = selectedBatch?.priceOverride ?? tier.salePrice ?? tier.price;
+                const unit = unitPrice(tier, selectedBatch);
                 const n = qty[tier.label] ?? 0;
                 return (
                   <li key={tier.label} className="flex items-center justify-between gap-3 p-4">

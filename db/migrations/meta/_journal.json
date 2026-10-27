@@ -50,6 +50,13 @@
       "when": 1790173361567,
       "tag": "0006_custom_trip_leads",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1793125815880,
+      "tag": "0007_batch_special_prices",
+      "breakpoints": true
     }
   ]
 }

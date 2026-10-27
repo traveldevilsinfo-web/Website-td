@@ -131,7 +131,7 @@ export function holidayWindow(now = new Date()) {
 /** Published trips with a departure in the holiday window, each with those departures (start/end) and its holiday "from" price. */
 export const getHolidayTrips = cache(async () => {
   const w = holidayWindow();
-  const deps = await db.select({ tripId: t.tripBatches.tripId, start: t.tripBatches.startDate, end: t.tripBatches.endDate, status: t.tripBatches.status })
+  const deps = await db.select({ tripId: t.tripBatches.tripId, start: t.tripBatches.startDate, end: t.tripBatches.endDate, status: t.tripBatches.status, label: t.tripBatches.label, tierPrices: t.tripBatches.tierPrices })
     .from(t.tripBatches)
     .where(and(gte(t.tripBatches.startDate, w.from > today() ? w.from : today()), sql`${t.tripBatches.startDate} <= ${w.to}`, sql`${t.tripBatches.status} <> 'closed'`))
     .orderBy(asc(t.tripBatches.startDate));
@@ -142,13 +142,16 @@ export const getHolidayTrips = cache(async () => {
     db.select({ id: t.trips.id, pricing: t.trips.pricing }).from(t.trips).where(inArray(t.trips.id, ids)),
   ]);
   const holidayFrom = (id: number) => {
+    // a departure's own holiday prices (set in admin) win over the trip's Christmas price group
+    const own = deps.filter((d) => d.tripId === id).flatMap((d) => Object.values(d.tierPrices ?? {}));
+    if (own.length) return Math.min(...own);
     const p = prices.find((x) => x.id === id)?.pricing ?? [];
     const tiers = p.filter((o) => o.from && o.from <= w.to && (o.to ?? o.from) >= w.from).flatMap((o) => o.tiers.map((x) => x.salePrice ?? x.price));
     return tiers.length ? Math.min(...tiers) : null;
   };
   return {
     window: w,
-    trips: cards.map((c) => ({ ...c, holidayPrice: holidayFrom(c.id), holidayDates: deps.filter((d) => d.tripId === c.id).map(({ start, end, status }) => ({ start, end, status })) })),
+    trips: cards.map((c) => ({ ...c, holidayPrice: holidayFrom(c.id), holidayDates: deps.filter((d) => d.tripId === c.id).map(({ start, end, status, label }) => ({ start, end, status, label })) })),
   };
 });
 export type HolidayTrip = Awaited<ReturnType<typeof getHolidayTrips>>["trips"][number];
