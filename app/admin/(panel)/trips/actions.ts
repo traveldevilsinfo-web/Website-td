@@ -45,6 +45,7 @@ const batchSchema = z.array(z.object({
   route: z.string().trim().optional(),
   note: z.string().optional(),
   label: z.string().trim().max(30).optional(),
+  inclusions: z.array(z.string().trim().max(80)).max(12).optional().transform((a) => (a ?? []).filter(Boolean)),
   // empty boxes are dropped (normal price); 0 means "not offered on this date"
   tierPrices: z.record(z.string(), num).optional().transform((o) => Object.fromEntries(Object.entries(o ?? {}).filter((e): e is [string, number] => e[1] != null))),
 })).max(200);

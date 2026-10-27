@@ -232,7 +232,13 @@
         "Quad Sharing": 6899,
         "Triple Sharing": 7099,
         "Double Sharing": 7299
-      }
+      },
+      "inclusions": [
+        "New Year party",
+        "Unlimited snacks (2+2)",
+        "DJ night",
+        "Travel Devils merchandise"
+      ]
     },
     {
       "slug": "kanatal-tehri",
@@ -244,7 +250,13 @@
         "Quad Sharing": 6899,
         "Triple Sharing": 7099,
         "Double Sharing": 0
-      }
+      },
+      "inclusions": [
+        "New Year party",
+        "Unlimited snacks (2+2)",
+        "DJ night",
+        "Travel Devils merchandise"
+      ]
     },
     {
       "slug": "mukteshwar-kainchi-dham",
@@ -256,7 +268,13 @@
         "Quad Sharing": 6899,
         "Triple Sharing": 7099,
         "Double Sharing": 0
-      }
+      },
+      "inclusions": [
+        "New Year party",
+        "Unlimited snacks (2+2)",
+        "DJ night",
+        "Travel Devils merchandise"
+      ]
     },
     {
       "slug": "jibhi-tirthan",

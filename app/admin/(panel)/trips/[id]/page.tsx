@@ -30,7 +30,7 @@ export default async function TripEditor({ params, searchParams }: PageProps<"/a
     basePrice: trip?.basePrice ?? null, salePrice: trip?.salePrice ?? null, bookingAmount: trip?.bookingAmount ?? null,
     pricing: trip?.pricing ?? [],
     routes: trip?.routes ?? [],
-    batches: batches.map((b) => ({ id: b.id, startDate: b.startDate, endDate: b.endDate, seats: b.seats, status: b.status, priceOverride: b.priceOverride ?? "", note: b.note ?? "", route: b.route ?? "", label: b.label ?? "", tierPrices: b.tierPrices ?? {} })),
+    batches: batches.map((b) => ({ id: b.id, startDate: b.startDate, endDate: b.endDate, seats: b.seats, status: b.status, priceOverride: b.priceOverride ?? "", note: b.note ?? "", route: b.route ?? "", label: b.label ?? "", tierPrices: b.tierPrices ?? {}, inclusions: b.inclusions ?? [] })),
     coverImage: trip?.coverImage ?? "", gallery: trip?.gallery ?? [], videoUrl: trip?.videoUrl ?? "", itineraryPdf: trip?.itineraryPdf ?? "",
     overview: trip?.overview ?? "", highlights: trip?.highlights ?? [], itinerary: trip?.itinerary ?? [],
     includes: trip?.includes ?? [], excludes: trip?.excludes ?? [], thingsToCarry: trip?.thingsToCarry ?? [],

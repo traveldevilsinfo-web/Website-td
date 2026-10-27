@@ -87,7 +87,7 @@ export function DeparturesEditor({ name, initial, routes, durationDays, tierLabe
               <th className="px-2 py-2 font-medium">Starts</th><th className="px-2 py-2 font-medium">Ends</th>
               <th className="w-20 px-2 py-2 font-medium">Seats</th><th className="px-2 py-2 font-medium">Status</th>
               <th className="w-32 px-2 py-2 font-medium">Label</th>
-              <th className="w-28 px-2 py-2 font-medium">Special ₹</th>
+              <th className="w-36 px-2 py-2 font-medium">Special price &amp; extras</th>
               {routes.length > 0 && <th className="px-2 py-2 font-medium">Route</th>}
               <th className="px-2 py-2 font-medium">Note</th><th className="w-8" />
             </tr>
@@ -114,14 +114,17 @@ export function DeparturesEditor({ name, initial, routes, durationDays, tierLabe
                   <input aria-label="Label" list="batch-labels" placeholder="—" value={r.label ?? ""} onChange={(e) => set(i, { label: e.target.value })} className={cell} />
                 </td>
                 <td className="px-2 py-1.5">
-                  {tierLabels.length > 0 ? (
-                    <button type="button" onClick={() => setOpenPrices(openPrices === i ? null : i)} aria-expanded={openPrices === i}
-                      className={`${cell} w-full text-left ${Object.values(r.tierPrices ?? {}).some((v) => v !== "" && v != null) ? "!border-amber-400 bg-amber-50 font-semibold" : ""}`}>
-                      {Object.values(r.tierPrices ?? {}).filter((v) => v !== "" && v != null).length || "Set"} price{Object.values(r.tierPrices ?? {}).filter((v) => v !== "" && v != null).length === 1 ? "" : "s"} ▾
-                    </button>
-                  ) : (
-                    <input type="number" aria-label="Special price" placeholder="—" value={r.priceOverride} onChange={(e) => set(i, { priceOverride: e.target.value })} className={cell} />
-                  )}
+                  {(() => {
+                    const nPrices = Object.values(r.tierPrices ?? {}).filter((v) => v !== "" && v != null).length + (r.priceOverride !== "" && r.priceOverride != null ? 1 : 0);
+                    const nExtras = (r.inclusions ?? []).filter(Boolean).length;
+                    const summary = [nPrices && `${nPrices} price${nPrices === 1 ? "" : "s"}`, nExtras && `${nExtras} extra${nExtras === 1 ? "" : "s"}`].filter(Boolean).join(" · ");
+                    return (
+                      <button type="button" onClick={() => setOpenPrices(openPrices === i ? null : i)} aria-expanded={openPrices === i}
+                        className={`${cell} w-full text-left ${summary ? "!border-amber-400 bg-amber-50 font-semibold" : ""}`}>
+                        {summary || "Set"} ▾
+                      </button>
+                    );
+                  })()}
                 </td>
                 {routes.length > 0 && (
                   <td className="px-2 py-1.5">
@@ -140,6 +143,11 @@ export function DeparturesEditor({ name, initial, routes, durationDays, tierLabe
                   <td colSpan={9} className="px-3 py-3">
                     <p className="mb-2 text-xs text-gray-600">Prices for <b>this date only</b> (per person). Leave a box empty to use the normal price; enter <b>0</b> to stop that option being booked on this date. Use it for Christmas, New Year, long weekends or a one-off offer.</p>
                     <div className="flex flex-wrap gap-3">
+                      {tierLabels.length === 0 && (
+                        <label className="text-xs text-gray-600">Price per person
+                          <input type="number" min={0} placeholder="normal" value={r.priceOverride} onChange={(e) => set(i, { priceOverride: e.target.value })} className={`${cell} mt-0.5 block w-32`} />
+                        </label>
+                      )}
                       {tierLabels.map((l) => (
                         <label key={l} className="text-xs text-gray-600">{l}
                           <input type="number" min={0} placeholder="normal" value={r.tierPrices?.[l] ?? ""}
@@ -147,6 +155,10 @@ export function DeparturesEditor({ name, initial, routes, durationDays, tierLabe
                         </label>
                       ))}
                     </div>
+                    <label className="mt-3 block text-xs text-gray-600">Extra inclusions on this date (one per line), shown to travellers at booking, e.g. New Year party, DJ night
+                      <textarea rows={3} value={(r.inclusions ?? []).join("\n")} placeholder={"New Year party\nDJ night"}
+                        onChange={(e) => set(i, { inclusions: e.target.value.split("\n") })} className={`${input} mt-0.5 block w-full max-w-xl !text-sm`} />
+                    </label>
                   </td>
                 </tr>
               )}

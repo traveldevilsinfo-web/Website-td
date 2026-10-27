@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CalendarDays, ChevronDown, Download } from "lucide-react";
+import { CalendarDays, Check, ChevronDown, Download, PartyPopper } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { OpenLeadButton } from "@/components/LeadDialog";
 import { BATCH_LABEL, dateDay, dateShort, inr, monthShort } from "@/lib/format";
@@ -162,7 +162,7 @@ function LightboxDialog({ dialog, track, images, title, step }: {
 
 type Tier = { label: string; price: number; salePrice?: number | null };
 type Pkg = { name: string; route?: string; from?: string; to?: string; tiers: Tier[] };
-type Batch = { id: number; startDate: string; endDate: string; status: string; priceOverride: number | null; tierPrices?: Record<string, number> | null; label?: string | null; seats: number; route: string | null };
+type Batch = { id: number; startDate: string; endDate: string; status: string; priceOverride: number | null; tierPrices?: Record<string, number> | null; label?: string | null; inclusions?: string[] | null; seats: number; route: string | null };
 type Route = { name: string; from: string; to: string; reporting?: string; departTime?: string; returnTime?: string };
 
 export function PriceCard({ slug, bookable, title, basePrice, salePrice, bookingAmount, pricing, batches, routes, whatsapp, pdf, priceNote }: {
@@ -301,6 +301,7 @@ export function PriceCard({ slug, bookable, title, basePrice, salePrice, booking
           </div>
         </details>
       )}
+      <BatchExtras label={batch?.label} items={batch?.inclusions} className="mt-4" />
 
       <div className="mt-6 grid gap-2">
         {bookable && batch ? (
@@ -388,4 +389,23 @@ export function ShareButton({ title }: { title: string }) {
 export function BatchTag({ label, className = "" }: { label: string; className?: string }) {
   const tone = /christmas|xmas/i.test(label) ? "bg-green-600 text-white" : /new year/i.test(label) ? "bg-amber-400 text-amber-950" : "bg-brand text-white";
   return <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide ${tone} ${className}`}>{label}</span>;
+}
+
+/** What a special departure adds on top of the usual inclusions (e.g. the New Year party), so its higher price makes sense. */
+export function BatchExtras({ label, items, className = "" }: { label?: string | null; items?: string[] | null; className?: string }) {
+  if (!items?.length) return null;
+  return (
+    <div className={`fade-in rounded-2xl border border-amber-300/70 bg-gradient-to-br from-amber-50 to-orange-50 p-4 ${className}`}>
+      <p className="flex items-center gap-2 text-sm font-extrabold text-amber-900">
+        <PartyPopper className="size-4" aria-hidden /> {label ? `${label} special: also included` : "Also included on this date"}
+      </p>
+      <ul className="mt-2 grid gap-1.5">
+        {items.map((x) => (
+          <li key={x} className="flex items-start gap-2 text-sm font-semibold text-amber-950">
+            <Check className="mt-0.5 size-4 shrink-0 text-green-600" aria-hidden /> {x}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

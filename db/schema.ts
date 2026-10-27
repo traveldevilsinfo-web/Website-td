@@ -133,6 +133,8 @@ export const tripBatches = pgTable(
     tierPrices: jsonb("tier_prices").$type<Record<string, number>>().notNull().default({}),
     /** Shown on the date, e.g. "Christmas" or "New Year". */
     label: text("label"),
+    /** Extras this departure includes on top of the trip's usual inclusions, e.g. "New Year party", "DJ night". */
+    inclusions: text("inclusions").array().notNull().default([]),
     route: text("route"), // TripRoute.name; null = every route
     note: text("note"),
   },

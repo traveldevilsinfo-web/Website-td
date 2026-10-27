@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { PaymentStart } from "@/lib/bookings";
 import { optionsForDate, tiersFor, unitPrice, type Quote } from "@/lib/pricing";
-import { BatchTag } from "@/components/site/TripClient";
+import { BatchExtras, BatchTag } from "@/components/site/TripClient";
 import { BATCH_LABEL, dateShort, inr, monthShort } from "@/lib/format";
 import { completeTestPayment, getQuote, submitCheckout } from "@/app/(site)/booking/actions";
 import { AuthForm } from "./AuthForm";
@@ -13,7 +13,7 @@ import { payWithRazorpay } from "./pay";
 
 type Tier = { label: string; price: number; salePrice?: number | null };
 type Pkg = { name: string; route?: string; from?: string; to?: string; tiers: Tier[] };
-type Batch = { id: number; startDate: string; endDate: string; status: string; seats: number; route: string | null; priceOverride: number | null; tierPrices?: Record<string, number> | null; label?: string | null };
+type Batch = { id: number; startDate: string; endDate: string; status: string; seats: number; route: string | null; priceOverride: number | null; tierPrices?: Record<string, number> | null; label?: string | null; inclusions?: string[] | null };
 type Route = { name: string; from: string; to: string; reporting?: string; departTime?: string };
 type Traveller = { name: string; age: string; gender: "male" | "female" | "other" | "" };
 
@@ -258,6 +258,7 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
                 <div className="flex justify-between border-t border-line pt-2 text-base"><span className="font-extrabold">Total</span><span className="font-extrabold">{inr(quote.total)}</span></div>
               </>
             )}
+            <BatchExtras label={selectedBatch?.label} items={selectedBatch?.inclusions} className="!mt-4" />
             {quoteErr && <p role="alert" className="rounded-xl bg-red-50 p-3 font-semibold text-red-700">{quoteErr}</p>}
           </div>
 

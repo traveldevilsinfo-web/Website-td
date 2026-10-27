@@ -1,0 +1,1 @@
+ALTER TABLE "trip_batches" ADD COLUMN "inclusions" text[] DEFAULT '{}' NOT NULL;
