@@ -101,7 +101,7 @@
     },
     {
       "q": "How much does the Manali, Kasol & Jibhi trip cost?",
-      "a": "On regular dates: ₹14,000 per person on quad sharing, ₹14,500 on triple and ₹15,000 on double. 5% GST is extra."
+      "a": "On regular dates: ₹14,000 per person on quad sharing, ₹14,500 on triple and ₹15,000 on double. Christmas (24 and 27 December) and New Year (29 December) departures have their own price, shown when you pick that date. 5% GST is extra."
     },
     {
       "q": "What is included?",
@@ -156,6 +156,8 @@
       "2026-12-18",
       "2026-12-24",
       "2026-12-25",
+      "2026-12-27",
+      "2026-12-29",
       "2026-12-30"
     ],
     "returnAfterDays": 6,

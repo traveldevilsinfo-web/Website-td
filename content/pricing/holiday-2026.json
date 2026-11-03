@@ -1,5 +1,5 @@
 {
-  "note": "Christmas = 24 & 25 Dec; New Year = 30 Dec, plus 29 Dec on 2N3D trips (owner's lists, 28 Oct and 3 Nov 2026). 2N3D trips run no other batches between 24 and 30 Dec. close:true turns dates off (never a booked one); status sets availability (e.g. sold_out). Apply with scripts/apply-holiday-prices.mts; afterwards edit in Admin → Trips → Departures. 3N4D (3 Nov): Jibhi-Tirthan-Kasol and Manali-Sissu-Kasol run 24/25 + 28/29; Chitkul-Kalpa, Kasol-Kheerganga-Tosh and McLeodganj-Triund-Bir run 24/26 + 29.",
+  "note": "Christmas = 24 & 25 Dec; New Year = 30 Dec, plus 29 Dec on 2N3D trips (owner's lists, 28 Oct and 3 Nov 2026). 2N3D trips run no other batches between 24 and 30 Dec. close:true turns dates off (never a booked one); status sets availability (e.g. sold_out). Apply with scripts/apply-holiday-prices.mts; afterwards edit in Admin → Trips → Departures. 3N4D (3 Nov): Jibhi-Tirthan-Kasol and Manali-Sissu-Kasol run 24/25 + 28/29; Chitkul-Kalpa, Kasol-Kheerganga-Tosh and McLeodganj-Triund-Bir run 24/26 + 29. 4N5D (3 Nov): 24/27 Christmas, 29 New Year.",
   "batches": [
     {
       "slug": "chakrata",
@@ -157,42 +157,6 @@
     },
     {
       "slug": "manali-jispa",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25",
-        "2026-12-30"
-      ],
-      "close": true
-    },
-    {
-      "slug": "manali-kasol-jibhi-4n5d",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25",
-        "2026-12-30"
-      ],
-      "close": true
-    },
-    {
-      "slug": "manali-kasol-kheerganga-4n5d",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25",
-        "2026-12-30"
-      ],
-      "close": true
-    },
-    {
-      "slug": "manali-kasol-tosh-4n5d",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25",
-        "2026-12-30"
-      ],
-      "close": true
-    },
-    {
-      "slug": "mcleodganj-bir-jibhi-4n5d",
       "dates": [
         "2026-12-24",
         "2026-12-25",
@@ -1100,6 +1064,186 @@
       "dates": [
         "2026-12-25",
         "2026-12-27",
+        "2026-12-28",
+        "2026-12-30"
+      ],
+      "close": true
+    },
+    {
+      "slug": "mcleodganj-bir-jibhi-4n5d",
+      "dates": [
+        "2026-12-24",
+        "2026-12-27"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 16000,
+        "Triple Sharing": 17000,
+        "Double Sharing": 18000
+      },
+      "create": {
+        "returnAfterDays": 6,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "mcleodganj-bir-jibhi-4n5d",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 16000,
+        "Triple Sharing": 17000,
+        "Double Sharing": 18000
+      },
+      "create": {
+        "returnAfterDays": 6,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "mcleodganj-bir-jibhi-4n5d",
+      "dates": [
+        "2026-12-25",
+        "2026-12-26",
+        "2026-12-28",
+        "2026-12-30"
+      ],
+      "close": true
+    },
+    {
+      "slug": "manali-kasol-jibhi-4n5d",
+      "dates": [
+        "2026-12-24",
+        "2026-12-27"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 15000,
+        "Triple Sharing": 16000,
+        "Double Sharing": 17000
+      },
+      "create": {
+        "returnAfterDays": 6,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "manali-kasol-jibhi-4n5d",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 15000,
+        "Triple Sharing": 16000,
+        "Double Sharing": 17000
+      },
+      "create": {
+        "returnAfterDays": 6,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "manali-kasol-jibhi-4n5d",
+      "dates": [
+        "2026-12-25",
+        "2026-12-26",
+        "2026-12-28",
+        "2026-12-30"
+      ],
+      "close": true
+    },
+    {
+      "slug": "manali-kasol-kheerganga-4n5d",
+      "dates": [
+        "2026-12-24",
+        "2026-12-27"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 14000,
+        "Triple Sharing": 15000,
+        "Double Sharing": 16000
+      },
+      "create": {
+        "returnAfterDays": 6,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "manali-kasol-kheerganga-4n5d",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 14000,
+        "Triple Sharing": 15000,
+        "Double Sharing": 16000
+      },
+      "create": {
+        "returnAfterDays": 6,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "manali-kasol-kheerganga-4n5d",
+      "dates": [
+        "2026-12-25",
+        "2026-12-26",
+        "2026-12-28",
+        "2026-12-30"
+      ],
+      "close": true
+    },
+    {
+      "slug": "manali-kasol-tosh-4n5d",
+      "dates": [
+        "2026-12-24",
+        "2026-12-27"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 14500,
+        "Triple Sharing": 15500,
+        "Double Sharing": 16500
+      },
+      "create": {
+        "returnAfterDays": 6,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "manali-kasol-tosh-4n5d",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 14500,
+        "Triple Sharing": 15500,
+        "Double Sharing": 16500
+      },
+      "create": {
+        "returnAfterDays": 6,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "manali-kasol-tosh-4n5d",
+      "dates": [
+        "2026-12-25",
+        "2026-12-26",
         "2026-12-28",
         "2026-12-30"
       ],
