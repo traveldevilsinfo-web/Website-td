@@ -6,6 +6,7 @@ import { db, t } from "./db";
 import { computeQuote, QuoteError, type CouponRule, type Quote } from "./pricing";
 import { createRazorpayOrder, razorpayConfigured, razorpayKeyId, testPaymentsAllowed } from "./razorpay";
 import { alertPaymentFailed, alertPaymentReceived } from "./alerts";
+import { sendBookingConfirmation } from "./customer-email";
 import { getSettings } from "./settings";
 
 export const selectionSchema = z.object({
@@ -23,6 +24,7 @@ const PHONE = /^[6-9]\d{9}$/;
 export const checkoutSchema = selectionSchema.extend({
   contactName: z.string().trim().min(2, "Enter the lead traveller's name").max(80),
   contactEmail: z.string().trim().email("Enter a valid email").max(120),
+  contactPhone: z.string().trim().max(20).optional(), // guests only; logged-in customers book with their account's phone
   travellers: z.array(z.object({
     name: z.string().trim().min(2, "Every traveller needs a name").max(80),
     age: z.coerce.number().int().min(1, "Enter a valid age").max(99),
@@ -77,7 +79,31 @@ async function startPayment(booking: { id: number; code: string; tripTitle: stri
   return { mode: "test", paymentId: p.id, amount, bookingCode: booking.code };
 }
 
-export async function createBooking(input: z.infer<typeof checkoutSchema>, customer: { id: number; phone: string }) {
+/**
+ * Guest checkout: the customer record for this phone (or email), created if new. No password: the confirmation
+ * email and page offer to create the account. An existing account's details are never overwritten.
+ */
+export async function findOrCreateGuest(v: { name: string; email: string; phone: string }) {
+  const email = v.email.toLowerCase();
+  const [byPhone] = await db.select().from(t.customers).where(eq(t.customers.phone, v.phone));
+  if (byPhone) {
+    if (!byPhone.passwordHash) {
+      const [emailTaken] = await db.select({ id: t.customers.id }).from(t.customers).where(eq(t.customers.email, email));
+      await db.update(t.customers).set(emailTaken ? { name: v.name } : { name: v.name, email }).where(eq(t.customers.id, byPhone.id));
+    }
+    return { id: byPhone.id, phone: byPhone.phone };
+  }
+  const [byEmail] = await db.select().from(t.customers).where(eq(t.customers.email, email));
+  if (byEmail) return { id: byEmail.id, phone: byEmail.phone };
+  const [c] = await db.insert(t.customers).values({ phone: v.phone, email, name: v.name })
+    .onConflictDoNothing().returning({ id: t.customers.id, phone: t.customers.phone });
+  if (c) return c;
+  // created by a parallel request a moment ago
+  const [again] = await db.select({ id: t.customers.id, phone: t.customers.phone }).from(t.customers).where(eq(t.customers.phone, v.phone));
+  return again;
+}
+
+export async function createBooking(input: z.infer<typeof checkoutSchema>, customer: { id: number; phone: string }, guest = false) {
   const q = await quoteSelection(input);
   if (!q.couponFound) throw new QuoteError("Invalid coupon code.");
   if (input.travellers.length !== q.pax) throw new QuoteError(`Enter details for all ${q.pax} travellers.`);
@@ -86,10 +112,10 @@ export async function createBooking(input: z.infer<typeof checkoutSchema>, custo
   const [booking] = await db.insert(t.bookings).values({
     code: bookingCode(), customerId: customer.id, tripId: c.trip.id, batchId: c.batch.id, tripTitle: c.trip.title,
     route: input.route || null, packageName: input.packageName || null, lines: q.lines, travellers: input.travellers,
-    contactName: input.contactName, contactEmail: input.contactEmail, contactPhone: customer.phone, pax: q.pax,
+    contactName: input.contactName, contactEmail: input.contactEmail, contactPhone: guest && input.contactPhone ? input.contactPhone : customer.phone, pax: q.pax,
     subtotal: q.subtotal, discount: q.discount, couponCode: q.couponCode, gstPercent: q.gstPercent, gst: q.gst, total: q.total,
   }).returning();
-  await db.update(t.customers).set({ name: input.contactName, email: input.contactEmail }).where(eq(t.customers.id, customer.id));
+  if (!guest) await db.update(t.customers).set({ name: input.contactName, email: input.contactEmail }).where(eq(t.customers.id, customer.id));
   return startPayment(booking, q.payNow);
 }
 
@@ -132,11 +158,15 @@ export async function confirmPayment(where: { orderId: string } | { paymentRowId
     await tx.update(t.bookings).set({ paid, status, seatsHeld }).where(eq(t.bookings.id, b.id));
     return {
       ok: true as const, code: b.code, already: false,
+      firstPayment: b.paid === 0,
       alert: { id: b.id, code: b.code, tripTitle: b.tripTitle, contactName: b.contactName, contactPhone: b.contactPhone, pax: b.pax, total: b.total, amount: p.amount, paid, needsAttention: status === "needs_attention" },
     };
   });
   // Tell the team once per captured payment (not on the duplicate callback/webhook), after the transaction commits.
-  if (result.ok && "alert" in result && result.alert) await alertPaymentReceived(result.alert);
+  if (result.ok && "alert" in result && result.alert) {
+    await alertPaymentReceived(result.alert);
+    if (result.firstPayment) await sendBookingConfirmation(result.alert.id); // the traveller's confirmation + "create your account" link
+  }
   return result;
 }
 

@@ -50,7 +50,8 @@ export function AuthForm({ onDone, whatsapp, mode: initial = "login", onModeChan
       {mode === "register" && (
         <Input icon={User} name="name" required minLength={2} autoComplete="name" placeholder="Full name" aria-label="Full name" />
       )}
-      <Input icon={Mail} name="email" type="email" required autoComplete="email" placeholder="Email address" aria-label="Email address"
+      <Input icon={Mail} name="email" type={mode === "login" ? "text" : "email"} required autoComplete={mode === "login" ? "username" : "email"}
+        placeholder={mode === "login" ? "Email or mobile number" : "Email address"} aria-label={mode === "login" ? "Email or mobile number" : "Email address"}
         value={email} onChange={(e) => setEmail(e.target.value)} />
       {mode === "register" && (
         <label className={box}>

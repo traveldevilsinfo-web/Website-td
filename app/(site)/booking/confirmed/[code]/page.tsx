@@ -3,6 +3,9 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { and, eq } from "drizzle-orm";
 import { getCustomer } from "@/lib/customer-auth";
+import { guestBookingCodes, setupToken } from "@/lib/guest";
+import { AccountSetupForm } from "@/components/booking/AccountSetupForm";
+import { customerEmailConfigured } from "@/lib/customer-email";
 import { db, t } from "@/lib/db";
 import { dateShort, inr } from "@/lib/format";
 import { getSettings } from "@/lib/settings";
@@ -11,13 +14,18 @@ export const metadata: Metadata = { title: "Booking confirmed", robots: { index:
 
 export default async function Confirmed({ params }: PageProps<"/booking/confirmed/[code]">) {
   const { code } = await params;
-  const customer = await getCustomer();
-  if (!customer) redirect(`/login?next=/booking/confirmed/${code}`);
-  const [row] = await db.select({ b: t.bookings, batch: t.tripBatches }).from(t.bookings)
+  // The account that owns the booking, or the browser that just booked it as a guest.
+  const [customer, guestCodes] = await Promise.all([getCustomer(), guestBookingCodes()]);
+  const guest = guestCodes.includes(code);
+  if (!customer && !guest) redirect(`/login?next=/booking/confirmed/${code}`);
+  const [row] = await db.select({ b: t.bookings, batch: t.tripBatches, owner: t.customers }).from(t.bookings)
     .innerJoin(t.tripBatches, eq(t.tripBatches.id, t.bookings.batchId))
-    .where(and(eq(t.bookings.code, code), eq(t.bookings.customerId, customer.id)));
+    .innerJoin(t.customers, eq(t.customers.id, t.bookings.customerId))
+    .where(and(eq(t.bookings.code, code), guest ? undefined : eq(t.bookings.customerId, customer!.id)));
   if (!row) redirect("/account");
-  const { b, batch } = row;
+  const { b, batch, owner } = row;
+  // Guest with no account yet: offer it right here (also sent by email after payment).
+  const offerAccount = !customer && !owner.passwordHash && b.paid > 0;
   const settings = await getSettings();
   const due = b.total - b.paid;
   const ok = b.status === "confirmed";
@@ -52,8 +60,20 @@ export default async function Confirmed({ params }: PageProps<"/booking/confirme
         })}
       </dl>
 
+      {offerAccount && (
+        <div className="mt-8 rounded-[1.75rem] border-2 border-brand/20 bg-brand/[0.03] p-6">
+          <h2 className="text-xl font-extrabold">Track this booking: create your account</h2>
+          <p className="mt-1 mb-4 text-sm text-muted">One step: pick a password. You&apos;ll see your bookings, pay any balance and get trip updates.{customerEmailConfigured() && " We've also emailed you this link."}</p>
+          <AccountSetupForm token={setupToken(owner)} login={owner.email ?? `+91 ${owner.phone}`} />
+        </div>
+      )}
+
       <div className="mt-8 flex flex-wrap justify-center gap-3">
+        {!customer && owner.passwordHash ? (
+          <Link href={`/login?next=/account`} className="press rounded-full bg-ink px-6 py-3 font-extrabold text-white">Log in to My Bookings</Link>
+        ) : customer ? (
         <Link href="/account" className="press rounded-full bg-ink px-6 py-3 font-extrabold text-white">{due > 0 && b.status !== "cancelled" ? "Pay balance in My Bookings" : "My Bookings"}</Link>
+        ) : null}
         <a href={`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(`Hi! My booking ID is ${b.code}`)}`} target="_blank" rel="noopener noreferrer"
           className="press rounded-full border border-line px-6 py-3 font-extrabold">WhatsApp us</a>
       </div>

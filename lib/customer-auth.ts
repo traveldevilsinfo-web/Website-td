@@ -2,9 +2,10 @@ import "server-only";
 import { createHash, randomBytes } from "node:crypto";
 import { cache } from "react";
 import { cookies } from "next/headers";
-import { and, eq, gt, lt } from "drizzle-orm";
+import { and, eq, gt, isNull, lt } from "drizzle-orm";
 import { db, t } from "./db";
 import { hashPassword, verifyPassword } from "./auth-hash";
+import { normalizePhone } from "./lead";
 
 const COOKIE = "td_customer";
 const REMEMBER_DAYS = 60;
@@ -47,9 +48,11 @@ export async function registerCustomer(
   return { ok: true, customerId: c.id };
 }
 
+/** Log in with the account's email or its mobile number. */
 export async function loginCustomer(emailRaw: string, password: string, remember: boolean): Promise<AuthResult> {
   const email = emailRaw.trim().toLowerCase();
-  const [c] = await db.select().from(t.customers).where(eq(t.customers.email, email));
+  const phone = email.includes("@") ? null : normalizePhone(email);
+  const [c] = await db.select().from(t.customers).where(phone ? eq(t.customers.phone, phone) : eq(t.customers.email, email));
   if (c?.lockedUntil && c.lockedUntil > new Date()) {
     const mins = Math.ceil((c.lockedUntil.getTime() - Date.now()) / 60_000);
     return { ok: false, message: `Too many wrong attempts. Try again in ${mins} minute${mins === 1 ? "" : "s"}.` };
@@ -63,7 +66,7 @@ export async function loginCustomer(emailRaw: string, password: string, remember
         lockedUntil: fails >= MAX_FAILS ? new Date(Date.now() + LOCK_MIN * 60_000) : null,
       }).where(eq(t.customers.id, c.id));
     }
-    return { ok: false, message: "Email or password is incorrect." };
+    return { ok: false, message: "Email/mobile or password is incorrect." };
   }
   if (c.failedLogins || c.lockedUntil) await db.update(t.customers).set({ failedLogins: 0, lockedUntil: null }).where(eq(t.customers.id, c.id));
   await startSession(c.id, remember);
@@ -84,4 +87,13 @@ export async function logoutCustomer() {
   const token = jar.get(COOKIE)?.value;
   if (token) await db.delete(t.customerSessions).where(eq(t.customerSessions.id, sha256(token)));
   jar.delete(COOKIE);
+}
+
+/** Guest → account: sets the first password (the caller has checked the setup token) and logs them in. */
+export async function setFirstPassword(customerId: number, password: string): Promise<AuthResult> {
+  const [c] = await db.update(t.customers).set({ passwordHash: await hashPassword(password), failedLogins: 0, lockedUntil: null })
+    .where(and(eq(t.customers.id, customerId), isNull(t.customers.passwordHash))).returning({ id: t.customers.id });
+  if (!c) return { ok: false, message: "This account already has a password. Log in instead." };
+  await startSession(c.id, true);
+  return { ok: true, customerId: c.id };
 }

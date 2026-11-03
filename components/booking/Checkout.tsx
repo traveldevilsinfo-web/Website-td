@@ -61,6 +61,8 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
   const [me, setMe] = useState(customer);
   const [contactName, setContactName] = useState(customer?.name ?? "");
   const [contactEmail, setContactEmail] = useState(customer?.email ?? "");
+  const [contactPhone, setContactPhone] = useState(customer?.phone ?? "");
+  const [showLogin, setShowLogin] = useState(false);
   // Only count sharing options this date offers (a holiday date can drop one, e.g. Double).
   const offered = pkg ? new Set(tiersFor(pkg.tiers, bs.find((b) => b.id === batchId)).map((x) => x.label)) : null;
   const liveQty = offered ? Object.fromEntries(Object.entries(qty).filter(([k]) => offered.has(k))) : qty;
@@ -101,13 +103,14 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
   const [month, setMonth] = useState("all");
   const shown = month === "all" ? bs : bs.filter((b) => b.startDate.startsWith(month));
 
-  const detailsOk = contactName.trim().length >= 2 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail)
-    && travellers.length === pax && travellers.every((x) => x.name.trim().length >= 2 && Number(x.age) > 0 && Number(x.age) < 100 && x.gender);
-  const canPay = !!me && !!quote && !quoteErr && detailsOk && !paying;
+  const phoneOk = !!me || /^[6-9]\d{9}$/.test(contactPhone.replace(/\D/g, "").replace(/^(91|0)(?=\d{10}$)/, ""));
+  const contactOk = contactName.trim().length >= 2 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail) && phoneOk;
+  const detailsOk = contactOk && travellers.length === pax && travellers.every((x) => x.name.trim().length >= 2 && Number(x.age) > 0 && Number(x.age) < 100 && x.gender);
+  const canPay = !!quote && !quoteErr && detailsOk && !paying; // no account needed: guests pay directly
 
   async function pay() {
     setPayErr(""); setPaying(true);
-    const r = await submitCheckout({ ...selection, contactName, contactEmail, travellers: travellers.map((x) => ({ ...x, age: Number(x.age) })) });
+    const r = await submitCheckout({ ...selection, contactName, contactEmail, contactPhone, travellers: travellers.map((x) => ({ ...x, age: Number(x.age) })) });
     if (!r.ok) { setPaying(false); setPayErr(r.message); return; }
     if (r.data.mode === "test") { setPaying(false); setTestPay(r.data); return; }
     const done = await payWithRazorpay(r.data);
@@ -206,24 +209,32 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
           </div>
         </Step>
 
-        <Step n={2} title="Log in or create an account" done={!!me}>
+        <Step n={2} title="Your contact details" done={contactOk}>
           {me ? (
-            <p className="font-semibold">Logged in as <b>{me.email ?? `+91 ${me.phone}`}</b></p>
+            <p className="mb-4 text-sm font-semibold">Booking on your account <b>{me.email ?? `+91 ${me.phone}`}</b></p>
           ) : (
-            <>
-              <p className="mb-4 text-sm text-muted">Takes a few seconds. Your bookings and balance payments stay in My Bookings.</p>
-              <div className="max-w-md">
-                <AuthForm whatsapp={whatsapp} mode="register" onDone={(who) => { setMe(who); setContactName((n) => n || who.name || ""); setContactEmail((e) => e || who.email || ""); router.refresh(); }} />
-              </div>
-            </>
+            <p className="mb-4 text-sm text-muted">No account needed. We&apos;ll send your booking confirmation here, with a link to track it.{" "}
+              <button type="button" onClick={() => setShowLogin(!showLogin)} className="font-bold text-brand hover:underline">{showLogin ? "Book as guest" : "Have an account? Log in"}</button>
+            </p>
+          )}
+          {!me && showLogin ? (
+            <div className="max-w-md">
+              <AuthForm whatsapp={whatsapp} mode="login" onDone={(who) => { setMe(who); setShowLogin(false); setContactName((n) => n || who.name || ""); setContactEmail((e) => e || who.email || ""); setContactPhone(who.phone); router.refresh(); }} />
+            </div>
+          ) : (
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label><span className="mb-1 block text-sm font-bold">Full name</span><input value={contactName} onChange={(e) => setContactName(e.target.value)} autoComplete="name" className={field} /></label>
+              <label><span className="mb-1 block text-sm font-bold">Email</span><input value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} type="email" autoComplete="email" className={field} /></label>
+              {!me && (
+                <label><span className="mb-1 block text-sm font-bold">Mobile number</span>
+                  <input value={contactPhone} onChange={(e) => setContactPhone(e.target.value)} type="tel" inputMode="numeric" autoComplete="tel-national" placeholder="10-digit mobile" className={field} />
+                </label>
+              )}
+            </div>
           )}
         </Step>
 
         <Step n={3} title="Traveller details" done={detailsOk}>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <label><span className="mb-1 block text-sm font-bold">Lead traveller name</span><input value={contactName} onChange={(e) => setContactName(e.target.value)} autoComplete="name" className={field} /></label>
-            <label><span className="mb-1 block text-sm font-bold">Email (for your invoice)</span><input value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} type="email" autoComplete="email" className={field} /></label>
-          </div>
           <div className="mt-5 space-y-3">
             {travellers.map((x, i) => (
               <fieldset key={i} className="grid gap-2 rounded-2xl bg-surface p-3 sm:grid-cols-[1fr_90px_140px]">
@@ -303,7 +314,7 @@ export function Checkout({ trip, batches, initial, customer, priceNote, whatsapp
           )}
           {!canPay && !testPay && (
             <p className="mt-2 text-center text-xs text-muted">
-              {!me ? "Log in with your phone to continue." : !detailsOk ? "Fill in all traveller details to continue." : ""}
+              {!contactOk ? "Add your name, email and mobile number to continue." : !detailsOk ? "Fill in all traveller details to continue." : ""}
             </p>
           )}
           {payErr && <p role="alert" className="mt-3 rounded-xl bg-red-50 p-3 text-sm font-semibold text-red-700">{payErr}</p>}
