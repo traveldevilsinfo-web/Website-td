@@ -1,5 +1,5 @@
 {
-  "note": "Christmas = 24 & 25 Dec, New Year = 30 Dec (owner's list, 28 Oct 2026). Entries with close:true have those dates turned off (status closed, never if booked). Apply with scripts/apply-holiday-prices.mts; afterwards edit in Admin → Trips → Departures.",
+  "note": "Christmas = 24 & 25 Dec, New Year = 30 Dec (owner's list, 28 Oct 2026). Entries with close:true have those dates turned off (status closed, never if booked). Apply with scripts/apply-holiday-prices.mts; afterwards edit in Admin → Trips → Departures. 2N3D trips also have a New Year departure on 29 Dec (owner, 3 Nov). Entries with `create` add the departure if it doesn't exist.",
   "batches": [
     {
       "slug": "chakrata",
@@ -630,6 +630,180 @@
         "2026-12-24",
         "2026-12-25",
         "2026-12-30"
+      ],
+      "close": true
+    },
+    {
+      "slug": "auli",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 9500,
+        "Triple Sharing": 10000,
+        "Double Sharing": 10500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      }
+    },
+    {
+      "slug": "chopta-tungnath",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 6500,
+        "Triple Sharing": 7000,
+        "Double Sharing": 7400
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      }
+    },
+    {
+      "slug": "jibhi-tirthan",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 8199,
+        "Triple Sharing": 8699,
+        "Double Sharing": 8999
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      }
+    },
+    {
+      "slug": "kasol-kheerganga-trek",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 8000,
+        "Triple Sharing": 8500,
+        "Double Sharing": 9000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      }
+    },
+    {
+      "slug": "kasol-tosh",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 8000,
+        "Triple Sharing": 8500,
+        "Double Sharing": 9500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      }
+    },
+    {
+      "slug": "manali-sissu-kasol",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 8000,
+        "Triple Sharing": 8500,
+        "Double Sharing": 9500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      }
+    },
+    {
+      "slug": "mcleodganj-bir-billing",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 8500,
+        "Triple Sharing": 9000,
+        "Double Sharing": 9500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      }
+    },
+    {
+      "slug": "mcleodganj-triund-trek",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 7500,
+        "Triple Sharing": 8000,
+        "Double Sharing": 8500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      }
+    },
+    {
+      "slug": "shangarh-sainj-valley",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 8500,
+        "Triple Sharing": 9000,
+        "Double Sharing": 9500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      }
+    },
+    {
+      "slug": "harsil-valley-gartang-gali",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 9200,
+        "Triple Sharing": 9600,
+        "Double Sharing": 10000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      }
+    },
+    {
+      "slug": "bir-barot",
+      "dates": [
+        "2026-12-29"
+      ],
+      "close": true
+    },
+    {
+      "slug": "udaipur-mount-abu",
+      "dates": [
+        "2026-12-29"
       ],
       "close": true
     }

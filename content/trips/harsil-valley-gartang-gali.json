@@ -28,7 +28,10 @@
     ],
     "returnAfterDays": 4,
     "weeks": 24,
-    "seats": 20
+    "seats": 20,
+    "dates": [
+      "2026-12-29"
+    ]
   },
   "slug": "harsil-valley-gartang-gali",
   "title": "Harsil Valley & Gartang Gali",

@@ -7,7 +7,10 @@ import { existsSync } from "node:fs";
 import postgres from "postgres";
 
 if (!process.env.DATABASE_URL && existsSync(".env.local")) process.loadEnvFile(".env.local");
-type Entry = { slug: string; dates: string[]; label?: string; prices?: Record<string, number>; inclusions?: string[]; close?: boolean };
+type Entry = {
+  slug: string; dates: string[]; label?: string; prices?: Record<string, number>; inclusions?: string[]; close?: boolean;
+  /** add the departure first if the trip doesn't have one on that date */ create?: { returnAfterDays: number; seats: number };
+};
 const { batches } = JSON.parse(await readFile(process.argv[2], "utf8")) as { batches: Entry[] };
 const sql = postgres(process.env.DATABASE_URL!, { max: 1 });
 for (const e of batches) {
@@ -19,6 +22,14 @@ for (const e of batches) {
       returning b.start_date::text as d`;
     console.log(`${e.slug} closed: ${r.map((x) => x.d.slice(8)).join(", ") || "none"}`);
     continue;
+  }
+  if (e.create) {
+    for (const d of e.dates) {
+      await sql`
+        insert into trip_batches (trip_id, start_date, end_date, seats, status)
+        select t.id, ${d}::date, ${d}::date + ${e.create.returnAfterDays}::int, ${e.create.seats}, 'available' from trips t
+        where t.slug = ${e.slug} and not exists (select 1 from trip_batches x where x.trip_id = t.id and x.start_date = ${d}::date)`;
+    }
   }
   const r = await sql`
     update trip_batches b set label = ${e.label ?? null}, tier_prices = ${sql.json(e.prices ?? {})},
