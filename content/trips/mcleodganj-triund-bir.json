@@ -32,6 +32,8 @@
       "2026-12-18",
       "2026-12-24",
       "2026-12-25",
+      "2026-12-26",
+      "2026-12-29",
       "2026-12-30"
     ],
     "returnAfterDays": 5,
@@ -137,7 +139,7 @@
     },
     {
       "q": "How much does the McLeodganj, Triund & Bir trip cost?",
-      "a": "₹8,500 per person on quad sharing, ₹9,000 on triple sharing and ₹9,500 on double sharing. 5% GST is extra."
+      "a": "₹8,500 per person on quad sharing, ₹9,000 on triple sharing and ₹9,500 on double sharing. Christmas (24 and 26 December) and New Year (29 December) departures have their own price, shown when you pick that date. 5% GST is extra."
     },
     {
       "q": "What is included?",

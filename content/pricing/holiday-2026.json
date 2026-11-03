@@ -1,5 +1,5 @@
 {
-  "note": "Christmas = 24 & 25 Dec; New Year = 30 Dec, plus 29 Dec on 2N3D trips (owner's lists, 28 Oct and 3 Nov 2026). 2N3D trips run no other batches between 24 and 30 Dec. close:true turns dates off (never a booked one); status sets availability (e.g. sold_out). Apply with scripts/apply-holiday-prices.mts; afterwards edit in Admin → Trips → Departures.",
+  "note": "Christmas = 24 & 25 Dec; New Year = 30 Dec, plus 29 Dec on 2N3D trips (owner's lists, 28 Oct and 3 Nov 2026). 2N3D trips run no other batches between 24 and 30 Dec. close:true turns dates off (never a booked one); status sets availability (e.g. sold_out). Apply with scripts/apply-holiday-prices.mts; afterwards edit in Admin → Trips → Departures. 3N4D (3 Nov): Jibhi-Tirthan-Kasol and Manali-Sissu-Kasol run 24/25 + 28/29; Chitkul-Kalpa, Kasol-Kheerganga-Tosh and McLeodganj-Triund-Bir run 24/26 + 29.",
   "batches": [
     {
       "slug": "chakrata",
@@ -120,106 +120,6 @@
       }
     },
     {
-      "slug": "jibhi-tirthan-kasol",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 10500,
-        "Triple Sharing": 11500,
-        "Double Sharing": 12500
-      }
-    },
-    {
-      "slug": "jibhi-tirthan-kasol",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 10500,
-        "Triple Sharing": 11500,
-        "Double Sharing": 12500
-      }
-    },
-    {
-      "slug": "manali-sissu-kasol-3n4d",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 12500,
-        "Triple Sharing": 13500,
-        "Double Sharing": 14500
-      }
-    },
-    {
-      "slug": "manali-sissu-kasol-3n4d",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 12500,
-        "Triple Sharing": 13500,
-        "Double Sharing": 14500
-      }
-    },
-    {
-      "slug": "shimla-chitkul-kalpa",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 13000,
-        "Triple Sharing": 14000,
-        "Double Sharing": 15000
-      }
-    },
-    {
-      "slug": "shimla-chitkul-kalpa",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 13000,
-        "Triple Sharing": 14000,
-        "Double Sharing": 15000
-      }
-    },
-    {
-      "slug": "kasol-kheerganga-tosh",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 10500,
-        "Triple Sharing": 11000,
-        "Double Sharing": 11500
-      }
-    },
-    {
-      "slug": "kasol-kheerganga-tosh",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 10500,
-        "Triple Sharing": 11000,
-        "Double Sharing": 11500
-      }
-    },
-    {
       "slug": "jaisalmer-new-year",
       "dates": [
         "2026-12-24",
@@ -293,15 +193,6 @@
     },
     {
       "slug": "mcleodganj-bir-jibhi-4n5d",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25",
-        "2026-12-30"
-      ],
-      "close": true
-    },
-    {
-      "slug": "mcleodganj-triund-bir",
       "dates": [
         "2026-12-24",
         "2026-12-25",
@@ -986,6 +877,231 @@
         "2026-12-26",
         "2026-12-27",
         "2026-12-28"
+      ],
+      "close": true
+    },
+    {
+      "slug": "jibhi-tirthan-kasol",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 10500,
+        "Triple Sharing": 11500,
+        "Double Sharing": 12500
+      },
+      "create": {
+        "returnAfterDays": 5,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "jibhi-tirthan-kasol",
+      "dates": [
+        "2026-12-28",
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 10500,
+        "Triple Sharing": 11500,
+        "Double Sharing": 12500
+      },
+      "create": {
+        "returnAfterDays": 5,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "jibhi-tirthan-kasol",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-30"
+      ],
+      "close": true
+    },
+    {
+      "slug": "manali-sissu-kasol-3n4d",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 12500,
+        "Triple Sharing": 13500,
+        "Double Sharing": 14500
+      },
+      "create": {
+        "returnAfterDays": 5,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "manali-sissu-kasol-3n4d",
+      "dates": [
+        "2026-12-28",
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 12500,
+        "Triple Sharing": 13500,
+        "Double Sharing": 14500
+      },
+      "create": {
+        "returnAfterDays": 5,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "manali-sissu-kasol-3n4d",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-30"
+      ],
+      "close": true
+    },
+    {
+      "slug": "shimla-chitkul-kalpa",
+      "dates": [
+        "2026-12-24",
+        "2026-12-26"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 13000,
+        "Triple Sharing": 14000,
+        "Double Sharing": 15000
+      },
+      "create": {
+        "returnAfterDays": 5,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "shimla-chitkul-kalpa",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 13000,
+        "Triple Sharing": 14000,
+        "Double Sharing": 15000
+      },
+      "create": {
+        "returnAfterDays": 5,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "shimla-chitkul-kalpa",
+      "dates": [
+        "2026-12-25",
+        "2026-12-27",
+        "2026-12-28",
+        "2026-12-30"
+      ],
+      "close": true
+    },
+    {
+      "slug": "kasol-kheerganga-tosh",
+      "dates": [
+        "2026-12-24",
+        "2026-12-26"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 10500,
+        "Triple Sharing": 11000,
+        "Double Sharing": 11500
+      },
+      "create": {
+        "returnAfterDays": 5,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "kasol-kheerganga-tosh",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 10500,
+        "Triple Sharing": 11000,
+        "Double Sharing": 11500
+      },
+      "create": {
+        "returnAfterDays": 5,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "kasol-kheerganga-tosh",
+      "dates": [
+        "2026-12-25",
+        "2026-12-27",
+        "2026-12-28",
+        "2026-12-30"
+      ],
+      "close": true
+    },
+    {
+      "slug": "mcleodganj-triund-bir",
+      "dates": [
+        "2026-12-24",
+        "2026-12-26"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 10500,
+        "Triple Sharing": 11000,
+        "Double Sharing": 11500
+      },
+      "create": {
+        "returnAfterDays": 5,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "mcleodganj-triund-bir",
+      "dates": [
+        "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 10500,
+        "Triple Sharing": 11000,
+        "Double Sharing": 11500
+      },
+      "create": {
+        "returnAfterDays": 5,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "mcleodganj-triund-bir",
+      "dates": [
+        "2026-12-25",
+        "2026-12-27",
+        "2026-12-28",
+        "2026-12-30"
       ],
       "close": true
     }
