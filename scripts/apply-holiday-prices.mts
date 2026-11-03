@@ -9,6 +9,7 @@ import postgres from "postgres";
 if (!process.env.DATABASE_URL && existsSync(".env.local")) process.loadEnvFile(".env.local");
 type Entry = {
   slug: string; dates: string[]; label?: string; prices?: Record<string, number>; inclusions?: string[]; close?: boolean;
+  /** availability to set, e.g. "available" (reopens a closed date) or "sold_out" */ status?: "available" | "filling_fast" | "sold_out";
   /** add the departure first if the trip doesn't have one on that date */ create?: { returnAfterDays: number; seats: number };
 };
 const { batches } = JSON.parse(await readFile(process.argv[2], "utf8")) as { batches: Entry[] };
@@ -33,7 +34,8 @@ for (const e of batches) {
   }
   const r = await sql`
     update trip_batches b set label = ${e.label ?? null}, tier_prices = ${sql.json(e.prices ?? {})},
-      inclusions = ${e.inclusions ? sql.array(e.inclusions) : sql`b.inclusions`}
+      inclusions = ${e.inclusions ? sql.array(e.inclusions) : sql`b.inclusions`},
+      status = ${e.status ? sql`${e.status}::batch_status` : sql`b.status`}
     from trips t where t.id = b.trip_id and t.slug = ${e.slug} and b.start_date = any(${e.dates}::date[])
     returning b.start_date::text as d`;
   const missing = e.dates.filter((d) => !r.some((x) => x.d === d));

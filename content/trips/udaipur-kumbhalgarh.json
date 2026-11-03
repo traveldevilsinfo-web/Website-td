@@ -26,7 +26,13 @@
     ],
     "returnAfterDays": 4,
     "weeks": 24,
-    "seats": 20
+    "seats": 20,
+    "dates": [
+      "2026-12-24",
+      "2026-12-25",
+      "2026-12-29",
+      "2026-12-30"
+    ]
   },
   "slug": "udaipur-kumbhalgarh",
   "title": "Udaipur & Kumbhalgarh",
@@ -119,7 +125,7 @@
     },
     {
       "q": "How much does the Udaipur & Kumbhalgarh trip cost?",
-      "a": "₹7,499 per person on quad sharing, ₹7,999 on triple sharing and ₹8,499 on double sharing. 5% GST is extra."
+      "a": "₹7,499 per person on quad sharing, ₹7,999 on triple sharing and ₹8,499 on double sharing. Christmas (24 and 25 December) and New Year (29 and 30 December) departures have their own price, shown when you pick that date. 5% GST is extra."
     },
     {
       "q": "What is included?",

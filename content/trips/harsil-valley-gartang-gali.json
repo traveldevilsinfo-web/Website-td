@@ -30,7 +30,10 @@
     "weeks": 24,
     "seats": 20,
     "dates": [
-      "2026-12-29"
+      "2026-12-24",
+      "2026-12-25",
+      "2026-12-29",
+      "2026-12-30"
     ]
   },
   "slug": "harsil-valley-gartang-gali",
@@ -133,7 +136,7 @@
     },
     {
       "q": "How much does the Harsil Valley & Gartang Gali trip cost?",
-      "a": "₹9,499 per person on quad sharing, ₹10,999 on triple sharing and ₹11,499 on double sharing. 5% GST is extra."
+      "a": "₹9,499 per person on quad sharing, ₹10,999 on triple sharing and ₹11,499 on double sharing. Christmas (24 and 25 December) and New Year (29 and 30 December) departures have their own price, shown when you pick that date. 5% GST is extra."
     },
     {
       "q": "What is included?",

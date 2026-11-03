@@ -114,7 +114,7 @@
     },
     {
       "q": "How much does the Jaisalmer trip cost?",
-      "a": "₹6,999 per person on quad sharing, ₹7,499 on triple sharing and ₹7,999 on double sharing. 5% GST is extra."
+      "a": "₹6,999 per person on quad sharing, ₹7,499 on triple sharing and ₹7,999 on double sharing. Christmas (24 and 25 December) and New Year (29 and 30 December) departures have their own price, shown when you pick that date. 5% GST is extra."
     },
     {
       "q": "What is included?",
@@ -143,7 +143,13 @@
     ],
     "returnAfterDays": 4,
     "weeks": 14,
-    "seats": 20
+    "seats": 20,
+    "dates": [
+      "2026-12-24",
+      "2026-12-25",
+      "2026-12-29",
+      "2026-12-30"
+    ]
   },
   "basePrice": 6999
 }

@@ -1,5 +1,5 @@
 {
-  "note": "Christmas = 24 & 25 Dec, New Year = 30 Dec (owner's list, 28 Oct 2026). Entries with close:true have those dates turned off (status closed, never if booked). Apply with scripts/apply-holiday-prices.mts; afterwards edit in Admin → Trips → Departures. 2N3D trips also have a New Year departure on 29 Dec (owner, 3 Nov). Entries with `create` add the departure if it doesn't exist.",
+  "note": "Christmas = 24 & 25 Dec; New Year = 30 Dec, plus 29 Dec on 2N3D trips (owner's lists, 28 Oct and 3 Nov 2026). 2N3D trips run no other batches between 24 and 30 Dec. close:true turns dates off (never a booked one); status sets availability (e.g. sold_out). Apply with scripts/apply-holiday-prices.mts; afterwards edit in Admin → Trips → Departures.",
   "batches": [
     {
       "slug": "chakrata",
@@ -95,231 +95,6 @@
       ]
     },
     {
-      "slug": "jibhi-tirthan",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 8199,
-        "Triple Sharing": 8699,
-        "Double Sharing": 8999
-      }
-    },
-    {
-      "slug": "jibhi-tirthan",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 8199,
-        "Triple Sharing": 8699,
-        "Double Sharing": 8999
-      }
-    },
-    {
-      "slug": "manali-sissu-kasol",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 8000,
-        "Triple Sharing": 8500,
-        "Double Sharing": 9500
-      }
-    },
-    {
-      "slug": "manali-sissu-kasol",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 8000,
-        "Triple Sharing": 8500,
-        "Double Sharing": 9500
-      }
-    },
-    {
-      "slug": "mcleodganj-triund-trek",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 7500,
-        "Triple Sharing": 8000,
-        "Double Sharing": 8500
-      }
-    },
-    {
-      "slug": "mcleodganj-triund-trek",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 7500,
-        "Triple Sharing": 8000,
-        "Double Sharing": 8500
-      }
-    },
-    {
-      "slug": "mcleodganj-bir-billing",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 8500,
-        "Triple Sharing": 9000,
-        "Double Sharing": 9500
-      }
-    },
-    {
-      "slug": "mcleodganj-bir-billing",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 8500,
-        "Triple Sharing": 9000,
-        "Double Sharing": 9500
-      }
-    },
-    {
-      "slug": "kasol-tosh",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 8000,
-        "Triple Sharing": 8500,
-        "Double Sharing": 9500
-      }
-    },
-    {
-      "slug": "kasol-tosh",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 8000,
-        "Triple Sharing": 8500,
-        "Double Sharing": 9500
-      }
-    },
-    {
-      "slug": "kasol-kheerganga-trek",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 8000,
-        "Triple Sharing": 8500,
-        "Double Sharing": 9000
-      }
-    },
-    {
-      "slug": "kasol-kheerganga-trek",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 8000,
-        "Triple Sharing": 8500,
-        "Double Sharing": 9000
-      }
-    },
-    {
-      "slug": "chopta-tungnath",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 6500,
-        "Triple Sharing": 7000,
-        "Double Sharing": 7400
-      }
-    },
-    {
-      "slug": "chopta-tungnath",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 6500,
-        "Triple Sharing": 7000,
-        "Double Sharing": 7400
-      }
-    },
-    {
-      "slug": "harsil-valley-gartang-gali",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 9200,
-        "Triple Sharing": 9600,
-        "Double Sharing": 10000
-      }
-    },
-    {
-      "slug": "harsil-valley-gartang-gali",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 9200,
-        "Triple Sharing": 9600,
-        "Double Sharing": 10000
-      }
-    },
-    {
-      "slug": "shangarh-sainj-valley",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25"
-      ],
-      "label": "Christmas",
-      "prices": {
-        "Quad Sharing": 8500,
-        "Triple Sharing": 9000,
-        "Double Sharing": 9500
-      }
-    },
-    {
-      "slug": "shangarh-sainj-valley",
-      "dates": [
-        "2026-12-30"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 8500,
-        "Triple Sharing": 9000,
-        "Double Sharing": 9500
-      }
-    },
-    {
       "slug": "auli",
       "dates": [
         "2026-12-24",
@@ -443,24 +218,6 @@
         "Triple Sharing": 11000,
         "Double Sharing": 11500
       }
-    },
-    {
-      "slug": "bir-barot",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25",
-        "2026-12-30"
-      ],
-      "close": true
-    },
-    {
-      "slug": "jaisalmer",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25",
-        "2026-12-30"
-      ],
-      "close": true
     },
     {
       "slug": "jaisalmer-new-year",
@@ -589,24 +346,6 @@
       "close": true
     },
     {
-      "slug": "udaipur-kumbhalgarh",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25",
-        "2026-12-30"
-      ],
-      "close": true
-    },
-    {
-      "slug": "udaipur-mount-abu",
-      "dates": [
-        "2026-12-24",
-        "2026-12-25",
-        "2026-12-30"
-      ],
-      "close": true
-    },
-    {
       "slug": "winter-spiti",
       "dates": [
         "2026-12-24",
@@ -650,41 +389,28 @@
       }
     },
     {
-      "slug": "chopta-tungnath",
+      "slug": "jibhi-tirthan",
       "dates": [
-        "2026-12-29"
+        "2026-12-24",
+        "2026-12-25"
       ],
-      "label": "New Year",
+      "label": "Christmas",
       "prices": {
-        "Quad Sharing": 6500,
-        "Triple Sharing": 7000,
-        "Double Sharing": 7400
+        "Quad Sharing": 8000,
+        "Triple Sharing": 8500,
+        "Double Sharing": 9000
       },
       "create": {
         "returnAfterDays": 4,
         "seats": 20
-      }
+      },
+      "status": "available"
     },
     {
       "slug": "jibhi-tirthan",
       "dates": [
-        "2026-12-29"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 8199,
-        "Triple Sharing": 8699,
-        "Double Sharing": 8999
-      },
-      "create": {
-        "returnAfterDays": 4,
-        "seats": 20
-      }
-    },
-    {
-      "slug": "kasol-kheerganga-trek",
-      "dates": [
-        "2026-12-29"
+        "2026-12-29",
+        "2026-12-30"
       ],
       "label": "New Year",
       "prices": {
@@ -695,28 +421,131 @@
       "create": {
         "returnAfterDays": 4,
         "seats": 20
-      }
+      },
+      "status": "available"
     },
     {
-      "slug": "kasol-tosh",
+      "slug": "jibhi-tirthan",
       "dates": [
-        "2026-12-29"
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
+      ],
+      "close": true
+    },
+    {
+      "slug": "kasol-kheerganga-trek",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 8000,
+        "Triple Sharing": 8500,
+        "Double Sharing": 9000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "kasol-kheerganga-trek",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30"
       ],
       "label": "New Year",
       "prices": {
         "Quad Sharing": 8000,
         "Triple Sharing": 8500,
-        "Double Sharing": 9500
+        "Double Sharing": 9000
       },
       "create": {
         "returnAfterDays": 4,
         "seats": 20
-      }
+      },
+      "status": "available"
+    },
+    {
+      "slug": "kasol-kheerganga-trek",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
+      ],
+      "close": true
+    },
+    {
+      "slug": "harsil-valley-gartang-gali",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 8500,
+        "Triple Sharing": 9000,
+        "Double Sharing": 10000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "harsil-valley-gartang-gali",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 8500,
+        "Triple Sharing": 9000,
+        "Double Sharing": 10000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "harsil-valley-gartang-gali",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
+      ],
+      "close": true
     },
     {
       "slug": "manali-sissu-kasol",
       "dates": [
-        "2026-12-29"
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 8000,
+        "Triple Sharing": 8500,
+        "Double Sharing": 9500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "manali-sissu-kasol",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30"
       ],
       "label": "New Year",
       "prices": {
@@ -727,12 +556,86 @@
       "create": {
         "returnAfterDays": 4,
         "seats": 20
-      }
+      },
+      "status": "available"
+    },
+    {
+      "slug": "manali-sissu-kasol",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
+      ],
+      "close": true
+    },
+    {
+      "slug": "kasol-tosh",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 8000,
+        "Triple Sharing": 8500,
+        "Double Sharing": 9500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "kasol-tosh",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 8000,
+        "Triple Sharing": 8500,
+        "Double Sharing": 9500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "kasol-tosh",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
+      ],
+      "close": true
     },
     {
       "slug": "mcleodganj-bir-billing",
       "dates": [
-        "2026-12-29"
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 8500,
+        "Triple Sharing": 9000,
+        "Double Sharing": 9500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "mcleodganj-bir-billing",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30"
       ],
       "label": "New Year",
       "prices": {
@@ -743,12 +646,131 @@
       "create": {
         "returnAfterDays": 4,
         "seats": 20
-      }
+      },
+      "status": "available"
+    },
+    {
+      "slug": "mcleodganj-bir-billing",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
+      ],
+      "close": true
+    },
+    {
+      "slug": "shangarh-sainj-valley",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 8500,
+        "Triple Sharing": 9500,
+        "Double Sharing": 10000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "shangarh-sainj-valley",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 8500,
+        "Triple Sharing": 9500,
+        "Double Sharing": 10000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "shangarh-sainj-valley",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
+      ],
+      "close": true
+    },
+    {
+      "slug": "udaipur-kumbhalgarh",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 9500,
+        "Triple Sharing": 10000,
+        "Double Sharing": 11000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "udaipur-kumbhalgarh",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 9500,
+        "Triple Sharing": 10000,
+        "Double Sharing": 11000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "udaipur-kumbhalgarh",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
+      ],
+      "close": true
     },
     {
       "slug": "mcleodganj-triund-trek",
       "dates": [
-        "2026-12-29"
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 7500,
+        "Triple Sharing": 8000,
+        "Double Sharing": 8500
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "mcleodganj-triund-trek",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30"
       ],
       "label": "New Year",
       "prices": {
@@ -759,51 +781,211 @@
       "create": {
         "returnAfterDays": 4,
         "seats": 20
-      }
-    },
-    {
-      "slug": "shangarh-sainj-valley",
-      "dates": [
-        "2026-12-29"
-      ],
-      "label": "New Year",
-      "prices": {
-        "Quad Sharing": 8500,
-        "Triple Sharing": 9000,
-        "Double Sharing": 9500
       },
-      "create": {
-        "returnAfterDays": 4,
-        "seats": 20
-      }
+      "status": "available"
     },
     {
-      "slug": "harsil-valley-gartang-gali",
+      "slug": "mcleodganj-triund-trek",
       "dates": [
-        "2026-12-29"
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
       ],
-      "label": "New Year",
+      "close": true
+    },
+    {
+      "slug": "bir-barot",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
       "prices": {
-        "Quad Sharing": 9200,
-        "Triple Sharing": 9600,
+        "Quad Sharing": 9000,
+        "Triple Sharing": 9500,
         "Double Sharing": 10000
       },
       "create": {
         "returnAfterDays": 4,
         "seats": 20
-      }
+      },
+      "status": "available"
     },
     {
       "slug": "bir-barot",
       "dates": [
-        "2026-12-29"
+        "2026-12-29",
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 9000,
+        "Triple Sharing": 9500,
+        "Double Sharing": 10000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "bir-barot",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
       ],
       "close": true
     },
     {
       "slug": "udaipur-mount-abu",
       "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 9000,
+        "Triple Sharing": 9500,
+        "Double Sharing": 10000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "udaipur-mount-abu",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 9000,
+        "Triple Sharing": 9500,
+        "Double Sharing": 10000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "udaipur-mount-abu",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
+      ],
+      "close": true
+    },
+    {
+      "slug": "jaisalmer",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 13000,
+        "Triple Sharing": 13500,
+        "Double Sharing": 14000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "jaisalmer",
+      "dates": [
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 13000,
+        "Triple Sharing": 13500,
+        "Double Sharing": 14000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "jaisalmer",
+      "dates": [
         "2026-12-29"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 13000,
+        "Triple Sharing": 13500,
+        "Double Sharing": 14000
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "sold_out"
+    },
+    {
+      "slug": "jaisalmer",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
+      ],
+      "close": true
+    },
+    {
+      "slug": "chopta-tungnath",
+      "dates": [
+        "2026-12-24",
+        "2026-12-25"
+      ],
+      "label": "Christmas",
+      "prices": {
+        "Quad Sharing": 6500,
+        "Triple Sharing": 7000,
+        "Double Sharing": 7400
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "chopta-tungnath",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30"
+      ],
+      "label": "New Year",
+      "prices": {
+        "Quad Sharing": 6500,
+        "Triple Sharing": 7000,
+        "Double Sharing": 7400
+      },
+      "create": {
+        "returnAfterDays": 4,
+        "seats": 20
+      },
+      "status": "available"
+    },
+    {
+      "slug": "chopta-tungnath",
+      "dates": [
+        "2026-12-26",
+        "2026-12-27",
+        "2026-12-28"
       ],
       "close": true
     }
