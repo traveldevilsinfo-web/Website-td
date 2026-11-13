@@ -89,7 +89,7 @@ export async function saveTicket(id: number | null, _prev: ActionState, f: FormD
       // Book once: the ticket is claimed in the same transaction, so a double submit or two managers can't book it twice.
       booked = await db.transaction(async (tx) => {
         const [ex] = await tx.insert(t.expenses).values({
-          business: biz, date: istToday(), amount: row.cost!, categoryId: cat.id, vendorId: row.vendorId, note: `Repair: ${row.title}`,
+          business: biz, date: istToday(), amount: row.cost!, categoryId: cat.id, vendorId: row.vendorId, propertyId: row.propertyId, note: `Repair: ${row.title}`,
           status: "approved", createdBy: user.id, approvedBy: user.id, approvedAt: new Date(),
         }).returning({ id: t.expenses.id });
         const claimed = await tx.update(t.tickets).set({ expenseId: ex.id }).where(and(eq(t.tickets.id, row.id), isNull(t.tickets.expenseId))).returning({ id: t.tickets.id });

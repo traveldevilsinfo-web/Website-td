@@ -20,7 +20,7 @@ export async function postRecurring(today: string, biz?: Biz): Promise<number> {
     const known = r.amount != null && r.amount > 0;
     return {
       business: r.business, date: d.date, period: d.period, recurringId: r.id, amount: known ? r.amount! : 0,
-      categoryId: r.categoryId, vendorId: r.vendorId, paidVia: r.paidVia, note: r.name,
+      categoryId: r.categoryId, vendorId: r.vendorId, propertyId: r.propertyId, paidVia: r.paidVia, note: r.name,
       status: known ? ("approved" as const) : ("needs_amount" as const),
       createdBy: owner.id, ...(known ? { approvedBy: owner.id, approvedAt: new Date() } : {}),
     };

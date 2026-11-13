@@ -22,7 +22,7 @@ export default async function OpsShell({ children }: { children: React.ReactNode
       .where(and(eq(t.tickets.business, biz), inArray(t.tickets.status, ["open", "doing"]), manager ? undefined : or(eq(t.tickets.assigneeId, user.id), eq(t.tickets.createdBy, user.id)))),
   ]);
   return (
-    <div style={{ "--acc": ACCENT[biz] } as React.CSSProperties} className="lg:pl-60">
+    <div style={{ "--acc": ACCENT[biz] } as React.CSSProperties} className="lg:pl-60 print:pl-0">
       <OpsNav biz={biz} businesses={businesses} manager={manager} owner={user.role === "owner"} user={{ name: user.name, role: user.role }}
         counts={{ approvals: manager ? c.approvals : 0, needsAmount: c.needsAmount, tasks: clean.n + fix.n }} logout={logout} />
       <main className="mx-auto max-w-6xl px-4 pb-28 pt-5 sm:px-6 lg:px-10 lg:pb-10 lg:pt-8">{children}</main>

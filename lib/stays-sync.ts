@@ -3,6 +3,7 @@ import { and, asc, eq, gte, inArray, isNotNull, ne, sql } from "drizzle-orm";
 import { db, t } from "./db";
 import { istToday } from "./ops-rules";
 import { feedUrlError, parseIcal, planSync, planTurnovers, syncLooksWrong } from "./stays";
+import { confirmationCodeFrom } from "./stays-revenue";
 
 const MAX_FEED_BYTES = 2 * 1024 * 1024;
 export const DEFAULT_CHECKLIST = [
@@ -64,10 +65,11 @@ export async function syncFeed(feedId: number, opts: { refresh?: boolean } = {})
 
   await db.transaction(async (tx) => {
     for (const u of plan.upserts) {
-      await tx.insert(t.reservations).values({ propertyId: feed.propertyId, channel: feed.channel, source: "ical", externalUid: u.uid, checkIn: u.checkIn, checkOut: u.checkOut, status: u.status })
+      const confirmationCode = confirmationCodeFrom(u.description); // lets the earnings CSV find this stay later
+      await tx.insert(t.reservations).values({ propertyId: feed.propertyId, channel: feed.channel, source: "ical", externalUid: u.uid, checkIn: u.checkIn, checkOut: u.checkOut, status: u.status, confirmationCode })
         .onConflictDoUpdate({
           target: [t.reservations.propertyId, t.reservations.channel, t.reservations.externalUid],
-          set: { checkIn: u.checkIn, checkOut: u.checkOut, status: u.status, updatedAt: new Date() },
+          set: { checkIn: u.checkIn, checkOut: u.checkOut, status: u.status, updatedAt: new Date(), ...(confirmationCode ? { confirmationCode } : {}) },
         });
     }
     if (plan.cancel.length) await tx.update(t.reservations).set({ status: "cancelled" }).where(inArray(t.reservations.id, plan.cancel));

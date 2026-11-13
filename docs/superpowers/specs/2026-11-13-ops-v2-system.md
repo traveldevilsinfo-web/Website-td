@@ -80,7 +80,7 @@ Sources: ui-ux-pro-max (the "Data-Dense + Drill-Down" pattern for operational da
 |---|---|---|
 | 2 | **Design system v2**, then Properties, iCal import + export, multi-flat Calendar, Reservations, clash alerts, **Turnovers** (auto from checkouts), **Maintenance** tickets, plus WhatsApp message templates (pulled forward from Phase 3) | **Built** 13 Nov on `ops-phase1` |
 | 3 | Guests: WhatsApp send queue, guest link per stay (check-in, signed house rules, then door code from the day before arrival), guidebook + in-flat QR link | **Built** 13 Nov on `ops-phase1` |
-| 4 | Revenue: earnings CSV import, occupancy/ADR/RevPAR, rate calendar, owner statements | |
+| 4 | Revenue: Airbnb earnings CSV import, occupancy/ADR/RevPAR per flat, owner statements, CSV export. **Rate calendar deferred**: we can't push prices anywhere, so our own copy of them would just be a note — revisit if a channel manager is added. | **Built** 13 Nov on `ops-phase1` |
 | 5 | HRMS: employees, attendance, leave, payroll, incentives, advances (both businesses) | |
 | 6 | Inventory: items, locations, movements, auto-issue on turnover, low stock (both) | |
 | 7 | TD trip P&L + captains, direct booking page, AI reply drafts, lock/noise integrations | |

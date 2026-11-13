@@ -15,7 +15,7 @@ export default async function FixedCostEditor({ params }: PageProps<"/ops/fixed-
   if (id !== null && !Number.isInteger(id)) notFound();
   const r = id ? (await db.select().from(t.recurringExpenses).where(and(eq(t.recurringExpenses.id, id), eq(t.recurringExpenses.business, biz))))[0] : null;
   if (id && !r) notFound();
-  const { categories, vendors } = await expenseFormOptions(biz);
+  const { categories, vendors, flats } = await expenseFormOptions(biz);
   return (
     <>
       <PageHeader back="/ops/fixed-costs" title={r ? r.name : "New fixed cost"} />
@@ -37,6 +37,14 @@ export default async function FixedCostEditor({ params }: PageProps<"/ops/fixed-
                 {vendors.filter((v) => v.active || v.id === r?.vendorId).map((v) => <option key={v.id} value={v.id}>{v.name}</option>)}
               </select>
             </Field>
+            {biz === "finzo" && (
+              <Field label="Flat (optional)" hint="Rent, Wi-Fi or society dues for one flat land on its statement.">
+                <select name="propertyId" defaultValue={r?.propertyId ?? ""} className={input}>
+                  <option value="">Not flat-specific</option>
+                  {flats.map((f) => <option key={f.id} value={f.id}>{f.code} · {f.name}</option>)}
+                </select>
+              </Field>
+            )}
             <Field label="Day of month"><input name="dayOfMonth" type="number" min={1} max={31} required defaultValue={r?.dayOfMonth ?? 1} className={input} /></Field>
             <Field label="Paid via">
               <select name="paidVia" defaultValue={r?.paidVia ?? "bank"} className={input}>{PAID_VIA.map((p) => <option key={p} value={p}>{p.toUpperCase()}</option>)}</select>

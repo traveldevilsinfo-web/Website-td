@@ -7,7 +7,7 @@ import { istToday, monthBounds, shiftMonth, type Biz } from "./ops-rules";
 /** Dropdown options for expense / fixed-cost forms. Departures are TD only: started in the last 10 days to 14 days ahead (TD runs ~35 a week). */
 export async function expenseFormOptions(biz: Biz) {
   const today = istToday();
-  const [categories, vendors, batches] = await Promise.all([
+  const [categories, vendors, batches, flats] = await Promise.all([
     db.select({ id: t.expenseCategories.id, name: t.expenseCategories.name, kind: t.expenseCategories.kind, active: t.expenseCategories.active })
       .from(t.expenseCategories).where(eq(t.expenseCategories.business, biz)).orderBy(asc(t.expenseCategories.sort), asc(t.expenseCategories.name)),
     db.select({ id: t.vendors.id, name: t.vendors.name, active: t.vendors.active }).from(t.vendors)
@@ -16,8 +16,10 @@ export async function expenseFormOptions(biz: Biz) {
       .from(t.tripBatches).innerJoin(t.trips, eq(t.trips.id, t.tripBatches.tripId))
       .where(and(gte(t.tripBatches.startDate, addDays(today, -10)), lte(t.tripBatches.startDate, addDays(today, 14))))
       .orderBy(asc(t.tripBatches.startDate), asc(t.trips.title)),
+    biz !== "finzo" ? [] : db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name })
+      .from(t.properties).where(eq(t.properties.active, true)).orderBy(asc(t.properties.sort), asc(t.properties.code)),
   ]);
-  return { categories, vendors, batches };
+  return { categories, vendors, batches, flats };
 }
 export type ExpenseFormOptions = Awaited<ReturnType<typeof expenseFormOptions>>;
 
@@ -63,4 +65,22 @@ export async function spentByMonth(biz: Biz, month: string, months = 6): Promise
       gte(t.expenses.date, `${shiftMonth(month, -(months - 1))}-01`), lte(t.expenses.date, monthBounds(month).to)))
     .groupBy(sql`1`).orderBy(desc(sql`1`));
   return new Map(rows.map((r) => [r.m, r.n]));
+}
+
+/** One month of the Finzo books: every active flat, the stays touching that month, and the costs tagged to each. */
+export async function propertyMonth(month: string) {
+  const { from, to } = monthBounds(month);
+  const [flats, stays, costs] = await Promise.all([
+    db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name }).from(t.properties)
+      .where(eq(t.properties.active, true)).orderBy(asc(t.properties.sort), asc(t.properties.code)),
+    db.select({ id: t.reservations.id, propertyId: t.reservations.propertyId, channel: t.reservations.channel, guestName: t.reservations.guestName,
+      checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, status: t.reservations.status, payout: t.reservations.payout, earningsAt: t.reservations.earningsAt })
+      .from(t.reservations).where(and(sql`${t.reservations.checkIn} < ${addDays(to, 1)}`, sql`${t.reservations.checkOut} > ${from}`))
+      .orderBy(asc(t.reservations.checkIn)),
+    db.select({ id: t.expenses.id, propertyId: t.expenses.propertyId, date: t.expenses.date, amount: t.expenses.amount, note: t.expenses.note, category: t.expenseCategories.name })
+      .from(t.expenses).innerJoin(t.expenseCategories, eq(t.expenseCategories.id, t.expenses.categoryId))
+      .where(and(eq(t.expenses.business, "finzo"), sql`${t.expenses.status} in ('approved', 'paid')`, gte(t.expenses.date, from), lte(t.expenses.date, to)))
+      .orderBy(asc(t.expenses.date)),
+  ]);
+  return { flats, stays, costs };
 }

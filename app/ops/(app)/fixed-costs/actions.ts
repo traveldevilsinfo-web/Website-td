@@ -30,7 +30,10 @@ export async function saveFixedCost(id: number | null, _prev: ActionState, f: Fo
   if (vendorId && !(await db.select({ id: t.vendors.id }).from(t.vendors).where(and(eq(t.vendors.id, vendorId), eq(t.vendors.business, biz)))).length)
     return { ok: false, message: "That vendor isn't in this business." };
   const paidVia = (PAID_VIA as readonly string[]).includes(r.str("paidVia") ?? "") ? (r.str("paidVia") as (typeof PAID_VIA)[number]) : null;
-  const values = { name, amount, dayOfMonth, startMonth, endMonth, categoryId, vendorId, paidVia, active: r.bool("active") };
+  const propertyId = biz === "finzo" ? r.int("propertyId") : null;
+  if (propertyId && !(await db.select({ id: t.properties.id }).from(t.properties).where(eq(t.properties.id, propertyId))).length)
+    return { ok: false, message: "That flat no longer exists." };
+  const values = { name, amount, dayOfMonth, startMonth, endMonth, categoryId, vendorId, paidVia, propertyId, active: r.bool("active") };
   let newId: number;
   try {
     const [row] = id

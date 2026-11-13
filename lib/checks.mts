@@ -371,7 +371,8 @@ const airbnb = [
 ].join("\r\n");
 const ev = parseIcal(airbnb);
 assert.equal(ev.length, 3);
-assert.deepEqual(ev[0], { uid: "1418fb94e984-0bd9c9e8@airbnb.com", start: "2026-11-20", end: "2026-11-23", summary: "Reserved" });
+assert.deepEqual(ev[0], { uid: "1418fb94e984-0bd9c9e8@airbnb.com", start: "2026-11-20", end: "2026-11-23", summary: "Reserved",
+  description: "Reservation URL: https://www.airbnb.com/hosting/reservations/details/HMABC123" });
 assert.equal(ev[2].start, "2026-12-05"); // date-time values keep their date
 assert.equal(isBlockSummary(ev[0].summary), false);
 assert.equal(isBlockSummary(ev[1].summary), true);
@@ -384,7 +385,7 @@ assert.equal(parseIcal("BEGIN:VEVENT\r\nUID:long-\r\n uid\r\nDTSTART;VALUE=DATE:
 const feed = buildIcal("FZ-01 Bandra 1BHK", [{ uid: "r12@finzo", start: "2026-11-20", end: "2026-11-23", summary: "Direct booking" }], new Date("2026-11-13T00:00:00Z"));
 assert.ok(feed.startsWith("BEGIN:VCALENDAR\r\n") && feed.trimEnd().endsWith("END:VCALENDAR"));
 assert.ok(feed.includes("DTSTART;VALUE=DATE:20261120\r\n") && feed.includes("DTEND;VALUE=DATE:20261123\r\n"));
-assert.deepEqual(parseIcal(feed)[0], { uid: "r12@finzo", start: "2026-11-20", end: "2026-11-23", summary: "Direct booking" }); // round-trip
+assert.deepEqual(parseIcal(feed)[0], { uid: "r12@finzo", start: "2026-11-20", end: "2026-11-23", summary: "Direct booking", description: "" }); // round-trip
 
 const existing = [
   { id: 1, externalUid: "a", checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" as const },
@@ -393,8 +394,8 @@ const existing = [
 ];
 const plan = planSync(existing, [{ uid: "a", start: "2026-11-21", end: "2026-11-23", summary: "Reserved" }, { uid: "b", start: "2026-11-28", end: "2026-12-01", summary: "Not available" }], "2026-11-13");
 assert.deepEqual(plan.upserts, [
-  { uid: "a", checkIn: "2026-11-21", checkOut: "2026-11-23", status: "confirmed" },
-  { uid: "b", checkIn: "2026-11-28", checkOut: "2026-12-01", status: "blocked" },
+  { uid: "a", checkIn: "2026-11-21", checkOut: "2026-11-23", status: "confirmed", description: "" },
+  { uid: "b", checkIn: "2026-11-28", checkOut: "2026-12-01", status: "blocked", description: "" },
 ]);
 assert.deepEqual(plan.cancel, [2]); // vanished future stay is cancelled; past history is kept
 
@@ -542,3 +543,89 @@ assert.deepEqual(parseGuide("## Empty section\n\n## Real\nbody"), [{ title: "Rea
 assert.equal(formatGuide([{ title: "Wi-Fi", body: "Behind the TV." }]), "## Wi-Fi\nBehind the TV.");
 assert.deepEqual(parseGuide(formatGuide([{ title: "A", body: "one\ntwo" }, { title: "B", body: "x" }])), [{ title: "A", body: "one\ntwo" }, { title: "B", body: "x" }]);
 console.log("guidebook checks passed");
+
+// ---------------- revenue: Airbnb earnings CSV, nights per month, per-flat metrics
+import { parseCsv, parseEarnings, nightsInMonth, splitRevenue, flatStats, confirmationCodeFrom } from "./stays-revenue";
+assert.deepEqual(parseCsv('a,b\n1,2'), [["a", "b"], ["1", "2"]]);
+assert.deepEqual(parseCsv('a,b\r\n"x,y",2\r\n'), [["a", "b"], ["x,y", "2"]]); // commas inside quotes
+assert.deepEqual(parseCsv('"he said ""hi""",2'), [['he said "hi"', "2"]]); // escaped quotes
+assert.deepEqual(parseCsv('﻿a,b\n1,2')[0], ["a", "b"]); // byte-order mark
+assert.deepEqual(parseCsv('a,b\n\n1,2').length, 2); // blank lines dropped
+
+const CSV = [
+  '"Date","Arriving by date","Type","Confirmation code","Nights","Guest","Listing","Currency","Amount","Paid out","Service fee","Cleaning fee","Gross earnings"',
+  '"11/01/2026","11/20/2026","Reservation","HMABC123","3","Riya Sharma","Bandra 1BHK","INR","₹12,000.00","","₹360.00","₹1,500.00","₹12,360.00"',
+  '"11/02/2026","","Payout","","","","","INR","","₹12,000.00","","",""',
+  '"11/05/2026","11/28/2026","Reservation","HMXYZ789","2","Ana Lopez","Khar studio","INR","8000","","240","0","8240"',
+  '"11/07/2026","","Resolution Payout","HMABC123","","","","INR","₹2,000.00","","","",""',
+].join("\n");
+const er = parseEarnings(CSV);
+assert.equal(er.rows.length, 2); // two reservations
+assert.equal(er.payouts, 1); // bank transfers are not income, and are not counted twice
+assert.equal(er.other, 1); // the resolution payout is surfaced, not silently dropped
+assert.deepEqual(er.rows[0], { code: "HMABC123", listing: "Bandra 1BHK", guest: "Riya Sharma", checkIn: "2026-11-20", nights: 3, gross: 12360, channelFee: 360, cleaningFee: 1500, payout: 12000 });
+assert.equal(er.rows[1].payout, 8000); // "Amount" is the net figure Airbnb pays out
+assert.equal(er.rows[1].gross, 8240); // before the host service fee
+const noGross = parseEarnings(['"Type","Confirmation code","Amount","Service fee"', '"Reservation","HM1","5000","150"'].join("\n"));
+assert.deepEqual([noGross.rows[0].gross, noGross.rows[0].payout], [5150, 5000]); // gross rebuilt from amount + fee
+assert.ok(parseEarnings("not,a,csv\n1,2,3").error); // no recognisable columns
+
+// Airbnb puts the confirmation code in the event description
+assert.equal(confirmationCodeFrom("Reservation URL: https://www.airbnb.com/hosting/reservations/details/HMABC123\nPhone: 1234"), "HMABC123");
+assert.equal(confirmationCodeFrom("Nothing here"), null);
+
+// A stay that straddles month end belongs to both months
+assert.equal(nightsInMonth("2026-11-28", "2026-12-03", "2026-11"), 3); // 28, 29, 30
+assert.equal(nightsInMonth("2026-11-28", "2026-12-03", "2026-12"), 2); // 1, 2
+assert.equal(nightsInMonth("2026-11-20", "2026-11-23", "2026-11"), 3);
+assert.equal(nightsInMonth("2026-11-20", "2026-11-23", "2026-10"), 0);
+assert.equal(splitRevenue(10000, "2026-11-28", "2026-12-03", "2026-11"), 6000); // 3 of 5 nights
+assert.equal(splitRevenue(10000, "2026-11-28", "2026-12-03", "2026-12"), 4000);
+assert.equal(splitRevenue(10000, "2026-11-20", "2026-11-23", "2026-11"), 10000);
+
+// Occupancy, average nightly rate and revenue per available night, for one flat in one month
+const s1 = flatStats("2026-11", [
+  { checkIn: "2026-11-01", checkOut: "2026-11-11", status: "confirmed", payout: 50000 }, // 10 nights
+  { checkIn: "2026-11-20", checkOut: "2026-11-25", status: "confirmed", payout: 25000 }, // 5 nights
+  { checkIn: "2026-11-12", checkOut: "2026-11-15", status: "blocked", payout: null }, // owner's own use: 3 nights off the market
+  { checkIn: "2026-11-26", checkOut: "2026-11-28", status: "cancelled", payout: 9999 },
+]);
+assert.equal(s1.soldNights, 15);
+assert.equal(s1.availableNights, 27); // 30 − 3 blocked
+assert.equal(s1.revenue, 75000);
+assert.equal(Math.round(s1.occupancy * 100), 56);
+assert.equal(s1.adr, 5000);
+assert.equal(Math.round(s1.revpar), 2778);
+const empty = flatStats("2026-11", []);
+assert.equal(empty.occupancy, 0);
+assert.equal(empty.adr, 0); // no divide-by-zero
+assert.equal(flatStats("2026-11", [{ checkIn: "2026-11-01", checkOut: "2026-12-01", status: "blocked", payout: null }]).availableNights, 0);
+console.log("revenue checks passed");
+// the calendar event's description carries the confirmation code, which is how an earnings row finds its stay
+const withDesc = parseIcal(["BEGIN:VEVENT", "UID:u1", "DTSTART;VALUE=DATE:20261120", "DTEND;VALUE=DATE:20261123",
+  "SUMMARY:Reserved", "DESCRIPTION:Reservation URL: https://www.airbnb.com/hosting/reservations/details/HM", " ABC123", "END:VEVENT"].join("\r\n"));
+assert.equal(confirmationCodeFrom(withDesc[0].description), "HMABC123"); // unfolded across the line break
+assert.equal(parseIcal("BEGIN:VEVENT\nUID:u\nDTSTART;VALUE=DATE:20261101\nDTEND;VALUE=DATE:20261102\nEND:VEVENT")[0].description, "");
+console.log("ical description checks passed");
+import { matchEarnings } from "./stays-revenue";
+const theStays = [
+  { id: 1, propertyId: 1, channel: "airbnb", checkIn: "2026-11-20", checkOut: "2026-11-23", confirmationCode: "HMABC123" },
+  { id: 2, propertyId: 2, channel: "airbnb", checkIn: "2026-11-28", checkOut: "2026-11-30", confirmationCode: null },
+  { id: 3, propertyId: 3, channel: "booking", checkIn: "2026-11-20", checkOut: "2026-11-23", confirmationCode: null },
+];
+const em = matchEarnings(theStays, [
+  { code: "HMABC123", listing: "x", guest: "Riya", checkIn: "2026-11-20", nights: 3, gross: 12360, channelFee: 360, cleaningFee: 1500, payout: 12000 },
+  { code: "HMNEW999", listing: "Khar", guest: "Ana", checkIn: "2026-11-28", nights: 2, gross: 8240, channelFee: 240, cleaningFee: 0, payout: 8000 },
+  { code: "HMGONE", listing: "Sold flat", guest: "Nobody", checkIn: "2026-01-05", nights: 1, gross: 100, channelFee: 0, cleaningFee: 0, payout: 100 },
+]);
+assert.equal(em.matched.length, 2);
+assert.deepEqual(em.matched[0], { id: 1, payout: 12000, gross: 12360, channelFee: 360, cleaningFee: 1500, guest: "Riya", code: "HMABC123" });
+assert.equal(em.matched[1].id, 2); // no code stored: matched on Airbnb + check-in date, and the code is filled in
+assert.equal(em.matched[1].code, "HMNEW999");
+assert.equal(em.unmatched.length, 1);
+assert.equal(em.unmatched[0].code, "HMGONE");
+// a Booking.com stay on the same dates is never claimed by an Airbnb earnings row
+assert.deepEqual(matchEarnings([theStays[2]], [{ code: null, listing: "x", guest: null, checkIn: "2026-11-20", nights: 3, gross: 100, channelFee: 0, cleaningFee: 0, payout: 100 }]).matched, []);
+// two stays arriving the same day on different flats: a dateless, codeless row can't be guessed
+assert.equal(matchEarnings(theStays, [{ code: null, listing: "x", guest: null, checkIn: null, nights: 3, gross: 100, channelFee: 0, cleaningFee: 0, payout: 100 }]).unmatched.length, 1);
+console.log("earnings match checks passed");

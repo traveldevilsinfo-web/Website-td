@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useTransition } from "react";
 import {
-  BedDouble, Building2, CalendarClock, CalendarDays, ChartColumn, ClipboardCheck, FolderTree, House, LogOut, MoreHorizontal, Plus, Receipt, Store, UserRound, Users, X,
+  BedDouble, Building2, CalendarClock, CalendarDays, ChartColumn, ClipboardCheck, FolderTree, House, LogOut, MoreHorizontal, Plus, Receipt, Store, TrendingUp, UserRound, Users, X,
 } from "lucide-react";
 import { BIZ_LABEL, ROLE_LABEL, type Biz, type OpsRole } from "@/lib/ops-rules";
 import { ACCENT, BIZ_SHORT } from "./accent";
@@ -31,6 +31,7 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
       { href: "/ops/calendar", label: "Calendar", icon: CalendarDays, show: stays && manager },
       { href: "/ops/stays", label: "Bookings", icon: BedDouble, show: stays && manager },
       { href: "/ops/guests", label: "Guests", icon: UserRound, show: stays && manager },
+      { href: "/ops/revenue", label: "Revenue", icon: TrendingUp, show: stays && manager },
       { href: "/ops/properties", label: "Flats", icon: Building2, show: stays && manager },
     ] },
     { title: "Money", items: [
@@ -122,7 +123,7 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
 
   return (
     <>
-      <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col bg-[#0c0e12] lg:flex">
+      <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col bg-[#0c0e12] lg:flex print:hidden">
         <div className="flex h-16 shrink-0 items-center px-4">{brand}</div>
         <div className="flex flex-1 flex-col gap-4 overflow-y-auto px-3 pb-4">
           {switcher}
@@ -135,7 +136,7 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
       </aside>
 
       {/* Phone: translucent top bar, content scrolls under it */}
-      <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-white/[0.06] bg-[#0c0e12]/90 px-4 backdrop-blur-xl backdrop-saturate-150 lg:hidden">
+      <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-white/[0.06] bg-[#0c0e12]/90 px-4 backdrop-blur-xl backdrop-saturate-150 lg:hidden print:hidden">
         {brand}
         {businesses.length > 1 && (
           <button type="button" disabled={pending} onClick={() => start(() => setBusiness(biz === "td" ? "finzo" : "td"))}
@@ -145,7 +146,7 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
         )}
       </header>
 
-      <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-30 border-t border-[var(--line)] bg-white/85 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl backdrop-saturate-150 lg:hidden">
+      <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-30 print:hidden border-t border-[var(--line)] bg-white/85 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl backdrop-saturate-150 lg:hidden">
         <ul className="grid grid-cols-5">
           {tab("/ops", "Today", House)}
           {tab(second.href, second.label, second.icon)}

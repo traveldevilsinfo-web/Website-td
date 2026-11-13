@@ -5,7 +5,7 @@ import { Field, input } from "@/app/ops/kit";
 import { ReceiptInput } from "../ReceiptInput";
 
 type Values = {
-  amount?: number; date?: string; categoryId?: number; vendorId?: number | null; tripBatchId?: number | null;
+  amount?: number; date?: string; categoryId?: number; vendorId?: number | null; tripBatchId?: number | null; propertyId?: number | null;
   paidVia?: string | null; reimburse?: boolean; receiptPath?: string | null; note?: string | null;
 };
 
@@ -41,6 +41,14 @@ export function ExpenseFields({ biz, options, v = {}, today }: { biz: Biz; optio
       <label className="flex items-center gap-2 text-sm font-medium sm:col-span-2">
         <input type="checkbox" name="reimburse" defaultChecked={v.reimburse} className="size-4" /> I paid this from my own pocket (reimburse me)
       </label>
+      {biz === "finzo" && (
+        <Field label="Flat (optional)" hint="Tag a cost to its flat so it lands on that flat's statement.">
+          <select name="propertyId" defaultValue={v.propertyId ?? ""} className={input}>
+            <option value="">Not flat-specific</option>
+            {options.flats.map((f) => <option key={f.id} value={f.id}>{f.code} · {f.name}</option>)}
+          </select>
+        </Field>
+      )}
       {biz === "td" && (
         <Field label="Trip departure (optional)" hint="Tag trip costs so each departure shows its profit.">
           <select name="tripBatchId" defaultValue={v.tripBatchId ?? ""} className={input}>

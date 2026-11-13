@@ -1,7 +1,8 @@
 // Pure stay logic for the BnB side: iCal in/out, sync diff, double-booking detection, cleaning plan.
 // No DB, no server-only: tested in lib/checks.mts. Dates are YYYY-MM-DD; check-out is exclusive (the morning they leave).
 
-export type IcalEvent = { uid: string; start: string; end: string; summary: string };
+/** `description` is only produced when reading a feed; writing one never needs it. */
+export type IcalEvent = { uid: string; start: string; end: string; summary: string; description?: string };
 export type StayStatus = "confirmed" | "cancelled" | "blocked";
 
 const ymd = (v: string) => {
@@ -17,7 +18,7 @@ export function parseIcal(text: string): IcalEvent[] {
   for (const line of lines) {
     if (line === "BEGIN:VEVENT") cur = {};
     else if (line === "END:VEVENT") {
-      if (cur?.uid && cur.start && cur.end) out.push({ uid: cur.uid, start: cur.start, end: cur.end, summary: cur.summary ?? "" });
+      if (cur?.uid && cur.start && cur.end) out.push({ uid: cur.uid, start: cur.start, end: cur.end, summary: cur.summary ?? "", description: cur.description ?? "" });
       cur = null;
     } else if (cur) {
       const i = line.indexOf(":");
@@ -27,6 +28,7 @@ export function parseIcal(text: string): IcalEvent[] {
       else if (key === "DTSTART") cur.start = ymd(val) ?? undefined;
       else if (key === "DTEND") cur.end = ymd(val) ?? undefined;
       else if (key === "SUMMARY") cur.summary = val.replace(/\\([,;\\])/g, "$1").trim();
+      else if (key === "DESCRIPTION") cur.description = val.replace(/\\n/g, "\n").replace(/\\([,;\\])/g, "$1").trim();
     }
   }
   return out;
@@ -66,7 +68,7 @@ type Existing = { id: number; externalUid: string | null; checkIn: string; check
 export function planSync(existing: Existing[], feed: IcalEvent[], today: string, channel = "other") {
   const seen = new Set(feed.map((e) => e.uid));
   return {
-    upserts: feed.map((e) => ({ uid: e.uid, checkIn: e.start, checkOut: e.end, status: (isBlockEvent(channel, e.summary) ? "blocked" : "confirmed") as StayStatus })),
+    upserts: feed.map((e) => ({ uid: e.uid, checkIn: e.start, checkOut: e.end, description: e.description ?? "", status: (isBlockEvent(channel, e.summary) ? "blocked" : "confirmed") as StayStatus })),
     cancel: existing.filter((x) => x.externalUid && !seen.has(x.externalUid) && x.status !== "cancelled" && x.checkIn >= today).map((x) => x.id),
   };
 }

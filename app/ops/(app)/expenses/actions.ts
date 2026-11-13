@@ -34,6 +34,9 @@ export async function saveExpense(id: number | null, _prev: ActionState, f: Form
   const vendorId = r.int("vendorId");
   if (vendorId && !(await db.select({ id: t.vendors.id }).from(t.vendors).where(and(eq(t.vendors.id, vendorId), eq(t.vendors.business, biz)))).length)
     return { ok: false, message: "That vendor isn't in this business." };
+  const propertyId = biz === "finzo" ? r.int("propertyId") : null;
+  if (propertyId && !(await db.select({ id: t.properties.id }).from(t.properties).where(eq(t.properties.id, propertyId))).length)
+    return { ok: false, message: "That flat no longer exists." };
   const tripBatchId = biz === "td" ? r.int("tripBatchId") : null;
   if (tripBatchId && !(await db.select({ id: t.tripBatches.id }).from(t.tripBatches).where(eq(t.tripBatches.id, tripBatchId))).length)
     return { ok: false, message: "That departure no longer exists." };
@@ -47,7 +50,7 @@ export async function saveExpense(id: number | null, _prev: ActionState, f: Form
   const status = statusAfterSave(manager, prev?.status ?? null, amount);
   const becameApproved = status === "approved" && prev?.status !== "approved";
   const values = {
-    amount, date, categoryId: cat.id, vendorId, tripBatchId, receiptPath, note: r.str("note"),
+    amount, date, categoryId: cat.id, vendorId, tripBatchId, propertyId, receiptPath, note: r.str("note"),
     paidVia: paidViaOf(r.str("paidVia")), reimburse: r.bool("reimburse"), status,
     ...(becameApproved ? { approvedBy: user.id, approvedAt: new Date() } : {}),
   };

@@ -1,5 +1,6 @@
 import { sql } from "drizzle-orm";
 import {
+  type AnyPgColumn,
   boolean, date, index, integer, jsonb, pgEnum, pgTable, serial, text, timestamp, uniqueIndex,
 } from "drizzle-orm/pg-core";
 
@@ -375,6 +376,7 @@ export const recurringExpenses = pgTable("recurring_expenses", {
   amount: integer("amount"), // null = variable bill (electricity): posted as needs_amount
   categoryId: integer("category_id").notNull().references(() => expenseCategories.id),
   vendorId: integer("vendor_id").references(() => vendors.id, { onDelete: "set null" }),
+  propertyId: integer("property_id").references((): AnyPgColumn => properties.id, { onDelete: "set null" }), // e.g. this flat's rent
   dayOfMonth: integer("day_of_month").notNull(), // 1-31; short months post on their last day
   paidVia: paidViaEnum("paid_via"),
   active: boolean("active").notNull().default(true),
@@ -393,6 +395,7 @@ export const expenses = pgTable(
     categoryId: integer("category_id").notNull().references(() => expenseCategories.id),
     vendorId: integer("vendor_id").references(() => vendors.id, { onDelete: "set null" }),
     tripBatchId: integer("trip_batch_id").references(() => tripBatches.id, { onDelete: "set null" }), // TD cost centre
+    propertyId: integer("property_id").references((): AnyPgColumn => properties.id, { onDelete: "set null" }), // Finzo cost centre
     paidVia: paidViaEnum("paid_via"),
     reimburse: boolean("reimburse").notNull().default(false), // staff paid out of pocket
     receiptPath: text("receipt_path"), // private bucket path yyyy/mm/name.ext
@@ -411,6 +414,7 @@ export const expenses = pgTable(
     index("expenses_business_date_idx").on(t.business, t.date),
     index("expenses_business_status_idx").on(t.business, t.status),
     index("expenses_created_by_idx").on(t.createdBy),
+    index("expenses_property_idx").on(t.propertyId),
     uniqueIndex("expenses_recurring_period_idx").on(t.recurringId, t.period),
   ],
 );
@@ -478,7 +482,12 @@ export const reservations = pgTable(
     guestName: text("guest_name"),
     guests: integer("guests"),
     phone: text("phone"),
-    amount: integer("amount"),
+    amount: integer("amount"), // gross booking value
+    payout: integer("payout"), // what actually reaches the bank, after channel fees
+    channelFee: integer("channel_fee"),
+    cleaningFee: integer("cleaning_fee"),
+    confirmationCode: text("confirmation_code"), // Airbnb HM…: how an earnings row finds its stay
+    earningsAt: timestamp("earnings_at", { withTimezone: true }), // last time an import touched this row
     status: stayStatusEnum("status").notNull().default("confirmed"),
     notes: text("notes"),
     createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
