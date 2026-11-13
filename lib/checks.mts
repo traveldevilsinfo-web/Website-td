@@ -537,3 +537,9 @@ assert.deepEqual(parseGuide("## Empty section\n\n## Real\nbody"), [{ title: "Rea
 assert.equal(formatGuide([{ title: "Wi-Fi", body: "Behind the TV." }]), "## Wi-Fi\nBehind the TV.");
 assert.deepEqual(parseGuide(formatGuide([{ title: "A", body: "one\ntwo" }, { title: "B", body: "x" }])), [{ title: "A", body: "one\ntwo" }, { title: "B", body: "x" }]);
 console.log("guidebook checks passed");
+import { canSeeGuestId } from "./ops-rules";
+assert.equal(canSeeGuestId(owner), true);
+assert.equal(canSeeGuestId({ id: 5, role: "manager", businesses: ["finzo"] }), true);
+assert.equal(canSeeGuestId({ id: 6, role: "manager", businesses: ["td"] }), false); // other business
+assert.equal(canSeeGuestId(staffT), false); // housekeepers never see guest ID documents
+console.log("guest id access checks passed");
