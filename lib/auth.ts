@@ -48,6 +48,12 @@ export const getCurrentUser = cache(async (): Promise<CurrentUser | null> => {
   return row ?? null;
 });
 
+/** For /api/admin/* and other admin route handlers: the user, or null for guests AND ops-only roles (they never get website admin). */
+export async function getAdminUser() {
+  const user = await getCurrentUser();
+  return user && !isOpsOnly(user.role) ? user : null;
+}
+
 /** Call at the top of every admin page AND every admin server action. */
 export async function requireUser(role?: "admin") {
   const user = await getCurrentUser();

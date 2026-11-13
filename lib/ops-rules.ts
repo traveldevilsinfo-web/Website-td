@@ -85,17 +85,18 @@ export function monthBounds(month: string) {
 export type RecurringLike = { id: number; dayOfMonth: number; active: boolean; startMonth: string; endMonth: string | null };
 
 /**
- * Fixed costs due this month as of `today`. Only the current month: the DB's unique (recurring_id, period)
- * makes re-runs harmless, and a missed cron day is caught up on the next run.
+ * Fixed costs due by `today`, for last month and this month. Looking back one month means a cron that missed
+ * the last day of a month still posts it on the 1st; the DB's unique (recurring_id, period) makes re-runs harmless.
  */
 export function dueRecurring(rows: RecurringLike[], today: string) {
-  const period = today.slice(0, 7);
-  const { to } = monthBounds(period);
-  const lastDay = Number(to.slice(8));
-  return rows
-    .filter((r) => r.active && r.startMonth <= period && (!r.endMonth || r.endMonth >= period))
-    .map((r) => ({ id: r.id, period, date: `${period}-${String(Math.min(r.dayOfMonth, lastDay)).padStart(2, "0")}` }))
-    .filter((d) => d.date <= today);
+  const current = today.slice(0, 7);
+  return [shiftMonth(current, -1), current].flatMap((period) => {
+    const lastDay = Number(monthBounds(period).to.slice(8));
+    return rows
+      .filter((r) => r.active && r.startMonth <= period && (!r.endMonth || r.endMonth >= period))
+      .map((r) => ({ id: r.id, period, date: `${period}-${String(Math.min(r.dayOfMonth, lastDay)).padStart(2, "0")}` }))
+      .filter((d) => d.date <= today);
+  });
 }
 
 // ------------------------------------------------------------------ reports

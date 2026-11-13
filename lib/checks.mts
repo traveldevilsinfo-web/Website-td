@@ -288,15 +288,17 @@ assert.deepEqual(monthBounds("2026-12"), { from: "2026-12-01", to: "2026-12-31" 
 console.log("ops month checks passed");
 import { dueRecurring, type RecurringLike } from "./ops-rules";
 const rec = (o: Partial<RecurringLike>): RecurringLike => ({ id: 1, dayOfMonth: 1, active: true, startMonth: "2026-01", endMonth: null, ...o });
-assert.deepEqual(dueRecurring([rec({})], "2026-11-01"), [{ id: 1, period: "2026-11", date: "2026-11-01" }]);
-assert.deepEqual(dueRecurring([rec({ dayOfMonth: 5 })], "2026-11-04"), []); // not yet
-assert.deepEqual(dueRecurring([rec({ dayOfMonth: 5 })], "2026-11-20"), [{ id: 1, period: "2026-11", date: "2026-11-05" }]); // catches up
-assert.deepEqual(dueRecurring([rec({ dayOfMonth: 31 })], "2026-02-28"), [{ id: 1, period: "2026-02", date: "2026-02-28" }]); // short month
-assert.deepEqual(dueRecurring([rec({ dayOfMonth: 31 })], "2026-11-30"), [{ id: 1, period: "2026-11", date: "2026-11-30" }]);
+// Looks at last month AND this month (the unique (recurring_id, period) index makes re-posting a no-op).
+const nov = (today: string, o: Partial<RecurringLike> = {}) => dueRecurring([rec(o)], today).filter((d) => d.period === "2026-11");
+assert.deepEqual(nov("2026-11-01"), [{ id: 1, period: "2026-11", date: "2026-11-01" }]);
+assert.deepEqual(nov("2026-11-04", { dayOfMonth: 5 }), []); // not yet
+assert.deepEqual(nov("2026-11-20", { dayOfMonth: 5 }), [{ id: 1, period: "2026-11", date: "2026-11-05" }]); // catches up
+assert.deepEqual(dueRecurring([rec({ dayOfMonth: 31, startMonth: "2026-02" })], "2026-02-28"), [{ id: 1, period: "2026-02", date: "2026-02-28" }]); // short month
+assert.deepEqual(nov("2026-11-30", { dayOfMonth: 31 }), [{ id: 1, period: "2026-11", date: "2026-11-30" }]);
 assert.deepEqual(dueRecurring([rec({ active: false })], "2026-11-20"), []);
 assert.deepEqual(dueRecurring([rec({ startMonth: "2026-12" })], "2026-11-20"), []);
-assert.deepEqual(dueRecurring([rec({ endMonth: "2026-10" })], "2026-11-20"), []);
-assert.deepEqual(dueRecurring([rec({ endMonth: "2026-11" })], "2026-11-20").length, 1); // end month inclusive
+assert.deepEqual(dueRecurring([rec({ endMonth: "2026-10" })], "2026-11-20"), [{ id: 1, period: "2026-10", date: "2026-10-01" }]); // only its last month
+assert.equal(dueRecurring([rec({ endMonth: "2026-11" })], "2026-11-20").length, 2); // end month inclusive
 console.log("ops recurring checks passed");
 import { summarize, csvCell } from "./ops-rules";
 const sm = summarize([
@@ -324,3 +326,10 @@ assert.equal(shiftMonth("2026-01", -1), "2025-12");
 assert.equal(shiftMonth("2026-11", -5), "2026-06");
 assert.equal(shiftMonth("2026-12", 1), "2027-01");
 console.log("ops shiftMonth checks passed");
+// cron missed the last day of the month: next month's first run still posts it (and this month's)
+assert.deepEqual(dueRecurring([rec({ dayOfMonth: 31 })], "2026-12-01"), [{ id: 1, period: "2026-11", date: "2026-11-30" }]);
+assert.deepEqual(dueRecurring([rec({ dayOfMonth: 1 })], "2026-12-01"),
+  [{ id: 1, period: "2026-11", date: "2026-11-01" }, { id: 1, period: "2026-12", date: "2026-12-01" }]);
+assert.deepEqual(dueRecurring([rec({ startMonth: "2026-12" })], "2026-12-01"), [{ id: 1, period: "2026-12", date: "2026-12-01" }]); // not before it started
+assert.deepEqual(dueRecurring([rec({ dayOfMonth: 31 })], "2027-01-01"), [{ id: 1, period: "2026-12", date: "2026-12-31" }]); // across the year
+console.log("ops recurring catch-up checks passed");
