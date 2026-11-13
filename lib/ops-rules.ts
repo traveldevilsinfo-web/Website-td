@@ -97,3 +97,38 @@ export function dueRecurring(rows: RecurringLike[], today: string) {
     .map((r) => ({ id: r.id, period, date: `${period}-${String(Math.min(r.dayOfMonth, lastDay)).padStart(2, "0")}` }))
     .filter((d) => d.date <= today);
 }
+
+// ------------------------------------------------------------------ reports
+
+type SumRow = { amount: number; status: string; category: string; kind: string };
+
+/** Spent = approved + paid. Submitted is pending; rejected and needs_amount count for nothing yet. */
+export function summarize(rows: SumRow[]) {
+  let spent = 0, unpaid = 0, pendingCount = 0, pendingAmount = 0, needsAmount = 0;
+  const cats = new Map<string, { category: string; kind: string; amount: number }>();
+  for (const r of rows) {
+    if (r.status === "submitted") { pendingCount++; pendingAmount += r.amount; }
+    if (r.status === "needs_amount") needsAmount++;
+    if (r.status !== "approved" && r.status !== "paid") continue;
+    spent += r.amount;
+    if (r.status === "approved") unpaid += r.amount;
+    const c = cats.get(r.category) ?? { category: r.category, kind: r.kind, amount: 0 };
+    c.amount += r.amount;
+    cats.set(r.category, c);
+  }
+  return { spent, unpaid, pendingCount, pendingAmount, needsAmount, byCategory: [...cats.values()].sort((a, b) => b.amount - a.amount) };
+}
+
+/** One CSV cell: quoted when needed; text starting with = + - @ is prefixed with ' so spreadsheets don't run it. */
+export function csvCell(v: string | number | boolean | null | undefined): string {
+  if (v == null) return "";
+  if (typeof v !== "string") return String(v);
+  const s = /^[=+\-@\t\r]/.test(v) ? `'${v}` : v;
+  return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+
+/** "2026-01" shifted by -1 → "2025-12". */
+export function shiftMonth(month: string, by: number) {
+  const [y, m] = month.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1 + by, 1)).toISOString().slice(0, 7);
+}

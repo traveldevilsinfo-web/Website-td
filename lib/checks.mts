@@ -298,3 +298,29 @@ assert.deepEqual(dueRecurring([rec({ startMonth: "2026-12" })], "2026-11-20"), [
 assert.deepEqual(dueRecurring([rec({ endMonth: "2026-10" })], "2026-11-20"), []);
 assert.deepEqual(dueRecurring([rec({ endMonth: "2026-11" })], "2026-11-20").length, 1); // end month inclusive
 console.log("ops recurring checks passed");
+import { summarize, csvCell } from "./ops-rules";
+const sm = summarize([
+  { amount: 1000, status: "approved", category: "Food", kind: "variable" },
+  { amount: 500, status: "paid", category: "Food", kind: "variable" },
+  { amount: 3000, status: "paid", category: "Rent", kind: "fixed" },
+  { amount: 200, status: "submitted", category: "Food", kind: "variable" },
+  { amount: 999, status: "rejected", category: "Food", kind: "variable" },
+  { amount: 0, status: "needs_amount", category: "Electricity", kind: "variable" },
+]);
+assert.equal(sm.spent, 4500);
+assert.equal(sm.unpaid, 1000);
+assert.equal(sm.pendingCount, 1);
+assert.equal(sm.pendingAmount, 200);
+assert.equal(sm.needsAmount, 1);
+assert.deepEqual(sm.byCategory, [{ category: "Rent", kind: "fixed", amount: 3000 }, { category: "Food", kind: "variable", amount: 1500 }]);
+assert.equal(csvCell("plain"), "plain");
+assert.equal(csvCell('say "hi", ok'), '"say ""hi"", ok"');
+assert.equal(csvCell("=HYPERLINK(1)"), "'=HYPERLINK(1)"); // spreadsheet formula injection
+assert.equal(csvCell(-500), "-500"); // numbers stay numbers
+assert.equal(csvCell(null), "");
+console.log("ops summary checks passed");
+import { shiftMonth } from "./ops-rules";
+assert.equal(shiftMonth("2026-01", -1), "2025-12");
+assert.equal(shiftMonth("2026-11", -5), "2026-06");
+assert.equal(shiftMonth("2026-12", 1), "2027-01");
+console.log("ops shiftMonth checks passed");
