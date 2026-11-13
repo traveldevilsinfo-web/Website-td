@@ -162,3 +162,7 @@ export function teamChangeError(me: { id: number }, targetId: number, next: { ro
   if (currentRole === "owner" && losesOwner && owners <= 1) return "Keep at least one owner.";
   return null;
 }
+
+/** Cleanings and repairs: managers see all; staff only what's assigned to them or what they reported. */
+export const canWorkOn = (u: OpsUser, task: { assigneeId: number | null; createdBy?: number | null }) =>
+  isManager(u) || task.assigneeId === u.id || task.createdBy === u.id;

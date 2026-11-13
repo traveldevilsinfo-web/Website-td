@@ -1,0 +1,2 @@
+ALTER TABLE "tickets" ADD COLUMN "expense_id" integer;--> statement-breakpoint
+ALTER TABLE "tickets" ADD CONSTRAINT "tickets_expense_id_expenses_id_fk" FOREIGN KEY ("expense_id") REFERENCES "public"."expenses"("id") ON DELETE set null ON UPDATE no action;

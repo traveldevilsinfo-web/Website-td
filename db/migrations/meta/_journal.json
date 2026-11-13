@@ -71,6 +71,20 @@
       "when": 1794573477284,
       "tag": "0009_ops_foundation",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1794574152738,
+      "tag": "0010_stays",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1794574471845,
+      "tag": "0011_ticket_expense",
+      "breakpoints": true
     }
   ]
 }

@@ -17,3 +17,10 @@ export async function requireOps(opts?: { manager?: boolean; owner?: boolean }):
   if ((opts?.manager && !manager) || (opts?.owner && user.role !== "owner")) redirect("/ops?denied=1");
   return { user, biz, businesses, manager };
 }
+
+/** Finzo-only pages (flats, calendar, bookings): managers, and only while Finzo is the open business. */
+export async function requireStays() {
+  const ctx = await requireOps({ manager: true });
+  if (ctx.biz !== "finzo") redirect("/ops?switch=finzo");
+  return ctx;
+}

@@ -358,3 +358,101 @@ assert.equal(teamChangeError(me, 1, { role: "owner", active: true }, 1), null); 
 assert.ok(teamChangeError(me, 2, { role: "staff", active: true }, 1, "owner")); // demoting the last other owner... only one owner left
 assert.equal(teamChangeError(me, 2, { role: "staff", active: true }, 2, "owner"), null); // two owners: fine
 console.log("ops team checks passed");
+
+// ---------------- stays: iCal, sync, clashes, cleanings
+import { parseIcal, buildIcal, planSync, findClashes, planTurnovers, isBlockSummary } from "./stays";
+const airbnb = [
+  "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Airbnb Inc//Hosting Calendar 0.8.8//EN",
+  "BEGIN:VEVENT", "DTEND;VALUE=DATE:20261123", "DTSTART;VALUE=DATE:20261120", "UID:1418fb94e984-0bd9c9e8@airbnb.com",
+  "DESCRIPTION:Reservation URL: https://www.airbnb.com/hosting/reservations/details/HM\r\n ABC123", "SUMMARY:Reserved", "END:VEVENT",
+  "BEGIN:VEVENT", "DTEND;VALUE=DATE:20261201", "DTSTART;VALUE=DATE:20261128", "UID:abc-blocked@airbnb.com", "SUMMARY:Airbnb (Not available)", "END:VEVENT",
+  "BEGIN:VEVENT", "DTSTART:20261205T083000Z", "DTEND:20261207T053000Z", "UID:booking-77", "SUMMARY:CLOSED - Not available", "END:VEVENT",
+  "END:VCALENDAR",
+].join("\r\n");
+const ev = parseIcal(airbnb);
+assert.equal(ev.length, 3);
+assert.deepEqual(ev[0], { uid: "1418fb94e984-0bd9c9e8@airbnb.com", start: "2026-11-20", end: "2026-11-23", summary: "Reserved" });
+assert.equal(ev[2].start, "2026-12-05"); // date-time values keep their date
+assert.equal(isBlockSummary(ev[0].summary), false);
+assert.equal(isBlockSummary(ev[1].summary), true);
+assert.equal(isBlockSummary(ev[2].summary), true);
+assert.deepEqual(parseIcal("garbage"), []);
+assert.deepEqual(parseIcal("BEGIN:VEVENT\nUID:x\nSUMMARY:no dates\nEND:VEVENT"), []); // skip events without dates
+// folded lines (RFC 5545: continuation starts with a space)
+assert.equal(parseIcal("BEGIN:VEVENT\r\nUID:long-\r\n uid\r\nDTSTART;VALUE=DATE:20261101\r\nDTEND;VALUE=DATE:20261102\r\nEND:VEVENT")[0].uid, "long-uid");
+
+const feed = buildIcal("FZ-01 Bandra 1BHK", [{ uid: "r12@finzo", start: "2026-11-20", end: "2026-11-23", summary: "Direct booking" }], new Date("2026-11-13T00:00:00Z"));
+assert.ok(feed.startsWith("BEGIN:VCALENDAR\r\n") && feed.trimEnd().endsWith("END:VCALENDAR"));
+assert.ok(feed.includes("DTSTART;VALUE=DATE:20261120\r\n") && feed.includes("DTEND;VALUE=DATE:20261123\r\n"));
+assert.deepEqual(parseIcal(feed)[0], { uid: "r12@finzo", start: "2026-11-20", end: "2026-11-23", summary: "Direct booking" }); // round-trip
+
+const existing = [
+  { id: 1, externalUid: "a", checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" as const },
+  { id: 2, externalUid: "gone-future", checkIn: "2026-12-01", checkOut: "2026-12-03", status: "confirmed" as const },
+  { id: 3, externalUid: "gone-past", checkIn: "2026-11-01", checkOut: "2026-11-03", status: "confirmed" as const },
+];
+const plan = planSync(existing, [{ uid: "a", start: "2026-11-21", end: "2026-11-23", summary: "Reserved" }, { uid: "b", start: "2026-11-28", end: "2026-12-01", summary: "Not available" }], "2026-11-13");
+assert.deepEqual(plan.upserts, [
+  { uid: "a", checkIn: "2026-11-21", checkOut: "2026-11-23", status: "confirmed" },
+  { uid: "b", checkIn: "2026-11-28", checkOut: "2026-12-01", status: "blocked" },
+]);
+assert.deepEqual(plan.cancel, [2]); // vanished future stay is cancelled; past history is kept
+
+const stays = [
+  { id: 1, propertyId: 1, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" as const },
+  { id: 2, propertyId: 1, checkIn: "2026-11-23", checkOut: "2026-11-25", status: "confirmed" as const }, // same-day turnover, no clash
+  { id: 3, propertyId: 1, checkIn: "2026-11-22", checkOut: "2026-11-24", status: "confirmed" as const }, // overlaps 1 and 2
+  { id: 4, propertyId: 2, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" as const }, // other flat
+  { id: 5, propertyId: 1, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "cancelled" as const },
+];
+assert.deepEqual(findClashes(stays), [[1, 3], [2, 3]]);
+
+assert.deepEqual(planTurnovers([
+  { id: 1, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" },
+  { id: 6, checkIn: "2026-11-23", checkOut: "2026-11-24", status: "blocked" }, // owner block: no cleaning, not a next guest
+  { id: 2, checkIn: "2026-11-23", checkOut: "2026-11-25", status: "confirmed" },
+  { id: 7, checkIn: "2026-11-27", checkOut: "2026-11-29", status: "cancelled" },
+]), [
+  { reservationId: 1, date: "2026-11-23", nextCheckIn: "2026-11-23" }, // same-day: urgent
+  { reservationId: 2, date: "2026-11-25", nextCheckIn: null },
+]);
+console.log("stays checks passed");
+import { feedUrlError } from "./stays";
+assert.equal(feedUrlError("https://www.airbnb.co.in/calendar/ical/123.ics?s=abc"), null);
+assert.equal(feedUrlError("https://admin.booking.com/hotel/hoteladmin/ical.html?t=x"), null);
+assert.ok(feedUrlError("http://www.airbnb.com/calendar/ical/1.ics")); // https only
+assert.ok(feedUrlError("https://localhost/x.ics"));
+assert.ok(feedUrlError("https://127.0.0.1/x.ics")); // no IP literals (internal network)
+assert.ok(feedUrlError("https://169.254.169.254/latest"));
+assert.ok(feedUrlError("https://[::1]/x"));
+assert.ok(feedUrlError("not a url"));
+console.log("feed url checks passed");
+import { stayDatesError, nights } from "./stays";
+assert.equal(stayDatesError("2026-11-20", "2026-11-23"), null);
+assert.ok(stayDatesError("2026-11-23", "2026-11-23")); // zero nights
+assert.ok(stayDatesError("2026-11-23", "2026-11-20")); // backwards
+assert.ok(stayDatesError("2026-02-30", "2026-03-02")); // not a real day
+assert.ok(stayDatesError(null, "2026-11-23"));
+assert.ok(stayDatesError("2026-11-01", "2027-02-01")); // > 90 nights: almost certainly a typo
+assert.equal(nights("2026-11-20", "2026-11-23"), 3);
+assert.equal(nights("2026-12-30", "2027-01-02"), 3);
+assert.ok(stayDatesError("2026-13-01", "2026-13-04")); // month 13: message, not a crash
+console.log("stay date checks passed");
+import { stayMessage, whatsappLink } from "./stays-messages";
+const flatX = { name: "Bandra 1BHK", address: "14 Hill Rd", checkinTime: "14:00", checkoutTime: "11:00", wifiName: "FZ01", wifiPass: "pass1234", lockCode: "4821" };
+const stayX = { guestName: "Riya Sharma", checkIn: "2026-11-20", checkOut: "2026-11-23", phone: "+91 98765 43210" };
+const ci = stayMessage("checkin", flatX, stayX);
+assert.ok(ci.startsWith("Hi Riya,") && ci.includes("Door code: 4821") && ci.includes("Wi-Fi: FZ01 / pass1234"));
+assert.ok(!stayMessage("checkin", { ...flatX, lockCode: null }, stayX).includes("Door code")); // no empty lines for missing details
+assert.ok(stayMessage("confirm", flatX, { ...stayX, guestName: null }).startsWith("Hi there,"));
+assert.equal(whatsappLink("+91 98765 43210", "a b")?.startsWith("https://wa.me/919876543210?text=a%20b"), true);
+assert.equal(whatsappLink("12345", "x"), null);
+assert.equal(whatsappLink(null, "x"), null);
+console.log("stay message checks passed");
+import { canWorkOn } from "./ops-rules";
+assert.equal(canWorkOn(staffT, { assigneeId: 3 }), true); // their job
+assert.equal(canWorkOn(staffT, { assigneeId: 9 }), false); // someone else's cleaning
+assert.equal(canWorkOn(staffT, { assigneeId: null }), false); // unassigned: managers hand it out
+assert.equal(canWorkOn(staffT, { assigneeId: 9, createdBy: 3 }), true); // a repair they reported
+assert.equal(canWorkOn(mgrF, { assigneeId: 9 }), true);
+console.log("task access checks passed");

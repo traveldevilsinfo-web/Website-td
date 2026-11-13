@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { and, eq, lt, sql } from "drizzle-orm";
 import { db, t } from "@/lib/db";
-import { addDays, inr } from "@/lib/format";
+import { addDays, dateDay, inr } from "@/lib/format";
 import { requireOps } from "@/lib/ops";
 import { monthExpenses, revenueByMonth, spentByMonth } from "@/lib/ops-queries";
 import { BIZ_LABEL, istToday, shiftMonth, summarize } from "@/lib/ops-rules";
 import { Notice, PageHeader, Panel, Stat, btnPrimary } from "@/app/ops/kit";
 import { MonthPicker } from "./MonthPicker";
 import { money, monthLabel } from "./ui";
+import { TodayStays } from "./TodayStays";
 
 export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
   const { user, biz, manager } = await requireOps();
@@ -19,8 +20,10 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
     const s = summarize(mine);
     return (
       <>
-        <PageHeader title={`Hi ${user.name.split(" ")[0]}`} sub={`${BIZ_LABEL[biz]} · ${monthLabel(month)}`} />
+        <PageHeader title={`Hi ${user.name.split(" ")[0]}`} sub={`${BIZ_LABEL[biz]} · ${dateDay(istToday())}`} />
         {sp.denied && <Notice tone="amber">That page is for managers.</Notice>}
+        {biz === "finzo" && <TodayStays manager={false} userId={user.id} />}
+        <h2 className="mb-3 text-[15px] font-semibold">Your expenses · {monthLabel(month)}</h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <Stat label="Approved this month" value={inr(s.spent)} href="/ops/expenses" />
           <Stat label="Waiting approval" value={s.pendingCount} hint={inr(s.pendingAmount)} href="/ops/expenses" />
@@ -45,8 +48,14 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
 
   return (
     <>
-      <PageHeader title={`${BIZ_LABEL[biz]} overview`} sub={monthLabel(month)} action={<MonthPicker month={month} />} />
+      <PageHeader title="Today" sub={`${BIZ_LABEL[biz]} · ${dateDay(today)}`} />
       {sp.denied && <Notice tone="amber">You don&apos;t have access to that page.</Notice>}
+      {sp.switch === "finzo" && <Notice tone="amber">Calendar, bookings and flats belong to Finzo Stays. Switch business to open them.</Notice>}
+      {biz === "finzo" && <TodayStays manager userId={user.id} />}
+      <div className="mb-3 mt-2 flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-[15px] font-semibold">Money · {monthLabel(month)}</h2>
+        <MonthPicker month={month} />
+      </div>
       {s.needsAmount > 0 && <Notice tone="amber">{s.needsAmount} fixed bill(s) need the real amount. <Link className="underline" href={{ pathname: "/ops/expenses", query: { month, status: "needs_amount" } }}>Fill them in</Link></Notice>}
       {stale.n > 0 && <Notice tone="amber">{stale.n} expense(s) have waited more than 3 days for approval. <Link className="underline" href="/ops/expenses?status=submitted">Review</Link></Notice>}
 

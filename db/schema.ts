@@ -413,3 +413,108 @@ export const expenses = pgTable(
     uniqueIndex("expenses_recurring_period_idx").on(t.recurringId, t.period),
   ],
 );
+
+// ------------------------------------------------------------------ stays (Finzo: flats, calendars, cleaning, maintenance)
+
+export const channelEnum = pgEnum("channel", ["airbnb", "booking", "vrbo", "mmt", "direct", "other"]);
+export const stayStatusEnum = pgEnum("stay_status", ["confirmed", "cancelled", "blocked"]);
+export const turnoverStatusEnum = pgEnum("turnover_status", ["todo", "doing", "done", "issue"]);
+export const ticketStatusEnum = pgEnum("ticket_status", ["open", "doing", "waiting", "done"]);
+export const priorityEnum = pgEnum("priority", ["low", "normal", "high", "urgent"]);
+
+export type ChecklistItem = { label: string; done: boolean };
+
+export const properties = pgTable("properties", {
+  id: serial("id").primaryKey(),
+  code: text("code").notNull().unique(), // FZ-01
+  name: text("name").notNull(),
+  address: text("address"),
+  area: text("area"),
+  bedrooms: integer("bedrooms").notNull().default(1),
+  maxGuests: integer("max_guests").notNull().default(2),
+  checkinTime: text("checkin_time").notNull().default("14:00"),
+  checkoutTime: text("checkout_time").notNull().default("11:00"),
+  lockCode: text("lock_code"),
+  wifiName: text("wifi_name"),
+  wifiPass: text("wifi_pass"),
+  notes: text("notes"),
+  icalToken: text("ical_token").notNull().unique(), // secret in our export feed URL
+  housekeeperId: integer("housekeeper_id").references(() => opsUsers.id, { onDelete: "set null" }),
+  active: boolean("active").notNull().default(true),
+  sort: integer("sort").notNull().default(0),
+  ...timestamps,
+});
+
+export const propertyFeeds = pgTable("property_feeds", {
+  id: serial("id").primaryKey(),
+  propertyId: integer("property_id").notNull().references(() => properties.id, { onDelete: "cascade" }),
+  channel: channelEnum("channel").notNull(),
+  url: text("url").notNull(),
+  lastSyncAt: timestamp("last_sync_at", { withTimezone: true }),
+  lastError: text("last_error"),
+  lastCount: integer("last_count"),
+});
+
+export const reservations = pgTable(
+  "reservations",
+  {
+    id: serial("id").primaryKey(),
+    propertyId: integer("property_id").notNull().references(() => properties.id, { onDelete: "cascade" }),
+    channel: channelEnum("channel").notNull(),
+    source: text("source").notNull().default("manual"), // ical | manual
+    externalUid: text("external_uid"),
+    checkIn: date("check_in").notNull(),
+    checkOut: date("check_out").notNull(), // exclusive: the morning they leave
+    guestName: text("guest_name"),
+    guests: integer("guests"),
+    phone: text("phone"),
+    amount: integer("amount"),
+    status: stayStatusEnum("status").notNull().default("confirmed"),
+    notes: text("notes"),
+    createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    ...timestamps,
+  },
+  (t) => [
+    uniqueIndex("reservations_feed_uid_idx").on(t.propertyId, t.channel, t.externalUid),
+    index("reservations_property_dates_idx").on(t.propertyId, t.checkIn),
+  ],
+);
+
+export const turnovers = pgTable(
+  "turnovers",
+  {
+    id: serial("id").primaryKey(),
+    propertyId: integer("property_id").notNull().references(() => properties.id, { onDelete: "cascade" }),
+    reservationId: integer("reservation_id").references(() => reservations.id, { onDelete: "cascade" }),
+    date: date("date").notNull(),
+    nextCheckIn: date("next_check_in"), // same day = urgent
+    assigneeId: integer("assignee_id").references(() => opsUsers.id, { onDelete: "set null" }),
+    status: turnoverStatusEnum("status").notNull().default("todo"),
+    checklist: jsonb("checklist").$type<ChecklistItem[]>().notNull().default([]),
+    note: text("note"),
+    doneAt: timestamp("done_at", { withTimezone: true }),
+    ...timestamps,
+  },
+  (t) => [uniqueIndex("turnovers_reservation_idx").on(t.reservationId), index("turnovers_date_idx").on(t.date)],
+);
+
+export const tickets = pgTable(
+  "tickets",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    propertyId: integer("property_id").references(() => properties.id, { onDelete: "set null" }),
+    title: text("title").notNull(),
+    detail: text("detail"),
+    priority: priorityEnum("priority").notNull().default("normal"),
+    status: ticketStatusEnum("status").notNull().default("open"),
+    assigneeId: integer("assignee_id").references(() => opsUsers.id, { onDelete: "set null" }),
+    vendorId: integer("vendor_id").references(() => vendors.id, { onDelete: "set null" }),
+    cost: integer("cost"),
+    expenseId: integer("expense_id").references(() => expenses.id, { onDelete: "set null" }), // the cost, booked as an expense
+    createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    doneAt: timestamp("done_at", { withTimezone: true }),
+    ...timestamps,
+  },
+  (t) => [index("tickets_business_status_idx").on(t.business, t.status)],
+);
