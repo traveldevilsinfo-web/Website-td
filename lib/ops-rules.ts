@@ -45,3 +45,5 @@ export function planReceipt(name: string, size: number, now = new Date()): { pat
   const rand = Array.from(crypto.getRandomValues(new Uint8Array(12)), (b) => b.toString(16).padStart(2, "0")).join("");
   return { path: `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, "0")}/r-${rand}.${ext}`, mime };
 }
+
+export const CATEGORY_KINDS = ["variable", "fixed", "salary", "inventory"] as const;
