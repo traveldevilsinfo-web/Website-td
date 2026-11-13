@@ -675,3 +675,44 @@ assert.equal(broken.unreadable, 1);
 // some exports head the column "Reference code"
 assert.equal(parseEarnings(['"Type","Reference code","Amount"', '"Reservation","HMREF1","100"'].join("\n")).rows[0].code, "HMREF1");
 console.log("revenue fix checks passed");
+
+// ---------------- payroll: days payable, payslips, advance recovery
+import { payableHalfDays, computePayslip, advanceDue, ATTENDANCE_LABEL } from "./hr";
+// Halves are counted in half-day units so nothing is lost to rounding; 30 days = 60 units.
+// Unmarked days count as worked: forgetting to mark attendance must never silently zero someone's pay.
+assert.equal(payableHalfDays("2026-11", []), 60);
+assert.equal(payableHalfDays("2026-11", [{ date: "2026-11-05", status: "absent" }]), 58);
+assert.equal(payableHalfDays("2026-11", [{ date: "2026-11-05", status: "half" }]), 59);
+assert.equal(payableHalfDays("2026-11", [{ date: "2026-11-05", status: "present" }, { date: "2026-11-06", status: "off" }, { date: "2026-11-07", status: "leave" }]), 60);
+assert.equal(payableHalfDays("2026-11", [{ date: "2026-10-31", status: "absent" }]), 60); // another month's record is ignored
+assert.equal(payableHalfDays("2026-02", []), 56); // 28 days
+// joined or left mid-month: only pay for the part they were employed
+assert.equal(payableHalfDays("2026-11", [], { joinDate: "2026-11-16" }), 30); // 15 days
+assert.equal(payableHalfDays("2026-11", [], { exitDate: "2026-11-15" }), 30);
+assert.equal(payableHalfDays("2026-11", [], { joinDate: "2026-12-01" }), 0); // not there at all
+assert.equal(payableHalfDays("2026-11", [{ date: "2026-11-20", status: "absent" }], { joinDate: "2026-11-16" }), 28);
+
+const slip = { daysInMonth: 30, payableHalf: 60, incentives: 0, advanceRecovery: 0, deductions: 0 };
+const full = computePayslip({ ...slip, payType: "monthly", monthlySalary: 18000, dailyRate: null });
+assert.equal(full.base, 18000);
+assert.equal(full.net, 18000);
+// 3 absences out of 30 days
+assert.equal(computePayslip({ ...slip, payableHalf: 54, payType: "monthly", monthlySalary: 18000, dailyRate: null }).base, 16200);
+// a daily-rate cleaner: 26.5 days at ₹600
+assert.equal(computePayslip({ ...slip, payableHalf: 53, payType: "daily", monthlySalary: null, dailyRate: 600 }).base, 15900);
+const withBits = computePayslip({ ...slip, payType: "monthly", monthlySalary: 18000, dailyRate: null, incentives: 2500, advanceRecovery: 2000, deductions: 500 });
+assert.equal(withBits.net, 18000 + 2500 - 2000 - 500);
+assert.deepEqual(withBits.lines.map((l) => l.label), ["Salary for 30 of 30 days", "Incentives", "Advance recovered", "Other deductions"]);
+// pay can never come out negative, however large the deductions
+assert.equal(computePayslip({ ...slip, payType: "monthly", monthlySalary: 5000, dailyRate: null, advanceRecovery: 9000 }).net, 0);
+assert.equal(computePayslip({ ...slip, payType: "monthly", monthlySalary: 5000, dailyRate: null, advanceRecovery: 9000 }).advanceRecovery, 5000); // only what the payslip can bear
+assert.equal(computePayslip({ ...slip, payableHalf: 0, payType: "monthly", monthlySalary: 18000, dailyRate: null }).net, 0);
+assert.equal(computePayslip({ ...slip, payType: "monthly", monthlySalary: null, dailyRate: null }).base, 0); // no pay set yet
+
+// advances come back a slice at a time, never more than is left
+assert.equal(advanceDue([{ amount: 10000, recovered: 0, monthlyRecovery: 3000 }]), 3000);
+assert.equal(advanceDue([{ amount: 10000, recovered: 9000, monthlyRecovery: 3000 }]), 1000); // last slice is the remainder
+assert.equal(advanceDue([{ amount: 10000, recovered: 10000, monthlyRecovery: 3000 }]), 0);
+assert.equal(advanceDue([{ amount: 5000, recovered: 0, monthlyRecovery: 2000 }, { amount: 3000, recovered: 0, monthlyRecovery: 1000 }]), 3000);
+assert.equal(ATTENDANCE_LABEL.half, "Half day");
+console.log("payroll checks passed");

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useTransition } from "react";
 import {
-  BedDouble, Building2, CalendarClock, CalendarDays, ChartColumn, ClipboardCheck, FolderTree, House, LogOut, MoreHorizontal, Plus, Receipt, Store, TrendingUp, UserRound, Users, X,
+  BedDouble, Building2, CalendarClock, CalendarDays, ChartColumn, ClipboardCheck, FolderTree, House, LogOut, MoreHorizontal, Plus, CalendarCheck, KeyRound, Receipt, Store, TrendingUp, UserRound, Users, Wallet, X,
 } from "lucide-react";
 import { BIZ_LABEL, ROLE_LABEL, type Biz, type OpsRole } from "@/lib/ops-rules";
 import { ACCENT, BIZ_SHORT } from "./accent";
@@ -39,10 +39,15 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
       { href: "/ops/fixed-costs", label: "Fixed costs", icon: CalendarClock, count: counts.needsAmount, show: manager },
       { href: "/ops/reports", label: "Reports", icon: ChartColumn, show: manager },
     ] },
+    { title: "People", items: [
+      { href: "/ops/people", label: "People", icon: Users, show: manager },
+      { href: "/ops/attendance", label: "Attendance", icon: CalendarCheck, show: manager },
+      { href: "/ops/payroll", label: "Payroll", icon: Wallet, show: manager },
+    ] },
     { title: "Setup", items: [
       { href: "/ops/vendors", label: "Vendors", icon: Store, show: manager },
       { href: "/ops/categories", label: "Categories", icon: FolderTree, show: manager },
-      { href: "/ops/team", label: "Team", icon: Users, show: owner },
+      { href: "/ops/team", label: "Logins", icon: KeyRound, show: owner },
     ] },
   ];
   const isActive = (href: string) => (href === "/ops" ? path === "/ops" : path === href || (path.startsWith(href + "/") && !path.startsWith("/ops/expenses/new")));
