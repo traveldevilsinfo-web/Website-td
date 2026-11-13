@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useTransition } from "react";
 import {
-  BedDouble, Building2, CalendarClock, CalendarDays, ChartColumn, ClipboardCheck, FolderTree, House, LogOut, MoreHorizontal, Plus, CalendarCheck, KeyRound, Receipt, Store, TrendingUp, UserRound, Users, Wallet, X,
+  BedDouble, Boxes, Building2, CalendarClock, CalendarDays, ChartColumn, ClipboardCheck, FolderTree, House, LogOut, MoreHorizontal, Plus, CalendarCheck, KeyRound, Receipt, Store, TrendingUp, UserRound, Users, Wallet, X,
 } from "lucide-react";
 import { BIZ_LABEL, ROLE_LABEL, type Biz, type OpsRole } from "@/lib/ops-rules";
 import { ACCENT, BIZ_SHORT } from "./accent";
@@ -37,6 +37,7 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
     { title: "Money", items: [
       { href: "/ops/expenses", label: "Expenses", icon: Receipt, count: counts.approvals, show: true },
       { href: "/ops/fixed-costs", label: "Fixed costs", icon: CalendarClock, count: counts.needsAmount, show: manager },
+      { href: "/ops/stock", label: "Stock", icon: Boxes, show: manager },
       { href: "/ops/reports", label: "Reports", icon: ChartColumn, show: manager },
     ] },
     { title: "People", items: [

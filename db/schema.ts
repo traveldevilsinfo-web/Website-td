@@ -653,3 +653,48 @@ export const payslips = pgTable(
   },
   (t) => [uniqueIndex("payslips_run_employee_idx").on(t.runId, t.employeeId)],
 );
+
+// ------------------------------------------------------------------ stock (both businesses)
+// Stock is never a stored number: it is the sum of its movements, so every figure can be traced to who did what.
+// There is no "locations" table — stock sits in the business's store (property_id null) or at one flat.
+
+export const stockKindEnum = pgEnum("stock_kind", ["in", "issue", "return", "damaged", "count"]);
+
+export const inventoryItems = pgTable(
+  "inventory_items",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    name: text("name").notNull(),
+    unit: text("unit").notNull().default("piece"), // piece, set, kg, litre…
+    category: text("category"),
+    reorderLevel: integer("reorder_level").notNull().default(0), // warn at or below this
+    costPerUnit: integer("cost_per_unit"),
+    /** Finzo consumables: how many go out automatically when a cleaning is finished. */
+    perTurnover: integer("per_turnover").notNull().default(0),
+    active: boolean("active").notNull().default(true),
+    ...timestamps,
+  },
+  (t) => [uniqueIndex("inventory_items_business_name_idx").on(t.business, t.name)],
+);
+
+export const stockMovements = pgTable(
+  "stock_movements",
+  {
+    id: serial("id").primaryKey(),
+    itemId: integer("item_id").notNull().references(() => inventoryItems.id, { onDelete: "cascade" }),
+    propertyId: integer("property_id").references(() => properties.id, { onDelete: "set null" }), // null = the store
+    qty: integer("qty").notNull(), // signed: what this movement did to the stock at that place
+    kind: stockKindEnum("kind").notNull(),
+    tripBatchId: integer("trip_batch_id").references(() => tripBatches.id, { onDelete: "set null" }), // TD gear on a departure
+    turnoverId: integer("turnover_id").references(() => turnovers.id, { onDelete: "set null" }), // used by a cleaning
+    note: text("note"),
+    createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    createdAt: timestamps.createdAt,
+  },
+  (t) => [
+    index("stock_movements_item_idx").on(t.itemId, t.createdAt),
+    // A cleaning issues each item once, however many times it is re-finished.
+    uniqueIndex("stock_movements_turnover_item_idx").on(t.turnoverId, t.itemId),
+  ],
+);

@@ -2,12 +2,12 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { and, asc, eq, gte, ilike, lte, or, sql } from "drizzle-orm";
+import { and, asc, eq, gte, lte, or, sql } from "drizzle-orm";
 import { db, t } from "@/lib/db";
 import { form, type ActionState } from "@/lib/admin";
 import { requireOps } from "@/lib/ops";
 import { istToday, monthBounds } from "@/lib/ops-rules";
-import { advanceDue, computePayslip, payableHalfDays, type AttendanceStatus } from "@/lib/hr";
+import { advanceDue, computePayslip, payableHalfDays, recoverAdvances, type AttendanceStatus } from "@/lib/hr";
 
 const MONTH = /^\d{4}-\d{2}$/;
 
@@ -32,11 +32,13 @@ export async function buildRun(month: string): Promise<ActionState> {
   if (run.status !== "draft") return { ok: false, message: `${month} is already ${run.status}.` };
 
   const people = await db.select().from(t.employees)
-    .where(and(eq(t.employees.business, biz), or(eq(t.employees.active, true), gte(t.employees.exitDate, from))));
+    .where(and(eq(t.employees.business, biz), or(eq(t.employees.active, true), sql`${t.employees.exitDate} is null`, gte(t.employees.exitDate, from))));
   const [marks, advances, existing] = await Promise.all([
     db.select({ employeeId: t.attendance.employeeId, date: t.attendance.date, status: t.attendance.status }).from(t.attendance)
-      .where(and(gte(t.attendance.date, from), lte(t.attendance.date, to))),
-    db.select().from(t.advances).where(sql`${t.advances.recovered} < ${t.advances.amount}`),
+      .innerJoin(t.employees, eq(t.employees.id, t.attendance.employeeId))
+      .where(and(eq(t.employees.business, biz), gte(t.attendance.date, from), lte(t.attendance.date, to))),
+    db.select({ a: t.advances }).from(t.advances).innerJoin(t.employees, eq(t.employees.id, t.advances.employeeId))
+      .where(and(eq(t.employees.business, biz), sql`${t.advances.recovered} < ${t.advances.amount}`)),
     db.select().from(t.payslips).where(eq(t.payslips.runId, run.id)),
   ]);
 
@@ -48,12 +50,16 @@ export async function buildRun(month: string): Promise<ActionState> {
     const slip = computePayslip({
       payType: p.payType, monthlySalary: p.monthlySalary, dailyRate: p.dailyRate, daysInMonth, payableHalf,
       incentives: was?.incentives ?? 0,
-      advanceRecovery: was ? was.advanceRecovery : advanceDue(advances.filter((a) => a.employeeId === p.id)),
+      advanceRecovery: was ? was.advanceRecovery : advanceDue(advances.map((x) => x.a).filter((a) => a.employeeId === p.id)),
       deductions: was?.deductions ?? 0,
     });
+    // Write every figure the slip was computed from, so the row can never disagree with its own net.
     await db.insert(t.payslips).values({ runId: run.id, employeeId: p.id, daysInMonth, payableDays: payableHalf, ...slip })
-      .onConflictDoUpdate({ target: [t.payslips.runId, t.payslips.employeeId], set: { daysInMonth, payableDays: payableHalf, base: slip.base, net: slip.net, lines: slip.lines } });
+      .onConflictDoUpdate({ target: [t.payslips.runId, t.payslips.employeeId], set: { daysInMonth, payableDays: payableHalf, ...slip } });
   }
+  // Someone may have locked the run while we were building: don't leave fresh figures inside a locked month.
+  const [still] = await db.select({ status: t.payrollRuns.status }).from(t.payrollRuns).where(eq(t.payrollRuns.id, run.id));
+  if (still?.status !== "draft") return { ok: false, message: "This payroll was locked while it was being rebuilt. Unlock it and try again." };
   revalidatePath("/ops/payroll");
   redirect(`/ops/payroll/${run.id}`);
 }
@@ -67,8 +73,14 @@ export async function adjustSlip(id: number, _prev: ActionState, f: FormData): P
   if (!row || row.run.business !== biz) return { ok: false, message: "Not found." };
   if (row.run.status !== "draft") return { ok: false, message: "This payroll is locked." };
   const [emp] = await db.select().from(t.employees).where(eq(t.employees.id, row.s.employeeId));
-  const incentives = r.int("incentives") ?? 0, deductions = r.int("deductions") ?? 0, advanceRecovery = r.int("advanceRecovery") ?? 0;
+  if (!emp) return { ok: false, message: "That person has been removed." };
+  const incentives = r.int("incentives") ?? 0, deductions = r.int("deductions") ?? 0;
+  const advanceRecovery = r.int("advanceRecovery") ?? 0;
   if ([incentives, deductions, advanceRecovery].some((n) => n < 0 || n > 10_000_000)) return { ok: false, message: "Check the amounts." };
+  // Never withhold more than is actually owed: the difference would come off their pay and clear no debt.
+  const owed = (await db.select().from(t.advances).where(and(eq(t.advances.employeeId, row.s.employeeId), sql`${t.advances.recovered} < ${t.advances.amount}`)))
+    .reduce((n, a) => n + (a.amount - a.recovered), 0);
+  if (advanceRecovery > owed) return { ok: false, message: owed ? `Only ₹${owed.toLocaleString("en-IN")} is still owed on advances.` : "There's no advance left to take back." };
   const slip = computePayslip({
     payType: emp.payType, monthlySalary: emp.monthlySalary, dailyRate: emp.dailyRate,
     daysInMonth: row.s.daysInMonth, payableHalf: row.s.payableDays, incentives, advanceRecovery, deductions,
@@ -106,29 +118,38 @@ export async function payRun(id: number, f: FormData): Promise<void> {
   const paidRef = form(f).str("paidRef");
   const slips = await db.select({ s: t.payslips, name: t.employees.name }).from(t.payslips)
     .innerJoin(t.employees, eq(t.employees.id, t.payslips.employeeId)).where(eq(t.payslips.runId, id));
+  // Match the category by what it is, not what it's called: someone may have renamed "Salaries".
   const [cat] = await db.select({ id: t.expenseCategories.id }).from(t.expenseCategories)
-    .where(and(eq(t.expenseCategories.business, biz), ilike(t.expenseCategories.name, "Salaries"))).limit(1);
+    .where(and(eq(t.expenseCategories.business, biz), eq(t.expenseCategories.kind, "salary"))).orderBy(asc(t.expenseCategories.sort)).limit(1);
+  if (!cat) redirect(`/ops/payroll/${id}?error=nocategory`); // pay nothing rather than pay invisibly
 
   await db.transaction(async (tx) => {
     const [claimed] = await tx.update(t.payrollRuns).set({ status: "paid", paidAt: new Date(), paidRef })
       .where(and(eq(t.payrollRuns.id, id), eq(t.payrollRuns.status, "locked"))).returning({ id: t.payrollRuns.id });
     if (!claimed) return; // someone else paid it a moment ago
     for (const { s, name } of slips) {
+      let recovery = 0;
       if (s.advanceRecovery > 0) {
-        // Take the recovery off the oldest advances first.
-        let left = s.advanceRecovery;
         const open = await tx.select().from(t.advances)
           .where(and(eq(t.advances.employeeId, s.employeeId), sql`${t.advances.recovered} < ${t.advances.amount}`)).orderBy(asc(t.advances.date));
-        for (const a of open) {
-          if (left <= 0) break;
-          const take = Math.min(left, a.amount - a.recovered);
-          await tx.update(t.advances).set({ recovered: a.recovered + take }).where(eq(t.advances.id, a.id));
-          left -= take;
-        }
+        const plan = recoverAdvances(open, s.advanceRecovery);
+        for (const row of plan.rows) await tx.update(t.advances).set({ recovered: row.recovered }).where(eq(t.advances.id, row.id));
+        recovery = plan.taken;
       }
-      if (cat && s.net > 0 && !s.expenseId) {
+      // Only what was really recovered comes off their pay: the rest would be money taken for no debt.
+      const net = s.base + s.incentives - s.deductions - recovery;
+      if (recovery !== s.advanceRecovery) {
+        await tx.update(t.payslips).set({
+          advanceRecovery: recovery, net,
+          lines: s.lines.map((l) => (l.label === "Advance recovered" ? { ...l, amount: -recovery } : l)).filter((l) => l.amount !== 0 || l.label.startsWith("Salary") || l.label.includes("days at")),
+        }).where(eq(t.payslips.id, s.id));
+      }
+      // The expense is what they earned this month, dated to that month. The advance itself was cash lent,
+      // not a cost, so taking it back doesn't reduce the salary expense.
+      const earned = s.base + s.incentives - s.deductions;
+      if (earned > 0 && !s.expenseId) {
         const [ex] = await tx.insert(t.expenses).values({
-          business: biz, date: istToday(), amount: s.net, categoryId: cat.id, note: `Salary: ${name}, ${run.month}`,
+          business: biz, date: monthBounds(run.month).to, amount: earned, categoryId: cat.id, note: `Salary: ${name}, ${run.month}`,
           status: "paid", paidAt: new Date(), paidRef, createdBy: user.id, approvedBy: user.id, approvedAt: new Date(),
         }).returning({ id: t.expenses.id });
         await tx.update(t.payslips).set({ expenseId: ex.id }).where(and(eq(t.payslips.id, s.id), sql`${t.payslips.expenseId} is null`));

@@ -10,7 +10,7 @@ import { ConfirmSubmit, OpsForm } from "../../../OpsForm";
 import { monthLabel } from "../../ui";
 import { adjustSlip, buildRun, lockRun, payRun, removeSlip, unlockRun } from "../actions";
 
-export default async function RunPage({ params }: PageProps<"/ops/payroll/[id]">) {
+export default async function RunPage({ params, searchParams }: PageProps<"/ops/payroll/[id]">) {
   const { user, biz } = await requireOps({ manager: true });
   const id = Number((await params).id);
   if (!Number.isInteger(id)) notFound();
@@ -34,6 +34,7 @@ export default async function RunPage({ params }: PageProps<"/ops/payroll/[id]">
           </>
         } />
 
+      {(await searchParams).error === "nocategory" && <Notice tone="red">Nothing was paid: there is no salary category to book the cost to. Add one under <Link href="/ops/categories" className="font-semibold underline">Categories</Link> with kind &quot;salary&quot;, then try again.</Notice>}
       {draft && <Notice tone="amber">Draft. Days come from attendance, and unmarked days count as worked. Adjust anyone below, then lock.</Notice>}
       {run.status === "paid" && <Notice>Paid{run.paidRef ? ` · ref ${run.paidRef}` : ""}. Each payslip is booked as a salary expense, and advances have been taken back.</Notice>}
 

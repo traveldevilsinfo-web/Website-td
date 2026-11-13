@@ -26,8 +26,11 @@ export async function savePerson(id: number | null, _prev: ActionState, f: FormD
   const joinDate = r.str("joinDate"), exitDate = r.str("exitDate");
   if (joinDate && exitDate && exitDate < joinDate) return { ok: false, message: "The leaving date is before the joining date." };
   const opsUserId = r.int("opsUserId");
-  if (opsUserId && !(await db.select({ id: t.opsUsers.id }).from(t.opsUsers).where(eq(t.opsUsers.id, opsUserId))).length)
-    return { ok: false, message: "That login no longer exists." };
+  if (opsUserId) {
+    const [u] = await db.select({ role: t.opsUsers.role, b: t.opsUsers.businesses }).from(t.opsUsers).where(eq(t.opsUsers.id, opsUserId));
+    if (!u) return { ok: false, message: "That login no longer exists." };
+    if (u.role !== "owner" && !u.b.includes(biz)) return { ok: false, message: "That login isn't on this business's team." };
+  }
   const values = {
     name, phone: r.str("phone"), roleTitle: r.str("roleTitle"), joinDate, exitDate, payType,
     monthlySalary: payType === "monthly" ? monthlySalary : null, dailyRate: payType === "daily" ? dailyRate : null,
@@ -66,8 +69,11 @@ export async function addAdvance(employeeId: number, _prev: ActionState, f: Form
 
 /** Written off, or repaid in cash outside payroll. */
 export async function closeAdvance(id: number) {
-  await requireOps({ manager: true });
-  const [a] = await db.select().from(t.advances).where(eq(t.advances.id, id));
+  const { biz } = await requireOps({ manager: true });
+  const [row] = await db.select({ a: t.advances }).from(t.advances)
+    .innerJoin(t.employees, eq(t.employees.id, t.advances.employeeId))
+    .where(and(eq(t.advances.id, id), eq(t.employees.business, biz)));
+  const a = row?.a;
   if (!a) return;
   await db.update(t.advances).set({ recovered: a.amount }).where(eq(t.advances.id, id));
   revalidatePath(`/ops/people/${a.employeeId}`);

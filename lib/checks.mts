@@ -716,3 +716,57 @@ assert.equal(advanceDue([{ amount: 10000, recovered: 10000, monthlyRecovery: 300
 assert.equal(advanceDue([{ amount: 5000, recovered: 0, monthlyRecovery: 2000 }, { amount: 3000, recovered: 0, monthlyRecovery: 1000 }]), 3000);
 assert.equal(ATTENDANCE_LABEL.half, "Half day");
 console.log("payroll checks passed");
+
+// ---------------- stock: totals from movements, low stock, transfers, stocktake
+import { stockTotals, stockAt, isLow, transferRows, countDelta, STOCK_LABEL } from "./stock";
+const moves = [
+  { itemId: 1, propertyId: null, qty: 100 },   // 100 into the store
+  { itemId: 1, propertyId: null, qty: -12 },   // 12 out to a flat…
+  { itemId: 1, propertyId: 7, qty: 12 },       // …and 12 arrive there
+  { itemId: 1, propertyId: 7, qty: -2 },       // 2 used up
+  { itemId: 2, propertyId: null, qty: 30 },
+];
+const totals = stockTotals(moves);
+assert.equal(stockAt(totals, 1, null), 88);
+assert.equal(stockAt(totals, 1, 7), 10);
+assert.equal(stockAt(totals, 1, 99), 0); // nowhere else
+assert.equal(stockAt(totals, 2, null), 30);
+assert.equal(stockAt(totals, 9, null), 0); // an item with no movements has no stock, not an error
+assert.equal(totals.total(1), 98); // everywhere it sits
+assert.equal(totals.total(2), 30);
+
+assert.equal(isLow({ reorderLevel: 10 }, 10), true); // at the level is already low
+assert.equal(isLow({ reorderLevel: 10 }, 11), false);
+assert.equal(isLow({ reorderLevel: 0 }, 0), false); // no level set: never nags
+
+// Moving stock writes both sides, so each place's total stays true
+assert.deepEqual(transferRows(5, null, 7, 4), [
+  { itemId: 5, propertyId: null, qty: -4 },
+  { itemId: 5, propertyId: 7, qty: 4 },
+]);
+assert.deepEqual(transferRows(5, 7, null, 2), [
+  { itemId: 5, propertyId: 7, qty: -2 },
+  { itemId: 5, propertyId: null, qty: 2 },
+]);
+assert.equal(transferRows(5, 7, 7, 3), null); // nowhere to nowhere
+assert.equal(transferRows(5, null, 7, 0), null);
+assert.equal(transferRows(5, null, 7, -3), null);
+
+// A stocktake records the difference, so the history still adds up to what was counted
+assert.equal(countDelta(88, 85), -3);
+assert.equal(countDelta(88, 90), 2);
+assert.equal(countDelta(88, 88), 0);
+assert.equal(STOCK_LABEL.damaged, "Damaged or lost");
+console.log("stock checks passed");
+
+// ---------------- payroll fixes from review
+import { recoverAdvances } from "./hr";
+const open2 = [{ id: 1, amount: 6000, recovered: 0 }, { id: 2, amount: 3000, recovered: 0 }];
+// take the slice off the oldest advance first
+assert.deepEqual(recoverAdvances(open2, 5000), { taken: 5000, rows: [{ id: 1, recovered: 5000 }] });
+assert.deepEqual(recoverAdvances(open2, 8000), { taken: 8000, rows: [{ id: 1, recovered: 6000 }, { id: 2, recovered: 2000 }] });
+// we can never take back more than is actually owed, however large the payslip says
+assert.deepEqual(recoverAdvances([{ id: 1, amount: 6000, recovered: 5000 }], 5000), { taken: 1000, rows: [{ id: 1, recovered: 6000 }] });
+assert.deepEqual(recoverAdvances([], 5000), { taken: 0, rows: [] });
+assert.deepEqual(recoverAdvances(open2, 0), { taken: 0, rows: [] });
+console.log("advance recovery checks passed");

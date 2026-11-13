@@ -61,3 +61,20 @@ export function computePayslip(i: PayslipInput) {
 /** How much of the outstanding advances to take back this month: each one's monthly slice, capped at what's left. */
 export const advanceDue = (rows: { amount: number; recovered: number; monthlyRecovery: number }[]) =>
   rows.reduce((n, a) => n + Math.max(0, Math.min(a.monthlyRecovery, a.amount - a.recovered)), 0);
+
+/**
+ * Spread a payslip's advance recovery across the open advances, oldest first. `taken` is what could really be
+ * recovered — never more than is owed — so the payslip can be corrected to match before anyone is paid.
+ */
+export function recoverAdvances(open: { id: number; amount: number; recovered: number }[], want: number) {
+  let left = Math.max(0, want);
+  const rows: { id: number; recovered: number }[] = [];
+  for (const a of open) {
+    if (left <= 0) break;
+    const take = Math.min(left, Math.max(0, a.amount - a.recovered));
+    if (!take) continue;
+    rows.push({ id: a.id, recovered: a.recovered + take });
+    left -= take;
+  }
+  return { taken: Math.max(0, want) - left, rows };
+}
