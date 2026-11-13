@@ -8,6 +8,7 @@ import { db, t } from "@/lib/db";
 import { z } from "zod";
 import { errorMessage, faqSchema, form, type ActionState } from "@/lib/admin";
 import { deleteUpload } from "@/lib/uploads";
+import { BUSINESSES, parseRole } from "@/lib/ops-rules";
 
 // ---------------- media
 export async function updateMediaAlt(id: number, f: FormData) {
@@ -134,13 +135,27 @@ export async function createUser(_prev: ActionState, f: FormData): Promise<Actio
   if (!email || !name) return { ok: false, message: "Name and email are required." };
   if (password.length < 10) return { ok: false, message: "Password must be at least 10 characters." };
   try {
-    await db.insert(t.users).values({ email, name, role: r.str("role") === "admin" ? "admin" : "editor", passwordHash: await hashPassword(password) });
+    await db.insert(t.users).values({ email, name, ...accessFrom(f), passwordHash: await hashPassword(password) });
   } catch (e) {
     const msg = errorMessage(e);
     return { ok: false, message: msg.includes("slug") ? "A user with that email already exists." : msg };
   }
   revalidatePath("/admin/users");
   return { ok: true, message: `Created ${email}` };
+}
+
+/** Role + ops businesses from the Team forms (ops_td / ops_finzo checkboxes). */
+const accessFrom = (f: FormData) => ({
+  role: parseRole(form(f).str("role")),
+  opsBusinesses: BUSINESSES.filter((b) => f.get(`ops_${b}`) === "on"),
+});
+
+export async function updateUserAccess(id: number, f: FormData) {
+  const me = await requireUser("admin");
+  const access = accessFrom(f);
+  if (me.id === id && access.role !== "admin") return; // can't demote yourself
+  await db.update(t.users).set(access).where(eq(t.users.id, id));
+  revalidatePath("/admin/users");
 }
 
 export async function deleteUser(id: number) {

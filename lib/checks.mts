@@ -247,3 +247,11 @@ assert.equal(canSeeExpense(staffT, { business: "td", createdBy: 9 }), false); //
 assert.equal(canSeeExpense(mgrF, { business: "td", createdBy: 2 }), false); // wrong business
 assert.equal(canSeeExpense(owner, { business: "finzo", createdBy: 9 }), true);
 console.log("ops access checks passed");
+import { parseRole, ROLE_LABEL } from "./ops-rules";
+assert.equal(parseRole("staff"), "staff");
+assert.equal(parseRole("ops_manager"), "ops_manager");
+assert.equal(parseRole("admin"), "admin");
+assert.equal(parseRole("superadmin"), "editor"); // unknown → least privilege
+assert.equal(parseRole(null), "editor");
+assert.equal(ROLE_LABEL.ops_manager, "Ops manager");
+console.log("ops role checks passed");

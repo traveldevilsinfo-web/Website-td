@@ -21,3 +21,10 @@ export const pickBusiness = (cookie: string | undefined, allowed: Biz[]): Biz | 
 
 export const canSeeExpense = (u: OpsUser, e: { business: Biz; createdBy: number }) =>
   allowedBusinesses(u).includes(e.business) && (isManager(u) || e.createdBy === u.id);
+
+export const ROLE_LABEL: Record<OpsUser["role"], string> = {
+  editor: "Editor (website)", admin: "Admin (everything)", ops_manager: "Ops manager", staff: "Ops staff",
+};
+/** Role from a form field; anything unknown gets the least privilege. */
+export const parseRole = (v: string | null): OpsUser["role"] =>
+  v === "admin" || v === "ops_manager" || v === "staff" ? v : "editor";
