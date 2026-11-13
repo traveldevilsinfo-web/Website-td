@@ -27,7 +27,7 @@ export default async function StaysPage({ searchParams }: PageProps<"/ops/stays"
     db.select({ r: t.reservations, code: t.properties.code, flat: t.properties.name }).from(t.reservations)
       .innerJoin(t.properties, eq(t.properties.id, t.reservations.propertyId))
       .where(where[view]).orderBy(view === "past" || view === "cancelled" ? desc(t.reservations.checkIn) : asc(t.reservations.checkIn)).limit(300),
-    db.select({ id: t.reservations.id, propertyId: t.reservations.propertyId, checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, status: t.reservations.status })
+    db.select({ id: t.reservations.id, propertyId: t.reservations.propertyId, checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, status: t.reservations.status, source: t.reservations.source })
       .from(t.reservations).where(and(ne(t.reservations.status, "cancelled"), gte(t.reservations.checkOut, today))),
   ]);
   const clashing = new Set(findClashes(live).flat());

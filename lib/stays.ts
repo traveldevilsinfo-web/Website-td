@@ -32,8 +32,17 @@ export function parseIcal(text: string): IcalEvent[] {
   return out;
 }
 
-/** Airbnb "Not available", Booking.com "CLOSED - Not available", generic "Blocked". */
+/** Airbnb "Not available", Vrbo "Blocked", generic "Closed". */
 export const isBlockSummary = (s: string) => /not available|blocked|closed/i.test(s);
+/** Booking.com labels real reservations "CLOSED - Not available" too, so every Booking.com event counts as a guest stay. */
+export const isBlockEvent = (channel: string, summary: string) => channel !== "booking" && isBlockSummary(summary);
+
+/**
+ * True when a fetch would wipe out too much to trust: the channel returned nothing while we have upcoming stays,
+ * or it would cancel most upcoming stays at once (3+). Then we keep what we have and report the feed as failing.
+ */
+export const syncLooksWrong = ({ events, upcoming, cancel }: { events: number; upcoming: number; cancel: number }) =>
+  (events === 0 && upcoming > 0) || (cancel >= 3 && cancel > upcoming / 2);
 
 const icalText = (s: string) => s.replace(/([\\,;])/g, "\\$1").replace(/\n/g, "\\n");
 const compact = (d: string) => d.replaceAll("-", "");
@@ -54,19 +63,22 @@ type Existing = { id: number; externalUid: string | null; checkIn: string; check
  * What one feed fetch changes for one flat + channel. Every event is upserted by UID.
  * A stay that vanished from the feed is cancelled only if it hasn't started (past history stays as it was).
  */
-export function planSync(existing: Existing[], feed: IcalEvent[], today: string) {
+export function planSync(existing: Existing[], feed: IcalEvent[], today: string, channel = "other") {
   const seen = new Set(feed.map((e) => e.uid));
   return {
-    upserts: feed.map((e) => ({ uid: e.uid, checkIn: e.start, checkOut: e.end, status: (isBlockSummary(e.summary) ? "blocked" : "confirmed") as StayStatus })),
+    upserts: feed.map((e) => ({ uid: e.uid, checkIn: e.start, checkOut: e.end, status: (isBlockEvent(channel, e.summary) ? "blocked" : "confirmed") as StayStatus })),
     cancel: existing.filter((x) => x.externalUid && !seen.has(x.externalUid) && x.status !== "cancelled" && x.checkIn >= today).map((x) => x.id),
   };
 }
 
-type Stay = { id: number; propertyId: number; checkIn: string; checkOut: string; status: StayStatus };
+type Stay = { id: number; propertyId: number; checkIn: string; checkOut: string; status: StayStatus; source?: string };
 
-/** Pairs of overlapping live stays on the same flat (a checkout and check-in on the same day is fine). */
+/**
+ * Pairs of overlapping live stays on the same flat (a checkout and check-in on the same day is fine).
+ * Blocks imported from a channel are skipped: they're usually our own export echoed back (or the owner's own hold).
+ */
 export function findClashes(stays: Stay[]): [number, number][] {
-  const live = stays.filter((s) => s.status !== "cancelled").sort((a, b) => a.checkIn.localeCompare(b.checkIn) || a.id - b.id);
+  const live = stays.filter((s) => s.status !== "cancelled" && !(s.source === "ical" && s.status === "blocked")).sort((a, b) => a.checkIn.localeCompare(b.checkIn) || a.id - b.id);
   const out: [number, number][] = [];
   for (let i = 0; i < live.length; i++)
     for (let j = i + 1; j < live.length && live[j].checkIn < live[i].checkOut; j++)
@@ -87,17 +99,19 @@ export function feedUrlError(raw: string): string | null {
   let u: URL;
   try { u = new URL(raw.trim()); } catch { return "That isn't a link."; }
   if (u.protocol !== "https:") return "Use the https:// calendar link.";
-  const h = u.hostname.toLowerCase();
+  const h = u.hostname.toLowerCase().replace(/\.+$/, ""); // "localhost." is localhost
   if (h === "localhost" || h.endsWith(".local") || h.endsWith(".internal") || !h.includes(".") || /^[\d.]+$/.test(h) || h.startsWith("["))
     return "That address can't be used. Paste the calendar link from Airbnb / Booking.com.";
   return null;
 }
 
-const realDate = (d: string | null) => {
+/** A real calendar day in YYYY-MM-DD (not 2026-02-30, not month 13). */
+export const isRealDate = (d: unknown): d is string => realDate(typeof d === "string" ? d : null);
+function realDate(d: string | null) {
   if (!d || !/^\d{4}-\d{2}-\d{2}$/.test(d)) return false;
   const t = new Date(`${d}T00:00:00Z`);
   return !Number.isNaN(t.getTime()) && t.toISOString().startsWith(d);
-};
+}
 export const nights = (checkIn: string, checkOut: string) => Math.round((Date.parse(`${checkOut}T00:00:00Z`) - Date.parse(`${checkIn}T00:00:00Z`)) / 864e5);
 
 /** Error message for a booking's dates, or null. Check-out is the morning they leave. */

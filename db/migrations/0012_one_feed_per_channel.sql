@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "property_feeds_property_channel_idx" ON "property_feeds" USING btree ("property_id","channel");

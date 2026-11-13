@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { and, asc, eq, gt, lt, ne } from "drizzle-orm";
+import { and, asc, eq, gt, lt, ne, sql } from "drizzle-orm";
 import { MessageCircle } from "lucide-react";
 import { db, t } from "@/lib/db";
 import { dateDay } from "@/lib/format";
@@ -23,7 +23,8 @@ export default async function StayPage({ params, searchParams }: PageProps<"/ops
   const [flats, clashes, [clean]] = await Promise.all([
     db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name }).from(t.properties).orderBy(asc(t.properties.code)),
     r.status === "cancelled" ? [] : db.select({ id: t.reservations.id, channel: t.reservations.channel, checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut }).from(t.reservations)
-      .where(and(eq(t.reservations.propertyId, r.propertyId), ne(t.reservations.status, "cancelled"), ne(t.reservations.id, r.id), lt(t.reservations.checkIn, r.checkOut), gt(t.reservations.checkOut, r.checkIn))),
+      .where(and(eq(t.reservations.propertyId, r.propertyId), ne(t.reservations.status, "cancelled"), ne(t.reservations.id, r.id), lt(t.reservations.checkIn, r.checkOut), gt(t.reservations.checkOut, r.checkIn),
+        sql`not (${t.reservations.source} = 'ical' and ${t.reservations.status} = 'blocked')`)),
     db.select({ id: t.turnovers.id, status: t.turnovers.status, who: t.opsUsers.name }).from(t.turnovers).leftJoin(t.opsUsers, eq(t.opsUsers.id, t.turnovers.assigneeId)).where(eq(t.turnovers.reservationId, r.id)),
   ]);
   const guestStay = r.status === "confirmed";

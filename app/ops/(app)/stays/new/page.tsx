@@ -1,6 +1,7 @@
 import { asc, eq } from "drizzle-orm";
 import { db, t } from "@/lib/db";
 import { requireStays } from "@/lib/ops";
+import { isRealDate } from "@/lib/stays";
 import { PageHeader, Panel } from "../../../kit";
 import { OpsForm } from "../../../OpsForm";
 import { saveStay } from "../actions";
@@ -10,7 +11,7 @@ export default async function NewStay({ searchParams }: PageProps<"/ops/stays/ne
   await requireStays();
   const sp = await searchParams;
   const flats = await db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name }).from(t.properties).where(eq(t.properties.active, true)).orderBy(asc(t.properties.sort), asc(t.properties.code));
-  const date = /^\d{4}-\d{2}-\d{2}$/.test(String(sp.date)) ? String(sp.date) : undefined;
+  const date = isRealDate(sp.date) ? sp.date : undefined;
   return (
     <>
       <PageHeader back="/ops/calendar" title="Add booking or block" sub="Airbnb and Booking.com stays arrive by themselves; add direct bookings and blocks here." />

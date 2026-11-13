@@ -456,3 +456,35 @@ assert.equal(canWorkOn(staffT, { assigneeId: null }), false); // unassigned: man
 assert.equal(canWorkOn(staffT, { assigneeId: 9, createdBy: 3 }), true); // a repair they reported
 assert.equal(canWorkOn(mgrF, { assigneeId: 9 }), true);
 console.log("task access checks passed");
+
+// ---------------- review fixes: sync safety, channel labels, echoed blocks
+import { isBlockEvent, syncLooksWrong } from "./stays";
+// Booking.com labels real reservations "CLOSED - Not available": every Booking.com event is a guest stay.
+assert.equal(isBlockEvent("booking", "CLOSED - Not available"), false);
+assert.equal(isBlockEvent("airbnb", "Airbnb (Not available)"), true);
+assert.equal(isBlockEvent("airbnb", "Reserved"), false);
+assert.equal(isBlockEvent("vrbo", "Blocked"), true);
+assert.equal(isBlockEvent("vrbo", "Reserved - Riya"), false);
+// planSync with a channel: Booking.com events come in confirmed
+assert.equal(planSync([], [{ uid: "x", start: "2026-11-20", end: "2026-11-22", summary: "CLOSED - Not available" }], "2026-11-13", "booking").upserts[0].status, "confirmed");
+// An empty or mostly-empty feed must not wipe the calendar
+assert.equal(syncLooksWrong({ events: 0, upcoming: 1, cancel: 1 }), true); // channel returned nothing but we have upcoming stays
+assert.equal(syncLooksWrong({ events: 0, upcoming: 0, cancel: 0 }), false); // genuinely empty flat
+assert.equal(syncLooksWrong({ events: 5, upcoming: 6, cancel: 4 }), true); // would cancel most upcoming stays at once
+assert.equal(syncLooksWrong({ events: 9, upcoming: 6, cancel: 1 }), false); // one cancellation is normal
+assert.equal(syncLooksWrong({ events: 2, upcoming: 3, cancel: 2 }), false); // a couple of cancellations is normal
+// Imported blocks are often our own exports echoed back by the channel: never a clash
+assert.deepEqual(findClashes([
+  { id: 1, propertyId: 1, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" as const, source: "manual" },
+  { id: 2, propertyId: 1, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "blocked" as const, source: "ical" }, // Airbnb echo of stay 1
+  { id: 3, propertyId: 1, checkIn: "2026-11-21", checkOut: "2026-11-22", status: "blocked" as const, source: "manual" }, // our own block over a guest: real
+]), [[1, 3]]);
+// Trailing-dot hostnames are the same host
+assert.ok(feedUrlError("https://localhost./x.ics"));
+assert.ok(feedUrlError("https://metadata.google.internal./x"));
+console.log("review fix checks passed");
+import { isRealDate } from "./stays";
+assert.equal(isRealDate("2026-11-13"), true);
+assert.equal(isRealDate("2026-13-45"), false); // the calendar used to crash on this
+assert.equal(isRealDate(undefined), false);
+console.log("real date checks passed");

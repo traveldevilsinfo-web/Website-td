@@ -10,7 +10,7 @@ import { CHANNEL_LABEL, ChannelDot } from "./stays-ui";
 export async function TodayStays({ manager, userId }: { manager: boolean; userId: number }) {
   const today = istToday();
   const [stays, cleanings] = await Promise.all([
-    manager ? db.select({ id: t.reservations.id, propertyId: t.reservations.propertyId, code: t.properties.code, channel: t.reservations.channel, guestName: t.reservations.guestName, checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, status: t.reservations.status })
+    manager ? db.select({ id: t.reservations.id, propertyId: t.reservations.propertyId, code: t.properties.code, channel: t.reservations.channel, guestName: t.reservations.guestName, checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, status: t.reservations.status, source: t.reservations.source })
       .from(t.reservations).innerJoin(t.properties, eq(t.properties.id, t.reservations.propertyId))
       .where(and(ne(t.reservations.status, "cancelled"), lte(t.reservations.checkIn, today), gte(t.reservations.checkOut, today))) : [],
     db.select({ id: t.turnovers.id, status: t.turnovers.status, code: t.properties.code, nextCheckIn: t.turnovers.nextCheckIn })
@@ -20,7 +20,7 @@ export async function TodayStays({ manager, userId }: { manager: boolean; userId
   const guests = stays.filter((s) => s.status === "confirmed");
   const arriving = guests.filter((s) => s.checkIn === today), leaving = guests.filter((s) => s.checkOut === today);
   const staying = guests.filter((s) => s.checkIn <= today && s.checkOut > today);
-  const clashes = manager ? findClashes((await db.select({ id: t.reservations.id, propertyId: t.reservations.propertyId, checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, status: t.reservations.status })
+  const clashes = manager ? findClashes((await db.select({ id: t.reservations.id, propertyId: t.reservations.propertyId, checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, status: t.reservations.status, source: t.reservations.source })
     .from(t.reservations).where(and(ne(t.reservations.status, "cancelled"), gt(t.reservations.checkOut, today))))).length : 0;
   const cleanDone = cleanings.filter((c) => c.status === "done").length;
 
@@ -36,8 +36,8 @@ export async function TodayStays({ manager, userId }: { manager: boolean; userId
     <section aria-label="Today at the flats" className="mb-6">
       {clashes > 0 && <Notice tone="red">{clashes} double booking{clashes > 1 ? "s" : ""} coming up. <Link href="/ops/calendar" className="font-semibold underline">Open the calendar</Link></Notice>}
       <div className={`grid gap-3 ${manager ? "sm:grid-cols-2 lg:grid-cols-4" : ""}`}>
-        {manager && <div className={tile}>{head("Arriving today", arriving.length, "/ops/stays?view=upcoming")}{list(arriving, "No check-ins.")}</div>}
-        {manager && <div className={tile}>{head("Leaving today", leaving.length, "/ops/stays?view=inhouse")}{list(leaving, "No check-outs.")}</div>}
+        {manager && <div className={tile}>{head("Arriving today", arriving.length, "/ops/calendar")}{list(arriving, "No check-ins.")}</div>}
+        {manager && <div className={tile}>{head("Leaving today", leaving.length, "/ops/calendar")}{list(leaving, "No check-outs.")}</div>}
         {manager && <div className={tile}>{head("Staying now", staying.length, "/ops/stays?view=inhouse")}<p className="mt-2 text-sm text-[var(--muted)]">{staying.length ? `${staying.length} flat${staying.length > 1 ? "s" : ""} occupied tonight` : "All flats empty tonight."}</p></div>}
         <div className={tile}>
           {head(manager ? "Cleanings today" : "Your cleanings today", cleanings.length ? `${cleanDone}/${cleanings.length}` : 0, "/ops/tasks")}

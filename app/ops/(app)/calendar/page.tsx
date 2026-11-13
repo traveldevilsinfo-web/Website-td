@@ -6,7 +6,7 @@ import { db, t } from "@/lib/db";
 import { addDays, dateShort } from "@/lib/format";
 import { requireStays } from "@/lib/ops";
 import { istToday } from "@/lib/ops-rules";
-import { findClashes, nights } from "@/lib/stays";
+import { findClashes, isRealDate, nights } from "@/lib/stays";
 import { syncStale } from "@/lib/stays-sync";
 import { Empty, Notice, PageHeader, btnGhost, btnPrimary } from "../../kit";
 import { CHANNEL_COLOR, CHANNEL_LABEL, ChannelDot, type Channel } from "../stays-ui";
@@ -21,13 +21,13 @@ export default async function CalendarPage({ searchParams }: PageProps<"/ops/cal
   after(() => syncStale(30)); // refresh calendars older than 30 min once this page is sent
   const sp = await searchParams;
   const today = istToday();
-  const start = /^\d{4}-\d{2}-\d{2}$/.test(String(sp.start)) ? String(sp.start) : addDays(today, -1);
+  const start = isRealDate(sp.start) ? sp.start : addDays(today, -1);
   const end = addDays(start, DAYS);
   const dates = Array.from({ length: DAYS }, (_, i) => addDays(start, i));
 
   const [flats, stays] = await Promise.all([
     db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name }).from(t.properties).where(eq(t.properties.active, true)).orderBy(asc(t.properties.sort), asc(t.properties.code)),
-    db.select({ id: t.reservations.id, propertyId: t.reservations.propertyId, channel: t.reservations.channel, checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, status: t.reservations.status, guestName: t.reservations.guestName })
+    db.select({ id: t.reservations.id, propertyId: t.reservations.propertyId, channel: t.reservations.channel, checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, status: t.reservations.status, source: t.reservations.source, guestName: t.reservations.guestName })
       .from(t.reservations).where(and(ne(t.reservations.status, "cancelled"), lt(t.reservations.checkIn, end), gt(t.reservations.checkOut, start))),
   ]);
   const clashing = new Set(findClashes(stays).flat());

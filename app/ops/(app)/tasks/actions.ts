@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { notFound, redirect } from "next/navigation";
-import { and, eq, ilike, ne, or } from "drizzle-orm";
+import { and, eq, ilike, isNull, ne, or } from "drizzle-orm";
 import { db, t } from "@/lib/db";
 import { form, type ActionState } from "@/lib/admin";
 import { requireOps } from "@/lib/ops";
@@ -50,8 +50,14 @@ export async function reportIssue(id: number, _prev: ActionState, f: FormData): 
 }
 
 export async function assignTurnover(id: number, f: FormData) {
-  await requireOps({ manager: true });
-  await db.update(t.turnovers).set({ assigneeId: form(f).int("assigneeId") }).where(eq(t.turnovers.id, id));
+  const { businesses } = await requireOps({ manager: true });
+  if (!businesses.includes("finzo")) notFound(); // a Travel Devils-only manager can't move Finzo cleanings
+  const assigneeId = form(f).int("assigneeId");
+  if (assigneeId) {
+    const [a] = await db.select({ role: t.opsUsers.role, b: t.opsUsers.businesses, active: t.opsUsers.active }).from(t.opsUsers).where(eq(t.opsUsers.id, assigneeId));
+    if (!a?.active || (a.role !== "owner" && !a.b.includes("finzo"))) return; // only people on the Finzo team
+  }
+  await db.update(t.turnovers).set({ assigneeId }).where(eq(t.turnovers.id, id));
   revalidatePath("/ops", "layout");
 }
 
@@ -75,18 +81,24 @@ export async function saveTicket(id: number | null, _prev: ActionState, f: FormD
     ? await db.update(t.tickets).set({ ...base, ...mgr }).where(eq(t.tickets.id, id)).returning()
     : await db.insert(t.tickets).values({ ...base, ...mgr, business: biz, createdBy: user.id }).returning();
 
+  let booked = !!row.expenseId;
   if (manager && row.status === "done" && row.cost && !row.expenseId) {
     const [cat] = await db.select({ id: t.expenseCategories.id }).from(t.expenseCategories)
       .where(and(eq(t.expenseCategories.business, biz), or(ilike(t.expenseCategories.name, "Repairs%"), eq(t.expenseCategories.name, "Misc")))).orderBy(t.expenseCategories.sort).limit(1);
     if (cat) {
-      const [ex] = await db.insert(t.expenses).values({
-        business: biz, date: istToday(), amount: row.cost, categoryId: cat.id, vendorId: row.vendorId, note: `Repair: ${row.title}`,
-        status: "approved", createdBy: user.id, approvedBy: user.id, approvedAt: new Date(),
-      }).returning({ id: t.expenses.id });
-      await db.update(t.tickets).set({ expenseId: ex.id }).where(eq(t.tickets.id, row.id));
+      // Book once: the ticket is claimed in the same transaction, so a double submit or two managers can't book it twice.
+      booked = await db.transaction(async (tx) => {
+        const [ex] = await tx.insert(t.expenses).values({
+          business: biz, date: istToday(), amount: row.cost!, categoryId: cat.id, vendorId: row.vendorId, note: `Repair: ${row.title}`,
+          status: "approved", createdBy: user.id, approvedBy: user.id, approvedAt: new Date(),
+        }).returning({ id: t.expenses.id });
+        const claimed = await tx.update(t.tickets).set({ expenseId: ex.id }).where(and(eq(t.tickets.id, row.id), isNull(t.tickets.expenseId))).returning({ id: t.tickets.id });
+        if (!claimed.length) tx.rollback();
+        return true;
+      }).catch(() => true); // rolled back: someone else booked it a moment ago
     }
   }
   revalidatePath("/ops", "layout");
   if (!id) redirect(`/ops/tasks/repairs/${row.id}?added=1`);
-  return { ok: true, message: row.status === "done" && row.cost ? "Saved ✓ Cost booked as an expense." : "Saved ✓" };
+  return { ok: true, message: row.status === "done" && row.cost ? (booked ? "Saved ✓ Cost booked as an expense." : "Saved ✓ Add a \"Repairs\" or \"Misc\" category to book the cost as an expense.") : "Saved ✓" };
 }

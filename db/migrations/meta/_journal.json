@@ -85,6 +85,13 @@
       "when": 1794574471845,
       "tag": "0011_ticket_expense",
       "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1794575995486,
+      "tag": "0012_one_feed_per_channel",
+      "breakpoints": true
     }
   ]
 }

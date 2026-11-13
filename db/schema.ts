@@ -445,15 +445,20 @@ export const properties = pgTable("properties", {
   ...timestamps,
 });
 
-export const propertyFeeds = pgTable("property_feeds", {
-  id: serial("id").primaryKey(),
-  propertyId: integer("property_id").notNull().references(() => properties.id, { onDelete: "cascade" }),
-  channel: channelEnum("channel").notNull(),
-  url: text("url").notNull(),
-  lastSyncAt: timestamp("last_sync_at", { withTimezone: true }),
-  lastError: text("last_error"),
-  lastCount: integer("last_count"),
-});
+export const propertyFeeds = pgTable(
+  "property_feeds",
+  {
+    id: serial("id").primaryKey(),
+    propertyId: integer("property_id").notNull().references(() => properties.id, { onDelete: "cascade" }),
+    channel: channelEnum("channel").notNull(),
+    url: text("url").notNull(),
+    lastSyncAt: timestamp("last_sync_at", { withTimezone: true }),
+    lastError: text("last_error"),
+    lastCount: integer("last_count"),
+  },
+  // One link per channel per flat: two Airbnb links would cancel each other's stays on every sync.
+  (t) => [uniqueIndex("property_feeds_property_channel_idx").on(t.propertyId, t.channel)],
+);
 
 export const reservations = pgTable(
   "reservations",
