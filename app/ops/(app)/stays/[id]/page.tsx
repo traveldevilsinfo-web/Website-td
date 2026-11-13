@@ -9,7 +9,11 @@ import { nights } from "@/lib/stays";
 import { MESSAGE_KINDS, MESSAGE_LABEL, stayMessage, whatsappLink } from "@/lib/stays-messages";
 import { Badge, Notice, PageHeader, Panel, btnDanger, btnGhost } from "../../../kit";
 import { ConfirmSubmit, OpsForm } from "../../../OpsForm";
+import { CopyField } from "../../../CopyField";
+import { stayUrl } from "@/lib/stay-link";
 import { CHANNEL_LABEL, ChannelDot, STAY_TONE, TURN_LABEL, TURN_TONE } from "../../stays-ui";
+
+const when = (d: Date) => d.toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "numeric", minute: "2-digit" });
 import { cancelStay, saveStay } from "../actions";
 import { StayFields } from "../StayFields";
 
@@ -58,6 +62,18 @@ export default async function StayPage({ params, searchParams }: PageProps<"/ops
                   );
                 })}
               </ul>
+            </Panel>
+          )}
+          {guestStay && (
+            <Panel title="Guest link" sub={r.agreedAt ? undefined : "Send this with the check-in message: they sign the house rules, then get the door code."}>
+              <CopyField label="Guest link" value={stayUrl(r.guestToken)} />
+              {r.agreedAt ? (
+                <dl className="mt-3 space-y-1 text-sm">
+                  <div className="flex justify-between gap-3"><dt className="text-[var(--muted)]">Checked in</dt><dd className="font-medium">{r.agreedName} · {when(r.agreedAt)}</dd></div>
+                  {r.guestEmail && <div className="flex justify-between gap-3"><dt className="text-[var(--muted)]">Email</dt><dd className="truncate">{r.guestEmail}</dd></div>}
+                  {r.idPath && <div className="flex justify-between gap-3"><dt className="text-[var(--muted)]">ID photo</dt><dd><a className="font-medium underline" target="_blank" rel="noopener" href={`/api/ops/file?path=${encodeURIComponent(r.idPath)}`}>View</a></dd></div>}
+                </dl>
+              ) : <p className="mt-3 text-sm text-[var(--muted)]">Not checked in yet.</p>}
             </Panel>
           )}
           {clean && (

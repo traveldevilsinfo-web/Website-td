@@ -6,6 +6,8 @@ import { requireStays } from "@/lib/ops";
 import { Badge, Field, Notice, PageHeader, Panel, btnGhost, btnQuiet, input } from "../../../kit";
 import { OpsForm } from "../../../OpsForm";
 import { CopyField } from "../../../CopyField";
+import { stayUrl } from "@/lib/stay-link";
+import { formatGuide } from "@/lib/stays-guests";
 import { CHANNEL_LABEL, ChannelDot } from "../../stays-ui";
 import { addFeed, removeFeed, saveProperty, syncProperty } from "../actions";
 
@@ -60,6 +62,15 @@ export default async function FlatEditor({ params, searchParams }: PageProps<"/o
             <Field label="Wi-Fi password"><input name="wifiPass" defaultValue={p?.wifiPass ?? ""} autoComplete="off" className={input} /></Field>
             <Field label="Notes for the team" className="sm:col-span-2"><textarea name="notes" rows={2} defaultValue={p?.notes ?? ""} placeholder="Water heater switch is behind the door…" className={input} /></Field>
             <label className="flex items-center gap-2 text-sm sm:col-span-2"><input type="checkbox" name="active" defaultChecked={p?.active ?? true} className="size-4 accent-[var(--acc)]" /> Active (shows on the calendar and gets cleanings)</label>
+
+            <h3 className="mt-2 border-t border-[var(--line)] pt-4 text-sm font-semibold sm:col-span-2">Guest guidebook</h3>
+            <Field label="House rules" hint="Shown on the guest's link; they tick a box to accept these." className="sm:col-span-2">
+              <textarea name="houseRules" rows={4} defaultValue={p?.houseRules ?? ""} placeholder="No parties. No smoking indoors…" className={input} />
+            </Field>
+            <Field label="How things work" hint={'Start a section with "## " — e.g. "## Wi-Fi", then the details on the next lines.'} className="sm:col-span-2">
+              <textarea name="guide" rows={7} defaultValue={formatGuide(p?.guide ?? [])} placeholder={"## Getting in\nThe lift is on the right…\n\n## Kitchen\nInduction hob, no oven."} className={`${input} font-mono text-[13px]`} />
+            </Field>
+            <label className="flex items-center gap-2 text-sm sm:col-span-2"><input type="checkbox" name="needsId" defaultChecked={p?.needsId ?? false} className="size-4 accent-[var(--acc)]" /> Ask guests for a photo ID at check-in</label>
           </OpsForm>
         </Panel>
 
@@ -96,6 +107,9 @@ export default async function FlatEditor({ params, searchParams }: PageProps<"/o
                 <Field label="Everything (other channels)"><CopyField label="Full calendar link" value={exportUrl()} /></Field>
               </div>
               <p className="mt-3 text-xs text-[var(--muted)]">Channels re-read these links every 1–3 hours, so a booking can still slip in during that gap. Clashes show in red on the calendar.</p>
+            </Panel>
+            <Panel title="Guidebook QR" sub="Print this link as a QR code inside the flat: guests get Wi-Fi and the guidebook, never the door code.">
+              <CopyField label="Guidebook link" value={stayUrl(p.guideToken)} />
             </Panel>
           </div>
         )}

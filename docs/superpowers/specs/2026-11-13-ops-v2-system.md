@@ -79,7 +79,7 @@ Sources: ui-ux-pro-max (the "Data-Dense + Drill-Down" pattern for operational da
 | # | Ships | Notes |
 |---|---|---|
 | 2 | **Design system v2**, then Properties, iCal import + export, multi-flat Calendar, Reservations, clash alerts, **Turnovers** (auto from checkouts), **Maintenance** tickets, plus WhatsApp message templates (pulled forward from Phase 3) | **Built** 13 Nov on `ops-phase1` |
-| 3 | Guests: message templates + WhatsApp send queue, public guidebook page, check-in form (ID + agreement) | |
+| 3 | Guests: WhatsApp send queue, guest link per stay (check-in, signed house rules, ID photo, then door code), guidebook + in-flat QR link | **Built** 13 Nov on `ops-phase1` |
 | 4 | Revenue: earnings CSV import, occupancy/ADR/RevPAR, rate calendar, owner statements | |
 | 5 | HRMS: employees, attendance, leave, payroll, incentives, advances (both businesses) | |
 | 6 | Inventory: items, locations, movements, auto-issue on turnover, low stock (both) | |

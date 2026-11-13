@@ -1,3 +1,4 @@
+import { sql } from "drizzle-orm";
 import {
   boolean, date, index, integer, jsonb, pgEnum, pgTable, serial, text, timestamp, uniqueIndex,
 } from "drizzle-orm/pg-core";
@@ -439,6 +440,11 @@ export const properties = pgTable("properties", {
   wifiPass: text("wifi_pass"),
   notes: text("notes"),
   icalToken: text("ical_token").notNull().unique(), // secret in our export feed URL
+  /** Guest-facing guidebook: house rules and "how things work" sections. No secrets here (the page is link-public). */
+  houseRules: text("house_rules"),
+  guide: jsonb("guide").$type<GuideSection[]>().notNull().default([]),
+  guideToken: text("guide_token").notNull().unique().default(sql`replace(gen_random_uuid()::text, '-', '')`), // QR link inside the flat
+  needsId: boolean("needs_id").notNull().default(false), // ask guests for an ID at check-in
   housekeeperId: integer("housekeeper_id").references(() => opsUsers.id, { onDelete: "set null" }),
   active: boolean("active").notNull().default(true),
   sort: integer("sort").notNull().default(0),
@@ -477,6 +483,14 @@ export const reservations = pgTable(
     status: stayStatusEnum("status").notNull().default("confirmed"),
     notes: text("notes"),
     createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    /** Guest's private link: check-in, agreement, then door code and Wi-Fi. */
+    guestToken: text("guest_token").notNull().unique().default(sql`replace(gen_random_uuid()::text, '-', '')`),
+    guestEmail: text("guest_email"),
+    checkedInAt: timestamp("checked_in_at", { withTimezone: true }),
+    agreedName: text("agreed_name"), // typed signature
+    agreedAt: timestamp("agreed_at", { withTimezone: true }),
+    agreedIp: text("agreed_ip"),
+    idPath: text("id_path"), // private bucket only
     ...timestamps,
   },
   (t) => [
@@ -522,4 +536,22 @@ export const tickets = pgTable(
     ...timestamps,
   },
   (t) => [index("tickets_business_status_idx").on(t.business, t.status)],
+);
+
+// ------------------------------------------------------------------ guests (guidebook, check-in, messages)
+
+export const messageKindEnum = pgEnum("message_kind", ["confirm", "checkin", "checkout", "review"]);
+export type GuideSection = { title: string; body: string };
+// Link tokens are 32 hex chars (~122 bits) from gen_random_uuid(): unguessable, and no extension needed.
+
+export const stayMessages = pgTable(
+  "stay_messages",
+  {
+    id: serial("id").primaryKey(),
+    reservationId: integer("reservation_id").notNull().references(() => reservations.id, { onDelete: "cascade" }),
+    kind: messageKindEnum("kind").notNull(),
+    sentAt: timestamp("sent_at", { withTimezone: true }).notNull().defaultNow(),
+    sentBy: integer("sent_by").references(() => opsUsers.id, { onDelete: "set null" }),
+  },
+  (t) => [uniqueIndex("stay_messages_reservation_kind_idx").on(t.reservationId, t.kind)],
 );

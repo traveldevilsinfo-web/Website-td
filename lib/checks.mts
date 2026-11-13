@@ -488,3 +488,52 @@ assert.equal(isRealDate("2026-11-13"), true);
 assert.equal(isRealDate("2026-13-45"), false); // the calendar used to crash on this
 assert.equal(isRealDate(undefined), false);
 console.log("real date checks passed");
+
+// ---------------- guests: what to send when, check-in agreement, ID uploads
+import { dueMessageKinds, agreementError, planGuestId, GUEST_ID_PATH, guestStage } from "./stays-guests";
+const due = (today: string, sent: string[] = [], o: object = {}) =>
+  dueMessageKinds({ checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed", ...o }, today, sent as never[]);
+assert.deepEqual(due("2026-11-15"), ["confirm"]);
+assert.deepEqual(due("2026-11-19"), ["confirm", "checkin"]); // evening before: send details
+assert.deepEqual(due("2026-11-20"), ["checkin"]); // arrival day: confirming is too late to matter
+assert.deepEqual(due("2026-11-21"), []); // mid-stay: leave them alone
+assert.deepEqual(due("2026-11-22"), ["checkout"]);
+assert.deepEqual(due("2026-11-23"), ["review"]);
+assert.deepEqual(due("2026-11-24"), ["review"]);
+assert.deepEqual(due("2026-11-25"), []);
+assert.deepEqual(due("2026-11-19", ["checkin"]), ["confirm"]); // already sent drops out
+assert.deepEqual(due("2026-11-19", ["confirm", "checkin"]), []);
+assert.deepEqual(due("2026-11-20", [], { status: "blocked" }), []); // owner blocks aren't guests
+assert.deepEqual(due("2026-11-20", [], { status: "cancelled" }), []);
+assert.deepEqual(dueMessageKinds({ checkIn: "2026-11-20", checkOut: "2026-11-21", status: "confirmed" }, "2026-11-20", []), ["checkin", "checkout"]); // one-nighter
+
+assert.equal(agreementError("Riya Sharma", true), null);
+assert.ok(agreementError("Riya Sharma", false)); // box not ticked
+assert.ok(agreementError("R", true)); // too short to be a name
+assert.ok(agreementError("   ", true));
+assert.ok(agreementError("x".repeat(200), true));
+
+const gid = planGuestId("passport.JPG", 1_000_000, new Date("2026-11-13T10:00:00Z"));
+assert.ok("path" in gid && /^2026\/11\/g-[0-9a-f]{24}\.jpg$/.test(gid.path));
+assert.ok("path" in gid && GUEST_ID_PATH.test(gid.path));
+assert.ok("error" in planGuestId("id.pdf", 100)); // photo of the ID, not a document
+assert.ok("error" in planGuestId("id.jpg", 20 * 1024 * 1024));
+assert.ok(!GUEST_ID_PATH.test("2026/11/r-aaaaaaaaaaaaaaaaaaaaaaaa.jpg")); // a receipt path is not an ID path
+
+// What the guest's own page shows them
+assert.equal(guestStage({ agreedAt: null, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" }, "2026-11-15"), "checkin");
+assert.equal(guestStage({ agreedAt: new Date(), checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" }, "2026-11-15"), "ready");
+assert.equal(guestStage({ agreedAt: new Date(), checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" }, "2026-11-24"), "over");
+assert.equal(guestStage({ agreedAt: null, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "cancelled" }, "2026-11-15"), "cancelled");
+console.log("guest checks passed");
+import { parseGuide, formatGuide } from "./stays-guests";
+assert.deepEqual(parseGuide("## Wi-Fi\nRouter is behind the TV.\n\n## Kitchen\nInduction hob.\nNo oven."), [
+  { title: "Wi-Fi", body: "Router is behind the TV." },
+  { title: "Kitchen", body: "Induction hob.\nNo oven." },
+]);
+assert.deepEqual(parseGuide("No heading here\njust text"), [{ title: "Good to know", body: "No heading here\njust text" }]);
+assert.deepEqual(parseGuide("   "), []);
+assert.deepEqual(parseGuide("## Empty section\n\n## Real\nbody"), [{ title: "Real", body: "body" }]); // drop empties
+assert.equal(formatGuide([{ title: "Wi-Fi", body: "Behind the TV." }]), "## Wi-Fi\nBehind the TV.");
+assert.deepEqual(parseGuide(formatGuide([{ title: "A", body: "one\ntwo" }, { title: "B", body: "x" }])), [{ title: "A", body: "one\ntwo" }, { title: "B", body: "x" }]);
+console.log("guidebook checks passed");
