@@ -28,6 +28,10 @@ export async function PUT(req: Request) {
   if (!RECEIPT_PATH.test(p)) return Response.json({ error: "Bad path" }, { status: 400 });
   const body = Buffer.from(await req.arrayBuffer());
   if (body.length > RECEIPT_MAX_BYTES) return Response.json({ error: "Too large" }, { status: 413 });
-  await writePrivateLocal(p, body);
+  try {
+    await writePrivateLocal(p, body);
+  } catch {
+    return Response.json({ error: "Already uploaded" }, { status: 409 }); // never overwrite an existing receipt
+  }
   return Response.json({ ok: true });
 }

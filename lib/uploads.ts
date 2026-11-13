@@ -100,6 +100,14 @@ export async function privateFileUrl(p: string): Promise<string> {
 
 export async function writePrivateLocal(p: string, body: Buffer) {
   await mkdir(path.dirname(path.join(OPS_DIR, p)), { recursive: true });
-  await writeFile(path.join(OPS_DIR, p), body);
+  await writeFile(path.join(OPS_DIR, p), body, { flag: "wx" }); // wx: an existing receipt is never overwritten
 }
 export const readPrivateLocal = (p: string) => readFile(path.join(OPS_DIR, p));
+
+export async function deletePrivate(p: string) {
+  if (onSupabase) {
+    await sb(`object/${OPS_BUCKET}`, { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ prefixes: [p] }) });
+    return;
+  }
+  await unlink(path.join(OPS_DIR, p));
+}

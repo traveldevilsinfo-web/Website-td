@@ -133,3 +133,19 @@ export function shiftMonth(month: string, by: number) {
   const [y, m] = month.split("-").map(Number);
   return new Date(Date.UTC(y, m - 1 + by, 1)).toISOString().slice(0, 7);
 }
+
+/** Status from a URL/form value. Own keys only: "constructor" must not reach the DB enum. */
+export const parseStatus = (v: unknown): ExpenseStatus | null =>
+  typeof v === "string" && Object.hasOwn(STATUS_LABEL, v) ? (v as ExpenseStatus) : null;
+
+/** Error message, or null when `date` is a real YYYY-MM-DD not after today (IST). */
+export function checkExpenseDate(date: string | null, today: string): string | null {
+  if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) return "Pick a date.";
+  const d = new Date(`${date}T00:00:00Z`);
+  if (Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== date) return "That date doesn't exist.";
+  if (date > today) return "Expenses can't be dated in the future.";
+  return null;
+}
+
+/** Receipt file to delete after a save: the old one, if it was replaced or removed. */
+export const staleReceipt = (prev: string | null, next: string | null) => (prev && prev !== next ? prev : null);

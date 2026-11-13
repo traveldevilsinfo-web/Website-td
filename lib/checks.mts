@@ -333,3 +333,21 @@ assert.deepEqual(dueRecurring([rec({ dayOfMonth: 1 })], "2026-12-01"),
 assert.deepEqual(dueRecurring([rec({ startMonth: "2026-12" })], "2026-12-01"), [{ id: 1, period: "2026-12", date: "2026-12-01" }]); // not before it started
 assert.deepEqual(dueRecurring([rec({ dayOfMonth: 31 })], "2027-01-01"), [{ id: 1, period: "2026-12", date: "2026-12-31" }]); // across the year
 console.log("ops recurring catch-up checks passed");
+// review minors: crafted filters, future dates, replaced receipts
+import { parseStatus, checkExpenseDate, staleReceipt } from "./ops-rules";
+assert.equal(parseStatus("submitted"), "submitted");
+assert.equal(parseStatus("constructor"), null); // inherited key must not pass
+assert.equal(parseStatus("toString"), null);
+assert.equal(parseStatus(undefined), null);
+assert.equal(checkExpenseDate("2026-11-13", "2026-11-13"), null);
+assert.equal(checkExpenseDate("2026-11-01", "2026-11-13"), null);
+assert.ok(checkExpenseDate("2026-11-14", "2026-11-13")); // future
+assert.ok(checkExpenseDate("2026-02-30", "2026-11-13")); // not a real day
+assert.ok(checkExpenseDate("13/11/2026", "2026-11-13"));
+assert.ok(checkExpenseDate("2026-13-01", "2026-11-13")); // month 13: message, not a crash
+assert.ok(checkExpenseDate(null, "2026-11-13"));
+assert.equal(staleReceipt("2026/11/r-a.png", "2026/11/r-b.png"), "2026/11/r-a.png"); // replaced → delete old
+assert.equal(staleReceipt("2026/11/r-a.png", null), "2026/11/r-a.png"); // removed
+assert.equal(staleReceipt("2026/11/r-a.png", "2026/11/r-a.png"), null); // unchanged
+assert.equal(staleReceipt(null, "2026/11/r-b.png"), null);
+console.log("ops minor-fix checks passed");

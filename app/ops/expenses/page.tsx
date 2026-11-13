@@ -4,7 +4,7 @@ import { Paperclip } from "lucide-react";
 import { db, t } from "@/lib/db";
 import { dateShort, inr } from "@/lib/format";
 import { requireOps } from "@/lib/ops";
-import { istToday, monthBounds, STATUS_LABEL, type ExpenseStatus } from "@/lib/ops-rules";
+import { istToday, monthBounds, parseStatus } from "@/lib/ops-rules";
 import { PageHeader, Table, btnPrimary, input } from "@/components/admin/ui";
 import { ExpenseBadge, monthLabel } from "../ui";
 
@@ -12,7 +12,7 @@ export default async function ExpensesPage({ searchParams }: PageProps<"/ops/exp
   const { user, biz, manager } = await requireOps();
   const sp = await searchParams;
   const month = /^\d{4}-\d{2}$/.test(String(sp.month)) ? String(sp.month) : istToday().slice(0, 7);
-  const status = String(sp.status ?? "") in STATUS_LABEL ? (String(sp.status) as ExpenseStatus) : null;
+  const status = parseStatus(sp.status);
   const waiting = manager && status === "submitted"; // the approval queue spans all months
   const { from, to } = monthBounds(month);
 

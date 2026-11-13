@@ -8,7 +8,7 @@ const fileUrl = (p: string) => `/api/ops/file?path=${encodeURIComponent(p)}`;
 /** Photo/PDF of the bill → private bucket. The chosen path goes in a hidden `receiptPath` field. */
 export function ReceiptInput({ defaultPath }: { defaultPath?: string | null }) {
   const [path, setPath] = useState(defaultPath ?? "");
-  const [preview, setPreview] = useState<string | null>(null); // local object URL right after upload
+  const [preview, setPreview] = useState<string | null>(null); // local copy right after upload: works before the expense is saved
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
@@ -22,7 +22,7 @@ export function ReceiptInput({ defaultPath }: { defaultPath?: string | null }) {
       const put = await fetch(plan.uploadUrl, { method: "PUT", headers: { "Content-Type": plan.mime }, body: file });
       if (!put.ok) throw new Error(`Upload failed (${put.status})`);
       setPath(plan.path);
-      setPreview(file.type.startsWith("image/") ? URL.createObjectURL(file) : null);
+      setPreview(URL.createObjectURL(file));
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -39,7 +39,7 @@ export function ReceiptInput({ defaultPath }: { defaultPath?: string | null }) {
           {isPdf ? <FileText className="size-10 text-gray-400" aria-hidden />
             // eslint-disable-next-line @next/next/no-img-element
             : <img src={preview ?? fileUrl(path)} alt="Receipt" className="size-16 rounded-lg object-cover" />}
-          <a href={fileUrl(path)} target="_blank" className="flex-1 text-sm font-semibold text-gray-700 underline">{isPdf ? "PDF attached" : "View receipt"}</a>
+          <a href={preview ?? fileUrl(path)} target="_blank" className="flex-1 text-sm font-semibold text-gray-700 underline">{isPdf ? "PDF attached" : "View receipt"}</a>
           <button type="button" onClick={() => { setPath(""); setPreview(null); }} aria-label="Remove receipt" className="grid size-9 place-items-center rounded-lg text-gray-500 hover:bg-gray-100"><X className="size-4" /></button>
         </div>
       ) : (
