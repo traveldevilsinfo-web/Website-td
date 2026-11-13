@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { and, eq, gt, lt } from "drizzle-orm";
 import { db, t } from "./db";
+import { isOpsOnly } from "./ops-rules";
 
 export const SESSION_COOKIE = "td_admin";
 const SESSION_DAYS = 14;
@@ -34,13 +35,13 @@ export async function destroySession() {
   jar.delete(SESSION_COOKIE);
 }
 
-export type CurrentUser = { id: number; name: string; email: string; role: "admin" | "editor" | "ops_manager" | "staff" };
+export type CurrentUser = { id: number; name: string; email: string; role: "admin" | "editor" | "ops_manager" | "staff"; opsBusinesses: string[] };
 
 export const getCurrentUser = cache(async (): Promise<CurrentUser | null> => {
   const token = (await cookies()).get(SESSION_COOKIE)?.value;
   if (!token) return null;
   const [row] = await db
-    .select({ id: t.users.id, name: t.users.name, email: t.users.email, role: t.users.role })
+    .select({ id: t.users.id, name: t.users.name, email: t.users.email, role: t.users.role, opsBusinesses: t.users.opsBusinesses })
     .from(t.sessions)
     .innerJoin(t.users, eq(t.users.id, t.sessions.userId))
     .where(and(eq(t.sessions.id, sha256(token)), gt(t.sessions.expiresAt, new Date())));
@@ -51,6 +52,7 @@ export const getCurrentUser = cache(async (): Promise<CurrentUser | null> => {
 export async function requireUser(role?: "admin") {
   const user = await getCurrentUser();
   if (!user) redirect("/admin/login");
+  if (isOpsOnly(user.role)) redirect("/ops"); // ops managers and staff never get the website admin
   if (role && user.role !== role) redirect("/admin?denied=1");
   return user;
 }

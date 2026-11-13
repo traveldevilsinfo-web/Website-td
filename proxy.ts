@@ -5,4 +5,4 @@ export function proxy(req: NextRequest) {
   if (!req.cookies.has("td_admin")) return NextResponse.redirect(new URL("/admin/login", req.url));
 }
 
-export const config = { matcher: ["/admin", "/admin/((?!login).*)"] };
+export const config = { matcher: ["/admin", "/admin/((?!login).*)", "/ops", "/ops/:path*"] };

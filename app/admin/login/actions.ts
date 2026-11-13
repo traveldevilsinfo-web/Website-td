@@ -7,6 +7,7 @@ import { db, t } from "@/lib/db";
 import {
   clearLoginFailures, createSession, destroySession, loginThrottled, recordLoginFailure, verifyPassword,
 } from "@/lib/auth";
+import { isOpsOnly } from "@/lib/ops-rules";
 
 export async function login(_prev: { message: string }, f: FormData) {
   const email = String(f.get("email") ?? "").trim().toLowerCase();
@@ -22,7 +23,7 @@ export async function login(_prev: { message: string }, f: FormData) {
   }
   clearLoginFailures(key);
   await createSession(user.id);
-  redirect("/admin");
+  redirect(isOpsOnly(user.role) ? "/ops" : "/admin");
 }
 
 export async function logout() {

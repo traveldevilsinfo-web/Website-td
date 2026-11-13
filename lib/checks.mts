@@ -224,3 +224,26 @@ console.log("trip order checks passed");
 assert.deepEqual(tiersFor([{ label: "Triple" }, { label: "Double" }], { priceOverride: null, tierPrices: { Double: 0 } }).map((t) => t.label), ["Triple"]);
 assert.throws(() => computeQuote({ ...qbase, batch: { ...qbase.batch, tierPrices: { Double: 0 } } }), QuoteError);
 console.log("batch price checks passed");
+
+// ops dashboard: who sees which business, and whose expenses
+import { allowedBusinesses, pickBusiness, isManager, isOpsOnly, canSeeExpense } from "./ops-rules";
+const owner = { id: 1, role: "admin" as const, opsBusinesses: [] };
+const mgrF = { id: 2, role: "ops_manager" as const, opsBusinesses: ["finzo"] };
+const staffT = { id: 3, role: "staff" as const, opsBusinesses: ["td", "bogus"] };
+const editorU = { id: 4, role: "editor" as const, opsBusinesses: ["td"] };
+assert.deepEqual(allowedBusinesses(owner), ["td", "finzo"]);
+assert.deepEqual(allowedBusinesses(staffT), ["td"]);
+assert.deepEqual(allowedBusinesses(editorU), []);
+assert.equal(pickBusiness("td", ["finzo"]), "finzo"); // forged cookie ignored
+assert.equal(pickBusiness("finzo", ["td", "finzo"]), "finzo");
+assert.equal(pickBusiness(undefined, []), null);
+assert.equal(isManager(mgrF), true);
+assert.equal(isManager(staffT), false);
+assert.equal(isOpsOnly("staff"), true);
+assert.equal(isOpsOnly("admin"), false);
+assert.equal(isOpsOnly("editor"), false);
+assert.equal(canSeeExpense(staffT, { business: "td", createdBy: 3 }), true);
+assert.equal(canSeeExpense(staffT, { business: "td", createdBy: 9 }), false); // someone else's
+assert.equal(canSeeExpense(mgrF, { business: "td", createdBy: 2 }), false); // wrong business
+assert.equal(canSeeExpense(owner, { business: "finzo", createdBy: 9 }), true);
+console.log("ops access checks passed");
