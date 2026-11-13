@@ -79,3 +79,21 @@ export function monthBounds(month: string) {
   const last = new Date(Date.UTC(y, m, 0)).getUTCDate();
   return { from: `${month}-01`, to: `${month}-${String(last).padStart(2, "0")}` };
 }
+
+// ------------------------------------------------------------------ fixed costs
+
+export type RecurringLike = { id: number; dayOfMonth: number; active: boolean; startMonth: string; endMonth: string | null };
+
+/**
+ * Fixed costs due this month as of `today`. Only the current month: the DB's unique (recurring_id, period)
+ * makes re-runs harmless, and a missed cron day is caught up on the next run.
+ */
+export function dueRecurring(rows: RecurringLike[], today: string) {
+  const period = today.slice(0, 7);
+  const { to } = monthBounds(period);
+  const lastDay = Number(to.slice(8));
+  return rows
+    .filter((r) => r.active && r.startMonth <= period && (!r.endMonth || r.endMonth >= period))
+    .map((r) => ({ id: r.id, period, date: `${period}-${String(Math.min(r.dayOfMonth, lastDay)).padStart(2, "0")}` }))
+    .filter((d) => d.date <= today);
+}

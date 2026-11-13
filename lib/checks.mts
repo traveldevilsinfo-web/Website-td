@@ -286,3 +286,15 @@ assert.deepEqual(monthBounds("2026-02"), { from: "2026-02-01", to: "2026-02-28" 
 assert.deepEqual(monthBounds("2028-02"), { from: "2028-02-01", to: "2028-02-29" });
 assert.deepEqual(monthBounds("2026-12"), { from: "2026-12-01", to: "2026-12-31" });
 console.log("ops month checks passed");
+import { dueRecurring, type RecurringLike } from "./ops-rules";
+const rec = (o: Partial<RecurringLike>): RecurringLike => ({ id: 1, dayOfMonth: 1, active: true, startMonth: "2026-01", endMonth: null, ...o });
+assert.deepEqual(dueRecurring([rec({})], "2026-11-01"), [{ id: 1, period: "2026-11", date: "2026-11-01" }]);
+assert.deepEqual(dueRecurring([rec({ dayOfMonth: 5 })], "2026-11-04"), []); // not yet
+assert.deepEqual(dueRecurring([rec({ dayOfMonth: 5 })], "2026-11-20"), [{ id: 1, period: "2026-11", date: "2026-11-05" }]); // catches up
+assert.deepEqual(dueRecurring([rec({ dayOfMonth: 31 })], "2026-02-28"), [{ id: 1, period: "2026-02", date: "2026-02-28" }]); // short month
+assert.deepEqual(dueRecurring([rec({ dayOfMonth: 31 })], "2026-11-30"), [{ id: 1, period: "2026-11", date: "2026-11-30" }]);
+assert.deepEqual(dueRecurring([rec({ active: false })], "2026-11-20"), []);
+assert.deepEqual(dueRecurring([rec({ startMonth: "2026-12" })], "2026-11-20"), []);
+assert.deepEqual(dueRecurring([rec({ endMonth: "2026-10" })], "2026-11-20"), []);
+assert.deepEqual(dueRecurring([rec({ endMonth: "2026-11" })], "2026-11-20").length, 1); // end month inclusive
+console.log("ops recurring checks passed");
