@@ -16,8 +16,8 @@ export async function expenseFormOptions(biz: Biz) {
       .from(t.tripBatches).innerJoin(t.trips, eq(t.trips.id, t.tripBatches.tripId))
       .where(and(gte(t.tripBatches.startDate, addDays(today, -10)), lte(t.tripBatches.startDate, addDays(today, 14))))
       .orderBy(asc(t.tripBatches.startDate), asc(t.trips.title)),
-    biz !== "finzo" ? [] : db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name })
-      .from(t.properties).where(eq(t.properties.active, true)).orderBy(asc(t.properties.sort), asc(t.properties.code)),
+    biz !== "finzo" ? [] : db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name, active: t.properties.active })
+      .from(t.properties).orderBy(asc(t.properties.active), asc(t.properties.sort), asc(t.properties.code)),
   ]);
   return { categories, vendors, batches, flats };
 }
@@ -71,8 +71,8 @@ export async function spentByMonth(biz: Biz, month: string, months = 6): Promise
 export async function propertyMonth(month: string) {
   const { from, to } = monthBounds(month);
   const [flats, stays, costs] = await Promise.all([
-    db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name }).from(t.properties)
-      .where(eq(t.properties.active, true)).orderBy(asc(t.properties.sort), asc(t.properties.code)),
+    db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name, active: t.properties.active }).from(t.properties)
+      .orderBy(asc(t.properties.sort), asc(t.properties.code)),
     db.select({ id: t.reservations.id, propertyId: t.reservations.propertyId, channel: t.reservations.channel, guestName: t.reservations.guestName,
       checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, status: t.reservations.status, payout: t.reservations.payout, earningsAt: t.reservations.earningsAt })
       .from(t.reservations).where(and(sql`${t.reservations.checkIn} < ${addDays(to, 1)}`, sql`${t.reservations.checkOut} > ${from}`))

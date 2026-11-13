@@ -45,7 +45,7 @@ export function ExpenseFields({ biz, options, v = {}, today }: { biz: Biz; optio
         <Field label="Flat (optional)" hint="Tag a cost to its flat so it lands on that flat's statement.">
           <select name="propertyId" defaultValue={v.propertyId ?? ""} className={input}>
             <option value="">Not flat-specific</option>
-            {options.flats.map((f) => <option key={f.id} value={f.id}>{f.code} · {f.name}</option>)}
+            {options.flats.filter((f) => f.active || f.id === v.propertyId).map((f) => <option key={f.id} value={f.id}>{f.code} · {f.name}{f.active ? "" : " (off)"}</option>)}
           </select>
         </Field>
       )}

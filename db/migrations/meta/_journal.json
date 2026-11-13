@@ -113,6 +113,13 @@
       "when": 1794577669753,
       "tag": "0015_cost_centres_and_earnings",
       "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1794578522036,
+      "tag": "0016_people_payroll",
+      "breakpoints": true
     }
   ]
 }

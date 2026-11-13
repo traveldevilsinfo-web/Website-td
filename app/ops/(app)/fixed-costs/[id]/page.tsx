@@ -41,7 +41,7 @@ export default async function FixedCostEditor({ params }: PageProps<"/ops/fixed-
               <Field label="Flat (optional)" hint="Rent, Wi-Fi or society dues for one flat land on its statement.">
                 <select name="propertyId" defaultValue={r?.propertyId ?? ""} className={input}>
                   <option value="">Not flat-specific</option>
-                  {flats.map((f) => <option key={f.id} value={f.id}>{f.code} · {f.name}</option>)}
+                  {flats.filter((f) => f.active || f.id === r?.propertyId).map((f) => <option key={f.id} value={f.id}>{f.code} · {f.name}{f.active ? "" : " (off)"}</option>)}
                 </select>
               </Field>
             )}

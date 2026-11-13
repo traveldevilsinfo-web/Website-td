@@ -629,3 +629,49 @@ assert.deepEqual(matchEarnings([theStays[2]], [{ code: null, listing: "x", guest
 // two stays arriving the same day on different flats: a dateless, codeless row can't be guessed
 assert.equal(matchEarnings(theStays, [{ code: null, listing: "x", guest: null, checkIn: null, nights: 3, gross: 100, channelFee: 0, cleaningFee: 0, payout: 100 }]).unmatched.length, 1);
 console.log("earnings match checks passed");
+
+// ---------------- revenue fixes from review
+// Our own export comes back from Airbnb as a "block" over a stay we already sold: that night is sold, not idle.
+const echo = flatStats("2026-11", [
+  { checkIn: "2026-11-10", checkOut: "2026-11-13", status: "confirmed", payout: 15000 },
+  { checkIn: "2026-11-01", checkOut: "2026-12-01", status: "blocked", payout: null }, // whole month echoed back
+]);
+assert.equal(echo.soldNights, 3);
+assert.equal(echo.availableNights, 3); // only the nights that were genuinely off the market are removed
+assert.equal(echo.occupancy, 1);
+assert.equal(echo.revpar, 5000);
+const partial = flatStats("2026-11", [
+  { checkIn: "2026-11-10", checkOut: "2026-11-13", status: "confirmed", payout: 0 },
+  { checkIn: "2026-11-12", checkOut: "2026-11-15", status: "blocked", payout: null }, // overlaps the 12th
+]);
+assert.equal(partial.availableNights, 28); // only the 13th and 14th are truly blocked
+assert.ok(partial.occupancy <= 1); // never over 100%
+// two overlapping blocks are one stretch of unavailable nights, not double-counted
+assert.equal(flatStats("2026-11", [
+  { checkIn: "2026-11-01", checkOut: "2026-11-05", status: "blocked", payout: null },
+  { checkIn: "2026-11-03", checkOut: "2026-11-08", status: "blocked", payout: null },
+]).availableNights, 23);
+
+// Airbnb repeats a confirmation code when a booking is altered: the rows add up, they don't overwrite
+const altered = matchEarnings([{ id: 1, propertyId: 1, channel: "airbnb", checkIn: "2026-11-20", checkOut: "2026-11-23", confirmationCode: "HMABC123" }], [
+  { code: "HMABC123", listing: "A", guest: "Riya", checkIn: "2026-11-20", nights: 3, gross: 12000, channelFee: 360, cleaningFee: 1500, payout: 11640 },
+  { code: "HMABC123", listing: "A", guest: "Riya", checkIn: "2026-11-20", nights: 3, gross: 3000, channelFee: 90, cleaningFee: 0, payout: 2910 },
+]);
+assert.equal(altered.matched.length, 1); // one stay, not two
+assert.equal(altered.matched[0].payout, 14550);
+assert.equal(altered.matched[0].gross, 15000);
+assert.equal(altered.matched[0].channelFee, 450);
+
+// Money written the European way must not come out 100× too big
+assert.equal(parseEarnings(['"Type","Amount","Service fee"', '"Reservation","12 000,00","360,00"'].join("\n")).rows[0].payout, 12000);
+assert.equal(parseEarnings(['"Type","Amount"', '"Reservation","1.234,50"'].join("\n")).rows[0].payout, 1235);
+assert.equal(parseEarnings(['"Type","Amount"', '"Reservation","₹12,345.60"'].join("\n")).rows[0].payout, 12346);
+// a trailing minus is how some exports write a negative
+assert.equal(parseEarnings(['"Type","Amount"', '"Reservation","1234-"'].join("\n")).rows[0].payout, -1234);
+// a cell we can't read at all is reported, never imported as zero
+const broken = parseEarnings(['"Type","Amount"', '"Reservation","n/a"'].join("\n"));
+assert.equal(broken.rows.length, 0);
+assert.equal(broken.unreadable, 1);
+// some exports head the column "Reference code"
+assert.equal(parseEarnings(['"Type","Reference code","Amount"', '"Reservation","HMREF1","100"'].join("\n")).rows[0].code, "HMREF1");
+console.log("revenue fix checks passed");

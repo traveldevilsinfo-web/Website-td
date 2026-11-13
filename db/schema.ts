@@ -562,3 +562,94 @@ export const stayMessages = pgTable(
   },
   (t) => [uniqueIndex("stay_messages_reservation_kind_idx").on(t.reservationId, t.kind)],
 );
+
+// ------------------------------------------------------------------ people and payroll (both businesses)
+
+export const payTypeEnum = pgEnum("pay_type", ["monthly", "daily"]);
+export const attendanceEnum = pgEnum("attendance_status", ["present", "absent", "half", "leave", "off"]);
+export const payrollStatusEnum = pgEnum("payroll_status", ["draft", "locked", "paid"]);
+export type PayslipLine = { label: string; amount: number };
+
+/** Everyone we pay. Separate from ops_users: a cook or a landlord's watchman is paid without ever signing in. */
+export const employees = pgTable(
+  "employees",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    opsUserId: integer("ops_user_id").references(() => opsUsers.id, { onDelete: "set null" }), // if they also have a login
+    name: text("name").notNull(),
+    phone: text("phone"),
+    roleTitle: text("role_title"), // Housekeeper, Trip captain, Cook…
+    joinDate: date("join_date"),
+    exitDate: date("exit_date"),
+    payType: payTypeEnum("pay_type").notNull().default("monthly"),
+    monthlySalary: integer("monthly_salary"), // ₹ for a full month
+    dailyRate: integer("daily_rate"), // ₹ per day worked
+    payTo: text("pay_to"), // UPI id or bank details
+    notes: text("notes"),
+    active: boolean("active").notNull().default(true),
+    ...timestamps,
+  },
+  (t) => [index("employees_business_idx").on(t.business)],
+);
+
+export const attendance = pgTable(
+  "attendance",
+  {
+    id: serial("id").primaryKey(),
+    employeeId: integer("employee_id").notNull().references(() => employees.id, { onDelete: "cascade" }),
+    date: date("date").notNull(),
+    status: attendanceEnum("status").notNull(),
+    markedBy: integer("marked_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    note: text("note"),
+  },
+  (t) => [uniqueIndex("attendance_employee_date_idx").on(t.employeeId, t.date), index("attendance_date_idx").on(t.date)],
+);
+
+export const advances = pgTable("advances", {
+  id: serial("id").primaryKey(),
+  employeeId: integer("employee_id").notNull().references(() => employees.id, { onDelete: "cascade" }),
+  date: date("date").notNull(),
+  amount: integer("amount").notNull(),
+  monthlyRecovery: integer("monthly_recovery").notNull(), // taken back from each payslip until it's clear
+  recovered: integer("recovered").notNull().default(0),
+  note: text("note"),
+  createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
+  ...timestamps,
+});
+
+export const payrollRuns = pgTable(
+  "payroll_runs",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    month: text("month").notNull(), // YYYY-MM
+    status: payrollStatusEnum("status").notNull().default("draft"),
+    lockedBy: integer("locked_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    lockedAt: timestamp("locked_at", { withTimezone: true }),
+    paidAt: timestamp("paid_at", { withTimezone: true }),
+    paidRef: text("paid_ref"),
+    ...timestamps,
+  },
+  (t) => [uniqueIndex("payroll_runs_business_month_idx").on(t.business, t.month)],
+);
+
+export const payslips = pgTable(
+  "payslips",
+  {
+    id: serial("id").primaryKey(),
+    runId: integer("run_id").notNull().references(() => payrollRuns.id, { onDelete: "cascade" }),
+    employeeId: integer("employee_id").notNull().references(() => employees.id, { onDelete: "cascade" }),
+    daysInMonth: integer("days_in_month").notNull(),
+    payableDays: integer("payable_days").notNull(), // halves are stored doubled, see lib/hr.ts
+    base: integer("base").notNull(),
+    incentives: integer("incentives").notNull().default(0),
+    advanceRecovery: integer("advance_recovery").notNull().default(0),
+    deductions: integer("deductions").notNull().default(0),
+    net: integer("net").notNull(),
+    lines: jsonb("lines").$type<PayslipLine[]>().notNull().default([]),
+    note: text("note"),
+    expenseId: integer("expense_id").references(() => expenses.id, { onDelete: "set null" }),
+  },
+  (t) => [uniqueIndex("payslips_run_employee_idx").on(t.runId, t.employeeId)],
+);

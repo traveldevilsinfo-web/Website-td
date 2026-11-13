@@ -11,7 +11,9 @@ export async function GET(req: Request) {
   const month = /^\d{4}-\d{2}$/.test(q) ? q : istToday().slice(0, 7);
   const only = Number(url.searchParams.get("property")) || null;
   const { flats, stays, costs } = await propertyMonth(month);
-  const mine = flats.filter((f) => !only || f.id === only);
+  const shown = flats.filter((f) => f.active || stays.some((s) => s.propertyId === f.id) || costs.some((c) => c.propertyId === f.id));
+  const mine = shown.filter((f) => !only || f.id === only);
+  const inBooks = new Set(shown.map((f) => f.id));
 
   const lines: string[] = [];
   lines.push(["flat", "nights_sold", "nights_available", "occupancy_pct", "avg_night", "per_available_night", "income", "costs", "profit"].join(","));
@@ -27,7 +29,7 @@ export async function GET(req: Request) {
     for (const c of costs.filter((v) => v.propertyId === f.id))
       lines.push(["cost", `${f.code} ${f.name}`, c.date, [c.category, c.note].filter(Boolean).join(" · "), -c.amount].map(csvCell).join(","));
   }
-  if (!only) for (const c of costs.filter((v) => !v.propertyId))
+  if (!only) for (const c of costs.filter((v) => !v.propertyId || !inBooks.has(v.propertyId)))
     lines.push(["cost", "(not tied to a flat)", c.date, [c.category, c.note].filter(Boolean).join(" · "), -c.amount].map(csvCell).join(","));
 
   return new Response("﻿" + lines.join("\r\n"), {

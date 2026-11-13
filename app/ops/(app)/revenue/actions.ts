@@ -1,10 +1,11 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { and, eq, gte, inArray, lte, ne } from "drizzle-orm";
+import { and, eq, gte, lte, ne } from "drizzle-orm";
 import { db, t } from "@/lib/db";
 import { type ActionState } from "@/lib/admin";
 import { requireStays } from "@/lib/ops";
+import { inr } from "@/lib/format";
 import { matchEarnings, parseEarnings } from "@/lib/stays-revenue";
 
 const MAX_CSV_BYTES = 5 * 1024 * 1024;
@@ -29,27 +30,25 @@ export async function importEarnings(_prev: ActionState, f: FormData): Promise<A
       dates.length ? lte(t.reservations.checkIn, dates.reduce((a, b) => (a > b ? a : b))) : undefined));
   const { matched, unmatched } = matchEarnings(stays, parsed.rows);
 
-  for (const m of matched) {
-    await db.update(t.reservations).set({
-      payout: m.payout, amount: m.gross, channelFee: m.channelFee, cleaningFee: m.cleaningFee, earningsAt: new Date(),
-      ...(m.code ? { confirmationCode: m.code } : {}), ...(m.guest ? { guestName: m.guest } : {}),
-    }).where(eq(t.reservations.id, m.id));
-  }
+  // All or nothing: a half-written import would leave the books disagreeing with the message.
+  await db.transaction(async (tx) => {
+    for (const m of matched) {
+      await tx.update(t.reservations).set({
+        payout: m.payout, amount: m.gross, channelFee: m.channelFee, cleaningFee: m.cleaningFee, earningsAt: new Date(),
+        ...(m.code ? { confirmationCode: m.code } : {}), ...(m.guest ? { guestName: m.guest } : {}),
+      }).where(eq(t.reservations.id, m.id));
+    }
+  });
   revalidatePath("/ops", "layout");
-  const bits = [`${matched.length} stay${matched.length === 1 ? "" : "s"} updated`];
+  // The total is the sanity check: a mis-read file shows up here as an absurd number before anyone trusts a statement.
+  const total = matched.reduce((n, m) => n + m.payout, 0);
+  const bits = [`${matched.length} stay${matched.length === 1 ? "" : "s"} updated, ${inr(total)} in payouts`];
   if (unmatched.length) {
     const names = unmatched.slice(0, 5).map((u) => u.code || `${u.listing ?? "?"} ${u.checkIn ?? ""}`.trim()).join(", ");
     bits.push(`${unmatched.length} row${unmatched.length === 1 ? "" : "s"} matched no booking (${names}${unmatched.length > 5 ? ", …" : ""}) — check the flat's calendar is linked`);
   }
   if (parsed.payouts) bits.push(`${parsed.payouts} payout row${parsed.payouts === 1 ? "" : "s"} skipped`);
+  if (parsed.unreadable) bits.push(`${parsed.unreadable} row${parsed.unreadable === 1 ? "" : "s"} had an amount we could not read and were skipped`);
   if (parsed.other) bits.push(`${parsed.other} other row${parsed.other === 1 ? "" : "s"} (resolutions, adjustments) not imported — add those by hand`);
   return { ok: true, message: `${bits.join(" · ")}.` };
-}
-
-/** Clear imported money from a stay (a wrong file, or a cancelled booking Airbnb already paid out). */
-export async function clearEarnings(ids: number[]) {
-  await requireStays();
-  if (!ids.length) return;
-  await db.update(t.reservations).set({ payout: null, channelFee: null, cleaningFee: null, earningsAt: null }).where(inArray(t.reservations.id, ids));
-  revalidatePath("/ops", "layout");
 }
