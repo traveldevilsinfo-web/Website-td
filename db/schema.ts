@@ -1,4 +1,3 @@
-import { sql } from "drizzle-orm";
 import {
   boolean, date, index, integer, jsonb, pgEnum, pgTable, serial, text, timestamp, uniqueIndex,
 } from "drizzle-orm/pg-core";
@@ -9,7 +8,7 @@ const timestamps = {
 };
 
 export const statusEnum = pgEnum("status", ["draft", "published"]);
-export const roleEnum = pgEnum("role", ["admin", "editor", "ops_manager", "staff"]);
+export const roleEnum = pgEnum("role", ["admin", "editor"]);
 export const regionEnum = pgEnum("region", ["india", "international"]);
 export const batchStatusEnum = pgEnum("batch_status", ["available", "filling_fast", "sold_out", "closed"]);
 
@@ -24,8 +23,6 @@ export const users = pgTable("users", {
   name: text("name").notNull(),
   passwordHash: text("password_hash").notNull(),
   role: roleEnum("role").notNull().default("editor"),
-  /** Ops dashboard businesses for ops_manager / staff ("td", "finzo"). Admin always gets both. */
-  opsBusinesses: text("ops_businesses").array().notNull().default(sql`'{}'::text[]`),
   ...timestamps,
 });
 
@@ -317,6 +314,26 @@ export const payments = pgTable(
 // ------------------------------------------------------------------ ops (back office: TD + Finzo Stays)
 
 export const businessEnum = pgEnum("business", ["td", "finzo"]);
+export const opsRoleEnum = pgEnum("ops_role", ["owner", "manager", "staff"]);
+
+/** Ops accounts: separate from the website's `users`. Owner sees both businesses; others only `businesses`. */
+export const opsUsers = pgTable("ops_users", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull().unique(),
+  phone: text("phone"),
+  passwordHash: text("password_hash").notNull(),
+  role: opsRoleEnum("role").notNull().default("staff"),
+  businesses: text("businesses").array().notNull().default([]),
+  active: boolean("active").notNull().default(true),
+  ...timestamps,
+});
+
+export const opsSessions = pgTable("ops_sessions", {
+  id: text("id").primaryKey(), // sha256 of the cookie token
+  userId: integer("user_id").notNull().references(() => opsUsers.id, { onDelete: "cascade" }),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+});
 export const expenseStatusEnum = pgEnum("expense_status", ["needs_amount", "submitted", "approved", "rejected", "paid"]);
 export const paidViaEnum = pgEnum("paid_via", ["cash", "upi", "bank", "card"]);
 
@@ -380,8 +397,8 @@ export const expenses = pgTable(
     receiptPath: text("receipt_path"), // private bucket path yyyy/mm/name.ext
     note: text("note"),
     status: expenseStatusEnum("status").notNull().default("submitted"),
-    createdBy: integer("created_by").notNull().references(() => users.id),
-    approvedBy: integer("approved_by").references(() => users.id),
+    createdBy: integer("created_by").notNull().references(() => opsUsers.id),
+    approvedBy: integer("approved_by").references(() => opsUsers.id),
     approvedAt: timestamp("approved_at", { withTimezone: true }),
     paidAt: timestamp("paid_at", { withTimezone: true }),
     paidRef: text("paid_ref"),

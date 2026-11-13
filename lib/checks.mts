@@ -226,34 +226,32 @@ assert.throws(() => computeQuote({ ...qbase, batch: { ...qbase.batch, tierPrices
 console.log("batch price checks passed");
 
 // ops dashboard: who sees which business, and whose expenses
-import { allowedBusinesses, pickBusiness, isManager, isOpsOnly, canSeeExpense } from "./ops-rules";
-const owner = { id: 1, role: "admin" as const, opsBusinesses: [] };
-const mgrF = { id: 2, role: "ops_manager" as const, opsBusinesses: ["finzo"] };
-const staffT = { id: 3, role: "staff" as const, opsBusinesses: ["td", "bogus"] };
-const editorU = { id: 4, role: "editor" as const, opsBusinesses: ["td"] };
+import { allowedBusinesses, pickBusiness, isManager, canSeeExpense, parseRole, ROLE_LABEL } from "./ops-rules";
+// Ops accounts are separate from website users: owner sees both businesses, others only what they're given.
+const owner = { id: 1, role: "owner" as const, businesses: [] };
+const mgrF = { id: 2, role: "manager" as const, businesses: ["finzo"] };
+const staffT = { id: 3, role: "staff" as const, businesses: ["td", "bogus"] };
+const noBiz = { id: 4, role: "staff" as const, businesses: [] };
 assert.deepEqual(allowedBusinesses(owner), ["td", "finzo"]);
 assert.deepEqual(allowedBusinesses(staffT), ["td"]);
-assert.deepEqual(allowedBusinesses(editorU), []);
+assert.deepEqual(allowedBusinesses(noBiz), []);
 assert.equal(pickBusiness("td", ["finzo"]), "finzo"); // forged cookie ignored
 assert.equal(pickBusiness("finzo", ["td", "finzo"]), "finzo");
 assert.equal(pickBusiness(undefined, []), null);
+assert.equal(isManager(owner), true);
 assert.equal(isManager(mgrF), true);
 assert.equal(isManager(staffT), false);
-assert.equal(isOpsOnly("staff"), true);
-assert.equal(isOpsOnly("admin"), false);
-assert.equal(isOpsOnly("editor"), false);
 assert.equal(canSeeExpense(staffT, { business: "td", createdBy: 3 }), true);
 assert.equal(canSeeExpense(staffT, { business: "td", createdBy: 9 }), false); // someone else's
 assert.equal(canSeeExpense(mgrF, { business: "td", createdBy: 2 }), false); // wrong business
 assert.equal(canSeeExpense(owner, { business: "finzo", createdBy: 9 }), true);
 console.log("ops access checks passed");
-import { parseRole, ROLE_LABEL } from "./ops-rules";
 assert.equal(parseRole("staff"), "staff");
-assert.equal(parseRole("ops_manager"), "ops_manager");
-assert.equal(parseRole("admin"), "admin");
-assert.equal(parseRole("superadmin"), "editor"); // unknown → least privilege
-assert.equal(parseRole(null), "editor");
-assert.equal(ROLE_LABEL.ops_manager, "Ops manager");
+assert.equal(parseRole("manager"), "manager");
+assert.equal(parseRole("owner"), "owner");
+assert.equal(parseRole("admin"), "staff"); // website roles mean nothing here → least privilege
+assert.equal(parseRole(null), "staff");
+assert.equal(ROLE_LABEL.manager, "Manager");
 console.log("ops role checks passed");
 import { planReceipt, RECEIPT_PATH } from "./ops-rules";
 const rp = planReceipt("Bill Photo.JPG", 2_000_000, new Date("2026-11-13T10:00:00Z"));
@@ -351,3 +349,12 @@ assert.equal(staleReceipt("2026/11/r-a.png", null), "2026/11/r-a.png"); // remov
 assert.equal(staleReceipt("2026/11/r-a.png", "2026/11/r-a.png"), null); // unchanged
 assert.equal(staleReceipt(null, "2026/11/r-b.png"), null);
 console.log("ops minor-fix checks passed");
+import { teamChangeError } from "./ops-rules";
+const me = { id: 1 };
+assert.equal(teamChangeError(me, 2, { role: "staff", active: true }, 1), null); // owner edits a staff member
+assert.ok(teamChangeError(me, 1, { role: "manager", active: true }, 2)); // can't demote yourself
+assert.ok(teamChangeError(me, 1, { role: "owner", active: false }, 2)); // can't switch yourself off
+assert.equal(teamChangeError(me, 1, { role: "owner", active: true }, 1), null); // saving yourself unchanged is fine
+assert.ok(teamChangeError(me, 2, { role: "staff", active: true }, 1, "owner")); // demoting the last other owner... only one owner left
+assert.equal(teamChangeError(me, 2, { role: "staff", active: true }, 2, "owner"), null); // two owners: fine
+console.log("ops team checks passed");

@@ -74,22 +74,19 @@ A **switch in the top bar (TD ⇄ Finzo)** flips the whole dashboard. The module
     └─ Turnovers             auto cleaning tasks per checkout, assigned to housekeeping
 ```
 
-Entry from the existing admin: one "Ops" link in `AdminNav`, visible only to roles that have ops access.
+Entry: `/ops` (its own login). No link from the website admin.
 
 ## 4. Roles and access
 
-Extend `roleEnum` (`admin`, `editor`) with ops roles, plus a per-user business scope:
+**Separate from the website (owner's decision, 13 Nov).** Ops has its own accounts (`ops_users`), sessions (`ops_sessions`, cookie `ops_session`), login page (`/ops/login`), UI kit and look (dark finance app, IBM Plex Sans). Website admins don't get into ops, ops people don't get into the website admin, and nothing in the website admin links to ops.
 
 | Role | Can |
 |---|---|
-| `owner` (= current `admin`) | Everything, both businesses, payroll lock, salary visibility |
-| `ops_manager` | Their business(es): approve expenses, attendance, run payroll draft (not lock), inventory |
-| `staff` | Log own expenses, mark own attendance, request leave, see own payslips, issue/return stock |
-| `editor` | Website only, no ops (unchanged) |
+| `owner` | Everything, both businesses, Team page, payroll lock, salary visibility |
+| `manager` | Their business(es): approve expenses, fixed costs, vendors, reports; later attendance, payroll draft (not lock), inventory |
+| `staff` | Log own expenses; later attend, leave, own payslips, issue/return stock |
 
-`users.opsBusinesses: text[]` (`{td}`, `{finzo}`, `{td,finzo}`). The switch only shows businesses the user has. **Every ops query filters by `business` on the server**: the cookie is a UI preference, not a permission.
-
-Staff who aren't on the website team get a user row with role `staff`. They reuse the same login page.
+`ops_users.businesses: text[]` (`{td}`, `{finzo}`, `{td,finzo}`); owners always get both. The switch only shows businesses the user has. **Every ops query filters by `business` on the server**: the cookie is a UI preference, not a permission. First owner: `npm run ops:owner -- email "Name" password`.
 
 ## 5. Data model (new tables, all with `business` = `td` | `finzo`)
 

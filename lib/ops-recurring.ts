@@ -11,7 +11,8 @@ export async function postRecurring(today: string, biz?: Biz): Promise<number> {
   const rows = await db.select().from(t.recurringExpenses).where(biz ? eq(t.recurringExpenses.business, biz) : undefined);
   const due = dueRecurring(rows, today);
   if (!due.length) return 0;
-  const [owner] = await db.select({ id: t.users.id }).from(t.users).where(eq(t.users.role, "admin")).orderBy(asc(t.users.id)).limit(1);
+  // Auto-posted rows are recorded as the first ops owner's.
+  const [owner] = await db.select({ id: t.opsUsers.id }).from(t.opsUsers).where(eq(t.opsUsers.role, "owner")).orderBy(asc(t.opsUsers.id)).limit(1);
   if (!owner) return 0;
   const byId = new Map(rows.map((r) => [r.id, r]));
   const inserted = await db.insert(t.expenses).values(due.map((d) => {

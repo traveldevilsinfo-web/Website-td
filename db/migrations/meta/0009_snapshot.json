@@ -1,5 +1,5 @@
 {
-  "id": "0e9b0536-ad7b-4120-ba9e-aa211b325198",
+  "id": "34c5d993-923f-48e4-95e3-fc3b595073cf",
   "prevId": "2f380c06-0407-4eb0-8709-95b9484751b5",
   "version": "7",
   "dialect": "postgresql",
@@ -1027,10 +1027,10 @@
           "onDelete": "set null",
           "onUpdate": "no action"
         },
-        "expenses_created_by_users_id_fk": {
-          "name": "expenses_created_by_users_id_fk",
+        "expenses_created_by_ops_users_id_fk": {
+          "name": "expenses_created_by_ops_users_id_fk",
           "tableFrom": "expenses",
-          "tableTo": "users",
+          "tableTo": "ops_users",
           "columnsFrom": [
             "created_by"
           ],
@@ -1040,10 +1040,10 @@
           "onDelete": "no action",
           "onUpdate": "no action"
         },
-        "expenses_approved_by_users_id_fk": {
-          "name": "expenses_approved_by_users_id_fk",
+        "expenses_approved_by_ops_users_id_fk": {
+          "name": "expenses_approved_by_ops_users_id_fk",
           "tableFrom": "expenses",
-          "tableTo": "users",
+          "tableTo": "ops_users",
           "columnsFrom": [
             "approved_by"
           ],
@@ -1253,6 +1253,138 @@
           "nullsNotDistinct": false,
           "columns": [
             "url"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.ops_sessions": {
+      "name": "ops_sessions",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expires_at": {
+          "name": "expires_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "ops_sessions_user_id_ops_users_id_fk": {
+          "name": "ops_sessions_user_id_ops_users_id_fk",
+          "tableFrom": "ops_sessions",
+          "tableTo": "ops_users",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.ops_users": {
+      "name": "ops_users",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "phone": {
+          "name": "phone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "password_hash": {
+          "name": "password_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "role": {
+          "name": "role",
+          "type": "ops_role",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'staff'"
+        },
+        "businesses": {
+          "name": "businesses",
+          "type": "text[]",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'{}'"
+        },
+        "active": {
+          "name": "active",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "ops_users_email_unique": {
+          "name": "ops_users_email_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "email"
           ]
         }
       },
@@ -2271,13 +2403,6 @@
           "notNull": true,
           "default": "'editor'"
         },
-        "ops_businesses": {
-          "name": "ops_businesses",
-          "type": "text[]",
-          "primaryKey": false,
-          "notNull": true,
-          "default": "'{}'::text[]"
-        },
         "created_at": {
           "name": "created_at",
           "type": "timestamp with time zone",
@@ -2457,6 +2582,15 @@
         "paid"
       ]
     },
+    "public.ops_role": {
+      "name": "ops_role",
+      "schema": "public",
+      "values": [
+        "owner",
+        "manager",
+        "staff"
+      ]
+    },
     "public.paid_via": {
       "name": "paid_via",
       "schema": "public",
@@ -2489,9 +2623,7 @@
       "schema": "public",
       "values": [
         "admin",
-        "editor",
-        "ops_manager",
-        "staff"
+        "editor"
       ]
     },
     "public.status": {

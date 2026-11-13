@@ -16,7 +16,8 @@
     "supabase:push": "tsx --env-file=.env.supabase scripts/push-to-supabase.mts",
     "seo:load": "tsx --env-file=.env.local scripts/load-seo-content.mts",
     "blog:load": "tsx --env-file=.env.local scripts/load-blog.mts",
-    "trips:load": "tsx --env-file=.env.local scripts/load-trips.mts"
+    "trips:load": "tsx --env-file=.env.local scripts/load-trips.mts",
+    "ops:owner": "tsx --env-file=.env.local scripts/create-ops-owner.mts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.128.0",

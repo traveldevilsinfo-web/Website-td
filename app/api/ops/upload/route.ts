@@ -1,9 +1,9 @@
-import { getCurrentUser } from "@/lib/auth";
+import { getOpsUser } from "@/lib/ops-auth";
 import { allowedBusinesses, planReceipt, RECEIPT_MAX_BYTES, RECEIPT_PATH } from "@/lib/ops-rules";
 import { onSupabase, signPrivateUpload, writePrivateLocal } from "@/lib/uploads";
 
 const opsUser = async () => {
-  const u = await getCurrentUser();
+  const u = await getOpsUser();
   return u && allowedBusinesses(u).length ? u : null;
 };
 

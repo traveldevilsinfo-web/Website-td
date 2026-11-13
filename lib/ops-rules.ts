@@ -4,15 +4,15 @@ export type Biz = "td" | "finzo";
 export const BUSINESSES: Biz[] = ["td", "finzo"];
 export const BIZ_LABEL: Record<Biz, string> = { td: "Travel Devils", finzo: "Finzo Stays" };
 
-export type OpsUser = { id: number; role: "admin" | "editor" | "ops_manager" | "staff"; opsBusinesses: string[] };
+export type OpsRole = "owner" | "manager" | "staff";
+/** An ops account (table ops_users), separate from website users. */
+export type OpsUser = { id: number; role: OpsRole; businesses: string[] };
 
-export const isOpsOnly = (role: string) => role === "ops_manager" || role === "staff";
-export const isManager = (u: Pick<OpsUser, "role">) => u.role === "admin" || u.role === "ops_manager";
+export const isManager = (u: Pick<OpsUser, "role">) => u.role === "owner" || u.role === "manager";
 
 export function allowedBusinesses(u: OpsUser): Biz[] {
-  if (u.role === "admin") return [...BUSINESSES];
-  if (!isOpsOnly(u.role)) return [];
-  return BUSINESSES.filter((b) => u.opsBusinesses.includes(b));
+  if (u.role === "owner") return [...BUSINESSES];
+  return BUSINESSES.filter((b) => u.businesses.includes(b));
 }
 
 /** The switch cookie is only a preference: anything not allowed falls back to the first allowed business. */
@@ -22,12 +22,14 @@ export const pickBusiness = (cookie: string | undefined, allowed: Biz[]): Biz | 
 export const canSeeExpense = (u: OpsUser, e: { business: Biz; createdBy: number }) =>
   allowedBusinesses(u).includes(e.business) && (isManager(u) || e.createdBy === u.id);
 
-export const ROLE_LABEL: Record<OpsUser["role"], string> = {
-  editor: "Editor (website)", admin: "Admin (everything)", ops_manager: "Ops manager", staff: "Ops staff",
+export const ROLE_LABEL: Record<OpsRole, string> = { owner: "Owner", manager: "Manager", staff: "Staff" };
+export const ROLE_HINT: Record<OpsRole, string> = {
+  owner: "Both businesses, team and everything else",
+  manager: "Approves expenses, fixed costs, vendors, reports",
+  staff: "Adds own expenses and sees their status",
 };
 /** Role from a form field; anything unknown gets the least privilege. */
-export const parseRole = (v: string | null): OpsUser["role"] =>
-  v === "admin" || v === "ops_manager" || v === "staff" ? v : "editor";
+export const parseRole = (v: string | null): OpsRole => (v === "owner" || v === "manager" ? v : "staff");
 
 // ------------------------------------------------------------------ receipts (private bucket)
 
@@ -149,3 +151,14 @@ export function checkExpenseDate(date: string | null, today: string): string | n
 
 /** Receipt file to delete after a save: the old one, if it was replaced or removed. */
 export const staleReceipt = (prev: string | null, next: string | null) => (prev && prev !== next ? prev : null);
+
+/**
+ * Why a Team change must be refused, or null. `owners` = active owners right now;
+ * `currentRole` = the target's role before the change.
+ */
+export function teamChangeError(me: { id: number }, targetId: number, next: { role: OpsRole; active: boolean }, owners: number, currentRole?: OpsRole): string | null {
+  const losesOwner = next.role !== "owner" || !next.active;
+  if (targetId === me.id && losesOwner) return "You can't remove your own owner access.";
+  if (currentRole === "owner" && losesOwner && owners <= 1) return "Keep at least one owner.";
+  return null;
+}

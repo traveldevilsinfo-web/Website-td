@@ -1,8 +1,7 @@
 CREATE TYPE "public"."business" AS ENUM('td', 'finzo');--> statement-breakpoint
 CREATE TYPE "public"."expense_status" AS ENUM('needs_amount', 'submitted', 'approved', 'rejected', 'paid');--> statement-breakpoint
+CREATE TYPE "public"."ops_role" AS ENUM('owner', 'manager', 'staff');--> statement-breakpoint
 CREATE TYPE "public"."paid_via" AS ENUM('cash', 'upi', 'bank', 'card');--> statement-breakpoint
-ALTER TYPE "public"."role" ADD VALUE 'ops_manager';--> statement-breakpoint
-ALTER TYPE "public"."role" ADD VALUE 'staff';--> statement-breakpoint
 CREATE TABLE "expense_categories" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"business" "business" NOT NULL,
@@ -36,6 +35,26 @@ CREATE TABLE "expenses" (
 	"updated_at" timestamp with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
+CREATE TABLE "ops_sessions" (
+	"id" text PRIMARY KEY NOT NULL,
+	"user_id" integer NOT NULL,
+	"expires_at" timestamp with time zone NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE "ops_users" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"name" text NOT NULL,
+	"email" text NOT NULL,
+	"phone" text,
+	"password_hash" text NOT NULL,
+	"role" "ops_role" DEFAULT 'staff' NOT NULL,
+	"businesses" text[] DEFAULT '{}' NOT NULL,
+	"active" boolean DEFAULT true NOT NULL,
+	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
+	"updated_at" timestamp with time zone DEFAULT now() NOT NULL,
+	CONSTRAINT "ops_users_email_unique" UNIQUE("email")
+);
+--> statement-breakpoint
 CREATE TABLE "recurring_expenses" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"business" "business" NOT NULL,
@@ -66,13 +85,13 @@ CREATE TABLE "vendors" (
 	"updated_at" timestamp with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
-ALTER TABLE "users" ADD COLUMN "ops_businesses" text[] DEFAULT '{}'::text[] NOT NULL;--> statement-breakpoint
 ALTER TABLE "expenses" ADD CONSTRAINT "expenses_category_id_expense_categories_id_fk" FOREIGN KEY ("category_id") REFERENCES "public"."expense_categories"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "expenses" ADD CONSTRAINT "expenses_vendor_id_vendors_id_fk" FOREIGN KEY ("vendor_id") REFERENCES "public"."vendors"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "expenses" ADD CONSTRAINT "expenses_trip_batch_id_trip_batches_id_fk" FOREIGN KEY ("trip_batch_id") REFERENCES "public"."trip_batches"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "expenses" ADD CONSTRAINT "expenses_created_by_users_id_fk" FOREIGN KEY ("created_by") REFERENCES "public"."users"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "expenses" ADD CONSTRAINT "expenses_approved_by_users_id_fk" FOREIGN KEY ("approved_by") REFERENCES "public"."users"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "expenses" ADD CONSTRAINT "expenses_created_by_ops_users_id_fk" FOREIGN KEY ("created_by") REFERENCES "public"."ops_users"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "expenses" ADD CONSTRAINT "expenses_approved_by_ops_users_id_fk" FOREIGN KEY ("approved_by") REFERENCES "public"."ops_users"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "expenses" ADD CONSTRAINT "expenses_recurring_id_recurring_expenses_id_fk" FOREIGN KEY ("recurring_id") REFERENCES "public"."recurring_expenses"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "ops_sessions" ADD CONSTRAINT "ops_sessions_user_id_ops_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."ops_users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "recurring_expenses" ADD CONSTRAINT "recurring_expenses_category_id_expense_categories_id_fk" FOREIGN KEY ("category_id") REFERENCES "public"."expense_categories"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "recurring_expenses" ADD CONSTRAINT "recurring_expenses_vendor_id_vendors_id_fk" FOREIGN KEY ("vendor_id") REFERENCES "public"."vendors"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 CREATE UNIQUE INDEX "expense_categories_business_name_idx" ON "expense_categories" USING btree ("business","name");--> statement-breakpoint

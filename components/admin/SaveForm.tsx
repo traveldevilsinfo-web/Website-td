@@ -1,6 +1,6 @@
 "use client";
 
-import { startTransition, useActionState, useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { AlertCircle, Check } from "lucide-react";
 import { btnPrimary } from "./ui";
 
@@ -67,10 +67,7 @@ export function SaveForm({
   const error = !state.ok && state.message;
 
   return (
-    <form ref={form} data-saveform action={formAction}
-      // Submit by hand: React 19 resets a <form action> after every run, which wiped what was typed when a save failed.
-      onSubmit={(e) => { e.preventDefault(); const fd = new FormData(e.currentTarget); startTransition(() => formAction(fd)); }}
-      className={inline ? "space-y-3" : "space-y-6 pb-28"} onInput={mark} onChange={mark}
+    <form ref={form} data-saveform action={formAction} className={inline ? "space-y-3" : "space-y-6 pb-28"} onInput={mark} onChange={mark}
       // add / remove / reorder buttons change hidden JSON fields without firing input events
       onClick={(e) => { if ((e.target as HTMLElement).closest("button[type=button]")) mark(); }}>
       {children}

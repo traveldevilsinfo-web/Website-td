@@ -1,5 +1,5 @@
 import { desc } from "drizzle-orm";
-import { getAdminUser } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/auth";
 import { db, t } from "@/lib/db";
 
 const cell = (v: unknown) => {
@@ -8,7 +8,7 @@ const cell = (v: unknown) => {
 };
 
 export async function GET() {
-  if (!(await getAdminUser())) return new Response("Unauthorized", { status: 401 });
+  if (!(await getCurrentUser())) return new Response("Unauthorized", { status: 401 });
   const rows = await db.select().from(t.leads).orderBy(desc(t.leads.createdAt));
   const cols = ["createdAt", "kind", "name", "phone", "email", "category", "destination", "travelMonth", "budget", "status", "notes", "sourcePath"] as const;
   // answers from the trip planner (custom_trip) and the corporate form

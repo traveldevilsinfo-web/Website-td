@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { getAdminUser } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/auth";
 import { db, t } from "@/lib/db";
 import { extractTripFromPdf } from "@/lib/pdf-trip";
 import { deleteUpload, readUpload, UPLOAD_PATH } from "@/lib/uploads";
@@ -9,7 +9,7 @@ export const maxDuration = 300; // long PDFs can take a minute or two
 const MAX_PDF = 20 * 1024 * 1024; // base64 adds ~33%; API request cap is 32 MB
 
 export async function POST(req: Request) {
-  if (!(await getAdminUser())) return Response.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await getCurrentUser())) return Response.json({ error: "Unauthorized" }, { status: 401 });
   const { path, filename } = await req.json().catch(() => ({}));
   if (typeof path !== "string" || !UPLOAD_PATH.test(path) || !path.endsWith(".pdf")) return Response.json({ error: "Choose a PDF file." }, { status: 400 });
   const url = `/uploads/${path}`;
