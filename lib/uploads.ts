@@ -77,3 +77,29 @@ export async function deleteUpload(url: string) {
   const file = path.resolve(UPLOAD_DIR, p);
   if (file.startsWith(UPLOAD_DIR + path.sep)) await unlink(file).catch(() => {});
 }
+
+// ------------------------------------------------------------------ private files (ops receipts)
+// Separate PRIVATE bucket (create it as private in Supabase). Never reachable through /uploads/*;
+// only /api/ops/file hands out a 5-minute signed URL after checking who is asking.
+export const OPS_BUCKET = process.env.SUPABASE_OPS_BUCKET || "ops-private";
+export const OPS_DIR = path.resolve(/*turbopackIgnore: true*/ process.env.OPS_UPLOAD_DIR || "./uploads-private");
+
+export async function signPrivateUpload(p: string): Promise<string> {
+  if (!onSupabase) return `/api/ops/upload?path=${encodeURIComponent(p)}`;
+  const res = await sb(`object/upload/sign/${OPS_BUCKET}/${p}`, { method: "POST" });
+  if (!res.ok) throw new Error(`Storage refused the upload (${res.status})`);
+  return `${SB}/storage/v1${(await res.json()).url}`;
+}
+
+/** Supabase only: short-lived signed download URL. */
+export async function privateFileUrl(p: string): Promise<string> {
+  const res = await sb(`object/sign/${OPS_BUCKET}/${p}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ expiresIn: 300 }) });
+  if (!res.ok) throw new Error(`Storage refused (${res.status})`);
+  return `${SB}/storage/v1${(await res.json()).signedURL}`;
+}
+
+export async function writePrivateLocal(p: string, body: Buffer) {
+  await mkdir(path.dirname(path.join(OPS_DIR, p)), { recursive: true });
+  await writeFile(path.join(OPS_DIR, p), body);
+}
+export const readPrivateLocal = (p: string) => readFile(path.join(OPS_DIR, p));

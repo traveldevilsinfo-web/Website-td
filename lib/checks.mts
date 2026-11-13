@@ -255,3 +255,12 @@ assert.equal(parseRole("superadmin"), "editor"); // unknown → least privilege
 assert.equal(parseRole(null), "editor");
 assert.equal(ROLE_LABEL.ops_manager, "Ops manager");
 console.log("ops role checks passed");
+import { planReceipt, RECEIPT_PATH } from "./ops-rules";
+const rp = planReceipt("Bill Photo.JPG", 2_000_000, new Date("2026-11-13T10:00:00Z"));
+assert.ok("path" in rp && /^2026\/11\/r-[0-9a-f]{24}\.jpg$/.test(rp.path)); // random, no user text in the name
+assert.equal("path" in rp && rp.mime, "image/jpeg");
+assert.ok("path" in rp && RECEIPT_PATH.test(rp.path));
+assert.ok("error" in planReceipt("bill.svg", 100)); // svg/html never allowed
+assert.ok("error" in planReceipt("bill.pdf", 11 * 1024 * 1024)); // over 10 MB
+assert.ok(!RECEIPT_PATH.test("../2026/11/r-aaaaaaaaaaaaaaaaaaaaaaaa.jpg"));
+console.log("ops receipt checks passed");
