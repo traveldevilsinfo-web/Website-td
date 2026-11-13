@@ -264,3 +264,25 @@ assert.ok("error" in planReceipt("bill.svg", 100)); // svg/html never allowed
 assert.ok("error" in planReceipt("bill.pdf", 11 * 1024 * 1024)); // over 10 MB
 assert.ok(!RECEIPT_PATH.test("../2026/11/r-aaaaaaaaaaaaaaaaaaaaaaaa.jpg"));
 console.log("ops receipt checks passed");
+import { canEditExpense, statusAfterSave, istToday } from "./ops-rules";
+const ex = (o: object) => ({ business: "td" as const, createdBy: 3, status: "submitted" as const, ...o });
+assert.equal(canEditExpense(staffT, ex({})), true);
+assert.equal(canEditExpense(staffT, ex({ status: "approved" })), false); // locked once approved
+assert.equal(canEditExpense(staffT, ex({ status: "rejected" })), true); // fix and resubmit
+assert.equal(canEditExpense(staffT, ex({ createdBy: 9 })), false);
+assert.equal(canEditExpense(owner, ex({ status: "approved", createdBy: 9 })), true);
+assert.equal(canEditExpense(owner, ex({ status: "paid" })), false); // paid is final
+assert.equal(statusAfterSave(false, null, 500), "submitted"); // staff add
+assert.equal(statusAfterSave(true, null, 500), "approved"); // manager add
+assert.equal(statusAfterSave(false, "rejected", 500), "submitted"); // staff resubmit
+assert.equal(statusAfterSave(true, "needs_amount", 1800), "approved"); // manager fills the electricity bill
+assert.equal(statusAfterSave(false, "needs_amount", 1800), "submitted");
+assert.equal(statusAfterSave(true, "submitted", 500), "submitted"); // editing isn't approving
+assert.equal(statusAfterSave(true, "approved", 500), "approved");
+assert.equal(istToday(new Date("2026-11-12T19:00:00Z")), "2026-11-13"); // IST is already past midnight
+console.log("ops expense checks passed");
+import { monthBounds } from "./ops-rules";
+assert.deepEqual(monthBounds("2026-02"), { from: "2026-02-01", to: "2026-02-28" });
+assert.deepEqual(monthBounds("2028-02"), { from: "2028-02-01", to: "2028-02-29" });
+assert.deepEqual(monthBounds("2026-12"), { from: "2026-12-01", to: "2026-12-31" });
+console.log("ops month checks passed");

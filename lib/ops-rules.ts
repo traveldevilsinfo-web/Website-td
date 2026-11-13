@@ -47,3 +47,35 @@ export function planReceipt(name: string, size: number, now = new Date()): { pat
 }
 
 export const CATEGORY_KINDS = ["variable", "fixed", "salary", "inventory"] as const;
+
+// ------------------------------------------------------------------ expenses
+
+export type ExpenseStatus = "needs_amount" | "submitted" | "approved" | "rejected" | "paid";
+export const STATUS_LABEL: Record<ExpenseStatus, string> = {
+  needs_amount: "Needs amount", submitted: "Waiting approval", approved: "Approved", rejected: "Rejected", paid: "Paid",
+};
+export const PAID_VIA = ["cash", "upi", "bank", "card"] as const;
+export const MAX_EXPENSE = 10_000_000;
+
+/** Staff can fix their own until a manager approves it; managers can fix anything not yet paid. */
+export const canEditExpense = (u: OpsUser, e: { business: Biz; createdBy: number; status: ExpenseStatus }) =>
+  canSeeExpense(u, e) && (isManager(u) ? e.status !== "paid" : ["submitted", "needs_amount", "rejected"].includes(e.status));
+
+/** Status an expense lands in after a save. Saving is never approving, except a manager's own new entry or a bill amount they fill in. */
+export function statusAfterSave(manager: boolean, prev: ExpenseStatus | null, amount: number): ExpenseStatus {
+  if (!manager) return "submitted";
+  if (prev === null) return "approved";
+  if (prev === "needs_amount" && amount > 0) return "approved";
+  if (prev === "rejected") return "submitted";
+  return prev;
+}
+
+/** Today's date in India (the server runs in UTC). */
+export const istToday = (now = new Date()) => new Date(now.getTime() + 5.5 * 3600_000).toISOString().slice(0, 10);
+
+/** "2026-02" → first and last date of that month (inclusive). */
+export function monthBounds(month: string) {
+  const [y, m] = month.split("-").map(Number);
+  const last = new Date(Date.UTC(y, m, 0)).getUTCDate();
+  return { from: `${month}-01`, to: `${month}-${String(last).padStart(2, "0")}` };
+}
