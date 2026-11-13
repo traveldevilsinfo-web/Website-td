@@ -70,7 +70,6 @@ export default async function FlatEditor({ params, searchParams }: PageProps<"/o
             <Field label="How things work" hint={'Start a section with "## " — e.g. "## Wi-Fi", then the details on the next lines.'} className="sm:col-span-2">
               <textarea name="guide" rows={7} defaultValue={formatGuide(p?.guide ?? [])} placeholder={"## Getting in\nThe lift is on the right…\n\n## Kitchen\nInduction hob, no oven."} className={`${input} font-mono text-[13px]`} />
             </Field>
-            <label className="flex items-center gap-2 text-sm sm:col-span-2"><input type="checkbox" name="needsId" defaultChecked={p?.needsId ?? false} className="size-4 accent-[var(--acc)]" /> Ask guests for a photo ID at check-in</label>
           </OpsForm>
         </Panel>
 

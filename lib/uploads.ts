@@ -84,9 +84,8 @@ export async function deleteUpload(url: string) {
 export const OPS_BUCKET = process.env.SUPABASE_OPS_BUCKET || "ops-private";
 export const OPS_DIR = path.resolve(/*turbopackIgnore: true*/ process.env.OPS_UPLOAD_DIR || "./uploads-private");
 
-export async function signPrivateUpload(p: string, localRoute = "/api/ops/upload"): Promise<string> {
-  // On local disk the browser PUTs back to us, so each caller names the route that may accept its file.
-  if (!onSupabase) return `${localRoute}?path=${encodeURIComponent(p)}`;
+export async function signPrivateUpload(p: string): Promise<string> {
+  if (!onSupabase) return `/api/ops/upload?path=${encodeURIComponent(p)}`;
   const res = await sb(`object/upload/sign/${OPS_BUCKET}/${p}`, { method: "POST" });
   if (!res.ok) throw new Error(`Storage refused the upload (${res.status})`);
   return `${SB}/storage/v1${(await res.json()).url}`;

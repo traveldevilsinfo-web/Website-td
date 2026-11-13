@@ -31,7 +31,8 @@ export async function saveProperty(id: number | null, _prev: ActionState, f: For
   const values = {
     code, name, address: r.str("address"), area: r.str("area"), bedrooms: r.int("bedrooms") ?? 1, maxGuests: r.int("maxGuests") ?? 2,
     checkinTime, checkoutTime, lockCode: r.str("lockCode"), wifiName: r.str("wifiName"), wifiPass: r.str("wifiPass"), notes: r.str("notes"),
-    houseRules: r.str("houseRules"), guide: parseGuide(String(f.get("guide") ?? "")).slice(0, 25), needsId: r.bool("needsId"),
+    houseRules: r.str("houseRules")?.slice(0, 4000) ?? null,
+    guide: parseGuide(String(f.get("guide") ?? "")).slice(0, 25).map((g) => ({ title: g.title.slice(0, 80), body: g.body.slice(0, 2000) })),
     housekeeperId, active: r.bool("active"),
   };
   let newId: number;

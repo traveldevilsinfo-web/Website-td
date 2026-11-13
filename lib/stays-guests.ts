@@ -28,26 +28,13 @@ export function agreementError(name: string, agreed: boolean): string | null {
   return null;
 }
 
-// ------------------------------------------------------------------ ID photo (private bucket)
-
-const ID_MIME: Record<string, string> = { jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp" };
-export const GUEST_ID_MAX_BYTES = 10 * 1024 * 1024;
-/** yyyy/mm/g-<96 random bits>.ext — a different prefix from receipts, so the two can't be mistaken for each other. */
-export const GUEST_ID_PATH = /^\d{4}\/\d{2}\/g-[0-9a-f]{24}\.(jpg|jpeg|png|webp)$/;
-export const guestIdMime = (p: string) => ID_MIME[p.split(".").pop() ?? ""];
-
-export function planGuestId(name: string, size: number, now = new Date()): { path: string; mime: string } | { error: string } {
-  const ext = (name.split(".").pop() || "").toLowerCase();
-  const mime = ID_MIME[ext];
-  if (!mime) return { error: "Please upload a photo of the ID (JPG, PNG or WebP)." };
-  if (!(size > 0) || size > GUEST_ID_MAX_BYTES) return { error: "That photo is over 10 MB. Try again with a smaller one." };
-  const rand = Array.from(crypto.getRandomValues(new Uint8Array(12)), (b) => b.toString(16).padStart(2, "0")).join("");
-  return { path: `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, "0")}/g-${rand}.${ext}`, mime };
+/** Which version of their page a guest sees. The door code waits until the day before they arrive. */
+export function guestStage(s: Stay & { agreedAt: Date | null }, today: string): "cancelled" | "over" | "checkin" | "soon" | "ready" {
+  if (s.status !== "confirmed") return "cancelled";
+  if (today > s.checkOut) return "over";
+  if (!s.agreedAt) return "checkin";
+  return today >= addDays(s.checkIn, -1) ? "ready" : "soon";
 }
-
-/** Which version of their page a guest sees. */
-export const guestStage = (s: Stay & { agreedAt: Date | null }, today: string): "cancelled" | "over" | "checkin" | "ready" =>
-  s.status !== "confirmed" ? "cancelled" : today > s.checkOut ? "over" : s.agreedAt ? "ready" : "checkin";
 
 // ------------------------------------------------------------------ guidebook
 // One text box, sections split by "## Heading": easy to edit on a phone, no drag-and-drop list.

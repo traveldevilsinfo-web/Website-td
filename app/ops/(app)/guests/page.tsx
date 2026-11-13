@@ -36,7 +36,7 @@ export default async function GuestsPage() {
       {!queue.length ? <Empty text="Nothing to send today." /> : (
         <ul className="space-y-2">
           {queue.map(({ r, p, kind }) => {
-            const text = stayMessage(kind as MessageKind, p, r);
+            const text = stayMessage(kind as MessageKind, p, r, stayUrl(r.guestToken));
             return (
               <li key={`${r.id}-${kind}`} className="flex flex-wrap items-center gap-3 rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3">
                 <div className="min-w-0 flex-1">

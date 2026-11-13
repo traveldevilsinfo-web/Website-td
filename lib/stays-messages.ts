@@ -9,15 +9,18 @@ export const MESSAGE_KINDS = ["confirm", "checkin", "checkout", "review"] as con
 export type MessageKind = (typeof MESSAGE_KINDS)[number];
 export const MESSAGE_LABEL: Record<MessageKind, string> = { confirm: "Booking confirmed", checkin: "Check-in details", checkout: "Check-out reminder", review: "Ask for a review" };
 
-export function stayMessage(kind: MessageKind, flat: Flat, s: Stay): string {
+/**
+ * The door code and Wi-Fi password never go into WhatsApp: a chat is forwarded, backed up and read on lock
+ * screens. The message carries the guest's own link, and that page shows the code once they've checked in.
+ */
+export function stayMessage(kind: MessageKind, flat: Flat, s: Stay, link: string): string {
   const hi = `Hi ${s.guestName?.split(" ")[0] || "there"}`;
   switch (kind) {
     case "confirm":
-      return `${hi}, your stay at ${flat.name} is confirmed for ${dateDay(s.checkIn)} → ${dateDay(s.checkOut)}. Check-in is from ${flat.checkinTime}. We'll send door and Wi-Fi details on the day. — Finzo Stays`;
+      return `${hi}, your stay at ${flat.name} is confirmed for ${dateDay(s.checkIn)} → ${dateDay(s.checkOut)}. Check-in is from ${flat.checkinTime}.\nPlease check in here before you arrive — it takes a minute, and your door code and Wi-Fi appear on the same page: ${link}\n— Finzo Stays`;
     case "checkin":
       return [`${hi}, welcome to ${flat.name}!`, flat.address && `Address: ${flat.address}`, `Check-in from ${flat.checkinTime}.`,
-        flat.lockCode && `Door code: ${flat.lockCode}`, flat.wifiName && `Wi-Fi: ${flat.wifiName}${flat.wifiPass ? ` / ${flat.wifiPass}` : ""}`,
-        "Message us here anytime. — Finzo Stays"].filter(Boolean).join("\n");
+        `Your door code and Wi-Fi are here: ${link}`, "Message us here anytime. — Finzo Stays"].filter(Boolean).join("\n");
     case "checkout":
       return `${hi}, a reminder that check-out is tomorrow (${dateDay(s.checkOut)}) by ${flat.checkoutTime}. Please leave the keys inside and close the windows. Safe travels! — Finzo Stays`;
     case "review":

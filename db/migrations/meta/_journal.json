@@ -99,6 +99,13 @@
       "when": 1794576405498,
       "tag": "0013_guests",
       "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1794577198294,
+      "tag": "0014_drop_guest_id",
+      "breakpoints": true
     }
   ]
 }

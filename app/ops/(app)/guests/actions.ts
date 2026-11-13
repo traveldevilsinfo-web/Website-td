@@ -13,8 +13,6 @@ export async function markSent(reservationId: number, kind: string) {
   const { user } = await requireStays();
   const k = kindOf(kind);
   if (!k) return;
-  const [stay] = await db.select({ id: t.reservations.id }).from(t.reservations).where(eq(t.reservations.id, reservationId));
-  if (!stay) return;
   await db.insert(t.stayMessages).values({ reservationId, kind: k, sentBy: user.id }).onConflictDoNothing();
   revalidatePath("/ops/guests");
 }

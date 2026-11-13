@@ -444,7 +444,6 @@ export const properties = pgTable("properties", {
   houseRules: text("house_rules"),
   guide: jsonb("guide").$type<GuideSection[]>().notNull().default([]),
   guideToken: text("guide_token").notNull().unique().default(sql`replace(gen_random_uuid()::text, '-', '')`), // QR link inside the flat
-  needsId: boolean("needs_id").notNull().default(false), // ask guests for an ID at check-in
   housekeeperId: integer("housekeeper_id").references(() => opsUsers.id, { onDelete: "set null" }),
   active: boolean("active").notNull().default(true),
   sort: integer("sort").notNull().default(0),
@@ -490,7 +489,6 @@ export const reservations = pgTable(
     agreedName: text("agreed_name"), // typed signature
     agreedAt: timestamp("agreed_at", { withTimezone: true }),
     agreedIp: text("agreed_ip"),
-    idPath: text("id_path"), // private bucket only
     ...timestamps,
   },
   (t) => [

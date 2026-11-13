@@ -38,7 +38,7 @@ To check with the team: language mix for staff, Android share, whether caretaker
 | | Maintenance tickets: priority, assignee or vendor, cost becomes an expense | Ours. |
 | **Access & smart home** | Lock code per flat and per stay, with rotate reminders | Manual now. Brand APIs (Nuki, Yale, igloohome, Minut noise) once the brands are known. |
 | **Direct & guest experience** | Public **guidebook** page per flat (Wi-Fi, rules, appliances, local tips) | `/stay/<flat>`, no login |
-| | **Guest check-in form**: ID upload + rental agreement e-signature | Typed name + checkbox + timestamp + IP (Indian IT Act click-wrap) |
+| | **Guest check-in form**: rental agreement e-signature | Typed name + checkbox + timestamp + IP (Indian IT Act click-wrap). **No ID documents** (owner's call, 13 Nov): collecting them brings DPDP Act duties the business doesn't want. |
 | | Direct booking page with Razorpay (later) | Ours |
 | **Finance** | Occupancy, average nightly rate (ADR), revenue per available night (RevPAR) per flat; owner statements; accountant CSV | Airbnb earnings CSV import gives payouts and fees. |
 | **HRMS** (both businesses) | Employees, attendance, leave, salary, payroll run, payslips, advances, incentives | As in the v1 spec, §5–6 |
@@ -79,7 +79,7 @@ Sources: ui-ux-pro-max (the "Data-Dense + Drill-Down" pattern for operational da
 | # | Ships | Notes |
 |---|---|---|
 | 2 | **Design system v2**, then Properties, iCal import + export, multi-flat Calendar, Reservations, clash alerts, **Turnovers** (auto from checkouts), **Maintenance** tickets, plus WhatsApp message templates (pulled forward from Phase 3) | **Built** 13 Nov on `ops-phase1` |
-| 3 | Guests: WhatsApp send queue, guest link per stay (check-in, signed house rules, ID photo, then door code), guidebook + in-flat QR link | **Built** 13 Nov on `ops-phase1` |
+| 3 | Guests: WhatsApp send queue, guest link per stay (check-in, signed house rules, then door code from the day before arrival), guidebook + in-flat QR link | **Built** 13 Nov on `ops-phase1` |
 | 4 | Revenue: earnings CSV import, occupancy/ADR/RevPAR, rate calendar, owner statements | |
 | 5 | HRMS: employees, attendance, leave, payroll, incentives, advances (both businesses) | |
 | 6 | Inventory: items, locations, movements, auto-issue on turnover, low stock (both) | |

@@ -52,7 +52,7 @@ export default async function StayPage({ params, searchParams }: PageProps<"/ops
             <Panel title="Message the guest" sub={r.phone ? "Opens WhatsApp with the text ready." : "Add their phone number to message them."}>
               <ul className="grid gap-2">
                 {MESSAGE_KINDS.map((k) => {
-                  const href = whatsappLink(r.phone, stayMessage(k, p, r));
+                  const href = whatsappLink(r.phone, stayMessage(k, p, r, stayUrl(r.guestToken)));
                   return (
                     <li key={k}>
                       {href
@@ -71,7 +71,6 @@ export default async function StayPage({ params, searchParams }: PageProps<"/ops
                 <dl className="mt-3 space-y-1 text-sm">
                   <div className="flex justify-between gap-3"><dt className="text-[var(--muted)]">Checked in</dt><dd className="font-medium">{r.agreedName} · {when(r.agreedAt)}</dd></div>
                   {r.guestEmail && <div className="flex justify-between gap-3"><dt className="text-[var(--muted)]">Email</dt><dd className="truncate">{r.guestEmail}</dd></div>}
-                  {r.idPath && <div className="flex justify-between gap-3"><dt className="text-[var(--muted)]">ID photo</dt><dd><a className="font-medium underline" target="_blank" rel="noopener" href={`/api/ops/file?path=${encodeURIComponent(r.idPath)}`}>View</a></dd></div>}
                 </dl>
               ) : <p className="mt-3 text-sm text-[var(--muted)]">Not checked in yet.</p>}
             </Panel>

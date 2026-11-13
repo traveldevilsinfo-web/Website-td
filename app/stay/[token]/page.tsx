@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CalendarDays, Check, DoorOpen, KeyRound, MapPin, Wifi } from "lucide-react";
-import { dateDay } from "@/lib/format";
+import { addDays, dateDay } from "@/lib/format";
 import { istToday } from "@/lib/ops-rules";
 import { openStayLink } from "@/lib/stay-link";
 import { nights } from "@/lib/stays";
@@ -10,6 +10,8 @@ import { CheckinForm } from "./CheckinForm";
 
 // A link anyone with the URL can open: never indexed, and the door code only after check-in.
 export const metadata: Metadata = { title: { absolute: "Your stay · Finzo Stays" }, robots: { index: false, follow: false } };
+// Rendered fresh every time: a cached copy would keep handing out the door code after the stay ends or is cancelled.
+export const dynamic = "force-dynamic";
 
 const DEFAULT_RULES = `No parties or events, and no loud music after 10 pm.
 No smoking indoors.
@@ -59,15 +61,17 @@ export default async function GuestStayPage({ params }: PageProps<"/stay/[token]
             <h2 className="text-lg font-semibold text-emerald-950">Check in before you arrive</h2>
             <p className="mt-1.5 text-[15px] leading-relaxed text-emerald-900/80">Takes a minute. Once it&apos;s done, your door code and Wi-Fi appear on this page.</p>
           </Card>
-          <Card><CheckinForm token={r.guestToken} needsId={p.needsId} guestName={r.guestName} guests={r.guests} rules={rules} /></Card>
+          <Card><CheckinForm token={r.guestToken} guestName={r.guestName} guests={r.guests} rules={rules} /></Card>
         </>
       )}
 
-      {(stage === "ready" || stage === "guide") && (
+      {(stage === "ready" || stage === "soon" || stage === "guide") && (
         <div className="space-y-4">
-          {stage === "ready" && (
-            <p className="flex items-center gap-2 rounded-2xl bg-emerald-700 px-5 py-4 text-[15px] font-semibold text-white">
-              <Check className="size-5 shrink-0" aria-hidden />You&apos;re checked in. Here&apos;s everything you need.
+          {stage !== "guide" && (
+            <p className="flex items-start gap-2 rounded-2xl bg-emerald-700 px-5 py-4 text-[15px] font-semibold text-white">
+              <Check className="mt-0.5 size-5 shrink-0" aria-hidden />
+              {stage === "ready" ? "You're checked in. Here's everything you need."
+                : `You're checked in. Your door code appears here on ${dateDay(addDays(r!.checkIn, -1))}, the day before you arrive.`}
             </p>
           )}
           <Card>
@@ -81,9 +85,9 @@ export default async function GuestStayPage({ params }: PageProps<"/stay/[token]
                   {p.wifiPass && <span className="mt-0.5 block font-mono text-lg tracking-wide">{p.wifiPass}</span>}
                 </Row>
               )}
-              {stage === "ready" && p.address && <Row icon={MapPin} label="Address">{p.address}</Row>}
+              {stage !== "guide" && p.address && <Row icon={MapPin} label="Address">{p.address}</Row>}
               <Row icon={CalendarDays} label="Check-in / check-out">From {p.checkinTime} · by {p.checkoutTime}</Row>
-              {stage === "ready" && r && <Row icon={DoorOpen} label="Checked in as">{r.agreedName}</Row>}
+              {stage !== "guide" && r && <Row icon={DoorOpen} label="Checked in as">{r.agreedName}</Row>}
             </div>
           </Card>
 

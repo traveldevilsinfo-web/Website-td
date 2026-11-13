@@ -441,10 +441,18 @@ console.log("stay date checks passed");
 import { stayMessage, whatsappLink } from "./stays-messages";
 const flatX = { name: "Bandra 1BHK", address: "14 Hill Rd", checkinTime: "14:00", checkoutTime: "11:00", wifiName: "FZ01", wifiPass: "pass1234", lockCode: "4821" };
 const stayX = { guestName: "Riya Sharma", checkIn: "2026-11-20", checkOut: "2026-11-23", phone: "+91 98765 43210" };
-const ci = stayMessage("checkin", flatX, stayX);
-assert.ok(ci.startsWith("Hi Riya,") && ci.includes("Door code: 4821") && ci.includes("Wi-Fi: FZ01 / pass1234"));
-assert.ok(!stayMessage("checkin", { ...flatX, lockCode: null }, stayX).includes("Door code")); // no empty lines for missing details
-assert.ok(stayMessage("confirm", flatX, { ...stayX, guestName: null }).startsWith("Hi there,"));
+const LINK = "https://x.test/stay/abc";
+// Secrets never travel by WhatsApp: the message carries the guest's link, the link carries the code.
+for (const kind of ["confirm", "checkin", "checkout", "review"] as const) {
+  const m = stayMessage(kind, flatX, stayX, LINK);
+  assert.ok(!m.includes("4821"), `${kind} must not contain the door code`);
+  assert.ok(!m.includes("pass1234"), `${kind} must not contain the wifi password`);
+}
+const ci = stayMessage("checkin", flatX, stayX, LINK);
+assert.ok(ci.startsWith("Hi Riya,") && ci.includes("14 Hill Rd") && ci.includes(LINK));
+assert.ok(stayMessage("confirm", flatX, stayX, LINK).includes(LINK)); // they can check in early
+assert.ok(!stayMessage("review", flatX, stayX, LINK).includes(LINK)); // nothing left to do there
+assert.ok(stayMessage("confirm", flatX, { ...stayX, guestName: null }, LINK).startsWith("Hi there,"));
 assert.equal(whatsappLink("+91 98765 43210", "a b")?.startsWith("https://wa.me/919876543210?text=a%20b"), true);
 assert.equal(whatsappLink("12345", "x"), null);
 assert.equal(whatsappLink(null, "x"), null);
@@ -490,7 +498,7 @@ assert.equal(isRealDate(undefined), false);
 console.log("real date checks passed");
 
 // ---------------- guests: what to send when, check-in agreement, ID uploads
-import { dueMessageKinds, agreementError, planGuestId, GUEST_ID_PATH, guestStage } from "./stays-guests";
+import { dueMessageKinds, agreementError, guestStage } from "./stays-guests";
 const due = (today: string, sent: string[] = [], o: object = {}) =>
   dueMessageKinds({ checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed", ...o }, today, sent as never[]);
 assert.deepEqual(due("2026-11-15"), ["confirm"]);
@@ -513,18 +521,15 @@ assert.ok(agreementError("R", true)); // too short to be a name
 assert.ok(agreementError("   ", true));
 assert.ok(agreementError("x".repeat(200), true));
 
-const gid = planGuestId("passport.JPG", 1_000_000, new Date("2026-11-13T10:00:00Z"));
-assert.ok("path" in gid && /^2026\/11\/g-[0-9a-f]{24}\.jpg$/.test(gid.path));
-assert.ok("path" in gid && GUEST_ID_PATH.test(gid.path));
-assert.ok("error" in planGuestId("id.pdf", 100)); // photo of the ID, not a document
-assert.ok("error" in planGuestId("id.jpg", 20 * 1024 * 1024));
-assert.ok(!GUEST_ID_PATH.test("2026/11/r-aaaaaaaaaaaaaaaaaaaaaaaa.jpg")); // a receipt path is not an ID path
 
 // What the guest's own page shows them
-assert.equal(guestStage({ agreedAt: null, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" }, "2026-11-15"), "checkin");
-assert.equal(guestStage({ agreedAt: new Date(), checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" }, "2026-11-15"), "ready");
-assert.equal(guestStage({ agreedAt: new Date(), checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed" }, "2026-11-24"), "over");
-assert.equal(guestStage({ agreedAt: null, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "cancelled" }, "2026-11-15"), "cancelled");
+const gs = (o: object, today: string) => guestStage({ agreedAt: null, checkIn: "2026-11-20", checkOut: "2026-11-23", status: "confirmed", ...o }, today);
+assert.equal(gs({}, "2026-11-15"), "checkin"); // hasn't signed yet
+assert.equal(gs({ agreedAt: new Date() }, "2026-11-15"), "soon"); // signed, but too early for the door code
+assert.equal(gs({ agreedAt: new Date() }, "2026-11-19"), "ready"); // day before arrival: show it
+assert.equal(gs({ agreedAt: new Date() }, "2026-11-22"), "ready"); // during the stay
+assert.equal(gs({ agreedAt: new Date() }, "2026-11-24"), "over"); // after checkout: nothing
+assert.equal(gs({ status: "cancelled" }, "2026-11-15"), "cancelled");
 console.log("guest checks passed");
 import { parseGuide, formatGuide } from "./stays-guests";
 assert.deepEqual(parseGuide("## Wi-Fi\nRouter is behind the TV.\n\n## Kitchen\nInduction hob.\nNo oven."), [
@@ -537,9 +542,3 @@ assert.deepEqual(parseGuide("## Empty section\n\n## Real\nbody"), [{ title: "Rea
 assert.equal(formatGuide([{ title: "Wi-Fi", body: "Behind the TV." }]), "## Wi-Fi\nBehind the TV.");
 assert.deepEqual(parseGuide(formatGuide([{ title: "A", body: "one\ntwo" }, { title: "B", body: "x" }])), [{ title: "A", body: "one\ntwo" }, { title: "B", body: "x" }]);
 console.log("guidebook checks passed");
-import { canSeeGuestId } from "./ops-rules";
-assert.equal(canSeeGuestId(owner), true);
-assert.equal(canSeeGuestId({ id: 5, role: "manager", businesses: ["finzo"] }), true);
-assert.equal(canSeeGuestId({ id: 6, role: "manager", businesses: ["td"] }), false); // other business
-assert.equal(canSeeGuestId(staffT), false); // housekeepers never see guest ID documents
-console.log("guest id access checks passed");

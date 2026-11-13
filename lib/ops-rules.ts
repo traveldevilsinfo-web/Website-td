@@ -167,5 +167,3 @@ export function teamChangeError(me: { id: number }, targetId: number, next: { ro
 export const canWorkOn = (u: OpsUser, task: { assigneeId: number | null; createdBy?: number | null }) =>
   isManager(u) || task.assigneeId === u.id || task.createdBy === u.id;
 
-/** Guest ID documents are personal data: only Finzo managers and the owner, never housekeepers. */
-export const canSeeGuestId = (u: OpsUser) => isManager(u) && allowedBusinesses(u).includes("finzo");
