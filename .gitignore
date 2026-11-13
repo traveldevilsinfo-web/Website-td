@@ -48,3 +48,6 @@ next-env.d.ts
 
 # local SEO audit output
 /website-td.vercel.app-audit/
+
+# ops receipts (local dev; production uses the private Supabase bucket)
+/uploads-private/

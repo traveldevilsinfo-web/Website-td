@@ -1,5 +1,6 @@
+import { sql } from "drizzle-orm";
 import {
-  boolean, date, index, integer, jsonb, pgEnum, pgTable, serial, text, timestamp,
+  boolean, date, index, integer, jsonb, pgEnum, pgTable, serial, text, timestamp, uniqueIndex,
 } from "drizzle-orm/pg-core";
 
 const timestamps = {
@@ -8,7 +9,7 @@ const timestamps = {
 };
 
 export const statusEnum = pgEnum("status", ["draft", "published"]);
-export const roleEnum = pgEnum("role", ["admin", "editor"]);
+export const roleEnum = pgEnum("role", ["admin", "editor", "ops_manager", "staff"]);
 export const regionEnum = pgEnum("region", ["india", "international"]);
 export const batchStatusEnum = pgEnum("batch_status", ["available", "filling_fast", "sold_out", "closed"]);
 
@@ -23,6 +24,8 @@ export const users = pgTable("users", {
   name: text("name").notNull(),
   passwordHash: text("password_hash").notNull(),
   role: roleEnum("role").notNull().default("editor"),
+  /** Ops dashboard businesses for ops_manager / staff ("td", "finzo"). Admin always gets both. */
+  opsBusinesses: text("ops_businesses").array().notNull().default(sql`'{}'::text[]`),
   ...timestamps,
 });
 
@@ -309,4 +312,87 @@ export const payments = pgTable(
     createdAt: timestamps.createdAt,
   },
   (t) => [index("payments_booking_idx").on(t.bookingId)],
+);
+
+// ------------------------------------------------------------------ ops (back office: TD + Finzo Stays)
+
+export const businessEnum = pgEnum("business", ["td", "finzo"]);
+export const expenseStatusEnum = pgEnum("expense_status", ["needs_amount", "submitted", "approved", "rejected", "paid"]);
+export const paidViaEnum = pgEnum("paid_via", ["cash", "upi", "bank", "card"]);
+
+export const vendors = pgTable(
+  "vendors",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    name: text("name").notNull(),
+    kind: text("kind"), // hotel | driver | landlord | utility | shop | other
+    phone: text("phone"),
+    gstin: text("gstin"),
+    payTo: text("pay_to"), // UPI id or bank details
+    notes: text("notes"),
+    active: boolean("active").notNull().default(true),
+    ...timestamps,
+  },
+  (t) => [index("vendors_business_idx").on(t.business)],
+);
+
+export const expenseCategories = pgTable(
+  "expense_categories",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    name: text("name").notNull(),
+    kind: text("kind").notNull().default("variable"), // fixed | variable | salary | inventory
+    sort: integer("sort").notNull().default(0),
+    active: boolean("active").notNull().default(true),
+  },
+  (t) => [uniqueIndex("expense_categories_business_name_idx").on(t.business, t.name)],
+);
+
+export const recurringExpenses = pgTable("recurring_expenses", {
+  id: serial("id").primaryKey(),
+  business: businessEnum("business").notNull(),
+  name: text("name").notNull(),
+  amount: integer("amount"), // null = variable bill (electricity): posted as needs_amount
+  categoryId: integer("category_id").notNull().references(() => expenseCategories.id),
+  vendorId: integer("vendor_id").references(() => vendors.id, { onDelete: "set null" }),
+  dayOfMonth: integer("day_of_month").notNull(), // 1-31; short months post on their last day
+  paidVia: paidViaEnum("paid_via"),
+  active: boolean("active").notNull().default(true),
+  startMonth: text("start_month").notNull(), // YYYY-MM
+  endMonth: text("end_month"),
+  ...timestamps,
+});
+
+export const expenses = pgTable(
+  "expenses",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    date: date("date").notNull(),
+    amount: integer("amount").notNull().default(0), // ₹
+    categoryId: integer("category_id").notNull().references(() => expenseCategories.id),
+    vendorId: integer("vendor_id").references(() => vendors.id, { onDelete: "set null" }),
+    tripBatchId: integer("trip_batch_id").references(() => tripBatches.id, { onDelete: "set null" }), // TD cost centre
+    paidVia: paidViaEnum("paid_via"),
+    reimburse: boolean("reimburse").notNull().default(false), // staff paid out of pocket
+    receiptPath: text("receipt_path"), // private bucket path yyyy/mm/name.ext
+    note: text("note"),
+    status: expenseStatusEnum("status").notNull().default("submitted"),
+    createdBy: integer("created_by").notNull().references(() => users.id),
+    approvedBy: integer("approved_by").references(() => users.id),
+    approvedAt: timestamp("approved_at", { withTimezone: true }),
+    paidAt: timestamp("paid_at", { withTimezone: true }),
+    paidRef: text("paid_ref"),
+    recurringId: integer("recurring_id").references(() => recurringExpenses.id, { onDelete: "set null" }),
+    period: text("period"), // YYYY-MM, recurring rows only
+    ...timestamps,
+  },
+  (t) => [
+    index("expenses_business_date_idx").on(t.business, t.date),
+    index("expenses_business_status_idx").on(t.business, t.status),
+    index("expenses_created_by_idx").on(t.createdBy),
+    uniqueIndex("expenses_recurring_period_idx").on(t.recurringId, t.period),
+  ],
 );

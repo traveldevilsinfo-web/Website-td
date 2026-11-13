@@ -34,7 +34,7 @@ export async function destroySession() {
   jar.delete(SESSION_COOKIE);
 }
 
-export type CurrentUser = { id: number; name: string; email: string; role: "admin" | "editor" };
+export type CurrentUser = { id: number; name: string; email: string; role: "admin" | "editor" | "ops_manager" | "staff" };
 
 export const getCurrentUser = cache(async (): Promise<CurrentUser | null> => {
   const token = (await cookies()).get(SESSION_COOKIE)?.value;
