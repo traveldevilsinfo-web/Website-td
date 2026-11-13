@@ -1,16 +1,17 @@
 import { notFound } from "next/navigation";
-import { and, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { alias } from "drizzle-orm/pg-core";
 import { db, t } from "@/lib/db";
 import { dateShort, inr } from "@/lib/format";
 import { requireOps } from "@/lib/ops";
 import { expenseFormOptions } from "@/lib/ops-queries";
-import { canEditExpense, canSeeExpense, istToday, PAID_VIA } from "@/lib/ops-rules";
+import { BIZ_LABEL, canEditExpense, canSeeExpense, istToday, PAID_VIA } from "@/lib/ops-rules";
 import { SaveForm } from "@/components/admin/SaveForm";
 import { Notice, PageHeader, Section, btnDanger, btnGhost, btnPrimary, input } from "@/components/admin/ui";
 import { decideExpense, markPaid, saveExpense } from "../actions";
 import { ExpenseFields } from "../ExpenseForm";
 import { ExpenseBadge } from "../../ui";
+import { setBusiness } from "../../biz-actions";
 
 const approver = alias(t.users, "approver");
 const when = (d: Date | null) => d?.toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "numeric", minute: "2-digit" });
@@ -25,8 +26,18 @@ export default async function ExpensePage({ params, searchParams }: PageProps<"/
     .innerJoin(t.expenseCategories, eq(t.expenseCategories.id, t.expenses.categoryId))
     .innerJoin(t.users, eq(t.users.id, t.expenses.createdBy))
     .leftJoin(approver, eq(approver.id, t.expenses.approvedBy))
-    .where(and(eq(t.expenses.id, id), eq(t.expenses.business, biz)));
+    .where(eq(t.expenses.id, id));
   if (!row || !canSeeExpense(user, row.e)) notFound();
+  if (row.e.business !== biz) {
+    // A link into the other business's books: offer the switch instead of a dead end.
+    return (
+      <>
+        <PageHeader back="/ops/expenses" title="Expense in the other business" />
+        <Notice tone="amber">This expense belongs to {BIZ_LABEL[row.e.business]}.</Notice>
+        <form action={setBusiness.bind(null, row.e.business)}><button className={btnPrimary}>Switch to {BIZ_LABEL[row.e.business]}</button></form>
+      </>
+    );
+  }
   const e = row.e;
   const editable = canEditExpense(user, e);
 

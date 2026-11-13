@@ -8,7 +8,7 @@ import { BIZ_LABEL, istToday, shiftMonth, summarize } from "@/lib/ops-rules";
 import { Notice, PageHeader, Section, StatCard, btnPrimary } from "@/components/admin/ui";
 import { ACCENT } from "./accent";
 import { MonthPicker } from "./MonthPicker";
-import { monthLabel } from "./ui";
+import { money, monthLabel } from "./ui";
 
 export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
   const { user, biz, manager } = await requireOps();
@@ -52,10 +52,10 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
       {s.needsAmount > 0 && <Notice tone="amber">{s.needsAmount} fixed bill(s) need the real amount. <Link className="underline" href={{ pathname: "/ops/expenses", query: { month, status: "needs_amount" } }}>Fill them in</Link></Notice>}
       {stale.n > 0 && <Notice tone="amber">{stale.n} expense(s) have waited more than 3 days for approval. <Link className="underline" href="/ops/expenses?status=submitted">Review</Link></Notice>}
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         <StatCard label="Revenue" value={inr(rev)} href="/ops/reports" hint={biz === "td" ? "Paid website bookings" : "Airbnb payouts come in Phase 2"} />
         <StatCard label="Expenses" value={inr(s.spent)} href={`/ops/expenses?month=${month}`} hint="Approved + paid" />
-        <StatCard label="Profit" value={<span className={profit < 0 ? "text-red-600" : ""}>{inr(profit)}</span>} href="/ops/reports" />
+        <StatCard label="Profit" value={<span className={`whitespace-nowrap ${profit < 0 ? "text-red-600" : ""}`}>{money(profit)}</span>} href="/ops/reports" />
         <StatCard label="Waiting approval" value={s.pendingCount} hint={inr(s.pendingAmount)} href="/ops/expenses?status=submitted" tone={s.pendingCount ? "alert" : undefined} />
         <StatCard label="Approved, unpaid" value={inr(s.unpaid)} href={`/ops/expenses?month=${month}&status=approved`} />
       </div>
@@ -64,8 +64,8 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
         <Section title="Last 6 months" description="Revenue vs expenses">
           <ul className="space-y-3">
             {trend.map((x) => (
-              <li key={x.m} className="grid grid-cols-[4.5rem_1fr] items-center gap-3 text-xs">
-                <span className="font-semibold text-gray-600">{monthLabel(x.m).replace(/ (\d{2})(\d{2})$/, " ’$2")}</span>
+              <li key={x.m} className="grid grid-cols-[5.5rem_1fr] items-center gap-3 text-xs">
+                <span className="font-semibold text-gray-600">{monthLabel(x.m, true)}</span>
                 <span className="space-y-1">
                   <span className="flex items-center gap-2"><span className={`h-2.5 rounded-full ${a.bg}`} style={{ width: `${(x.rev / max) * 100}%` }} /><span className="text-gray-600">{inr(x.rev)}</span></span>
                   <span className="flex items-center gap-2"><span className="h-2.5 rounded-full bg-gray-400" style={{ width: `${(x.spent / max) * 100}%` }} /><span className="text-gray-600">{inr(x.spent)}</span></span>

@@ -4,7 +4,7 @@ import { db, t } from "./db";
 import { addDays } from "./format";
 import { istToday, monthBounds, shiftMonth, type Biz } from "./ops-rules";
 
-/** Dropdown options for expense / fixed-cost forms. Departures are TD only: last 30 days to next 60. */
+/** Dropdown options for expense / fixed-cost forms. Departures are TD only: started in the last 10 days to 14 days ahead (TD runs ~35 a week). */
 export async function expenseFormOptions(biz: Biz) {
   const today = istToday();
   const [categories, vendors, batches] = await Promise.all([
@@ -14,7 +14,7 @@ export async function expenseFormOptions(biz: Biz) {
       .where(eq(t.vendors.business, biz)).orderBy(asc(t.vendors.name)),
     biz !== "td" ? [] : db.select({ id: t.tripBatches.id, startDate: t.tripBatches.startDate, title: t.trips.title })
       .from(t.tripBatches).innerJoin(t.trips, eq(t.trips.id, t.tripBatches.tripId))
-      .where(and(gte(t.tripBatches.startDate, addDays(today, -30)), lte(t.tripBatches.startDate, addDays(today, 60))))
+      .where(and(gte(t.tripBatches.startDate, addDays(today, -10)), lte(t.tripBatches.startDate, addDays(today, 14))))
       .orderBy(asc(t.tripBatches.startDate), asc(t.trips.title)),
   ]);
   return { categories, vendors, batches };

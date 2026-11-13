@@ -4,7 +4,7 @@ import { monthExpenses, revenueByMonth } from "@/lib/ops-queries";
 import { BIZ_LABEL, istToday, summarize } from "@/lib/ops-rules";
 import { PageHeader, Section, Table, btnGhost } from "@/components/admin/ui";
 import { MonthPicker } from "../MonthPicker";
-import { monthLabel } from "../ui";
+import { money, monthLabel } from "../ui";
 
 export default async function ReportsPage({ searchParams }: PageProps<"/ops/reports">) {
   const { biz } = await requireOps({ manager: true });
@@ -37,7 +37,7 @@ export default async function ReportsPage({ searchParams }: PageProps<"/ops/repo
               {cats.map((c) => <dd key={c.category} className="flex justify-between pl-4 text-gray-600"><span>{c.category}</span><span>{inr(c.amount)}</span></dd>)}
             </div>
           ))}
-          <div className="flex justify-between py-2 text-base"><dt className="font-extrabold">Profit</dt><dd className={`font-extrabold ${rev - s.spent < 0 ? "text-red-600" : ""}`}>{inr(rev - s.spent)}</dd></div>
+          <div className="flex justify-between py-2 text-base"><dt className="font-extrabold">Profit</dt><dd className={`font-extrabold ${rev - s.spent < 0 ? "text-red-600" : ""}`}>{money(rev - s.spent)}</dd></div>
         </dl>
         <p className="text-xs text-gray-500">
           Counts approved and paid expenses. Not included: {s.pendingCount} waiting approval ({inr(s.pendingAmount)}){s.needsAmount ? `, ${s.needsAmount} bill(s) without an amount` : ""}.

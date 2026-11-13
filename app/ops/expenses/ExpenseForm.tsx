@@ -9,6 +9,12 @@ type Values = {
   paidVia?: string | null; reimburse?: boolean; receiptPath?: string | null; note?: string | null;
 };
 
+const byDate = <T extends { startDate: string }>(xs: T[]) => {
+  const out: Record<string, T[]> = {};
+  for (const x of xs) (out[x.startDate] ??= []).push(x);
+  return out;
+};
+
 /** Phone-first field order: amount, what, when, bill photo; the rest is optional. */
 export function ExpenseFields({ biz, options, v = {}, today }: { biz: Biz; options: ExpenseFormOptions; v?: Values; today: string }) {
   const cats = options.categories.filter((c) => c.active || c.id === v.categoryId);
@@ -39,7 +45,10 @@ export function ExpenseFields({ biz, options, v = {}, today }: { biz: Biz; optio
         <Field label="Trip departure (optional)" hint="Tag trip costs so each departure shows its profit.">
           <select name="tripBatchId" defaultValue={v.tripBatchId ?? ""} className={input}>
             <option value="">Not trip-specific</option>
-            {options.batches.map((b) => <option key={b.id} value={b.id}>{dateShort(b.startDate)} · {b.title}</option>)}
+            {Object.entries(byDate(options.batches)).map(([d, list]) => (
+              <optgroup key={d} label={`Starts ${dateShort(d)}`}>{list.map((b) => <option key={b.id} value={b.id}>{b.title}</option>)}</optgroup>
+            ))}
+            {v.tripBatchId && !options.batches.some((b) => b.id === v.tripBatchId) && <option value={v.tripBatchId}>(departure outside the list, kept)</option>}
           </select>
         </Field>
       )}

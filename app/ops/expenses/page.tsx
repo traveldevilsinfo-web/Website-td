@@ -51,19 +51,21 @@ export default async function ExpensesPage({ searchParams }: PageProps<"/ops/exp
           <button className="rounded-lg px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-100">Go</button>
         </form>
       </div>
-      <Table head={["Date", "What", manager ? "By" : "", "Amount", "Status"]} empty={!rows.length} emptyText="No expenses here."
+      <Table head={manager ? ["What", "By", "Amount"] : ["What", "Amount"]} empty={!rows.length} emptyText="No expenses here."
         emptyAction={<Link href="/ops/expenses/new" className={btnPrimary}>+ Add expense</Link>}>
         {rows.map(({ e, ...r }) => (
           <tr key={e.id} className="group relative">
-            <td className="whitespace-nowrap text-gray-600">{dateShort(e.date)}</td>
             <td>
+              <span className="block text-xs text-gray-500">{dateShort(e.date)}</span>
               <Link href={`/ops/expenses/${e.id}`} className="font-semibold after:absolute after:inset-0 group-hover:underline">{r.category}</Link>
               {e.receiptPath && <Paperclip className="ml-1 inline size-3.5 text-gray-400" aria-label="has receipt" />}
-              <p className="max-w-md truncate text-xs text-gray-500">{[r.vendor, r.trip && `${r.trip} · ${dateShort(r.tripDate!)}`, e.note].filter(Boolean).join(" · ")}</p>
+              <p className="max-w-[40vw] truncate text-xs text-gray-500 sm:max-w-md">{[r.vendor, r.trip && `${r.trip} · ${dateShort(r.tripDate!)}`, e.note].filter(Boolean).join(" · ")}</p>
             </td>
-            <td className="text-xs text-gray-600">{manager && r.by}</td>
-            <td className="whitespace-nowrap font-semibold">{inr(e.amount)}{e.reimburse && <span className="block text-[11px] font-medium text-amber-700">reimburse</span>}</td>
-            <td><ExpenseBadge status={e.status} /></td>
+            {manager && <td className="text-xs text-gray-600">{r.by}</td>}
+            <td className="whitespace-nowrap text-right font-semibold">
+              {inr(e.amount)}{e.reimburse && <span className="block text-[11px] font-medium text-amber-700">reimburse</span>}
+              <span className="mt-1 block"><ExpenseBadge status={e.status} /></span>
+            </td>
           </tr>
         ))}
       </Table>
