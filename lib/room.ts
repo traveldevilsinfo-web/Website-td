@@ -33,12 +33,16 @@ export function kitLines(
 export type Shortfall = { itemId: number; propertyId: number; qty: number; reason: string | null; reservationId: number | null; unitCost: number | null };
 
 /**
- * A shortfall is ONE movement. With a reason it is "damaged", without one it is a "count" correction.
+ * Takes a SIGNED delta: negative is a shortfall, positive is a surplus. Always ONE movement.
+ * A shortfall with a reason is "damaged"; without one (or a blank one) it is a "count" correction.
  * Never both: a damaged row of -2 already lowers the total, so a second count row would take it down twice.
+ * A surplus is always a "count", whatever reason came with it: finding two towels must never lower the ledger.
  */
 export function planShortfall(s: Shortfall): { kind: StockKind; qty: number; reason: string | null; reservationId: number | null; unitCost: number | null } | null {
   if (!s.qty) return null;
-  return { kind: s.reason ? "damaged" : "count", qty: -Math.abs(s.qty), reason: s.reason, reservationId: s.reservationId, unitCost: s.unitCost };
+  const base = { qty: s.qty, reason: s.reason, reservationId: s.reservationId, unitCost: s.unitCost };
+  if (s.qty > 0) return { kind: "count", ...base };
+  return { kind: s.reason?.trim() ? "damaged" : "count", ...base };
 }
 
 /** Value of what was lost. Rows with no cost are counted apart, never valued at zero. */

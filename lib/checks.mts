@@ -848,6 +848,22 @@ const lines = kitLines([{ id: 2, name: "Ash tray", area: "Table" }], kit, new Ma
 assert.equal(lines[0].expected, null);
 assert.equal(lines[0].short, 0);
 assert.equal(fitOutValue([{ cost: 32000, active: true }, { cost: 8500, active: true }, { cost: 999, active: false }]), 40500);
+// kitLines: the shortfall clamp, negative stock, and the area-then-name sort
+const sh = (qty: number, reason: string | null) => ({ itemId: 1, propertyId: 7, qty, reason, reservationId: null, unitCost: null });
+const kl = kitLines([{ id: 1, name: "Towel", area: "Bath" }], kit, new Map(), 7)[0];
+assert.deepEqual([kl.expected, kl.actual, kl.short], [6, 0, 6]);   // in the kit, none there: all of it is short
+assert.equal(kitLines([{ id: 1, name: "Towel", area: "Bath" }], kit, new Map([["1@7", 9]]), 7)[0].short, 0); // over-stock is never negative-short
+assert.equal(kitLines([{ id: 1, name: "Towel", area: "Bath" }], kit, new Map([["1@7", -1]]), 7)[0].short, 7); // a negative total is short by more
+assert.deepEqual(kitLines([{ id: 3, name: "Zeta", area: "Bed" }, { id: 4, name: "Alpha", area: "Bed" }, { id: 5, name: "Mid", area: "Bath" }], kit, new Map(), 7).map((l) => l.name), ["Mid", "Alpha", "Zeta"]);
+// planShortfall takes a signed delta: a surplus is a positive count and never a loss
+assert.deepEqual(planShortfall(sh(2, null)), { kind: "count", qty: 2, reason: null, reservationId: null, unitCost: null });
+assert.equal(planShortfall(sh(2, "stolen"))?.kind, "count");   // a reason on a surplus is ignored
+assert.equal(planShortfall(sh(2, "stolen"))?.qty, 2);
+assert.equal(planShortfall(sh(-1, ""))?.kind, "count");        // blank reason: unexplained
+assert.equal(planShortfall(sh(-1, "   "))?.kind, "count");     // whitespace-only reason: unexplained
+assert.equal(planShortfall(sh(-1, "lost"))?.qty, -1);
+assert.deepEqual(lossTotal([]), { value: 0, unpriced: 0 });
+assert.deepEqual(lossTotal([{ qty: 0, unitCost: 450 }]), { value: 0, unpriced: 0 });
 // The schema defaults a fixture to "working", so a key missing here would render blank on the Room page
 assert.deepEqual(Object.keys(FIXTURE_CONDITION), ["working", "attention", "broken", "missing"]);
 assert.ok(FIXTURE_CONDITION.working);

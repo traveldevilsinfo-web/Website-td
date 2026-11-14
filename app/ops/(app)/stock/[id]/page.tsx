@@ -75,7 +75,7 @@ export default async function ItemPage({ params }: PageProps<"/ops/stock/[id]">)
                       <option value="in">Received new stock</option>
                       <option value="issue">Sent somewhere</option>
                       <option value="return">Came back</option>
-                      <option value="damaged">Damaged or lost</option>
+                      <option value="damaged">Damaged, lost or stolen</option>
                     </select>
                   </Field>
                   <Field label="How many"><input name="qty" type="number" min={1} required className={input} /></Field>
