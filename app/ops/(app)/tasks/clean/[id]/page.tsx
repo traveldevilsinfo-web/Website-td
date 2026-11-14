@@ -37,7 +37,9 @@ export default async function CleaningPage({ params }: PageProps<"/ops/tasks/cle
 
       <div className="grid gap-5 lg:grid-cols-5">
         <Panel title="Checklist" sub={done ? "All done" : `${left} of ${tv.checklist.length} left`} className="lg:col-span-3" flush>
-          <Checklist id={tv.id} items={tv.checklist} locked={done} />
+          {/* Keyed on the ticks themselves: the kit check writes one server-side, and the client component seeds its
+              state once, so without a remount the next tap would post the pre-check flags and untick what was done. */}
+          <Checklist key={tv.checklist.map((c) => (c.done ? 1 : 0)).join("")} id={tv.id} items={tv.checklist} locked={done} />
           {!done && (
             <div className="border-t border-[var(--line)] p-4 sm:p-5">
               <form action={finishTurnover.bind(null, tv.id)}><button className={`${btnPrimary} w-full py-3 text-base`}><Check className="size-5" aria-hidden />{left ? `Mark done (${left} unticked)` : "Mark done"}</button></form>
