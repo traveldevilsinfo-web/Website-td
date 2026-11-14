@@ -53,7 +53,7 @@ export default async function LossesPage({ searchParams }: PageProps<"/ops/repor
           <DataTable head={["When", "What", "Stay", "Value", "Claim"]} align={[undefined, undefined, undefined, "r", undefined]} phoneTitle={1}>
             {rows.filter((r) => (r.flat ?? "No flat") === f).map((r) => (
               <tr key={r.id}>
-                <td className="whitespace-nowrap text-xs text-[var(--muted)]">{dateShort(r.at.toISOString().slice(0, 10))}</td>
+                <td className="whitespace-nowrap text-xs text-[var(--muted)]">{dateShort(istToday(r.at))}</td>
                 <td className="text-sm font-semibold">{Math.abs(r.qty)} × {r.item}<span className="block text-xs font-normal capitalize text-[var(--muted)]">{r.reason}</span></td>
                 <td className="text-xs">{r.checkIn ? `${r.guest ?? "Guest"} · ${dateShort(r.checkIn)}–${dateShort(r.checkOut!)}` : "No guest"}</td>
                 <td className="text-right font-semibold">{r.unitCost === null ? <span className="text-xs font-normal text-amber-700">no cost</span> : inr(Math.abs(r.qty) * r.unitCost)}</td>
