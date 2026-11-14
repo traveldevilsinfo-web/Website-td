@@ -84,16 +84,43 @@ of kind **salary** — payroll refuses to pay if there isn't one.
 housekeepers need both, a cook may need only the second. Give each flat a housekeeper, so cleanings
 assign themselves.
 
-**Add the 13 flats.** Finzo Stays → Flats. For each one: code, name, address, door code, Wi-Fi and the
-housekeeper.
+**Bring in the flats that are on Airbnb.** Eight listings were read off the Airbnb host account on
+14 Nov 2026 — name, address, bedrooms, guests, check-in and checkout, and each listing's calendar
+link. One command puts them in with their Airbnb calendar already connected:
+
+```bash
+DATABASE_URL='<your supabase connection string>' npx tsx scripts/import-airbnb-listings.mts
+```
+
+It reads `exports/airbnb-listings.json`, which is deliberately **not** in the repository: those
+calendar links are secrets, and anyone holding one can read that flat's bookings without logging in.
+Keep the file somewhere safe. Running the command twice is harmless — flats are matched on their
+code, so the second run updates rather than duplicates, and it never overwrites a door code, Wi-Fi
+password, housekeeper or guidebook.
+
+> Set `NEXT_PUBLIC_SITE_URL` (step 2) **before** this, or every guest and calendar link the app hands
+> out will point at `localhost`.
+
+**Add any flat that isn't on Airbnb.** Finzo Stays → Flats → Add flat: code, name, address, door
+code, Wi-Fi and the housekeeper. Eight of the flats come from the import above; the rest are let
+some other way and have to be typed in.
+
+**Fill in what Airbnb doesn't know.** Open each imported flat and add its door code, Wi-Fi and
+housekeeper. Airbnb holds none of these, so the import leaves them blank, and cleanings only assign
+themselves once a flat has a housekeeper.
 
 **Add each flat's rent.** On the flat's page, **Add rent** opens a form already filled in — type the
-amount and save. Do this for all 13. A flat with no rent recorded will read as far more profitable than
-it is, and that error goes straight onto its owner statement.
+amount and save. Do this for every flat. A flat with no rent recorded will read as far more
+profitable than it is, and that error goes straight onto its owner statement.
 
-**Connect the calendars.** On each flat: paste its Airbnb calendar link under *Calendars in*, then copy
-the *For Airbnb* link from *Calendar out* and paste it into Airbnb's "import calendar". Open the
-**Calendar** page and press **Sync now**. Bookings should appear within a minute.
+**Send our calendar back to Airbnb.** The import only brings bookings *in*. Until this step, a
+booking taken anywhere else won't block the night on Airbnb. On each flat's page copy the *For
+Airbnb* link under *Calendar out*, then in Airbnb: that listing → Calendar → Availability → Connect
+to another website → Add calendar. The link carries `?exclude=airbnb` so Airbnb never sees its own
+reservations come back as blocks.
+
+**Check it arrived.** Open the **Calendar** page and press **Sync now**. Bookings should appear
+within a minute, and each flat's page should show its calendar as syncing rather than *Failing*.
 
 **Import last month's earnings.** Revenue → Import earnings. In Airbnb: Earnings → Transaction history →
 export CSV. Upload it.
