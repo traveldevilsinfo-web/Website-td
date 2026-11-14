@@ -24,7 +24,7 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
         {sp.denied && <Notice tone="amber">That page is for managers.</Notice>}
         {biz === "finzo" && <TodayStays manager={false} userId={user.id} />}
         <h2 className="mb-3 text-[15px] font-bold tracking-[-0.01em]">Your expenses · {monthLabel(month)}</h2>
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-4">
           <Stat label="Approved this month" value={inr(s.spent)} href="/ops/expenses" />
           <Stat label="Waiting approval" value={s.pendingCount} hint={inr(s.pendingAmount)} href="/ops/expenses" />
           <Stat label="Expenses added" value={mine.length} href="/ops/expenses" />
@@ -74,22 +74,22 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
       {stale.n > 0 && <Notice tone="amber">{stale.n} expense(s) have waited more than 3 days for approval. <Link className="underline" href="/ops/expenses?status=submitted">Review</Link></Notice>}
 
       {/* The month's books in one strip: in − out = profit */}
-      <section className="relative grid overflow-hidden rounded-[var(--r-lg)] bg-[var(--chrome)] text-white shadow-[var(--shadow-md)] sm:grid-cols-3">
+      <section className="relative grid grid-cols-3 overflow-hidden rounded-[var(--r-lg)] bg-[var(--chrome)] text-white shadow-[var(--shadow-md)]">
         <span aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.18]" style={{ background: "radial-gradient(90% 120% at 100% 0%, var(--acc), transparent 65%)" }} />
         {[
           { label: "Money in", value: inr(rev), hint: biz === "td" ? "Paid website bookings" : "Imported Airbnb payouts, after fees", href: "/ops/reports" },
           { label: "Money out", value: inr(s.spent), hint: "Approved and paid expenses", href: `/ops/expenses?month=${month}` },
           { label: "Profit", value: money(profit), hint: rev ? `${Math.round((profit / rev) * 100)}% margin` : "No revenue yet", href: "/ops/reports", loss: profit < 0 },
         ].map((x, i) => (
-          <Link key={x.label} href={x.href} className={`relative block px-6 py-5 transition-colors duration-200 hover:bg-white/[0.07] ${i ? "border-t border-white/10 sm:border-l sm:border-t-0" : ""}`}>
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-zinc-400">{x.label}</p>
-            <p className={`mt-1.5 whitespace-nowrap text-[34px] font-extrabold leading-[1.05] tracking-[-0.03em] ${x.loss ? "text-red-400" : i === 2 ? "text-[var(--acc)]" : ""}`}>{x.value}</p>
-            <p className="mt-1 text-xs text-zinc-500">{x.hint}</p>
+          <Link key={x.label} href={x.href} className={`relative block px-3 py-3.5 transition-colors duration-200 hover:bg-white/[0.07] sm:px-6 sm:py-5 ${i ? "border-l border-white/10" : ""}`}>
+            <p className="text-[9.5px] font-extrabold uppercase leading-tight tracking-[0.08em] text-zinc-400 sm:text-[11px] sm:tracking-[0.14em]">{x.label}</p>
+            <p className={`mt-1 whitespace-nowrap text-[18px] font-extrabold leading-[1.05] tracking-[-0.03em] sm:mt-1.5 sm:text-[34px] ${x.loss ? "text-red-400" : i === 2 ? "text-[var(--acc)]" : ""}`}>{x.value}</p>
+            <p className="mt-1 text-xs text-zinc-500 max-sm:hidden">{x.hint}</p>
           </Link>
         ))}
       </section>
 
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+      <div className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-4">
         <Stat label="Waiting approval" value={s.pendingCount} hint={inr(s.pendingAmount)} href="/ops/expenses?status=submitted" alert={!!s.pendingCount} />
         <Stat label="Approved, not paid yet" value={inr(s.unpaid)} href={`/ops/expenses?month=${month}&status=approved`} />
       </div>
