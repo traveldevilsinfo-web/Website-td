@@ -22,23 +22,28 @@ back office uses a second one.
 
 ## 2. Set the environment variables in Vercel
 
-Vercel → the `website-td` project → **Settings** → **Environment Variables**. Add these for
-**Production** (and Preview, if you want the preview deployments to work):
+Vercel → the project that serves traveldevils.in → **Settings** → **Environment Variables**. Add
+these for **Production** (and Preview, if you want the preview deployments to work):
 
 | Name | Value | What breaks without it |
 |---|---|---|
-| `SUPABASE_OPS_BUCKET` | `ops-private` | Receipts fail to upload |
 | `NEXT_PUBLIC_SITE_URL` | `https://traveldevils.in` (your real site address) | Guest links and calendar links point at `localhost` |
-| `CRON_SECRET` | a long random string | The nightly jobs refuse to run |
 
-These should already exist from the website; check they are set:
-`DATABASE_URL`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_BUCKET`.
+That is usually the only one to add. Two more only matter in particular cases:
 
-To generate a `CRON_SECRET`:
+- `CRON_SECRET` — **the website already has one**, and the back office's nightly jobs check the same
+  variable, so reuse it. Adding a second is what Vercel rejects with *"a variable with the name
+  CRON_SECRET already exists"*. Only set it if the project genuinely has none.
+- `SUPABASE_OPS_BUCKET` — only if the private bucket is **not** called `ops-private`, which is what
+  the code falls back to.
 
-```bash
-openssl rand -hex 32
-```
+> `NEXT_PUBLIC_SITE_URL` cannot be marked **secret**. Anything with the `NEXT_PUBLIC_` prefix is
+> compiled into the browser bundle, so Vercel refuses it and says to use *visibility: config*
+> instead. Turn the secret toggle off on that one.
+
+These should already exist from the website; check they are set, because the back office needs them
+too — `DATABASE_URL` (nothing loads without it), and `SUPABASE_URL` plus
+`SUPABASE_SERVICE_ROLE_KEY` (receipt photos fail to upload without them).
 
 ## 3. Run the database migrations
 
