@@ -18,7 +18,8 @@
     "blog:load": "tsx --env-file=.env.local scripts/load-blog.mts",
     "trips:load": "tsx --env-file=.env.local scripts/load-trips.mts",
     "ops:owner": "tsx --env-file=.env.local scripts/create-ops-owner.mts",
-    "ops:airbnb": "tsx --env-file=.env.local scripts/import-airbnb-listings.mts"
+    "ops:airbnb": "tsx --env-file=.env.local scripts/import-airbnb-listings.mts",
+    "ops:kit": "tsx --env-file=.env.local scripts/seed-room-kit.mts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.128.0",
