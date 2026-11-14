@@ -43,7 +43,9 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
     db.select({ name: t.inventoryItems.name, qty: sql<number>`coalesce(sum(${t.stockMovements.qty}), 0)::int`, level: t.inventoryItems.reorderLevel })
       .from(t.inventoryItems).leftJoin(t.stockMovements, eq(t.stockMovements.itemId, t.inventoryItems.id))
       .where(and(eq(t.inventoryItems.business, biz), eq(t.inventoryItems.active, true), gt(t.inventoryItems.reorderLevel, 0)))
-      .groupBy(t.inventoryItems.id).having(sql`coalesce(sum(${t.stockMovements.qty}), 0) <= ${t.inventoryItems.reorderLevel}`).limit(6),
+      .groupBy(t.inventoryItems.id).having(sql`coalesce(sum(${t.stockMovements.qty}), 0) <= ${t.inventoryItems.reorderLevel}`)
+      // Worst first, so the six shown are the six that matter.
+      .orderBy(sql`coalesce(sum(${t.stockMovements.qty}), 0) - ${t.inventoryItems.reorderLevel}`).limit(6),
   ]);
   const s = summarize(rows);
   const rev = revenue.get(month) ?? 0;

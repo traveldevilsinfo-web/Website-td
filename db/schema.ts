@@ -686,7 +686,8 @@ export const stockMovements = pgTable(
   {
     id: serial("id").primaryKey(),
     itemId: integer("item_id").notNull().references(() => inventoryItems.id, { onDelete: "cascade" }),
-    propertyId: integer("property_id").references(() => properties.id, { onDelete: "set null" }), // null = the store
+    // restrict, not set null: silently moving a deleted flat's stock into the store would invent a surplus.
+    propertyId: integer("property_id").references(() => properties.id, { onDelete: "restrict" }), // null = the store
     qty: integer("qty").notNull(), // signed: what this movement did to the stock at that place
     kind: stockKindEnum("kind").notNull(),
     tripBatchId: integer("trip_batch_id").references(() => tripBatches.id, { onDelete: "set null" }), // TD gear on a departure

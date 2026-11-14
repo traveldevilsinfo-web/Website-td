@@ -31,35 +31,42 @@ export async function buildRun(month: string): Promise<ActionState> {
     .onConflictDoUpdate({ target: [t.payrollRuns.business, t.payrollRuns.month], set: { updatedAt: new Date() } }).returning();
   if (run.status !== "draft") return { ok: false, message: `${month} is already ${run.status}.` };
 
-  const people = await db.select().from(t.employees)
-    .where(and(eq(t.employees.business, biz), or(eq(t.employees.active, true), sql`${t.employees.exitDate} is null`, gte(t.employees.exitDate, from))));
-  const [marks, advances, existing] = await Promise.all([
-    db.select({ employeeId: t.attendance.employeeId, date: t.attendance.date, status: t.attendance.status }).from(t.attendance)
-      .innerJoin(t.employees, eq(t.employees.id, t.attendance.employeeId))
-      .where(and(eq(t.employees.business, biz), gte(t.attendance.date, from), lte(t.attendance.date, to))),
-    db.select({ a: t.advances }).from(t.advances).innerJoin(t.employees, eq(t.employees.id, t.advances.employeeId))
-      .where(and(eq(t.employees.business, biz), sql`${t.advances.recovered} < ${t.advances.amount}`)),
-    db.select().from(t.payslips).where(eq(t.payslips.runId, run.id)),
-  ]);
+  // Build under a lock on this run, and re-check the status inside it: without that, an owner locking the
+  // month mid-build would end up holding figures that were written after the lock.
+  const locked = await db.transaction(async (tx) => {
+    await tx.execute(sql`select pg_advisory_xact_lock(7303, ${run.id})`);
+    const [fresh] = await tx.select({ status: t.payrollRuns.status }).from(t.payrollRuns).where(eq(t.payrollRuns.id, run.id));
+    if (fresh?.status !== "draft") return true;
 
-  for (const p of people) {
-    // Someone who joined after this month, or left before it, was never on this month's payroll.
-    if ((p.joinDate && p.joinDate > to) || (p.exitDate && p.exitDate < from)) continue;
-    const payableHalf = payableHalfDays(month, marks.filter((m) => m.employeeId === p.id) as { date: string; status: AttendanceStatus }[], p);
-    const was = existing.find((x) => x.employeeId === p.id);
-    const slip = computePayslip({
-      payType: p.payType, monthlySalary: p.monthlySalary, dailyRate: p.dailyRate, daysInMonth, payableHalf,
-      incentives: was?.incentives ?? 0,
-      advanceRecovery: was ? was.advanceRecovery : advanceDue(advances.map((x) => x.a).filter((a) => a.employeeId === p.id)),
-      deductions: was?.deductions ?? 0,
-    });
-    // Write every figure the slip was computed from, so the row can never disagree with its own net.
-    await db.insert(t.payslips).values({ runId: run.id, employeeId: p.id, daysInMonth, payableDays: payableHalf, ...slip })
-      .onConflictDoUpdate({ target: [t.payslips.runId, t.payslips.employeeId], set: { daysInMonth, payableDays: payableHalf, ...slip } });
-  }
-  // Someone may have locked the run while we were building: don't leave fresh figures inside a locked month.
-  const [still] = await db.select({ status: t.payrollRuns.status }).from(t.payrollRuns).where(eq(t.payrollRuns.id, run.id));
-  if (still?.status !== "draft") return { ok: false, message: "This payroll was locked while it was being rebuilt. Unlock it and try again." };
+    const people = await tx.select().from(t.employees)
+      .where(and(eq(t.employees.business, biz), or(eq(t.employees.active, true), sql`${t.employees.exitDate} is null`, gte(t.employees.exitDate, from))));
+    const [marks, advances, existing] = await Promise.all([
+      tx.select({ employeeId: t.attendance.employeeId, date: t.attendance.date, status: t.attendance.status }).from(t.attendance)
+        .innerJoin(t.employees, eq(t.employees.id, t.attendance.employeeId))
+        .where(and(eq(t.employees.business, biz), gte(t.attendance.date, from), lte(t.attendance.date, to))),
+      tx.select({ a: t.advances }).from(t.advances).innerJoin(t.employees, eq(t.employees.id, t.advances.employeeId))
+        .where(and(eq(t.employees.business, biz), sql`${t.advances.recovered} < ${t.advances.amount}`)),
+      tx.select().from(t.payslips).where(eq(t.payslips.runId, run.id)),
+    ]);
+
+    for (const p of people) {
+      // Someone who joined after this month, or left before it, was never on this month's payroll.
+      if ((p.joinDate && p.joinDate > to) || (p.exitDate && p.exitDate < from)) continue;
+      const payableHalf = payableHalfDays(month, marks.filter((m) => m.employeeId === p.id) as { date: string; status: AttendanceStatus }[], p);
+      const was = existing.find((x) => x.employeeId === p.id);
+      const slip = computePayslip({
+        payType: p.payType, monthlySalary: p.monthlySalary, dailyRate: p.dailyRate, daysInMonth, payableHalf,
+        incentives: was?.incentives ?? 0,
+        advanceRecovery: was ? was.advanceRecovery : advanceDue(advances.map((x) => x.a).filter((a) => a.employeeId === p.id)),
+        deductions: was?.deductions ?? 0,
+      });
+      // Write every figure the slip was computed from, so the row can never disagree with its own net.
+      await tx.insert(t.payslips).values({ runId: run.id, employeeId: p.id, daysInMonth, payableDays: payableHalf, ...slip })
+        .onConflictDoUpdate({ target: [t.payslips.runId, t.payslips.employeeId], set: { daysInMonth, payableDays: payableHalf, ...slip } });
+    }
+    return false;
+  });
+  if (locked) return { ok: false, message: "This payroll was locked while it was being rebuilt. Unlock it first." };
   revalidatePath("/ops/payroll");
   redirect(`/ops/payroll/${run.id}`);
 }
@@ -95,7 +102,11 @@ export async function lockRun(id: number) {
   const { user, biz } = await requireOps({ owner: true });
   const run = await openRun(id, biz);
   if (!run || run.status !== "draft") return;
-  await db.update(t.payrollRuns).set({ status: "locked", lockedBy: user.id, lockedAt: new Date() }).where(eq(t.payrollRuns.id, id));
+  await db.transaction(async (tx) => {
+    await tx.execute(sql`select pg_advisory_xact_lock(7303, ${id})`); // wait for any rebuild to finish first
+    await tx.update(t.payrollRuns).set({ status: "locked", lockedBy: user.id, lockedAt: new Date() })
+      .where(and(eq(t.payrollRuns.id, id), eq(t.payrollRuns.status, "draft")));
+  });
   revalidatePath("/ops", "layout");
 }
 
