@@ -48,7 +48,7 @@ export default async function RunPage({ params, searchParams }: PageProps<"/ops/
             <td className="text-right">{s.incentives ? inr(s.incentives) : "—"}</td>
             <td className="text-right">{s.advanceRecovery ? `−${inr(s.advanceRecovery)}` : "—"}</td>
             <td className="text-right">{s.deductions ? `−${inr(s.deductions)}` : "—"}</td>
-            <td className="text-right font-semibold">{inr(s.net)}</td>
+            <td className="text-right text-[15px] font-extrabold tracking-[-0.015em]">{inr(s.net)}</td>
             <td className="text-right">{draft && <details className="inline-block text-left"><summary className={`${btnQuiet} list-none`}>Adjust</summary>
               <div className="absolute right-4 z-10 mt-1 w-72 rounded-xl border border-[var(--line)] bg-[var(--surface)] p-4 shadow-lg">
                 <OpsForm action={adjustSlip.bind(null, s.id)} submitLabel="Save" className="space-y-3">
@@ -62,7 +62,7 @@ export default async function RunPage({ params, searchParams }: PageProps<"/ops/
             </td>
           </tr>
         ))}
-        <tr className="bg-zinc-50 font-semibold"><td colSpan={6}>Total to pay</td><td className="text-right">{inr(total)}</td><td /></tr>
+        <tr className="border-t-2 border-[var(--line)] bg-[var(--sunk)] text-[15px] font-extrabold tracking-[-0.015em]"><td colSpan={6}>Total to pay</td><td className="text-right">{inr(total)}</td><td /></tr>
       </DataTable>
 
       {run.status === "locked" && owner && (

@@ -29,17 +29,17 @@ export default async function ReportsPage({ searchParams }: PageProps<"/ops/repo
       <PageHeader title="Profit & loss" sub={`${BIZ_LABEL[biz]} · ${monthLabel(month)}`}
         action={<div className="flex items-center gap-2"><MonthPicker month={month} /><a href={`/ops/reports/export?month=${month}`} className={btnGhost}>Download CSV</a></div>} />
       <Panel title="Summary">
-        <dl className="divide-y divide-zinc-100 text-sm">
+        <dl className="divide-y divide-[var(--line)] text-sm">
           <div className="flex justify-between py-2"><dt className="font-semibold">Revenue</dt><dd className="font-bold">{inr(rev)}</dd></div>
           {kinds.map(({ k, cats }) => (
             <div key={k} className="py-2">
               <dt className="flex justify-between font-semibold capitalize"><span>{k} costs</span><span>−{inr(cats.reduce((n, c) => n + c.amount, 0))}</span></dt>
-              {cats.map((c) => <dd key={c.category} className="flex justify-between pl-4 text-zinc-600"><span>{c.category}</span><span>{inr(c.amount)}</span></dd>)}
+              {cats.map((c) => <dd key={c.category} className="flex justify-between pl-4 text-[var(--muted)]"><span>{c.category}</span><span>{inr(c.amount)}</span></dd>)}
             </div>
           ))}
           <div className="flex justify-between py-2 text-base"><dt className="font-extrabold">Profit</dt><dd className={`font-extrabold ${rev - s.spent < 0 ? "text-red-600" : ""}`}>{money(rev - s.spent)}</dd></div>
         </dl>
-        <p className="text-xs text-zinc-500">
+        <p className="text-xs text-[var(--muted)]">
           Counts approved and paid expenses. Not included: {s.pendingCount} waiting approval ({inr(s.pendingAmount)}){s.needsAmount ? `, ${s.needsAmount} bill(s) without an amount` : ""}.
           {biz === "finzo" && " Income is the imported Airbnb payouts; see Revenue for the breakdown per flat."}
         </p>
@@ -52,7 +52,7 @@ export default async function ReportsPage({ searchParams }: PageProps<"/ops/repo
               <tr key={x.trip + x.date}><td>{x.date && dateShort(x.date)}</td><td className="font-semibold">{x.trip}</td><td>{x.count}</td><td className="font-semibold">{inr(x.amount)}</td></tr>
             ))}
           </DataTable>
-          <p className="mt-2 text-xs text-zinc-500">Revenue per departure and margin are still to come.</p>
+          <p className="mt-2 text-xs text-[var(--muted)]">Revenue per departure and margin are still to come.</p>
         </div>
       )}
     </>

@@ -15,11 +15,11 @@ function Access({ role = "staff", businesses = [] }: { role?: OpsRole; businesse
         </select>
       </Field>
       <fieldset>
-        <legend className="mb-1 text-xs font-semibold uppercase tracking-wide text-zinc-600">Businesses</legend>
+        <legend className="mb-1 text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">Businesses</legend>
         <div className="flex flex-wrap gap-4 pt-1.5 text-sm">
           {BUSINESSES.map((b) => <label key={b} className="inline-flex items-center gap-2"><input type="checkbox" name={`biz_${b}`} defaultChecked={businesses.includes(b)} className="size-4 accent-[var(--acc)]" />{BIZ_LABEL[b]}</label>)}
         </div>
-        <p className="mt-1 text-xs text-zinc-500">Owners always see both.</p>
+        <p className="mt-1 text-xs text-[var(--muted)]">Owners always see both.</p>
       </fieldset>
     </>
   );
@@ -33,17 +33,17 @@ export default async function TeamPage() {
       <PageHeader title="Team" sub="Who can sign in to the back office. These accounts are separate from the website admin." />
       <div className="space-y-3">
         {people.map((p) => (
-          <details key={p.id} className="group rounded-lg border border-zinc-200 bg-white open:shadow-sm">
+          <details key={p.id} className="group rounded-lg border border-[var(--line)] bg-white open:shadow-sm">
             <summary className="flex cursor-pointer list-none items-center gap-3 px-4 py-3">
-              <span className="grid size-9 shrink-0 place-items-center rounded-full bg-zinc-900 text-sm font-semibold text-white">{p.name.slice(0, 1).toUpperCase()}</span>
+              <span className="grid size-9 shrink-0 place-items-center rounded-full bg-[var(--ink)] text-sm font-semibold text-white">{p.name.slice(0, 1).toUpperCase()}</span>
               <span className="min-w-0 flex-1">
-                <span className="block truncate font-semibold">{p.name}{p.id === me.id && <span className="font-normal text-zinc-500"> (you)</span>}</span>
-                <span className="block truncate text-xs text-zinc-500">{p.email}{p.phone && ` · ${p.phone}`}</span>
+                <span className="block truncate font-semibold">{p.name}{p.id === me.id && <span className="font-normal text-[var(--muted)]"> (you)</span>}</span>
+                <span className="block truncate text-xs text-[var(--muted)]">{p.email}{p.phone && ` · ${p.phone}`}</span>
               </span>
               <span className="hidden gap-1 sm:flex">{(p.role === "owner" ? BUSINESSES : p.businesses).map((b) => <Badge key={b}>{b === "td" ? "TD" : "Finzo"}</Badge>)}</span>
               <Badge tone={p.active ? (p.role === "owner" ? "blue" : "green") : "gray"}>{p.active ? ROLE_LABEL[p.role] : "Switched off"}</Badge>
             </summary>
-            <div className="border-t border-zinc-100 p-4">
+            <div className="border-t border-[var(--line)] p-4">
               <OpsForm action={updateMember.bind(null, p.id)} className="grid gap-4 sm:grid-cols-2">
                 <Access role={p.role} businesses={p.businesses} />
                 <Field label="Phone"><input name="phone" type="tel" defaultValue={p.phone ?? ""} className={input} /></Field>

@@ -23,7 +23,7 @@ export default async function ImportEarningsPage() {
             <li>Upload it here. Re-uploading the same file is safe.</li>
           </ol>
           <OpsForm action={importEarningsAction} submitLabel="Import">
-            <Field label="Airbnb CSV"><input type="file" name="file" accept=".csv,text/csv" required className={`${input} py-2 file:mr-3 file:rounded file:border-0 file:bg-zinc-100 file:px-2 file:py-1 file:text-sm`} /></Field>
+            <Field label="Airbnb CSV"><input type="file" name="file" accept=".csv,text/csv" required className={`${input} py-2 file:mr-3 file:rounded file:border-0 file:bg-[var(--sunk)] file:px-2 file:py-1 file:text-sm`} /></Field>
           </OpsForm>
           <p className="mt-3 text-xs text-[var(--muted)]">Only reservation rows are imported. Payout rows are the bank transfers of money already counted, and resolutions or adjustments are reported so you can add them as income or an expense yourself.</p>
         </Panel>

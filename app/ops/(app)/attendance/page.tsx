@@ -35,8 +35,8 @@ export default async function AttendancePage({ searchParams }: PageProps<"/ops/a
           <div className="overflow-x-auto rounded-xl border border-[var(--line)] bg-[var(--surface)]">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-[var(--line)] bg-zinc-50 text-[10px] text-[var(--muted)]">
-                  <th scope="col" className="sticky left-0 z-10 bg-zinc-50 px-3 py-2 text-left font-medium">Person</th>
+                <tr className="border-b border-[var(--line)] bg-[var(--sunk)] text-[10px] text-[var(--muted)]">
+                  <th scope="col" className="sticky left-0 z-10 bg-[var(--sunk)] px-3 py-2 text-left font-medium">Person</th>
                   {days.map((d) => (
                     <th key={d} scope="col" className={`w-8 py-2 text-center font-medium ${d === today ? "text-[var(--acc)]" : ""}`}>{Number(d.slice(8))}</th>
                   ))}
@@ -68,7 +68,7 @@ export default async function AttendancePage({ searchParams }: PageProps<"/ops/a
           <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-[var(--muted)]">
             {(Object.keys(ATTENDANCE_LABEL) as AttendanceStatus[]).map((k) => (
               <span key={k} className="inline-flex items-center gap-1.5">
-                <span className={`grid size-5 place-items-center rounded text-[10px] font-semibold ${k === "present" ? "bg-zinc-50 text-zinc-400" : k === "absent" ? "bg-red-100 text-red-800" : k === "half" ? "bg-amber-100 text-amber-900" : k === "leave" ? "bg-sky-100 text-sky-800" : "bg-zinc-200 text-zinc-600"}`}>
+                <span className={`grid size-5 place-items-center rounded text-[10px] font-semibold ${k === "present" ? "bg-[var(--sunk)] text-[var(--muted)]" : k === "absent" ? "bg-red-100 text-red-800" : k === "half" ? "bg-amber-100 text-amber-900" : k === "leave" ? "bg-sky-100 text-sky-800" : "bg-[var(--line)] text-[var(--muted)]"}`}>
                   {k === "present" ? "P" : k === "absent" ? "A" : k === "half" ? "½" : k === "leave" ? "L" : "O"}
                 </span>{ATTENDANCE_LABEL[k]}
               </span>

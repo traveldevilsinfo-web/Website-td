@@ -49,7 +49,7 @@ export default async function TripsPage({ searchParams }: PageProps<"/ops/trips"
                 <td className="text-right text-[var(--muted)]">{r.pax ? money(r.perPax - r.costPerPax) : "—"}</td>
               </tr>
             ))}
-            <tr className="bg-zinc-50 font-semibold">
+            <tr className="border-t-2 border-[var(--line)] bg-[var(--sunk)] text-[15px] font-extrabold tracking-[-0.015em]">
               <td>{rows.length} departures</td>
               <td className="text-right">{sum("pax")}</td>
               <td className="text-right">{inr(sum("revenue"))}</td>

@@ -15,11 +15,11 @@ export default async function VendorsPage({ searchParams }: PageProps<"/ops/vend
       <form className="mb-4"><input name="q" defaultValue={q} placeholder="Search vendors…" className={`${input} max-w-xs`} /></form>
       <DataTable head={["Name", "Type", "Phone", "Pay to", "Status"]} empty={!rows.length} emptyText={q ? "No vendor matches." : "No vendors yet."}>
         {rows.map((v) => (
-          <tr key={v.id} className="group relative hover:bg-zinc-50">
+          <tr key={v.id} className="group relative hover:bg-[var(--sunk)]">
             <td><Link href={`/ops/vendors/${v.id}`} className="font-semibold after:absolute after:inset-0 group-hover:underline">{v.name}</Link></td>
             <td className="capitalize">{v.kind}</td>
             <td>{v.phone}</td>
-            <td className="max-w-48 truncate text-xs text-zinc-600">{v.payTo}</td>
+            <td className="max-w-48 truncate text-xs text-[var(--muted)]">{v.payTo}</td>
             <td><Badge tone={v.active ? "green" : "gray"}>{v.active ? "Active" : "Off"}</Badge></td>
           </tr>
         ))}

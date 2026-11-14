@@ -25,16 +25,16 @@ export default async function FixedCostsPage({ searchParams }: PageProps<"/ops/f
       <DataTable head={["Name", "Category", "Amount", "Day", "Last posted", "Status"]} empty={!rows.length} emptyText="No fixed costs yet.">
         {rows.map(({ r, ...x }) => (
           <tr key={r.id} className="group relative">
-            <td><Link href={`/ops/fixed-costs/${r.id}`} className="font-semibold after:absolute after:inset-0 group-hover:underline">{r.name}</Link><p className="text-xs text-zinc-500">{x.vendor}</p></td>
+            <td><Link href={`/ops/fixed-costs/${r.id}`} className="font-semibold after:absolute after:inset-0 group-hover:underline">{r.name}</Link><p className="text-xs text-[var(--muted)]">{x.vendor}</p></td>
             <td>{x.category}</td>
             <td className="font-semibold">{r.amount ? inr(r.amount) : <span className="text-amber-700">variable</span>}</td>
             <td>{r.dayOfMonth}</td>
-            <td className="text-zinc-600">{x.last ?? "—"}</td>
+            <td className="text-[var(--muted)]">{x.last ?? "—"}</td>
             <td><Badge tone={r.active ? "green" : "gray"}>{r.active ? "Active" : "Off"}</Badge></td>
           </tr>
         ))}
       </DataTable>
-      {!!rows.length && <p className="mt-3 text-right text-sm text-zinc-600">Known monthly total <b className="text-zinc-900">{inr(monthly)}</b> + variable bills</p>}
+      {!!rows.length && <p className="mt-3 text-right text-sm text-[var(--muted)]">Known monthly total <b className="text-[var(--ink)]">{inr(monthly)}</b> + variable bills</p>}
     </>
   );
 }

@@ -55,7 +55,7 @@ export default async function RevenuePage({ searchParams }: PageProps<"/ops/reve
             <td className={`text-right font-semibold ${r.profit < 0 ? "text-[var(--bad)]" : ""}`}>{money(r.profit)}</td>
           </tr>
         ))}
-        <tr className="bg-zinc-50 font-semibold">
+        <tr className="border-t-2 border-[var(--line)] bg-[var(--sunk)] text-[15px] font-extrabold tracking-[-0.015em]">
           <td>All flats</td>
           <td className="text-right">{sum("soldNights")}<span className="font-normal text-[var(--muted)]">/{sum("availableNights")}</span></td>
           <td className="text-right">{pc(sum("availableNights") ? sum("soldNights") / sum("availableNights") : 0)}</td>

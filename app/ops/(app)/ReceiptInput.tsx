@@ -35,15 +35,15 @@ export function ReceiptInput({ defaultPath }: { defaultPath?: string | null }) {
     <div>
       <input type="hidden" name="receiptPath" value={path} />
       {path ? (
-        <div className="flex items-center gap-3 rounded-md border border-zinc-200 bg-white p-2">
-          {isPdf ? <FileText className="size-10 text-zinc-400" aria-hidden />
+        <div className="flex items-center gap-3 rounded-md border border-[var(--line)] bg-white p-2">
+          {isPdf ? <FileText className="size-10 text-[var(--muted)]" aria-hidden />
             // eslint-disable-next-line @next/next/no-img-element
             : <img src={preview ?? fileUrl(path)} alt="Receipt" className="size-16 rounded-lg object-cover" />}
-          <a href={preview ?? fileUrl(path)} target="_blank" className="flex-1 text-sm font-semibold text-zinc-700 underline">{isPdf ? "PDF attached" : "View receipt"}</a>
-          <button type="button" onClick={() => { setPath(""); setPreview(null); }} aria-label="Remove receipt" className="grid size-9 place-items-center rounded-lg text-zinc-500 hover:bg-zinc-100"><X className="size-4" /></button>
+          <a href={preview ?? fileUrl(path)} target="_blank" className="flex-1 text-sm font-semibold text-[var(--ink)] underline">{isPdf ? "PDF attached" : "View receipt"}</a>
+          <button type="button" onClick={() => { setPath(""); setPreview(null); }} aria-label="Remove receipt" className="grid size-9 place-items-center rounded-lg text-[var(--muted)] hover:bg-[var(--sunk)]"><X className="size-4" /></button>
         </div>
       ) : (
-        <label className={`flex cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-dashed border-zinc-300 bg-white px-4 py-5 text-sm font-semibold text-zinc-600 hover:border-zinc-400 ${busy ? "opacity-60" : ""}`}>
+        <label className={`flex cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-dashed border-[color-mix(in_oklab,var(--ink)_20%,transparent)] bg-white px-4 py-5 text-sm font-semibold text-[var(--muted)] hover:border-zinc-400 ${busy ? "opacity-60" : ""}`}>
           <Camera className="size-5" aria-hidden /> {busy ? "Uploading…" : "Take photo or attach bill"}
           <input type="file" accept="image/jpeg,image/png,image/webp,application/pdf" className="sr-only" disabled={busy}
             onChange={(e) => onFile(e.target.files?.[0])} />

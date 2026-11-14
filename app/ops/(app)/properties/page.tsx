@@ -24,11 +24,11 @@ export default async function FlatsPage() {
             const broken = mine.some((f) => f.error);
             return (
               <li key={p.id}>
-                <Link href={`/ops/properties/${p.id}`} className={`block h-full cursor-pointer rounded-xl border bg-[var(--surface)] p-4 transition-colors duration-150 hover:border-zinc-300 ${p.active ? "border-[var(--line)]" : "border-dashed border-zinc-300 opacity-70"}`}>
+                <Link href={`/ops/properties/${p.id}`} className={`ops-lift block h-full cursor-pointer rounded-[var(--r-md)] border bg-[var(--surface)] p-4 shadow-[var(--shadow-sm)] ${p.active ? "border-[var(--line)]" : "border-dashed border-[color-mix(in_oklab,var(--ink)_20%,transparent)] opacity-70"}`}>
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">
                       <p className="font-mono text-xs font-semibold text-[var(--muted)]">{p.code}</p>
-                      <p className="truncate text-[15px] font-semibold">{p.name}</p>
+                      <p className="truncate text-[15px] font-bold tracking-[-0.012em]">{p.name}</p>
                       <p className="truncate text-xs text-[var(--muted)]">{[p.area, `${p.bedrooms} BR`, `${p.maxGuests} guests`].filter(Boolean).join(" · ")}</p>
                     </div>
                     {!p.active ? <Badge>Off</Badge> : broken ? <Badge tone="red"><AlertTriangle className="size-3" aria-hidden />Sync</Badge> : null}

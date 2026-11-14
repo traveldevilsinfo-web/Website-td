@@ -52,16 +52,19 @@ export default async function CalendarPage({ searchParams }: PageProps<"/ops/cal
         } />
       {clashing.size > 0 && <Notice tone="red">{clashing.size} stays overlap on the same flat (outlined in red). Open one and cancel it on its channel.</Notice>}
       {!flats.length ? <Empty text="No flats yet." action={<Link href="/ops/properties/new" className={btnPrimary}>Add a flat</Link>} /> : (
-        <div className="overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface)]">
-          <div className="overflow-x-auto overscroll-x-contain">
+        <div className="overflow-hidden rounded-[var(--r-md)] border border-[var(--line)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
+          <div className="ops-scroll overflow-x-auto overscroll-x-contain">
             <div className="grid min-w-[44rem]" style={grid} role="grid" aria-label="Bookings by flat and day">
               {/* header */}
-              <div className="sticky left-0 z-20 border-b border-r border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-xs font-medium text-[var(--muted)]">Flat</div>
+              <div className="sticky left-0 z-20 border-b border-r border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.07em] text-[var(--muted)] shadow-[8px_0_12px_-10px_rgb(16_18_24/0.35)]">Flat</div>
               {dates.map((d) => {
                 const dt = day(d), wknd = [0, 6].includes(dt.getUTCDay());
                 return (
-                  <div key={d} role="columnheader" className={`col-span-2 border-b border-[var(--line)] py-1.5 text-center text-[11px] leading-tight ${d === today ? "bg-[var(--acc)] font-semibold text-white" : wknd ? "bg-zinc-50 text-[var(--ink)]" : "text-[var(--muted)]"}`}>
-                    {dt.toLocaleDateString("en-IN", { weekday: "short", timeZone: "UTC" }).slice(0, 2)}<br /><span className="text-[13px] font-semibold">{dt.getUTCDate()}</span>
+                  <div key={d} role="columnheader" className={`col-span-2 border-b border-[var(--line)] pb-1.5 pt-2 text-center text-[10px] font-bold uppercase leading-tight tracking-[0.06em] ${d === today ? "text-[var(--acc)]" : wknd ? "bg-[var(--sunk)] text-[var(--muted)]" : "text-[var(--muted)]"}`}>
+                    {dt.toLocaleDateString("en-IN", { weekday: "short", timeZone: "UTC" }).slice(0, 2)}
+                    <span className={`mx-auto mt-0.5 grid size-[22px] place-items-center rounded-full text-[12.5px] font-extrabold tracking-normal ${d === today ? "bg-[var(--acc)] text-white shadow-[0_2px_8px_-2px_color-mix(in_oklab,var(--acc)_75%,transparent)]" : "text-[var(--ink)]"}`}>
+                      {dt.getUTCDate()}
+                    </span>
                   </div>
                 );
               })}
@@ -70,13 +73,13 @@ export default async function CalendarPage({ searchParams }: PageProps<"/ops/cal
                 const row = ri + 2;
                 return [
                   <Link key={`n${f.id}`} href={`/ops/properties/${f.id}`} style={{ gridRow: row }}
-                    className="sticky left-0 z-10 flex min-h-12 flex-col justify-center border-b border-r border-[var(--line)] bg-[var(--surface)] px-3 hover:bg-zinc-50">
-                    <span className="font-mono text-[11px] text-[var(--muted)]">{f.code}</span><span className="truncate text-[13px] font-medium">{f.name}</span>
+                    className="sticky left-0 z-10 flex min-h-12 flex-col justify-center border-b border-r border-[var(--line)] bg-[var(--surface)] px-3 shadow-[8px_0_12px_-10px_rgb(16_18_24/0.35)] transition-colors hover:bg-[var(--sunk)]">
+                    <span className="font-mono text-[10.5px] font-bold text-[var(--muted)]">{f.code}</span><span className="truncate text-[13px] font-semibold">{f.name}</span>
                   </Link>,
                   ...dates.map((d, di) => (
                     <Link key={`c${f.id}${d}`} href={`/ops/stays/new?property=${f.id}&date=${d}`} aria-label={`Add booking at ${f.code} on ${dateShort(d)}`} tabIndex={-1}
                       style={{ gridRow: row, gridColumn: `${di * 2 + 2} / span 2` }}
-                      className={`group/c border-b border-[var(--line)] ${di ? "border-l border-l-zinc-100" : ""} ${d === today ? "bg-[var(--acc)]/[0.04]" : [0, 6].includes(day(d).getUTCDay()) ? "bg-zinc-50/60" : ""} hover:bg-[var(--acc)]/[0.07]`}>
+                      className={`group/c border-b border-[var(--line)] ${di ? "border-l border-l-[var(--line)]" : ""} ${d === today ? "bg-[var(--acc)]/[0.04]" : [0, 6].includes(day(d).getUTCDay()) ? "bg-[var(--sunk)]/60" : ""} hover:bg-[var(--acc)]/[0.07]`}>
                       <Plus className="m-auto mt-3.5 size-3.5 text-[var(--acc)] opacity-0 group-hover/c:opacity-60" aria-hidden />
                     </Link>
                   )),
@@ -86,7 +89,7 @@ export default async function CalendarPage({ searchParams }: PageProps<"/ops/cal
                     return (
                       <Link key={`s${s.id}`} href={`/ops/stays/${s.id}`} style={{ gridRow: row, gridColumn: `${Math.max(from, 2)} / ${to}`, background: blocked ? undefined : CHANNEL_COLOR[s.channel as Channel] }}
                         title={`${s.guestName ?? CHANNEL_LABEL[s.channel as Channel]} · ${s.checkIn} → ${s.checkOut} · ${nights(s.checkIn, s.checkOut)} nights`}
-                        className={`z-[5] mx-px my-2 flex min-w-0 items-center truncate rounded-md px-2 text-[12px] font-medium leading-none outline-none transition-[filter] hover:brightness-110 focus-visible:ring-2 focus-visible:ring-[var(--ink)] ${blocked ? "bg-[repeating-linear-gradient(135deg,#e4e4e7_0_6px,#f4f4f5_6px_12px)] text-zinc-600" : "text-white"} ${clash ? "ring-2 ring-[var(--bad)] ring-offset-1" : ""} ${s.checkIn < start ? "rounded-l-none" : ""} ${s.checkOut > end ? "rounded-r-none" : ""}`}>
+                        className={`z-[5] mx-px my-[7px] flex min-w-0 items-center truncate rounded-[7px] px-2 text-[11.5px] font-bold leading-none shadow-[0_1px_2px_rgb(16_18_24/0.18)] outline-none transition-[filter,transform] duration-200 hover:-translate-y-px hover:brightness-110 focus-visible:ring-2 focus-visible:ring-[var(--ink)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${blocked ? "bg-[repeating-linear-gradient(135deg,var(--line)_0_6px,var(--sunk)_6px_12px)] text-[var(--muted)] shadow-none" : "text-white"} ${clash ? "ring-2 ring-[var(--bad)] ring-offset-1" : ""} ${s.checkIn < start ? "rounded-l-none" : ""} ${s.checkOut > end ? "rounded-r-none" : ""}`}>
                         <span className="truncate">{blocked ? "Blocked" : s.guestName ?? CHANNEL_LABEL[s.channel as Channel]}</span>
                       </Link>
                     );
@@ -97,10 +100,10 @@ export default async function CalendarPage({ searchParams }: PageProps<"/ops/cal
           </div>
         </div>
       )}
-      <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-[var(--muted)]">
+      <p className="mt-3.5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11.5px] font-semibold text-[var(--muted)]">
         {(["airbnb", "booking", "vrbo", "mmt", "direct"] as Channel[]).map((c) => <span key={c} className="inline-flex items-center gap-1.5"><ChannelDot c={c} />{CHANNEL_LABEL[c]}</span>)}
-        <span className="inline-flex items-center gap-1.5"><span className="inline-block size-2.5 rounded-sm bg-[repeating-linear-gradient(135deg,#d4d4d8_0_3px,#f4f4f5_3px_6px)]" />Blocked</span>
-        <span className="ml-auto">Tap an empty day to add a booking.</span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block size-2.5 rounded-sm bg-[repeating-linear-gradient(135deg,var(--line)_0_3px,var(--sunk)_3px_6px)]" />Blocked</span>
+        <span className="ml-auto font-medium">Tap an empty day to add a booking.</span>
       </p>
     </>
   );

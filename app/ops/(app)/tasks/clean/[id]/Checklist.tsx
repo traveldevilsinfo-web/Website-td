@@ -24,8 +24,8 @@ export function Checklist({ id, items, locked }: { id: number; items: ChecklistI
                 setState(next);
                 start(() => saveChecklist(id, next.map((x) => x.done)));
               }}
-              className="flex min-h-14 w-full cursor-pointer items-center gap-3 px-4 text-left transition-colors hover:bg-zinc-50 active:bg-zinc-100 disabled:cursor-default sm:px-5">
-              <span className={`grid size-6 shrink-0 place-items-center rounded-md border-2 transition-colors duration-150 ${c.done ? "border-[var(--acc)] bg-[var(--acc)] text-white" : "border-zinc-300"}`}>{c.done && <Check className="size-4" strokeWidth={3} aria-hidden />}</span>
+              className="flex min-h-14 w-full cursor-pointer items-center gap-3 px-4 text-left transition-colors hover:bg-[var(--sunk)] active:bg-[var(--sunk)] disabled:cursor-default sm:px-5">
+              <span className={`grid size-6 shrink-0 place-items-center rounded-md border-2 transition-colors duration-150 ${c.done ? "border-[var(--acc)] bg-[var(--acc)] text-white" : "border-[color-mix(in_oklab,var(--ink)_20%,transparent)]"}`}>{c.done && <Check className="size-4" strokeWidth={3} aria-hidden />}</span>
               <span className={`text-[15px] ${c.done ? "text-[var(--muted)] line-through" : ""}`}>{c.label}</span>
             </button>
           </li>

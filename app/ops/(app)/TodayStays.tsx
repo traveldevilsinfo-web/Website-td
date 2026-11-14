@@ -27,9 +27,9 @@ export async function TodayStays({ manager, userId }: { manager: boolean; userId
   const list = (rows: typeof guests, empty: string) => rows.length
     ? <ul className="mt-2 space-y-1 text-sm">{rows.slice(0, 4).map((s) => <li key={s.id}><Link href={`/ops/stays/${s.id}`} className="flex items-center gap-2 hover:underline"><ChannelDot c={s.channel} /><span className="font-mono text-xs text-[var(--muted)]">{s.code}</span><span className="truncate">{s.guestName ?? CHANNEL_LABEL[s.channel]}</span></Link></li>)}{rows.length > 4 && <li className="text-xs text-[var(--muted)]">+{rows.length - 4} more</li>}</ul>
     : <p className="mt-2 text-sm text-[var(--muted)]">{empty}</p>;
-  const tile = "rounded-xl border border-[var(--line)] bg-[var(--surface)] p-4";
+  const tile = "rounded-[var(--r-md)] border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[var(--shadow-sm)]";
   const head = (label: string, n: number | string, href: string) => (
-    <Link href={href} className="flex items-baseline justify-between gap-2 hover:underline"><span className="text-[13px] font-medium text-[var(--muted)]">{label}</span><span className="text-2xl font-bold tracking-[-0.02em]">{n}</span></Link>
+    <Link href={href} className="flex items-baseline justify-between gap-2 hover:underline"><span className="text-[12px] font-bold uppercase tracking-[0.06em] text-[var(--muted)]">{label}</span><span className="text-[26px] font-extrabold leading-none tracking-[-0.03em]">{n}</span></Link>
   );
 
   return (
@@ -43,7 +43,7 @@ export async function TodayStays({ manager, userId }: { manager: boolean; userId
           {head(manager ? "Cleanings today" : "Your cleanings today", cleanings.length ? `${cleanDone}/${cleanings.length}` : 0, "/ops/tasks")}
           {cleanings.length ? (
             <ul className="mt-2 flex flex-wrap gap-1.5">
-              {cleanings.map((c) => <li key={c.id}><Link href={`/ops/tasks/clean/${c.id}`} className={`inline-flex min-h-8 items-center rounded-full px-2.5 font-mono text-xs font-semibold ${c.status === "done" ? "bg-green-50 text-green-800" : c.nextCheckIn === istToday() ? "bg-amber-100 text-amber-900" : "bg-zinc-100 text-zinc-700"}`}>{c.code}</Link></li>)}
+              {cleanings.map((c) => <li key={c.id}><Link href={`/ops/tasks/clean/${c.id}`} className={`inline-flex min-h-8 items-center rounded-full px-2.5 font-mono text-xs font-semibold ${c.status === "done" ? "bg-green-50 text-green-800" : c.nextCheckIn === istToday() ? "bg-amber-100 text-amber-900" : "bg-[var(--sunk)] text-[var(--ink)]"}`}>{c.code}</Link></li>)}
             </ul>
           ) : <p className="mt-2 text-sm text-[var(--muted)]">Nothing to clean today.</p>}
         </div>

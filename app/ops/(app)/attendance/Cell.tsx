@@ -5,11 +5,11 @@ import type { AttendanceStatus } from "@/lib/hr";
 import { mark } from "./actions";
 
 const LOOK: Record<string, { bg: string; label: string }> = {
-  present: { bg: "bg-zinc-50 text-zinc-400", label: "P" },
+  present: { bg: "bg-[var(--sunk)] text-[var(--muted)]", label: "P" },
   absent: { bg: "bg-red-100 text-red-800", label: "A" },
   half: { bg: "bg-amber-100 text-amber-900", label: "½" },
   leave: { bg: "bg-sky-100 text-sky-800", label: "L" },
-  off: { bg: "bg-zinc-200 text-zinc-600", label: "O" },
+  off: { bg: "bg-[var(--line)] text-[var(--muted)]", label: "O" },
 };
 /** Tapping cycles: present → absent → half → leave → week off → present. */
 const NEXT: Record<string, AttendanceStatus | "clear"> = { present: "absent", absent: "half", half: "leave", leave: "off", off: "clear" };

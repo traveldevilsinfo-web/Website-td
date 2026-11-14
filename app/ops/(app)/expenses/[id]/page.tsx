@@ -79,13 +79,13 @@ export default async function ExpensePage({ params, searchParams }: PageProps<"/
       ) : (
         <Panel title="Details">
           <dl className="grid gap-3 text-sm sm:grid-cols-2">
-            <div><dt className="text-zinc-500">Paid via</dt><dd className="font-semibold uppercase">{e.paidVia ?? "—"}{e.reimburse && " · reimbursement"}</dd></div>
-            <div><dt className="text-zinc-500">Note</dt><dd className="whitespace-pre-line font-semibold">{e.note ?? "—"}</dd></div>
-            {e.receiptPath && <div><dt className="text-zinc-500">Receipt</dt><dd><a className="font-semibold underline" target="_blank" href={`/api/ops/file?path=${encodeURIComponent(e.receiptPath)}`}>Open receipt</a></dd></div>}
+            <div><dt className="text-[var(--muted)]">Paid via</dt><dd className="font-semibold uppercase">{e.paidVia ?? "—"}{e.reimburse && " · reimbursement"}</dd></div>
+            <div><dt className="text-[var(--muted)]">Note</dt><dd className="whitespace-pre-line font-semibold">{e.note ?? "—"}</dd></div>
+            {e.receiptPath && <div><dt className="text-[var(--muted)]">Receipt</dt><dd><a className="font-semibold underline" target="_blank" href={`/api/ops/file?path=${encodeURIComponent(e.receiptPath)}`}>Open receipt</a></dd></div>}
           </dl>
         </Panel>
       )}
-      <p className="mt-4 text-xs text-zinc-500">
+      <p className="mt-4 text-xs text-[var(--muted)]">
         {row.approvedByName && <>Approved by {row.approvedByName} {when(e.approvedAt)}. </>}
         {e.paidAt && <>Paid {when(e.paidAt)}{e.paidRef && ` (ref ${e.paidRef})`}.</>}
       </p>

@@ -38,14 +38,14 @@ export default async function StockPage({ searchParams }: PageProps<"/ops/stock"
           <DataTable head={["Item", "In store", ...columns.map((f) => f.code), "Total", ""]}
             align={[undefined, "r", ...columns.map(() => "r" as const), "r", undefined]} empty={!shown.length} emptyText={only === "low" ? "Nothing is running low." : "Nothing here."}>
             {shown.map(({ i, qty, store, low }) => (
-              <tr key={i.id} className={`group relative ${i.active ? "" : "opacity-60"}`}>
+              <tr key={i.id} className={`group relative ${low && i.active ? "bg-amber-50/60" : ""} ${i.active ? "" : "opacity-60"}`}>
                 <td>
-                  <Link href={`/ops/stock/${i.id}`} className="font-medium after:absolute after:inset-0 group-hover:underline">{i.name}</Link>
+                  <Link href={`/ops/stock/${i.id}`} className="font-semibold after:absolute after:inset-0 group-hover:underline">{i.name}</Link>
                   <span className="block text-xs text-[var(--muted)]">{[i.category, i.unit, i.perTurnover > 0 && `${i.perTurnover} per cleaning`].filter(Boolean).join(" · ")}</span>
                 </td>
                 <td className="text-right">{store}</td>
                 {columns.map((f) => <td key={f.id} className="text-right text-[var(--muted)]">{stockAt(totals, i.id, f.id) || "·"}</td>)}
-                <td className="text-right font-semibold">{qty}</td>
+                <td className="text-right text-[15px] font-extrabold tracking-[-0.015em]">{qty}</td>
                 <td>{low && <Badge tone="amber"><AlertTriangle className="size-3" aria-hidden />Low</Badge>}</td>
               </tr>
             ))}
