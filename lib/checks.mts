@@ -874,3 +874,27 @@ import { isOpeningCount } from "./room";
 assert.equal(isOpeningCount([]), true);                        // nothing counted here yet
 assert.equal(isOpeningCount([{ itemId: 1, qty: 4 }]), false);  // this flat has history
 console.log("opening count checks passed");
+
+// ---------------- what one box on the kit check writes
+import { planKitEntry } from "./room";
+const entry = (raw: string | null | undefined, actual: number, reason: string | null = null, opening = false) =>
+  planKitEntry({ itemId: 11, propertyId: 20, raw, actual, reason, opening, reservationId: 42, unitCost: 450 });
+// Fewer than the ledger holds, with a reason: ONE damaged row, signed against the actual and tied to the stay
+assert.deepEqual(entry("2", 4, "stolen"), { kind: "damaged", qty: -2, reason: "stolen", reservationId: 42, unitCost: 450 });
+assert.equal(entry("0", 4, "lost")?.qty, -4);                 // all of it gone is -4, never -0 or 4
+// Fewer, with nothing said: a count correction, and no stay is blamed
+assert.deepEqual(entry("3", 4), { kind: "count", qty: -1, reason: null, reservationId: null, unitCost: 450 });
+// More than the ledger holds: a positive count, no reason survives, no stay
+assert.deepEqual(entry("6", 4, "stolen"), { kind: "count", qty: 2, reason: null, reservationId: null, unitCost: 450 });
+// The same number: nothing at all is written
+assert.equal(entry("4", 4, "stolen"), null);
+assert.equal(entry("0", 0), null);
+// Untouched or unreadable: silence, never a loss invented out of an empty box
+for (const raw of [undefined, null, "", "   ", "abc", "-1", "2.5", "1e2", "4 towels"]) assert.equal(entry(raw, 4), null, `raw ${String(raw)} must write nothing`);
+// A first count sets the baseline: a reason is dropped, so it can never read as a loss
+assert.deepEqual(entry("4", 0, "stolen", true), { kind: "count", qty: 4, reason: null, reservationId: null, unitCost: 450 });
+assert.equal(entry("0", 2, "stolen", true)?.kind, "count");   // even a drop, on a first count, is only a count
+assert.equal(entry("0", 2, "stolen", true)?.reason, null);
+// planShortfall itself must drop a reason on a surplus; the caller's guard is not the only thing holding it
+assert.equal(planShortfall(sh(2, "stolen"))?.reason, null);
+console.log("kit entry checks passed");

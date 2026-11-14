@@ -4,25 +4,28 @@ import { db, t } from "./db";
 import { fitOutValue, kitLines, type KitRow } from "./room";
 import { stockTotals } from "./stock";
 
+/** The pool, or a transaction: a caller holding a lock must read through its own transaction, not around it. */
+type Conn = Pick<typeof db, "select">;
+
 /** Every kit row: the standard (propertyId null) and any per-flat overrides. */
-export async function effectiveKit(): Promise<KitRow[]> {
-  return db.select({ itemId: t.propertyKit.itemId, propertyId: t.propertyKit.propertyId, expected: t.propertyKit.expected }).from(t.propertyKit);
+export async function effectiveKit(conn: Conn = db): Promise<KitRow[]> {
+  return conn.select({ itemId: t.propertyKit.itemId, propertyId: t.propertyKit.propertyId, expected: t.propertyKit.expected }).from(t.propertyKit);
 }
 
 /**
  * A flat's room: counted lines plus its active fixtures. The kit decides what is counted: an item is a line if it has
  * a kit row that applies here, or any stock movement at this flat. Quantities come from the ledger, never stored.
  */
-export async function roomForFlat(propertyId: number) {
+export async function roomForFlat(propertyId: number, conn: Conn = db) {
   const [items, kit, moves, fixtures] = await Promise.all([
-    db.select({ id: t.inventoryItems.id, name: t.inventoryItems.name, area: t.inventoryItems.area })
+    conn.select({ id: t.inventoryItems.id, name: t.inventoryItems.name, area: t.inventoryItems.area })
       .from(t.inventoryItems).where(and(eq(t.inventoryItems.business, "finzo"), eq(t.inventoryItems.active, true))),
-    effectiveKit(),
+    effectiveKit(conn),
     // Undone rows and their reversals both stay: summing every row is what keeps the total true.
-    db.select({ itemId: t.stockMovements.itemId, propertyId: t.stockMovements.propertyId, qty: t.stockMovements.qty })
+    conn.select({ itemId: t.stockMovements.itemId, propertyId: t.stockMovements.propertyId, qty: t.stockMovements.qty })
       .from(t.stockMovements).innerJoin(t.inventoryItems, eq(t.stockMovements.itemId, t.inventoryItems.id))
       .where(and(eq(t.stockMovements.propertyId, propertyId), eq(t.inventoryItems.business, "finzo"))),
-    db.select().from(t.fixtures).where(and(eq(t.fixtures.propertyId, propertyId), eq(t.fixtures.active, true))),
+    conn.select().from(t.fixtures).where(and(eq(t.fixtures.propertyId, propertyId), eq(t.fixtures.active, true))),
   ]);
 
   const counted = new Set<number>(moves.map((m) => m.itemId));

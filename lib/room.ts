@@ -42,13 +42,35 @@ export type Shortfall = { itemId: number; propertyId: number; qty: number; reaso
  * Takes a SIGNED delta: negative is a shortfall, positive is a surplus. Always ONE movement.
  * A shortfall with a reason is "damaged"; without one (or a blank one) it is a "count" correction.
  * Never both: a damaged row of -2 already lowers the total, so a second count row would take it down twice.
- * A surplus is always a "count", whatever reason came with it: finding two towels must never lower the ledger.
+ * A surplus is always a plain "count" and drops the reason with it: finding two towels must never lower the
+ * ledger, nor leave history showing a positive row annotated "stolen". The invariant lives here, not in callers.
  */
 export function planShortfall(s: Shortfall): { kind: StockKind; qty: number; reason: string | null; reservationId: number | null; unitCost: number | null } | null {
   if (!s.qty) return null;
   const base = { qty: s.qty, reason: s.reason, reservationId: s.reservationId, unitCost: s.unitCost };
-  if (s.qty > 0) return { kind: "count", ...base };
+  if (s.qty > 0) return { ...base, kind: "count", reason: null };
   return { kind: s.reason?.trim() ? "damaged" : "count", ...base };
+}
+
+/**
+ * One box on the kit check → the one movement to write, or null. The whole decision lives here so it can be
+ * tested without a database: what the housekeeper typed becomes a SIGNED delta against what the ledger holds
+ * now (`counted - actual`), never against what the kit expects.
+ *
+ * Anything that is not a whole number — untouched, blank, "abc", "-1", "2.5" — writes nothing at all. Reading an
+ * empty box as 0 would file the flat's whole stock as a loss, so silence is the only safe answer.
+ * A first count has no baseline to have lost anything from, so it never carries a reason.
+ */
+export function planKitEntry(e: {
+  itemId: number; propertyId: number; raw: string | null | undefined; actual: number;
+  reason: string | null; opening: boolean; reservationId: number | null; unitCost: number | null;
+}) {
+  const raw = String(e.raw ?? "").trim();
+  if (!/^\d+$/.test(raw)) return null;
+  const qty = Number(raw) - e.actual;
+  const reason = e.opening || qty > 0 ? null : e.reason;
+  // The stay is attached only to an explained loss, so a correction never points a finger at a guest.
+  return planShortfall({ itemId: e.itemId, propertyId: e.propertyId, qty, reason, reservationId: reason ? e.reservationId : null, unitCost: e.unitCost });
 }
 
 /** Value of what was lost. Rows with no cost are counted apart, never valued at zero. */
