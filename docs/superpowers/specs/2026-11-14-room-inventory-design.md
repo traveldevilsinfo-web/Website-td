@@ -200,3 +200,49 @@ These were settled by the author, not the owner. Each is reversible; none change
 - Seeding Harshit's sixty items and the standard kit: a script in the manner of
   `scripts/import-airbnb-listings.mts`, with the list in a data file so it can be edited without code.
 - How fixtures are first populated — most likely the same seed, with costs filled in later.
+
+---
+
+## Knowingly deferred (recorded 15 Nov 2026, after the branch review)
+
+The whole-branch review returned 0 Critical and 5 Important; the five were fixed. These were
+judged real but not worth holding the branch for. Nothing here loses data or misreports money.
+
+**Needs the owner, not code**
+- No expected kit counts are seeded, and no item prices. Both are the owner's numbers, not ours:
+  inventing them would make the Room page and the losses report confidently wrong. Until they are
+  entered on `/ops/kit`, every flat reads "Nothing counted here yet" and losses total ₹0 (the
+  report says how many items have no cost recorded).
+- Portable appliances (iron, hair dryer, kettle, toaster, mixer, coffee maker, lamp) are fixtures,
+  so they carry a condition but no count and no loss value. If one walking off should be caught by
+  the kit check, they belong as replaceables instead — a one-line change each in
+  `scripts/room-kit.json`.
+
+**Behaviour**
+- The kit check silently ignores a bad entry (a finished cleaning, or a value like "2.5") instead of
+  saying so. The header count still moves, so there is feedback, just not an explanation.
+- `isOpeningCount`'s "first count" path is effectively dead once a cleaning has issued any
+  consumable. Left in: it still guards a genuinely empty ledger, and a count above an empty ledger
+  is a surplus, so no day-one losses can be invented either way.
+- A kit-check movement can carry neither a turnover nor a reservation. The clean fix is a partial
+  unique index.
+- An item that is inactive but still holding stock at a flat is left off the Room page.
+- A kit check now locks every item in the flat's kit, so two kit checks on *different* flats
+  serialise where they used to run in parallel. Irrelevant at eight flats; revisit if that grows.
+- `saveTicket` lets a manager move a ticket to another flat while its fixture still points at the
+  old one.
+- The "Other" area sorts to the top of the Room page rather than the bottom.
+
+**Validation and types**
+- `condition` and `reason` are plain text with no database CHECK, so only the app layer validates
+  them.
+- `boughtOn` accepts an impossible date (2026-13-45) at the regex and relies on Postgres to reject
+  it; it also formats in the server's timezone rather than IST.
+- `saveKitForm` quietly does nothing on a bad value while `saveKit` throws.
+- `lossTotal` has no note that it expects loss rows only, and `fitOutValue` does not guard a
+  negative cost.
+
+**Naming and cost**
+- `effectiveKit` returns every flat's kit rows, so the name overstates what it does.
+- The losses actions make two round trips where one would do.
+- Grouping room lines by area copies arrays O(n²) — harmless at room scale.
