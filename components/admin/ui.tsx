@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { Children, cloneElement, isValidElement } from "react";
 import { ArrowLeft } from "lucide-react";
 
 // Admin design tokens as class strings. Neutral surfaces, brand red only for primary actions and "active".
 export const input =
-  "w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 shadow-xs outline-none transition placeholder:text-gray-400 hover:border-gray-300 focus:border-brand focus:ring-4 focus:ring-brand/10 disabled:bg-gray-50";
+  "w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-base text-gray-900 sm:py-2 sm:text-sm shadow-xs outline-none transition placeholder:text-gray-400 hover:border-gray-300 focus:border-brand focus:ring-4 focus:ring-brand/10 disabled:bg-gray-50";
 export const btn =
-  "inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg px-3.5 py-2 text-sm font-semibold transition active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex min-h-11 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg px-3.5 py-2 text-sm font-semibold transition sm:min-h-0 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50";
 export const btnPrimary = `${btn} bg-brand text-white shadow-sm shadow-brand/20 hover:bg-brand-dark`;
 export const btnGhost = `${btn} border border-gray-200 bg-white text-gray-800 shadow-xs hover:border-gray-300 hover:bg-gray-50`;
 export const btnDanger = `${btn} border border-red-200 bg-white text-red-600 shadow-xs hover:bg-red-50`;
@@ -26,14 +27,14 @@ export function Section({ id, title, description, children, action }: {
 }) {
   return (
     <section id={id} className="scroll-mt-28 overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-xs">
-      <header className="flex items-start justify-between gap-4 border-b border-gray-100 px-6 py-4">
+      <header className="flex items-start justify-between gap-4 border-b border-gray-100 px-4 py-4 sm:px-6">
         <div>
           <h2 className="text-[15px] font-bold text-gray-900">{title}</h2>
           {description && <p className="mt-0.5 max-w-2xl text-[13px] leading-relaxed text-gray-500">{description}</p>}
         </div>
         {action}
       </header>
-      <div className="space-y-5 px-6 py-5">{children}</div>
+      <div className="space-y-5 px-4 py-5 sm:px-6">{children}</div>
     </section>
   );
 }
@@ -50,7 +51,7 @@ export function PageHeader({ title, description, action, back, backLabel = "Back
       )}
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div className="min-w-0">
-          <h1 className="truncate text-2xl font-extrabold tracking-tight text-gray-900">{title}</h1>
+          <h1 className="truncate text-[22px] font-extrabold tracking-tight text-gray-900 sm:text-2xl">{title}</h1>
           {description && <p className="mt-1 text-sm text-gray-500">{description}</p>}
         </div>
         {action && <div className="flex flex-wrap items-center gap-2">{action}</div>}
@@ -87,17 +88,30 @@ export function StatusBadge({ status }: { status: string }) {
   return <Badge tone={STATUS_TONE[status] ?? "gray"}>{label[0].toUpperCase() + label.slice(1)}</Badge>;
 }
 
+/** Rows become cards on phones: first cell is the card title, the rest show as labelled values (from `head`). */
 export function Table({ head, children, empty, emptyText = "Nothing here yet.", emptyAction }: {
   head: string[]; children: React.ReactNode; empty?: boolean; emptyText?: string; emptyAction?: React.ReactNode;
 }) {
+  const label = (row: React.ReactNode): React.ReactNode => {
+    if (!isValidElement<{ children?: React.ReactNode }>(row) || row.type !== "tr") return row;
+    let i = 0;
+    return cloneElement(row, {}, Children.map(row.props.children, (cell) =>
+      // the first cell is the card's title; the rest get their column name as a label (none for blank headings)
+      isValidElement(cell) && cell.type === "td" ? (i++ && head[i - 1] ? cloneElement(cell as React.ReactElement<{ "data-label"?: string }>, { "data-label": head[i - 1] }) : cell) : cell));
+  };
   return (
     <div className="overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-xs">
       <div className="overflow-x-auto">
-        <table className="w-full text-left text-sm">
-          <thead className="border-b border-gray-100 bg-gray-50/70 text-[11px] font-bold uppercase tracking-wider text-gray-500">
+        <table className="w-full text-left text-sm max-sm:block">
+          <thead className="border-b border-gray-100 bg-gray-50/70 text-[11px] font-bold uppercase tracking-wider text-gray-500 max-sm:hidden">
             <tr>{head.map((h, i) => <th key={h + i} className="whitespace-nowrap px-4 py-3">{h}</th>)}</tr>
           </thead>
-          <tbody className="divide-y divide-gray-100 [&_td]:px-4 [&_td]:py-3.5 [&_tr]:transition-colors [&_tr:hover]:bg-gray-50/60">{children}</tbody>
+          <tbody className="divide-y divide-gray-100 max-sm:block [&_tr]:transition-colors [&_tr:hover]:bg-gray-50/60 sm:[&_td]:px-4 sm:[&_td]:py-3.5
+            max-sm:[&_tr]:relative max-sm:[&_tr]:grid max-sm:[&_tr]:grid-cols-2 max-sm:[&_tr]:gap-x-4 max-sm:[&_tr]:gap-y-2.5 max-sm:[&_tr]:px-4 max-sm:[&_tr]:py-4
+            max-sm:[&_td]:block max-sm:[&_td]:min-w-0 max-sm:[&_td:first-child]:col-span-2 max-sm:[&_td:first-child]:text-[15px]
+            max-sm:[&_td[data-label]]:before:mb-0.5 max-sm:[&_td[data-label]]:before:block max-sm:[&_td[data-label]]:before:text-[11px] max-sm:[&_td[data-label]]:before:font-bold max-sm:[&_td[data-label]]:before:uppercase max-sm:[&_td[data-label]]:before:tracking-wider max-sm:[&_td[data-label]]:before:text-gray-400 max-sm:[&_td[data-label]]:before:content-[attr(data-label)]">
+            {Children.map(children, label)}
+          </tbody>
         </table>
       </div>
       {empty && <EmptyState text={emptyText} action={emptyAction} />}

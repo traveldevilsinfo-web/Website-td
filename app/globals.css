@@ -362,3 +362,10 @@ dialog[open]::backdrop { background: rgb(0 0 0 / 0.5); backdrop-filter: blur(6px
   .xmas-burst { display: none; }
   .xmas-card, .xmas-hand-h, .xmas-hand-m { transition: none; }
 }
+
+/* admin phone shell: "More" sheet */
+@keyframes sheet-up { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes sheet-fade { from { opacity: 0; } to { opacity: 1; } }
+/* iPhone Safari zooms into any field under 16px; admin forms use smaller text on desktop only */
+/* in the base layer: for !important, earlier layers beat later ones, so this also wins over `!text-sm` utilities */
+@layer base { @media (max-width: 639px) { .admin-shell :is(input, select, textarea) { font-size: 16px !important; } } }

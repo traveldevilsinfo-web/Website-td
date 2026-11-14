@@ -83,7 +83,7 @@ export function TripForm({ initial, cats, dests, action, isNew }: {
     <>
       <PdfImport dests={dests} onDraft={(d, url) => { setValues((cur) => { const next = applyDraft({ ...cur, routes }, d, url, cats, dests); setRoutes(next.routes); return next; }); setVersion((n) => n + 1); }} />
 
-      <nav aria-label="Form sections" className="sticky top-0 z-10 -mx-6 mb-4 flex gap-1 overflow-x-auto border-b border-gray-200 bg-gray-50/90 px-6 py-2 backdrop-blur">
+      <nav aria-label="Form sections" className="sticky top-[calc(3.5rem+env(safe-area-inset-top))] z-10 -mx-4 mb-4 flex gap-1 overflow-x-auto border-b border-gray-200 bg-gray-50/90 px-4 py-2 backdrop-blur [scrollbar-width:none] sm:-mx-6 sm:px-6 lg:top-0">
         {SECTIONS.map(([id, label]) => (
           <a key={id} href={`#${id}`} className="whitespace-nowrap rounded-full px-3 py-1 text-xs font-medium text-gray-600 hover:bg-white hover:text-ink">{label}</a>
         ))}

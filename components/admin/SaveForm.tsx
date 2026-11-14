@@ -67,13 +67,13 @@ export function SaveForm({
   const error = !state.ok && state.message;
 
   return (
-    <form ref={form} data-saveform action={formAction} className={inline ? "space-y-3" : "space-y-6 pb-28"} onInput={mark} onChange={mark}
+    <form ref={form} data-saveform action={formAction} className={inline ? "space-y-3" : "space-y-6 pb-32 lg:pb-28"} onInput={mark} onChange={mark}
       // add / remove / reorder buttons change hidden JSON fields without firing input events
       onClick={(e) => { if ((e.target as HTMLElement).closest("button[type=button]")) mark(); }}>
       {children}
-      <div className={inline ? "" : "fixed inset-x-0 bottom-0 z-20 border-t border-gray-200/80 bg-white/90 backdrop-blur-md lg:left-64"}>
+      <div className={inline ? "" : "fixed inset-x-0 bottom-[calc(4rem+env(safe-area-inset-bottom))] z-30 border-t border-gray-200/80 bg-white/90 backdrop-blur-md lg:bottom-0 lg:left-64"}>
         <div className={inline ? "flex flex-wrap items-center gap-3" : "mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3 sm:px-6 lg:px-10"}>
-          <button disabled={pending} className={`${btnPrimary} min-w-28`}>{pending ? "Saving…" : submitLabel}</button>
+          <button disabled={pending} className={`${btnPrimary} min-w-28 ${inline ? "" : "max-sm:flex-1"}`}>{pending ? "Saving…" : submitLabel}</button>
           {!inline && <kbd className="hidden rounded border border-gray-200 px-1.5 text-[11px] font-semibold text-gray-400 sm:inline">⌘S</kbd>}
           {extra}
           <p role="status" className={`${inline ? "" : "ml-auto"} flex items-center gap-2 text-sm font-semibold`}>
