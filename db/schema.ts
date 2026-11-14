@@ -541,6 +541,7 @@ export const tickets = pgTable(
     vendorId: integer("vendor_id").references(() => vendors.id, { onDelete: "set null" }),
     cost: integer("cost"),
     expenseId: integer("expense_id").references(() => expenses.id, { onDelete: "set null" }), // the cost, booked as an expense
+    fixtureId: integer("fixture_id").references(() => fixtures.id, { onDelete: "set null" }), // the fixture that broke
     createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
     doneAt: timestamp("done_at", { withTimezone: true }),
     ...timestamps,
@@ -671,6 +672,10 @@ export const inventoryItems = pgTable(
     name: text("name").notNull(),
     unit: text("unit").notNull().default("piece"), // piece, set, kg, litre…
     category: text("category"),
+    /** Flat inventory only: where in the flat it lives (kitchen, bathroom…). Null for the business store. */
+    area: text("area"),
+    /** Flat inventory only: null (gear, untouched) | "consumable" | "replaceable". Plain text, not a pgEnum. */
+    kind: text("kind"),
     reorderLevel: integer("reorder_level").notNull().default(0), // warn at or below this
     costPerUnit: integer("cost_per_unit"),
     /** Finzo consumables: how many go out automatically when a cleaning is finished. */
@@ -693,6 +698,13 @@ export const stockMovements = pgTable(
     tripBatchId: integer("trip_batch_id").references(() => tripBatches.id, { onDelete: "set null" }), // TD gear on a departure
     turnoverId: integer("turnover_id").references(() => turnovers.id, { onDelete: "set null" }), // used by a cleaning
     note: text("note"),
+    /** Loss reason: "damaged" | "stolen" | "lost" | "worn out". Plain text, not a pgEnum. */
+    reason: text("reason"),
+    reservationId: integer("reservation_id").references(() => reservations.id, { onDelete: "set null" }), // the stay it happened during
+    /** Can the loss be charged to the guest? */
+    chargeable: boolean("chargeable").notNull().default(false),
+    unitCost: integer("unit_cost"), // value of one unit at the time of loss, for claims
+    claimSettledAt: timestamp("claim_settled_at", { withTimezone: true }),
     /** Both legs of a move share this, so undoing one undoes the pair rather than inventing stock. */
     groupId: text("group_id"),
     undoneAt: timestamp("undone_at", { withTimezone: true }), // reversed once, and only once
@@ -704,4 +716,39 @@ export const stockMovements = pgTable(
     // A cleaning issues each item once, however many times it is re-finished.
     uniqueIndex("stock_movements_turnover_item_idx").on(t.turnoverId, t.itemId),
   ],
+);
+
+/** The standard kit for every flat (property_id null) or a flat's own override (property_id set). */
+export const propertyKit = pgTable(
+  "property_kit",
+  {
+    id: serial("id").primaryKey(),
+    itemId: integer("item_id").notNull().references(() => inventoryItems.id, { onDelete: "cascade" }),
+    propertyId: integer("property_id").references(() => properties.id, { onDelete: "cascade" }), // null = the standard for every flat
+    expected: integer("expected").notNull(),
+    ...timestamps,
+  },
+  // Postgres treats nulls as distinct, so this index does not stop two standard (null property_id) rows for one item. The app keeps one.
+  (t) => [uniqueIndex("property_kit_item_property_idx").on(t.itemId, t.propertyId)],
+);
+
+/** Things in a flat that can break: the sofa, the boiler. Their repair costs never post to expenses. */
+export const fixtures = pgTable(
+  "fixtures",
+  {
+    id: serial("id").primaryKey(),
+    propertyId: integer("property_id").notNull().references(() => properties.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    area: text("area"),
+    /** "working" | "attention" | "broken" | "missing". Plain text, not a pgEnum. */
+    condition: text("condition").notNull().default("working"),
+    conditionAt: timestamp("condition_at", { withTimezone: true }),
+    cost: integer("cost"),
+    boughtOn: date("bought_on"),
+    model: text("model"),
+    notes: text("notes"),
+    active: boolean("active").notNull().default(true),
+    ...timestamps,
+  },
+  (t) => [index("fixtures_property_idx").on(t.propertyId)],
 );
