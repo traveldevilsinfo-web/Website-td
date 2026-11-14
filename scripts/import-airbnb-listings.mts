@@ -10,6 +10,10 @@
  * Safe to run twice. Flats are matched on `code`, feeds on (flat, channel), so a second run updates
  * rather than duplicates, and it never touches a flat's door code, Wi-Fi, housekeeper or guidebook.
  *
+ * A listing may pin `icalToken`. That is the token in OUR outgoing feed URL — the one pasted into
+ * Airbnb's "import calendar" — so pinning it means every database hands out the same link and the
+ * eight links set up on Airbnb keep working after a re-import.
+ *
  *   npm run ops:airbnb                 # the local dev database
  *   DATABASE_URL='<supabase>' npx tsx scripts/import-airbnb-listings.mts
  *
@@ -24,7 +28,7 @@ import { feedUrlError } from "../lib/stays";
 type Listing = {
   code: string; name: string; listingId: string; area: string | null; address: string | null;
   bedrooms: number; maxGuests: number; checkinTime: string; checkoutTime: string;
-  airbnbTitle: string; publicLink: string | null; ical: string;
+  airbnbTitle: string; publicLink: string | null; ical: string; icalToken?: string;
 };
 
 const file = process.argv.find((a) => a.endsWith(".json")) ?? "exports/airbnb-listings.json";
@@ -45,7 +49,7 @@ for (const [i, l] of listings.entries()) {
   const [flat] = await sql<{ id: number; existed: boolean }[]>`
     insert into properties (code, name, address, area, bedrooms, max_guests, checkin_time, checkout_time, notes, ical_token, sort)
     values (${l.code}, ${l.name}, ${l.address}, ${l.area}, ${l.bedrooms}, ${l.maxGuests},
-            ${l.checkinTime}, ${l.checkoutTime}, ${notes}, ${randomBytes(16).toString("hex")}, ${i + 1})
+            ${l.checkinTime}, ${l.checkoutTime}, ${notes}, ${l.icalToken || randomBytes(16).toString("hex")}, ${i + 1})
     on conflict (code) do update set
       name = excluded.name, address = excluded.address, area = excluded.area,
       bedrooms = excluded.bedrooms, max_guests = excluded.max_guests,
