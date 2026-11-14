@@ -7,7 +7,7 @@ Status: **draft for review** · 13 Nov 2026
 One internal back-office ("Ops") for two businesses run by the same owners:
 
 - **Travel Devils (TD)**: group trips. Revenue already comes in through the website (bookings + Razorpay payments in this codebase). Missing today: what each trip *cost*, staff salaries, trip-captain payouts, sales incentives, and gear inventory.
-- **Finzo Stays**: 13 Airbnb apartments. There's no system yet. They need per-property income vs. costs, staff (caretakers and housekeeping), salaries, fixed monthly costs (rent, electricity, Wi-Fi, maintenance) and stock (linen, toiletries).
+- **Finzo Stays**: 8 Airbnb apartments (13 at the time of this spec; the owner confirmed 8 on 14 Nov 2026). There's no system yet. They need per-property income vs. costs, staff (caretakers and housekeeping), salaries, fixed monthly costs (rent, electricity, Wi-Fi, maintenance) and stock (linen, toiletries).
 
 A **switch in the top bar (TD ⇄ Finzo)** flips the whole dashboard. The modules are the same in both; each record belongs to one business; and each business gets a few modules of its own.
 
@@ -196,7 +196,7 @@ Order rationale: expenses + Finzo first, because Finzo has no system at all toda
 
 **Answered 14 Nov:**
 1. **Nobody works for both businesses.** Each person belongs to one, so payroll stays one list and one monthly run per business. If that ever changes, an employee would need their salary split across the two.
-2. **All 13 Finzo flats are rented from landlords.** Rent is each flat's biggest monthly cost, so every flat needs a recurring rent tied to it — otherwise its owner statement overstates profit by the rent. The flat page now lists that flat's fixed costs and links straight to adding one.
+2. **Every Finzo flat is rented from a landlord.** (Eight flats as of 14 Nov 2026; thirteen when this was asked.) Rent is each flat's biggest monthly cost, so every flat needs a recurring rent tied to it — otherwise its owner statement overstates profit by the rent. The flat page now lists that flat's fixed costs and links straight to adding one.
 3. **Airbnb only, plus direct bookings** taken by phone or WhatsApp. The earnings import understands Airbnb's file, and direct bookings carry the amount you enter, so no other channel format is needed. Booking.com and MakeMyTrip calendars would still sync if a flat is ever listed there; only their *money* would need a new import.
 
 **Answered by how it was built:**

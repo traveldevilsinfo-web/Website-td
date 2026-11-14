@@ -29,7 +29,7 @@ To check with the team: language mix for staff, Android share, whether caretaker
 
 | Area | What we build | How (no channel manager) |
 |---|---|---|
-| **Channel & calendar** | One calendar for 13 flats × all channels, plus double-booking alerts | Import each listing's iCal (Airbnb, Booking.com, Vrbo, MMT) every 30 min, with manual "Sync now". **Export** one iCal feed per flat (direct bookings + owner blocks) and paste it into each OTA, so they block those dates. Clash detection flags overlapping stays. |
+| **Channel & calendar** | One calendar for every flat × all channels, plus double-booking alerts | Import each listing's iCal (Airbnb, Booking.com, Vrbo, MMT) every 30 min, with manual "Sync now". **Export** one iCal feed per flat (direct bookings + owner blocks) and paste it into each OTA, so they block those dates. Clash detection flags overlapping stays. |
 | | Unified listing info | Title, photos, house rules, Wi-Fi and lock code stored once here. These are *not* pushed to OTAs (no API). |
 | **Guest comms** | Message templates and a "to send today" queue | Templates for confirmation, check-in instructions, mid-stay, checkout and review request, filled from the reservation. **One tap opens WhatsApp** (`wa.me` link) with the text ready. |
 | | AI reply drafts (later) | Claude drafts an answer from the flat's guidebook + house rules; a person sends it. |
