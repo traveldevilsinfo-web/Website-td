@@ -41,10 +41,10 @@ const LOSS_REASONS = ["damaged", "stolen", "lost", "worn out"] as const;
  * movement to write; an item whose number did not change writes nothing at all, so the usual "all good" tap is free.
  * The arithmetic itself lives in lib/room.ts and is pinned in lib/checks.mts; this is only its wiring to the DB.
  *
- * Read and write are ONE transaction behind an advisory lock on the flat, as refreshTurnovers does for its own
- * flat. Without it, two overlapping submits both read actual = 4, both plan -2, and both insert: the total lands
- * on 0 instead of 2. The lock serialises them, so the second re-reads 2, plans nothing, and writes nothing.
- * Disabling the button client-side does not cover two tabs, two devices or a fast double-tap.
+ * Read and write are ONE transaction behind advisory locks, one per item. Without them, two overlapping submits
+ * both read actual = 4, both plan -2, and both insert: the total lands on 0 instead of 2. The locks serialise
+ * them, so the second re-reads 2, plans nothing, and writes nothing. Disabling the button client-side does not
+ * cover two tabs, two devices or a fast double-tap.
  *
  * No `chargeable` here: the housekeeper says what happened, a manager decides what to claim.
  *
@@ -54,19 +54,33 @@ const LOSS_REASONS = ["damaged", "stolen", "lost", "worn out"] as const;
  */
 export async function recordKitCheck(id: number, f: FormData) {
   const { tv, user } = await loadTurnover(id);
-  if (tv.status === "done") return;
+  if (tv.status === "done") return; // a cheap early out; the answer that decides anything is re-read under the locks
+
+  // Which items this check could touch, read before any lock is held. Choosing a lock while holding one is how
+  // two checks of overlapping flats would each end up waiting for what the other already has.
+  const itemIds = (await roomForFlat(tv.propertyId)).lines.map((l) => l.itemId).sort((a, b) => a - b);
 
   await db.transaction(async (tx) => {
-    // 7301 is refreshTurnovers' key; this is its own, so the two never block each other.
-    await tx.execute(sql`select pg_advisory_xact_lock(7302, ${tv.propertyId})`);
+    // 7302 is the key for any read-sum-then-write-delta on one item's total: the Stock page's stocktake
+    // (countTo) and its undo already take it per item id, so the kit check must take the same key on the same
+    // entity or the two simply do not exclude each other. Ascending id order is what keeps overlapping sets from
+    // deadlocking, and it is why the ids were read above rather than from the authoritative read below.
+    for (const itemId of itemIds) await tx.execute(sql`select pg_advisory_xact_lock(7302, ${itemId})`);
+
+    // The turnover is re-read inside, so a saveChecklist or a finish that landed while we waited is not overwritten.
+    const [cur] = await tx.select().from(t.turnovers).where(eq(t.turnovers.id, id));
+    if (!cur || cur.status === "done") return;
+
     const { lines, moves } = await roomForFlat(tv.propertyId, tx);
     const opening = isOpeningCount(moves);
 
-    const changed = lines.flatMap((l) => {
+    // Only items whose lock we hold: an item that gained a kit row or a movement while we waited is left for the
+    // next check rather than written against a total nobody is holding still.
+    const changed = lines.filter((l) => itemIds.includes(l.itemId)).flatMap((l) => {
       const plan = planKitEntry({
         itemId: l.itemId, propertyId: tv.propertyId, raw: String(f.get(`qty-${l.itemId}`) ?? ""), actual: l.actual,
         reason: LOSS_REASONS.find((r) => r === f.get(`reason-${l.itemId}`)) ?? null,
-        opening, reservationId: tv.reservationId, unitCost: null,
+        opening, reservationId: cur.reservationId, unitCost: null,
       });
       return plan ? [{ itemId: l.itemId, plan }] : [];
     });
@@ -78,15 +92,15 @@ export async function recordKitCheck(id: number, f: FormData) {
       await tx.insert(t.stockMovements).values(changed.map(({ itemId, plan }) => ({
         itemId, propertyId: tv.propertyId, qty: plan.qty, kind: plan.kind, reason: plan.reason,
         reservationId: plan.reservationId, unitCost: costs.get(itemId) ?? null,
-        note: `Kit check, cleaning ${tv.date}`, createdBy: user.id,
+        note: `Kit check, cleaning ${cur.date}`, createdBy: user.id,
       })));
     }
 
     // The step is ticked either way: an "all good" tap is a real answer. Either wording counts, so the tick also
     // lands on turnovers created before this line was renamed.
     await tx.update(t.turnovers).set({
-      checklist: tv.checklist.map((c) => (KIT_STEPS.includes(c.label) ? { label: c.label, done: true } : c)),
-      status: tv.status === "todo" ? "doing" : tv.status,
+      checklist: cur.checklist.map((c) => (KIT_STEPS.includes(c.label) ? { label: c.label, done: true } : c)),
+      status: cur.status === "todo" ? "doing" : cur.status,
     }).where(and(eq(t.turnovers.id, id), ne(t.turnovers.status, "done")));
   });
   revalidatePath("/ops", "layout");
