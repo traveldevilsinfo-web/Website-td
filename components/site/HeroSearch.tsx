@@ -79,7 +79,9 @@ export function HeroSearch({ popular }: { popular: SearchHit[] }) {
       </form>
 
       {show && (
-        <div id={`${id}-list`} role="listbox" aria-label="Suggestions"
+        // Pressing a suggestion must not blur the input first: iOS Safari doesn't focus links on tap, so the blur
+        // above would close the list before the tap lands and nothing opens. Keeping focus lets the link's click run.
+        <div id={`${id}-list`} role="listbox" aria-label="Suggestions" onMouseDown={(e) => e.preventDefault()}
           className="glass-light fade-swap absolute inset-x-0 top-full z-30 mt-2 max-h-[min(60vh,28rem)] overflow-y-auto rounded-3xl p-3 text-ink shadow-2xl ring-1 ring-black/5">
           {empty && <p className="px-3 py-4 text-sm font-semibold text-muted">No trips for “{term}” yet. Press Enter to search everything.</p>}
           {groups.map((g) => (
