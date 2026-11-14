@@ -29,5 +29,6 @@ export async function roomForFlat(propertyId: number) {
   for (const k of kit) if (k.propertyId === null || k.propertyId === propertyId) counted.add(k.itemId);
 
   const lines = kitLines(items.filter((i) => counted.has(i.id)), kit, stockTotals(moves).byPlace, propertyId);
-  return { lines, fixtures, fitOut: fitOutValue(fixtures) };
+  // `moves` goes back out too: whether this flat has any history at all decides if a count is its opening one.
+  return { lines, moves, fixtures, fitOut: fitOutValue(fixtures) };
 }

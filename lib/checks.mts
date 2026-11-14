@@ -868,3 +868,9 @@ assert.deepEqual(lossTotal([{ qty: 0, unitCost: 450 }]), { value: 0, unpriced: 0
 assert.deepEqual(Object.keys(FIXTURE_CONDITION), ["working", "attention", "broken", "missing"]);
 assert.ok(FIXTURE_CONDITION.working);
 console.log("room kit checks passed");
+
+// ---------------- the first count at a flat
+import { isOpeningCount } from "./room";
+assert.equal(isOpeningCount([]), true);                        // nothing counted here yet
+assert.equal(isOpeningCount([{ itemId: 1, qty: 4 }]), false);  // this flat has history
+console.log("opening count checks passed");

@@ -30,6 +30,12 @@ export function kitLines(
     .sort((a, b) => (a.area ?? "").localeCompare(b.area ?? "") || a.name.localeCompare(b.name));
 }
 
+/**
+ * The flat's very first count: no stock movement has ever been written here. Nothing can have been lost from a
+ * baseline that does not exist yet, so the first count is recorded as a plain count and no reason is asked for.
+ */
+export const isOpeningCount = (moves: { itemId: number; qty: number }[]) => moves.length === 0;
+
 export type Shortfall = { itemId: number; propertyId: number; qty: number; reason: string | null; reservationId: number | null; unitCost: number | null };
 
 /**

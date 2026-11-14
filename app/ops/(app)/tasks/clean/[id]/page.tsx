@@ -5,11 +5,14 @@ import { db, t } from "@/lib/db";
 import { dateDay } from "@/lib/format";
 import { requireOps } from "@/lib/ops";
 import { canWorkOn } from "@/lib/ops-rules";
+import { isOpeningCount } from "@/lib/room";
+import { roomForFlat } from "@/lib/room-queries";
 import { Badge, Notice, PageHeader, Panel, btnGhost, btnPrimary, input } from "../../../../kit";
 import { OpsForm } from "../../../../OpsForm";
 import { TURN_LABEL, TURN_TONE } from "../../../stays-ui";
 import { assignTurnover, finishTurnover, reportIssue } from "../../actions";
 import { Checklist } from "./Checklist";
+import { KitCheck } from "./KitCheck";
 
 export default async function CleaningPage({ params }: PageProps<"/ops/tasks/clean/[id]">) {
   const { user, businesses, manager } = await requireOps();
@@ -23,6 +26,7 @@ export default async function CleaningPage({ params }: PageProps<"/ops/tasks/cle
     .where(and(eq(t.opsUsers.active, true), sql`(${t.opsUsers.role} = 'owner' or 'finzo' = any(${t.opsUsers.businesses}))`)).orderBy(asc(t.opsUsers.name)) : [];
   const left = tv.checklist.filter((c) => !c.done).length;
   const done = tv.status === "done";
+  const room = done ? null : await roomForFlat(tv.propertyId);
 
   return (
     <>
@@ -42,6 +46,12 @@ export default async function CleaningPage({ params }: PageProps<"/ops/tasks/cle
         </Panel>
 
         <div className="space-y-5 lg:col-span-2">
+          {room && (
+            <Panel title={isOpeningCount(room.moves) ? "First count for this flat" : "Room kit"}
+              sub={isOpeningCount(room.moves) ? "Nothing has been counted here before, so this just sets the starting numbers." : "Tap an item only if its number is wrong."}>
+              <KitCheck id={tv.id} lines={room.lines} opening={isOpeningCount(room.moves)} />
+            </Panel>
+          )}
           <Panel title="Flat access">
             <dl className="space-y-2 text-sm">
               {p.address && <div><dt className="text-[var(--muted)]">Address</dt><dd>{p.address}</dd></div>}

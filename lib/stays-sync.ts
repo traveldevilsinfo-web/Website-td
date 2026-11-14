@@ -6,9 +6,11 @@ import { feedUrlError, parseIcal, planSync, planTurnovers, syncLooksWrong } from
 import { confirmationCodeFrom } from "./stays-revenue";
 
 const MAX_FEED_BYTES = 2 * 1024 * 1024;
+/** The kit-check line. Turnovers made before this existed keep the checklist they were created with. */
+export const KIT_STEP = "Room kit checked";
 export const DEFAULT_CHECKLIST = [
   "Strip beds, fresh linen", "Bathroom + towels", "Kitchen + dishes", "Floors", "Bins out",
-  "Restock toiletries, tea/coffee", "Check for damage / missing items", "Photos of every room",
+  "Restock toiletries, tea/coffee", KIT_STEP, "Photos of every room",
 ].map((label) => ({ label, done: false }));
 
 /** Read a response body, giving up past `max` bytes (never buffers a huge or endless reply). */
