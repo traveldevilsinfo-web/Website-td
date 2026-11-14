@@ -1,5 +1,5 @@
 import "server-only";
-import { and, eq } from "drizzle-orm";
+import { and, asc, eq } from "drizzle-orm";
 import { db, t } from "./db";
 import { fitOutValue, kitLines, type KitRow } from "./room";
 import { stockTotals } from "./stock";
@@ -25,7 +25,10 @@ export async function roomForFlat(propertyId: number, conn: Conn = db) {
     conn.select({ itemId: t.stockMovements.itemId, propertyId: t.stockMovements.propertyId, qty: t.stockMovements.qty })
       .from(t.stockMovements).innerJoin(t.inventoryItems, eq(t.stockMovements.itemId, t.inventoryItems.id))
       .where(and(eq(t.stockMovements.propertyId, propertyId), eq(t.inventoryItems.business, "finzo"))),
-    conn.select().from(t.fixtures).where(and(eq(t.fixtures.propertyId, propertyId), eq(t.fixtures.active, true))),
+    // Area then name, the order the counted lines already come back in: without one, Postgres is free to
+    // reshuffle the Room page's fixture cards between two loads of the same flat.
+    conn.select().from(t.fixtures).where(and(eq(t.fixtures.propertyId, propertyId), eq(t.fixtures.active, true)))
+      .orderBy(asc(t.fixtures.area), asc(t.fixtures.name)),
   ]);
 
   const counted = new Set<number>(moves.map((m) => m.itemId));
