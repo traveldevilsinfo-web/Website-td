@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { notFound, redirect } from "next/navigation";
-import { and, eq, ilike, isNull, ne, or } from "drizzle-orm";
+import { and, eq, gt, ilike, isNull, ne, or } from "drizzle-orm";
 import { db, t } from "@/lib/db";
 import { form, type ActionState } from "@/lib/admin";
 import { requireOps } from "@/lib/ops";
@@ -32,10 +32,21 @@ export async function saveChecklist(id: number, done: boolean[]) {
 }
 
 export async function finishTurnover(id: number) {
-  const { tv } = await loadTurnover(id);
+  const { tv, user } = await loadTurnover(id);
   await db.update(t.turnovers).set({ status: "done", doneAt: new Date(), checklist: tv.checklist.map((c) => ({ ...c, done: true })) }).where(eq(t.turnovers.id, id));
+
+  // Linen and toiletries leave the flat with the cleaning. The unique (turnover, item) index means
+  // re-finishing a job never takes the same stock twice.
+  const consumables = await db.select({ id: t.inventoryItems.id, perTurnover: t.inventoryItems.perTurnover })
+    .from(t.inventoryItems).where(and(eq(t.inventoryItems.business, "finzo"), eq(t.inventoryItems.active, true), gt(t.inventoryItems.perTurnover, 0)));
+  const used = consumables.length
+    ? await db.insert(t.stockMovements).values(consumables.map((c) => ({
+        itemId: c.id, propertyId: tv.propertyId, qty: -c.perTurnover, kind: "issue" as const,
+        turnoverId: tv.id, note: `Used cleaning ${tv.date}`, createdBy: user.id,
+      }))).onConflictDoNothing().returning({ id: t.stockMovements.id })
+    : [];
   revalidatePath("/ops", "layout");
-  redirect("/ops/tasks?done=1");
+  redirect(`/ops/tasks?done=1${used.length ? `&used=${used.length}` : ""}`);
 }
 
 export async function reportIssue(id: number, _prev: ActionState, f: FormData): Promise<ActionState> {

@@ -3,6 +3,7 @@ import { and, asc, desc, eq, gte, lte, sql } from "drizzle-orm";
 import { db, t } from "./db";
 import { addDays } from "./format";
 import { istToday, monthBounds, shiftMonth, type Biz } from "./ops-rules";
+import { splitRevenue } from "./stays-revenue";
 
 /** Dropdown options for expense / fixed-cost forms. Departures are TD only: started in the last 10 days to 14 days ahead (TD runs ~35 a week). */
 export async function expenseFormOptions(biz: Biz) {
@@ -48,8 +49,21 @@ const istMonth = (col: unknown) => sql<string>`to_char(${col} at time zone 'Asia
  * TD: paid website payments (test payments excluded). Finzo: Airbnb income arrives in Phase 2, so empty for now.
  */
 export async function revenueByMonth(biz: Biz, month: string, months = 6): Promise<Map<string, number>> {
-  if (biz !== "td") return new Map();
-  const from = `${shiftMonth(month, -(months - 1))}-01`;
+  const first = shiftMonth(month, -(months - 1));
+  const from = `${first}-01`;
+  if (biz === "finzo") {
+    // Finzo income is the Airbnb payout after fees, split across the months a stay spans.
+    const stays = await db.select({ checkIn: t.reservations.checkIn, checkOut: t.reservations.checkOut, payout: t.reservations.payout })
+      .from(t.reservations).where(and(eq(t.reservations.status, "confirmed"), sql`${t.reservations.payout} is not null`,
+        sql`${t.reservations.checkOut} > ${from}`, sql`${t.reservations.checkIn} <= ${monthBounds(month).to}`));
+    const out = new Map<string, number>();
+    for (let i = 0; i < months; i++) {
+      const m = shiftMonth(first, i);
+      const n = stays.reduce((sum, x) => sum + splitRevenue(x.payout, x.checkIn, x.checkOut, m), 0);
+      if (n) out.set(m, n);
+    }
+    return out;
+  }
   const rows = await db.select({ m: istMonth(t.payments.createdAt), n: sql<number>`sum(${t.payments.amount})::int` }).from(t.payments)
     .where(sql`${t.payments.status} = 'paid' and ${t.payments.provider} <> 'test'
       and ${t.payments.createdAt} >= (${from}::date at time zone 'Asia/Kolkata')
@@ -57,6 +71,7 @@ export async function revenueByMonth(biz: Biz, month: string, months = 6): Promi
     .groupBy(sql`1`);
   return new Map(rows.map((r) => [r.m, r.n]));
 }
+
 
 /** Spent (approved + paid) per month for the trend chart. */
 export async function spentByMonth(biz: Biz, month: string, months = 6): Promise<Map<string, number>> {

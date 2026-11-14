@@ -41,7 +41,7 @@ export default async function ReportsPage({ searchParams }: PageProps<"/ops/repo
         </dl>
         <p className="text-xs text-zinc-500">
           Counts approved and paid expenses. Not included: {s.pendingCount} waiting approval ({inr(s.pendingAmount)}){s.needsAmount ? `, ${s.needsAmount} bill(s) without an amount` : ""}.
-          {biz === "finzo" && " Airbnb income is added in Phase 2."}
+          {biz === "finzo" && " Income is the imported Airbnb payouts; see Revenue for the breakdown per flat."}
         </p>
       </Panel>
       {biz === "td" && (
@@ -52,7 +52,7 @@ export default async function ReportsPage({ searchParams }: PageProps<"/ops/repo
               <tr key={x.trip + x.date}><td>{x.date && dateShort(x.date)}</td><td className="font-semibold">{x.trip}</td><td>{x.count}</td><td className="font-semibold">{inr(x.amount)}</td></tr>
             ))}
           </DataTable>
-          <p className="mt-2 text-xs text-zinc-500">Revenue per departure and margin come in Phase 5 (trip P&amp;L).</p>
+          <p className="mt-2 text-xs text-zinc-500">Revenue per departure and margin are still to come.</p>
         </div>
       )}
     </>

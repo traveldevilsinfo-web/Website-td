@@ -33,7 +33,7 @@ export default async function TasksPage({ searchParams }: PageProps<"/ops/tasks"
     <>
       <PageHeader title="Tasks" sub={manager ? "Cleanings and repairs for the whole team" : "Your cleanings and repairs"}
         action={<Link href="/ops/tasks/repairs/new" className={btnPrimary}><Plus className="size-4" aria-hidden />Report a problem</Link>} />
-      {sp.done && <Notice>Cleaning marked done ✓</Notice>}
+      {sp.done && <Notice>Cleaning marked done ✓{sp.used ? ` ${sp.used} supplies came out of that flat’s stock.` : ""}</Notice>}
       <Chips items={[
         ...(stays ? [{ label: "Cleaning", href: "/ops/tasks", active: tab === "cleaning" && !sp.all }] : []),
         { label: "Repairs", href: "/ops/tasks?tab=repairs", active: tab === "repairs" && !sp.all },

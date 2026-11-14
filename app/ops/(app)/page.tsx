@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { and, eq, lt, sql } from "drizzle-orm";
+import { and, eq, gt, lt, sql } from "drizzle-orm";
 import { db, t } from "@/lib/db";
 import { addDays, dateDay, inr } from "@/lib/format";
 import { requireOps } from "@/lib/ops";
@@ -35,10 +35,15 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
   }
 
   const today = istToday();
-  const [rows, revenue, spent, [stale]] = await Promise.all([
+  const [rows, revenue, spent, [stale], lowStock] = await Promise.all([
     monthExpenses(biz, month), revenueByMonth(biz, month), spentByMonth(biz, month),
     db.select({ n: sql<number>`count(*)::int` }).from(t.expenses)
       .where(and(eq(t.expenses.business, biz), eq(t.expenses.status, "submitted"), lt(t.expenses.createdAt, new Date(`${addDays(today, -3)}T00:00:00+05:30`)))),
+    // Items at or below their reorder level, counted across the store and every flat.
+    db.select({ name: t.inventoryItems.name, qty: sql<number>`coalesce(sum(${t.stockMovements.qty}), 0)::int`, level: t.inventoryItems.reorderLevel })
+      .from(t.inventoryItems).leftJoin(t.stockMovements, eq(t.stockMovements.itemId, t.inventoryItems.id))
+      .where(and(eq(t.inventoryItems.business, biz), eq(t.inventoryItems.active, true), gt(t.inventoryItems.reorderLevel, 0)))
+      .groupBy(t.inventoryItems.id).having(sql`coalesce(sum(${t.stockMovements.qty}), 0) <= ${t.inventoryItems.reorderLevel}`).limit(6),
   ]);
   const s = summarize(rows);
   const rev = revenue.get(month) ?? 0;
@@ -57,12 +62,18 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
         <MonthPicker month={month} />
       </div>
       {s.needsAmount > 0 && <Notice tone="amber">{s.needsAmount} fixed bill(s) need the real amount. <Link className="underline" href={{ pathname: "/ops/expenses", query: { month, status: "needs_amount" } }}>Fill them in</Link></Notice>}
+      {lowStock.length > 0 && (
+        <Notice tone="amber">
+          Running low: {lowStock.map((x) => `${x.name} (${x.qty})`).join(", ")}.{" "}
+          <Link className="underline" href="/ops/stock?show=low">Check stock</Link>
+        </Notice>
+      )}
       {stale.n > 0 && <Notice tone="amber">{stale.n} expense(s) have waited more than 3 days for approval. <Link className="underline" href="/ops/expenses?status=submitted">Review</Link></Notice>}
 
       {/* The month's books in one strip: in − out = profit */}
       <section className="grid overflow-hidden rounded-lg bg-[#0c0e12] text-white sm:grid-cols-3">
         {[
-          { label: "Money in", value: inr(rev), hint: biz === "td" ? "Paid website bookings" : "Airbnb payouts arrive in Phase 2", href: "/ops/reports" },
+          { label: "Money in", value: inr(rev), hint: biz === "td" ? "Paid website bookings" : "Imported Airbnb payouts, after fees", href: "/ops/reports" },
           { label: "Money out", value: inr(s.spent), hint: "Approved and paid expenses", href: `/ops/expenses?month=${month}` },
           { label: "Profit", value: money(profit), hint: rev ? `${Math.round((profit / rev) * 100)}% margin` : "No revenue yet", href: "/ops/reports", loss: profit < 0 },
         ].map((x, i) => (
