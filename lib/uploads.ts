@@ -4,7 +4,7 @@ import { mkdir, readFile, stat, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 // Two backends behind one API: Supabase Storage (production / Vercel, where the disk is read-only) or local disk (dev).
-// Either way files are addressed as "/uploads/<path>"; on Supabase next.config rewrites /uploads/* to the public bucket.
+// Either way files are addressed as "/uploads/<path>"; on Supabase app/uploads/[...path]/route.ts proxies the public bucket behind Vercel's CDN.
 // Browsers upload straight to storage via a signed URL, so Vercel's 4.5 MB request-body limit never applies.
 export const UPLOAD_DIR = path.resolve(/*turbopackIgnore: true*/ process.env.UPLOAD_DIR || "./uploads");
 const SB = process.env.SUPABASE_URL?.replace(/\/$/, "");

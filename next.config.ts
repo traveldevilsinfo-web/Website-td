@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const supabase = process.env.SUPABASE_URL?.replace(/\/$/, "");
-const bucket = process.env.SUPABASE_BUCKET || "media";
 // The public domain. Every other host (website-td.vercel.app, previews) is kept out of search engines.
 const prodHost = process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL).hostname.replace(/^www\./, "") : null;
 
@@ -83,14 +81,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 2678400, // 31 days
     localPatterns: [{ pathname: "/**", search: "" }],
   },
-  // With Supabase Storage configured, /uploads/* is served straight from the public bucket (before the local-disk route).
-  async rewrites() {
-    return {
-      beforeFiles: supabase ? [{ source: "/uploads/:path*", destination: `${supabase}/storage/v1/object/public/${bucket}/:path*` }] : [],
-      afterFiles: [],
-      fallback: [],
-    };
-  },
+  // /uploads/* is served by app/uploads/[...path]/route.ts (Supabase bucket in production), so Vercel's CDN can cache it.
   async redirects() {
     // Keep old links and anything Google indexed working.
     return [
