@@ -56,6 +56,7 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
       <PageHeader title="Today" sub={`${BIZ_LABEL[biz]} · ${dateDay(today)}`} />
       {sp.denied && <Notice tone="amber">You don&apos;t have access to that page.</Notice>}
       {sp.switch === "finzo" && <Notice tone="amber">Calendar, bookings and flats belong to Finzo Stays. Switch business to open them.</Notice>}
+      {sp.switch === "td" && <Notice tone="amber">Trip profit belongs to Travel Devils. Switch business to open it.</Notice>}
       {biz === "finzo" && <TodayStays manager userId={user.id} />}
       <div className="mb-3 mt-2 flex flex-wrap items-center justify-between gap-3">
         <h2 className="text-[15px] font-semibold">Money · {monthLabel(month)}</h2>

@@ -139,6 +139,9 @@ export const tripBatches = pgTable(
     inclusions: text("inclusions").array().notNull().default([]),
     route: text("route"), // TripRoute.name; null = every route
     note: text("note"),
+    /** Back office only: who led it, and whether every cost is in yet. The website never reads these. */
+    captainId: integer("captain_id").references((): AnyPgColumn => employees.id, { onDelete: "set null" }),
+    costsClosedAt: timestamp("costs_closed_at", { withTimezone: true }),
   },
   (t) => [index("batches_trip_idx").on(t.tripId, t.startDate)],
 );
@@ -689,6 +692,9 @@ export const stockMovements = pgTable(
     tripBatchId: integer("trip_batch_id").references(() => tripBatches.id, { onDelete: "set null" }), // TD gear on a departure
     turnoverId: integer("turnover_id").references(() => turnovers.id, { onDelete: "set null" }), // used by a cleaning
     note: text("note"),
+    /** Both legs of a move share this, so undoing one undoes the pair rather than inventing stock. */
+    groupId: text("group_id"),
+    undoneAt: timestamp("undone_at", { withTimezone: true }), // reversed once, and only once
     createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
     createdAt: timestamps.createdAt,
   },

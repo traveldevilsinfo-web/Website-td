@@ -27,6 +27,9 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
       { href: "/ops", label: "Today", icon: House, show: true },
       { href: "/ops/tasks", label: "Tasks", icon: ClipboardCheck, count: counts.tasks, show: true },
     ] },
+    { title: "Trips", items: [
+      { href: "/ops/trips", label: "Trip profit", icon: TrendingUp, show: !stays && manager },
+    ] },
     { title: "Stays", items: [
       { href: "/ops/calendar", label: "Calendar", icon: CalendarDays, show: stays && manager },
       { href: "/ops/stays", label: "Bookings", icon: BedDouble, show: stays && manager },

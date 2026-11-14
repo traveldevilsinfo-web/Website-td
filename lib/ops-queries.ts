@@ -1,5 +1,5 @@
 import "server-only";
-import { and, asc, desc, eq, gte, lte, sql } from "drizzle-orm";
+import { and, asc, desc, eq, gte, inArray, lte, sql } from "drizzle-orm";
 import { db, t } from "./db";
 import { addDays } from "./format";
 import { istToday, monthBounds, shiftMonth, type Biz } from "./ops-rules";
@@ -46,7 +46,7 @@ const istMonth = (col: unknown) => sql<string>`to_char(${col} at time zone 'Asia
 
 /**
  * Money in, per month (YYYY-MM → ₹) for the last `months` months up to `month`.
- * TD: paid website payments (test payments excluded). Finzo: Airbnb income arrives in Phase 2, so empty for now.
+ * TD: paid website payments (test payments excluded). Finzo: imported Airbnb payouts, split by night.
  */
 export async function revenueByMonth(biz: Biz, month: string, months = 6): Promise<Map<string, number>> {
   const first = shiftMonth(month, -(months - 1));
@@ -71,7 +71,6 @@ export async function revenueByMonth(biz: Biz, month: string, months = 6): Promi
     .groupBy(sql`1`);
   return new Map(rows.map((r) => [r.m, r.n]));
 }
-
 
 /** Spent (approved + paid) per month for the trend chart. */
 export async function spentByMonth(biz: Biz, month: string, months = 6): Promise<Map<string, number>> {
@@ -98,4 +97,33 @@ export async function propertyMonth(month: string) {
       .orderBy(asc(t.expenses.date)),
   ]);
   return { flats, stays, costs };
+}
+
+/** Departures starting in `month`, with everything needed to work out what each one made. */
+export async function tripMonth(month: string) {
+  const { from, to } = monthBounds(month);
+  const batches = await db.select({
+    id: t.tripBatches.id, startDate: t.tripBatches.startDate, endDate: t.tripBatches.endDate, seats: t.tripBatches.seats,
+    label: t.tripBatches.label, captainId: t.tripBatches.captainId, costsClosedAt: t.tripBatches.costsClosedAt,
+    title: t.trips.title, captain: t.employees.name,
+  }).from(t.tripBatches)
+    .innerJoin(t.trips, eq(t.trips.id, t.tripBatches.tripId))
+    .leftJoin(t.employees, eq(t.employees.id, t.tripBatches.captainId))
+    .where(and(gte(t.tripBatches.startDate, from), lte(t.tripBatches.startDate, to)))
+    .orderBy(asc(t.tripBatches.startDate), asc(t.trips.title));
+  if (!batches.length) return { batches, bookings: [], payments: [], costs: [] };
+  const ids = batches.map((b) => b.id);
+
+  const [bookings, payments, costs] = await Promise.all([
+    db.select({ id: t.bookings.id, batchId: t.bookings.batchId, pax: t.bookings.pax, status: t.bookings.status,
+      contactName: t.bookings.contactName, code: t.bookings.code, total: t.bookings.total })
+      .from(t.bookings).where(inArray(t.bookings.batchId, ids)),
+    db.select({ batchId: t.bookings.batchId, amount: t.payments.amount, status: t.payments.status, provider: t.payments.provider, createdAt: t.payments.createdAt })
+      .from(t.payments).innerJoin(t.bookings, eq(t.bookings.id, t.payments.bookingId)).where(inArray(t.bookings.batchId, ids)),
+    db.select({ id: t.expenses.id, tripBatchId: t.expenses.tripBatchId, amount: t.expenses.amount, status: t.expenses.status,
+      date: t.expenses.date, note: t.expenses.note, category: t.expenseCategories.name })
+      .from(t.expenses).innerJoin(t.expenseCategories, eq(t.expenseCategories.id, t.expenses.categoryId))
+      .where(inArray(t.expenses.tripBatchId, ids)),
+  ]);
+  return { batches, bookings, payments, costs };
 }

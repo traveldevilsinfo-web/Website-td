@@ -23,18 +23,24 @@ export default async function ItemPage({ params }: PageProps<"/ops/stock/[id]">)
   const [i] = id ? await db.select().from(t.inventoryItems).where(and(eq(t.inventoryItems.id, id), eq(t.inventoryItems.business, biz))) : [null];
   if (id && !i) notFound();
 
-  const [flats, moves, batches] = await Promise.all([
-    biz === "finzo" ? db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name }).from(t.properties).where(eq(t.properties.active, true)).orderBy(asc(t.properties.sort)) : [],
+  const [flats, moves, batches, sums] = await Promise.all([
+    biz === "finzo" ? db.select({ id: t.properties.id, code: t.properties.code, name: t.properties.name, active: t.properties.active })
+      .from(t.properties).orderBy(asc(t.properties.active), asc(t.properties.sort)) : [],
     id ? db.select({ m: t.stockMovements, who: t.opsUsers.name, code: t.properties.code }).from(t.stockMovements)
       .leftJoin(t.opsUsers, eq(t.opsUsers.id, t.stockMovements.createdBy)).leftJoin(t.properties, eq(t.properties.id, t.stockMovements.propertyId))
       .where(eq(t.stockMovements.itemId, id)).orderBy(desc(t.stockMovements.id)).limit(60) : [],
     biz === "td" && id ? db.select({ id: t.tripBatches.id, startDate: t.tripBatches.startDate, title: t.trips.title }).from(t.tripBatches)
       .innerJoin(t.trips, eq(t.trips.id, t.tripBatches.tripId))
       .where(sql`${t.tripBatches.startDate} between ${addDays(istToday(), -30)} and ${addDays(istToday(), 30)}`).orderBy(asc(t.tripBatches.startDate)).limit(80) : [],
+    // Every movement, summed in the database: the history below is only the latest page of it.
+    id ? db.select({ propertyId: t.stockMovements.propertyId, qty: sql<number>`sum(${t.stockMovements.qty})::int` })
+      .from(t.stockMovements).where(eq(t.stockMovements.itemId, id)).groupBy(t.stockMovements.propertyId) : [],
   ]);
-  const totals = stockTotals(moves.map((x) => x.m));
+  const totals = stockTotals(sums.map((x) => ({ itemId: id ?? 0, propertyId: x.propertyId, qty: x.qty })));
   const places = [{ value: "store", label: "The store", qty: stockAt(totals, id ?? 0, null) },
-    ...flats.map((f) => ({ value: String(f.id), label: `${f.code} ${f.name}`, qty: stockAt(totals, id ?? 0, f.id) }))];
+    // A flat switched off may still be holding stock; keep it pickable so it can be brought back.
+    ...flats.filter((f) => f.active || stockAt(totals, id ?? 0, f.id) !== 0)
+      .map((f) => ({ value: String(f.id), label: `${f.code} ${f.name}${f.active ? "" : " (off)"}`, qty: stockAt(totals, id ?? 0, f.id) }))];
 
   return (
     <>
@@ -106,7 +112,8 @@ export default async function ItemPage({ params }: PageProps<"/ops/stock/[id]">)
                   <td className="text-sm">{STOCK_LABEL[m.kind]}{m.note && <span className="block max-w-xs truncate text-xs text-[var(--muted)]">{m.note}</span>}</td>
                   <td className="text-xs">{code ?? "Store"}</td>
                   <td className={`text-right font-semibold ${m.qty < 0 ? "text-[var(--bad)]" : "text-[var(--ok)]"}`}>{m.qty > 0 ? "+" : ""}{m.qty}</td>
-                  <td className="text-right"><form action={undoMovement.bind(null, m.id)}><button className={btnQuiet}>Undo</button></form></td>
+                  <td className="text-right">{m.undoneAt ? <span className="text-xs text-[var(--muted)]">undone</span>
+                    : <form action={undoMovement.bind(null, m.id)}><button className={btnQuiet}>Undo</button></form>}</td>
                 </tr>
               ))}
             </DataTable>

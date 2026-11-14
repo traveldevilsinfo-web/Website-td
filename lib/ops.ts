@@ -24,3 +24,10 @@ export async function requireStays() {
   if (ctx.biz !== "finzo") redirect("/ops?switch=finzo");
   return ctx;
 }
+
+/** TD-only pages (trip profit): managers, and only while Travel Devils is the open business. */
+export async function requireTrips() {
+  const ctx = await requireOps({ manager: true });
+  if (ctx.biz !== "td") redirect("/ops?switch=td");
+  return ctx;
+}

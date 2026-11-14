@@ -14,13 +14,15 @@ export default async function StockPage({ searchParams }: PageProps<"/ops/stock"
     db.select().from(t.inventoryItems).where(eq(t.inventoryItems.business, biz)).orderBy(asc(t.inventoryItems.active), asc(t.inventoryItems.category), asc(t.inventoryItems.name)),
     db.select({ itemId: t.stockMovements.itemId, propertyId: t.stockMovements.propertyId, qty: t.stockMovements.qty })
       .from(t.stockMovements).innerJoin(t.inventoryItems, eq(t.inventoryItems.id, t.stockMovements.itemId)).where(eq(t.inventoryItems.business, biz)),
-    biz === "finzo" ? db.select({ id: t.properties.id, code: t.properties.code }).from(t.properties).where(eq(t.properties.active, true)).orderBy(asc(t.properties.sort)) : [],
+    biz === "finzo" ? db.select({ id: t.properties.id, code: t.properties.code, active: t.properties.active })
+      .from(t.properties).orderBy(asc(t.properties.active), asc(t.properties.sort)) : [],
   ]);
   const totals = stockTotals(moves);
+  const columns = flats.filter((f) => f.active || moves.some((m) => m.propertyId === f.id));
   const rows = items.map((i) => ({ i, qty: totals.total(i.id), store: stockAt(totals, i.id, null), low: isLow(i, totals.total(i.id)) }));
   const lowCount = rows.filter((r) => r.i.active && r.low).length;
-  const shown = only === "low" ? rows.filter((r) => r.low) : rows.filter((r) => r.i.active || only === "all");
-  const value = rows.reduce((n, r) => n + r.qty * (r.i.costPerUnit ?? 0), 0);
+  const shown = only === "low" ? rows.filter((r) => r.low && r.i.active) : rows.filter((r) => r.i.active || only === "all");
+  const value = rows.filter((r) => r.i.active).reduce((n, r) => n + Math.max(0, r.qty) * (r.i.costPerUnit ?? 0), 0);
 
   return (
     <>
@@ -33,8 +35,8 @@ export default async function StockPage({ searchParams }: PageProps<"/ops/stock"
       ]} />
       {!items.length ? <Empty text="No items yet. Add linen, toiletries, gear — whatever you keep track of." action={<Link href="/ops/stock/new" className={btnPrimary}>Add the first item</Link>} /> : (
         <>
-          <DataTable head={["Item", "In store", ...flats.map((f) => f.code), "Total", ""]}
-            align={[undefined, "r", ...flats.map(() => "r" as const), "r", undefined]} empty={!shown.length} emptyText={only === "low" ? "Nothing is running low." : "Nothing here."}>
+          <DataTable head={["Item", "In store", ...columns.map((f) => f.code), "Total", ""]}
+            align={[undefined, "r", ...columns.map(() => "r" as const), "r", undefined]} empty={!shown.length} emptyText={only === "low" ? "Nothing is running low." : "Nothing here."}>
             {shown.map(({ i, qty, store, low }) => (
               <tr key={i.id} className={`group relative ${i.active ? "" : "opacity-60"}`}>
                 <td>
@@ -42,7 +44,7 @@ export default async function StockPage({ searchParams }: PageProps<"/ops/stock"
                   <span className="block text-xs text-[var(--muted)]">{[i.category, i.unit, i.perTurnover > 0 && `${i.perTurnover} per cleaning`].filter(Boolean).join(" · ")}</span>
                 </td>
                 <td className="text-right">{store}</td>
-                {flats.map((f) => <td key={f.id} className="text-right text-[var(--muted)]">{stockAt(totals, i.id, f.id) || "·"}</td>)}
+                {columns.map((f) => <td key={f.id} className="text-right text-[var(--muted)]">{stockAt(totals, i.id, f.id) || "·"}</td>)}
                 <td className="text-right font-semibold">{qty}</td>
                 <td>{low && <Badge tone="amber"><AlertTriangle className="size-3" aria-hidden />Low</Badge>}</td>
               </tr>

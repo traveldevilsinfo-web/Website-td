@@ -24,6 +24,16 @@ export function stockTotals(moves: Move[]) {
 export const stockAt = (totals: ReturnType<typeof stockTotals>, itemId: number, propertyId: number | null) =>
   totals.byPlace.get(`${itemId}@${at(propertyId)}`) ?? 0;
 
+/**
+ * A form's place value: "store" → null, a flat id → that number, anything else → undefined so the caller can
+ * refuse it. Turning a stray value into "the store" would file stock in the wrong place with a success message.
+ */
+export function parsePlace(v: string | null | undefined): number | null | undefined {
+  if (v === "store") return null;
+  const n = Number(v);
+  return v && Number.isInteger(n) && n > 0 ? n : undefined;
+}
+
 /** At or below the reorder level is low. A level of 0 means nobody set one, so it never nags. */
 export const isLow = (item: { reorderLevel: number }, qty: number) => item.reorderLevel > 0 && qty <= item.reorderLevel;
 

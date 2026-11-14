@@ -83,7 +83,7 @@ Sources: ui-ux-pro-max (the "Data-Dense + Drill-Down" pattern for operational da
 | 4 | Revenue: Airbnb earnings CSV import, occupancy/ADR/RevPAR per flat, owner statements, CSV export. **Rate calendar deferred**: we can't push prices anywhere, so our own copy of them would just be a note — revisit if a channel manager is added. | **Built** 13 Nov on `ops-phase1` |
 | 5 | HRMS: people, attendance, advances, monthly payroll run (draft → lock → paid), incentives as manual lines. **Incentive rules engine deferred** until the owner settles a scheme; the per-month line does the same job today. Statutory PF/ESI/TDS stay manual deduction lines, as agreed. | **Built** 13 Nov on `ops-phase1` |
 | 6 | Stock: items, movements (the only source of truth for quantity), stocktake, undo, consumables issued automatically when a cleaning is finished, low-stock alert on Today. **No locations table**: stock sits in the business's store or at one flat. | **Built** 14 Nov on `ops-phase1` |
-| 7 | TD trip P&L + captains, direct booking page, AI reply drafts, lock/noise integrations | |
+| 7 | **TD trip profit + captains built** 14 Nov on `ops-phase1`: money in from paid website payments, costs from expenses tagged to the departure, profit/margin/per traveller, captain, gear out-and-back, and a "costs are in" flag. Still open: direct booking page, AI reply drafts, smart-lock and noise integrations. | |
 
 ## 5. Data (Phase 2)
 

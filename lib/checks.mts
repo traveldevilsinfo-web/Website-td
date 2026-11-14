@@ -770,3 +770,56 @@ assert.deepEqual(recoverAdvances([{ id: 1, amount: 6000, recovered: 5000 }], 500
 assert.deepEqual(recoverAdvances([], 5000), { taken: 0, rows: [] });
 assert.deepEqual(recoverAdvances(open2, 0), { taken: 0, rows: [] });
 console.log("advance recovery checks passed");
+
+// ---------------- trip profit: what counts as money in, money out, and how many went
+import { tripStats } from "./trips";
+const td1 = tripStats({
+  payments: [
+    { amount: 12000, status: "paid", provider: "razorpay" },
+    { amount: 8000, status: "paid", provider: "offline" },
+    { amount: 5000, status: "created", provider: "razorpay" }, // started checkout, never paid
+    { amount: 3000, status: "failed", provider: "razorpay" },
+    { amount: 999, status: "paid", provider: "test" }, // a test payment is not income
+  ],
+  expenses: [
+    { amount: 6000, status: "paid" },
+    { amount: 2000, status: "approved" },
+    { amount: 1500, status: "submitted" }, // waiting on a manager: not counted yet
+    { amount: 900, status: "rejected" },
+    { amount: 0, status: "needs_amount" },
+  ],
+  bookings: [
+    { pax: 3, status: "confirmed" },
+    { pax: 2, status: "pending" },
+    { pax: 4, status: "cancelled" }, // they aren't coming
+  ],
+});
+assert.equal(td1.revenue, 20000);
+assert.equal(td1.costs, 8000);
+assert.equal(td1.profit, 12000);
+assert.equal(td1.pax, 5);
+assert.equal(td1.perPax, 4000); // revenue per traveller
+assert.equal(td1.costPerPax, 1600);
+assert.equal(Math.round(td1.margin * 100), 60);
+assert.equal(td1.pending, 1500); // costs still waiting for approval, flagged so nobody trusts a half-costed trip
+
+// A departure with nothing on it yet must not divide by zero
+const td0 = tripStats({ payments: [], expenses: [], bookings: [] });
+assert.deepEqual([td0.revenue, td0.costs, td0.profit, td0.pax, td0.perPax, td0.costPerPax, td0.margin], [0, 0, 0, 0, 0, 0, 0]);
+// Costs with no revenue yet: a loss, and margin stays 0 rather than infinite
+const lossy = tripStats({ payments: [], expenses: [{ amount: 5000, status: "paid" }], bookings: [{ pax: 2, status: "confirmed" }] });
+assert.equal(lossy.profit, -5000);
+assert.equal(lossy.margin, 0);
+assert.equal(lossy.costPerPax, 2500);
+console.log("trip profit checks passed");
+
+// ---------------- stock fixes from review
+import { parsePlace } from "./stock";
+// A place we can't read must not quietly become "the store"
+assert.equal(parsePlace("store"), null);
+assert.equal(parsePlace("7"), 7);
+assert.equal(parsePlace("abc"), undefined); // unreadable: the caller refuses
+assert.equal(parsePlace("0"), undefined);
+assert.equal(parsePlace(null), undefined);
+assert.equal(parsePlace("-3"), undefined);
+console.log("stock place checks passed");
