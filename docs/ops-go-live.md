@@ -229,3 +229,38 @@ Cleanings are created from checkouts as bookings arrive, not on a schedule.
 - A booking made on another channel can take up to a few hours to appear, because that is how often
   channels re-read each other's calendars. Clashes are flagged, not prevented.
 - Receiving stock does not create the matching expense. Record the purchase under Expenses as usual.
+
+---
+
+## Running it on your laptop against the live data
+
+By default your laptop has its own Postgres (`DATABASE_URL` in `.env.local`) and the live site has
+Supabase. They share nothing, which is why a person you add on one never appears on the other.
+
+To use **one** database, point `.env.local` at Supabase. Three lines, not one — all three matter:
+
+```
+DATABASE_URL=<the session pooler URI from step 3>
+SUPABASE_URL=https://<project-ref>.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=<the service_role key from Supabase → Settings → API>
+```
+
+Take them from the Supabase dashboard in a browser, not the `vercel` CLI, which may be signed in to a
+different account. Use the **session pooler** string: the direct one is IPv6-only and most networks
+can't reach it.
+
+> The two Supabase lines are not optional. Without them, files you upload land on your laptop's disk
+> while the row naming them goes into the shared database, so the receipt is unreadable everywhere
+> else and nothing says so. The app now refuses an upload in that state rather than creating the
+> broken row — if you see that error, these are the lines that are missing.
+
+What to expect once they are set:
+
+- You sign in locally with your **real** ops password, not the `LOCAL_*` ones in `.env.local`.
+- Anything you change on `localhost:3000` changes the real business. A delete is a real delete.
+- `npm run db:migrate` now migrates **production**, which is the point of one database, but means a
+  half-finished migration is a live problem. Run it when you mean to.
+- Every local page load reads from Supabase and counts against the Free plan's egress.
+
+To go back to a separate laptop database, set `DATABASE_URL` to
+`postgres://localhost:5432/traveldevils` and delete the two Supabase lines.
