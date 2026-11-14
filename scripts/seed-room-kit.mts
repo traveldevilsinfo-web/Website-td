@@ -52,6 +52,13 @@ insert into inventory_items (business, name, area, kind, cost_per_unit)
     console.log(`insert into fixtures (property_id, name, area)
   select p.id, ${q(i.name)}, ${q(i.area)} from properties p
   where p.active and not exists (select 1 from fixtures f where f.property_id = p.id and f.name = ${q(i.name)});`);
+  // Moving an item out of the fixtures list leaves its old rows behind, because this seeder never deletes.
+  // Offer the statement rather than run it: only the owner knows whether those rows are worth keeping.
+  console.log(`
+-- Anything the list now counts as stock keeps any fixtures rows it had from an earlier run, which would
+-- show the same thing twice on the Room page. If you have seeded before, run this once to clear them.
+-- Hand-added fixtures are untouched: this only names what the list itself calls a consumable or replaceable.
+-- delete from fixtures where name in (${stock.map((i) => q(i.name)).join(", ")});`);
   process.exit(0);
 }
 
@@ -83,7 +90,21 @@ for (const f of flats)
     fixtureRows++;
   }
 
+// Same as the --sql note: a name the list has moved out of fixtures keeps its old rows, so say so with the
+// count rather than leave them sitting on the Room page beside the counted line for the same thing.
+const stale = stock.length
+  ? await sql<{ name: string; n: number }[]>`
+      select name, count(*)::int as n from fixtures where name in ${sql(stock.map((i) => i.name))}
+      group by name order by name`
+  : [];
+
 console.log(`\nItems: ${added} added, ${updated} updated (${stock.length} in the list).`);
 console.log(`Fixtures: ${fixtureRows} added across ${flats.length} flat(s) (${fixes.length} per flat).`);
 console.log("No kit counts or stock movements written. Nothing works until the standard kit is set in /ops/kit.");
+if (stale.length) {
+  const total = stale.reduce((n, r) => n + r.n, 0);
+  console.log(`\nThese are counted stock now, but ${total} old fixtures row(s) are still there from a previous run:`);
+  for (const r of stale) console.log(`  ${r.name} (${r.n})`);
+  console.log(`Clear them when you are happy to:\n  delete from fixtures where name in (${stale.map((r) => `'${r.name.replace(/'/g, "''")}'`).join(", ")});`);
+}
 await sql.end();

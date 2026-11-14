@@ -213,10 +213,11 @@ judged real but not worth holding the branch for. Nothing here loses data or mis
   inventing them would make the Room page and the losses report confidently wrong. Until they are
   entered on `/ops/kit`, every flat reads "Nothing counted here yet" and losses total ₹0 (the
   report says how many items have no cost recorded).
-- Portable appliances (iron, hair dryer, kettle, toaster, mixer, coffee maker, lamp) are fixtures,
-  so they carry a condition but no count and no loss value. If one walking off should be caught by
-  the kit check, they belong as replaceables instead — a one-line change each in
-  `scripts/room-kit.json`.
+- ~~Portable appliances are fixtures~~ **Settled 15 Nov 2026:** the owner's call is that iron, hair
+  dryer, electric kettle, toaster, mixer, coffee maker and lamp are **replaceables** — counted at
+  every cleaning, and valued when one goes missing. Microwave and induction stayed fixtures, as did
+  everything plumbed or wired in. The seeder now warns about `fixtures` rows left behind by an
+  earlier run and prints the statement to clear them; it never deletes them itself.
 
 **Behaviour**
 - The kit check silently ignores a bad entry (a finished cleaning, or a value like "2.5") instead of
