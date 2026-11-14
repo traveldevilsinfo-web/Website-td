@@ -192,12 +192,18 @@ Alerts: low stock · unpaid fixed costs · expenses awaiting approval · iCal sy
 
 Order rationale: expenses + Finzo first, because Finzo has no system at all today and expenses feed every other report.
 
-## 10. Open questions for the owner
-1. Do Finzo staff and TD staff overlap (one person paid by both)? If yes, one employee would need a salary split across businesses.
-2. Is the Finzo rent paid to landlords (leased units) or are the flats owned? This changes the fixed-cost setup and the property P&L.
-3. Who will actually use it day to day: only the owners, or also captains/housekeepers on their phones? This decides how much the mobile staff view matters in phase 1.
-4. Are any Finzo listings also on Booking.com/MakeMyTrip? iCal handles those too, but CSV import would need one format per channel.
-5. Do you want Finzo under its own domain/branding later, or is it fine living at `traveldevils…/ops`?
+## 10. Questions for the owner
+
+**Answered 14 Nov:**
+1. **Nobody works for both businesses.** Each person belongs to one, so payroll stays one list and one monthly run per business. If that ever changes, an employee would need their salary split across the two.
+2. **All 13 Finzo flats are rented from landlords.** Rent is each flat's biggest monthly cost, so every flat needs a recurring rent tied to it — otherwise its owner statement overstates profit by the rent. The flat page now lists that flat's fixed costs and links straight to adding one.
+3. **Airbnb only, plus direct bookings** taken by phone or WhatsApp. The earnings import understands Airbnb's file, and direct bookings carry the amount you enter, so no other channel format is needed. Booking.com and MakeMyTrip calendars would still sync if a flat is ever listed there; only their *money* would need a new import.
+
+**Answered by how it was built:**
+4. Captains and housekeepers use it on their phones, which is why the staff view is a bottom tab bar, the expense form is phone-first, and the cleaning checklist keeps every tick.
+
+**Still open:**
+5. Do you want Finzo under its own domain or branding later, or is `traveldevils…/ops` fine? Nothing depends on this yet; the back office is already visually its own product.
 
 ## 11. Left to the builder
 Exact UI layout (reuse `components/admin/ui.tsx`, `TableEditor`), chart library (prefer plain SVG/CSS bars; no new dependency unless needed), cron via `vercel.json` crons, Drizzle migrations, category seed lists per business.

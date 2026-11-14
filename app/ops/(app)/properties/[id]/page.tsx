@@ -4,6 +4,8 @@ import { RefreshCw, Trash2 } from "lucide-react";
 import { db, t } from "@/lib/db";
 import { requireStays } from "@/lib/ops";
 import { Badge, Field, Notice, PageHeader, Panel, btnGhost, btnQuiet, input } from "../../../kit";
+import { inr } from "@/lib/format";
+import Link from "next/link";
 import { OpsForm } from "../../../OpsForm";
 import { CopyField } from "../../../CopyField";
 import { stayUrl } from "@/lib/stay-link";
@@ -24,11 +26,15 @@ export default async function FlatEditor({ params, searchParams }: PageProps<"/o
   if (id !== null && !Number.isInteger(id)) notFound();
   const [p] = id ? await db.select().from(t.properties).where(eq(t.properties.id, id)) : [null];
   if (id && !p) notFound();
-  const [feeds, team] = await Promise.all([
+  const [feeds, team, fixed] = await Promise.all([
     id ? db.select().from(t.propertyFeeds).where(eq(t.propertyFeeds.propertyId, id)).orderBy(asc(t.propertyFeeds.id)) : [],
     db.select({ id: t.opsUsers.id, name: t.opsUsers.name }).from(t.opsUsers)
       .where(and(eq(t.opsUsers.active, true), sql`(${t.opsUsers.role} = 'owner' or 'finzo' = any(${t.opsUsers.businesses}))`)).orderBy(asc(t.opsUsers.name)),
+    id ? db.select({ id: t.recurringExpenses.id, name: t.recurringExpenses.name, amount: t.recurringExpenses.amount, active: t.recurringExpenses.active, category: t.expenseCategories.name })
+      .from(t.recurringExpenses).innerJoin(t.expenseCategories, eq(t.expenseCategories.id, t.recurringExpenses.categoryId))
+      .where(eq(t.recurringExpenses.propertyId, id)).orderBy(asc(t.recurringExpenses.name)) : [],
   ]);
+  const monthly = fixed.filter((x) => x.active).reduce((n, x) => n + (x.amount ?? 0), 0);
   const site = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
   const exportUrl = (ex?: string) => `${site}/api/stays/ical/${p?.icalToken}${ex ? `?exclude=${ex}` : ""}`;
 
@@ -106,6 +112,18 @@ export default async function FlatEditor({ params, searchParams }: PageProps<"/o
                 <Field label="Everything (other channels)"><CopyField label="Full calendar link" value={exportUrl()} /></Field>
               </div>
               <p className="mt-3 text-xs text-[var(--muted)]">Channels re-read these links every 1–3 hours, so a booking can still slip in during that gap. Clashes show in red on the calendar.</p>
+            </Panel>
+            <Panel title="What this flat costs every month" sub={monthly ? `${inr(monthly)} a month, plus any variable bills` : "Rent, Wi-Fi, society dues — so they land on this flat's statement"}
+              action={<Link href={`/ops/fixed-costs/new?property=${p.id}&category=Rent&name=rent`} className={btnQuiet}>+ Add rent</Link>}>
+              <ul className="divide-y divide-[var(--line)] text-sm">
+                {fixed.map((x) => (
+                  <li key={x.id} className={`flex justify-between gap-3 py-2 ${x.active ? "" : "opacity-60"}`}>
+                    <Link href={`/ops/fixed-costs/${x.id}`} className="min-w-0 hover:underline">{x.name}<span className="block text-xs text-[var(--muted)]">{x.category}{x.active ? "" : " · off"}</span></Link>
+                    <span className="whitespace-nowrap font-medium">{x.amount ? inr(x.amount) : <span className="text-[var(--warn)]">varies</span>}</span>
+                  </li>
+                ))}
+                {!fixed.length && <li className="py-2 text-[var(--muted)]">Nothing recurring yet. Without rent here, this flat&apos;s statement will overstate its profit.</li>}
+              </ul>
             </Panel>
             <Panel title="Guidebook QR" sub="Print this link as a QR code inside the flat: guests get Wi-Fi and the guidebook, never the door code.">
               <CopyField label="Guidebook link" value={stayUrl(p.guideToken)} />

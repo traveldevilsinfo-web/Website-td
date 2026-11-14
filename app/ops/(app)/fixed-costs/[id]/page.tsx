@@ -8,7 +8,7 @@ import { OpsForm } from "@/app/ops/OpsForm";
 import { Field, PageHeader, Panel, input } from "@/app/ops/kit";
 import { saveFixedCost } from "../actions";
 
-export default async function FixedCostEditor({ params }: PageProps<"/ops/fixed-costs/[id]">) {
+export default async function FixedCostEditor({ params, searchParams }: PageProps<"/ops/fixed-costs/[id]">) {
   const { biz } = await requireOps({ manager: true });
   const raw = (await params).id;
   const id = raw === "new" ? null : Number(raw);
@@ -16,18 +16,23 @@ export default async function FixedCostEditor({ params }: PageProps<"/ops/fixed-
   const r = id ? (await db.select().from(t.recurringExpenses).where(and(eq(t.recurringExpenses.id, id), eq(t.recurringExpenses.business, biz))))[0] : null;
   if (id && !r) notFound();
   const { categories, vendors, flats } = await expenseFormOptions(biz);
+  // Arriving from a flat: pre-fill it, so setting up 13 rents isn't 13 blank forms.
+  const sp = await searchParams;
+  const forFlat = flats.find((f) => f.id === Number(sp.property));
+  const preset = forFlat && !r ? { propertyId: forFlat.id, name: `${forFlat.code} ${String(sp.name ?? "rent")}`,
+    categoryId: categories.find((c) => c.name.toLowerCase().startsWith(String(sp.category ?? "rent").toLowerCase()))?.id } : null;
   return (
     <>
       <PageHeader back="/ops/fixed-costs" title={r ? r.name : "New fixed cost"} />
       <OpsForm action={saveFixedCost.bind(null, id)} submitLabel={r ? "Save" : "Create fixed cost"}>
         <Panel title="Fixed cost" sub="Posted as an approved, unpaid expense on this day each month (the last day for short months).">
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Name"><input name="name" required defaultValue={r?.name} placeholder="Flat 3B rent" className={input} /></Field>
+            <Field label="Name"><input name="name" required defaultValue={r?.name ?? preset?.name} placeholder="Flat 3B rent" className={input} /></Field>
             <Field label="Amount (₹)" hint="Empty = varies every month (electricity). It's posted as 'needs amount'.">
               <input name="amount" inputMode="numeric" defaultValue={r?.amount ?? ""} className={input} />
             </Field>
             <Field label="Category">
-              <select name="categoryId" required defaultValue={r?.categoryId ?? categories.find((c) => c.kind === "fixed")?.id} className={input}>
+              <select name="categoryId" required defaultValue={r?.categoryId ?? preset?.categoryId ?? categories.find((c) => c.kind === "fixed")?.id} className={input}>
                 {categories.filter((c) => c.active || c.id === r?.categoryId).map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
               </select>
             </Field>
@@ -39,7 +44,7 @@ export default async function FixedCostEditor({ params }: PageProps<"/ops/fixed-
             </Field>
             {biz === "finzo" && (
               <Field label="Flat (optional)" hint="Rent, Wi-Fi or society dues for one flat land on its statement.">
-                <select name="propertyId" defaultValue={r?.propertyId ?? ""} className={input}>
+                <select name="propertyId" defaultValue={r?.propertyId ?? preset?.propertyId ?? ""} className={input}>
                   <option value="">Not flat-specific</option>
                   {flats.filter((f) => f.active || f.id === r?.propertyId).map((f) => <option key={f.id} value={f.id}>{f.code} · {f.name}{f.active ? "" : " (off)"}</option>)}
                 </select>
