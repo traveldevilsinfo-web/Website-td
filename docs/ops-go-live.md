@@ -49,14 +49,45 @@ too — `DATABASE_URL` (nothing loads without it), and `SUPABASE_URL` plus
 
 This adds the back office's tables. It does not alter any table the website uses.
 
-From the project folder, with your Supabase connection string:
+### Finding the connection string
+
+Supabase → your project → **Settings** → **Database** → **Connection string** → **URI**. Supabase
+offers three, and for this step you want one of the first two:
+
+| | Port | Use it for |
+|---|---|---|
+| **Direct connection** | 5432 | migrations and the one-off scripts below |
+| **Session pooler** | 5432 (host contains `pooler`) | the same, when your network has no IPv6 |
+| Transaction pooler | 6543 | the deployed app — **not** these commands |
+
+The transaction pooler drops the prepared statements the migration tool relies on, so use 5432 here.
+Supabase prints the password as `[YOUR-PASSWORD]`; replace it with the real one (**Reset database
+password** on the same page if you don't have it).
+
+It is already in Vercel too, as `DATABASE_URL` under Environment Variables, if that is quicker to
+reach — but take it from the dashboard in the browser rather than the `vercel` CLI, which may be
+signed in to a different account than the one holding this project.
+
+### Running them
+
+From the project folder:
 
 ```bash
-DATABASE_URL='<your supabase connection string>' npm run db:migrate
+DATABASE_URL='<the URI from above>' npm run db:migrate
 ```
 
-Use the **pooled** connection string from Supabase → Settings → Database. It runs migrations `0009`
-through `0020`. It is safe to run twice: anything already applied is skipped.
+It runs migrations `0009` through `0020` and is safe to run twice: anything already applied is
+skipped. Putting `DATABASE_URL=` in front of the command overrides whatever is in `.env.local` for
+that one run, so there is no way to hit your laptop's database by mistake.
+
+To check afterwards — `21` means every migration is in:
+
+```bash
+psql '<the URI from above>' -c "select count(*) from drizzle.__drizzle_migrations;"
+```
+
+> The string holds your database password, so it goes into your shell history. Clear it afterwards
+> if that matters to you.
 
 > Setting `DATABASE_URL` on the command line like this overrides whatever is in `.env.local`, so you
 > cannot accidentally run it against your laptop's database.
