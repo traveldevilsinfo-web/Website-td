@@ -103,6 +103,26 @@ driver for database querying*, which reads like success. If you see no `[✓]` l
 > Setting `DATABASE_URL` on the command line like this overrides whatever is in `.env.local`, so you
 > cannot accidentally run it against your laptop's database.
 
+### If your network has no IPv6: do it from the browser instead
+
+Rather than hunting for a connection string that works, let the scripts print SQL and paste it into
+Supabase → **SQL Editor** → Run. Nothing connects from your machine, so nothing can fail this way.
+
+```bash
+npm run ops:owner -- you@traveldevils.in "Your Name" 'a-long-password' --sql
+```
+
+```bash
+npm run ops:airbnb -- --sql
+```
+
+The first prints one `insert` for your login — the password is hashed on your machine, so only the
+hash is ever on screen or in the clipboard. The second prints the eight flats and their Airbnb
+calendars. Both are safe to run twice.
+
+The migrations are the one thing this cannot do; they need a real connection. If `db:migrate` fails,
+use the session pooler string above.
+
 ## 4. Deploy
 
 Merge the pull request. Vercel builds and deploys `main` by itself.

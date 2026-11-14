@@ -19,6 +19,9 @@
  *
  * It does not sync; the app does that itself. Open the Calendar page (or press Sync now) and the
  * bookings arrive — lib/stays-sync is server-only, so it can't be reached from a script like this.
+ *
+ * Add --sql and it connects to nothing: it prints the statements to paste into Supabase's SQL
+ * editor. That is the way in when your network has no IPv6 route to the database.
  */
 import { readFileSync } from "node:fs";
 import { randomBytes } from "node:crypto";
@@ -41,11 +44,35 @@ for (const l of listings) {
   if (bad) throw new Error(`${l.code} (${l.name}): ${bad}`);
 }
 
+const COLS = "code, name, address, area, bedrooms, max_guests, checkin_time, checkout_time, notes, ical_token, sort";
+const UPSERT = `on conflict (code) do update set
+      name = excluded.name, address = excluded.address, area = excluded.area,
+      bedrooms = excluded.bedrooms, max_guests = excluded.max_guests,
+      checkin_time = excluded.checkin_time, checkout_time = excluded.checkout_time,
+      notes = excluded.notes, active = true, updated_at = now()`;
+const notesFor = (l: Listing) =>
+  [`Airbnb listing ${l.listingId} · "${l.airbnbTitle}"`, l.publicLink].filter(Boolean).join("\n");
+
+if (process.argv.includes("--sql")) {
+  const q = (v: string | null) => (v === null ? "null" : `'${v.replace(/'/g, "''")}'`);
+  console.log("-- Paste into Supabase → SQL Editor → Run. Safe to run twice.");
+  listings.forEach((l, i) => {
+    console.log(`\ninsert into properties (${COLS}) values (
+  ${q(l.code)}, ${q(l.name)}, ${q(l.address)}, ${q(l.area)}, ${l.bedrooms}, ${l.maxGuests},
+  ${q(l.checkinTime)}, ${q(l.checkoutTime)}, ${q(notesFor(l))}, ${q(l.icalToken ?? randomBytes(16).toString("hex"))}, ${i + 1})
+    ${UPSERT};
+insert into property_feeds (property_id, channel, url)
+  select id, 'airbnb', ${q(l.ical)} from properties where code = ${q(l.code)}
+  on conflict (property_id, channel) do update set url = excluded.url, last_error = null;`);
+  });
+  process.exit(0);
+}
+
 const sql = postgres(process.env.DATABASE_URL!);
 let added = 0, updated = 0;
 
 for (const [i, l] of listings.entries()) {
-  const notes = [`Airbnb listing ${l.listingId} · "${l.airbnbTitle}"`, l.publicLink].filter(Boolean).join("\n");
+  const notes = notesFor(l);
   const [flat] = await sql<{ id: number; existed: boolean }[]>`
     insert into properties (code, name, address, area, bedrooms, max_guests, checkin_time, checkout_time, notes, ical_token, sort)
     values (${l.code}, ${l.name}, ${l.address}, ${l.area}, ${l.bedrooms}, ${l.maxGuests},
