@@ -552,12 +552,14 @@ assert.deepEqual(parseCsv('"he said ""hi""",2'), [['he said "hi"', "2"]]); // es
 assert.deepEqual(parseCsv('﻿a,b\n1,2')[0], ["a", "b"]); // byte-order mark
 assert.deepEqual(parseCsv('a,b\n\n1,2').length, 2); // blank lines dropped
 
+// Shaped like the real export: "Start date" is the stay, "Arriving by date" is when the payout lands
+// (blank on reservation rows), and the Payout row carries the arrival date instead.
 const CSV = [
-  '"Date","Arriving by date","Type","Confirmation code","Nights","Guest","Listing","Currency","Amount","Paid out","Service fee","Cleaning fee","Gross earnings"',
-  '"11/01/2026","11/20/2026","Reservation","HMABC123","3","Riya Sharma","Bandra 1BHK","INR","₹12,000.00","","₹360.00","₹1,500.00","₹12,360.00"',
-  '"11/02/2026","","Payout","","","","","INR","","₹12,000.00","","",""',
-  '"11/05/2026","11/28/2026","Reservation","HMXYZ789","2","Ana Lopez","Khar studio","INR","8000","","240","0","8240"',
-  '"11/07/2026","","Resolution Payout","HMABC123","","","","INR","₹2,000.00","","","",""',
+  '"Date","Arriving by date","Type","Confirmation code","Start date","Nights","Guest","Listing","Currency","Amount","Paid out","Service fee","Cleaning fee","Gross earnings"',
+  '"11/01/2026","","Reservation","HMABC123","11/20/2026","3","Riya Sharma","Bandra 1BHK","INR","₹12,000.00","","₹360.00","₹1,500.00","₹12,360.00"',
+  '"11/02/2026","11/04/2026","Payout","","","","","","INR","","₹12,000.00","","",""',
+  '"11/05/2026","","Reservation","HMXYZ789","11/28/2026","2","Ana Lopez","Khar studio","INR","8000","","240","0","8240"',
+  '"11/07/2026","","Resolution Payout","HMABC123","","","","","INR","₹2,000.00","","","",""',
 ].join("\n");
 const er = parseEarnings(CSV);
 assert.equal(er.rows.length, 2); // two reservations
@@ -569,6 +571,9 @@ assert.equal(er.rows[1].gross, 8240); // before the host service fee
 const noGross = parseEarnings(['"Type","Confirmation code","Amount","Service fee"', '"Reservation","HM1","5000","150"'].join("\n"));
 assert.deepEqual([noGross.rows[0].gross, noGross.rows[0].payout], [5150, 5000]); // gross rebuilt from amount + fee
 assert.ok(parseEarnings("not,a,csv\n1,2,3").error); // no recognisable columns
+// An older export with only "Arriving by date" still yields a check-in
+const oldShape = parseEarnings(['"Arriving by date","Type","Confirmation code","Amount","Service fee"', '"11/20/2026","Reservation","HM2","5000","0"'].join("\n"));
+assert.equal(oldShape.rows[0].checkIn, "2026-11-20");
 
 // Airbnb puts the confirmation code in the event description
 assert.equal(confirmationCodeFrom("Reservation URL: https://www.airbnb.com/hosting/reservations/details/HMABC123\nPhone: 1234"), "HMABC123");

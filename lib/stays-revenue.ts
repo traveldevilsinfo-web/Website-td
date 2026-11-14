@@ -72,7 +72,9 @@ export function parseEarnings(csv: string): { rows: EarningRow[]; payouts: numbe
   if (cType < 0 || (cGross < 0 && cAmount < 0))
     return { rows: [], payouts: 0, other: 0, unreadable: 0, error: "This doesn't look like an Airbnb earnings file. Download Transaction history as CSV." };
   const cCode = at("Confirmation code", "Confirmation", "Reference code"), cNights = at("Nights"), cGuest = at("Guest"), cListing = at("Listing");
-  const cStart = at("Arriving by date", "Start date", "Check-in"), cFee = at("Service fee", "Host service fee"), cClean = at("Cleaning fee");
+  // "Start date" is the stay's first night. "Arriving by date" is when the *money* lands, and is blank on
+  // reservation rows in the real export — preferring it lost every check-in date.
+  const cStart = at("Start date", "Check-in", "Arriving by date"), cFee = at("Service fee", "Host service fee"), cClean = at("Cleaning fee");
 
   const rows: EarningRow[] = [];
   let payouts = 0, other = 0, unreadable = 0;
