@@ -23,7 +23,7 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
         <PageHeader title={`Hi ${user.name.split(" ")[0]}`} sub={`${BIZ_LABEL[biz]} · ${dateDay(istToday())}`} />
         {sp.denied && <Notice tone="amber">That page is for managers.</Notice>}
         {biz === "finzo" && <TodayStays manager={false} userId={user.id} />}
-        <h2 className="mb-3 text-[15px] font-semibold">Your expenses · {monthLabel(month)}</h2>
+        <h2 className="mb-3 text-[15px] font-bold tracking-[-0.01em]">Your expenses · {monthLabel(month)}</h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <Stat label="Approved this month" value={inr(s.spent)} href="/ops/expenses" />
           <Stat label="Waiting approval" value={s.pendingCount} hint={inr(s.pendingAmount)} href="/ops/expenses" />
@@ -61,7 +61,7 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
       {sp.switch === "td" && <Notice tone="amber">Trip profit belongs to Travel Devils. Switch business to open it.</Notice>}
       {biz === "finzo" && <TodayStays manager userId={user.id} />}
       <div className="mb-3 mt-2 flex flex-wrap items-center justify-between gap-3">
-        <h2 className="text-[15px] font-semibold">Money · {monthLabel(month)}</h2>
+        <h2 className="text-[15px] font-bold tracking-[-0.01em]">Money · {monthLabel(month)}</h2>
         <MonthPicker month={month} />
       </div>
       {s.needsAmount > 0 && <Notice tone="amber">{s.needsAmount} fixed bill(s) need the real amount. <Link className="underline" href={{ pathname: "/ops/expenses", query: { month, status: "needs_amount" } }}>Fill them in</Link></Notice>}
@@ -74,15 +74,16 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
       {stale.n > 0 && <Notice tone="amber">{stale.n} expense(s) have waited more than 3 days for approval. <Link className="underline" href="/ops/expenses?status=submitted">Review</Link></Notice>}
 
       {/* The month's books in one strip: in − out = profit */}
-      <section className="grid overflow-hidden rounded-lg bg-[#0c0e12] text-white sm:grid-cols-3">
+      <section className="relative grid overflow-hidden rounded-[var(--r-lg)] bg-[var(--chrome)] text-white shadow-[var(--shadow-md)] sm:grid-cols-3">
+        <span aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.18]" style={{ background: "radial-gradient(90% 120% at 100% 0%, var(--acc), transparent 65%)" }} />
         {[
           { label: "Money in", value: inr(rev), hint: biz === "td" ? "Paid website bookings" : "Imported Airbnb payouts, after fees", href: "/ops/reports" },
           { label: "Money out", value: inr(s.spent), hint: "Approved and paid expenses", href: `/ops/expenses?month=${month}` },
           { label: "Profit", value: money(profit), hint: rev ? `${Math.round((profit / rev) * 100)}% margin` : "No revenue yet", href: "/ops/reports", loss: profit < 0 },
         ].map((x, i) => (
-          <Link key={x.label} href={x.href} className={`block px-6 py-5 transition hover:bg-white/5 ${i ? "border-t border-white/10 sm:border-l sm:border-t-0" : ""}`}>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">{x.label}</p>
-            <p className={`mt-1 whitespace-nowrap text-3xl font-semibold tracking-tight ${x.loss ? "text-red-400" : i === 2 ? "text-[var(--acc)]" : ""}`}>{x.value}</p>
+          <Link key={x.label} href={x.href} className={`relative block px-6 py-5 transition-colors duration-200 hover:bg-white/[0.07] ${i ? "border-t border-white/10 sm:border-l sm:border-t-0" : ""}`}>
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-zinc-400">{x.label}</p>
+            <p className={`mt-1.5 whitespace-nowrap text-[34px] font-extrabold leading-[1.05] tracking-[-0.03em] ${x.loss ? "text-red-400" : i === 2 ? "text-[var(--acc)]" : ""}`}>{x.value}</p>
             <p className="mt-1 text-xs text-zinc-500">{x.hint}</p>
           </Link>
         ))}
@@ -95,15 +96,15 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
 
       <div className="mt-6 grid gap-4 lg:grid-cols-5">
         <Panel title="Last 6 months" sub="Money in vs money out" className="lg:col-span-3"
-          action={<span className="flex gap-3 text-[11px] text-zinc-500"><span className="flex items-center gap-1"><span className="size-2 rounded-sm bg-[var(--acc)]" />In</span><span className="flex items-center gap-1"><span className="size-2 rounded-sm bg-zinc-800" />Out</span></span>}>
+          action={<span className="flex gap-3 text-[11px] font-bold text-[var(--muted)]"><span className="flex items-center gap-1"><span className="size-2 rounded-sm bg-[var(--acc)]" />In</span><span className="flex items-center gap-1"><span className="size-2 rounded-sm bg-[var(--ink)]/85" />Out</span></span>}>
           <div className="flex h-44 items-end gap-3" role="img" aria-label={trend.map((x) => `${monthLabel(x.m, true)}: in ${inr(x.rev)}, out ${inr(x.spent)}`).join("; ")}>
             {trend.map((x) => (
               <div key={x.m} className="flex h-full flex-1 flex-col justify-end">
                 <div className="flex flex-1 items-end justify-center gap-1">
-                  <span title={`In ${inr(x.rev)}`} className="w-1/3 max-w-5 rounded-t-sm bg-[var(--acc)]" style={{ height: `${Math.max(2, (x.rev / max) * 100)}%` }} />
-                  <span title={`Out ${inr(x.spent)}`} className="w-1/3 max-w-5 rounded-t-sm bg-zinc-800" style={{ height: `${Math.max(2, (x.spent / max) * 100)}%` }} />
+                  <span title={`In ${inr(x.rev)}`} className="w-1/3 max-w-5 rounded-t-[3px] bg-[var(--acc)]" style={{ height: `${Math.max(2, (x.rev / max) * 100)}%` }} />
+                  <span title={`Out ${inr(x.spent)}`} className="w-1/3 max-w-5 rounded-t-[3px] bg-[var(--ink)]/85" style={{ height: `${Math.max(2, (x.spent / max) * 100)}%` }} />
                 </div>
-                <span className={`mt-2 text-center text-[11px] ${x.m === month ? "font-semibold text-zinc-900" : "text-zinc-500"}`}>{monthLabel(x.m, true).split(" ")[0]}</span>
+                <span className={`mt-2 text-center text-[11px] font-bold ${x.m === month ? "text-[var(--ink)]" : "text-[var(--muted)]"}`}>{monthLabel(x.m, true).split(" ")[0]}</span>
               </div>
             ))}
           </div>
@@ -114,11 +115,11 @@ export default async function OpsHome({ searchParams }: PageProps<"/ops">) {
               {s.byCategory.slice(0, 7).map((c) => (
                 <li key={c.category}>
                   <span className="flex justify-between"><span>{c.category}</span><span className="font-semibold">{inr(c.amount)}</span></span>
-                  <span className="mt-1 block h-1 rounded bg-zinc-100"><span className="block h-1 rounded bg-[var(--acc)]" style={{ width: `${(c.amount / s.spent) * 100}%` }} /></span>
+                  <span className="mt-1.5 block h-1.5 rounded-full bg-[var(--sunk)]"><span className="block h-1.5 rounded-full bg-[var(--acc)]" style={{ width: `${(c.amount / s.spent) * 100}%` }} /></span>
                 </li>
               ))}
             </ul>
-          ) : <p className="text-sm text-zinc-500">No approved expenses this month yet.</p>}
+          ) : <p className="text-sm text-[var(--muted)]">No approved expenses this month yet.</p>}
         </Panel>
       </div>
     </>

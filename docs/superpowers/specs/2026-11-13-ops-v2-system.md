@@ -52,27 +52,50 @@ Honest limits:
 
 Sources: ui-ux-pro-max (the "Data-Dense + Drill-Down" pattern for operational dashboards), Apple's fluid-interface and typography guidance, and the personas above.
 
-- **Type:** the system UI font stack (SF on Apple, Roboto on Android, Segoe on Windows). It's native, needs no download, and is tuned for each platform; it also clearly isn't the website's Nunito.
-  - Tabular numbers everywhere.
-  - Display sizes use −0.02em tracking and tight leading; body text uses 1.5 leading.
-- **Colour tokens** (CSS variables on the ops root):
-  - `--bg` #f4f5f7, `--surface` #fff, `--line` #e4e4e7, `--ink` #0f1115, `--muted` #5b5f66 (passes 4.5:1 on white)
-  - `--acc`: TD #e5484d, Finzo #12a594
-  - Semantic: ok #15803d, warn #b45309, bad #b91c1c, info #0369a1
-  - Channel colours: Airbnb #e0565b, Booking #2563eb, Vrbo #0e7490, Direct = `--acc`, Block #71717a
+- **Type:** Plus Jakarta Sans, self-hosted by `next/font` (no network request, no layout shift). A
+  geometric grotesque with open shapes and a tall x-height — the family hospitality brands reach for,
+  and clearly not the website's Nunito.
+  - Tabular numbers everywhere, so money columns line up.
+  - Display sizes use −0.03em tracking and 1.05 leading; body text sits near 0 tracking and 1.5 leading.
+  - Hierarchy comes from weight as much as size: bold labels, extrabold figures.
+- **Colour: a whole palette per business, not one accent** (`app/ops/(app)/accent.ts`), so a glance
+  tells you whose books are open:
+
+  | | Travel Devils | Finzo Stays |
+  |---|---|---|
+  | Accent (`--acc`) | #2f54eb alpine blue | #ff385c coral |
+  | On-white accent (`--acc-ink`) | #2546c8 | #d61f4e (raw coral is only 3.9:1 under white text) |
+  | Page (`--bg`) | #f2f4f8 cool grey | #f7f5f2 warm paper |
+  | Ink / muted | #0d1220 / #5a6478 | #1b1613 / #6b6054 |
+  | Chrome (`--chrome`) | #0b1020 navy | #17110e warm charcoal |
+
+  Finzo wears the look of the listings it manages. Travel Devils had to move off red for it: coral and
+  red side by side would have destroyed the one thing the switch exists to make obvious.
+  - Semantic (both): ok #15803d, warn #b45309, bad #b91c1c, info #0369a1
+  - Channels: Airbnb #ff385c, Booking #1d4ed8, Vrbo #0e7490, MakeMyTrip #7c3aed, Direct #0f766e,
+    Block #52525b. Direct is teal rather than the accent, because the Finzo accent *is* Airbnb's coral.
 - **Structure:**
-  - Dark structural sidebar on desktop (a heavy material separates structure)
-  - **Translucent sticky top bar** (`backdrop-blur`) holding the page title, the month or business context and the primary action
-  - On phones, a **bottom tab bar**: Today · Calendar/Expenses · ＋ · Tasks · More. This is a familiar pattern with thumb-reach targets of at least 44 px.
+  - Dark structural sidebar on desktop, carrying a breath of the business's colour at its head
+  - **Translucent chrome** (`backdrop-filter`) with content running underneath: the phone top bar, the
+    phone tab bar, and every sticky table header
+  - On phones, a **bottom tab bar**: Today · Calendar/Expenses · ＋ · Tasks · More, 44px+ targets
 - **Data:**
-  - Dense tables with sticky headers and right-aligned numbers
-  - Every KPI drills down to the rows behind it
+  - Dense tables with sticky glass headers and right-aligned numbers; the sides fade rather than clip
+  - Every KPI drills down to the rows behind it, and says so with a chevron on hover
   - Filters as chips in the URL, so they can be shared and the back button works
-- **Motion:**
-  - 150–200 ms colour and opacity transitions, plus press feedback (`active:scale-[.98]`)
-  - Sheets slide in from the side they belong to and leave the same way
-  - `prefers-reduced-motion` turns everything into cross-fades
-- **States:** every list has empty, loading (skeleton) and error states. Success feedback sits inline, next to what changed.
+- **Motion** (`app/ops/ops.css`, after Apple's *Designing Fluid Interfaces*):
+  - One curve does most of the work: `--ease-ios` `cubic-bezier(.32,.72,0,1)`
+  - Page content rises 10px into place, each block 40ms behind the last
+  - Press feedback is instant and on the press, not the release (`.ops-press`); cards lift under the pointer
+  - The business switch is a segmented control whose thumb slides and recolours, so the switch shows
+    you what changed
+  - The phone "More" sheet (`Sheet.tsx`) is **grabbable**: it tracks the finger 1:1 from where it was
+    held, rubber-bands past the top, and on release goes where the flick was *heading* (momentum
+    projection), picking up from its live position if grabbed mid-flight
+  - `prefers-reduced-motion` turns all of it into a 200ms cross-fade; `prefers-reduced-transparency`
+    makes the glass solid; `prefers-contrast: more` darkens the hairlines
+- **States:** every list has empty, loading (skeleton) and error states. Success feedback sits inline,
+  next to what changed.
 
 ## 4. Phases (each shippable)
 

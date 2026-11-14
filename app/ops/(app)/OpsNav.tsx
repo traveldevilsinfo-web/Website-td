@@ -9,6 +9,7 @@ import {
 import { BIZ_LABEL, ROLE_LABEL, type Biz, type OpsRole } from "@/lib/ops-rules";
 import { ACCENT, BIZ_SHORT } from "./accent";
 import { setBusiness } from "./biz-actions";
+import { Sheet } from "./Sheet";
 
 type Item = { href: string; label: string; icon: typeof House; count?: number; show: boolean };
 
@@ -56,12 +57,16 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
   ];
   const isActive = (href: string) => (href === "/ops" ? path === "/ops" : path === href || (path.startsWith(href + "/") && !path.startsWith("/ops/expenses/new")));
 
+  // A segmented control, not two buttons: the thumb slides between the businesses and takes the
+  // new accent with it, so the switch itself shows you what changed.
   const switcher = businesses.length > 1 && (
-    <div role="group" aria-label="Business" className={`grid grid-cols-2 gap-1 rounded-lg bg-white/[0.06] p-1 transition-opacity ${pending ? "opacity-60" : ""}`}>
+    <div role="group" aria-label="Business" className={`relative grid grid-cols-2 rounded-xl bg-white/[0.07] p-1 transition-opacity ${pending ? "opacity-70" : ""}`}>
+      <span aria-hidden
+        className="absolute inset-y-1 left-1 w-[calc(50%-6px)] rounded-[9px] shadow-[0_2px_8px_rgb(0_0_0/0.35)] transition-[transform,background-color] duration-[320ms] ease-[var(--ease-ios)] motion-reduce:transition-none"
+        style={{ background: ACCENT[biz], transform: `translateX(calc(${businesses.indexOf(biz)} * (100% + 4px)))` }} />
       {businesses.map((b) => (
         <button key={b} type="button" aria-pressed={b === biz} disabled={pending} onClick={() => b !== biz && start(() => setBusiness(b))}
-          style={b === biz ? { background: ACCENT[b] } : undefined}
-          className={`min-h-9 cursor-pointer rounded-md px-2 text-xs font-semibold outline-none transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-white/60 ${b === biz ? "text-white" : "text-zinc-400 hover:text-white"}`}>
+          className={`relative z-10 min-h-9 cursor-pointer rounded-[9px] px-2 text-[12.5px] font-bold outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-white/60 ${b === biz ? "text-white" : "text-zinc-400 hover:text-zinc-200"}`}>
           {BIZ_LABEL[b]}
         </button>
       ))}
@@ -75,18 +80,22 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
         if (!items.length) return null;
         return (
           <div key={gi}>
-            {g.title && <p className="mb-1 px-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500">{g.title}</p>}
+            {g.title && <p className="mb-1.5 px-3 text-[10.5px] font-extrabold uppercase tracking-[0.14em] text-zinc-500">{g.title}</p>}
             <ul className="space-y-0.5">
               {items.map((i) => {
                 const active = isActive(i.href);
                 return (
                   <li key={i.href}>
                     <Link href={i.href} aria-current={active ? "page" : undefined}
-                      className={`relative flex min-h-10 cursor-pointer items-center gap-3 rounded-lg px-2.5 text-[14px] outline-none transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-white/50 ${active ? "bg-white/[0.09] font-semibold text-white" : "text-zinc-400 hover:bg-white/[0.05] hover:text-white"}`}>
-                      {active && <span className="absolute inset-y-2 left-0 w-[3px] rounded-full bg-[var(--acc)]" aria-hidden />}
-                      <i.icon className="size-[18px] shrink-0" aria-hidden />
+                      className={`relative flex min-h-10 cursor-pointer items-center gap-3 rounded-[10px] px-3 text-[14px] font-semibold outline-none transition-[background-color,color] duration-200 focus-visible:ring-2 focus-visible:ring-white/50 ${active ? "bg-white/[0.08] text-white" : "text-zinc-400 hover:bg-white/[0.05] hover:text-white"}`}>
+                      <span className={`absolute inset-y-2.5 left-0 w-[3px] rounded-r-full bg-[var(--acc)] transition-[opacity,transform] duration-300 ease-[var(--ease-ios)] motion-reduce:transition-none ${active ? "opacity-100" : "scale-y-0 opacity-0"}`} aria-hidden />
+                      <i.icon className={`size-[18px] shrink-0 transition-colors duration-200 ${active ? "text-[var(--acc)]" : ""}`} aria-hidden />
                       <span className="flex-1">{i.label}</span>
-                      {!!i.count && <span className="min-w-5 rounded-full bg-[var(--acc)] px-1.5 py-0.5 text-center text-[11px] font-bold leading-none text-white">{i.count > 99 ? "99+" : i.count}<span className="sr-only"> waiting</span></span>}
+                      {!!i.count && (
+                        <span className="min-w-5 rounded-full bg-[var(--acc)] px-1.5 py-0.5 text-center text-[11px] font-extrabold leading-none text-white">
+                          {i.count > 99 ? "99+" : i.count}<span className="sr-only"> waiting</span>
+                        </span>
+                      )}
                     </Link>
                   </li>
                 );
@@ -99,97 +108,114 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
   );
 
   const brand = (
-    <Link href="/ops" className="flex items-center gap-2.5 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-white/50">
-      <span className="grid size-8 place-items-center rounded-lg bg-[var(--acc)] text-xs font-bold text-white">{BIZ_SHORT[biz]}</span>
-      <span className="leading-tight"><span className="block text-[15px] font-semibold tracking-[-0.01em] text-white">{BIZ_LABEL[biz]}</span><span className="block text-[11px] text-zinc-500">Back office</span></span>
+    <Link href="/ops" className="flex items-center gap-2.5 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-white/50">
+      <span className="grid size-9 place-items-center rounded-[11px] bg-[var(--acc)] text-[12px] font-extrabold text-white shadow-[0_4px_12px_-2px_color-mix(in_oklab,var(--acc)_60%,transparent)] transition-[background-color,box-shadow] duration-300">
+        {BIZ_SHORT[biz]}
+      </span>
+      <span className="leading-tight">
+        <span className="block text-[15px] font-extrabold tracking-[-0.02em] text-white">{BIZ_LABEL[biz]}</span>
+        <span className="block text-[10.5px] font-semibold uppercase tracking-[0.1em] text-zinc-500">Back office</span>
+      </span>
     </Link>
   );
 
   const me = (
-    <div className="flex items-center gap-3 border-t border-white/[0.08] px-4 py-3">
-      <span className="grid size-9 shrink-0 place-items-center rounded-full bg-white/10 text-sm font-semibold text-white">{user.name.slice(0, 1).toUpperCase()}</span>
+    <div className="flex items-center gap-3 border-t border-[var(--chrome-line)] px-4 py-3">
+      <span className="grid size-9 shrink-0 place-items-center rounded-full bg-white/10 text-sm font-bold text-white">{user.name.slice(0, 1).toUpperCase()}</span>
       <Link href="/ops/account" className="min-w-0 flex-1 rounded outline-none focus-visible:ring-2 focus-visible:ring-white/50">
-        <p className="truncate text-sm font-medium text-white">{user.name}</p>
-        <p className="text-xs text-zinc-500">{ROLE_LABEL[user.role]} · My account</p>
+        <p className="truncate text-sm font-bold text-white">{user.name}</p>
+        <p className="truncate text-xs text-zinc-500">{ROLE_LABEL[user.role]} · My account</p>
       </Link>
       <form action={logout}>
-        <button aria-label="Sign out" title="Sign out" className="grid size-10 cursor-pointer place-items-center rounded-lg text-zinc-400 outline-none transition-colors hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/50"><LogOut className="size-4" /></button>
+        <button aria-label="Sign out" title="Sign out" className="ops-press grid size-10 cursor-pointer place-items-center rounded-[10px] text-zinc-400 outline-none hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/50">
+          <LogOut className="size-4" />
+        </button>
       </form>
     </div>
   );
 
-  // Phone tab bar: the things people do most, everything else in the "More" sheet.
+  // Phone tab bar: the things people do most; everything else in the "More" sheet.
   const second = stays && manager ? { href: "/ops/calendar", label: "Calendar", icon: CalendarDays } : { href: "/ops/expenses", label: "Expenses", icon: Receipt };
-  const tab = (href: string, label: string, Icon: typeof House, count?: number) => (
-    <li>
-      <Link href={href} aria-current={isActive(href) ? "page" : undefined}
-        className={`relative flex min-h-14 cursor-pointer flex-col items-center justify-center gap-0.5 text-[11px] font-medium transition-colors ${isActive(href) ? "text-[var(--acc)]" : "text-zinc-500"}`}>
-        <Icon className="size-[22px]" aria-hidden />{label}
-        {!!count && <span className="absolute right-[20%] top-1.5 min-w-4 rounded-full bg-[var(--acc)] px-1 text-center text-[10px] font-bold leading-4 text-white">{count}</span>}
-      </Link>
-    </li>
-  );
+  const tab = (href: string, label: string, Icon: typeof House, count?: number) => {
+    const active = isActive(href);
+    return (
+      <li>
+        <Link href={href} aria-current={active ? "page" : undefined}
+          className={`relative flex min-h-14 cursor-pointer flex-col items-center justify-center gap-0.5 text-[10.5px] font-bold transition-colors duration-200 ${active ? "text-[var(--acc)]" : "text-[var(--muted)]"}`}>
+          <span className={`absolute top-1 h-[3px] w-6 rounded-full bg-[var(--acc)] transition-[opacity,transform] duration-300 ease-[var(--ease-ios)] motion-reduce:transition-none ${active ? "opacity-100" : "-translate-y-1 opacity-0"}`} aria-hidden />
+          <Icon className={`size-[21px] transition-transform duration-300 ease-[var(--ease-spring)] motion-reduce:transition-none ${active ? "scale-110" : ""}`} aria-hidden />
+          {label}
+          {!!count && <span className="absolute right-[18%] top-1.5 min-w-4 rounded-full bg-[var(--acc)] px-1 text-center text-[10px] font-extrabold leading-4 text-white">{count}</span>}
+        </Link>
+      </li>
+    );
+  };
 
   return (
     <>
-      <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col bg-[#0c0e12] lg:flex print:hidden">
-        <div className="flex h-16 shrink-0 items-center px-4">{brand}</div>
-        <div className="flex flex-1 flex-col gap-4 overflow-y-auto px-3 pb-4">
+      <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col border-r border-[var(--chrome-line)] bg-[var(--chrome)] lg:flex print:hidden">
+        {/* A breath of the business's colour at the top, so the chrome belongs to it too */}
+        <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-40 opacity-[0.16] transition-colors duration-500"
+          style={{ background: `radial-gradient(120% 70% at 20% 0%, ${ACCENT[biz]}, transparent 70%)` }} />
+        <div className="relative flex h-16 shrink-0 items-center px-4">{brand}</div>
+        <div className="ops-scroll relative flex flex-1 flex-col gap-4 overflow-y-auto px-3 pb-4">
           {switcher}
-          <Link href="/ops/expenses/new" className="flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[var(--acc)] text-sm font-semibold text-white transition-[filter,transform] duration-150 hover:brightness-110 active:scale-[0.98] motion-reduce:active:scale-100">
+          <Link href="/ops/expenses/new"
+            className="ops-press flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-[10px] bg-[var(--acc)] text-[14px] font-extrabold text-white shadow-[0_6px_18px_-6px_color-mix(in_oklab,var(--acc)_85%,transparent)] hover:brightness-[1.08]">
             <Plus className="size-4" aria-hidden /> Add expense
           </Link>
           {links}
         </div>
-        {me}
+        <div className="relative">{me}</div>
       </aside>
 
-      {/* Phone: translucent top bar, content scrolls under it */}
-      <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-white/[0.06] bg-[#0c0e12]/90 px-4 backdrop-blur-xl backdrop-saturate-150 lg:hidden print:hidden">
+      {/* Phone: translucent top bar, content runs underneath it */}
+      <header className="ops-glass-dark sticky top-0 z-30 flex h-14 items-center justify-between border-b border-[var(--chrome-line)] px-4 lg:hidden print:hidden">
         {brand}
         {businesses.length > 1 && (
           <button type="button" disabled={pending} onClick={() => start(() => setBusiness(biz === "td" ? "finzo" : "td"))}
-            className="min-h-9 cursor-pointer rounded-full border border-white/15 px-3 text-xs font-semibold text-zinc-300 transition-colors hover:text-white disabled:opacity-60">
+            className="ops-press min-h-9 cursor-pointer rounded-full border border-white/15 px-3.5 text-[12px] font-bold text-zinc-300 hover:border-white/30 hover:text-white disabled:opacity-60">
             {pending ? "Switching…" : `Switch to ${BIZ_LABEL[biz === "td" ? "finzo" : "td"]}`}
           </button>
         )}
       </header>
 
-      <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-30 print:hidden border-t border-[var(--line)] bg-white/85 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl backdrop-saturate-150 lg:hidden">
+      <nav aria-label="Main" className="ops-glass fixed inset-x-0 bottom-0 z-30 border-t border-[var(--line)] pb-[env(safe-area-inset-bottom)] lg:hidden print:hidden">
         <ul className="grid grid-cols-5">
           {tab("/ops", "Today", House)}
           {tab(second.href, second.label, second.icon)}
           <li>
             <Link href="/ops/expenses/new" className="flex min-h-14 cursor-pointer items-center justify-center">
-              <span className="grid size-11 place-items-center rounded-full bg-[var(--acc)] text-white shadow-md shadow-black/15 transition-transform active:scale-95 motion-reduce:active:scale-100"><Plus className="size-5" aria-hidden /><span className="sr-only">Add expense</span></span>
+              <span className="ops-press grid size-11 place-items-center rounded-full bg-[var(--acc)] text-white shadow-[0_6px_18px_-4px_color-mix(in_oklab,var(--acc)_80%,transparent)]">
+                <Plus className="size-5" aria-hidden /><span className="sr-only">Add expense</span>
+              </span>
             </Link>
           </li>
           {tab("/ops/tasks", "Tasks", ClipboardCheck, counts.tasks)}
           <li>
             <button type="button" onClick={() => setMoreAt(path)} aria-expanded={more}
-              className="flex min-h-14 w-full cursor-pointer flex-col items-center justify-center gap-0.5 text-[11px] font-medium text-zinc-500">
-              <MoreHorizontal className="size-[22px]" aria-hidden />More
+              className="flex min-h-14 w-full cursor-pointer flex-col items-center justify-center gap-0.5 text-[10.5px] font-bold text-[var(--muted)]">
+              <MoreHorizontal className="size-[21px]" aria-hidden />More
             </button>
           </li>
         </ul>
       </nav>
 
       {more && (
-        <div className="fixed inset-0 z-40 lg:hidden" role="dialog" aria-modal="true" aria-label="More">
-          <button aria-label="Close" onClick={() => setMoreAt(null)} className="absolute inset-0 animate-[ops-fade_.2s_ease-out] bg-black/50 motion-reduce:animate-none" />
-          {/* The sheet rises from the tab bar it was opened from and leaves the same way */}
-          <div className="absolute inset-x-0 bottom-0 flex max-h-[85vh] animate-[ops-sheet_.28s_cubic-bezier(.2,.9,.25,1)] flex-col rounded-t-2xl bg-[#0c0e12] pb-[env(safe-area-inset-bottom)] motion-reduce:animate-[ops-fade_.2s_ease-out]">
-            <div className="mx-auto mt-2 h-1 w-10 rounded-full bg-white/20" aria-hidden />
-            <div className="flex items-center justify-between px-4 pt-2">
+        <Sheet label="More" onClose={() => setMoreAt(null)}
+          head={
+            <div className="flex items-center justify-between px-4 pb-1 pt-2.5">
               {brand}
-              <button onClick={() => setMoreAt(null)} aria-label="Close" className="grid size-10 cursor-pointer place-items-center rounded-lg text-zinc-400 hover:bg-white/10"><X className="size-5" /></button>
+              <button onClick={() => setMoreAt(null)} aria-label="Close"
+                className="ops-press grid size-10 cursor-pointer place-items-center rounded-[10px] text-zinc-400 hover:bg-white/10 hover:text-white">
+                <X className="size-5" />
+              </button>
             </div>
-            <div className="space-y-4 overflow-y-auto px-3 py-4">{switcher}{links}</div>
-            {me}
-          </div>
-        </div>
+          }
+          foot={me}>
+          <div className="space-y-4 px-3 py-4">{switcher}{links}</div>
+        </Sheet>
       )}
-      <style>{"@keyframes ops-sheet{from{transform:translateY(100%)}to{transform:none}}@keyframes ops-fade{from{opacity:0}to{opacity:1}}"}</style>
     </>
   );
 }

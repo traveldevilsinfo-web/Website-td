@@ -53,7 +53,7 @@ export default async function TripPage({ params }: PageProps<"/ops/trips/[id]">)
       {closed && <Notice>Costs marked complete {dateShort(b.costsClosedAt!.toISOString().slice(0, 10))}. These figures are final unless you reopen them.</Notice>}
       {!closed && s.pending > 0 && <Notice tone="amber">{inr(s.pending)} of costs is still waiting for approval, so the profit below will move.</Notice>}
 
-      <section className="grid overflow-hidden rounded-xl bg-[#0c0e12] text-white sm:grid-cols-4">
+      <section className="grid overflow-hidden rounded-xl bg-[var(--chrome)] text-white sm:grid-cols-4">
         {[["Money in", inr(s.revenue), `${inr(s.perPax)} per traveller`], ["Costs", inr(s.costs), `${inr(s.costPerPax)} per traveller`],
           ["Profit", money(s.profit), s.revenue ? `${Math.round(s.margin * 100)}% margin` : "No revenue yet"],
           ["Per traveller", s.pax ? money(s.perPax - s.costPerPax) : "—", `${s.pax} travelling`]].map(([k, v, h], i) => (

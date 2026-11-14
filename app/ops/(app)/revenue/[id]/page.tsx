@@ -75,7 +75,7 @@ export default async function StatementPage({ params, searchParams }: PageProps<
         </Panel>
       </div>
 
-      <div className="mt-5 flex items-baseline justify-between rounded-xl bg-[#0c0e12] px-6 py-5 text-white">
+      <div className="mt-5 flex items-baseline justify-between rounded-xl bg-[var(--chrome)] px-6 py-5 text-white">
         <span className="text-[15px] font-semibold">Profit for {monthLabel(month)}</span>
         <span className={`text-3xl font-bold tracking-[-0.02em] ${s.revenue - spent < 0 ? "text-red-400" : "text-[var(--acc)]"}`}>{money(s.revenue - spent)}</span>
       </div>
