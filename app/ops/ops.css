@@ -42,6 +42,13 @@
   font-feature-settings: "tnum", "cv05";
   -webkit-tap-highlight-color: transparent;
   text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%; /* a phone rotating must not re-flow the type */
+  overscroll-behavior-y: contain; /* no rubber-banding the page behind the app */
+}
+
+/* Scrollers keep momentum and don't drag the page with them */
+.ops :where(.ops-scroll, [class*="overflow-"]) {
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Sticky chrome overlaps content, so anchors need room to clear it */
@@ -193,6 +200,91 @@
 /* Scroll edge effect: content fades where it meets floating chrome, instead of a hard 1px rule */
 .ops-edge-x {
   mask-image: linear-gradient(to right, transparent, #000 14px, #000 calc(100% - 14px), transparent);
+}
+
+
+/* The calendar's own column widths, so the grid can be narrow on a phone and roomy on a laptop */
+.ops-cal {
+  --flat-col: minmax(5.5rem, 7rem);
+  --day-col: 1.05rem;
+  scroll-snap-type: x proximity;
+}
+@media (min-width: 640px) {
+  .ops-cal {
+    --flat-col: minmax(7.5rem, 10rem);
+    --day-col: 1.4rem;
+  }
+}
+
+/* ---------- Phones: a dense table reads as a stack of cards ---------- */
+/* Sideways scrolling hides the column that matters, so below 640px each row becomes its own card and
+   every cell carries the column name it was labelled with in kit.tsx. */
+@media (max-width: 639px) {
+  .ops-table table,
+  .ops-table tbody,
+  .ops-table tr,
+  .ops-table td {
+    display: block;
+    width: auto;
+  }
+
+  .ops-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    border: 0;
+  }
+
+  .ops-table tr {
+    position: relative; /* rows whose whole card is a link anchor their overlay here */
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    padding: 0.25rem 0;
+  }
+
+  /* A cell is "label … value" on one line; the title cell is the card's heading instead */
+  .ops-table td {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.3rem 0.875rem !important;
+    text-align: left !important;
+  }
+  .ops-table td::before {
+    content: attr(data-col);
+    flex: none;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .ops-table td[data-title] {
+    padding-top: 0.625rem !important;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.012em;
+  }
+  .ops-table td[data-title]::before,
+  .ops-table td[data-col=""]::before {
+    content: none;
+  }
+  .ops-table td:last-child {
+    padding-bottom: 0.625rem !important;
+  }
+  /* Columns that only earn their place on a wide screen, and cells with nothing in them */
+  .ops-table td[data-hide],
+  .ops-table th[data-hide],
+  .ops-table td:empty {
+    display: none;
+  }
+  /* A row that spans the table (a totals footer) stays one line */
+  .ops-table td[colspan]::before {
+    content: none;
+  }
 }
 
 /* ---------- Accessibility: gentler equivalents, never nothing ---------- */

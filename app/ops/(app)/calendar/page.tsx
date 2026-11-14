@@ -34,7 +34,9 @@ export default async function CalendarPage({ searchParams }: PageProps<"/ops/cal
 
   // Two grid columns per day: a stay runs from midday of check-in to midday of check-out (same-day turnovers sit side by side).
   const col = (iso: string) => Math.min(Math.max(diff(start, iso) * 2 + 2, 1), DAYS * 2 + 1);
-  const grid = { gridTemplateColumns: `minmax(7.5rem, 10rem) repeat(${DAYS * 2}, minmax(1.4rem, 1fr))` };
+  // The flat column and the day columns both shrink on a phone, so roughly a week is visible at once
+  // instead of three days. Below that the grid scrolls sideways under a pinned flat column.
+  const grid = { gridTemplateColumns: `var(--flat-col) repeat(${DAYS * 2}, minmax(var(--day-col), 1fr))` } as React.CSSProperties;
 
   return (
     <>
@@ -54,7 +56,7 @@ export default async function CalendarPage({ searchParams }: PageProps<"/ops/cal
       {!flats.length ? <Empty text="No flats yet." action={<Link href="/ops/properties/new" className={btnPrimary}>Add a flat</Link>} /> : (
         <div className="overflow-hidden rounded-[var(--r-md)] border border-[var(--line)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
           <div className="ops-scroll overflow-x-auto overscroll-x-contain">
-            <div className="grid min-w-[44rem]" style={grid} role="grid" aria-label="Bookings by flat and day">
+            <div className="ops-cal grid min-w-[30rem] sm:min-w-[44rem]" style={grid} role="grid" aria-label="Bookings by flat and day">
               {/* header */}
               <div className="sticky left-0 z-20 border-b border-r border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.07em] text-[var(--muted)] shadow-[8px_0_12px_-10px_rgb(16_18_24/0.35)]">Flat</div>
               {dates.map((d) => {

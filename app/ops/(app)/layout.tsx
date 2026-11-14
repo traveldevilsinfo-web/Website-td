@@ -25,7 +25,7 @@ export default async function OpsShell({ children }: { children: React.ReactNode
     <div style={themeVars(biz)} className="min-h-screen bg-[var(--bg)] lg:pl-60 print:pl-0">
       <OpsNav biz={biz} businesses={businesses} manager={manager} owner={user.role === "owner"} user={{ name: user.name, role: user.role }}
         counts={{ approvals: manager ? c.approvals : 0, needsAmount: c.needsAmount, tasks: clean.n + fix.n }} logout={logout} />
-      <main key={biz} className="ops-page mx-auto max-w-6xl px-4 pb-28 pt-5 sm:px-6 lg:px-10 lg:pb-12 lg:pt-9">{children}</main>
+      <main key={biz} className="ops-page mx-auto max-w-6xl px-[max(1rem,env(safe-area-inset-left))] pb-28 pt-5 sm:px-6 lg:px-10 lg:pb-12 lg:pt-9">{children}</main>
     </div>
   );
 }

@@ -36,7 +36,10 @@ export default async function StockPage({ searchParams }: PageProps<"/ops/stock"
       {!items.length ? <Empty text="No items yet. Add linen, toiletries, gear — whatever you keep track of." action={<Link href="/ops/stock/new" className={btnPrimary}>Add the first item</Link>} /> : (
         <>
           <DataTable head={["Item", "In store", ...columns.map((f) => f.code), "Total", ""]}
-            align={[undefined, "r", ...columns.map(() => "r" as const), "r", undefined]} empty={!shown.length} emptyText={only === "low" ? "Nothing is running low." : "Nothing here."}>
+            align={[undefined, "r", ...columns.map(() => "r" as const), "r", undefined]}
+            // On a phone, one column per flat is mostly zeros: the item, the store and the total are the answer.
+            phoneHide={columns.map((_, i) => i + 2)}
+            empty={!shown.length} emptyText={only === "low" ? "Nothing is running low." : "Nothing here."}>
             {shown.map(({ i, qty, store, low }) => (
               <tr key={i.id} className={`group relative ${low && i.active ? "bg-amber-50/60" : ""} ${i.active ? "" : "opacity-60"}`}>
                 <td>

@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 
@@ -8,7 +9,7 @@ import { ArrowLeft, ChevronRight } from "lucide-react";
 const focus = "outline-none focus-visible:ring-2 focus-visible:ring-[var(--acc)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]";
 
 export const input =
-  `block w-full min-h-11 rounded-[var(--r-sm)] border border-[var(--line)] bg-[var(--surface)] px-3.5 text-[15px] font-medium text-[var(--ink)] shadow-[inset_0_1px_1px_rgb(16_18_24/0.02)] transition-[border-color,box-shadow] duration-150 placeholder:font-normal placeholder:text-[color-mix(in_oklab,var(--muted)_60%,transparent)] hover:border-[color-mix(in_oklab,var(--ink)_22%,transparent)] focus:border-[var(--acc)] focus:shadow-[0_0_0_3px_color-mix(in_oklab,var(--acc)_16%,transparent)] outline-none disabled:bg-[var(--sunk)] disabled:text-[var(--muted)] sm:min-h-[38px] sm:text-[14px] [&:is(textarea)]:py-2.5`;
+  `block w-full min-h-11 rounded-[var(--r-sm)] border border-[var(--line)] bg-[var(--surface)] px-3.5 text-[16px] font-medium text-[var(--ink)] shadow-[inset_0_1px_1px_rgb(16_18_24/0.02)] transition-[border-color,box-shadow] duration-150 placeholder:font-normal placeholder:text-[color-mix(in_oklab,var(--muted)_60%,transparent)] hover:border-[color-mix(in_oklab,var(--ink)_22%,transparent)] focus:border-[var(--acc)] focus:shadow-[0_0_0_3px_color-mix(in_oklab,var(--acc)_16%,transparent)] outline-none disabled:bg-[var(--sunk)] disabled:text-[var(--muted)] sm:min-h-[38px] sm:text-[14px] [&:is(textarea)]:py-2.5`;
 
 const btnBase = `ops-press inline-flex cursor-pointer select-none items-center justify-center gap-1.5 rounded-[var(--r-sm)] px-4 min-h-11 text-[14px] font-bold tracking-[-0.005em] disabled:pointer-events-none disabled:opacity-45 sm:min-h-[38px] ${focus}`;
 export const btnPrimary =
@@ -68,22 +69,51 @@ export function Field({ label, hint, children, className = "" }: { label: string
   );
 }
 
-/** Dense table. The header is a floating material the rows run under; the sides fade instead of being clipped. */
-export function DataTable({ head, children, empty, emptyText = "Nothing here yet.", emptyAction, align = [] }: {
-  head: string[]; children: React.ReactNode; empty?: boolean; emptyText?: string; emptyAction?: React.ReactNode; align?: ("r" | undefined)[];
+/**
+ * Dense table on a laptop; a stack of cards on a phone.
+ *
+ * A 12-column table in a 360px viewport is unusable, and sideways scrolling hides the column that
+ * matters. Below `sm` the header is dropped and every row becomes a card whose cells carry their own
+ * label — taken from `head`, so no page has to repeat itself. `phoneHide` drops columns that only
+ * earn their place on a wide screen (Stock's one-per-flat columns), and `phoneTitle` is the cell that
+ * becomes the card's heading, label omitted.
+ */
+export function DataTable({ head, children, empty, emptyText = "Nothing here yet.", emptyAction, align = [], phoneHide = [], phoneTitle = 0 }: {
+  head: string[]; children: React.ReactNode; empty?: boolean; emptyText?: string; emptyAction?: React.ReactNode;
+  align?: ("r" | undefined)[]; phoneHide?: number[]; phoneTitle?: number;
 }) {
+  // Label each cell from its column so the card layout can show "Amount  ₹2,400" without the pages changing.
+  const labelled = React.Children.map(children, (row) => {
+    if (!React.isValidElement(row) || row.type !== "tr") return row;
+    let col = 0; // a cell spanning two columns moves the next cell two along, or the labels drift
+    return React.cloneElement(row as React.ReactElement<{ children?: React.ReactNode }>, {
+      children: React.Children.map((row.props as { children?: React.ReactNode }).children, (cell) => {
+        if (!React.isValidElement(cell) || cell.type !== "td") return cell;
+        const props = cell.props as { colSpan?: number };
+        const i = col;
+        col += props.colSpan && props.colSpan > 1 ? props.colSpan : 1;
+        return React.cloneElement(cell as React.ReactElement<Record<string, unknown>>, {
+          "data-col": (props.colSpan ?? 1) > 1 ? "" : head[i] ?? "",
+          "data-hide": phoneHide.includes(i) ? "" : undefined,
+          "data-title": i === phoneTitle ? "" : undefined,
+        });
+      }),
+    });
+  });
+
   return (
-    <div className="overflow-hidden rounded-[var(--r-md)] border border-[var(--line)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
-      <div className="ops-scroll overflow-x-auto">
+    <div className="ops-table overflow-hidden rounded-[var(--r-md)] border border-[var(--line)] bg-[var(--surface)] shadow-[var(--shadow-sm)] max-sm:border-0 max-sm:bg-transparent max-sm:shadow-none">
+      <div className="ops-scroll overflow-x-auto max-sm:overflow-visible">
         <table className="w-full text-left text-sm">
-          <thead className="ops-glass sticky top-0 z-10 border-b border-[var(--line)] text-[11px] font-bold uppercase tracking-[0.07em] text-[var(--muted)]">
+          <thead className="ops-glass sticky top-0 z-10 border-b border-[var(--line)] text-[11px] font-bold uppercase tracking-[0.07em] text-[var(--muted)] max-sm:hidden">
             <tr>
               {head.map((h, i) => (
-                <th key={h + i} scope="col" className={`whitespace-nowrap px-4 py-3 font-bold ${align[i] === "r" ? "text-right" : ""}`}>{h}</th>
+                <th key={h + i} scope="col" data-hide={phoneHide.includes(i) ? "" : undefined}
+                  className={`whitespace-nowrap px-4 py-3 font-bold ${align[i] === "r" ? "text-right" : ""}`}>{h}</th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-[var(--line)] [&_td]:px-4 [&_td]:py-3.5 [&_tr]:transition-colors [&_tr]:duration-150 [&_tr:hover]:bg-[var(--sunk)]">{children}</tbody>
+          <tbody className="divide-y divide-[var(--line)] [&_td]:px-4 [&_td]:py-3.5 [&_tr]:transition-colors [&_tr]:duration-150 [&_tr:hover]:bg-[var(--sunk)]">{labelled}</tbody>
         </table>
       </div>
       {empty && <Empty text={emptyText} action={emptyAction} />}

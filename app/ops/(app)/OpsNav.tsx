@@ -170,11 +170,11 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
       </aside>
 
       {/* Phone: translucent top bar, content runs underneath it */}
-      <header className="ops-glass-dark sticky top-0 z-30 flex h-14 items-center justify-between border-b border-[var(--chrome-line)] px-4 lg:hidden print:hidden">
+      <header className="ops-glass-dark sticky top-0 z-30 flex h-[calc(3.5rem+env(safe-area-inset-top))] items-center justify-between border-b border-[var(--chrome-line)] px-4 pt-[env(safe-area-inset-top)] lg:hidden print:hidden">
         {brand}
         {businesses.length > 1 && (
           <button type="button" disabled={pending} onClick={() => start(() => setBusiness(biz === "td" ? "finzo" : "td"))}
-            className="ops-press min-h-9 cursor-pointer rounded-full border border-white/15 px-3.5 text-[12px] font-bold text-zinc-300 hover:border-white/30 hover:text-white disabled:opacity-60">
+            className="ops-press min-h-11 cursor-pointer rounded-full border border-white/15 px-4 text-[12.5px] font-bold text-zinc-300 hover:border-white/30 hover:text-white disabled:opacity-60">
             {pending ? "Switching…" : `Switch to ${BIZ_LABEL[biz === "td" ? "finzo" : "td"]}`}
           </button>
         )}

@@ -10,8 +10,20 @@ import "./ops.css";
 // there is no network request and no layout shift.
 const ops = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap", variable: "--font-ops" });
 
-export const metadata: Metadata = { title: { absolute: "Back office · Travel Devils & Finzo Stays" }, robots: { index: false, follow: false } };
-export const viewport: Viewport = { themeColor: "#17110e" };
+export const metadata: Metadata = {
+  title: { absolute: "Back office · Travel Devils & Finzo Stays" },
+  robots: { index: false, follow: false },
+  manifest: "/ops/manifest.webmanifest",
+  icons: { icon: "/ops/icon.svg", apple: "/ops/icon.svg" },
+  appleWebApp: { capable: true, title: "Back office", statusBarStyle: "black-translucent" },
+};
+export const viewport: Viewport = {
+  themeColor: "#17110e",
+  // Fill the screen on a notched phone (the bars already pad for the safe areas), and shrink the
+  // layout rather than scroll it when the keyboard opens.
+  viewportFit: "cover",
+  interactiveWidget: "resizes-content",
+};
 
 export default function OpsRoot({ children }: { children: React.ReactNode }) {
   return (
