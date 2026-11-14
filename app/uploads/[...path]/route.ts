@@ -4,6 +4,10 @@ import { BUCKET, MIME_BY_EXT, UPLOAD_DIR } from "@/lib/uploads";
 
 const SB = process.env.SUPABASE_URL?.replace(/\/$/, "");
 
+// Files the live site uses are also copied into public/uploads/ (served by Vercel directly, ahead of this route),
+// so pages keep working even if Supabase restricts the free project. Replacing one of those files in place
+// (itineraries/<slug>.pdf, thumbnails/*) means updating the copy in public/uploads/ too, or it keeps winning.
+// Anything else, e.g. new admin uploads, lands here.
 // Vercel's CDN keeps each file for a day (s-maxage), so Supabase is asked for it about once a day per region
 // instead of on every view: Supabase's free plan counts every byte it sends. A day, not a year, because some
 // paths are overwritten in place (itineraries/<trip>.pdf) and must refresh. A deploy also clears it.
