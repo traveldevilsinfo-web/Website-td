@@ -51,8 +51,9 @@ This adds the back office's tables. It does not alter any table the website uses
 
 ### Finding the connection string
 
-Supabase → your project → **Settings** → **Database** → **Connection string** → **URI**. Supabase
-offers three, and for this step you want one of the first two:
+Open your project in Supabase and click **Connect** at the top of the page (it used to live under
+Settings → Database; the dashboard moved it). Supabase offers three strings, and for this step you
+want one of the first two:
 
 | | Port | Use it for |
 |---|---|---|
@@ -61,8 +62,12 @@ offers three, and for this step you want one of the first two:
 | Transaction pooler | 6543 | the deployed app — **not** these commands |
 
 The transaction pooler drops the prepared statements the migration tool relies on, so use 5432 here.
-Supabase prints the password as `[YOUR-PASSWORD]`; replace it with the real one (**Reset database
-password** on the same page if you don't have it).
+Supabase prints the password as `[YOUR-PASSWORD]`; replace it with the real one, and
+percent-encode any `&`, `#`, `?` or space it contains or the URI parses wrong.
+
+> **If you don't have the password, think before resetting it.** `DATABASE_URL` in Vercel holds the
+> old one, so resetting breaks the live site until you paste the new string there too. Copy the
+> value out of Vercel instead if you can.
 
 It is already in Vercel too, as `DATABASE_URL` under Environment Variables, if that is quicker to
 reach — but take it from the dashboard in the browser rather than the `vercel` CLI, which may be
@@ -242,12 +247,23 @@ To use **one** database, point `.env.local` at Supabase. Three lines, not one �
 ```
 DATABASE_URL=<the session pooler URI from step 3>
 SUPABASE_URL=https://<project-ref>.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=<the service_role key from Supabase → Settings → API>
+SUPABASE_SERVICE_ROLE_KEY=<the secret key>
 ```
 
-Take them from the Supabase dashboard in a browser, not the `vercel` CLI, which may be signed in to a
-different account. Use the **session pooler** string: the direct one is IPv6-only and most networks
-can't reach it.
+The quickest and safest source for the last two is **Vercel**, which already holds the exact values
+the live site runs on: the project → Settings → Environment Variables → reveal each one. Copying
+proven values beats re-deriving them. Read them from the dashboard in a browser, not the `vercel`
+CLI, which may be signed in to a different account.
+
+`DATABASE_URL` is the one to take from Supabase's **Connect** dialog rather than Vercel, choosing
+**Session pooler**. Vercel's copy is the transaction pooler (port 6543), which suits serverless but
+drops the prepared statements `db:migrate` needs. The direct string is IPv6-only, which this network
+can't reach.
+
+> Supabase is retiring the `service_role` key at the end of 2026 in favour of a secret key that
+> starts `sb_secret_`. Either works in `SUPABASE_SERVICE_ROLE_KEY` today — the variable name is ours,
+> not Supabase's — so prefer the new one if the dashboard offers both. A key beginning `eyJ` is the
+> legacy kind.
 
 > The two Supabase lines are not optional. Without them, files you upload land on your laptop's disk
 > while the row naming them goes into the shared database, so the receipt is unreadable everywhere
