@@ -9,7 +9,7 @@
  *  - no stock movements: opening counts come from the first kit check.
  *
  * Safe to run twice. Items match on name (or `alias`, an older name that is renamed to the new one),
- * and an existing item only has its name, area and kind touched, never its cost, unit or per-turnover.
+ * and an existing item only has its name, area and kind touched (the JSON is the source of truth: a re-run overwrites area and kind), never its cost, unit or per-turnover.
  * Fixtures match on (flat, name).
  *
  *   npm run ops:kit            # the local dev database
@@ -29,9 +29,13 @@ if (process.argv.includes("--sql")) {
   const q = (v: string) => `'${v.replace(/'/g, "''")}'`;
   console.log("-- Paste into Supabase → SQL Editor → Run. Safe to run twice.");
   for (const i of stock) {
-    const from = i.alias ? `name in (${q(i.name)}, ${q(i.alias)})` : `name = ${q(i.name)}`;
-    console.log(`update inventory_items set name = ${q(i.name)}, area = ${q(i.area)}, kind = ${q(i.kind)}, updated_at = now()
-  where business = 'finzo' and ${from};
+    // Rename the alias only if the new name is free, so the two modes agree when both rows exist.
+    if (i.alias)
+      console.log(`update inventory_items set name = ${q(i.name)}, updated_at = now()
+  where business = 'finzo' and name = ${q(i.alias)}
+  and not exists (select 1 from inventory_items where business = 'finzo' and name = ${q(i.name)});`);
+    console.log(`update inventory_items set area = ${q(i.area)}, kind = ${q(i.kind)}, updated_at = now()
+  where business = 'finzo' and name = ${q(i.name)};
 insert into inventory_items (business, name, area, kind)
   select 'finzo', ${q(i.name)}, ${q(i.area)}, ${q(i.kind)}
   where not exists (select 1 from inventory_items where business = 'finzo' and name = ${q(i.name)});`);
