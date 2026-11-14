@@ -898,3 +898,8 @@ assert.equal(entry("0", 2, "stolen", true)?.reason, null);
 // planShortfall itself must drop a reason on a surplus; the caller's guard is not the only thing holding it
 assert.equal(planShortfall(sh(2, "stolen"))?.reason, null);
 console.log("kit entry checks passed");
+
+// ---------------- a reversed loss is not a loss
+assert.deepEqual(lossTotal([{ qty: -2, unitCost: 450 }, { qty: -1, unitCost: 450, undoneAt: new Date() }]),
+  { value: 900, unpriced: 0 });
+console.log("undone loss checks passed");

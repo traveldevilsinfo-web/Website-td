@@ -73,10 +73,11 @@ export function planKitEntry(e: {
   return planShortfall({ itemId: e.itemId, propertyId: e.propertyId, qty, reason, reservationId: reason ? e.reservationId : null, unitCost: e.unitCost });
 }
 
-/** Value of what was lost. Rows with no cost are counted apart, never valued at zero. */
-export function lossTotal(rows: { qty: number; unitCost: number | null }[]): { value: number; unpriced: number } {
+/** Value of what was lost. Rows with no cost are counted apart, never valued at zero. A reversed row is no loss. */
+export function lossTotal(rows: { qty: number; unitCost: number | null; undoneAt?: Date | null }[]): { value: number; unpriced: number } {
   let value = 0, unpriced = 0;
   for (const r of rows) {
+    if (r.undoneAt) continue;
     if (r.unitCost === null) unpriced++;
     else value += Math.abs(r.qty) * r.unitCost;
   }
