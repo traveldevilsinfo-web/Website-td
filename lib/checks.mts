@@ -830,7 +830,7 @@ assert.equal(parsePlace("-3"), undefined);
 console.log("stock place checks passed");
 
 // ---------------- room kit arithmetic
-import { expectedFor, kitLines, planShortfall, lossTotal, fitOutValue } from "./room";
+import { expectedFor, kitLines, planShortfall, lossTotal, fitOutValue, FIXTURE_CONDITION } from "./room";
 const kit = [{ itemId: 1, propertyId: null, expected: 4 }, { itemId: 1, propertyId: 7, expected: 6 }];
 assert.equal(expectedFor(kit, 1, 7), 6);        // the flat's own number wins
 assert.equal(expectedFor(kit, 1, 9), 4);        // otherwise the standard
@@ -848,4 +848,7 @@ const lines = kitLines([{ id: 2, name: "Ash tray", area: "Table" }], kit, new Ma
 assert.equal(lines[0].expected, null);
 assert.equal(lines[0].short, 0);
 assert.equal(fitOutValue([{ cost: 32000, active: true }, { cost: 8500, active: true }, { cost: 999, active: false }]), 40500);
+// The schema defaults a fixture to "working", so a key missing here would render blank on the Room page
+assert.deepEqual(Object.keys(FIXTURE_CONDITION), ["working", "attention", "broken", "missing"]);
+assert.ok(FIXTURE_CONDITION.working);
 console.log("room kit checks passed");

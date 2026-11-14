@@ -51,7 +51,7 @@ export function lossTotal(rows: { qty: number; unitCost: number | null }[]): { v
   return { value, unpriced };
 }
 
-export const FIXTURE_CONDITION: Record<string, string> = { good: "Good", worn: "Worn", broken: "Broken", missing: "Missing" };
+export const FIXTURE_CONDITION: Record<string, string> = { working: "Working", attention: "Needs attention", broken: "Broken", missing: "Missing" };
 
 /** What the flat cost to fit out: active fixtures only; an unpriced one adds nothing. */
 export const fitOutValue = (fixtures: { cost: number | null; active: boolean }[]) =>
