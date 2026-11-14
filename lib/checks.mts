@@ -867,6 +867,16 @@ assert.deepEqual(lossTotal([{ qty: 0, unitCost: 450 }]), { value: 0, unpriced: 0
 // The schema defaults a fixture to "working", so a key missing here would render blank on the Room page
 assert.deepEqual(Object.keys(FIXTURE_CONDITION), ["working", "attention", "broken", "missing"]);
 assert.ok(FIXTURE_CONDITION.working);
+// `expected` has an upper bound, so a forged box can't reach the int column and throw there
+import { MAX_EXPECTED, isExpected } from "./room";
+assert.equal(isExpected(0), true);                 // 0 is a real answer: the flat deliberately has none
+assert.equal(isExpected(6), true);
+assert.equal(isExpected(MAX_EXPECTED), true);      // the bound itself is allowed
+assert.equal(isExpected(MAX_EXPECTED + 1), false);
+assert.equal(isExpected(1e20), false);             // what passes /^\d+$/ and Number.isInteger but not an int column
+assert.equal(isExpected(-1), false);
+assert.equal(isExpected(2.5), false);
+assert.equal(isExpected(NaN), false);
 console.log("room kit checks passed");
 
 // ---------------- the first count at a flat

@@ -11,6 +11,14 @@ export function expectedFor(kit: KitRow[], itemId: number, propertyId: number): 
   return (mine.find((k) => k.propertyId === propertyId) ?? mine.find((k) => k.propertyId === null))?.expected ?? null;
 }
 
+/**
+ * The most a flat can be asked to hold of one item. A room's kit runs to a handful of each, so 10,000 is already
+ * absurd for a two-bedroom flat and is nowhere near the int column's ceiling: a forged box is refused here rather
+ * than reaching Postgres as an "integer out of range" the manager sees as a crashed page.
+ */
+export const MAX_EXPECTED = 10_000;
+export const isExpected = (n: number) => Number.isInteger(n) && n >= 0 && n <= MAX_EXPECTED;
+
 export type KitLine = { itemId: number; name: string; area: string | null; expected: number | null; actual: number; short: number };
 
 /** One line per item for a flat. `totals` is stockTotals().byPlace: "<itemId>@<propertyId>" → quantity. */

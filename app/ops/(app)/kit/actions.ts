@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { and, eq, isNull } from "drizzle-orm";
 import { db, t } from "@/lib/db";
 import { requireStays } from "@/lib/ops";
+import { MAX_EXPECTED, isExpected } from "@/lib/room";
 
 /**
  * Set what a flat should hold: propertyId null writes the standard, a flat id writes that flat's override.
@@ -12,7 +13,7 @@ import { requireStays } from "@/lib/ops";
  */
 export async function saveKit(itemId: number, propertyId: number | null, expected: number) {
   await requireStays();
-  if (!Number.isInteger(expected) || expected < 0) throw new Error("Expected must be a whole number, 0 or more.");
+  if (!isExpected(expected)) throw new Error(`Expected must be a whole number between 0 and ${MAX_EXPECTED}.`);
   const [item] = await db.select({ id: t.inventoryItems.id }).from(t.inventoryItems)
     .where(and(eq(t.inventoryItems.id, itemId), eq(t.inventoryItems.business, "finzo")));
   if (!item) throw new Error("Unknown item.");
