@@ -761,7 +761,7 @@ assert.equal(transferRows(5, null, 7, -3), null);
 assert.equal(countDelta(88, 85), -3);
 assert.equal(countDelta(88, 90), 2);
 assert.equal(countDelta(88, 88), 0);
-assert.equal(STOCK_LABEL.damaged, "Damaged or lost");
+assert.equal(STOCK_LABEL.damaged, "Damaged, lost or stolen");
 console.log("stock checks passed");
 
 // ---------------- payroll fixes from review
@@ -828,3 +828,24 @@ assert.equal(parsePlace("0"), undefined);
 assert.equal(parsePlace(null), undefined);
 assert.equal(parsePlace("-3"), undefined);
 console.log("stock place checks passed");
+
+// ---------------- room kit arithmetic
+import { expectedFor, kitLines, planShortfall, lossTotal, fitOutValue } from "./room";
+const kit = [{ itemId: 1, propertyId: null, expected: 4 }, { itemId: 1, propertyId: 7, expected: 6 }];
+assert.equal(expectedFor(kit, 1, 7), 6);        // the flat's own number wins
+assert.equal(expectedFor(kit, 1, 9), 4);        // otherwise the standard
+assert.equal(expectedFor(kit, 2, 7), null);     // an item nobody put in the kit
+// A shortfall lowers the ledger exactly once
+assert.deepEqual(planShortfall({ itemId: 1, propertyId: 7, qty: -2, reason: "stolen", reservationId: 31, unitCost: 450 }),
+  { kind: "damaged", qty: -2, reason: "stolen", reservationId: 31, unitCost: 450 });
+assert.equal(planShortfall({ itemId: 1, propertyId: 7, qty: -2, reason: "stolen", reservationId: 31, unitCost: 450 })?.kind, "damaged");
+assert.equal(planShortfall({ itemId: 1, propertyId: 7, qty: -1, reason: null, reservationId: null, unitCost: null })?.kind, "count");
+assert.equal(planShortfall({ itemId: 1, propertyId: 7, qty: 0, reason: null, reservationId: null, unitCost: null }), null);
+// An item with no cost must be reported, not counted as free
+assert.deepEqual(lossTotal([{ qty: -2, unitCost: 450 }, { qty: -1, unitCost: null }]), { value: 900, unpriced: 1 });
+// An item outside the kit is shown, never as "0 of 0"
+const lines = kitLines([{ id: 2, name: "Ash tray", area: "Table" }], kit, new Map([["2@7", 3]]), 7);
+assert.equal(lines[0].expected, null);
+assert.equal(lines[0].short, 0);
+assert.equal(fitOutValue([{ cost: 32000, active: true }, { cost: 8500, active: true }, { cost: 999, active: false }]), 40500);
+console.log("room kit checks passed");
