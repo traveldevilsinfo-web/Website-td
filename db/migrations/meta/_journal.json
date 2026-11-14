@@ -64,6 +64,90 @@
       "when": 1793129674487,
       "tag": "0008_batch_inclusions",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1794573477284,
+      "tag": "0009_ops_foundation",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1794574152738,
+      "tag": "0010_stays",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1794574471845,
+      "tag": "0011_ticket_expense",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1794575995486,
+      "tag": "0012_one_feed_per_channel",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1794576405498,
+      "tag": "0013_guests",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1794577198294,
+      "tag": "0014_drop_guest_id",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1794577669753,
+      "tag": "0015_cost_centres_and_earnings",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1794578522036,
+      "tag": "0016_people_payroll",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1794579476820,
+      "tag": "0017_stock",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1794654945349,
+      "tag": "0018_trip_captain",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1794655270680,
+      "tag": "0019_stock_undo",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1794657704085,
+      "tag": "0020_stock_fk_restrict",
+      "breakpoints": true
     }
   ]
 }

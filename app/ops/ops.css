@@ -1,0 +1,241 @@
+/*
+ * Back-office design system. Everything here is scoped under `.ops` so the public website is untouched.
+ * Per-business colours (--acc, --bg, --chrome, …) are set on the shell by app/ops/(app)/accent.ts.
+ * Motion follows Apple's fluid-interface guidance: compositor-only properties, the iOS easing curve,
+ * press feedback on pointer-down, and a cross-fade instead of movement when motion is reduced.
+ */
+
+.ops {
+  /* A neutral default so pages outside the business shell (the login screen) are never unstyled.
+     app/ops/(app)/accent.ts replaces all of these the moment a business is known. */
+  --acc: #2f54eb;
+  --acc-ink: #2546c8;
+  --acc-soft: #eef2ff;
+  --bg: #f2f4f8;
+  --surface: #ffffff;
+  --sunk: #f7f8fc;
+  --line: #e2e6ee;
+  --ink: #0d1220;
+  --muted: #5a6478;
+  --chrome: #0b1020;
+  --chrome-line: rgba(255, 255, 255, 0.08);
+
+  /* Semantic colours — the same in both businesses, because money is money */
+  --ok: #15803d;
+  --warn: #b45309;
+  --bad: #b91c1c;
+  --info: #0369a1;
+
+  /* Shape and depth. Cards are soft-cornered and lifted rather than outlined. */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --shadow-sm: 0 1px 2px rgb(16 18 24 / 0.05), 0 1px 1px rgb(16 18 24 / 0.03);
+  --shadow-md: 0 1px 2px rgb(16 18 24 / 0.04), 0 8px 20px -10px rgb(16 18 24 / 0.16);
+  --shadow-lg: 0 2px 4px rgb(16 18 24 / 0.04), 0 24px 48px -16px rgb(16 18 24 / 0.26);
+
+  /* Easing. --ease-ios is the curve iOS uses for sheets: fast out of the gate, long gentle settle. */
+  --ease-ios: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.26, 0.64, 1);
+
+  font-feature-settings: "tnum", "cv05";
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
+
+/* Sticky chrome overlaps content, so anchors need room to clear it */
+.ops {
+  scroll-padding-top: 5rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ops {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ---------- Scrollbars: thin, and only visible where there is something to scroll ---------- */
+.ops ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.ops ::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--muted) 28%, transparent);
+  border: 3px solid transparent;
+  border-radius: 99px;
+  background-clip: content-box;
+}
+.ops ::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklab, var(--muted) 50%, transparent);
+  background-clip: content-box;
+}
+.ops ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.ops :where(.ops-scroll) {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--muted) 30%, transparent) transparent;
+  overscroll-behavior-x: contain;
+}
+
+.ops ::selection {
+  background: color-mix(in oklab, var(--acc) 22%, transparent);
+}
+
+/* ---------- Entering a page: content rises into place, each block just behind the last ---------- */
+@keyframes ops-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes ops-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ops-sheet-in {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes ops-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translate3d(0, 6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.ops-page > * {
+  animation: ops-rise 0.42s var(--ease-ios) backwards;
+}
+.ops-page > :nth-child(2) {
+  animation-delay: 0.04s;
+}
+.ops-page > :nth-child(3) {
+  animation-delay: 0.08s;
+}
+.ops-page > :nth-child(4) {
+  animation-delay: 0.11s;
+}
+.ops-page > :nth-child(n + 5) {
+  animation-delay: 0.14s;
+}
+.ops-pop {
+  animation: ops-pop 0.26s var(--ease-spring) backwards;
+}
+
+/* The sheet rises from the bar it was opened from, and leaves the same way (see Sheet.tsx) */
+.ops-sheet {
+  animation: ops-sheet-in 0.42s var(--ease-ios);
+}
+.ops-scrim {
+  animation: ops-fade 0.3s ease-out;
+}
+
+/* ---------- Press feedback: instant, on pointer-down, and it never blocks the tap ---------- */
+.ops-press {
+  transition:
+    transform 0.16s var(--ease-out),
+    box-shadow 0.2s var(--ease-out),
+    background-color 0.16s var(--ease-out),
+    border-color 0.16s var(--ease-out),
+    color 0.16s var(--ease-out);
+}
+.ops-press:active {
+  transform: scale(0.975);
+}
+
+/* A card that rises a hair under the pointer, and presses in when clicked */
+.ops-lift {
+  transition:
+    transform 0.26s var(--ease-out),
+    box-shadow 0.26s var(--ease-out),
+    border-color 0.2s var(--ease-out);
+}
+@media (hover: hover) {
+  .ops-lift:hover {
+    transform: translate3d(0, -2px, 0);
+    box-shadow: var(--shadow-md);
+  }
+}
+.ops-lift:active {
+  transform: scale(0.99);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Floating chrome: a real material, with content running underneath ---------- */
+.ops-glass {
+  background: color-mix(in oklab, var(--surface) 72%, transparent);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+.ops-glass-dark {
+  background: color-mix(in oklab, var(--chrome) 76%, transparent);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+}
+
+/* Scroll edge effect: content fades where it meets floating chrome, instead of a hard 1px rule */
+.ops-edge-x {
+  mask-image: linear-gradient(to right, transparent, #000 14px, #000 calc(100% - 14px), transparent);
+}
+
+/* ---------- Accessibility: gentler equivalents, never nothing ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ops-sheet,
+  .ops-page > *,
+  .ops-pop {
+    animation: ops-fade 0.2s ease-out backwards;
+    animation-delay: 0s !important;
+  }
+  .ops *,
+  .ops *::before,
+  .ops *::after {
+    transition-duration: 0.12s !important;
+    animation-duration: 0.2s !important;
+  }
+  .ops-press:active,
+  .ops-lift:hover,
+  .ops-lift:active {
+    transform: none;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .ops-glass {
+    background: var(--surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .ops-glass-dark {
+    background: var(--chrome);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+@media (prefers-contrast: more) {
+  .ops {
+    --line: color-mix(in oklab, var(--ink) 40%, transparent);
+    --muted: var(--ink);
+  }
+}
+
+@media print {
+  .ops-page > * {
+    animation: none;
+  }
+}

@@ -1,5 +1,7 @@
+import { sql } from "drizzle-orm";
 import {
-  boolean, date, index, integer, jsonb, pgEnum, pgTable, serial, text, timestamp,
+  type AnyPgColumn,
+  boolean, date, index, integer, jsonb, pgEnum, pgTable, serial, text, timestamp, uniqueIndex,
 } from "drizzle-orm/pg-core";
 
 const timestamps = {
@@ -137,6 +139,9 @@ export const tripBatches = pgTable(
     inclusions: text("inclusions").array().notNull().default([]),
     route: text("route"), // TripRoute.name; null = every route
     note: text("note"),
+    /** Back office only: who led it, and whether every cost is in yet. The website never reads these. */
+    captainId: integer("captain_id").references((): AnyPgColumn => employees.id, { onDelete: "set null" }),
+    costsClosedAt: timestamp("costs_closed_at", { withTimezone: true }),
   },
   (t) => [index("batches_trip_idx").on(t.tripId, t.startDate)],
 );
@@ -309,4 +314,394 @@ export const payments = pgTable(
     createdAt: timestamps.createdAt,
   },
   (t) => [index("payments_booking_idx").on(t.bookingId)],
+);
+
+// ------------------------------------------------------------------ ops (back office: TD + Finzo Stays)
+
+export const businessEnum = pgEnum("business", ["td", "finzo"]);
+export const opsRoleEnum = pgEnum("ops_role", ["owner", "manager", "staff"]);
+
+/** Ops accounts: separate from the website's `users`. Owner sees both businesses; others only `businesses`. */
+export const opsUsers = pgTable("ops_users", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull().unique(),
+  phone: text("phone"),
+  passwordHash: text("password_hash").notNull(),
+  role: opsRoleEnum("role").notNull().default("staff"),
+  businesses: text("businesses").array().notNull().default([]),
+  active: boolean("active").notNull().default(true),
+  ...timestamps,
+});
+
+export const opsSessions = pgTable("ops_sessions", {
+  id: text("id").primaryKey(), // sha256 of the cookie token
+  userId: integer("user_id").notNull().references(() => opsUsers.id, { onDelete: "cascade" }),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+});
+export const expenseStatusEnum = pgEnum("expense_status", ["needs_amount", "submitted", "approved", "rejected", "paid"]);
+export const paidViaEnum = pgEnum("paid_via", ["cash", "upi", "bank", "card"]);
+
+export const vendors = pgTable(
+  "vendors",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    name: text("name").notNull(),
+    kind: text("kind"), // hotel | driver | landlord | utility | shop | other
+    phone: text("phone"),
+    gstin: text("gstin"),
+    payTo: text("pay_to"), // UPI id or bank details
+    notes: text("notes"),
+    active: boolean("active").notNull().default(true),
+    ...timestamps,
+  },
+  (t) => [index("vendors_business_idx").on(t.business)],
+);
+
+export const expenseCategories = pgTable(
+  "expense_categories",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    name: text("name").notNull(),
+    kind: text("kind").notNull().default("variable"), // fixed | variable | salary | inventory
+    sort: integer("sort").notNull().default(0),
+    active: boolean("active").notNull().default(true),
+  },
+  (t) => [uniqueIndex("expense_categories_business_name_idx").on(t.business, t.name)],
+);
+
+export const recurringExpenses = pgTable("recurring_expenses", {
+  id: serial("id").primaryKey(),
+  business: businessEnum("business").notNull(),
+  name: text("name").notNull(),
+  amount: integer("amount"), // null = variable bill (electricity): posted as needs_amount
+  categoryId: integer("category_id").notNull().references(() => expenseCategories.id),
+  vendorId: integer("vendor_id").references(() => vendors.id, { onDelete: "set null" }),
+  propertyId: integer("property_id").references((): AnyPgColumn => properties.id, { onDelete: "set null" }), // e.g. this flat's rent
+  dayOfMonth: integer("day_of_month").notNull(), // 1-31; short months post on their last day
+  paidVia: paidViaEnum("paid_via"),
+  active: boolean("active").notNull().default(true),
+  startMonth: text("start_month").notNull(), // YYYY-MM
+  endMonth: text("end_month"),
+  ...timestamps,
+});
+
+export const expenses = pgTable(
+  "expenses",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    date: date("date").notNull(),
+    amount: integer("amount").notNull().default(0), // ₹
+    categoryId: integer("category_id").notNull().references(() => expenseCategories.id),
+    vendorId: integer("vendor_id").references(() => vendors.id, { onDelete: "set null" }),
+    tripBatchId: integer("trip_batch_id").references(() => tripBatches.id, { onDelete: "set null" }), // TD cost centre
+    propertyId: integer("property_id").references((): AnyPgColumn => properties.id, { onDelete: "set null" }), // Finzo cost centre
+    paidVia: paidViaEnum("paid_via"),
+    reimburse: boolean("reimburse").notNull().default(false), // staff paid out of pocket
+    receiptPath: text("receipt_path"), // private bucket path yyyy/mm/name.ext
+    note: text("note"),
+    status: expenseStatusEnum("status").notNull().default("submitted"),
+    createdBy: integer("created_by").notNull().references(() => opsUsers.id),
+    approvedBy: integer("approved_by").references(() => opsUsers.id),
+    approvedAt: timestamp("approved_at", { withTimezone: true }),
+    paidAt: timestamp("paid_at", { withTimezone: true }),
+    paidRef: text("paid_ref"),
+    recurringId: integer("recurring_id").references(() => recurringExpenses.id, { onDelete: "set null" }),
+    period: text("period"), // YYYY-MM, recurring rows only
+    ...timestamps,
+  },
+  (t) => [
+    index("expenses_business_date_idx").on(t.business, t.date),
+    index("expenses_business_status_idx").on(t.business, t.status),
+    index("expenses_created_by_idx").on(t.createdBy),
+    index("expenses_property_idx").on(t.propertyId),
+    uniqueIndex("expenses_recurring_period_idx").on(t.recurringId, t.period),
+  ],
+);
+
+// ------------------------------------------------------------------ stays (Finzo: flats, calendars, cleaning, maintenance)
+
+export const channelEnum = pgEnum("channel", ["airbnb", "booking", "vrbo", "mmt", "direct", "other"]);
+export const stayStatusEnum = pgEnum("stay_status", ["confirmed", "cancelled", "blocked"]);
+export const turnoverStatusEnum = pgEnum("turnover_status", ["todo", "doing", "done", "issue"]);
+export const ticketStatusEnum = pgEnum("ticket_status", ["open", "doing", "waiting", "done"]);
+export const priorityEnum = pgEnum("priority", ["low", "normal", "high", "urgent"]);
+
+export type ChecklistItem = { label: string; done: boolean };
+
+export const properties = pgTable("properties", {
+  id: serial("id").primaryKey(),
+  code: text("code").notNull().unique(), // FZ-01
+  name: text("name").notNull(),
+  address: text("address"),
+  area: text("area"),
+  bedrooms: integer("bedrooms").notNull().default(1),
+  maxGuests: integer("max_guests").notNull().default(2),
+  checkinTime: text("checkin_time").notNull().default("14:00"),
+  checkoutTime: text("checkout_time").notNull().default("11:00"),
+  lockCode: text("lock_code"),
+  wifiName: text("wifi_name"),
+  wifiPass: text("wifi_pass"),
+  notes: text("notes"),
+  icalToken: text("ical_token").notNull().unique(), // secret in our export feed URL
+  /** Guest-facing guidebook: house rules and "how things work" sections. No secrets here (the page is link-public). */
+  houseRules: text("house_rules"),
+  guide: jsonb("guide").$type<GuideSection[]>().notNull().default([]),
+  guideToken: text("guide_token").notNull().unique().default(sql`replace(gen_random_uuid()::text, '-', '')`), // QR link inside the flat
+  housekeeperId: integer("housekeeper_id").references(() => opsUsers.id, { onDelete: "set null" }),
+  active: boolean("active").notNull().default(true),
+  sort: integer("sort").notNull().default(0),
+  ...timestamps,
+});
+
+export const propertyFeeds = pgTable(
+  "property_feeds",
+  {
+    id: serial("id").primaryKey(),
+    propertyId: integer("property_id").notNull().references(() => properties.id, { onDelete: "cascade" }),
+    channel: channelEnum("channel").notNull(),
+    url: text("url").notNull(),
+    lastSyncAt: timestamp("last_sync_at", { withTimezone: true }),
+    lastError: text("last_error"),
+    lastCount: integer("last_count"),
+  },
+  // One link per channel per flat: two Airbnb links would cancel each other's stays on every sync.
+  (t) => [uniqueIndex("property_feeds_property_channel_idx").on(t.propertyId, t.channel)],
+);
+
+export const reservations = pgTable(
+  "reservations",
+  {
+    id: serial("id").primaryKey(),
+    propertyId: integer("property_id").notNull().references(() => properties.id, { onDelete: "cascade" }),
+    channel: channelEnum("channel").notNull(),
+    source: text("source").notNull().default("manual"), // ical | manual
+    externalUid: text("external_uid"),
+    checkIn: date("check_in").notNull(),
+    checkOut: date("check_out").notNull(), // exclusive: the morning they leave
+    guestName: text("guest_name"),
+    guests: integer("guests"),
+    phone: text("phone"),
+    amount: integer("amount"), // gross booking value
+    payout: integer("payout"), // what actually reaches the bank, after channel fees
+    channelFee: integer("channel_fee"),
+    cleaningFee: integer("cleaning_fee"),
+    confirmationCode: text("confirmation_code"), // Airbnb HM…: how an earnings row finds its stay
+    earningsAt: timestamp("earnings_at", { withTimezone: true }), // last time an import touched this row
+    status: stayStatusEnum("status").notNull().default("confirmed"),
+    notes: text("notes"),
+    createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    /** Guest's private link: check-in, agreement, then door code and Wi-Fi. */
+    guestToken: text("guest_token").notNull().unique().default(sql`replace(gen_random_uuid()::text, '-', '')`),
+    guestEmail: text("guest_email"),
+    checkedInAt: timestamp("checked_in_at", { withTimezone: true }),
+    agreedName: text("agreed_name"), // typed signature
+    agreedAt: timestamp("agreed_at", { withTimezone: true }),
+    agreedIp: text("agreed_ip"),
+    ...timestamps,
+  },
+  (t) => [
+    uniqueIndex("reservations_feed_uid_idx").on(t.propertyId, t.channel, t.externalUid),
+    index("reservations_property_dates_idx").on(t.propertyId, t.checkIn),
+  ],
+);
+
+export const turnovers = pgTable(
+  "turnovers",
+  {
+    id: serial("id").primaryKey(),
+    propertyId: integer("property_id").notNull().references(() => properties.id, { onDelete: "cascade" }),
+    reservationId: integer("reservation_id").references(() => reservations.id, { onDelete: "cascade" }),
+    date: date("date").notNull(),
+    nextCheckIn: date("next_check_in"), // same day = urgent
+    assigneeId: integer("assignee_id").references(() => opsUsers.id, { onDelete: "set null" }),
+    status: turnoverStatusEnum("status").notNull().default("todo"),
+    checklist: jsonb("checklist").$type<ChecklistItem[]>().notNull().default([]),
+    note: text("note"),
+    doneAt: timestamp("done_at", { withTimezone: true }),
+    ...timestamps,
+  },
+  (t) => [uniqueIndex("turnovers_reservation_idx").on(t.reservationId), index("turnovers_date_idx").on(t.date)],
+);
+
+export const tickets = pgTable(
+  "tickets",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    propertyId: integer("property_id").references(() => properties.id, { onDelete: "set null" }),
+    title: text("title").notNull(),
+    detail: text("detail"),
+    priority: priorityEnum("priority").notNull().default("normal"),
+    status: ticketStatusEnum("status").notNull().default("open"),
+    assigneeId: integer("assignee_id").references(() => opsUsers.id, { onDelete: "set null" }),
+    vendorId: integer("vendor_id").references(() => vendors.id, { onDelete: "set null" }),
+    cost: integer("cost"),
+    expenseId: integer("expense_id").references(() => expenses.id, { onDelete: "set null" }), // the cost, booked as an expense
+    createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    doneAt: timestamp("done_at", { withTimezone: true }),
+    ...timestamps,
+  },
+  (t) => [index("tickets_business_status_idx").on(t.business, t.status)],
+);
+
+// ------------------------------------------------------------------ guests (guidebook, check-in, messages)
+
+export const messageKindEnum = pgEnum("message_kind", ["confirm", "checkin", "checkout", "review"]);
+export type GuideSection = { title: string; body: string };
+// Link tokens are 32 hex chars (~122 bits) from gen_random_uuid(): unguessable, and no extension needed.
+
+export const stayMessages = pgTable(
+  "stay_messages",
+  {
+    id: serial("id").primaryKey(),
+    reservationId: integer("reservation_id").notNull().references(() => reservations.id, { onDelete: "cascade" }),
+    kind: messageKindEnum("kind").notNull(),
+    sentAt: timestamp("sent_at", { withTimezone: true }).notNull().defaultNow(),
+    sentBy: integer("sent_by").references(() => opsUsers.id, { onDelete: "set null" }),
+  },
+  (t) => [uniqueIndex("stay_messages_reservation_kind_idx").on(t.reservationId, t.kind)],
+);
+
+// ------------------------------------------------------------------ people and payroll (both businesses)
+
+export const payTypeEnum = pgEnum("pay_type", ["monthly", "daily"]);
+export const attendanceEnum = pgEnum("attendance_status", ["present", "absent", "half", "leave", "off"]);
+export const payrollStatusEnum = pgEnum("payroll_status", ["draft", "locked", "paid"]);
+export type PayslipLine = { label: string; amount: number };
+
+/** Everyone we pay. Separate from ops_users: a cook or a landlord's watchman is paid without ever signing in. */
+export const employees = pgTable(
+  "employees",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    opsUserId: integer("ops_user_id").references(() => opsUsers.id, { onDelete: "set null" }), // if they also have a login
+    name: text("name").notNull(),
+    phone: text("phone"),
+    roleTitle: text("role_title"), // Housekeeper, Trip captain, Cook…
+    joinDate: date("join_date"),
+    exitDate: date("exit_date"),
+    payType: payTypeEnum("pay_type").notNull().default("monthly"),
+    monthlySalary: integer("monthly_salary"), // ₹ for a full month
+    dailyRate: integer("daily_rate"), // ₹ per day worked
+    payTo: text("pay_to"), // UPI id or bank details
+    notes: text("notes"),
+    active: boolean("active").notNull().default(true),
+    ...timestamps,
+  },
+  (t) => [index("employees_business_idx").on(t.business)],
+);
+
+export const attendance = pgTable(
+  "attendance",
+  {
+    id: serial("id").primaryKey(),
+    employeeId: integer("employee_id").notNull().references(() => employees.id, { onDelete: "cascade" }),
+    date: date("date").notNull(),
+    status: attendanceEnum("status").notNull(),
+    markedBy: integer("marked_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    note: text("note"),
+  },
+  (t) => [uniqueIndex("attendance_employee_date_idx").on(t.employeeId, t.date), index("attendance_date_idx").on(t.date)],
+);
+
+export const advances = pgTable("advances", {
+  id: serial("id").primaryKey(),
+  employeeId: integer("employee_id").notNull().references(() => employees.id, { onDelete: "cascade" }),
+  date: date("date").notNull(),
+  amount: integer("amount").notNull(),
+  monthlyRecovery: integer("monthly_recovery").notNull(), // taken back from each payslip until it's clear
+  recovered: integer("recovered").notNull().default(0),
+  note: text("note"),
+  createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
+  ...timestamps,
+});
+
+export const payrollRuns = pgTable(
+  "payroll_runs",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    month: text("month").notNull(), // YYYY-MM
+    status: payrollStatusEnum("status").notNull().default("draft"),
+    lockedBy: integer("locked_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    lockedAt: timestamp("locked_at", { withTimezone: true }),
+    paidAt: timestamp("paid_at", { withTimezone: true }),
+    paidRef: text("paid_ref"),
+    ...timestamps,
+  },
+  (t) => [uniqueIndex("payroll_runs_business_month_idx").on(t.business, t.month)],
+);
+
+export const payslips = pgTable(
+  "payslips",
+  {
+    id: serial("id").primaryKey(),
+    runId: integer("run_id").notNull().references(() => payrollRuns.id, { onDelete: "cascade" }),
+    employeeId: integer("employee_id").notNull().references(() => employees.id, { onDelete: "cascade" }),
+    daysInMonth: integer("days_in_month").notNull(),
+    payableDays: integer("payable_days").notNull(), // halves are stored doubled, see lib/hr.ts
+    base: integer("base").notNull(),
+    incentives: integer("incentives").notNull().default(0),
+    advanceRecovery: integer("advance_recovery").notNull().default(0),
+    deductions: integer("deductions").notNull().default(0),
+    net: integer("net").notNull(),
+    lines: jsonb("lines").$type<PayslipLine[]>().notNull().default([]),
+    note: text("note"),
+    expenseId: integer("expense_id").references(() => expenses.id, { onDelete: "set null" }),
+  },
+  (t) => [uniqueIndex("payslips_run_employee_idx").on(t.runId, t.employeeId)],
+);
+
+// ------------------------------------------------------------------ stock (both businesses)
+// Stock is never a stored number: it is the sum of its movements, so every figure can be traced to who did what.
+// There is no "locations" table — stock sits in the business's store (property_id null) or at one flat.
+
+export const stockKindEnum = pgEnum("stock_kind", ["in", "issue", "return", "damaged", "count"]);
+
+export const inventoryItems = pgTable(
+  "inventory_items",
+  {
+    id: serial("id").primaryKey(),
+    business: businessEnum("business").notNull(),
+    name: text("name").notNull(),
+    unit: text("unit").notNull().default("piece"), // piece, set, kg, litre…
+    category: text("category"),
+    reorderLevel: integer("reorder_level").notNull().default(0), // warn at or below this
+    costPerUnit: integer("cost_per_unit"),
+    /** Finzo consumables: how many go out automatically when a cleaning is finished. */
+    perTurnover: integer("per_turnover").notNull().default(0),
+    active: boolean("active").notNull().default(true),
+    ...timestamps,
+  },
+  (t) => [uniqueIndex("inventory_items_business_name_idx").on(t.business, t.name)],
+);
+
+export const stockMovements = pgTable(
+  "stock_movements",
+  {
+    id: serial("id").primaryKey(),
+    itemId: integer("item_id").notNull().references(() => inventoryItems.id, { onDelete: "cascade" }),
+    // restrict, not set null: silently moving a deleted flat's stock into the store would invent a surplus.
+    propertyId: integer("property_id").references(() => properties.id, { onDelete: "restrict" }), // null = the store
+    qty: integer("qty").notNull(), // signed: what this movement did to the stock at that place
+    kind: stockKindEnum("kind").notNull(),
+    tripBatchId: integer("trip_batch_id").references(() => tripBatches.id, { onDelete: "set null" }), // TD gear on a departure
+    turnoverId: integer("turnover_id").references(() => turnovers.id, { onDelete: "set null" }), // used by a cleaning
+    note: text("note"),
+    /** Both legs of a move share this, so undoing one undoes the pair rather than inventing stock. */
+    groupId: text("group_id"),
+    undoneAt: timestamp("undone_at", { withTimezone: true }), // reversed once, and only once
+    createdBy: integer("created_by").references(() => opsUsers.id, { onDelete: "set null" }),
+    createdAt: timestamps.createdAt,
+  },
+  (t) => [
+    index("stock_movements_item_idx").on(t.itemId, t.createdAt),
+    // A cleaning issues each item once, however many times it is re-finished.
+    uniqueIndex("stock_movements_turnover_item_idx").on(t.turnoverId, t.itemId),
+  ],
 );

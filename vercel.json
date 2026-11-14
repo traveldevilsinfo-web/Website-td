@@ -7,6 +7,14 @@
     {
       "path": "/api/cron/daily-digest",
       "schedule": "30 3 * * *"
+    },
+    {
+      "path": "/api/cron/ops-recurring",
+      "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/api/cron/stays-sync",
+      "schedule": "0 0 * * *"
     }
   ]
 }
