@@ -19,11 +19,18 @@ async function guard(id: number) {
   return !!row;
 }
 
-/** A manager's call: is this worth charging the guest for? Un-ticking also reopens a settled claim. */
+/**
+ * A manager's call: is this worth charging the guest for? Un-ticking only clears the tick.
+ *
+ * A settled claim is not reopenable this way, and the `isNull` below is what makes sure of it: the settled date is
+ * the only record that the money was collected, and there is no history table to recover it from. The UI already
+ * replaces both buttons with a Settled badge, so the one way to reach this branch is a stale second tab — and that
+ * stale click must be a no-op, not a quiet erasure that sends a guest who has paid back onto the chase list.
+ */
 export async function setChargeable(movementId: number, on: boolean) {
   if (!(await guard(movementId))) return;
-  await db.update(t.stockMovements).set(on ? { chargeable: true } : { chargeable: false, claimSettledAt: null })
-    .where(loss(movementId));
+  await db.update(t.stockMovements).set({ chargeable: on })
+    .where(on ? loss(movementId) : and(loss(movementId), isNull(t.stockMovements.claimSettledAt)));
   revalidatePath("/ops/reports/losses");
 }
 
