@@ -56,8 +56,8 @@ offers three, and for this step you want one of the first two:
 
 | | Port | Use it for |
 |---|---|---|
-| **Direct connection** | 5432 | migrations and the one-off scripts below |
-| **Session pooler** | 5432 (host contains `pooler`) | the same, when your network has no IPv6 |
+| **Direct connection** | 5432 | migrations and the one-off scripts below, **if** you have IPv6 |
+| **Session pooler** | 5432 (host contains `pooler`) | the same, over IPv4 — most networks need this |
 | Transaction pooler | 6543 | the deployed app — **not** these commands |
 
 The transaction pooler drops the prepared statements the migration tool relies on, so use 5432 here.
@@ -88,6 +88,17 @@ psql '<the URI from above>' -c "select count(*) from drizzle.__drizzle_migration
 
 > The string holds your database password, so it goes into your shell history. Clear it afterwards
 > if that matters to you.
+
+**If it fails with `EHOSTUNREACH` and an address full of colons**, that is the direct connection
+being IPv6-only on a network that has no IPv6 route:
+
+```
+Error: connect EHOSTUNREACH 2406:da12:1f1:f802:…:5432
+```
+
+Use the **Session pooler** string instead — same port, IPv4, user `postgres.<project-ref>`. The
+migration tool is worse: it fails the same way but prints nothing at all, stopping after *Using 'pg'
+driver for database querying*, which reads like success. If you see no `[✓]` line, it did not run.
 
 > Setting `DATABASE_URL` on the command line like this overrides whatever is in `.env.local`, so you
 > cannot accidentally run it against your laptop's database.
