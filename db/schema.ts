@@ -728,8 +728,11 @@ export const propertyKit = pgTable(
     expected: integer("expected").notNull(),
     ...timestamps,
   },
-  // Postgres treats nulls as distinct, so this index does not stop two standard (null property_id) rows for one item. The app keeps one.
-  (t) => [uniqueIndex("property_kit_item_property_idx").on(t.itemId, t.propertyId)],
+  (t) => [
+    uniqueIndex("property_kit_item_property_idx").on(t.itemId, t.propertyId),
+    // Postgres treats nulls as distinct, so the index above allows two standard (null property_id) rows for one item. This one closes that gap.
+    uniqueIndex("property_kit_item_standard_idx").on(t.itemId).where(sql`${t.propertyId} is null`),
+  ],
 );
 
 /** Things in a flat that can break: the sofa, the boiler. Their repair costs never post to expenses. */
