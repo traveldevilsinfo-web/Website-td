@@ -22,7 +22,8 @@ back office uses a second one.
 
 ## 2. Set the environment variables in Vercel
 
-Vercel → the project that serves traveldevils.in → **Settings** → **Environment Variables**. Add
+Vercel → the project that serves traveldevils.in → **Environment Variables** in the project's own
+sidebar. It is not under Settings any more, which is the usual reason it can't be found. Add
 these for **Production** (and Preview, if you want the preview deployments to work):
 
 | Name | Value | What breaks without it |
@@ -69,8 +70,8 @@ percent-encode any `&`, `#`, `?` or space it contains or the URI parses wrong.
 > old one, so resetting breaks the live site until you paste the new string there too. Copy the
 > value out of Vercel instead if you can.
 
-It is already in Vercel too, as `DATABASE_URL` under Environment Variables, if that is quicker to
-reach — but take it from the dashboard in the browser rather than the `vercel` CLI, which may be
+It is already in Vercel too, as `DATABASE_URL` under the project's Environment Variables, if that
+is quicker to reach — though a variable saved as a Secret one cannot be read back, only replaced — but take it from the dashboard in the browser rather than the `vercel` CLI, which may be
 signed in to a different account than the one holding this project.
 
 ### Running them
@@ -250,15 +251,20 @@ SUPABASE_URL=https://<project-ref>.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=<the secret key>
 ```
 
-The quickest and safest source for the last two is **Vercel**, which already holds the exact values
-the live site runs on: the project → Settings → Environment Variables → reveal each one. Copying
-proven values beats re-deriving them. Read them from the dashboard in a browser, not the `vercel`
-CLI, which may be signed in to a different account.
+**Take all three from Supabase**, not Vercel. Click **Connect** at the top of the project: that one
+dialog carries the connection string and the API keys. Vercel holds the same values, but they sit
+under **Environment Variables in the project sidebar** rather than under Settings, and one saved as
+a Secret variable cannot be read back at all — only replaced. Supabase can always show you its own
+keys, so it is the one source that never dead-ends.
 
-`DATABASE_URL` is the one to take from Supabase's **Connect** dialog rather than Vercel, choosing
-**Session pooler**. Vercel's copy is the transaction pooler (port 6543), which suits serverless but
-drops the prepared statements `db:migrate` needs. The direct string is IPv6-only, which this network
-can't reach.
+In the Connect dialog choose **Session pooler** for `DATABASE_URL`. Not the transaction pooler
+(port 6543) that Vercel uses, which suits serverless but drops the prepared statements `db:migrate`
+needs, and not the direct string, which is IPv6-only and unreachable from this network.
+
+For `SUPABASE_SERVICE_ROLE_KEY`, prefer the **existing `service_role` key** — the legacy one under
+Project Settings → API Keys, beginning `eyJ`. It is what the live site already runs on, so localhost
+behaves identically. A newer `sb_secret_` key should work the same way, but nothing here has tested
+it, and a storage key that silently fails is not worth the saving.
 
 > Supabase is retiring the `service_role` key at the end of 2026 in favour of a secret key that
 > starts `sb_secret_`. Either works in `SUPABASE_SERVICE_ROLE_KEY` today — the variable name is ours,
