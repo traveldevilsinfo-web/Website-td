@@ -63,6 +63,24 @@ want one of the first two:
 | Transaction pooler | 6543 | the deployed app — **not** these commands |
 
 The transaction pooler drops the prepared statements the migration tool relies on, so use 5432 here.
+
+### If you can't find the Connect dialog
+
+The pooler host can't be guessed from the region name, but it can be confirmed. Find the region from
+the direct host's address, then ask each candidate pooler whether it knows your project — a
+deliberately wrong password is enough, because the two failures differ:
+
+```bash
+dig +short db.<project-ref>.supabase.co AAAA   # the address tells you the AWS region
+```
+
+```bash
+PGPASSWORD=wrong psql "postgresql://postgres.<project-ref>@aws-0-<region>.pooler.supabase.com:5432/postgres" -c 'select 1'
+```
+
+`password authentication failed` means that pooler serves your project and the host is right.
+`tenant/user postgres.<project-ref> not found` means it is the wrong one — try `aws-1-<region>`.
+Nothing connects either way, so it is safe to run.
 Supabase prints the password as `[YOUR-PASSWORD]`; replace it with the real one, and
 percent-encode any `&`, `#`, `?` or space it contains or the URI parses wrong.
 
