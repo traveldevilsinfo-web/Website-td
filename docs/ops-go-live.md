@@ -261,10 +261,11 @@ In the Connect dialog choose **Session pooler** for `DATABASE_URL`. Not the tran
 (port 6543) that Vercel uses, which suits serverless but drops the prepared statements `db:migrate`
 needs, and not the direct string, which is IPv6-only and unreachable from this network.
 
-For `SUPABASE_SERVICE_ROLE_KEY`, prefer the **existing `service_role` key** — the legacy one under
-Project Settings → API Keys, beginning `eyJ`. It is what the live site already runs on, so localhost
-behaves identically. A newer `sb_secret_` key should work the same way, but nothing here has tested
-it, and a storage key that silently fails is not worth the saving.
+For `SUPABASE_SERVICE_ROLE_KEY`, use the **secret key** beginning `sb_secret_`, from Project
+Settings → API Keys. Our variable keeps the old name — it is ours, not Supabase's — but the new key
+works: it was checked against this project's storage API on 16 Nov 2026 and listed both buckets
+(`media` public, `ops-private` private). The legacy `service_role` key beginning `eyJ` still works
+too, and is what the live site runs on, but Supabase retires it at the end of 2026.
 
 > Supabase is retiring the `service_role` key at the end of 2026 in favour of a secret key that
 > starts `sb_secret_`. Either works in `SUPABASE_SERVICE_ROLE_KEY` today — the variable name is ours,
