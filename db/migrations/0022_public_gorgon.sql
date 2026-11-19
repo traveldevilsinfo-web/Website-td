@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "property_kit_item_standard_idx" ON "property_kit" USING btree ("item_id") WHERE "property_kit"."property_id" is null;

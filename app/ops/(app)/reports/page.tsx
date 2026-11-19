@@ -27,7 +27,7 @@ export default async function ReportsPage({ searchParams }: PageProps<"/ops/repo
   return (
     <>
       <PageHeader title="Profit & loss" sub={`${BIZ_LABEL[biz]} · ${monthLabel(month)}`}
-        action={<div className="flex items-center gap-2"><MonthPicker month={month} /><a href={`/ops/reports/export?month=${month}`} className={btnGhost}>Download CSV</a></div>} />
+        action={<div className="flex items-center gap-2"><MonthPicker month={month} /><a href={`/ops/reports/export?month=${month}`} className={btnGhost}>Download CSV</a>{biz === "finzo" && <a href="/ops/reports/losses" className={btnGhost}>Losses</a>}</div>} />
       <Panel title="Summary">
         <dl className="divide-y divide-[var(--line)] text-sm">
           <div className="flex justify-between py-2"><dt className="font-semibold">Revenue</dt><dd className="font-bold">{inr(rev)}</dd></div>

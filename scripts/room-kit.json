@@ -1,0 +1,416 @@
+{
+  "_note": "Harshit's room list. kind is a judgement call: a replaceable is counted at every cleaning and its loss is valued, a fixture only carries a condition. The portable appliances are replaceables for that reason (owner's call, 15 Nov 2026) — a guest can walk off with a kettle, not with a geyser. THIS FILE IS THE SOURCE OF TRUTH: re-running ops:kit overwrites area and kind in the database, so change them here, not only in the app. Renaming an item here creates a duplicate under the new name and leaves the old row behind (use alias to rename in place). alias = an older name already in the database, renamed to name on seeding. costPerUnit is read when it is a number and leaves the item's existing cost alone when it is null, so a price typed into /ops/kit survives a re-run; every entry is null today, so fill one in here and re-run ops:kit to price it. No kit counts are seeded, set them in /ops/kit. Bath towel is not on Harshit's list; it was already in stock.",
+  "items": [
+    {
+      "area": "Bed",
+      "name": "Mattress cover",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bed",
+      "name": "Big pillow",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bed",
+      "name": "Normal pillow",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bed",
+      "name": "Runner set",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bed",
+      "name": "Bedsheet",
+      "kind": "replaceable",
+      "alias": "Bedsheet (double)",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bed",
+      "name": "Duvet",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bed",
+      "name": "Duvet cover",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bed",
+      "name": "Pillow cover",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Table",
+      "name": "Water bottle",
+      "kind": "consumable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Table",
+      "name": "Glass",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Table",
+      "name": "Ash tray",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Table",
+      "name": "Glass coaster",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Table",
+      "name": "Tissue paper box",
+      "kind": "consumable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Table",
+      "name": "TV remote",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Table",
+      "name": "AC remote",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Table",
+      "name": "Bamboo plant",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Work desk",
+      "name": "Lamp",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Work desk",
+      "name": "Notepad",
+      "kind": "consumable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Work desk",
+      "name": "Pen and pen stand",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Work desk",
+      "name": "All out",
+      "kind": "consumable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Work desk",
+      "name": "Chair",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Utensils",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Chimney",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Coffee maker",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Fridge",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Microwave",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Induction",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "RO",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Toaster",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Electric kettle",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Dustbin",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Dishwasher",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Kitchen",
+      "name": "Mixer",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Wardrobe",
+      "name": "Hanger",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Wardrobe",
+      "name": "Iron",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "AC",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Room bell",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Wifi router",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Wall fan",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Sofa set",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Door mat",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Bed rug",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Wall painting",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Curtains",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Lights",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Plant",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Fixtures & other",
+      "name": "Digital lock",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Shampoo",
+      "kind": "consumable",
+      "alias": "Shampoo sachet",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Conditioner",
+      "kind": "consumable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Shower gel",
+      "kind": "consumable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Hand wash",
+      "kind": "consumable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Balti mug",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Wiper",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Toilet paper",
+      "kind": "consumable",
+      "alias": "Toilet roll",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Odonil",
+      "kind": "consumable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Hair dryer",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Bathroom kit",
+      "kind": "consumable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Bathroom mat",
+      "kind": "replaceable",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Shower",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Towel stand",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Hand towel stand",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Toilet paper stand",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Geyser",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Hand jet",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Flush",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Toilet seat",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Wash basin",
+      "kind": "fixture",
+      "costPerUnit": null
+    },
+    {
+      "area": "Bathroom",
+      "name": "Bath towel",
+      "kind": "replaceable",
+      "costPerUnit": null
+    }
+  ]
+}

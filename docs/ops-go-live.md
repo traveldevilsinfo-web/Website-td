@@ -22,7 +22,8 @@ back office uses a second one.
 
 ## 2. Set the environment variables in Vercel
 
-Vercel → the project that serves traveldevils.in → **Settings** → **Environment Variables**. Add
+Vercel → the project that serves traveldevils.in → **Environment Variables** in the project's own
+sidebar. It is not under Settings any more, which is the usual reason it can't be found. Add
 these for **Production** (and Preview, if you want the preview deployments to work):
 
 | Name | Value | What breaks without it |
@@ -51,8 +52,9 @@ This adds the back office's tables. It does not alter any table the website uses
 
 ### Finding the connection string
 
-Supabase → your project → **Settings** → **Database** → **Connection string** → **URI**. Supabase
-offers three, and for this step you want one of the first two:
+Open your project in Supabase and click **Connect** at the top of the page (it used to live under
+Settings → Database; the dashboard moved it). Supabase offers three strings, and for this step you
+want one of the first two:
 
 | | Port | Use it for |
 |---|---|---|
@@ -61,11 +63,33 @@ offers three, and for this step you want one of the first two:
 | Transaction pooler | 6543 | the deployed app — **not** these commands |
 
 The transaction pooler drops the prepared statements the migration tool relies on, so use 5432 here.
-Supabase prints the password as `[YOUR-PASSWORD]`; replace it with the real one (**Reset database
-password** on the same page if you don't have it).
 
-It is already in Vercel too, as `DATABASE_URL` under Environment Variables, if that is quicker to
-reach — but take it from the dashboard in the browser rather than the `vercel` CLI, which may be
+### If you can't find the Connect dialog
+
+The pooler host can't be guessed from the region name, but it can be confirmed. Find the region from
+the direct host's address, then ask each candidate pooler whether it knows your project — a
+deliberately wrong password is enough, because the two failures differ:
+
+```bash
+dig +short db.<project-ref>.supabase.co AAAA   # the address tells you the AWS region
+```
+
+```bash
+PGPASSWORD=wrong psql "postgresql://postgres.<project-ref>@aws-0-<region>.pooler.supabase.com:5432/postgres" -c 'select 1'
+```
+
+`password authentication failed` means that pooler serves your project and the host is right.
+`tenant/user postgres.<project-ref> not found` means it is the wrong one — try `aws-1-<region>`.
+Nothing connects either way, so it is safe to run.
+Supabase prints the password as `[YOUR-PASSWORD]`; replace it with the real one, and
+percent-encode any `&`, `#`, `?` or space it contains or the URI parses wrong.
+
+> **If you don't have the password, think before resetting it.** `DATABASE_URL` in Vercel holds the
+> old one, so resetting breaks the live site until you paste the new string there too. Copy the
+> value out of Vercel instead if you can.
+
+It is already in Vercel too, as `DATABASE_URL` under the project's Environment Variables, if that
+is quicker to reach — though a variable saved as a Secret one cannot be read back, only replaced — but take it from the dashboard in the browser rather than the `vercel` CLI, which may be
 signed in to a different account than the one holding this project.
 
 ### Running them
@@ -229,3 +253,55 @@ Cleanings are created from checkouts as bookings arrive, not on a schedule.
 - A booking made on another channel can take up to a few hours to appear, because that is how often
   channels re-read each other's calendars. Clashes are flagged, not prevented.
 - Receiving stock does not create the matching expense. Record the purchase under Expenses as usual.
+
+---
+
+## Running it on your laptop against the live data
+
+By default your laptop has its own Postgres (`DATABASE_URL` in `.env.local`) and the live site has
+Supabase. They share nothing, which is why a person you add on one never appears on the other.
+
+To use **one** database, point `.env.local` at Supabase. Three lines, not one — all three matter:
+
+```
+DATABASE_URL=<the session pooler URI from step 3>
+SUPABASE_URL=https://<project-ref>.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=<the secret key>
+```
+
+**Take all three from Supabase**, not Vercel. Click **Connect** at the top of the project: that one
+dialog carries the connection string and the API keys. Vercel holds the same values, but they sit
+under **Environment Variables in the project sidebar** rather than under Settings, and one saved as
+a Secret variable cannot be read back at all — only replaced. Supabase can always show you its own
+keys, so it is the one source that never dead-ends.
+
+In the Connect dialog choose **Session pooler** for `DATABASE_URL`. Not the transaction pooler
+(port 6543) that Vercel uses, which suits serverless but drops the prepared statements `db:migrate`
+needs, and not the direct string, which is IPv6-only and unreachable from this network.
+
+For `SUPABASE_SERVICE_ROLE_KEY`, use the **secret key** beginning `sb_secret_`, from Project
+Settings → API Keys. Our variable keeps the old name — it is ours, not Supabase's — but the new key
+works: it was checked against this project's storage API on 16 Nov 2026 and listed both buckets
+(`media` public, `ops-private` private). The legacy `service_role` key beginning `eyJ` still works
+too, and is what the live site runs on, but Supabase retires it at the end of 2026.
+
+> Supabase is retiring the `service_role` key at the end of 2026 in favour of a secret key that
+> starts `sb_secret_`. Either works in `SUPABASE_SERVICE_ROLE_KEY` today — the variable name is ours,
+> not Supabase's — so prefer the new one if the dashboard offers both. A key beginning `eyJ` is the
+> legacy kind.
+
+> The two Supabase lines are not optional. Without them, files you upload land on your laptop's disk
+> while the row naming them goes into the shared database, so the receipt is unreadable everywhere
+> else and nothing says so. The app now refuses an upload in that state rather than creating the
+> broken row — if you see that error, these are the lines that are missing.
+
+What to expect once they are set:
+
+- You sign in locally with your **real** ops password, not the `LOCAL_*` ones in `.env.local`.
+- Anything you change on `localhost:3000` changes the real business. A delete is a real delete.
+- `npm run db:migrate` now migrates **production**, which is the point of one database, but means a
+  half-finished migration is a live problem. Run it when you mean to.
+- Every local page load reads from Supabase and counts against the Free plan's egress.
+
+To go back to a separate laptop database, set `DATABASE_URL` to
+`postgres://localhost:5432/traveldevils` and delete the two Supabase lines.

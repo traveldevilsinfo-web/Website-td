@@ -12,6 +12,29 @@ const SB_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 export const BUCKET = process.env.SUPABASE_BUCKET || "media";
 export const onSupabase = !!(SB && SB_KEY);
 
+/**
+ * A shared database with laptop-local storage is the one combination that breaks quietly: the file lands on
+ * this machine's disk while the row naming it goes somewhere every other machine can read, so the receipt is
+ * gone for everyone but you and nothing ever says so. Refuse the upload instead — the row outlives the
+ * mistake. Either point the storage keys at Supabase too, or point the database back at this laptop.
+ */
+const dbIsLocal = (() => {
+  try {
+    const h = new URL(process.env.DATABASE_URL ?? "postgres://localhost").hostname.toLowerCase();
+    return h === "localhost" || h === "127.0.0.1" || h === "::1" || h === "";
+  } catch {
+    return true; // Unparseable means nothing can connect anyway; don't block uploads over it.
+  }
+})();
+
+function refuseSplitStorage() {
+  if (onSupabase || dbIsLocal) return;
+  throw new Error(
+    "Uploads are going to this machine's disk while DATABASE_URL points at a shared database, so the file " +
+      "would be unreadable everywhere else. Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local.",
+  );
+}
+
 export const MIME_BY_EXT: Record<string, string> = {
   jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp", avif: "image/avif",
   gif: "image/gif", svg: "image/svg+xml", mp4: "video/mp4", pdf: "application/pdf",
@@ -39,6 +62,7 @@ const sb = (route: string, init?: RequestInit) =>
 
 /** URL the browser PUTs the file body to. */
 export async function signUpload(p: string): Promise<string> {
+  refuseSplitStorage();
   if (!onSupabase) return `/api/admin/upload?path=${encodeURIComponent(p)}`;
   const res = await sb(`object/upload/sign/${BUCKET}/${p}`, { method: "POST" });
   if (!res.ok) throw new Error(`Storage refused the upload (${res.status})`);
@@ -85,6 +109,7 @@ export const OPS_BUCKET = process.env.SUPABASE_OPS_BUCKET || "ops-private";
 export const OPS_DIR = path.resolve(/*turbopackIgnore: true*/ process.env.OPS_UPLOAD_DIR || "./uploads-private");
 
 export async function signPrivateUpload(p: string): Promise<string> {
+  refuseSplitStorage();
   if (!onSupabase) return `/api/ops/upload?path=${encodeURIComponent(p)}`;
   const res = await sb(`object/upload/sign/${OPS_BUCKET}/${p}`, { method: "POST" });
   if (!res.ok) throw new Error(`Storage refused the upload (${res.status})`);

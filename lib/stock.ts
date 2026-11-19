@@ -4,7 +4,7 @@
 
 export type StockKind = "in" | "issue" | "return" | "damaged" | "count";
 export const STOCK_LABEL: Record<StockKind, string> = {
-  in: "Received", issue: "Sent out", return: "Came back", damaged: "Damaged or lost", count: "Stocktake",
+  in: "Received", issue: "Sent out", return: "Came back", damaged: "Damaged, lost or stolen", count: "Stocktake",
 };
 
 type Move = { itemId: number; propertyId: number | null; qty: number };
