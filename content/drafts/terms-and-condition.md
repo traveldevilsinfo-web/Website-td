@@ -56,4 +56,4 @@ These terms are governed by the laws of India. Disputes are subject to the exclu
 
 Travel Devils, 247, D Mall, Niti Khand, Indirapuram, Ghaziabad, Uttar Pradesh 201014
 
-[info@traveldevils.in](mailto:info@traveldevils.in) · Call [+91 97118 75589](tel:+919711875589) · WhatsApp +91 70428 52209
+[info@traveldevils.in](mailto:info@traveldevils.in) · Call [+91 70428 52209](tel:+917042852209) · WhatsApp +91 70428 52209
