@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useTransition } from "react";
 import {
-  BedDouble, Boxes, Building2, CalendarClock, CalendarDays, ChartColumn, ClipboardCheck, FolderTree, House, LogOut, MoreHorizontal, Plus, CalendarCheck, KeyRound, Receipt, Store, TrendingUp, UserRound, Users, Wallet, X,
+  BedDouble, Boxes, Building2, CalendarClock, CalendarDays, ChartColumn, ClipboardCheck, FolderTree, ListChecks, House, LogOut, MoreHorizontal, Plus, CalendarCheck, KeyRound, Receipt, Store, TrendingUp, UserRound, Users, Wallet, X,
 } from "lucide-react";
 import { BIZ_LABEL, ROLE_LABEL, type Biz, type OpsRole } from "@/lib/ops-rules";
 import { ACCENT, BIZ_SHORT } from "./accent";
@@ -51,6 +51,7 @@ export function OpsNav({ biz, businesses, manager, owner, user, counts, logout }
     ] },
     { title: "Setup", items: [
       { href: "/ops/vendors", label: "Vendors", icon: Store, show: manager },
+      { href: "/ops/kit", label: "Room kit", icon: ListChecks, show: stays && manager },
       { href: "/ops/categories", label: "Categories", icon: FolderTree, show: manager },
       { href: "/ops/team", label: "Logins", icon: KeyRound, show: owner },
     ] },

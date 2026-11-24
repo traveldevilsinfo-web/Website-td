@@ -761,7 +761,7 @@ assert.equal(transferRows(5, null, 7, -3), null);
 assert.equal(countDelta(88, 85), -3);
 assert.equal(countDelta(88, 90), 2);
 assert.equal(countDelta(88, 88), 0);
-assert.equal(STOCK_LABEL.damaged, "Damaged or lost");
+assert.equal(STOCK_LABEL.damaged, "Damaged, lost or stolen");
 console.log("stock checks passed");
 
 // ---------------- payroll fixes from review
@@ -828,3 +828,88 @@ assert.equal(parsePlace("0"), undefined);
 assert.equal(parsePlace(null), undefined);
 assert.equal(parsePlace("-3"), undefined);
 console.log("stock place checks passed");
+
+// ---------------- room kit arithmetic
+import { expectedFor, kitLines, planShortfall, lossTotal, fitOutValue, FIXTURE_CONDITION } from "./room";
+const kit = [{ itemId: 1, propertyId: null, expected: 4 }, { itemId: 1, propertyId: 7, expected: 6 }];
+assert.equal(expectedFor(kit, 1, 7), 6);        // the flat's own number wins
+assert.equal(expectedFor(kit, 1, 9), 4);        // otherwise the standard
+assert.equal(expectedFor(kit, 2, 7), null);     // an item nobody put in the kit
+// A shortfall lowers the ledger exactly once
+assert.deepEqual(planShortfall({ itemId: 1, propertyId: 7, qty: -2, reason: "stolen", reservationId: 31, unitCost: 450 }),
+  { kind: "damaged", qty: -2, reason: "stolen", reservationId: 31, unitCost: 450 });
+assert.equal(planShortfall({ itemId: 1, propertyId: 7, qty: -2, reason: "stolen", reservationId: 31, unitCost: 450 })?.kind, "damaged");
+assert.equal(planShortfall({ itemId: 1, propertyId: 7, qty: -1, reason: null, reservationId: null, unitCost: null })?.kind, "count");
+assert.equal(planShortfall({ itemId: 1, propertyId: 7, qty: 0, reason: null, reservationId: null, unitCost: null }), null);
+// An item with no cost must be reported, not counted as free
+assert.deepEqual(lossTotal([{ qty: -2, unitCost: 450 }, { qty: -1, unitCost: null }]), { value: 900, unpriced: 1 });
+// An item outside the kit is shown, never as "0 of 0"
+const lines = kitLines([{ id: 2, name: "Ash tray", area: "Table" }], kit, new Map([["2@7", 3]]), 7);
+assert.equal(lines[0].expected, null);
+assert.equal(lines[0].short, 0);
+assert.equal(fitOutValue([{ cost: 32000, active: true }, { cost: 8500, active: true }, { cost: 999, active: false }]), 40500);
+// kitLines: the shortfall clamp, negative stock, and the area-then-name sort
+const sh = (qty: number, reason: string | null) => ({ itemId: 1, propertyId: 7, qty, reason, reservationId: null, unitCost: null });
+const kl = kitLines([{ id: 1, name: "Towel", area: "Bath" }], kit, new Map(), 7)[0];
+assert.deepEqual([kl.expected, kl.actual, kl.short], [6, 0, 6]);   // in the kit, none there: all of it is short
+assert.equal(kitLines([{ id: 1, name: "Towel", area: "Bath" }], kit, new Map([["1@7", 9]]), 7)[0].short, 0); // over-stock is never negative-short
+assert.equal(kitLines([{ id: 1, name: "Towel", area: "Bath" }], kit, new Map([["1@7", -1]]), 7)[0].short, 7); // a negative total is short by more
+assert.deepEqual(kitLines([{ id: 3, name: "Zeta", area: "Bed" }, { id: 4, name: "Alpha", area: "Bed" }, { id: 5, name: "Mid", area: "Bath" }], kit, new Map(), 7).map((l) => l.name), ["Mid", "Alpha", "Zeta"]);
+// planShortfall takes a signed delta: a surplus is a positive count and never a loss
+assert.deepEqual(planShortfall(sh(2, null)), { kind: "count", qty: 2, reason: null, reservationId: null, unitCost: null });
+assert.equal(planShortfall(sh(2, "stolen"))?.kind, "count");   // a reason on a surplus is ignored
+assert.equal(planShortfall(sh(2, "stolen"))?.qty, 2);
+assert.equal(planShortfall(sh(-1, ""))?.kind, "count");        // blank reason: unexplained
+assert.equal(planShortfall(sh(-1, "   "))?.kind, "count");     // whitespace-only reason: unexplained
+assert.equal(planShortfall(sh(-1, "lost"))?.qty, -1);
+assert.deepEqual(lossTotal([]), { value: 0, unpriced: 0 });
+assert.deepEqual(lossTotal([{ qty: 0, unitCost: 450 }]), { value: 0, unpriced: 0 });
+// The schema defaults a fixture to "working", so a key missing here would render blank on the Room page
+assert.deepEqual(Object.keys(FIXTURE_CONDITION), ["working", "attention", "broken", "missing"]);
+assert.ok(FIXTURE_CONDITION.working);
+// `expected` has an upper bound, so a forged box can't reach the int column and throw there
+import { MAX_EXPECTED, isExpected } from "./room";
+assert.equal(isExpected(0), true);                 // 0 is a real answer: the flat deliberately has none
+assert.equal(isExpected(6), true);
+assert.equal(isExpected(MAX_EXPECTED), true);      // the bound itself is allowed
+assert.equal(isExpected(MAX_EXPECTED + 1), false);
+assert.equal(isExpected(1e20), false);             // what passes /^\d+$/ and Number.isInteger but not an int column
+assert.equal(isExpected(-1), false);
+assert.equal(isExpected(2.5), false);
+assert.equal(isExpected(NaN), false);
+console.log("room kit checks passed");
+
+// ---------------- the first count at a flat
+import { isOpeningCount } from "./room";
+assert.equal(isOpeningCount([]), true);                        // nothing counted here yet
+assert.equal(isOpeningCount([{ itemId: 1, qty: 4 }]), false);  // this flat has history
+console.log("opening count checks passed");
+
+// ---------------- what one box on the kit check writes
+import { planKitEntry } from "./room";
+const entry = (raw: string | null | undefined, actual: number, reason: string | null = null, opening = false) =>
+  planKitEntry({ itemId: 11, propertyId: 20, raw, actual, reason, opening, reservationId: 42, unitCost: 450 });
+// Fewer than the ledger holds, with a reason: ONE damaged row, signed against the actual and tied to the stay
+assert.deepEqual(entry("2", 4, "stolen"), { kind: "damaged", qty: -2, reason: "stolen", reservationId: 42, unitCost: 450 });
+assert.equal(entry("0", 4, "lost")?.qty, -4);                 // all of it gone is -4, never -0 or 4
+// Fewer, with nothing said: a count correction, and no stay is blamed
+assert.deepEqual(entry("3", 4), { kind: "count", qty: -1, reason: null, reservationId: null, unitCost: 450 });
+// More than the ledger holds: a positive count, no reason survives, no stay
+assert.deepEqual(entry("6", 4, "stolen"), { kind: "count", qty: 2, reason: null, reservationId: null, unitCost: 450 });
+// The same number: nothing at all is written
+assert.equal(entry("4", 4, "stolen"), null);
+assert.equal(entry("0", 0), null);
+// Untouched or unreadable: silence, never a loss invented out of an empty box
+for (const raw of [undefined, null, "", "   ", "abc", "-1", "2.5", "1e2", "4 towels"]) assert.equal(entry(raw, 4), null, `raw ${String(raw)} must write nothing`);
+// A first count sets the baseline: a reason is dropped, so it can never read as a loss
+assert.deepEqual(entry("4", 0, "stolen", true), { kind: "count", qty: 4, reason: null, reservationId: null, unitCost: 450 });
+assert.equal(entry("0", 2, "stolen", true)?.kind, "count");   // even a drop, on a first count, is only a count
+assert.equal(entry("0", 2, "stolen", true)?.reason, null);
+// planShortfall itself must drop a reason on a surplus; the caller's guard is not the only thing holding it
+assert.equal(planShortfall(sh(2, "stolen"))?.reason, null);
+console.log("kit entry checks passed");
+
+// ---------------- a reversed loss is not a loss
+assert.deepEqual(lossTotal([{ qty: -2, unitCost: 450 }, { qty: -1, unitCost: 450, undoneAt: new Date() }]),
+  { value: 900, unpriced: 0 });
+console.log("undone loss checks passed");

@@ -41,7 +41,10 @@ export default async function FlatEditor({ params, searchParams }: PageProps<"/o
   return (
     <>
       <PageHeader back="/ops/properties" title={p ? `${p.code} · ${p.name}` : "Add a flat"} sub={p ? p.address ?? undefined : "Details first; link the calendars after saving."}
-        action={p && feeds.length ? <form action={syncProperty.bind(null, p.id)}><button className={btnGhost}><RefreshCw className="size-4" aria-hidden />Sync now</button></form> : undefined} />
+        action={p ? <>
+          <Link href={`/ops/properties/${p.id}/room`} className={btnGhost}>Room</Link>
+          {feeds.length > 0 && <form action={syncProperty.bind(null, p.id)}><button className={btnGhost}><RefreshCw className="size-4" aria-hidden />Sync now</button></form>}
+        </> : undefined} />
       {(await searchParams).added && <Notice>Flat added ✓ Now paste its Airbnb calendar link below.</Notice>}
 
       <div className="grid gap-5 lg:grid-cols-5">
