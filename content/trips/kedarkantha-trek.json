@@ -47,7 +47,7 @@
   ],
   "reportingPoint": "Dehradun. Transport is by shared taxi from Dehradun to Sankri on Day 1. The exact pickup point and time are shared once your booking is confirmed.",
   "pickupPoints": [],
-  "basePrice": 5499,
+  "basePrice": 7999,
   "bookingAmount": 2800,
   "pricing": [
     {
@@ -55,12 +55,12 @@
       "tiers": [
         {
           "label": "Standard Sharing",
-          "price": 5499,
+          "price": 7999,
           "salePrice": null
         },
         {
           "label": "Dual Sharing",
-          "price": 6499,
+          "price": 9499,
           "salePrice": null
         }
       ]
@@ -81,7 +81,7 @@
     "Trail through pine and maple forest, meadows and rhododendron trees",
     "Vegetarian meals, permits, camping and technical equipment, and certified trek leaders"
   ],
-  "overview": "Kedarkantha is a well-known winter trek in the Garhwal Himalayas of Uttarakhand, with snow on the trail from December to April and a summit at 12,500 ft (3,810 m). It starts from Sankri village and is graded easy to moderate. This **4 Nights / 5 Days** trek runs from Dehradun to Dehradun by shared taxi: you need to reach Dehradun on your own, and the group drives about 200 km to Sankri on Day 1. Batches run every Friday, and every day from November to February.\n\nDay 1 is the drive to Sankri and a homestay night. Day 2 is a 4 km trek to Juda Ka Talab (8,900 ft). Day 3 is a 4 km trek to Kedarkantha Base Camp (11,200 ft). Day 4 starts around 3-4 AM for the summit at sunrise, then descends to Juda Ka Talab. Day 5 is the walk down to Sankri and the drive back to Dehradun by evening. Transport from Dehradun, the homestay and tents, vegetarian meals on the trek, permits, equipment and trek leaders are included. Prices start at ₹5,499 per person (5% GST extra); dual sharing accommodation costs ₹1,000 extra per person.",
+  "overview": "Kedarkantha is a well-known winter trek in the Garhwal Himalayas of Uttarakhand, with snow on the trail from December to April and a summit at 12,500 ft (3,810 m). It starts from Sankri village and is graded easy to moderate. This **4 Nights / 5 Days** trek runs from Dehradun to Dehradun by shared taxi: you need to reach Dehradun on your own, and the group drives about 200 km to Sankri on Day 1. Batches run every Friday, and every day from November to February.\n\nDay 1 is the drive to Sankri and a homestay night. Day 2 is a 4 km trek to Juda Ka Talab (8,900 ft). Day 3 is a 4 km trek to Kedarkantha Base Camp (11,200 ft). Day 4 starts around 3-4 AM for the summit at sunrise, then descends to Juda Ka Talab. Day 5 is the walk down to Sankri and the drive back to Dehradun by evening. Transport from Dehradun, the homestay and tents, vegetarian meals on the trek, permits, equipment and trek leaders are included. Prices start at ₹7,999 per person (5% GST extra); dual sharing is ₹9,499 per person.",
   "itinerary": [
     {
       "title": "Dehradun to Sankri (about 200 km drive)",
@@ -134,7 +134,7 @@
     },
     {
       "q": "How much does the Kedarkantha Trek cost?",
-      "a": "₹5,499 per person. Dual sharing accommodation is ₹1,000 extra per person, which makes it ₹6,499. 5% GST is extra."
+      "a": "₹7,999 per person on standard sharing, or ₹9,499 per person on dual sharing. 5% GST is extra."
     },
     {
       "q": "How difficult is the trek, and is it suitable for beginners?",
@@ -154,7 +154,7 @@
     },
     {
       "q": "How do I book and pay?",
-      "a": "Reserve your seat by paying 50% of the trip cost, and pay the rest at least 4 days before the trip. 5% GST is added to the price."
+      "a": "Reserve your seat by paying ₹2,800 per person, and pay the rest before the trek starts. 5% GST is added to the price."
     },
     {
       "q": "What is the cancellation policy?",
